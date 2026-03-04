@@ -10,5 +10,5 @@ import { NxWelcome } from './nx-welcome';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class App {
-  protected title = 'ng-primitives';
+  protected title = 'ng-primitives-docs';
 }

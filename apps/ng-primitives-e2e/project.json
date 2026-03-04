@@ -1,9 +1,0 @@
-{
-  "name": "ng-primitives-e2e",
-  "$schema": "../../node_modules/nx/schemas/project-schema.json",
-  "projectType": "application",
-  "sourceRoot": "apps/ng-primitives-e2e/src",
-  "implicitDependencies": ["ng-primitives"],
-  "// targets": "to see all targets run: nx show project ng-primitives-e2e --web",
-  "targets": {}
-}

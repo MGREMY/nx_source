@@ -6,6 +6,18 @@ export default [
   ...nx.configs['flat/typescript'],
   ...nx.configs['flat/javascript'],
   {
+    ignores: ['**/dist', '../node_modules'],
+  },
+  {
+    files: ['**/*.json'],
+    languageOptions: {
+      parser: jsoncParser,
+    },
+    rules: {
+      '@nx/dependency-checks': 'error',
+    },
+  },
+  {
     files: ['**/*.ts', '**/*.tsx'],
     languageOptions: {
       parser: tseslint.parser,
@@ -13,27 +25,6 @@ export default [
         tsconfigRootDir: import.meta.dirname,
         project: ['../../tsconfig.base.json'],
       },
-    },
-  },
-  {
-    ignores: ['**/dist', '../node_modules'],
-  },
-  {
-    files: ['**/*.ts', '**/*.tsx', '**/*.js', '**/*.jsx'],
-    rules: {
-      '@nx/enforce-module-boundaries': [
-        'error',
-        {
-          enforceBuildableLibDependency: true,
-          allow: ['^.*/eslint(\\.base)?\\.config\\.[cm]?js$'],
-          depConstraints: [
-            {
-              sourceTag: '*',
-              onlyDependOnLibsWithTags: ['*'],
-            },
-          ],
-        },
-      ],
     },
   },
   {
@@ -52,7 +43,15 @@ export default [
       '@nx/enforce-module-boundaries': [
         'error',
         {
+          enforceBuildableLibDependency: true,
           allowCircularSelfDependency: true,
+          allow: ['^.*/eslint(\\.base)?\\.config\\.[cm]?js$'],
+          depConstraints: [
+            {
+              sourceTag: '*',
+              onlyDependOnLibsWithTags: ['*'],
+            },
+          ],
         },
       ],
     },

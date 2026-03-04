@@ -24,7 +24,7 @@ export default defineConfig({
   },
   /* Run your local dev server before starting the tests */
   webServer: {
-    command: 'pnpm exec nx run ng-primitives:serve',
+    command: 'pnpm exec nx run ng-primitives-docs:serve',
     url: 'http://localhost:4200',
     reuseExistingServer: true,
     cwd: workspaceRoot,

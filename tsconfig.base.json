@@ -14,7 +14,10 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "@mgremy/libs": ["libs/src/index.ts"],
+      "@mgremy/ng-primitives": ["libs/ng-primitives/src/index.ts"]
+    }
   },
   "exclude": ["node_modules", "tmp"]
 }
