@@ -35,7 +35,7 @@ jobs:
 
       - name: Print Environment Info
         shell: bash
-        run: npx nx report
+        run: pnpx nx report
 
       - name: Lint & Build
         shell: bash

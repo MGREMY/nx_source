@@ -13,7 +13,7 @@ concurrency: ${{ github.ref }}
 
 jobs:
   main:
-    name: lint & build
+    name: publish
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -38,7 +38,7 @@ jobs:
 
       - name: Print Environment Info
         shell: bash
-        run: npx nx report
+        run: pnpx nx report
 
       - name: Build
         shell: bash
@@ -46,7 +46,9 @@ jobs:
 
       - name: Publish
         shell: bash
-        run: pnpx nx release publish
+        run: |
+          echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}" > ~/.npmrc
+          pnpx nx release publish
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
           NPM_CONFIG_PROVENANCE: true
