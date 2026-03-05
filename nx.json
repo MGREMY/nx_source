@@ -65,6 +65,7 @@
   },
   "release": {
     "projects": ["libs/**"],
+    "projectsRelationship": "fixed",
     "version": {
       "preVersionCommand": "pnpx nx run-many --target=build",
       "conventionalCommits": true

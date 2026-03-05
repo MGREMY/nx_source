@@ -48,7 +48,7 @@ jobs:
         shell: bash
         run: |
           echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}" > ~/.npmrc
-          pnpx nx release publish
+          pnpx nx run-many --target=nx-release-publish --all
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
           NPM_CONFIG_PROVENANCE: true
