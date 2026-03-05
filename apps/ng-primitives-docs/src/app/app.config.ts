@@ -1,20 +1,38 @@
+import { environment } from '../environments/environment';
+import { appRoutes } from './app.routes';
+import { provideApplicationThemeConfig } from './core/config/app-theme.config';
+import { provideApplicationConfig } from './core/config/app.config';
+import { provideDefaultDatePipeConfig } from './core/config/pipe.config';
+import { provideStorageConfig } from './core/config/storage.config';
+import { provideTranslationConfig } from './core/config/translation.config';
+import { langInterceptor } from './core/interceptors/lang.interceptor';
+import { APP_ENVIRONMENT_SERVICE } from '@mgremy/core';
+
+import { provideNgIconsConfig } from '@ng-icons/core';
+
+import { provideHttpClient, withInterceptors } from '@angular/common/http';
 import {
   ApplicationConfig,
-  provideBrowserGlobalErrorListeners,
+  provideZonelessChangeDetection,
 } from '@angular/core';
-import { provideRouter } from '@angular/router';
-import { appRoutes } from './app.routes';
-import { APP_BASE_HREF, HashLocationStrategy, LocationStrategy } from '@angular/common';
-import { environment } from '../environments/environment';
+import { provideRouter, withComponentInputBinding } from '@angular/router';
 
 export const appConfig: ApplicationConfig = {
   providers: [
-    provideBrowserGlobalErrorListeners(),
-    provideRouter(appRoutes),
-    { provide: LocationStrategy, useClass: HashLocationStrategy },
+    provideZonelessChangeDetection(),
+    provideHttpClient(withInterceptors([langInterceptor])),
+    provideRouter(appRoutes, withComponentInputBinding()),
+    provideNgIconsConfig({
+      size: '16px',
+    }),
     {
-      provide: APP_BASE_HREF,
-      useFactory: () => environment.appBaseHref,
+      provide: APP_ENVIRONMENT_SERVICE,
+      useValue: environment,
     },
+    provideApplicationThemeConfig(),
+    provideDefaultDatePipeConfig(),
+    provideApplicationConfig(),
+    provideStorageConfig(),
+    provideTranslationConfig(), // Internationalization
   ],
 };

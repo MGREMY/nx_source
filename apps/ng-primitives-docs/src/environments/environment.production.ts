@@ -1,5 +1,12 @@
-export const environment = {
+import { Environment } from '@mgremy/core';
+
+export const environment: Environment = {
   production: true,
-  appUrl: (window as any)["runtime_config"]["APP_URL"] ?? "http://localhost:4200",
-  appBaseHref: (window as any)["runtime_config"]["APP_BASE_HREF"] ?? "/",
+  appUrl: 'http://localhost:4200',
+  appBaseHref: '/',
+  apiUrl: '',
+  defaultLanguage: 'en-US',
+  authUrl: '',
+  authRealm: '',
+  authClientId: '',
 };

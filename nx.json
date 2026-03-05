@@ -66,8 +66,8 @@
   "release": {
     "projects": ["libs/**"],
     "version": {
-      "conventionalCommits": true,
-      "preVersionCommand": "pnpx nx run-many --target=build"
+      "preVersionCommand": "pnpx nx run-many --target=build",
+      "conventionalCommits": true
     },
     "changelog": {
       "workspaceChangelog": {
