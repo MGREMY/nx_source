@@ -1,10 +1,13 @@
-name: PR check
+name: Publish
 
 on:
-  pull_request:
+  push:
+    tags:
+      - v*.*.*
 
 permissions:
   contents: read
+  id-token: write
 
 concurrency: ${{ github.ref }}
 
@@ -37,6 +40,13 @@ jobs:
         shell: bash
         run: npx nx report
 
-      - name: Lint & Build
+      - name: Build
         shell: bash
-        run: pnpx nx run-many --target=lint,build --all
+        run: pnpx nx run-many --target=build --all
+
+      - name: Publish
+        shell: bash
+        run: pnpx nx release publish
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+          NPM_CONFIG_PROVENANCE: true

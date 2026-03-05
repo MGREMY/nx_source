@@ -68,6 +68,13 @@
     "version": {
       "conventionalCommits": true,
       "preVersionCommand": "pnpx nx run-many --target=build"
+    },
+    "changelog": {
+      "workspaceChangelog": {
+        "renderOptions": {
+          "versionTitleDate": false
+        }
+      }
     }
   }
 }
