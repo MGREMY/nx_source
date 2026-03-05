@@ -17,7 +17,8 @@
         "assets": [
           {
             "glob": "**/*",
-            "input": "apps/ng-primitives-docs/public"
+            "input": "apps/ng-primitives-docs/public",
+            "output": "."
           }
         ],
         "styles": ["apps/ng-primitives-docs/public/css/styles.css"]
@@ -36,12 +37,24 @@
               "maximumError": "8kb"
             }
           ],
+          "fileReplacements": [
+            {
+              "replace": "apps/ng-primitives-docs/src/environments/environment.ts",
+              "with": "apps/ng-primitives-docs/src/environments/environment.production.ts"
+            }
+          ],
           "outputHashing": "all"
         },
         "development": {
           "optimization": false,
           "extractLicenses": false,
-          "sourceMap": true
+          "sourceMap": true,
+          "fileReplacements": [
+            {
+              "replace": "apps/ng-primitives-docs/src/environments/environment.ts",
+              "with": "apps/ng-primitives-docs/src/environments/environment.development.ts"
+            }
+          ]
         }
       },
       "defaultConfiguration": "production"

@@ -1,0 +1,4 @@
+{
+  "APP_URL": "${APP_APP_URL}",
+  "APP_BASE_HREF": "${APP_BASE_HREF}"
+}
