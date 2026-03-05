@@ -1,0 +1,5 @@
+@reference "#ui.css";
+
+:host {
+  @apply bg-hover text-xs uppercase;
+}

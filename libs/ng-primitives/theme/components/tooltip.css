@@ -1,0 +1,69 @@
+@utility mgnp-tooltip {
+  position: absolute;
+  max-width: 16rem;
+  border-radius: 0.5rem;
+  background-color: var(--ngp-background-inverse);
+  padding: 0.5rem 0.75rem;
+  border: none;
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: var(--ngp-text-inverse);
+  animation: tooltip-show 200ms ease-in-out;
+  transform-origin: var(--ngp-tooltip-transform-origin);
+
+  @variant data-exit {
+    animation: tooltip-hide 200ms ease-in-out;
+  }
+}
+
+@utility mgnp-tooltip-arrow {
+  position: absolute;
+  pointer-events: none;
+  background-color: var(--ngp-background-inverse);
+  width: 8px;
+  height: 8px;
+  border-radius: 2px;
+  transform: rotate(45deg);
+
+  @variant data-[placement="top"] {
+    top: calc(100% - 5px);
+  }
+
+  @variant data-[placement="bottom"] {
+    bottom: calc(100% - 5px);
+  }
+}
+
+@layer base {
+  [mgnpTooltipdata-mgnp-componentnent='mgnp-tooltip'] {
+    @apply mgnp-tooltip;
+  }
+
+  [mgnpTooltipArrowdata-mgnp-componentnent='mgnp-tooltip-arrow'] {
+    @apply mgnp-tooltip-arrow;
+  }
+}
+
+@theme {
+  @keyframes tooltip-show {
+    0% {
+      opacity: 0;
+      transform: scale(0.9);
+    }
+    100% {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+  @keyframes tooltip-hide {
+    0% {
+      opacity: 1;
+      transform: scale(1);
+    }
+    100% {
+      opacity: 0;
+      transform: scale(0.9);
+    }
+  }
+}

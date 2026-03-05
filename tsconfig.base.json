@@ -16,7 +16,16 @@
     "baseUrl": ".",
     "paths": {
       "@mgremy/libs": ["libs/src/index.ts"],
-      "@mgremy/ng-primitives": ["libs/ng-primitives/src/index.ts"]
+      "@mgremy/ng-primitives": ["libs/ng-primitives/index.ts"],
+      "@mgremy/ng-primitives/button": ["libs/ng-primitives/button/src/index.ts"],
+      "@mgremy/ng-primitives/combobox": ["libs/ng-primitives/combobox/src/index.ts"],
+      "@mgremy/ng-primitives/input": ["libs/ng-primitives/input/src/index.ts"],
+      "@mgremy/ng-primitives/loader": ["libs/ng-primitives/loader/src/index.ts"],
+      "@mgremy/ng-primitives/menu": ["libs/ng-primitives/menu/src/index.ts"],
+      "@mgremy/ng-primitives/navbar": ["libs/ng-primitives/navbar/src/index.ts"],
+      "@mgremy/ng-primitives/pagination": ["libs/ng-primitives/pagination/src/index.ts"],
+      "@mgremy/ng-primitives/table": ["libs/ng-primitives/table/src/index.ts"],
+      "@mgremy/ng-primitives/tooltip": ["libs/ng-primitives/tooltip/src/index.ts"],
     }
   },
   "exclude": ["node_modules", "tmp"]

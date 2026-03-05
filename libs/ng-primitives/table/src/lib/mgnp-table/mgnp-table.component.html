@@ -1,0 +1,13 @@
+<thead>
+  <ng-container [ngTemplateOutlet]="tableHeader()" />
+</thead>
+<tbody>
+  @for (item of data(); track $index) {
+    <ng-container
+      [ngTemplateOutlet]="tableBody()"
+      [ngTemplateOutletContext]="{ $implicit: item }" />
+  }
+</tbody>
+<tfoot>
+  <ng-container [ngTemplateOutlet]="tableFooter()" />
+</tfoot>

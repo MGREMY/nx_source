@@ -1,0 +1,107 @@
+@import './ngp_tw.css';
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --bg-ui: var(--color-white);
+  --bg-secondary: var(--color-gray-300);
+  --bg-hover: var(--color-gray-50);
+  --bg-active: var(--color-gray-100);
+  --bg-inverse: var(--color-black);
+  --bg-disabled: var(--color-gray-100);
+  --bg-blue: var(--color-blue-200);
+  --bg-success: var(--color-lime-400);
+
+  --border-ui: var(--color-gray-300);
+  --border-secondary: var(--color-gray-200);
+  --border-blue: var(--color-blue-500);
+  --border-inverse: var(--color-black);
+
+  --text-ui: var(--color-black);
+  --text-active: var(--color-blue-400);
+  --text-emphasis: var(--color-black);
+  --text-primary: var(--color-gray-900);
+  --text-secondary: var(--color-gray-600);
+  --text-tertiary: var(--color-gray-500);
+  --text-disabled: var(--color-gray-400);
+  --text-placeholder: var(--color-gray-400);
+  --text-inverse: var(--color-white);
+  --text-blue: var(--color-blue-400);
+  --text-red: var(--color-red-500);
+
+  --shadow-ui: 0 1px 2px 0 rgba(0, 0, 0, 0.051);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.102), 0 4px 6px -4px rgba(0, 0, 0, 0.102);
+  --shadow-border: inset 0 0 0 1px rgba(0, 0, 0, 0.102);
+
+  --focus-ring-ui: rgb(59, 130, 246);
+
+  --avatar-background: rgb(186, 230, 253);
+  --avatar-border: rgb(255, 255, 255);
+
+  --button-shadow:
+    0 1px 3px 0 rgba(0, 0, 0, 0.102), 0 1px 2px -1px rgba(0, 0, 0, 0.102),
+    0 0 0 1px rgba(0, 0, 0, 0.051);
+
+  --input-shadow: 0 1px 2px rgba(0, 0, 0, 0.051), 0 0 0 1px rgba(0, 0, 0, 0.102);
+}
+
+@layer base {
+  html {
+    background-color: var(--bg-ui);
+    color: var(--text-ui);
+  }
+
+  @variant dark {
+    --bg-ui: var(--color-gray-950);
+    --bg-secondary: var(--color-gray-700);
+    --bg-hover: var(--color-gray-900);
+    --bg-active: var(--color-gray-800);
+    --bg-inverse: var(--color-white);
+    --bg-disabled: var(--color-gray-900);
+    --bg-blue: var(--color-blue-200);
+
+    --border-ui: var(--color-gray-800);
+    --border-secondary: var(--color-gray-700);
+    --border-blue: var(--color-blue-500);
+    --border-inverse: var(--color-white);
+
+    --text-ui: var(--color-white);
+    --text-active: var(--color-blue-600);
+    --text-emphasis: var(--color-white);
+    --text-primary: var(--color-gray-100);
+    --text-secondary: var(--color-gray-300);
+    --text-tertiary: var(--color-gray-400);
+    --text-disabled: var(--color-gray-500);
+    --text-inverse: var(--color-black);
+    --text-blue: var(--color-blue-600);
+    --text-red: var(--color-red-500);
+
+    --avatar-background: rgb(24, 24, 27);
+    --avatar-border: rgb(63, 63, 70);
+
+    --shadow-border: inset 0 0 0 1px rgba(255, 255, 255, 0.102);
+    --input-shadow: 0 1px 2px rgba(255, 255, 255, 0.008), 0 0 0 1px rgba(255, 255, 255, 0.1);
+
+    --button-shadow:
+      0 1px 3px 0 rgba(255, 255, 255, 0.102), 0 1px 2px -1px rgba(255, 255, 255, 0.102),
+      0 0 0 1px rgba(255, 255, 255, 0.051);
+  }
+}
+
+@utility bg-* {
+  background-color: --value([integer]);
+  background-color: --value(integer);
+  background-color: --value(--bg-*);
+}
+
+@utility border-* {
+  border-color: --value([integer]);
+  border-color: --value(integer);
+  border-color: --value(--border-*);
+}
+
+@utility text-* {
+  color: --value([integer]);
+  color: --value(integer);
+  color: --value(--text-*);
+}

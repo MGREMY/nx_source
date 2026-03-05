@@ -1,0 +1,40 @@
+<ul>
+  <li>
+    <button
+      ngpPaginationFirst
+      aria-label="First Page">
+      <ng-icon name="heroChevronDoubleLeft" />
+    </button>
+  </li>
+  <li>
+    <button
+      ngpPaginationPrevious
+      aria-label="Previous Page">
+      <ng-icon name="heroChevronLeft" />
+    </button>
+  </li>
+  @for (page of pages(); track page) {
+    <li>
+      <button
+        [ngpPaginationButtonPage]="page"
+        [attr.aria-label]="`Page ${page}`"
+        ngpPaginationButton>
+        {{ page }}
+      </button>
+    </li>
+  }
+  <li>
+    <button
+      ngpPaginationNext
+      aria-label="Next Page">
+      <ng-icon name="heroChevronRight" />
+    </button>
+  </li>
+  <li>
+    <button
+      ngpPaginationLast
+      aria-label="Last Page">
+      <ng-icon name="heroChevronDoubleRight" />
+    </button>
+  </li>
+</ul>

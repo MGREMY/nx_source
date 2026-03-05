@@ -1,0 +1,45 @@
+@import './components/button.css';
+@import './components/combobox.css';
+@import './components/input.css';
+@import './components/menu.css';
+@import './components/tooltip.css';
+
+@theme {
+  --ngp-background: var(--bg-ui);
+  --ngp-background-secondary: var(--bg-secondary);
+  --ngp-background-hover: var(--bg-hover);
+  --ngp-background-active: var(--bg-active);
+  --ngp-background-inverse: var(--bg-inverse);
+  --ngp-background-disabled: var(--bg-disabled);
+  --ngp-background-blue: var(--bg-blue);
+  --ngp-background-success: var(--bg-success);
+
+  --ngp-border: var(--border-ui);
+  --ngp-border-secondary: var(--border-secondary);
+  --ngp-border-blue: var(--border-blue);
+  --ngp-border-inverse: var(--border-inverse);
+
+  --ngp-text-active: var(--text-active);
+  --ngp-text-emphasis: var(--text-emphasis);
+  --ngp-text-primary: var(--text-primary);
+  --ngp-text-secondary: var(--text-secondary);
+  --ngp-text-tertiary: var(--text-tertiary);
+  --ngp-text-disabled: var(--text-disabled);
+  --ngp-text-placeholder: var(--text-placeholder);
+  --ngp-text-inverse: var(--text-inverse);
+  --ngp-text-blue: var(--text-blue);
+  --ngp-text-red: var(--text-red);
+
+  --ngp-shadow: var(--shadow-ui);
+  --ngp-shadow-lg: var(--shadow-lg);
+  --ngp-shadow-border: var(--shadow-border);
+
+  --ngp-focus-ring: var(--focus-ring-ui);
+
+  --ngp-avatar-background: var(--avatar-background);
+  --ngp-avatar-border: var(--avatar-border);
+
+  --ngp-button-shadow: var(--button-shadow);
+
+  --ngp-input-shadow: var(--input-shadow);
+}

@@ -1,1 +1,12 @@
 /* You can add global styles to this file, and also import other style files */
+@import 'tailwindcss';
+@import '#mgnp.css';
+
+@font-face {
+  font-family: roboto;
+  src: url('../fonts/roboto.ttf') format('truetype');
+}
+
+@theme {
+  --default-font-family: 'roboto';
+}

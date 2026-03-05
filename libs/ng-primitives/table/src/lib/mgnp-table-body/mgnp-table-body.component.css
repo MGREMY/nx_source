@@ -1,0 +1,5 @@
+@reference "#ui.css";
+
+:host {
+  @apply border-b border-b-(--border-secondary);
+}
