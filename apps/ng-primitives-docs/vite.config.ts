@@ -8,6 +8,7 @@ import { defineConfig } from 'vite';
 export default defineConfig(({ mode }) => {
   return {
     root: __dirname,
+    base: './',
     cacheDir: '../../node_modules/.vite',
     build: {
       target: ['es2020'],
