@@ -1,5 +1,4 @@
 import { environment } from '../environments/environment';
-import { appRoutes } from './app.routes';
 import { provideApplicationThemeConfig } from './core/config/app-theme.config';
 import { provideApplicationConfig } from './core/config/app.config';
 import { provideDefaultDatePipeConfig } from './core/config/pipe.config';
@@ -10,18 +9,28 @@ import { APP_ENVIRONMENT_SERVICE } from '@mgremy/core';
 
 import { provideNgIconsConfig } from '@ng-icons/core';
 
-import { provideHttpClient, withInterceptors } from '@angular/common/http';
+import { provideFileRouter, requestContextInterceptor } from '@analogjs/router';
+import {
+  provideHttpClient,
+  withFetch,
+  withInterceptors,
+} from '@angular/common/http';
 import {
   ApplicationConfig,
+  provideBrowserGlobalErrorListeners,
   provideZonelessChangeDetection,
 } from '@angular/core';
-import { provideRouter, withComponentInputBinding } from '@angular/router';
+import { withComponentInputBinding } from '@angular/router';
 
 export const appConfig: ApplicationConfig = {
   providers: [
     provideZonelessChangeDetection(),
-    provideHttpClient(withInterceptors([langInterceptor])),
-    provideRouter(appRoutes, withComponentInputBinding()),
+    provideBrowserGlobalErrorListeners(),
+    provideHttpClient(
+      withFetch(),
+      withInterceptors([langInterceptor, requestContextInterceptor]),
+    ),
+    provideFileRouter(withComponentInputBinding()),
     provideNgIconsConfig({
       size: '16px',
     }),

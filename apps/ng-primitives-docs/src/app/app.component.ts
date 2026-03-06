@@ -1,4 +1,3 @@
-import { NxWelcome } from './pages/nx-welcome';
 import { APP_TRANSLATION_SERVICE } from '@mgremy/core';
 
 import {
@@ -12,7 +11,7 @@ import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterModule, NxWelcome],
+  imports: [RouterModule],
   templateUrl: './app.component.html',
   providers: [],
   changeDetection: ChangeDetectionStrategy.OnPush,
