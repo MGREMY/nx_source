@@ -1,69 +1,69 @@
 @utility mgnp-pagination {
-    ul {
-        display: flex;
-        align-items: center;
-        gap: --spacing(2);
+  ul {
+    display: flex;
+    align-items: center;
+    gap: --spacing(2);
+  }
+
+  [ngpPaginationFirst],
+  [ngpPaginationPrevious],
+  [ngpPaginationButton],
+  [ngpPaginationNext],
+  [ngpPaginationLast] {
+    all: unset;
+
+    display: flex;
+    width: --spacing(8);
+    cursor: pointer;
+    align-items: center;
+    justify-content: center;
+    border-radius: var(--radius-lg);
+    outline-style: none;
+    background-color: var(--bg-ui);
+    color: var(--text-primary);
+    font-size: var(--text-sm);
+    font-weight: var(--font-weight-medium);
+    box-shadow: var(--button-shadow);
+    transition: background-color 0.2s ease-in-out;
+
+    @variant data-hover {
+      @variant not-data-disabled {
+        @variant not-data-selected {
+          background-color: var(--bg-hover);
+        }
+      }
     }
 
-    [ngpPaginationFirst],
-    [ngpPaginationPrevious],
-    [ngpPaginationButton],
-    [ngpPaginationNext],
-    [ngpPaginationLast] {
-        all: unset;
-
-        display: flex;
-        width: --spacing(8);
-        cursor: pointer;
-        align-items: center;
-        justify-content: center;
-        border-radius: var(--radius-lg);
-        outline-style: none;
-        background-color: var(--bg-ui);
-        color: var(--text-primary);
-        font-size: var(--text-sm);
-        font-weight: var(--font-weight-medium);
-        box-shadow: var(--button-shadow);
-        transition: background-color 0.2s ease-in-out;
-
-        @variant data-hover {
-            @variant not-data-disabled {
-                @variant not-data-selected {
-                    background-color: var(--bg-hover);
-                }
-            }
-        }
-
-        @variant data-focus-visible {
-            @variant not-data-disabled {
-                outline: 2px solid var(--focus-ring-ui);
-            }
-        }
-
-        @variant data-press {
-            @variant not-data--disabled {
-                @variant not-data-selected {
-                    background-color: var(--bg-active);
-                }
-            }
-        }
-
-        @variant data-disabled {
-            background-color: var(--bg-disabled);
-            cursor: not-allowed;
-            color: #d2d2d2;
-            box-shadow: none;
-        }
-
-        @variant data-selected {
-            background-color: var(--bg-inverse);
-            color: var(--text-inverse);
-        }
+    @variant data-focus-visible {
+      @variant not-data-disabled {
+        outline: 2px solid var(--focus-ring-ui);
+      }
     }
+
+    @variant data-press {
+      @variant not-data--disabled {
+        @variant not-data-selected {
+          background-color: var(--bg-active);
+        }
+      }
+    }
+
+    @variant data-disabled {
+      background-color: var(--bg-disabled);
+      cursor: not-allowed;
+      color: #d2d2d2;
+      box-shadow: none;
+    }
+
+    @variant data-selected {
+      background-color: var(--bg-inverse);
+      color: var(--text-inverse);
+    }
+  }
 }
 
 @layer base {
-    [data-mgnp-component='mgnp-pagination'] {
-        @apply mgnp-pagination;
-    }
+  [data-mgnp-component='mgnp-pagination'] {
+    @apply mgnp-pagination;
+  }
 }

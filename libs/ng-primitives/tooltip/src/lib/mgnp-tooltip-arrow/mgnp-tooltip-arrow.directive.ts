@@ -3,9 +3,7 @@ import { NgpTooltipArrow } from 'ng-primitives/tooltip';
 
 const options = ['ngpTooltipArrow'];
 
-const error = new Error(
-  `MgnpTooltipArrow must be used with ${options.join(' / ')}`,
-);
+const error = new Error(`MgnpTooltipArrow must be used with ${options.join(' / ')}`);
 
 @Directive({
   selector: '[ngpTooltipArrow][mgnpTooltipArrow]',

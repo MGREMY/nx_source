@@ -6,7 +6,8 @@
     "prepare": "husky",
     "lint": "pnpx nx run-many --target=lint --all",
     "build": "pnpx nx run-many --target=build --all",
-    "release": "pnpx nx release --skip-publish"
+    "release": "pnpx nx release --skip-publish",
+    "format": "pnpx prettier . --write"
   },
   "private": true,
   "imports": {

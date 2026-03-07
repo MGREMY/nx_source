@@ -1,8 +1,4 @@
-import {
-  APP_CONFIG_SERVICE,
-  APP_STORAGE_SERVICE,
-  ITranslationService,
-} from '@mgremy/core';
+import { APP_CONFIG_SERVICE, APP_STORAGE_SERVICE, ITranslationService } from '@mgremy/core';
 
 import { TranslateService } from '@ngx-translate/core';
 
@@ -21,17 +17,13 @@ export class NgxTranslationService implements ITranslationService {
   };
 
   private readonly _currentLanguage = signal(
-    this._storageService.getItem(this._storageKeys.lang) ??
-      this._appConfigService.defaultLanguage,
+    this._storageService.getItem(this._storageKeys.lang) ?? this._appConfigService.defaultLanguage
   );
   public readonly currentLanguage = this._currentLanguage.asReadonly();
 
   public init(): void {
     this._translationService.use(this._currentLanguage());
-    this._storageService.setItem(
-      this._storageKeys.lang,
-      this._currentLanguage(),
-    );
+    this._storageService.setItem(this._storageKeys.lang, this._currentLanguage());
   }
 
   public setLanguage(code: string): void {

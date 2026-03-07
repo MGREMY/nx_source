@@ -1,86 +1,86 @@
 @utility mgnp-menu {
-    position: fixed;
-    display: flex;
-    flex-direction: column;
-    width: max-content;
-    background: var(--ngp-background);
-    border: 1px solid var(--ngp-border);
-    box-shadow: var(--ngp-shadow-lg);
-    border-radius: var(--radius-lg);
-    padding: --spacing(1);
-    transform-origin: var(--ngp-menu-transform-origin);
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  width: max-content;
+  background: var(--ngp-background);
+  border: 1px solid var(--ngp-border);
+  box-shadow: var(--ngp-shadow-lg);
+  border-radius: var(--radius-lg);
+  padding: --spacing(1);
+  transform-origin: var(--ngp-menu-transform-origin);
 
-    @variant data-enter {
-        animation: menu-show 0.1s ease-out;
-    }
+  @variant data-enter {
+    animation: menu-show 0.1s ease-out;
+  }
 
-    @variant data-exit {
-        animation: menu-hide 0.1s ease-out;
-    }
+  @variant data-exit {
+    animation: menu-hide 0.1s ease-out;
+  }
 }
 
 @utility mgnp-menu-item {
-    padding-block: --spacing(1.5);
-    padding-inline: --spacing(3.5);
-    border: none;
-    background: none;
-    cursor: pointer;
-    transition: background-color 0.2s;
-    border-radius: var(--radius-sm);
-    min-width: --spacing(30);
-    text-align: start;
-    outline: none;
-    font-size: var(--text-sm);
-    line-height: var(--text-sm--line-height);
+  padding-block: --spacing(1.5);
+  padding-inline: --spacing(3.5);
+  border: none;
+  background: none;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  border-radius: var(--radius-sm);
+  min-width: --spacing(30);
+  text-align: start;
+  outline: none;
+  font-size: var(--text-sm);
+  line-height: var(--text-sm--line-height);
 
-    @variant data-hover {
-        background-color: var(--ngp-background-hover);
-    }
+  @variant data-hover {
+    background-color: var(--ngp-background-hover);
+  }
 
-    @variant data-press {
-        background-color: var(--ngp-background-active);
-    }
+  @variant data-press {
+    background-color: var(--ngp-background-active);
+  }
 
-    @variant data-focus-visible {
-        outline: 2px solid var(--ngp-focus-ring);
-        z-index: 1;
-    }
+  @variant data-focus-visible {
+    outline: 2px solid var(--ngp-focus-ring);
+    z-index: 1;
+  }
 
-    @variant data-disabled {
-        opacity: 50%;
-    }
+  @variant data-disabled {
+    opacity: 50%;
+  }
 }
 
 @layer base {
-    [mgnpMenu][data-mgnp-component='mgnp-menu'] {
-        @apply mgnp-menu;
-    }
+  [mgnpMenu][data-mgnp-component='mgnp-menu'] {
+    @apply mgnp-menu;
+  }
 
-    [mgnpMenuItem][data-mgnp-component='mgnp-menu-item'] {
-        @apply mgnp-menu-item;
-    }
+  [mgnpMenuItem][data-mgnp-component='mgnp-menu-item'] {
+    @apply mgnp-menu-item;
+  }
 }
 
 @theme {
-    @keyframes menu-show {
-        0% {
-            opacity: 0;
-            transform: scale(0.9);
-        }
-        100% {
-            opacity: 1;
-            transform: scale(1);
-        }
+  @keyframes menu-show {
+    0% {
+      opacity: 0;
+      transform: scale(0.9);
     }
+    100% {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
 
-    @keyframes menu-hide {
-        0% {
-            opacity: 1;
-            transform: scale(1);
-        }
-        100% {
-            opacity: 0;
-            transform: scale(0.9);
-        }
+  @keyframes menu-hide {
+    0% {
+      opacity: 1;
+      transform: scale(1);
     }
+    100% {
+      opacity: 0;
+      transform: scale(0.9);
+    }
+  }
 }

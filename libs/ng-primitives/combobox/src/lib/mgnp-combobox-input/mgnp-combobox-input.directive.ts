@@ -3,9 +3,7 @@ import { NgpComboboxInput } from 'ng-primitives/combobox';
 
 const options = ['ngpComboboxInput'];
 
-const error = new Error(
-  `MgnpComboboxInput must be used with ${options.join(' / ')}`,
-);
+const error = new Error(`MgnpComboboxInput must be used with ${options.join(' / ')}`);
 
 @Directive({
   selector: '[ngpComboboxInput][mgnpComboboxInput]',

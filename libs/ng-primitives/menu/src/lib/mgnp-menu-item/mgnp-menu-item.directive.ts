@@ -3,9 +3,7 @@ import { NgpMenuItem } from 'ng-primitives/menu';
 
 const options = ['ngpMenuItem'];
 
-const error = new Error(
-  `MgnpMenuItem must be used with ${options.join(' / ')}`,
-);
+const error = new Error(`MgnpMenuItem must be used with ${options.join(' / ')}`);
 
 @Directive({
   selector: '[ngpMenuItem][mgnpMenuItem]',

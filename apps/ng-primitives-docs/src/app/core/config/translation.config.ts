@@ -8,17 +8,9 @@ import { registerLocaleData } from '@angular/common';
 import { HttpBackend, HttpClient } from '@angular/common/http';
 import localeUS from '@angular/common/locales/en';
 import localeFR from '@angular/common/locales/fr';
-import {
-  EnvironmentProviders,
-  inject,
-  provideAppInitializer,
-  Provider,
-} from '@angular/core';
+import { EnvironmentProviders, inject, provideAppInitializer, Provider } from '@angular/core';
 
-export function provideTranslationConfig(): (
-  | Provider
-  | EnvironmentProviders
-)[] {
+export function provideTranslationConfig(): (Provider | EnvironmentProviders)[] {
   registerLocaleData(localeFR);
   registerLocaleData(localeUS);
 
