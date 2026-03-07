@@ -19,45 +19,45 @@
     justify-content: center;
     border-radius: var(--radius-lg);
     outline-style: none;
-    background-color: var(--bg-ui);
-    color: var(--text-primary);
+    background-color: var(--mg-background-ui);
+    color: var(--mg-text-primary);
     font-size: var(--text-sm);
     font-weight: var(--font-weight-medium);
-    box-shadow: var(--button-shadow);
+    box-shadow: var(--mg-shadow-button);
     transition: background-color 0.2s ease-in-out;
 
     @variant data-hover {
       @variant not-data-disabled {
         @variant not-data-selected {
-          background-color: var(--bg-hover);
+          background-color: var(--mg-background-hover);
         }
       }
     }
 
     @variant data-focus-visible {
       @variant not-data-disabled {
-        outline: 2px solid var(--focus-ring-ui);
+        outline: 2px solid var(--mg-ring-ui);
       }
     }
 
     @variant data-press {
       @variant not-data--disabled {
         @variant not-data-selected {
-          background-color: var(--bg-active);
+          background-color: var(--mg-background-active);
         }
       }
     }
 
     @variant data-disabled {
-      background-color: var(--bg-disabled);
+      background-color: var(--mg-background-disabled);
       cursor: not-allowed;
       color: #d2d2d2;
       box-shadow: none;
     }
 
     @variant data-selected {
-      background-color: var(--bg-inverse);
-      color: var(--text-inverse);
+      background-color: var(--mg-background-inverse);
+      color: var(--mg-text-inverse);
     }
   }
 }
