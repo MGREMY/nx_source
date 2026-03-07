@@ -11,7 +11,7 @@ import { provideNgIconsConfig } from '@ng-icons/core';
 
 import { provideContent, withMarkdownRenderer } from '@analogjs/content';
 import { withShikiHighlighter } from '@analogjs/content/shiki-highlighter';
-import { provideFileRouter, requestContextInterceptor } from '@analogjs/router';
+import { provideFileRouter, requestContextInterceptor, withDebugRoutes } from '@analogjs/router';
 import { provideHttpClient, withFetch, withInterceptors } from '@angular/common/http';
 import {
   ApplicationConfig,
@@ -25,7 +25,7 @@ export const appConfig: ApplicationConfig = {
     provideZonelessChangeDetection(),
     provideBrowserGlobalErrorListeners(),
     provideHttpClient(withFetch(), withInterceptors([langInterceptor, requestContextInterceptor])),
-    provideFileRouter(withComponentInputBinding()),
+    provideFileRouter(withComponentInputBinding(), withDebugRoutes()),
     provideContent(withMarkdownRenderer(), withShikiHighlighter()),
     provideNgIconsConfig({
       size: '16px',

@@ -10,4 +10,4 @@ import { RouterLink } from '@angular/router';
     <a [routerLink]="['/']">Go Back Home</a>
   `,
 })
-export default class PageNotFoundComponent {}
+export default class NotFoundPage {}
