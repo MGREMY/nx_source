@@ -34,7 +34,9 @@
   --mg-shadow-ui: 0 1px 2px 0 rgba(0, 0, 0, 0.051);
   --mg-shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.102), 0 4px 6px -4px rgba(0, 0, 0, 0.102);
   --mg-shadow-border: inset 0 0 0 1px rgba(0, 0, 0, 0.102);
-  --mg-shadow-button: 0 1px 3px 0 rgba(0, 0, 0, 0.102), 0 1px 2px -1px rgba(0, 0, 0, 0.102), 0 0 0 1px rgba(0, 0, 0, 0.051);
+  --mg-shadow-button:
+    0 1px 3px 0 rgba(0, 0, 0, 0.102), 0 1px 2px -1px rgba(0, 0, 0, 0.102),
+    0 0 0 1px rgba(0, 0, 0, 0.051);
   --mg-shadow-input: 0 1px 2px rgba(0, 0, 0, 0.051), 0 0 0 1px rgba(0, 0, 0, 0.102);
 
   --mg-ring-ui: rgb(59, 130, 246);
@@ -120,6 +122,8 @@
 
     --mg-shadow-border: inset 0 0 0 1px rgba(255, 255, 255, 0.102);
     --mg-shadow-input: 0 1px 2px rgba(255, 255, 255, 0.008), 0 0 0 1px rgba(255, 255, 255, 0.1);
-    --mg-shadow-button: 0 1px 3px 0 rgba(255, 255, 255, 0.102), 0 1px 2px -1px rgba(255, 255, 255, 0.102), 0 0 0 1px rgba(255, 255, 255, 0.051);
+    --mg-shadow-button:
+      0 1px 3px 0 rgba(255, 255, 255, 0.102), 0 1px 2px -1px rgba(255, 255, 255, 0.102),
+      0 0 0 1px rgba(255, 255, 255, 0.051);
   }
 }

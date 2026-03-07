@@ -1,20 +1,12 @@
 import { getRouterLinks } from '../../utils/router';
 
-
-
 import { NgIcon, provideIcons } from '@ng-icons/core';
 import { heroArrowLeft, heroArrowRight } from '@ng-icons/heroicons/outline';
-
-
 
 import { ChangeDetectionStrategy, Component, computed, inject, signal } from '@angular/core';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { NavigationEnd, Router, RouterLink } from '@angular/router';
 import { filter } from 'rxjs';
-
-
-
-
 
 @Component({
   selector: 'app-page-navigation',
