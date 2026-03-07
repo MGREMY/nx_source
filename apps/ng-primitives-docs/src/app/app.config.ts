@@ -9,39 +9,38 @@ import { APP_ENVIRONMENT_SERVICE } from '@mgremy/core';
 
 import { provideNgIconsConfig } from '@ng-icons/core';
 
+import { provideContent, withMarkdownRenderer } from '@analogjs/content';
+import { withShikiHighlighter } from '@analogjs/content/shiki-highlighter';
 import { provideFileRouter, requestContextInterceptor } from '@analogjs/router';
+import { provideHttpClient, withFetch, withInterceptors } from '@angular/common/http';
 import {
-  provideHttpClient,
-  withFetch,
-  withInterceptors,
-} from '@angular/common/http';
-import {
-  ApplicationConfig,
-  provideBrowserGlobalErrorListeners,
-  provideZonelessChangeDetection,
+    ApplicationConfig,
+    provideBrowserGlobalErrorListeners,
+    provideZonelessChangeDetection,
 } from '@angular/core';
 import { withComponentInputBinding } from '@angular/router';
 
 export const appConfig: ApplicationConfig = {
-  providers: [
-    provideZonelessChangeDetection(),
-    provideBrowserGlobalErrorListeners(),
-    provideHttpClient(
-      withFetch(),
-      withInterceptors([langInterceptor, requestContextInterceptor]),
-    ),
-    provideFileRouter(withComponentInputBinding()),
-    provideNgIconsConfig({
-      size: '16px',
-    }),
-    {
-      provide: APP_ENVIRONMENT_SERVICE,
-      useValue: environment,
-    },
-    provideApplicationThemeConfig(),
-    provideDefaultDatePipeConfig(),
-    provideApplicationConfig(),
-    provideStorageConfig(),
-    provideTranslationConfig(), // Internationalization
-  ],
+    providers: [
+        provideZonelessChangeDetection(),
+        provideBrowserGlobalErrorListeners(),
+        provideHttpClient(
+            withFetch(),
+            withInterceptors([langInterceptor, requestContextInterceptor])
+        ),
+        provideFileRouter(withComponentInputBinding()),
+        provideContent(withMarkdownRenderer(), withShikiHighlighter()),
+        provideNgIconsConfig({
+            size: '16px',
+        }),
+        {
+            provide: APP_ENVIRONMENT_SERVICE,
+            useValue: environment,
+        },
+        provideApplicationThemeConfig(),
+        provideDefaultDatePipeConfig(),
+        provideApplicationConfig(),
+        provideStorageConfig(),
+        provideTranslationConfig(), // Internationalization
+    ],
 };

@@ -1,7 +1,0 @@
-@reference "#ui.css";
-
-:host {
-  @apply mx-auto flex max-w-screen flex-wrap justify-between gap-8 border-b p-4;
-  @apply items-center;
-  @apply border-b-(--border-ui);
-}

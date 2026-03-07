@@ -3,7 +3,15 @@
  * @type {import("prettier").Config}
  */
 const config = {
+  bracketSameLine: true,
+  bracketSpacing: true,
+  endOfLine: 'lf',
+  printWidth: 100,
+  proseWrap: 'always',
+  singleAttributePerLine: true,
   singleQuote: true,
+  tabWidth: 4,
+  trailingComma: 'es5',
   importOrder: [
     '^~/(.*)$',
     '^[.]',

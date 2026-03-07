@@ -1,25 +1,26 @@
 @utility mgnp-input {
-  height: 36px;
-  width: 100%;
-  border-radius: 8px;
-  padding: 0 16px;
-  border: none;
-  box-shadow: var(--ngp-input-shadow);
-  background-color: var(--ngp-background);
-  outline: none;
+    height: --spacing(9);
+    width: 100%;
+    border-radius: var(--radius-lg);
+    padding-block: --spacing(0);
+    padding-inline: --spacing(4);
+    border: none;
+    box-shadow: var(--ngp-input-shadow);
+    background-color: var(--ngp-background);
+    outline: none;
 
-  @variant data-focus {
-    outline: 2px solid var(--ngp-focus-ring);
-    outline-offset: 2px;
-  }
+    @variant data-focus {
+        outline: 2px solid var(--ngp-focus-ring);
+        outline-offset: 2px;
+    }
 
-  ::placeholder {
-    color: var(--ngp-text-placeholder);
-  }
+    ::placeholder {
+        color: var(--ngp-text-placeholder);
+    }
 }
 
 @layer base {
-  [mgnpInputdata-mgnp-componentnt='mgnp-input'] {
-    @apply mgnp-input;
-  }
+    [mgnpInput][data-mgnp-component='mgnp-input'] {
+        @apply mgnp-input;
+    }
 }

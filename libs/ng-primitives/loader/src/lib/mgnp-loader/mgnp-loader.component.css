@@ -1,5 +1,0 @@
-@reference "#ui.css";
-
-:host {
-  @apply place-self-center;
-}

@@ -1,9 +1,0 @@
-@reference "#ui.css";
-
-:host {
-  transition: color 0.2s ease-in-out;
-
-  &[aria-current='page'] {
-    @apply text-active;
-  }
-}

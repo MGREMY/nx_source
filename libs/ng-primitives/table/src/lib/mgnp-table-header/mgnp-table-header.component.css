@@ -1,4 +1,4 @@
-@reference "#ui.css";
+@reference "#mgnp.css";
 
 :host {
   @apply bg-hover text-xs uppercase;
