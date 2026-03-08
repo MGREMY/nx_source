@@ -21,26 +21,6 @@ focus.
 </button>
 ```
 
-### Combobox
-
-```html
-<button
-  ngpComboboxButton
-  mgnpButton>
-  Combobox button
-</button>
-```
-
-### Menu
-
-```html
-<button
-  ngpMenuTrigger
-  mgnpButton>
-  Menu button
-</button>
-```
-
 ## Theme
 
 <app-file-content name="button"></app-file-content>

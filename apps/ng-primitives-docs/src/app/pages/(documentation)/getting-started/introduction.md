@@ -13,7 +13,7 @@ components, using [TailwindCSS](https://tailwindcss.com/).
 
 - **Headless component** `ng-primitives`: Provide behavior, accessibility and keyboard interactions
   without any visual styles
-- **Styled wrappers** `mgremy/ng-primitives`: Add TailwindCSS styling
+- **Styled wrappers** `@mgremy/ng-primitives`: Add TailwindCSS styling
 
 ## Usage pattern
 
@@ -31,5 +31,5 @@ Each components requires two parts:
 ```
 
 The **_mgnp-\*_** directive must be alongside its corresponding **_ngp-\*_** directive from
-`ng-primitives`. Is used incorrectly, the library throws a helpful error message indicating which
-directive pairins is required.
+`ng-primitives`. If used incorrectly, the library throws a helpful error message indicating which
+directive pairings is required.

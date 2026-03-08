@@ -8,7 +8,7 @@ icon: heroRocketLaunch
 
 ## Installation
 
-`@mgremy/ng-primitives` can be installed via npm. Each components have their secondary entrypoint.
+`@mgremy/ng-primitives` can be installed via npm. Each components has their secondary entrypoint.
 
 ### Via NPM
 
@@ -19,7 +19,7 @@ npm i --save-dev ng-primitives @mgremy/ng-primitives tailwindcss @tailwindcss/po
 ### Via YARN
 
 ```bash
-yarn i --dev ng-primitives @mgremy/ng-primitives tailwindcss @tailwindcss/postcss
+yarn add --dev ng-primitives @mgremy/ng-primitives tailwindcss @tailwindcss/postcss
 ```
 
 ### Via PNPM
