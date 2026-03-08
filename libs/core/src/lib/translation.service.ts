@@ -9,4 +9,6 @@ export interface ITranslationService {
 
   init(): void;
   setLanguage(code: string): void;
+
+  instant(key: string): string;
 }

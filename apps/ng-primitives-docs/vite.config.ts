@@ -62,6 +62,7 @@ export default defineConfig(({ mode }) => {
               },
             },
             highlighter: {
+              additionalLangs: ['bash'],
               themes: ['material-theme-lighter', 'material-theme-darker'],
             },
           },

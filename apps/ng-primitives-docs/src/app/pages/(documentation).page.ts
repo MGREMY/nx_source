@@ -13,18 +13,18 @@ import { NgpButton } from 'ng-primitives/button';
   imports: [RouterLink, NgIcon, RouterOutlet, SidebarComponent, MgnpButton, NgpButton],
   standalone: true,
   template: `
-    <header>
-      <nav class="flex max-w-screen justify-between p-4 items-center bg-secondary/75">
-        <div class="flex gap-4 items-center">
+    <header class="fixed top-0 w-full z-100">
+      <nav class="flex max-w-screen justify-between p-4 items-center bg-secondary">
+        <div class="flex gap-2 items-center">
           <ng-icon
             name="heroBars4"
             class="hover:cursor-pointer md:hidden!"
-            (click)="isSidebarOpen.set(true)" />
+            (click)="isSidebarOpen.set(!isSidebarOpen())" />
           <a
             class="cursor-pointer"
             [routerLink]="['/']">
             <span class="sr-only">Brand</span>
-            <span class="text-2xl font-semibold whitespace-nowrap">&#64;mgremy/ng-primitives</span>
+            <span class="text-xl md:text-2xl font-semibold whitespace-nowrap">&#64;mgremy/ng-primitives</span>
           </a>
         </div>
         <div class="flex gap-4 items-center">
@@ -36,17 +36,17 @@ import { NgpButton } from 'ng-primitives/button';
             ">
             <ng-icon
               name="heroSun"
-              class="!dark:hidden !inline-block" />
+              class="dark:hidden! inline-block!" />
             <ng-icon
               name="heroMoon"
-              class="!hidden !dark:inline-block" />
+              class="hidden! dark:inline-block!" />
           </button>
         </div>
       </nav>
       <div class="bg-(--mg-border-emphasis) absolute inset-x-0 h-0.5"></div>
     </header>
 
-    <main class="overflow-hidden p-8">
+    <main class="overflow-hidden mt-16 p-8">
       <div class="flex">
         <app-sidebar [(isOpen)]="isSidebarOpen" />
 

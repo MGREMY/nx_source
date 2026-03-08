@@ -1,5 +1,5 @@
 export const getNgPrimitivesCssContent = (componentName: string) => {
-  const results = import.meta.glob('../../../../../libs/ng-primitives/theme/components/*.css', {
+  const results = import.meta.glob('../../../../../libs/ng-primitives/theme/**/*.css', {
     import: 'default',
     query: '?raw',
     eager: true,
