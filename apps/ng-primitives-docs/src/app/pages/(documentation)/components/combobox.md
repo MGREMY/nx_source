@@ -10,52 +10,7 @@ from a list of options while filtering the list based on their input.
 
 ## Usage
 
-### Default
-
-```html
-<div
-  ngpCombobox
-  mgnpCombobox>
-  <input
-    ngpComboboxInput
-    mgnpComboboxInput />
-  <button ngpComboboxButton>▼</button>
-  <div
-    ngpComboboxDropdown
-    mgnpComboboxDropdown>
-    @for (option of options; track option) {
-    <div
-      ngpComboboxOption
-      mgnpComboboxOption
-      [ngpComboboxOptionValue]="option">
-      {{ option }}
-    </div>
-    }
-  </div>
-</div>
-```
-
-### Without input field
-
-```html
-<div
-  ngpCombobox
-  mgnpCombobox>
-  <button ngpComboboxButton>▼</button>
-  <div
-    ngpComboboxDropdown
-    mgnpComboboxDropdown>
-    @for (option of options; track option) {
-    <div
-      ngpComboboxOption
-      mgnpComboboxOption
-      [ngpComboboxOptionValue]="option">
-      {{ option }}
-    </div>
-    }
-  </div>
-</div>
-```
+<app-example name="combobox"></app-example>
 
 ## Theme
 

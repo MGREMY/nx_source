@@ -11,9 +11,9 @@
   [ngpPaginationNext],
   [ngpPaginationLast] {
     all: unset;
-
     display: flex;
     width: --spacing(8);
+    height: --spacing(8);
     cursor: pointer;
     align-items: center;
     justify-content: center;

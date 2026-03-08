@@ -9,44 +9,7 @@ Display additional information on hover.
 
 ## Usage
 
-### Default
-
-```html
-<button
-  [ngpTooltipTrigger]="tooltip"
-  mgnpButton>
-  Hover me
-</button>
-
-<ng-template #tooltip>
-  <div
-    ngpTooltip
-    mgnpTooltip>
-    Tooltip content
-  </div>
-</ng-template>
-```
-
-### With arrow
-
-```html
-<button
-  [ngpTooltipTrigger]="tooltip"
-  mgnpButton>
-  Hover me
-</button>
-
-<ng-template #tooltip>
-  <div
-    ngpTooltip
-    mgnpTooltip>
-    Tooltip content
-    <div
-      ngpTooltipArrow
-      mgnpTooltipArrow></div>
-  </div>
-</ng-template>
-```
+<app-example name="tooltip"></app-example>
 
 ## Theme
 

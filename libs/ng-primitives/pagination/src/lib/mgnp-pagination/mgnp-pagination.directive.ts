@@ -12,7 +12,7 @@ const error = new Error(`MgnpDirective must be used with ${options.join(' / ')}`
     'data-mgnp-component': 'mgnp-pagination',
   },
 })
-export class Pagination {
+export class MgnpPagination {
   protected readonly ngpPagination = inject(NgpPagination, { optional: true });
 
   constructor() {

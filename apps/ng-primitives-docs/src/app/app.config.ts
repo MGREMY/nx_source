@@ -1,4 +1,5 @@
 import { environment } from '../environments/environment';
+import { Example } from './components/example/example';
 import { FileContent } from './components/file-content/file-content';
 import { provideApplicationThemeConfig } from './core/config/app-theme.config';
 import { provideApplicationConfig } from './core/config/app.config';
@@ -62,6 +63,7 @@ export function initializeCustomElements(
         'app-file-content',
         createCustomElement(FileContent, { injector: injector })
       );
+      customElements.define('app-example', createCustomElement(Example, { injector: injector }));
     }
   };
 }

@@ -31,6 +31,19 @@
   width: auto;
 }
 
+@utility mgnp-combobox-button {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  background-color: transparent;
+  border: none;
+  color: var(--ngp-text);
+  cursor: pointer;
+  box-sizing: border-box;
+  box-shadow: none;
+}
+
 @utility mgnp-combobox-dropdown {
   background-color: var(--ngp-background);
   border: 1px solid var(--ngp-border);
@@ -96,6 +109,10 @@
 
   [mgnpComboboxInput][data-mgnp-component='mgnp-combobox-input'] {
     @apply mgnp-combobox-input;
+  }
+
+  [ngpComboboxButton][mgnpButton][data-mgnp-component='mgnp-button'] {
+    @apply mgnp-combobox-button;
   }
 
   [mgnpComboboxDropdown][data-mgnp-component='mgnp-combobox-dropdown'] {

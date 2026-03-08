@@ -10,14 +10,7 @@ consistent interaction handling for hover, focus, press and autofill states.
 
 ## Usage
 
-### Default
-
-```html
-<input
-  ngpInput
-  mgnpInput
-  type="text" />
-```
+<app-example name="input"></app-example>
 
 ## Theme
 
