@@ -1,1 +1,1 @@
-export * from './lib/mgnp-pagination/mgnp-pagination.component';
+export * from './lib/mgnp-pagination/mgnp-pagination.directive';

@@ -63,7 +63,7 @@
 }
 
 @layer base {
-  [data-mgnp-component='mgnp-pagination'] {
+  [ngpPagination][data-mgnp-component='mgnp-pagination'] {
     @apply mgnp-pagination;
   }
 }
