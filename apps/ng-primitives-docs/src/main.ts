@@ -4,7 +4,7 @@ import { appConfig } from './app/app.config';
 
 import { bootstrapApplication } from '@angular/platform-browser';
 
-fetch('/assets/config.json')
+fetch('/ng-primitives/assets/config.json')
   .then((response) => response.json())
   .then((config) => ((window as any)['runtime_config'] = config))
   .catch(() => ((window as any)['runtime_config'] = {}))

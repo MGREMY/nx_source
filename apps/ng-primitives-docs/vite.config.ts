@@ -9,6 +9,7 @@ import { defineConfig } from 'vite';
 export default defineConfig(({ mode }) => {
   return {
     root: __dirname,
+    base: '/ng-primitives',
     optimizeDeps: {
       include: [
         '@angular/common',
