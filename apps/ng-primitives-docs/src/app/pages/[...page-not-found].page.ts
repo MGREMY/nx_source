@@ -38,6 +38,7 @@ import { NgpButton } from 'ng-primitives/button';
             <a
               href="https://github.com/MGREMY/nx_source"
               target="_blank"
+              rel="noopener noreferrer"
               class="nav-item">
               Github
             </a>

@@ -38,6 +38,7 @@ import { NgpButton } from 'ng-primitives/button';
             <a
               href="https://github.com/MGREMY/nx_source"
               target="_blank"
+              rel="noopener noreferrer"
               class="nav-item">
               Github
             </a>
@@ -66,14 +67,16 @@ import { NgpButton } from 'ng-primitives/button';
               ngpButton
               mgnpButton
               href="https://github.com/MGREMY/nx_source"
-              target="_blank">
+              target="_blank"
+              rel="noopener noreferrer">
               Github
             </a>
             <a
               ngpButton
               mgnpButton
               href="https://www.npmjs.com/package/@mgremy/ng-primitives"
-              target="_blank">
+              target="_blank"
+              rel="noopener noreferrer">
               NpmJS
             </a>
           </div>
