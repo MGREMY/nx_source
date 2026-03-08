@@ -6,9 +6,9 @@ export const getNgPrimitivesCssContent = (componentName: string) => {
   });
 
   for (const [path, content] of Object.entries(results)) {
-    const splitedPath = path.split('/');
+    const splitPath = path.split('/');
 
-    if (splitedPath[splitedPath.length - 1] === `${componentName}.css`) {
+    if (splitPath[splitPath.length - 1] === `${componentName}.css`) {
       return content as string;
     }
   }

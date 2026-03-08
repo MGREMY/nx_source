@@ -62,7 +62,7 @@ export class PageNavigation {
 
   private readonly currentUrl = signal(this.router.url);
 
-  private readonly allLinks: NavLink[];
+  private readonly allLinks: Link[];
 
   readonly previous = computed(() => {
     const idx = this.currentIndex();
@@ -75,7 +75,7 @@ export class PageNavigation {
   });
 
   constructor() {
-    const sectionOrder = ['Getting Started', 'Primitives', 'Interactions', 'Utilities'];
+    const sectionOrder = ['Getting Started', 'Components'];
 
     this.allLinks = Object.entries(getRouterLinks())
       .map(([path, data]) => {
@@ -92,9 +92,9 @@ export class PageNavigation {
 
         return {
           path: normalizedPath,
-          name: (data as NavLink).name,
+          name: (data as Link).name,
           section: sectionTitle,
-          order: (data as NavLink).order ?? Infinity,
+          order: (data as Link).order ?? Infinity,
         };
       })
       .sort((a, b) => {
@@ -120,7 +120,7 @@ export class PageNavigation {
   });
 }
 
-interface NavLink {
+interface Link {
   path: string;
   name: string;
   section: string;

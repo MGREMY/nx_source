@@ -59,6 +59,7 @@ import { RouterLink, RouterLinkActive } from '@angular/router';
     @if (isOpen()) {
       <div
         class="fixed inset-0 z-10 bg-inverse/50"
+        (keydown.escape)="isOpen.set(false)"
         (click)="isOpen.set(false)">
         <div
           class="h-full w-72 max-w-full bg-ui px-10 shadow-xl"

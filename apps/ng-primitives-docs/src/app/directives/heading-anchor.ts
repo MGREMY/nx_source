@@ -1,12 +1,14 @@
 import { isPlatformBrowser } from '@angular/common';
 import {
   AfterViewInit,
+  DestroyRef,
   Directive,
   ElementRef,
   inject,
   PLATFORM_ID,
   Renderer2,
 } from '@angular/core';
+import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { NavigationEnd, Router } from '@angular/router';
 import { filter } from 'rxjs/operators';
 
@@ -22,6 +24,7 @@ export class HeadingAnchor implements AfterViewInit {
   private readonly renderer = inject(Renderer2);
   private readonly platformId = inject(PLATFORM_ID);
   private readonly router = inject(Router);
+  private readonly destroyRef = inject(DestroyRef);
 
   ngAfterViewInit(): void {
     if (isPlatformBrowser(this.platformId)) {
@@ -29,10 +32,15 @@ export class HeadingAnchor implements AfterViewInit {
       this.addAnchorsToHeadings();
 
       // Re-add anchors when navigation changes (for route transitions)
-      this.router.events.pipe(filter((event) => event instanceof NavigationEnd)).subscribe(() => {
-        // Use setTimeout to ensure content is rendered
-        setTimeout(() => this.addAnchorsToHeadings(), 0);
-      });
+      this.router.events
+        .pipe(
+          takeUntilDestroyed(this.destroyRef),
+          filter((event) => event instanceof NavigationEnd)
+        )
+        .subscribe(() => {
+          // Use setTimeout to ensure content is rendered
+          setTimeout(() => this.addAnchorsToHeadings(), 0);
+        });
     }
   }
 

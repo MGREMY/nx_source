@@ -41,7 +41,7 @@
     }
 
     @variant data-press {
-      @variant not-data--disabled {
+      @variant not-data-disabled {
         @variant not-data-selected {
           background-color: var(--mg-background-active);
         }
