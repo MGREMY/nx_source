@@ -14,19 +14,19 @@ import { filter } from 'rxjs';
   template: `
     @if (previous() || next()) {
       <nav
-        class="not-prose mt-12 flex items-stretch gap-4 border-t border-zinc-200 pt-6 dark:border-zinc-800"
+        class="not-prose mt-12 flex items-stretch gap-4 border-t border-ui pt-6"
         aria-label="Page navigation">
         @if (previous(); as prev) {
           <a
-            class="group flex flex-1 flex-col items-start gap-1 rounded-lg border border-zinc-200 px-4 py-3 transition-colors hover:border-zinc-300 hover:bg-zinc-50 dark:border-zinc-800 dark:hover:border-zinc-700 dark:hover:bg-zinc-900"
+            class="group flex flex-1 flex-col items-start gap-1 rounded-lg border border-ui px-4 py-3 transition-colors hover:border-hoverc hover:bg-hover"
             [routerLink]="'/' + prev.path">
-            <span class="flex items-center gap-1.5 text-xs text-zinc-500 dark:text-zinc-400">
+            <span class="flex items-center gap-1.5 text-xs text-tertiary">
               <ng-icon
                 class="text-sm"
                 name="heroArrowLeft" />
               Previous
             </span>
-            <span class="text-sm font-medium text-zinc-900 dark:text-zinc-100">
+            <span class="text-sm font-medium text-ui">
               {{ prev.name }}
             </span>
           </a>
@@ -36,15 +36,15 @@ import { filter } from 'rxjs';
 
         @if (next(); as nxt) {
           <a
-            class="group flex flex-1 flex-col items-end gap-1 rounded-lg border border-zinc-200 px-4 py-3 transition-colors hover:border-zinc-300 hover:bg-zinc-50 dark:border-zinc-800 dark:hover:border-zinc-700 dark:hover:bg-zinc-900"
+            class="group flex flex-1 flex-col items-end gap-1 rounded-lg border border-ui px-4 py-3 transition-colors hover:border-hoverc hover:bg-hover"
             [routerLink]="'/' + nxt.path">
-            <span class="flex items-center gap-1.5 text-xs text-zinc-500 dark:text-zinc-400">
+            <span class="flex items-center gap-1.5 text-xs text-tertiary">
               Next
               <ng-icon
                 class="text-sm"
                 name="heroArrowRight" />
             </span>
-            <span class="text-sm font-medium text-zinc-900 dark:text-zinc-100">
+            <span class="text-sm font-medium text-ui">
               {{ nxt.name }}
             </span>
           </a>

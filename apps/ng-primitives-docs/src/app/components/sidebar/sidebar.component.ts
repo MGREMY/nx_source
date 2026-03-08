@@ -9,7 +9,7 @@ import {
 } from '@ng-icons/heroicons/outline';
 
 import { NgTemplateOutlet } from '@angular/common';
-import { Component, model } from '@angular/core';
+import { ChangeDetectionStrategy, Component, model } from '@angular/core';
 import { RouterLink, RouterLinkActive } from '@angular/router';
 
 @Component({
@@ -25,27 +25,25 @@ import { RouterLink, RouterLinkActive } from '@angular/router';
         class="sticky top-24 flex h-[calc(100dvh-140px)] w-full flex-col gap-y-4 overflow-auto overscroll-contain md:h-max md:overflow-visible">
         @for (section of sections; track section.title) {
           <div class="mb-2">
-            <h2
-              class="mb-4 flex items-center gap-2 text-sm font-semibold text-zinc-800 dark:text-zinc-100">
+            <h2 class="mb-4 flex items-center gap-2 text-sm font-semibold text-ui">
               @if (sectionIcons[section.title]) {
                 <ng-icon
-                  class="text-base text-zinc-500 dark:text-zinc-400"
+                  class="text-base text-secondary"
                   [name]="sectionIcons[section.title]" />
               }
               {{ section.title }}
             </h2>
             <ul>
               @for (link of section.links; track link) {
-                <li
-                  class="text-zinc-600 hover:text-zinc-950 dark:text-zinc-300 dark:hover:text-white">
+                <li class="text-secondary hover:text-emphasis">
                   <a
-                    class="relative flex h-10 items-center border-l border-zinc-200 px-4 outline-hidden transition-colors focus-visible:ring-2 focus-visible:ring-blue-500 dark:border-zinc-800"
+                    class="relative flex h-10 items-center border-l border-ui px-4 outline-hidden transition-colors focus-visible:ring-2 focus-visible:ring-ui"
                     (click)="isOpen.set(false)"
                     [routerLink]="link.link"
-                    routerLinkActive="text-black dark:text-white font-medium before:w-0.5 before:bg-zinc-950 before:rounded-lg before:h-6 before:absolute before:left-0 before:-translate-x-1/2 dark:before:bg-white">
+                    routerLinkActive="text-active font-medium before:w-0.5 before:bg-blue before:rounded-lg before:h-6 before:absolute before:left-0 before:-translate-x-1/2">
                     @if (link.icon) {
                       <ng-icon
-                        class="mr-2 text-base text-zinc-600 dark:text-zinc-300"
+                        class="mr-2 text-base text-secondary"
                         [name]="link.icon" />
                     }
                     {{ link.name }}
@@ -60,10 +58,10 @@ import { RouterLink, RouterLinkActive } from '@angular/router';
 
     @if (isOpen()) {
       <div
-        class="fixed inset-0 z-10 bg-black/50"
+        class="fixed inset-0 z-10 bg-inverse/50"
         (click)="isOpen.set(false)">
         <div
-          class="h-full w-72 max-w-full bg-white px-10 shadow-xl dark:bg-zinc-900"
+          class="h-full w-72 max-w-full bg-ui px-10 shadow-xl"
           (click)="$event.stopPropagation()">
           <ng-container [ngTemplateOutlet]="content" />
         </div>
@@ -75,6 +73,7 @@ import { RouterLink, RouterLinkActive } from '@angular/router';
     }
   `,
   providers: [provideIcons({ heroRocketLaunch, heroBookmark, heroPaintBrush, heroBookOpen })],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class SidebarComponent {
   readonly isOpen = model(false);

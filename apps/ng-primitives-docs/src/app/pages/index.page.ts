@@ -1,28 +1,54 @@
-import { APP_TRANSLATION_SERVICE } from '@mgremy/core';
+import { APP_THEME_SERVICE, APP_TRANSLATION_SERVICE } from '@mgremy/core';
+import { MgnpButton } from '@mgremy/ng-primitives/button';
 import { MgnpMenu, MgnpMenuItem } from '@mgremy/ng-primitives/menu';
 
 import { NgIcon, provideIcons } from '@ng-icons/core';
 import { flagCp, flagUs } from '@ng-icons/flag-icons';
-import { heroBars4 } from '@ng-icons/heroicons/outline';
+import { heroBars4, heroMoon, heroSun } from '@ng-icons/heroicons/outline';
 
 import { Component, computed, inject } from '@angular/core';
+import { NgpButton } from 'ng-primitives/button';
 import { NgpMenu, NgpMenuItem, NgpMenuTrigger } from 'ng-primitives/menu';
 
 @Component({
-  imports: [NgIcon, NgpMenuTrigger, NgpMenu, MgnpMenu, NgpMenuItem, MgnpMenuItem],
+  imports: [
+    NgIcon,
+    NgpMenuTrigger,
+    NgpMenu,
+    MgnpMenu,
+    NgpMenuItem,
+    MgnpMenuItem,
+    NgpButton,
+    MgnpButton,
+  ],
   standalone: true,
   template: `
     <header>
-      <nav class="flex max-w-screen justify-end border-b border-ui p-4 items-center">
-        <ul class="flex gap-4 items-center">
-          <li>
+      <nav class="flex max-w-screen justify-end p-4 items-center bg-secondary/75">
+        <div class="flex gap-4 items-center">
+          <button
+            ngpButton
+            mgnpButton
+            (click)="
+              _themeService.setTheme(_themeService.getTheme() === 'light' ? 'dark' : 'light')
+            ">
             <ng-icon
-              [ngpMenuTrigger]="langDropdown"
+              name="heroSun"
+              class="!dark:hidden !inline-block" />
+            <ng-icon
+              name="heroMoon"
+              class="!hidden !dark:inline-block" />
+          </button>
+          <button
+            [ngpMenuTrigger]="langDropdown"
+            mgnpButton>
+            <ng-icon
               [name]="_currentLanguageIcon()"
               class="hover:cursor-pointer" />
-          </li>
-        </ul>
+          </button>
+        </div>
       </nav>
+      <div class="bg-(--mg-border-emphasis) absolute inset-x-0 h-0.5"></div>
     </header>
 
     <main class="overflow-hidden p-4">
@@ -47,10 +73,11 @@ import { NgpMenu, NgpMenuItem, NgpMenuTrigger } from 'ng-primitives/menu';
       </div>
     </ng-template>
   `,
-  providers: [provideIcons({ flagCp, flagUs, heroBars4 })],
+  providers: [provideIcons({ flagCp, flagUs, heroBars4, heroSun, heroMoon })],
 })
 export default class IndexPage {
   private readonly _translationService = inject(APP_TRANSLATION_SERVICE);
+  protected readonly _themeService = inject(APP_THEME_SERVICE);
 
   readonly _availableLanguages = [
     {

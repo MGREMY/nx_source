@@ -19,12 +19,12 @@ import { filter } from 'rxjs/operators';
   selector: 'app-quick-links',
   template: `
     <div class="w-40 flex-none xl:w-64">
-      <h2 class="text-md mb-2 font-semibold text-zinc-800 dark:text-zinc-100">On this page</h2>
+      <h2 class="text-md mb-2 font-semibold text-ui">On this page</h2>
       <ul>
         @for (link of links(); track link.id) {
           <li>
             <button
-              class="block h-8 cursor-pointer items-center truncate rounded-lg py-1.5 text-zinc-600 hover:text-zinc-950 dark:text-zinc-300 dark:hover:text-white"
+              class="block h-8 cursor-pointer items-center truncate rounded-lg py-1.5 text-secondary hover:text-emphasis "
               [class.pl-4]="link.level === 3"
               (click)="scrollTo(link.id)">
               {{ link.text }}
@@ -36,7 +36,7 @@ import { filter } from 'rxjs/operators';
   `,
   changeDetection: ChangeDetectionStrategy.OnPush,
   host: {
-    class: 'hidden xl:block sticky top-22 w-64 h-[calc(100vh-8rem)] overflow-y-auto',
+    class: 'hidden xl:block sticky top-22 w-64 overflow-y-auto',
   },
 })
 export class QuickLinks implements AfterViewInit {

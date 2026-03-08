@@ -3,30 +3,32 @@
 @custom-variant dark (&:where(.dark, .dark *));
 
 @theme {
-  --mg-background-ui: var(--color-white);
-  --mg-background-secondary: var(--color-gray-300);
-  --mg-background-hover: var(--color-gray-50);
-  --mg-background-active: var(--color-gray-100);
-  --mg-background-inverse: var(--color-black);
-  --mg-background-disabled: var(--color-gray-100);
+  --mg-background-ui: var(--color-stone-50);
+  --mg-background-secondary: var(--color-stone-100);
+  --mg-background-hover: var(--color-stone-100);
+  --mg-background-active: var(--color-stone-100);
+  --mg-background-inverse: var(--color-stone-950);
+  --mg-background-disabled: var(--color-stone-100);
   --mg-background-blue: var(--color-blue-200);
   --mg-background-success: var(--color-lime-400);
   --mg-background-avatar: rgb(186, 230, 253);
 
-  --mg-border-ui: var(--color-gray-300);
-  --mg-border-secondary: var(--color-gray-200);
+  --mg-border-ui: var(--color-stone-300);
+  --mg-border-emphasis: var(--color-blue-400);
+  --mg-border-hover: var(--color-stone-100);
+  --mg-border-secondary: var(--color-stone-200);
   --mg-border-blue: var(--color-blue-500);
   --mg-border-inverse: var(--color-black);
   --mg-border-avatar: rgb(255, 255, 255);
 
   --mg-text-ui: var(--color-black);
   --mg-text-active: var(--color-blue-400);
-  --mg-text-emphasis: var(--color-black);
-  --mg-text-primary: var(--color-gray-900);
-  --mg-text-secondary: var(--color-gray-600);
-  --mg-text-tertiary: var(--color-gray-500);
-  --mg-text-disabled: var(--color-gray-400);
-  --mg-text-placeholder: var(--color-gray-400);
+  --mg-text-emphasis: var(--color-blue-400);
+  --mg-text-primary: var(--color-stone-900);
+  --mg-text-secondary: var(--color-stone-600);
+  --mg-text-tertiary: var(--color-stone-500);
+  --mg-text-disabled: var(--color-stone-400);
+  --mg-text-placeholder: var(--color-stone-400);
   --mg-text-inverse: var(--color-white);
   --mg-text-blue: var(--color-blue-400);
   --mg-text-red: var(--color-red-500);
@@ -55,6 +57,8 @@
   --background-color-avatar: var(--mg-background-avatar);
 
   --border-color-ui: var(--mg-border-ui);
+  --border-color-emphasis: var(--mg-border-emphasis);
+  --border-color-hover: var(--mg-border-hover);
   --border-color-secondary: var(--mg-border-secondary);
   --border-color-blue: var(--mg-border-blue);
   --border-color-inverse: var(--mg-border-inverse);
@@ -88,34 +92,30 @@
 }
 
 @layer base {
-  html {
-    background-color: var(--mg-background-ui);
-    color: var(--mg-text-ui);
-  }
-
   @variant dark {
-    --mg-background-ui: var(--color-gray-950);
-    --mg-background-secondary: var(--color-gray-700);
-    --mg-background-hover: var(--color-gray-900);
-    --mg-background-active: var(--color-gray-800);
-    --mg-background-inverse: var(--color-white);
-    --mg-background-disabled: var(--color-gray-900);
+    --mg-background-ui: var(--color-stone-950);
+    --mg-background-secondary: var(--color-stone-900);
+    --mg-background-hover: var(--color-stone-900);
+    --mg-background-active: var(--color-stone-900);
+    --mg-background-inverse: var(--color-stone-50);
+    --mg-background-disabled: var(--color-stone-900);
     --mg-background-blue: var(--color-blue-200);
     --mg-background-avatar: rgb(24, 24, 27);
 
-    --mg-border-ui: var(--color-gray-800);
-    --mg-border-secondary: var(--color-gray-700);
+    --mg-border-ui: var(--color-stone-800);
+    --mg-border-emphasis: var(--color-blue-800);
+    --mg-border-secondary: var(--color-stone-700);
     --mg-border-blue: var(--color-blue-500);
     --mg-border-inverse: var(--color-white);
     --mg-border-avatar: rgb(63, 63, 70);
 
     --mg-text-ui: var(--color-white);
     --mg-text-active: var(--color-blue-600);
-    --mg-text-emphasis: var(--color-white);
-    --mg-text-primary: var(--color-gray-100);
-    --mg-text-secondary: var(--color-gray-300);
-    --mg-text-tertiary: var(--color-gray-400);
-    --mg-text-disabled: var(--color-gray-500);
+    --mg-text-emphasis: var(--color-blue-800);
+    --mg-text-primary: var(--color-stone-100);
+    --mg-text-secondary: var(--color-stone-300);
+    --mg-text-tertiary: var(--color-stone-400);
+    --mg-text-disabled: var(--color-stone-500);
     --mg-text-inverse: var(--color-black);
     --mg-text-blue: var(--color-blue-600);
     --mg-text-red: var(--color-red-500);

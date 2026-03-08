@@ -38,7 +38,10 @@ export default defineConfig(({ mode }) => {
           highlighter: 'shiki',
           shikiOptions: {
             highlight: {
-              theme: 'material-theme-lighter',
+              themes: {
+                light: 'material-theme-lighter',
+                dark: 'material-theme-darker',
+              },
             },
             highlighter: {
               themes: ['material-theme-lighter', 'material-theme-darker'],

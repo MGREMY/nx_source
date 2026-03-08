@@ -1,6 +1,16 @@
 ---
 name: 'Button'
-sourceUrl: 'https://github.com/mgremy/nx-source/tree/main/libs/ng-primitives/button'
+sourceUrl: 'https://github.com/mgremy/nx_source/tree/main/libs/ng-primitives/button'
 ---
 
 # Button
+
+A button is a clickable element that can be used to trigger an action. This primitive enhances the
+native button element with improved accessibility and interaction handling for hover, press and
+focus.
+
+## Usage
+
+## Theme
+
+<app-file-content name="button"></app-file-content>

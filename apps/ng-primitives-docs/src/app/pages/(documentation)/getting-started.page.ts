@@ -11,14 +11,14 @@ import { RouterOutlet } from '@angular/router';
   standalone: true,
   template: `
     <div class="flex gap-x-12">
-      <div
-        class="prose prose-sm prose-zinc dark:prose-invert flex-1 overflow-hidden px-px"
+      <article
+        class="prose prose-sm dark:prose-invert flex-1 overflow-hidden px-1 max-w-none"
         data-page-content
         appHeadingAnchor
         appSourceLink>
         <div class="mx-auto w-fit max-w-full">
           <p
-            class="from-primary to-accent mt-0 mb-2 inline-block bg-linear-to-r bg-clip-text text-sm font-medium text-transparent">
+            class="from-(--mg-text-primary) to-(--mg-text-emphasis) mt-0 mb-2 inline-block bg-linear-to-r bg-clip-text text-sm font-medium">
             Getting Started
           </p>
           <div class="max-w-3xl">
@@ -26,11 +26,12 @@ import { RouterOutlet } from '@angular/router';
             <app-page-navigation />
           </div>
         </div>
-      </div>
+      </article>
       <app-quick-links />
     </div>
   `,
   host: {
+    'data-component': 'doc-content',
     class: 'flex-1 max-w-full',
   },
 })
