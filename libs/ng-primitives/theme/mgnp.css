@@ -3,105 +3,127 @@
 @custom-variant dark (&:where(.dark, .dark *));
 
 @theme {
-  --bg-ui: var(--color-white);
-  --bg-secondary: var(--color-gray-300);
-  --bg-hover: var(--color-gray-50);
-  --bg-active: var(--color-gray-100);
-  --bg-inverse: var(--color-black);
-  --bg-disabled: var(--color-gray-100);
-  --bg-blue: var(--color-blue-200);
-  --bg-success: var(--color-lime-400);
+  --mg-background-ui: var(--color-stone-50);
+  --mg-background-secondary: var(--color-stone-100);
+  --mg-background-hover: var(--color-stone-100);
+  --mg-background-active: var(--color-stone-100);
+  --mg-background-inverse: var(--color-stone-950);
+  --mg-background-disabled: var(--color-stone-100);
+  --mg-background-blue: var(--color-blue-200);
+  --mg-background-success: var(--color-lime-400);
+  --mg-background-avatar: rgb(186, 230, 253);
 
-  --border-ui: var(--color-gray-300);
-  --border-secondary: var(--color-gray-200);
-  --border-blue: var(--color-blue-500);
-  --border-inverse: var(--color-black);
+  --mg-border-ui: var(--color-stone-300);
+  --mg-border-emphasis: var(--color-blue-400);
+  --mg-border-hover: var(--color-stone-100);
+  --mg-border-secondary: var(--color-stone-200);
+  --mg-border-blue: var(--color-blue-500);
+  --mg-border-inverse: var(--color-black);
+  --mg-border-avatar: rgb(255, 255, 255);
 
-  --text-ui: var(--color-black);
-  --text-active: var(--color-blue-400);
-  --text-emphasis: var(--color-black);
-  --text-primary: var(--color-gray-900);
-  --text-secondary: var(--color-gray-600);
-  --text-tertiary: var(--color-gray-500);
-  --text-disabled: var(--color-gray-400);
-  --text-placeholder: var(--color-gray-400);
-  --text-inverse: var(--color-white);
-  --text-blue: var(--color-blue-400);
-  --text-red: var(--color-red-500);
+  --mg-text-ui: var(--color-black);
+  --mg-text-active: var(--color-blue-400);
+  --mg-text-emphasis: var(--color-blue-400);
+  --mg-text-primary: var(--color-stone-900);
+  --mg-text-secondary: var(--color-stone-600);
+  --mg-text-tertiary: var(--color-stone-500);
+  --mg-text-disabled: var(--color-stone-400);
+  --mg-text-placeholder: var(--color-stone-400);
+  --mg-text-inverse: var(--color-white);
+  --mg-text-blue: var(--color-blue-400);
+  --mg-text-red: var(--color-red-500);
 
-  --shadow-ui: 0 1px 2px 0 rgba(0, 0, 0, 0.051);
-  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.102), 0 4px 6px -4px rgba(0, 0, 0, 0.102);
-  --shadow-border: inset 0 0 0 1px rgba(0, 0, 0, 0.102);
-
-  --focus-ring-ui: rgb(59, 130, 246);
-
-  --avatar-background: rgb(186, 230, 253);
-  --avatar-border: rgb(255, 255, 255);
-
-  --button-shadow:
+  --mg-shadow-ui: 0 1px 2px 0 rgba(0, 0, 0, 0.051);
+  --mg-shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.102), 0 4px 6px -4px rgba(0, 0, 0, 0.102);
+  --mg-shadow-border: inset 0 0 0 1px rgba(0, 0, 0, 0.102);
+  --mg-shadow-button:
     0 1px 3px 0 rgba(0, 0, 0, 0.102), 0 1px 2px -1px rgba(0, 0, 0, 0.102),
     0 0 0 1px rgba(0, 0, 0, 0.051);
+  --mg-shadow-input: 0 1px 2px rgba(0, 0, 0, 0.051), 0 0 0 1px rgba(0, 0, 0, 0.102);
 
-  --input-shadow: 0 1px 2px rgba(0, 0, 0, 0.051), 0 0 0 1px rgba(0, 0, 0, 0.102);
+  --mg-ring-ui: rgb(59, 130, 246);
+}
+
+@theme {
+  /* Tailwind */
+  --background-color-ui: var(--mg-background-ui);
+  --background-color-secondary: var(--mg-background-secondary);
+  --background-color-hover: var(--mg-background-hover);
+  --background-color-active: var(--mg-background-active);
+  --background-color-inverse: var(--mg-background-inverse);
+  --background-color-disabled: var(--mg-background-disabled);
+  --background-color-blue: var(--mg-background-blue);
+  --background-color-success: var(--mg-background-success);
+  --background-color-avatar: var(--mg-background-avatar);
+
+  --border-color-ui: var(--mg-border-ui);
+  --border-color-emphasis: var(--mg-border-emphasis);
+  --border-color-hover: var(--mg-border-hover);
+  --border-color-secondary: var(--mg-border-secondary);
+  --border-color-blue: var(--mg-border-blue);
+  --border-color-inverse: var(--mg-border-inverse);
+  --border-color-avatar: var(--mg-border-avatar);
+
+  --divide-color-ui: var(--mg-border-ui);
+  --divide-color-secondary: var(--mg-border-secondary);
+  --divide-color-blue: var(--mg-border-blue);
+  --divide-color-inverse: var(--mg-border-inverse);
+
+  --text-color-ui: var(--mg-text-ui);
+  --text-color-active: var(--mg-text-active);
+  --text-color-emphasis: var(--mg-text-emphasis);
+  --text-color-primary: var(--mg-text-primary);
+  --text-color-secondary: var(--mg-text-secondary);
+  --text-color-tertiary: var(--mg-text-tertiary);
+  --text-color-disabled: var(--mg-text-disabled);
+  --text-color-placeholder: var(--mg-text-placeholder);
+  --text-color-inverse: var(--mg-text-inverse);
+  --text-color-blue: var(--mg-text-blue);
+  --text-color-red: var(--mg-text-red);
+
+  --shadow-ui: var(--mg-shadow-ui);
+  --shadow-lg: var(--mg-shadow-lg);
+  --shadow-border: var(--mg-shadow-border);
+  --shadow-button: var(--mg-shadow-button);
+  --shadow-input: var(--mg-shadow-input);
+
+  --ring-color-ui: var(--mg-ring-ui);
+  --ring-offset-color-ui: var(--mg-ring-ui);
 }
 
 @layer base {
-  html {
-    background-color: var(--bg-ui);
-    color: var(--text-ui);
-  }
-
   @variant dark {
-    --bg-ui: var(--color-gray-950);
-    --bg-secondary: var(--color-gray-700);
-    --bg-hover: var(--color-gray-900);
-    --bg-active: var(--color-gray-800);
-    --bg-inverse: var(--color-white);
-    --bg-disabled: var(--color-gray-900);
-    --bg-blue: var(--color-blue-200);
+    --mg-background-ui: var(--color-stone-950);
+    --mg-background-secondary: var(--color-stone-900);
+    --mg-background-hover: var(--color-stone-900);
+    --mg-background-active: var(--color-stone-900);
+    --mg-background-inverse: var(--color-stone-50);
+    --mg-background-disabled: var(--color-stone-900);
+    --mg-background-blue: var(--color-blue-200);
+    --mg-background-avatar: rgb(24, 24, 27);
 
-    --border-ui: var(--color-gray-800);
-    --border-secondary: var(--color-gray-700);
-    --border-blue: var(--color-blue-500);
-    --border-inverse: var(--color-white);
+    --mg-border-ui: var(--color-stone-800);
+    --mg-border-emphasis: var(--color-blue-800);
+    --mg-border-secondary: var(--color-stone-700);
+    --mg-border-blue: var(--color-blue-500);
+    --mg-border-inverse: var(--color-white);
+    --mg-border-avatar: rgb(63, 63, 70);
 
-    --text-ui: var(--color-white);
-    --text-active: var(--color-blue-600);
-    --text-emphasis: var(--color-white);
-    --text-primary: var(--color-gray-100);
-    --text-secondary: var(--color-gray-300);
-    --text-tertiary: var(--color-gray-400);
-    --text-disabled: var(--color-gray-500);
-    --text-inverse: var(--color-black);
-    --text-blue: var(--color-blue-600);
-    --text-red: var(--color-red-500);
+    --mg-text-ui: var(--color-white);
+    --mg-text-active: var(--color-blue-600);
+    --mg-text-emphasis: var(--color-blue-800);
+    --mg-text-primary: var(--color-stone-100);
+    --mg-text-secondary: var(--color-stone-300);
+    --mg-text-tertiary: var(--color-stone-400);
+    --mg-text-disabled: var(--color-stone-500);
+    --mg-text-inverse: var(--color-black);
+    --mg-text-blue: var(--color-blue-600);
+    --mg-text-red: var(--color-red-500);
 
-    --avatar-background: rgb(24, 24, 27);
-    --avatar-border: rgb(63, 63, 70);
-
-    --shadow-border: inset 0 0 0 1px rgba(255, 255, 255, 0.102);
-    --input-shadow: 0 1px 2px rgba(255, 255, 255, 0.008), 0 0 0 1px rgba(255, 255, 255, 0.1);
-
-    --button-shadow:
+    --mg-shadow-border: inset 0 0 0 1px rgba(255, 255, 255, 0.102);
+    --mg-shadow-input: 0 1px 2px rgba(255, 255, 255, 0.008), 0 0 0 1px rgba(255, 255, 255, 0.1);
+    --mg-shadow-button:
       0 1px 3px 0 rgba(255, 255, 255, 0.102), 0 1px 2px -1px rgba(255, 255, 255, 0.102),
       0 0 0 1px rgba(255, 255, 255, 0.051);
   }
-}
-
-@utility bg-* {
-  background-color: --value([integer]);
-  background-color: --value(integer);
-  background-color: --value(--bg-*);
-}
-
-@utility border-* {
-  border-color: --value([integer]);
-  border-color: --value(integer);
-  border-color: --value(--border-*);
-}
-
-@utility text-* {
-  color: --value([integer]);
-  color: --value(integer);
-  color: --value(--text-*);
 }

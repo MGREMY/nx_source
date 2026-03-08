@@ -1,6 +1,5 @@
 {
   "nav": {
-    "components": "components",
-    "styling": "styling"
+    "documentation": "documentation"
   }
 }

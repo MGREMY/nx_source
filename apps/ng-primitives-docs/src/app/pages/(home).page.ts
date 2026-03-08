@@ -1,7 +1,0 @@
-import { Component } from '@angular/core';
-
-@Component({
-  standalone: true,
-  template: `<h2>Index</h2>`,
-})
-export default class HomePageComponent {}

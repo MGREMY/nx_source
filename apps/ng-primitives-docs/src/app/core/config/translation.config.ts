@@ -19,7 +19,7 @@ export function provideTranslationConfig(): (Provider | EnvironmentProviders)[] 
       loader: {
         provide: TranslateLoader,
         useFactory: (handler: HttpBackend) =>
-          new TranslateHttpLoader(new HttpClient(handler), './i18n/', '.json'),
+          new TranslateHttpLoader(new HttpClient(handler), '/i18n/', '.json'),
         deps: [HttpBackend],
       },
     }),

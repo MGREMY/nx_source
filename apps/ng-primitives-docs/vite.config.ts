@@ -2,6 +2,7 @@
 
 import analog from '@analogjs/platform';
 import { nxViteTsPaths } from '@nx/vite/plugins/nx-tsconfig-paths.plugin';
+import { globSync } from 'glob';
 import { defineConfig } from 'vite';
 
 // https://vitejs.dev/config/
@@ -34,11 +35,31 @@ export default defineConfig(({ mode }) => {
             with: `apps/ng-primitives-docs/src/environments/environment.${mode}.ts`,
           },
         ],
+        prerender: {
+          routes: async () => [
+            '/',
+            ...globSync('apps/ng-primitives-docs/src/app/pages/**/*.md').map((file) => {
+              return (
+                '/' +
+                file
+                  .replace('apps/documentation/src/app/pages/(documentation)/', '')
+                  .replace('apps/documentation/src/app/pages/', '')
+                  .replace('.md', '')
+              );
+            }),
+          ],
+          sitemap: {
+            host: 'https://angularprimitives.com/',
+          },
+        },
         content: {
           highlighter: 'shiki',
           shikiOptions: {
             highlight: {
-              theme: 'material-theme-lighter',
+              themes: {
+                light: 'material-theme-lighter',
+                dark: 'material-theme-darker',
+              },
             },
             highlighter: {
               themes: ['material-theme-lighter', 'material-theme-darker'],

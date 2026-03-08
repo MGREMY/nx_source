@@ -3,46 +3,45 @@
 @import './components/input.css';
 @import './components/loader.css';
 @import './components/menu.css';
-@import './components/navbar.css';
 @import './components/pagination.css';
 @import './components/tooltip.css';
 
 @theme {
-  --ngp-background: var(--bg-ui);
-  --ngp-background-secondary: var(--bg-secondary);
-  --ngp-background-hover: var(--bg-hover);
-  --ngp-background-active: var(--bg-active);
-  --ngp-background-inverse: var(--bg-inverse);
-  --ngp-background-disabled: var(--bg-disabled);
-  --ngp-background-blue: var(--bg-blue);
-  --ngp-background-success: var(--bg-success);
+  --ngp-background: var(--mg-background-ui);
+  --ngp-background-secondary: var(--mg-background-secondary);
+  --ngp-background-hover: var(--mg-background-hover);
+  --ngp-background-active: var(--mg-background-active);
+  --ngp-background-inverse: var(--mg-background-inverse);
+  --ngp-background-disabled: var(--mg-background-disabled);
+  --ngp-background-blue: var(--mg-background-blue);
+  --ngp-background-success: var(--mg-background-success);
 
-  --ngp-border: var(--border-ui);
-  --ngp-border-secondary: var(--border-secondary);
-  --ngp-border-blue: var(--border-blue);
-  --ngp-border-inverse: var(--border-inverse);
+  --ngp-border: var(--mg-border-ui);
+  --ngp-border-secondary: var(--mg-border-secondary);
+  --ngp-border-blue: var(--mg-border-blue);
+  --ngp-border-inverse: var(--mg-border-inverse);
 
-  --ngp-text-active: var(--text-active);
-  --ngp-text-emphasis: var(--text-emphasis);
-  --ngp-text-primary: var(--text-primary);
-  --ngp-text-secondary: var(--text-secondary);
-  --ngp-text-tertiary: var(--text-tertiary);
-  --ngp-text-disabled: var(--text-disabled);
-  --ngp-text-placeholder: var(--text-placeholder);
-  --ngp-text-inverse: var(--text-inverse);
-  --ngp-text-blue: var(--text-blue);
-  --ngp-text-red: var(--text-red);
+  --ngp-text-active: var(--mg-text-active);
+  --ngp-text-emphasis: var(--mg-text-emphasis);
+  --ngp-text-primary: var(--mg-text-primary);
+  --ngp-text-secondary: var(--mg-text-secondary);
+  --ngp-text-tertiary: var(--mg-text-tertiary);
+  --ngp-text-disabled: var(--mg-text-disabled);
+  --ngp-text-placeholder: var(--mg-text-placeholder);
+  --ngp-text-inverse: var(--mg-text-inverse);
+  --ngp-text-blue: var(--mg-text-blue);
+  --ngp-text-red: var(--mg-text-red);
 
-  --ngp-shadow: var(--shadow-ui);
-  --ngp-shadow-lg: var(--shadow-lg);
-  --ngp-shadow-border: var(--shadow-border);
+  --ngp-shadow: var(--mg-shadow-ui);
+  --ngp-shadow-lg: var(--mg-shadow-lg);
+  --ngp-shadow-border: var(--mg-shadow-border);
 
-  --ngp-focus-ring: var(--focus-ring-ui);
+  --ngp-focus-ring: var(--mg-ring-ui);
 
-  --ngp-avatar-background: var(--avatar-background);
-  --ngp-avatar-border: var(--avatar-border);
+  --ngp-avatar-background: var(--mg-background-avatar);
+  --ngp-avatar-border: var(--mg-border-avatar);
 
-  --ngp-button-shadow: var(--button-shadow);
+  --ngp-button-shadow: var(--mg-shadow-button);
 
-  --ngp-input-shadow: var(--input-shadow);
+  --ngp-input-shadow: var(--mg-shadow-input);
 }
