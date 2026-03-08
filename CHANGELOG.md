@@ -1,3 +1,15 @@
+## 0.3.0
+
+### 🚀 Features
+
+- **ng-primitives:** use only tailwind generation instead of @apply ([5dc6dc8](https://github.com/MGREMY/nx_source/commit/5dc6dc8))
+- **ng-primitives:** add pagination ([#3](https://github.com/MGREMY/nx_source/pull/3))
+
+### ❤️ Thank You
+
+- GREMY Miguel @MGREMY
+- MGREMY @MGREMY
+
 ## 0.2.0
 
 ### 🚀 Features
