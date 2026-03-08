@@ -16,12 +16,12 @@ import { RouterOutlet } from '@angular/router';
         data-page-content
         appHeadingAnchor
         appSourceLink>
-        <div class="mx-auto w-fit max-w-full">
-          <p
-            class="from-(--mg-text-primary) to-(--mg-text-emphasis) mt-0 mb-2 inline-block bg-linear-to-r bg-clip-text text-sm font-medium">
-            Getting Started
-          </p>
-          <div class="max-w-3xl">
+        <div class="w-full max-w-full">
+          <div class="max-w-3xl mx-auto">
+            <p
+              class="from-(--mg-text-primary) to-(--mg-text-emphasis) mt-0 mb-2 inline-block bg-linear-to-r bg-clip-text text-sm font-medium">
+              Getting Started
+            </p>
             <router-outlet />
             <app-page-navigation />
           </div>

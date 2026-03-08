@@ -22,7 +22,7 @@ import { RouterLink, RouterLinkActive } from '@angular/router';
 
     <ng-template #content>
       <div
-        class="sticky top-24 flex h-[calc(100dvh-140px)] w-full flex-col gap-y-4 overflow-auto overscroll-contain md:h-max md:overflow-visible">
+        class="sticky top-16 flex h-[calc(100dvh-140px)] w-full flex-col gap-y-4 overflow-auto overscroll-contain md:h-max md:overflow-visible">
         @for (section of sections; track section.title) {
           <div class="mb-2">
             <h2 class="mb-4 flex items-center gap-2 text-sm font-semibold text-ui">
@@ -62,7 +62,7 @@ import { RouterLink, RouterLinkActive } from '@angular/router';
         (keydown.escape)="isOpen.set(false)"
         (click)="isOpen.set(false)">
         <div
-          class="h-full w-72 max-w-full bg-ui px-10 shadow-xl"
+          class="h-full pt-24 w-72 max-w-full bg-ui px-10 shadow-xl"
           (click)="$event.stopPropagation()">
           <ng-container [ngTemplateOutlet]="content" />
         </div>

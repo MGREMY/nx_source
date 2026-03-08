@@ -4,7 +4,6 @@ import { provideApplicationThemeConfig } from './core/config/app-theme.config';
 import { provideApplicationConfig } from './core/config/app.config';
 import { provideDefaultDatePipeConfig } from './core/config/pipe.config';
 import { provideStorageConfig } from './core/config/storage.config';
-import { provideTranslationConfig } from './core/config/translation.config';
 import { langInterceptor } from './core/interceptors/lang.interceptor';
 import { APP_ENVIRONMENT_SERVICE } from '@mgremy/core';
 
@@ -48,7 +47,6 @@ export const appConfig: ApplicationConfig = {
     provideDefaultDatePipeConfig(),
     provideApplicationConfig(),
     provideStorageConfig(),
-    provideTranslationConfig(), // Internationalization
   ],
 };
 

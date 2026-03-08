@@ -11,6 +11,16 @@ focus.
 
 ## Usage
 
+### Default
+
+```html
+<button
+  ngpButton
+  mgnpButton>
+  Default button
+</button>
+```
+
 ## Theme
 
 <app-file-content name="button"></app-file-content>
