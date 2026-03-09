@@ -1,7 +1,7 @@
 import { Directive, inject } from '@angular/core';
 import { NgpAccordionContent } from 'ng-primitives/accordion';
 
-const options = ['ngpAccordion'];
+const options = ['ngpAccordionContent'];
 
 const error = new Error(`MgnpAccordionContent must be used with ${options.join(' / ')}`);
 
