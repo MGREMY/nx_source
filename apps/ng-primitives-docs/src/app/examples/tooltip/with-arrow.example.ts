@@ -1,11 +1,18 @@
 import { MgnpButton } from '@mgremy/ng-primitives/button';
-import { MgnpTooltip } from '@mgremy/ng-primitives/tooltip';
+import { MgnpTooltip, MgnpTooltipArrow } from '@mgremy/ng-primitives/tooltip';
 
 import { Component } from '@angular/core';
-import { NgpTooltip, NgpTooltipTrigger } from 'ng-primitives/tooltip';
+import { NgpTooltip, NgpTooltipArrow, NgpTooltipTrigger } from 'ng-primitives/tooltip';
 
 @Component({
-  imports: [NgpTooltipTrigger, NgpTooltip, MgnpButton, MgnpTooltip],
+  imports: [
+    NgpTooltipTrigger,
+    NgpTooltip,
+    NgpTooltipArrow,
+    MgnpButton,
+    MgnpTooltip,
+    MgnpTooltipArrow,
+  ],
   template: `
     <button
       [ngpTooltipTrigger]="tooltip"
@@ -18,6 +25,9 @@ import { NgpTooltip, NgpTooltipTrigger } from 'ng-primitives/tooltip';
         ngpTooltip
         mgnpTooltip>
         Tooltip content
+        <div
+          ngpTooltipArrow
+          mgnpTooltipArrow></div>
       </div>
     </ng-template>
   `,
