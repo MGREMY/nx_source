@@ -62,11 +62,11 @@
   z-index: 1001;
 
   @variant data-enter {
-    animation: combobox-show 0.1s ease-out;
+    animation: combobox-show 200ms ease-out;
   }
 
   @variant data-exit {
-    animation: combobox-hide 0.1s ease-out;
+    animation: combobox-hide 200ms ease-out;
   }
 }
 

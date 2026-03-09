@@ -11,11 +11,11 @@
   transform-origin: var(--ngp-menu-transform-origin);
 
   @variant data-enter {
-    animation: menu-show 0.1s ease-out;
+    animation: menu-show 200ms ease-out;
   }
 
   @variant data-exit {
-    animation: menu-hide 0.1s ease-out;
+    animation: menu-hide 200ms ease-out;
   }
 }
 
@@ -25,7 +25,7 @@
   border: none;
   background: none;
   cursor: pointer;
-  transition: background-color 0.2s;
+  transition: background-color 200ms;
   border-radius: var(--radius-sm);
   min-width: --spacing(30);
   text-align: start;

@@ -6,7 +6,7 @@
   --mg-background-ui: var(--color-stone-50);
   --mg-background-secondary: var(--color-stone-100);
   --mg-background-hover: var(--color-stone-100);
-  --mg-background-active: var(--color-stone-100);
+  --mg-background-active: var(--color-stone-200);
   --mg-background-inverse: var(--color-stone-950);
   --mg-background-disabled: var(--color-stone-100);
   --mg-background-blue: var(--color-blue-200);
@@ -96,7 +96,7 @@
     --mg-background-ui: var(--color-stone-950);
     --mg-background-secondary: var(--color-stone-900);
     --mg-background-hover: var(--color-stone-900);
-    --mg-background-active: var(--color-stone-900);
+    --mg-background-active: var(--color-stone-800);
     --mg-background-inverse: var(--color-stone-50);
     --mg-background-disabled: var(--color-stone-900);
     --mg-background-blue: var(--color-blue-200);

@@ -24,7 +24,7 @@
     font-size: var(--text-sm);
     font-weight: var(--font-weight-medium);
     box-shadow: var(--mg-shadow-button);
-    transition: background-color 0.2s ease-in-out;
+    transition: background-color 200ms ease-in-out;
 
     @variant data-hover {
       @variant not-data-disabled {

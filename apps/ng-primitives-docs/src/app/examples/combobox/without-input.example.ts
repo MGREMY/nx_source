@@ -2,7 +2,6 @@ import { MgnpButton } from '@mgremy/ng-primitives/button';
 import {
   MgnpCombobox,
   MgnpComboboxDropdown,
-  MgnpComboboxInput,
   MgnpComboboxOption,
 } from '@mgremy/ng-primitives/combobox';
 
@@ -11,7 +10,6 @@ import {
   NgpCombobox,
   NgpComboboxButton,
   NgpComboboxDropdown,
-  NgpComboboxInput,
   NgpComboboxOption,
   NgpComboboxPortal,
 } from 'ng-primitives/combobox';
