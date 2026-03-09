@@ -1,3 +1,13 @@
+## 0.4.0
+
+### 🚀 Features
+
+- **ng-primitives:** add accordion ([#4](https://github.com/MGREMY/nx_source/pull/4))
+
+### ❤️ Thank You
+
+- MGREMY @MGREMY
+
 ## 0.3.0
 
 ### 🚀 Features
