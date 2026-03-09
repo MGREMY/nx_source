@@ -1,0 +1,111 @@
+@utility mgnp-accordion {
+  display: block;
+  width: 100%;
+  max-width: --spacing(96);
+  border-radius: --spacing(3);
+  border: 1px solid var(--ngp-border);
+  background-color: var(--ngp-background);
+  box-shadow: var(--ngp-shadow);
+}
+
+@utility mgnp-accordion-content {
+  font-size: --spacing(3.5);
+  color: var(--ngp-text-secondary);
+  overflow: hidden;
+
+  @variant data-open {
+    animation: accordion-show 200ms ease-in-out forwards;
+  }
+
+  @variant data-closed {
+    animation: accordion-hide 200ms ease-in-out forwards;
+  }
+}
+
+@utility mgnp-accordion-item {
+  [h1],
+  [h2],
+  [h3],
+  [h4],
+  [h5],
+  [h6] {
+    margin: --spacing(0);
+  }
+
+  @variant not-last {
+    border-bottom: 1px solid var(--ngp-border);
+  }
+}
+
+@utility mgnp-accordion-trigger {
+  display: flex;
+  padding-left: --spacing(4);
+  padding-right: --spacing(4);
+  font-size: --spacing(3.5);
+  line-height: --spacing(5);
+  font-weight: var(--font-weight-medium);
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: --spacing(11);
+  border-radius: --spacing(3);
+  outline: none;
+  color: var(--ngp-text-primary);
+  background-color: var(--ngp-background);
+  border: none;
+  box-shadow: none;
+
+  @variant data-focus-visible {
+    font-size: --spacing(3.5);
+    color: var(--ngp-text-secondary);
+    overflow: hidden;
+  }
+
+  ng-icon {
+    transition: transform 200ms ease-in-out;
+  }
+
+  @variant data-open {
+    ng-icon {
+      transform: rotate(180deg);
+    }
+  }
+}
+
+@layer base {
+  [mgnpAccordion][data-mgnp-component='mgnp-accordion'] {
+    @apply mgnp-accordion;
+  }
+
+  [mgnpAccordionContent][data-mgnp-component='mgnp-accordion-content'] {
+    @apply mgnp-accordion-content;
+  }
+
+  [mgnpAccordionItem][data-mgnp-component='mgnp-accordion-item'] {
+    @apply mgnp-accordion-item;
+  }
+
+  [ngpAccordionTrigger][mgnpButton][data-mgnp-component='mgnp-button'] {
+    @apply mgnp-accordion-trigger;
+  }
+}
+
+@theme {
+  @keyframes accordion-show {
+    from {
+      height: 0;
+    }
+    to {
+      height: var(--ngp-accordion-content-height);
+    }
+  }
+
+  @keyframes accordion-hide {
+    from {
+      height: var(--ngp-accordion-content-height);
+    }
+    to {
+      height: 0;
+    }
+  }
+}

@@ -81,11 +81,13 @@ function getHeadingList(): HeadingData[] {
   const content = document.querySelector('[data-page-content]');
   const headings = content?.querySelectorAll('h2, h3');
 
-  return Array.from(headings ?? []).map((heading) => {
-    return {
-      level: parseInt(heading.tagName.slice(1)),
-      id: heading.id,
-      text: heading.textContent,
-    } as HeadingData;
-  });
+  return Array.from(headings ?? [])
+    .filter((x) => !x.closest('app-example'))
+    .map((heading) => {
+      return {
+        level: parseInt(heading.tagName.slice(1)),
+        id: heading.id,
+        text: heading.textContent,
+      } as HeadingData;
+    });
 }

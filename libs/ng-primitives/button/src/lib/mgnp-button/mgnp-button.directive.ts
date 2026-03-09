@@ -1,16 +1,23 @@
 import { Directive, inject } from '@angular/core';
+import { NgpAccordionTrigger } from 'ng-primitives/accordion';
 import { NgpButton } from 'ng-primitives/button';
 import { NgpComboboxButton } from 'ng-primitives/combobox';
 import { NgpMenuTrigger } from 'ng-primitives/menu';
 import { NgpTooltipTrigger } from 'ng-primitives/tooltip';
 
-const options = ['ngpButton', 'ngpComboboxButton', 'ngpMenuTrigger', 'ngpTooltipTrigger'];
+const options = [
+  'ngpButton',
+  'ngpComboboxButton',
+  'ngpMenuTrigger',
+  'ngpTooltipTrigger',
+  'ngpAccordionTrigger',
+];
 
 const error = new Error(`MgnpButton must be used with ${options.join(' / ')}`);
 
 @Directive({
   selector:
-    '[ngpButton][mgnpButton], [ngpComboboxButton][mgnpButton], [ngpMenuTrigger][mgnpButton], [ngpTooltipTrigger][mgnpButton]',
+    '[ngpButton][mgnpButton], [ngpComboboxButton][mgnpButton], [ngpMenuTrigger][mgnpButton], [ngpTooltipTrigger][mgnpButton], [ngpAccordionTrigger][mgnpButton]',
   standalone: true,
   host: {
     'data-mgnp-component': 'mgnp-button',
@@ -25,13 +32,15 @@ export class MgnpButton {
     optional: true,
   });
   protected readonly ngpTooltipTrigger = inject(NgpTooltipTrigger, { optional: true });
+  protected readonly ngpAccordionTrigger = inject(NgpAccordionTrigger, { optional: true });
 
   constructor() {
     if (
       !this.ngpButton &&
       !this.ngpComboboxButton &&
       !this.ngpMenuTrigger &&
-      !this.ngpTooltipTrigger
+      !this.ngpTooltipTrigger &&
+      !this.ngpAccordionTrigger
     ) {
       console.error(this);
       throw error;
