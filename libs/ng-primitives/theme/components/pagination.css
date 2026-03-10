@@ -12,52 +12,52 @@
   [ngpPaginationLast] {
     all: unset;
     display: flex;
-    width: --spacing(8);
-    height: --spacing(8);
     cursor: pointer;
     align-items: center;
     justify-content: center;
-    border-radius: var(--radius-lg);
     outline-style: none;
-    background-color: var(--mg-background-ui);
-    color: var(--mg-text-primary);
+    transition: background-color 200ms ease-in-out;
+    width: --spacing(8);
+    height: --spacing(8);
+    border-radius: var(--radius-lg);
     font-size: var(--text-sm);
     font-weight: var(--font-weight-medium);
-    box-shadow: var(--mg-shadow-button);
-    transition: background-color 200ms ease-in-out;
+    background-color: var(--ngp-background);
+    color: var(--ngp-text-primary);
+    box-shadow: var(--ngp-button-shadow);
 
     @variant data-hover {
       @variant not-data-disabled {
         @variant not-data-selected {
-          background-color: var(--mg-background-hover);
+          background-color: var(--ngp-background-hover);
         }
       }
     }
 
     @variant data-focus-visible {
       @variant not-data-disabled {
-        outline: 2px solid var(--mg-ring-ui);
+        outline: 2px solid var(--ngp-focus-ring);
       }
     }
 
     @variant data-press {
       @variant not-data-disabled {
         @variant not-data-selected {
-          background-color: var(--mg-background-active);
+          background-color: var(--ngp-background-active);
         }
       }
     }
 
     @variant data-disabled {
-      background-color: var(--mg-background-disabled);
       cursor: not-allowed;
       color: #d2d2d2;
       box-shadow: none;
+      background-color: var(--ngp-background-disabled);
     }
 
     @variant data-selected {
-      background-color: var(--mg-background-inverse);
-      color: var(--mg-text-inverse);
+      background-color: var(--ngp-background-inverse);
+      color: var(--ngp-text-inverse);
     }
   }
 }

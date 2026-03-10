@@ -1,6 +1,6 @@
 import { MgnpButton } from '@mgremy/ng-primitives/button';
 
-import { Component, signal } from '@angular/core';
+import { Component } from '@angular/core';
 import { NgpButton } from 'ng-primitives/button';
 
 @Component({
@@ -8,12 +8,36 @@ import { NgpButton } from 'ng-primitives/button';
   template: `
     <button
       ngpButton
+      mgnpButton>
+      Default
+    </button>
+    <button
+      ngpButton
       mgnpButton
-      (click)="count.set(count() + 1)">
-      {{ count() ? 'Count ' + count() : 'Click me' }}
+      color="primary">
+      Primary
+    </button>
+    <button
+      ngpButton
+      mgnpButton
+      color="success">
+      Success
+    </button>
+    <button
+      ngpButton
+      mgnpButton
+      color="warning">
+      Warning
+    </button>
+    <button
+      ngpButton
+      mgnpButton
+      color="danger">
+      Danger
     </button>
   `,
+  host: {
+    class: 'flex! flex-wrap gap-4 items-center',
+  },
 })
-export default class ButtonExample {
-  readonly count = signal(0);
-}
+export default class ButtonExample {}

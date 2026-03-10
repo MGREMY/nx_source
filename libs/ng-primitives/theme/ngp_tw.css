@@ -9,29 +9,29 @@
 
 @theme {
   --ngp-background: var(--mg-background-ui);
-  --ngp-background-secondary: var(--mg-background-secondary);
-  --ngp-background-hover: var(--mg-background-hover);
-  --ngp-background-active: var(--mg-background-active);
-  --ngp-background-inverse: var(--mg-background-inverse);
-  --ngp-background-disabled: var(--mg-background-disabled);
-  --ngp-background-blue: var(--mg-background-blue);
+  --ngp-background-secondary: var(--mg-background-ui-secondary);
+  --ngp-background-hover: var(--mg-background-ui-hover);
+  --ngp-background-active: var(--mg-background-ui-active);
+  --ngp-background-inverse: var(--mg-background-ui-inverse);
+  --ngp-background-disabled: var(--mg-background-ui-disabled);
+  --ngp-background-blue: var(--mg-background-primary);
   --ngp-background-success: var(--mg-background-success);
 
   --ngp-border: var(--mg-border-ui);
-  --ngp-border-secondary: var(--mg-border-secondary);
-  --ngp-border-blue: var(--mg-border-blue);
+  --ngp-border-secondary: var(--mg-border-ui-secondary);
+  --ngp-border-blue: var(--mg-border-info);
   --ngp-border-inverse: var(--mg-border-inverse);
 
   --ngp-text-active: var(--mg-text-active);
   --ngp-text-emphasis: var(--mg-text-emphasis);
-  --ngp-text-primary: var(--mg-text-primary);
-  --ngp-text-secondary: var(--mg-text-secondary);
-  --ngp-text-tertiary: var(--mg-text-tertiary);
-  --ngp-text-disabled: var(--mg-text-disabled);
+  --ngp-text-primary: var(--mg-text-ui);
+  --ngp-text-secondary: var(--mg-text-ui-secondary);
+  --ngp-text-tertiary: var(--mg-text-ui-tertiary);
+  --ngp-text-disabled: var(--mg-text-ui-disabled);
   --ngp-text-placeholder: var(--mg-text-placeholder);
   --ngp-text-inverse: var(--mg-text-inverse);
-  --ngp-text-blue: var(--mg-text-blue);
-  --ngp-text-red: var(--mg-text-red);
+  --ngp-text-blue: var(--mg-text-primary);
+  --ngp-text-red: var(--mg-text-danger);
 
   --ngp-shadow: var(--mg-shadow-ui);
   --ngp-shadow-lg: var(--mg-shadow-lg);

@@ -56,12 +56,12 @@ import { NgpButton } from 'ng-primitives/button';
           <p class="px-4 font-semibold text-lg sm:text-3xl">Styled wrappers for ng-primitives</p>
         </div>
         <div class="flex flex-col sm:flex-row items-center gap-16">
-          <button
+          <a
             ngpButton
             mgnpButton
             [routerLink]="['/', 'getting-started', 'introduction']">
             Get Started
-          </button>
+          </a>
           <div class="flex gap-4">
             <a
               ngpButton

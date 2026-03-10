@@ -4,31 +4,31 @@
   align-items: center;
   height: fit-content;
   width: fit-content;
-  border-radius: var(--radius-lg);
   border: none;
+  box-sizing: border-box;
+  border-radius: var(--radius-lg);
   background-color: var(--ngp-background);
   box-shadow: var(--ngp-input-shadow);
-  box-sizing: border-box;
 
   @variant data-focus {
-    outline: 2px solid var(--ngp-focus-ring);
     outline-offset: 2px;
+    outline: 2px solid var(--ngp-focus-ring);
   }
 }
 
 @utility mgnp-combobox-input {
   flex: 1;
-  padding-block: --spacing(0);
-  padding-inline: --spacing(4);
   border: none;
   background-color: transparent;
-  color: var(--ngp-text);
   font-family: inherit;
-  font-size: var(--text-sm);
-  line-height: var(--text-sm--line-height);
   outline: none;
   height: auto;
   width: auto;
+  padding-block: --spacing(0);
+  padding-inline: --spacing(4);
+  font-size: var(--text-sm);
+  line-height: var(--text-sm--line-height);
+  color: var(--ngp-text);
 }
 
 @utility mgnp-combobox-button {
@@ -38,28 +38,28 @@
   height: 100%;
   background-color: transparent;
   border: none;
-  color: var(--ngp-text);
   cursor: pointer;
   box-sizing: border-box;
   box-shadow: none;
+  color: var(--ngp-text);
 }
 
 @utility mgnp-combobox-dropdown {
-  background-color: var(--ngp-background);
-  border: 1px solid var(--ngp-border);
   padding: --spacing(1);
-  border-radius: var(--radius-xl);
   outline: none;
   position: absolute;
   animation: popover-show 0.1s ease-out;
-  width: var(--ngp-combobox-width);
   min-width: fit-content;
-  box-shadow: var(--ngp-shadow-lg);
   box-sizing: border-box;
-  margin-top: --spacing(1);
-  max-height: --spacing(60);
   overflow-y: auto;
   z-index: 1001;
+  border-radius: var(--radius-xl);
+  margin-top: --spacing(1);
+  max-height: --spacing(60);
+  width: var(--ngp-combobox-width);
+  box-shadow: var(--ngp-shadow-lg);
+  background-color: var(--ngp-background);
+  border: 1px solid var(--ngp-border);
 
   @variant data-enter {
     animation: combobox-show 200ms ease-out;
@@ -73,17 +73,17 @@
 @utility mgnp-combobox-option {
   display: flex;
   align-items: center;
+  cursor: pointer;
+  width: 100%;
+  box-sizing: border-box;
   gap: --spacing(2);
   padding-block: --spacing(1.5);
   padding-inline: --spacing(3);
-  cursor: pointer;
-  border-radius: var(--radius-lg);
-  width: 100%;
   height: --spacing(9);
+  border-radius: var(--radius-lg);
   font-size: var(--text-sm);
   line-height: var(--text-sm--line-height);
   color: var(--ngp-text-primary);
-  box-sizing: border-box;
 
   @variant data-hover {
     background-color: var(--ngp-background-hover);
