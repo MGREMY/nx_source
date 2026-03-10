@@ -7,18 +7,10 @@ import { NgpTooltip, NgpTooltipTrigger } from 'ng-primitives/tooltip';
 @Component({
   imports: [NgpTooltipTrigger, NgpTooltip, MgnpButton, MgnpTooltip],
   template: `
-    <button
-      [ngpTooltipTrigger]="tooltip"
-      mgnpButton>
-      Hover me
-    </button>
+    <button [ngpTooltipTrigger]="tooltip" mgnpButton>Hover me</button>
 
     <ng-template #tooltip>
-      <div
-        ngpTooltip
-        mgnpTooltip>
-        Tooltip content
-      </div>
+      <div ngpTooltip mgnpTooltip>Tooltip content</div>
     </ng-template>
   `,
 })
