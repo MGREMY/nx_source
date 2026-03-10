@@ -129,14 +129,14 @@
 @theme {
   /* Tailwind */
   /* Background */
-  --background-color-avatar: rgb(--mg-background-avatar);
+  --background-color-avatar: var(--mg-background-avatar);
   /* UI */
   --background-color-ui: var(--mg-background-ui);
   --background-color-ui-secondary: var(--mg-background-ui-secondary);
-  --background-color-ui-hover: var(--mg-background-ui--hover);
-  --background-color-ui-active: var(--mg-background-ui--active);
-  --background-color-ui-inverse: var(--mg-background-ui--inverse);
-  --background-color-ui-disabled: var(--mg-background-ui--disabled);
+  --background-color-ui-hover: var(--mg-background-ui-hover);
+  --background-color-ui-active: var(--mg-background-ui-active);
+  --background-color-ui-inverse: var(--mg-background-ui-inverse);
+  --background-color-ui-disabled: var(--mg-background-ui-disabled);
   /* Primary */
   --background-color-primary: var(--mg-background-primary);
   --background-color-primary-hover: var(--mg-background-primary-hover);
@@ -209,9 +209,9 @@
   --border-color-avatar: var(--mg-border-avatar);
 
   /* UI */
-  --divide-color-ui: var(--color-mg-border-ui);
-  --divide-color-ui-secondary: var(--color-mg-border-ui-secondary);
-  --divide-color-ui-hover: var(--color-mg-border-ui-hover);
+  --divide-color-ui: var(--mg-border-ui);
+  --divide-color-ui-secondary: var(--mg-border-ui-secondary);
+  --divide-color-ui-hover: var(--mg-border-ui-hover);
   --divide-color-ui-inverse: var(--mg-border-ui-inverse);
   /* Primary */
   --divide-color-primary: var(--mg-border-primary);
@@ -239,7 +239,7 @@
   --divide-color-danger-inverse: var(--mg-border-danger-inverse);
 
   --divide-color-emphasis: var(--mg-border-emphasis);
-  --divide-color-avatar: rgb(--mg-border-avatar);
+  --divide-color-avatar: var(--mg-border-avatar);
 
   /* Text */
   /* UI */
