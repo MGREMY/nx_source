@@ -32,7 +32,7 @@ import { codeToHtml } from 'shiki';
               class="w-16 rounded-md px-2 py-1.5 text-xs font-medium outline-hidden hover:cursor-pointer border-ui-secondary"
               [ngClass]="{
                 'bg-ui text-ui shadow-xs border': mode() === 'preview',
-                'text-tertiary hover:text-ui': mode() !== 'preview',
+                'text-ui-tertiary hover:text-ui': mode() !== 'preview',
               }"
               (click)="mode.set('preview')">
               Preview
@@ -41,7 +41,7 @@ import { codeToHtml } from 'shiki';
               class="w-16 rounded-md px-2 py-1.5 text-xs font-medium outline-hidden hover:cursor-pointer border-ui-secondary"
               [ngClass]="{
                 'bg-ui text-ui shadow-xs border': mode() === 'source',
-                'text-tertiary hover:text-ui': mode() !== 'source',
+                'text-ui-tertiary hover:text-ui': mode() !== 'source',
               }"
               (click)="mode.set('source')">
               Source

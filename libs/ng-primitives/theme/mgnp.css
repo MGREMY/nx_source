@@ -245,6 +245,7 @@
   /* UI */
   --text-color-ui: var(--mg-text-ui);
   --text-color-ui-secondary: var(--mg-text-ui-secondary);
+  --text-color-ui-tertiary: var(--mg-text-ui-tertiary);
   --text-color-ui-disabled: var(--mg-text-ui-disabled);
   /* Primary */
   --text-color-primary: var(--mg-text-primary);
