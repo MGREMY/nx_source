@@ -18,7 +18,7 @@ const options = [
 const error = new Error(`MgnpButton must be used with ${options.join(' / ')}`);
 
 export type MgnpButtonColor = PropertyType<
-  'primary' | 'secondary' | 'info' | 'success' | 'warning' | 'danger'
+  'ui' | 'primary' | 'secondary' | 'info' | 'success' | 'warning' | 'danger'
 >;
 export type MgnpButtonVariant = PropertyType<'solid'>;
 
@@ -46,7 +46,7 @@ export class MgnpButton {
   protected readonly ngpTooltipTrigger = inject(NgpTooltipTrigger, { optional: true });
   protected readonly ngpAccordionTrigger = inject(NgpAccordionTrigger, { optional: true });
 
-  readonly color = input<MgnpButtonColor | undefined>();
+  readonly color = input<MgnpButtonColor>('ui');
   readonly variant = input<MgnpButtonVariant>('solid');
 
   constructor() {

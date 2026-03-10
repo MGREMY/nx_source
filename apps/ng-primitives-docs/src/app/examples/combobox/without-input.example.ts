@@ -35,7 +35,7 @@ import {
     </div>
   `,
 })
-export default class ComboboxExample {
+export default class WithoutInputExample {
   readonly options = ['option 1', 'option 2', 'option 3'];
   readonly selectedOption = signal<string>('');
 }

@@ -66,6 +66,7 @@ import { NgpButton } from 'ng-primitives/button';
             <a
               ngpButton
               mgnpButton
+              color="secondary"
               href="https://github.com/MGREMY/nx_source"
               target="_blank"
               rel="noopener noreferrer">
@@ -74,6 +75,7 @@ import { NgpButton } from 'ng-primitives/button';
             <a
               ngpButton
               mgnpButton
+              color="secondary"
               href="https://www.npmjs.com/package/@mgremy/ng-primitives"
               target="_blank"
               rel="noopener noreferrer">
