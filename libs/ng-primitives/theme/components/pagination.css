@@ -16,7 +16,6 @@
     align-items: center;
     justify-content: center;
     outline-style: none;
-    transition: background-color 200ms ease-in-out;
     width: --spacing(8);
     height: --spacing(8);
     border-radius: var(--radius-lg);

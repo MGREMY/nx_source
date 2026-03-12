@@ -20,7 +20,7 @@ const error = new Error(`MgnpButton must be used with ${options.join(' / ')}`);
 export type MgnpButtonColor = PropertyType<
   'ui' | 'primary' | 'secondary' | 'info' | 'success' | 'warning' | 'danger'
 >;
-export type MgnpButtonVariant = PropertyType<'solid'>;
+export type MgnpButtonVariant = PropertyType<'solid' | 'outline'>;
 
 @Directive({
   selector: `[ngpButton][mgnpButton],

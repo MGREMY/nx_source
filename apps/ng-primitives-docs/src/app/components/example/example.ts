@@ -27,7 +27,7 @@ import { codeToHtml } from 'shiki';
         <div class="flex items-center gap-x-2">
           <!-- Preview/Source Toggle -->
           <div
-            class="rounded-lg bg-ui-secondary p-0.5 leading-6 border border-ui *:transition-colors *:duration-200 *:ease-in-out">
+            class="rounded-lg bg-ui-secondary p-0.5 leading-6 border border-ui">
             <button
               class="w-16 rounded-md px-2 py-1.5 text-xs font-medium outline-hidden hover:cursor-pointer border-ui-secondary"
               [ngClass]="{
@@ -52,7 +52,7 @@ import { codeToHtml } from 'shiki';
         <div class="flex gap-x-2">
           <!-- Style Selector -->
           @if (availableNames().length > 1) {
-            <div class="relative hidden sm:block **:transition-colors duration-200 ease-in-out">
+            <div class="relative hidden sm:block">
               <select
                 class="appearance-none rounded-md bg-ui text-ui border-ui-secondary border px-3 py-2 pr-8 text-xs font-medium shadow-xs hover:cursor-pointer outline-hidden focus-visible:z-10"
                 aria-label="Select example style"

@@ -24,7 +24,7 @@ import { filter } from 'rxjs/operators';
         @for (link of links(); track link.id) {
           <li>
             <button
-              class="block h-8 cursor-pointer items-center truncate rounded-lg py-1.5 text-ui-secondary hover:text-emphasis "
+              class="block h-8 cursor-pointer items-center truncate rounded-lg py-1.5 text-ui-secondary hover:text-emphasis"
               [class.pl-4]="link.level === 3"
               (click)="scrollTo(link.id)">
               {{ link.text }}

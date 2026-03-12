@@ -14,11 +14,11 @@
   color: var(--text-ui-secondary);
 
   @variant data-open {
-    animation: accordion-show 200ms ease-in-out forwards;
+    animation: accordion-show var(--default-transition-duration) var(--default-transition-timing-function) forwards;
   }
 
   @variant data-closed {
-    animation: accordion-hide 200ms ease-in-out forwards;
+    animation: accordion-hide var(--default-transition-duration) var(--default-transition-timing-function) forwards;
   }
 }
 
@@ -45,6 +45,7 @@
   outline: none;
   border: none;
   box-shadow: none;
+  background-color: transparent;
   font-weight: var(--font-weight-medium);
   padding-left: --spacing(4);
   padding-right: --spacing(4);
@@ -53,16 +54,11 @@
   height: --spacing(11);
   border-radius: --spacing(3);
   color: var(--ngp-text-primary);
-  background-color: var(--ngp-background);
 
   @variant data-focus-visible {
     overflow: hidden;
     font-size: --spacing(3.5);
     color: var(--ngp-text-secondary);
-  }
-
-  ng-icon {
-    transition: transform 200ms ease-in-out;
   }
 
   @variant data-open {

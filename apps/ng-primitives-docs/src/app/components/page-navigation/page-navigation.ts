@@ -18,7 +18,7 @@ import { filter } from 'rxjs';
         aria-label="Page navigation">
         @if (previous(); as prev) {
           <a
-            class="group flex flex-1 flex-col items-start gap-1 rounded-lg border border-ui px-4 py-3 transition-colors hover:border-hoverc hover:bg-hover"
+            class="group flex flex-1 flex-col items-start gap-1 rounded-lg border border-ui px-4 py-3 hover:border-ui-hover hover:bg-ui-hover"
             [routerLink]="'/' + prev.path">
             <span class="flex items-center gap-1.5 text-xs text-ui-tertiary">
               <ng-icon
@@ -36,7 +36,7 @@ import { filter } from 'rxjs';
 
         @if (next(); as nxt) {
           <a
-            class="group flex flex-1 flex-col items-end gap-1 rounded-lg border border-ui px-4 py-3 transition-colors hover:border-hoverc hover:bg-hover"
+            class="group flex flex-1 flex-col items-end gap-1 rounded-lg border border-ui px-4 py-3 hover:border-ui-hover hover:bg-ui-hover"
             [routerLink]="'/' + nxt.path">
             <span class="flex items-center gap-1.5 text-xs text-ui-tertiary">
               Next

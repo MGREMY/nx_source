@@ -8,6 +8,7 @@ import { NgpButton } from 'ng-primitives/button';
   template: `
     <button ngpButton disabled mgnpButton>Default</button>
     <button ngpButton disabled mgnpButton color="primary">Primary</button>
+    <button ngpButton disabled mgnpButton color="secondary">Secondary</button>
     <button ngpButton disabled mgnpButton color="success">Success</button>
     <button ngpButton disabled mgnpButton color="warning">Warning</button>
     <button ngpButton disabled mgnpButton color="danger">Danger</button>

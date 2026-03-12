@@ -4,7 +4,6 @@
   height: fit-content;
   width: max-content;
   cursor: pointer;
-  transition: background-color 200ms ease-in-out;
   font-weight: var(--font-weight-medium);
   border-radius: var(--radius-lg);
   padding-block: --spacing(2);
@@ -25,8 +24,9 @@
   /* Solid */
   @variant data-[mgnp-variant=solid] {
     /* Colors */
-
     @variant data-[mgnp-color=ui] {
+      --ngp-background: var(--mg-background-ui);
+
       @variant data-hover {
         --ngp-background: var(--ngp-background-hover);
       }
@@ -105,6 +105,80 @@
 
       @variant data-press {
         --ngp-background: var(--mg-background-danger-active);
+      }
+    }
+  }
+
+  /* Outline */
+  @variant data-[mgnp-variant=outline] {
+    --ngp-background: transparent;
+    --ngp-text-primary: var(--mg-text-ui);
+
+    /* Colors */
+    @variant data-[mgnp-color=ui] {
+      @variant data-hover {
+        --ngp-background: var(--mg-background-ui-inverse);
+        --ngp-text-primary: var(--mg-text-inverse);
+      }
+    }
+
+    @variant data-[mgnp-color=primary] {
+      @variant not-data-hover {
+        --ngp-text-primary: var(--mg-text-primary);
+      }
+
+      @variant data-hover {
+        --ngp-background: var(--mg-background-primary);
+      }
+    }
+
+    @variant data-[mgnp-color=secondary] {
+      @variant not-data-hover {
+        --ngp-text-primary: var(--mg-text-secondary);
+      }
+
+      @variant data-hover {
+        --ngp-background: var(--mg-background-secondary);
+      }
+    }
+
+    @variant data-[mgnp-color=info] {
+      @variant not-data-hover {
+        --ngp-text-primary: var(--mg-text-info);
+      }
+
+      @variant data-hover {
+        --ngp-background: var(--mg-background-info);
+      }
+    }
+
+    @variant data-[mgnp-color=success] {
+      @variant not-data-hover {
+        --ngp-text-primary: var(--mg-text-success);
+      }
+
+      @variant data-hover {
+        --ngp-background: var(--mg-background-success);
+      }
+    }
+
+    @variant data-[mgnp-color=warning] {
+      @variant not-data-hover {
+        --ngp-text-primary: var(--mg-text-warning);
+      }
+
+      @variant data-hover {
+        --ngp-background: var(--mg-background-warning);
+      }
+    }
+
+    @variant data-[mgnp-color=danger] {
+      @variant not-data-hover {
+        --ngp-text-primary: var(--mg-text-danger);
+      }
+
+      @variant data-hover {
+        --ngp-background: var(--mg-background-danger);
       }
     }
   }

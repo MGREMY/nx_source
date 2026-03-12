@@ -10,43 +10,43 @@
   --mg-background-ui-secondary: var(--color-stone-100);
   --mg-background-ui-hover: var(--color-stone-100);
   --mg-background-ui-active: var(--color-stone-200);
-  --mg-background-ui-inverse: var(--color-stone-950);
+  --mg-background-ui-inverse: var(--color-stone-900);
   --mg-background-ui-disabled: var(--color-stone-100);
   /* Primary */
   --mg-background-primary: var(--color-blue-400);
   --mg-background-primary-hover: var(--color-blue-500);
   --mg-background-primary-active: var(--color-blue-600);
-  --mg-background-primary-inverse: var(--color-blue-950);
+  --mg-background-primary-inverse: var(--color-blue-900);
   --mg-background-primary-disabled: var(--color-blue-100);
   /* Secondary */
   --mg-background-secondary: var(--color-emerald-400);
   --mg-background-secondary-hover: var(--color-emerald-500);
   --mg-background-secondary-active: var(--color-emerald-600);
-  --mg-background-secondary-inverse: var(--color-emerald-950);
+  --mg-background-secondary-inverse: var(--color-emerald-900);
   --mg-background-secondary-disabled: var(--color-emerald-100);
   /* Info */
   --mg-background-info: var(--color-blue-400);
   --mg-background-info-hover: var(--color-blue-500);
   --mg-background-info-active: var(--color-blue-600);
-  --mg-background-info-inverse: var(--color-blue-950);
+  --mg-background-info-inverse: var(--color-blue-900);
   --mg-background-info-disabled: var(--color-blue-100);
   /* Success */
   --mg-background-success: var(--color-green-400);
   --mg-background-success-hover: var(--color-green-500);
   --mg-background-success-active: var(--color-green-600);
-  --mg-background-success-inverse: var(--color-green-950);
+  --mg-background-success-inverse: var(--color-green-900);
   --mg-background-success-disabled: var(--color-green-100);
   /* Warning */
   --mg-background-warning: var(--color-yellow-400);
   --mg-background-warning-hover: var(--color-yellow-500);
   --mg-background-warning-active: var(--color-yellow-600);
-  --mg-background-warning-inverse: var(--color-yellow-950);
+  --mg-background-warning-inverse: var(--color-yellow-900);
   --mg-background-warning-disabled: var(--color-yellow-100);
   /* Danger */
   --mg-background-danger: var(--color-red-400);
   --mg-background-danger-hover: var(--color-red-500);
   --mg-background-danger-active: var(--color-red-600);
-  --mg-background-danger-inverse: var(--color-red-950);
+  --mg-background-danger-inverse: var(--color-red-900);
   --mg-background-danger-disabled: var(--color-red-100);
 
   /* Border */
@@ -54,31 +54,31 @@
   --mg-border-ui: var(--color-stone-300);
   --mg-border-ui-secondary: var(--color-stone-200);
   --mg-border-ui-hover: var(--color-stone-100);
-  --mg-border-ui-inverse: var(--color-black);
+  --mg-border-ui-inverse: var(--color-stone-700);
   /* Primary */
   --mg-border-primary: var(--color-blue-300);
   --mg-border-primary-hover: var(--color-blue-100);
-  --mg-border-primary-inverse: var(--color-black);
+  --mg-border-primary-inverse: var(--color-blue-300);
   /* Secondary */
   --mg-border-secondary: var(--color-emerald-300);
   --mg-border-secondary-hover: var(--color-emerald-100);
-  --mg-border-secondary-inverse: var(--color-black);
+  --mg-border-secondary-inverse: var(--color-emerald-300);
   /* Info */
   --mg-border-info: var(--color-blue-500);
   --mg-border-info-hover: var(--color-blue-300);
-  --mg-border-info-inverse: var(--color-black);
+  --mg-border-info-inverse: var(--color-blue-500);
   /* Success */
   --mg-border-success: var(--color-green-300);
   --mg-border-success-hover: var(--color-green-100);
-  --mg-border-success-inverse: var(--color-black);
+  --mg-border-success-inverse: var(--color-green-300);
   /* Warning */
   --mg-border-warning: var(--color-yellow-300);
   --mg-border-warning-hover: var(--color-yellow-100);
-  --mg-border-warning-inverse: var(--color-black);
+  --mg-border-warning-inverse: var(--color-yellow-300);
   /* Danger */
   --mg-border-danger: var(--color-red-300);
   --mg-border-danger-hover: var(--color-red-100);
-  --mg-border-danger-inverse: var(--color-black);
+  --mg-border-danger-inverse: var(--color-red-300);
 
   --mg-border-emphasis: var(--color-blue-400);
   --mg-border-avatar: var(--color-white);
@@ -124,6 +124,8 @@
 
   /* Other */
   --mg-ring-ui: rgb(59, 130, 246);
+  --mg-default-transition-duration: 250ms;
+  --mg-default-transition-timing-function: var(--ease-in-out);
 }
 
 @theme {
@@ -281,52 +283,54 @@
   /* Other */
   --ring-color-ui: var(--mg-ring-ui);
   --ring-offset-color-ui: var(--mg-ring-ui);
+  --default-transition-duration: var(--mg-default-transition-duration);
+  --default-transition-timing-function: var(--mg-default-transition-timing-function);
 }
 
 @layer base {
   @variant dark {
     /* Background */
     /* UI */
-    --mg-background-ui: var(--color-stone-950);
-    --mg-background-ui-secondary: var(--color-stone-900);
-    --mg-background-ui-hover: var(--color-stone-900);
-    --mg-background-ui-active: var(--color-stone-800);
+    --mg-background-ui: var(--color-stone-900);
+    --mg-background-ui-secondary: var(--color-stone-800);
+    --mg-background-ui-hover: var(--color-stone-800);
+    --mg-background-ui-active: var(--color-stone-700);
     --mg-background-ui-inverse: var(--color-stone-50);
     --mg-background-ui-disabled: var(--color-stone-900);
     /* Primary */
-    --mg-background-primary: var(--color-blue-950);
-    --mg-background-primary-hover: var(--color-blue-900);
-    --mg-background-primary-active: var(--color-blue-800);
+    --mg-background-primary: var(--color-blue-900);
+    --mg-background-primary-hover: var(--color-blue-800);
+    --mg-background-primary-active: var(--color-blue-700);
     --mg-background-primary-inverse: var(--color-blue-50);
     --mg-background-primary-disabled: var(--color-blue-900);
     /* Secondary */
-    --mg-background-secondary: var(--color-emerald-950);
-    --mg-background-secondary-hover: var(--color-emerald-900);
-    --mg-background-secondary-active: var(--color-emerald-800);
+    --mg-background-secondary: var(--color-emerald-900);
+    --mg-background-secondary-hover: var(--color-emerald-800);
+    --mg-background-secondary-active: var(--color-emerald-700);
     --mg-background-secondary-inverse: var(--color-emerald-50);
     --mg-background-secondary-disabled: var(--color-emerald-900);
     /* Info */
-    --mg-background-info: var(--color-blue-950);
-    --mg-background-info-hover: var(--color-blue-900);
-    --mg-background-info-active: var(--color-blue-800);
+    --mg-background-info: var(--color-blue-900);
+    --mg-background-info-hover: var(--color-blue-800);
+    --mg-background-info-active: var(--color-blue-700);
     --mg-background-info-inverse: var(--color-blue-50);
     --mg-background-info-disabled: var(--color-blue-900);
     /* Success */
-    --mg-background-success: var(--color-green-950);
-    --mg-background-success-hover: var(--color-green-900);
-    --mg-background-success-active: var(--color-green-800);
+    --mg-background-success: var(--color-green-900);
+    --mg-background-success-hover: var(--color-green-800);
+    --mg-background-success-active: var(--color-green-700);
     --mg-background-success-inverse: var(--color-green-50);
     --mg-background-success-disabled: var(--color-green-900);
     /* Warning */
-    --mg-background-warning: var(--color-yellow-950);
-    --mg-background-warning-hover: var(--color-yellow-900);
-    --mg-background-warning-active: var(--color-yellow-800);
+    --mg-background-warning: var(--color-yellow-900);
+    --mg-background-warning-hover: var(--color-yellow-800);
+    --mg-background-warning-active: var(--color-yellow-700);
     --mg-background-warning-inverse: var(--color-yellow-50);
     --mg-background-warning-disabled: var(--color-yellow-900);
     /* Danger */
-    --mg-background-danger: var(--color-red-950);
-    --mg-background-danger-hover: var(--color-red-900);
-    --mg-background-danger-active: var(--color-red-800);
+    --mg-background-danger: var(--color-red-900);
+    --mg-background-danger-hover: var(--color-red-800);
+    --mg-background-danger-active: var(--color-red-700);
     --mg-background-danger-inverse: var(--color-red-50);
     --mg-background-danger-disabled: var(--color-red-900);
 
@@ -334,34 +338,34 @@
 
     /* Border */
     /* UI */
-    --mg-border-ui: var(--color-stone-800);
-    --mg-border-ui-secondary: var(--color-stone-700);
-    --mg-border-ui-hover: var(--color-stone-100);
-    --mg-border-ui-inverse: var(--color-white);
+    --mg-border-ui: var(--color-stone-700);
+    --mg-border-ui-secondary: var(--color-stone-800);
+    --mg-border-ui-hover: var(--color-stone-400);
+    --mg-border-ui-inverse: var(--color-stone-300);
     /* Primary */
     --mg-border-primary: var(--color-blue-300);
     --mg-border-primary-hover: var(--color-blue-100);
-    --mg-border-primary-inverse: var(--color-white);
+    --mg-border-primary-inverse: var(--color-blue-300);
     /* Secondary */
     --mg-border-secondary: var(--color-emerald-300);
     --mg-border-secondary-hover: var(--color-emerald-100);
-    --mg-border-secondary-inverse: var(--color-white);
+    --mg-border-secondary-inverse: var(--color-emerald-300);
     /* Info */
     --mg-border-info: var(--color-blue-500);
     --mg-border-info-hover: var(--color-blue-300);
-    --mg-border-info-inverse: var(--color-white);
+    --mg-border-info-inverse: var(--color-blue-500);
     /* Success */
     --mg-border-success: var(--color-green-300);
     --mg-border-success-hover: var(--color-green-100);
-    --mg-border-success-inverse: var(--color-white);
+    --mg-border-success-inverse: var(--color-green-300);
     /* Warning */
     --mg-border-warning: var(--color-yellow-300);
     --mg-border-warning-hover: var(--color-yellow-100);
-    --mg-border-warning-inverse: var(--color-white);
+    --mg-border-warning-inverse: var(--color-yellow-300);
     /* Danger */
     --mg-border-danger: var(--color-red-300);
     --mg-border-danger-hover: var(--color-red-100);
-    --mg-border-danger-inverse: var(--color-white);
+    --mg-border-danger-inverse: var(--color-red-300);
 
     --mg-border-emphasis: var(--color-blue-800);
     --mg-border-avatar: rgb(63, 63, 70);

@@ -37,10 +37,10 @@ import { RouterLink, RouterLinkActive } from '@angular/router';
               @for (link of section.links; track link) {
                 <li class="text-ui-secondary hover:text-emphasis">
                   <a
-                    class="relative flex h-10 items-center border-l border-ui px-4 outline-hidden transition-colors focus-visible:ring-2 focus-visible:ring-ui"
+                    class="relative flex h-10 items-center border-l border-ui px-4 outline-hidden focus-visible:ring-2 focus-visible:ring-ui"
                     (click)="isOpen.set(false)"
                     [routerLink]="link.link"
-                    routerLinkActive="text-active font-medium before:w-0.5 before:bg-blue before:rounded-lg before:h-6 before:absolute before:left-0 before:-translate-x-1/2">
+                    routerLinkActive="text-active font-medium before:w-0.5 before:bg-primary before:rounded-lg before:h-6 before:absolute before:left-0 before:-translate-x-1/2">
                     @if (link.icon) {
                       <ng-icon
                         class="mr-2 text-base text-ui-secondary"

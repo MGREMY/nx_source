@@ -48,7 +48,6 @@
   padding: --spacing(1);
   outline: none;
   position: absolute;
-  animation: popover-show 0.1s ease-out;
   min-width: fit-content;
   box-sizing: border-box;
   overflow-y: auto;
@@ -62,11 +61,11 @@
   border: 1px solid var(--ngp-border);
 
   @variant data-enter {
-    animation: combobox-show 200ms ease-out;
+    animation: combobox-show var(--default-transition-duration) var(--default-transition-timing-function);
   }
 
   @variant data-exit {
-    animation: combobox-hide 200ms ease-out;
+    animation: combobox-hide var(--default-transition-duration) var(--default-transition-timing-function);
   }
 }
 
