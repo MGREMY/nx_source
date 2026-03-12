@@ -1,3 +1,13 @@
+## 0.5.0
+
+### 🚀 Features
+
+- **ng-primitives:** add variants ([#6](https://github.com/MGREMY/nx_source/pull/6))
+
+### ❤️ Thank You
+
+- MGREMY @MGREMY
+
 ## 0.4.0
 
 ### 🚀 Features
