@@ -3,33 +3,32 @@
   display: flex;
   flex-direction: column;
   width: max-content;
+  padding: --spacing(1);
+  border-radius: var(--radius-lg);
   background: var(--ngp-background);
   border: 1px solid var(--ngp-border);
   box-shadow: var(--ngp-shadow-lg);
-  border-radius: var(--radius-lg);
-  padding: --spacing(1);
   transform-origin: var(--ngp-menu-transform-origin);
 
   @variant data-enter {
-    animation: menu-show 200ms ease-out;
+    animation: menu-show var(--default-transition-duration) var(--default-transition-timing-function);
   }
 
   @variant data-exit {
-    animation: menu-hide 200ms ease-out;
+    animation: menu-hide var(--default-transition-duration) var(--default-transition-timing-function);
   }
 }
 
 @utility mgnp-menu-item {
-  padding-block: --spacing(1.5);
-  padding-inline: --spacing(3.5);
   border: none;
   background: none;
   cursor: pointer;
-  transition: background-color 200ms;
-  border-radius: var(--radius-sm);
-  min-width: --spacing(30);
   text-align: start;
   outline: none;
+  padding-block: --spacing(1.5);
+  padding-inline: --spacing(3.5);
+  min-width: --spacing(30);
+  border-radius: var(--radius-sm);
   font-size: var(--text-sm);
   line-height: var(--text-sm--line-height);
 
@@ -42,8 +41,8 @@
   }
 
   @variant data-focus-visible {
-    outline: 2px solid var(--ngp-focus-ring);
     z-index: 1;
+    outline: 2px solid var(--ngp-focus-ring);
   }
 
   @variant data-disabled {

@@ -9,16 +9,16 @@
 }
 
 @utility mgnp-accordion-content {
-  font-size: --spacing(3.5);
-  color: var(--ngp-text-secondary);
   overflow: hidden;
+  font-size: --spacing(3.5);
+  color: var(--ngo-text-secondary);
 
   @variant data-open {
-    animation: accordion-show 200ms ease-in-out forwards;
+    animation: accordion-show var(--default-transition-duration) var(--default-transition-timing-function) forwards;
   }
 
   @variant data-closed {
-    animation: accordion-hide 200ms ease-in-out forwards;
+    animation: accordion-hide var(--default-transition-duration) var(--default-transition-timing-function) forwards;
   }
 }
 
@@ -39,30 +39,26 @@
 
 @utility mgnp-accordion-trigger {
   display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  outline: none;
+  border: none;
+  box-shadow: none;
+  background-color: transparent;
+  font-weight: var(--font-weight-medium);
   padding-left: --spacing(4);
   padding-right: --spacing(4);
   font-size: --spacing(3.5);
   line-height: --spacing(5);
-  font-weight: var(--font-weight-medium);
-  justify-content: space-between;
-  align-items: center;
-  width: 100%;
   height: --spacing(11);
   border-radius: --spacing(3);
-  outline: none;
   color: var(--ngp-text-primary);
-  background-color: var(--ngp-background);
-  border: none;
-  box-shadow: none;
 
   @variant data-focus-visible {
+    overflow: hidden;
     font-size: --spacing(3.5);
     color: var(--ngp-text-secondary);
-    overflow: hidden;
-  }
-
-  ng-icon {
-    transition: transform 200ms ease-in-out;
   }
 
   @variant data-open {

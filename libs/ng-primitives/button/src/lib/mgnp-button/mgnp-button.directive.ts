@@ -1,4 +1,6 @@
-import { Directive, inject } from '@angular/core';
+import { PropertyType } from '@mgremy/ng-primitives';
+
+import { Directive, inject, input } from '@angular/core';
 import { NgpAccordionTrigger } from 'ng-primitives/accordion';
 import { NgpButton } from 'ng-primitives/button';
 import { NgpComboboxButton } from 'ng-primitives/combobox';
@@ -15,12 +17,22 @@ const options = [
 
 const error = new Error(`MgnpButton must be used with ${options.join(' / ')}`);
 
+export type MgnpButtonColor = PropertyType<
+  'ui' | 'primary' | 'secondary' | 'info' | 'success' | 'warning' | 'danger'
+>;
+export type MgnpButtonVariant = PropertyType<'solid' | 'outline'>;
+
 @Directive({
-  selector:
-    '[ngpButton][mgnpButton], [ngpComboboxButton][mgnpButton], [ngpMenuTrigger][mgnpButton], [ngpTooltipTrigger][mgnpButton], [ngpAccordionTrigger][mgnpButton]',
+  selector: `[ngpButton][mgnpButton],
+    [ngpComboboxButton][mgnpButton],
+    [ngpMenuTrigger][mgnpButton],
+    [ngpTooltipTrigger][mgnpButton],
+    [ngpAccordionTrigger][mgnpButton]`,
   standalone: true,
   host: {
     'data-mgnp-component': 'mgnp-button',
+    '[attr.data-mgnp-color]': 'color() || null',
+    '[attr.data-mgnp-variant]': 'variant() || null',
   },
 })
 export class MgnpButton {
@@ -33,6 +45,9 @@ export class MgnpButton {
   });
   protected readonly ngpTooltipTrigger = inject(NgpTooltipTrigger, { optional: true });
   protected readonly ngpAccordionTrigger = inject(NgpAccordionTrigger, { optional: true });
+
+  readonly color = input<MgnpButtonColor>('ui');
+  readonly variant = input<MgnpButtonVariant>('solid');
 
   constructor() {
     if (

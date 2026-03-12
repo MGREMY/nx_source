@@ -31,28 +31,12 @@ import {
     MgnpButton,
   ],
   template: `
-    <div
-      ngpCombobox
-      mgnpCombobox
-      [(ngpComboboxValue)]="selectedOption">
-      <input
-        ngpComboboxInput
-        mgnpComboboxInput
-        [value]="selectedOption()" />
-      <button
-        ngpComboboxButton
-        mgnpButton>
-        ▼
-      </button>
-      <div
-        *ngpComboboxPortal
-        ngpComboboxDropdown
-        mgnpComboboxDropdown>
+    <div ngpCombobox mgnpCombobox [(ngpComboboxValue)]="selectedOption">
+      <input ngpComboboxInput mgnpComboboxInput [value]="selectedOption()" />
+      <button ngpComboboxButton mgnpButton>▼</button>
+      <div *ngpComboboxPortal ngpComboboxDropdown mgnpComboboxDropdown>
         @for (option of options; track option) {
-          <div
-            ngpComboboxOption
-            mgnpComboboxOption
-            [ngpComboboxOptionValue]="option">
+          <div ngpComboboxOption mgnpComboboxOption [ngpComboboxOptionValue]="option">
             {{ option }}
           </div>
         }

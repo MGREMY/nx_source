@@ -27,21 +27,21 @@ import { codeToHtml } from 'shiki';
         <div class="flex items-center gap-x-2">
           <!-- Preview/Source Toggle -->
           <div
-            class="rounded-lg bg-secondary p-0.5 leading-6 border border-ui *:transition-colors *:duration-200 *:ease-in-out">
+            class="rounded-lg bg-ui-secondary p-0.5 leading-6 border border-ui">
             <button
-              class="w-16 rounded-md px-2 py-1.5 text-xs font-medium outline-hidden hover:cursor-pointer border-secondary"
+              class="w-16 rounded-md px-2 py-1.5 text-xs font-medium outline-hidden hover:cursor-pointer border-ui-secondary"
               [ngClass]="{
                 'bg-ui text-ui shadow-xs border': mode() === 'preview',
-                'text-tertiary hover:text-ui': mode() !== 'preview',
+                'text-ui-tertiary hover:text-ui': mode() !== 'preview',
               }"
               (click)="mode.set('preview')">
               Preview
             </button>
             <button
-              class="w-16 rounded-md px-2 py-1.5 text-xs font-medium outline-hidden hover:cursor-pointer border-secondary"
+              class="w-16 rounded-md px-2 py-1.5 text-xs font-medium outline-hidden hover:cursor-pointer border-ui-secondary"
               [ngClass]="{
                 'bg-ui text-ui shadow-xs border': mode() === 'source',
-                'text-tertiary hover:text-ui': mode() !== 'source',
+                'text-ui-tertiary hover:text-ui': mode() !== 'source',
               }"
               (click)="mode.set('source')">
               Source
@@ -52,9 +52,9 @@ import { codeToHtml } from 'shiki';
         <div class="flex gap-x-2">
           <!-- Style Selector -->
           @if (availableNames().length > 1) {
-            <div class="relative hidden sm:block **:transition-colors duration-200 ease-in-out">
+            <div class="relative hidden sm:block">
               <select
-                class="appearance-none rounded-md bg-ui text-ui border-secondary border px-3 py-2 pr-8 text-xs font-medium shadow-xs hover:cursor-pointer outline-hidden focus-visible:z-10"
+                class="appearance-none rounded-md bg-ui text-ui border-ui-secondary border px-3 py-2 pr-8 text-xs font-medium shadow-xs hover:cursor-pointer outline-hidden focus-visible:z-10"
                 aria-label="Select example style"
                 [ngModel]="selectedName()">
                 @for (name of availableNames(); track name) {
@@ -83,7 +83,7 @@ import { codeToHtml } from 'shiki';
       <div class="relative mt-10 w-full flex-1">
         @if (mode() === 'preview') {
           <div
-            class="not-prose flex h-full min-h-70 w-full p-8 items-center justify-center rounded-xl border border-ui bg-secondary *:contents">
+            class="not-prose flex h-full min-h-70 w-full p-8 items-center justify-center rounded-xl border border-ui bg-ui-secondary *:contents">
             <ng-container [ngComponentOutlet]="selectedExample()" />
           </div>
         }

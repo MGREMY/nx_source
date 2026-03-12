@@ -28,22 +28,22 @@ import { RouterLink, RouterLinkActive } from '@angular/router';
             <h2 class="mb-4 flex items-center gap-2 text-sm font-semibold text-ui">
               @if (sectionIcons[section.title]) {
                 <ng-icon
-                  class="text-base text-secondary"
+                  class="text-base text-ui-secondary"
                   [name]="sectionIcons[section.title]" />
               }
               {{ section.title }}
             </h2>
             <ul>
               @for (link of section.links; track link) {
-                <li class="text-secondary hover:text-emphasis">
+                <li class="text-ui-secondary hover:text-emphasis">
                   <a
-                    class="relative flex h-10 items-center border-l border-ui px-4 outline-hidden transition-colors focus-visible:ring-2 focus-visible:ring-ui"
+                    class="relative flex h-10 items-center border-l border-ui px-4 outline-hidden focus-visible:ring-2 focus-visible:ring-ui"
                     (click)="isOpen.set(false)"
                     [routerLink]="link.link"
-                    routerLinkActive="text-active font-medium before:w-0.5 before:bg-blue before:rounded-lg before:h-6 before:absolute before:left-0 before:-translate-x-1/2">
+                    routerLinkActive="text-active font-medium before:w-0.5 before:bg-primary before:rounded-lg before:h-6 before:absolute before:left-0 before:-translate-x-1/2">
                     @if (link.icon) {
                       <ng-icon
-                        class="mr-2 text-base text-secondary"
+                        class="mr-2 text-base text-ui-secondary"
                         [name]="link.icon" />
                     }
                     {{ link.name }}

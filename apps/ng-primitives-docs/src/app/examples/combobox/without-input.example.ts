@@ -1,9 +1,5 @@
 import { MgnpButton } from '@mgremy/ng-primitives/button';
-import {
-  MgnpCombobox,
-  MgnpComboboxDropdown,
-  MgnpComboboxOption,
-} from '@mgremy/ng-primitives/combobox';
+import { MgnpCombobox, MgnpComboboxDropdown, MgnpComboboxOption } from '@mgremy/ng-primitives/combobox';
 
 import { Component, signal } from '@angular/core';
 import {
@@ -27,24 +23,11 @@ import {
     MgnpButton,
   ],
   template: `
-    <div
-      ngpCombobox
-      mgnpCombobox
-      [(ngpComboboxValue)]="selectedOption">
-      <button
-        ngpComboboxButton
-        mgnpButton>
-        {{ selectedOption() || 'Select an option' }} ▼
-      </button>
-      <div
-        *ngpComboboxPortal
-        ngpComboboxDropdown
-        mgnpComboboxDropdown>
+    <div ngpCombobox mgnpCombobox [(ngpComboboxValue)]="selectedOption">
+      <button ngpComboboxButton mgnpButton>{{ selectedOption() || 'Select an option' }} ▼</button>
+      <div *ngpComboboxPortal ngpComboboxDropdown mgnpComboboxDropdown>
         @for (option of options; track option) {
-          <div
-            ngpComboboxOption
-            mgnpComboboxOption
-            [ngpComboboxOptionValue]="option">
+          <div ngpComboboxOption mgnpComboboxOption [ngpComboboxOptionValue]="option">
             {{ option }}
           </div>
         }
@@ -52,7 +35,7 @@ import {
     </div>
   `,
 })
-export default class ComboboxExample {
+export default class WithoutInputExample {
   readonly options = ['option 1', 'option 2', 'option 3'];
   readonly selectedOption = signal<string>('');
 }

@@ -7,31 +7,13 @@ import { NgpMenu, NgpMenuItem, NgpMenuTrigger } from 'ng-primitives/menu';
 @Component({
   imports: [NgpMenu, NgpMenuTrigger, NgpMenuItem, MgnpButton, MgnpMenu, MgnpMenuItem],
   template: `
-    <button
-      [ngpMenuTrigger]="menu"
-      mgnpButton>
-      Open menu
-    </button>
+    <button [ngpMenuTrigger]="menu" mgnpButton>Open menu</button>
 
     <ng-template #menu>
-      <div
-        ngpMenu
-        mgnpMenu>
-        <button
-          ngpMenuItem
-          mgnpMenuItem>
-          Item 1
-        </button>
-        <button
-          ngpMenuItem
-          mgnpMenuItem>
-          Item 2
-        </button>
-        <button
-          ngpMenuItem
-          mgnpMenuItem>
-          Item 3
-        </button>
+      <div ngpMenu mgnpMenu>
+        <button ngpMenuItem mgnpMenuItem>Item 1</button>
+        <button ngpMenuItem mgnpMenuItem>Item 2</button>
+        <button ngpMenuItem mgnpMenuItem>Item 3</button>
       </div>
     </ng-template>
   `,

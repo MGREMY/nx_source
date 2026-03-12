@@ -1,32 +1,186 @@
 @utility mgnp-button {
   display: inline-block;
-  padding-block: --spacing(2);
-  padding-inline: --spacing(4);
-  border-radius: var(--radius-lg);
-  color: var(--ngp-text-primary);
   border: none;
-  font-weight: var(--font-weight-medium);
   height: fit-content;
   width: max-content;
-  background-color: var(--ngp-background);
-  transition: background-color 200ms ease-in-out;
-  box-shadow: var(--ngp-button-shadow);
   cursor: pointer;
-
-  @variant data-hover {
-    background-color: var(--ngp-background-hover);
-  }
+  font-weight: var(--font-weight-medium);
+  border-radius: var(--radius-lg);
+  padding-block: --spacing(2);
+  padding-inline: --spacing(4);
+  color: var(--ngp-text-primary);
+  background-color: var(--ngp-background);
+  box-shadow: var(--ngp-button-shadow);
 
   @variant data-focus-visible {
     outline: 2px solid var(--ngp-focus-ring);
   }
 
-  @variant data-press {
-    background-color: var(--ngp-background-active);
-  }
-
   @variant data-disabled {
     opacity: 50%;
+    cursor: default;
+  }
+
+  /* Solid */
+  @variant data-[mgnp-variant=solid] {
+    /* Colors */
+    @variant data-[mgnp-color=ui] {
+      --ngp-background: var(--mg-background-ui);
+
+      @variant data-hover {
+        --ngp-background: var(--ngp-background-hover);
+      }
+
+      @variant data-press {
+        --ngp-background: var(--ngp-background-active);
+      }
+    }
+
+    @variant data-[mgnp-color=primary] {
+      --ngp-background: var(--mg-background-primary);
+
+      @variant data-hover {
+        --ngp-background: var(--mg-background-primary-hover);
+      }
+
+      @variant data-press {
+        --ngp-background: var(--mg-background-primary-active);
+      }
+    }
+
+    @variant data-[mgnp-color=secondary] {
+      --ngp-background: var(--mg-background-secondary);
+
+      @variant data-hover {
+        --ngp-background: var(--mg-background-secondary-hover);
+      }
+
+      @variant data-press {
+        --ngp-background: var(--mg-background-secondary-active);
+      }
+    }
+
+    @variant data-[mgnp-color=info] {
+      --ngp-background: var(--mg-background-info);
+
+      @variant data-hover {
+        --ngp-background: var(--mg-background-info-hover);
+      }
+
+      @variant data-press {
+        --ngp-background: var(--mg-background-info-active);
+      }
+    }
+
+    @variant data-[mgnp-color=success] {
+      --ngp-background: var(--mg-background-success);
+
+      @variant data-hover {
+        --ngp-background: var(--mg-background-success-hover);
+      }
+
+      @variant data-press {
+        --ngp-background: var(--mg-background-success-active);
+      }
+    }
+
+    @variant data-[mgnp-color=warning] {
+      --ngp-background: var(--mg-background-warning);
+
+      @variant data-hover {
+        --ngp-background: var(--mg-background-warning-hover);
+      }
+
+      @variant data-press {
+        --ngp-background: var(--mg-background-warning-active);
+      }
+    }
+
+    @variant data-[mgnp-color=danger] {
+      --ngp-background: var(--mg-background-danger);
+
+      @variant data-hover {
+        --ngp-background: var(--mg-background-danger-hover);
+      }
+
+      @variant data-press {
+        --ngp-background: var(--mg-background-danger-active);
+      }
+    }
+  }
+
+  /* Outline */
+  @variant data-[mgnp-variant=outline] {
+    --ngp-background: transparent;
+    --ngp-text-primary: var(--mg-text-ui);
+
+    /* Colors */
+    @variant data-[mgnp-color=ui] {
+      @variant data-hover {
+        --ngp-background: var(--mg-background-ui-inverse);
+        --ngp-text-primary: var(--mg-text-inverse);
+      }
+    }
+
+    @variant data-[mgnp-color=primary] {
+      @variant not-data-hover {
+        --ngp-text-primary: var(--mg-text-primary);
+      }
+
+      @variant data-hover {
+        --ngp-background: var(--mg-background-primary);
+      }
+    }
+
+    @variant data-[mgnp-color=secondary] {
+      @variant not-data-hover {
+        --ngp-text-primary: var(--mg-text-secondary);
+      }
+
+      @variant data-hover {
+        --ngp-background: var(--mg-background-secondary);
+      }
+    }
+
+    @variant data-[mgnp-color=info] {
+      @variant not-data-hover {
+        --ngp-text-primary: var(--mg-text-info);
+      }
+
+      @variant data-hover {
+        --ngp-background: var(--mg-background-info);
+      }
+    }
+
+    @variant data-[mgnp-color=success] {
+      @variant not-data-hover {
+        --ngp-text-primary: var(--mg-text-success);
+      }
+
+      @variant data-hover {
+        --ngp-background: var(--mg-background-success);
+      }
+    }
+
+    @variant data-[mgnp-color=warning] {
+      @variant not-data-hover {
+        --ngp-text-primary: var(--mg-text-warning);
+      }
+
+      @variant data-hover {
+        --ngp-background: var(--mg-background-warning);
+      }
+    }
+
+    @variant data-[mgnp-color=danger] {
+      @variant not-data-hover {
+        --ngp-text-primary: var(--mg-text-danger);
+      }
+
+      @variant data-hover {
+        --ngp-background: var(--mg-background-danger);
+      }
+    }
   }
 }
 

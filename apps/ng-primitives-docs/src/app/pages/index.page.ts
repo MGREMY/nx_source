@@ -45,8 +45,7 @@ import { NgpButton } from 'ng-primitives/button';
           </div>
         </div>
       </nav>
-      <div
-        class="transition-colors duration-200 ease-in-out bg-(--mg-border-emphasis) absolute inset-x-0 h-0.5"></div>
+      <div class="bg-(--mg-border-emphasis) absolute inset-x-0 h-0.5"></div>
     </header>
 
     <main class="overflow-hidden mt-16 p-4 md:max-w-6xl md:mx-auto">
@@ -56,16 +55,18 @@ import { NgpButton } from 'ng-primitives/button';
           <p class="px-4 font-semibold text-lg sm:text-3xl">Styled wrappers for ng-primitives</p>
         </div>
         <div class="flex flex-col sm:flex-row items-center gap-16">
-          <button
+          <a
             ngpButton
             mgnpButton
             [routerLink]="['/', 'getting-started', 'introduction']">
             Get Started
-          </button>
+          </a>
           <div class="flex gap-4">
             <a
               ngpButton
               mgnpButton
+              color="secondary"
+              variant="outline"
               href="https://github.com/MGREMY/nx_source"
               target="_blank"
               rel="noopener noreferrer">
@@ -74,6 +75,8 @@ import { NgpButton } from 'ng-primitives/button';
             <a
               ngpButton
               mgnpButton
+              color="secondary"
+              variant="outline"
               href="https://www.npmjs.com/package/@mgremy/ng-primitives"
               target="_blank"
               rel="noopener noreferrer">
