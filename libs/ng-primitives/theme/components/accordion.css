@@ -11,7 +11,7 @@
 @utility mgnp-accordion-content {
   overflow: hidden;
   font-size: --spacing(3.5);
-  color: var(--text-ui-secondary);
+  color: var(--ngo-text-secondary);
 
   @variant data-open {
     animation: accordion-show var(--default-transition-duration) var(--default-transition-timing-function) forwards;

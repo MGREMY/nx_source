@@ -90,23 +90,23 @@
   --mg-text-ui-tertiary: var(--color-stone-500);
   --mg-text-ui-disabled: var(--color-stone-400);
   /* Primary */
-  --mg-text-primary: var(--color-blue-500);
-  --mg-text-primary-disabled: var(--color-blue-300);
+  --mg-text-primary: var(--color-blue-800);
+  --mg-text-primary-disabled: var(--color-blue-400);
   /* Secondary */
-  --mg-text-secondary: var(--color-emerald-500);
-  --mg-text-secondary-disabled: var(--color-emerald-300);
+  --mg-text-secondary: var(--color-emerald-800);
+  --mg-text-secondary-disabled: var(--color-emerald-400);
   /* Info */
-  --mg-text-info: var(--color-blue-500);
-  --mg-text-info-disabled: var(--color-blue-300);
+  --mg-text-info: var(--color-blue-800);
+  --mg-text-info-disabled: var(--color-blue-400);
   /* Success */
-  --mg-text-success: var(--color-green-500);
-  --mg-text-success-disabled: var(--color-green-300);
+  --mg-text-success: var(--color-green-800);
+  --mg-text-success-disabled: var(--color-green-400);
   /* Warning */
-  --mg-text-warning: var(--color-yellow-500);
-  --mg-text-warning-disabled: var(--color-yellow-300);
+  --mg-text-warning: var(--color-yellow-800);
+  --mg-text-warning-disabled: var(--color-yellow-400);
   /* Danger */
-  --mg-text-danger: var(--color-red-500);
-  --mg-text-danger-disabled: var(--color-red-300);
+  --mg-text-danger: var(--color-red-800);
+  --mg-text-danger-disabled: var(--color-red-400);
 
   --mg-text-inverse: var(--color-white);
   --mg-text-active: var(--color-blue-400);
