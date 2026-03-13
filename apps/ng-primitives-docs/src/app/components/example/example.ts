@@ -26,8 +26,7 @@ import { codeToHtml } from 'shiki';
       <div class="absolute inset-x-0 top-0 flex items-center justify-between gap-x-2">
         <div class="flex items-center gap-x-2">
           <!-- Preview/Source Toggle -->
-          <div
-            class="rounded-lg bg-ui-secondary p-0.5 leading-6 border border-ui">
+          <div class="rounded-lg bg-ui-secondary p-0.5 leading-6 border border-ui">
             <button
               class="w-16 rounded-md px-2 py-1.5 text-xs font-medium outline-hidden hover:cursor-pointer border-ui-secondary"
               [ngClass]="{
@@ -56,11 +55,9 @@ import { codeToHtml } from 'shiki';
               <select
                 class="appearance-none rounded-md bg-ui text-ui border-ui-secondary border px-3 py-2 pr-8 text-xs font-medium shadow-xs hover:cursor-pointer outline-hidden focus-visible:z-10"
                 aria-label="Select example style"
-                [ngModel]="selectedName()">
+                [(ngModel)]="selectedName">
                 @for (name of availableNames(); track name) {
-                  <option
-                    (click)="selectedName.set(name)"
-                    [value]="name">
+                  <option [value]="name">
                     {{ name }}
                   </option>
                 }
