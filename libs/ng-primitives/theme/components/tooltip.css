@@ -37,11 +37,11 @@
 
 @layer base {
   [mgnpTooltip][data-mgnp-component='mgnp-tooltip'] {
-    @apply mgnp-tooltip;
+    @apply mgnp-tooltip transition;
   }
 
   [mgnpTooltipArrow][data-mgnp-component='mgnp-tooltip-arrow'] {
-    @apply mgnp-tooltip-arrow;
+    @apply mgnp-tooltip-arrow transition;
   }
 }
 

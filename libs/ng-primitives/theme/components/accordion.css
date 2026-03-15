@@ -11,7 +11,7 @@
 @utility mgnp-accordion-content {
   overflow: hidden;
   font-size: --spacing(3.5);
-  color: var(--ngo-text-secondary);
+  color: var(--ngp-text-secondary);
 
   @variant data-open {
     animation: accordion-show var(--default-transition-duration) var(--default-transition-timing-function) forwards;
@@ -61,6 +61,10 @@
     color: var(--ngp-text-secondary);
   }
 
+  ng-icon {
+    transition: transform var(--default-transition-duration) var(--default-transition-timing-function);
+  }
+
   @variant data-open {
     ng-icon {
       transform: rotate(180deg);
@@ -70,19 +74,19 @@
 
 @layer base {
   [mgnpAccordion][data-mgnp-component='mgnp-accordion'] {
-    @apply mgnp-accordion;
+    @apply mgnp-accordion transition;
   }
 
   [mgnpAccordionContent][data-mgnp-component='mgnp-accordion-content'] {
-    @apply mgnp-accordion-content;
+    @apply mgnp-accordion-content transition;
   }
 
   [mgnpAccordionItem][data-mgnp-component='mgnp-accordion-item'] {
-    @apply mgnp-accordion-item;
+    @apply mgnp-accordion-item transition;
   }
 
   [ngpAccordionTrigger][mgnpButton][data-mgnp-component='mgnp-button'] {
-    @apply mgnp-accordion-trigger;
+    @apply mgnp-accordion-trigger transition;
   }
 }
 

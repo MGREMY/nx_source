@@ -214,6 +214,6 @@
 
 @layer base {
   [mgnpButton][data-mgnp-component='mgnp-button'] {
-    @apply mgnp-button;
+    @apply mgnp-button transition;
   }
 }

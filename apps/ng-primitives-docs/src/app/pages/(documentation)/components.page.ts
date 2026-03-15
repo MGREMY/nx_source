@@ -19,7 +19,7 @@ import { RouterOutlet } from '@angular/router';
         <div class="w-full max-w-full">
           <div class="max-w-3xl mx-auto">
             <p
-              class="from-(--mg-text-primary) to-(--mg-text-emphasis) mt-0 mb-2 inline-block bg-linear-to-r bg-clip-text text-sm font-medium">
+              class="from-(--mg-text-primary) to-(--mg-text-emphasis) transition-colors mt-0 mb-2 inline-block bg-linear-to-r bg-clip-text text-sm font-medium">
               Components
             </p>
             <router-outlet />

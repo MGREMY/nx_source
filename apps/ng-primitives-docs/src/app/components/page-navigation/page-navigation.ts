@@ -14,19 +14,19 @@ import { filter } from 'rxjs';
   template: `
     @if (previous() || next()) {
       <nav
-        class="not-prose mt-12 flex items-stretch gap-4 border-t border-ui pt-6"
+        class="not-prose mt-12 flex items-stretch gap-4 border-t border-ui pt-6 transition-colors"
         aria-label="Page navigation">
         @if (previous(); as prev) {
           <a
-            class="group flex flex-1 flex-col items-start gap-1 rounded-lg border border-ui px-4 py-3 hover:border-ui-hover hover:bg-ui-hover"
+            class="group flex flex-1 flex-col items-start gap-1 rounded-lg border border-ui px-4 py-3 hover:border-ui-hover hover:bg-ui-hover transition-colors"
             [routerLink]="'/' + prev.path">
-            <span class="flex items-center gap-1.5 text-xs text-ui-tertiary">
+            <span class="flex items-center gap-1.5 text-xs text-ui-tertiary transition-colors">
               <ng-icon
                 class="text-sm"
                 name="heroArrowLeft" />
               Previous
             </span>
-            <span class="text-sm font-medium text-ui">
+            <span class="text-sm font-medium text-ui transition-colors">
               {{ prev.name }}
             </span>
           </a>
@@ -36,15 +36,15 @@ import { filter } from 'rxjs';
 
         @if (next(); as nxt) {
           <a
-            class="group flex flex-1 flex-col items-end gap-1 rounded-lg border border-ui px-4 py-3 hover:border-ui-hover hover:bg-ui-hover"
+            class="group flex flex-1 flex-col items-end gap-1 rounded-lg border border-ui px-4 py-3 hover:border-ui-hover hover:bg-ui-hover transition-colors"
             [routerLink]="'/' + nxt.path">
-            <span class="flex items-center gap-1.5 text-xs text-ui-tertiary">
+            <span class="flex items-center gap-1.5 text-xs text-ui-tertiary transition-colors">
               Next
               <ng-icon
                 class="text-sm"
                 name="heroArrowRight" />
             </span>
-            <span class="text-sm font-medium text-ui">
+            <span class="text-sm font-medium text-ui transition-colors">
               {{ nxt.name }}
             </span>
           </a>
