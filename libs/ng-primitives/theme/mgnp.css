@@ -11,42 +11,49 @@
   --mg-background-ui-hover: var(--color-stone-100);
   --mg-background-ui-active: var(--color-stone-200);
   --mg-background-ui-inverse: var(--color-stone-900);
+  --mg-background-ui-inverse-active: var(--color-stone-700);
   --mg-background-ui-disabled: var(--color-stone-100);
   /* Primary */
   --mg-background-primary: var(--color-blue-400);
   --mg-background-primary-hover: var(--color-blue-500);
   --mg-background-primary-active: var(--color-blue-600);
   --mg-background-primary-inverse: var(--color-blue-900);
+  --mg-background-primary-inverse-active: var(--color-blue-700);
   --mg-background-primary-disabled: var(--color-blue-100);
   /* Secondary */
   --mg-background-secondary: var(--color-emerald-400);
   --mg-background-secondary-hover: var(--color-emerald-500);
   --mg-background-secondary-active: var(--color-emerald-600);
   --mg-background-secondary-inverse: var(--color-emerald-900);
+  --mg-background-secondary-inverse-active: var(--color-emerald-700);
   --mg-background-secondary-disabled: var(--color-emerald-100);
   /* Info */
   --mg-background-info: var(--color-blue-400);
   --mg-background-info-hover: var(--color-blue-500);
   --mg-background-info-active: var(--color-blue-600);
   --mg-background-info-inverse: var(--color-blue-900);
+  --mg-background-info-inverse-active: var(--color-blue-700);
   --mg-background-info-disabled: var(--color-blue-100);
   /* Success */
   --mg-background-success: var(--color-green-400);
   --mg-background-success-hover: var(--color-green-500);
   --mg-background-success-active: var(--color-green-600);
   --mg-background-success-inverse: var(--color-green-900);
+  --mg-background-success-inverse-active: var(--color-green-700);
   --mg-background-success-disabled: var(--color-green-100);
   /* Warning */
   --mg-background-warning: var(--color-yellow-400);
   --mg-background-warning-hover: var(--color-yellow-500);
   --mg-background-warning-active: var(--color-yellow-600);
   --mg-background-warning-inverse: var(--color-yellow-900);
+  --mg-background-warning-inverse-active: var(--color-yellow-700);
   --mg-background-warning-disabled: var(--color-yellow-100);
   /* Danger */
   --mg-background-danger: var(--color-red-400);
   --mg-background-danger-hover: var(--color-red-500);
   --mg-background-danger-active: var(--color-red-600);
   --mg-background-danger-inverse: var(--color-red-900);
+  --mg-background-danger-inverse-active: var(--color-red-700);
   --mg-background-danger-disabled: var(--color-red-100);
 
   /* Border */
@@ -138,6 +145,7 @@
   --background-color-ui-hover: var(--mg-background-ui-hover);
   --background-color-ui-active: var(--mg-background-ui-active);
   --background-color-ui-inverse: var(--mg-background-ui-inverse);
+  --background-color-ui-inverse-active: var(--mg-background-ui-inverse-active);
   --background-color-ui-disabled: var(--mg-background-ui-disabled);
   /* Primary */
   --background-color-primary: var(--mg-background-primary);
@@ -296,42 +304,49 @@
     --mg-background-ui-hover: var(--color-stone-800);
     --mg-background-ui-active: var(--color-stone-700);
     --mg-background-ui-inverse: var(--color-stone-50);
+    --mg-background-ui-inverse-active: var(--color-stone-200);
     --mg-background-ui-disabled: var(--color-stone-900);
     /* Primary */
     --mg-background-primary: var(--color-blue-900);
     --mg-background-primary-hover: var(--color-blue-800);
     --mg-background-primary-active: var(--color-blue-700);
     --mg-background-primary-inverse: var(--color-blue-50);
+    --mg-background-primary-inverse-active: var(--color-blue-600);
     --mg-background-primary-disabled: var(--color-blue-900);
     /* Secondary */
     --mg-background-secondary: var(--color-emerald-900);
     --mg-background-secondary-hover: var(--color-emerald-800);
     --mg-background-secondary-active: var(--color-emerald-700);
     --mg-background-secondary-inverse: var(--color-emerald-50);
+    --mg-background-secondary-inverse-active: var(--color-emerald-600);
     --mg-background-secondary-disabled: var(--color-emerald-900);
     /* Info */
     --mg-background-info: var(--color-blue-900);
     --mg-background-info-hover: var(--color-blue-800);
     --mg-background-info-active: var(--color-blue-700);
     --mg-background-info-inverse: var(--color-blue-50);
+    --mg-background-info-inverse-active: var(--color-blue-600);
     --mg-background-info-disabled: var(--color-blue-900);
     /* Success */
     --mg-background-success: var(--color-green-900);
     --mg-background-success-hover: var(--color-green-800);
     --mg-background-success-active: var(--color-green-700);
     --mg-background-success-inverse: var(--color-green-50);
+    --mg-background-success-inverse-active: var(--color-green-600);
     --mg-background-success-disabled: var(--color-green-900);
     /* Warning */
     --mg-background-warning: var(--color-yellow-900);
     --mg-background-warning-hover: var(--color-yellow-800);
     --mg-background-warning-active: var(--color-yellow-700);
     --mg-background-warning-inverse: var(--color-yellow-50);
+    --mg-background-warning-inverse-active: var(--color-yellow-600);
     --mg-background-warning-disabled: var(--color-yellow-900);
     /* Danger */
     --mg-background-danger: var(--color-red-900);
     --mg-background-danger-hover: var(--color-red-800);
     --mg-background-danger-active: var(--color-red-700);
     --mg-background-danger-inverse: var(--color-red-50);
+    --mg-background-danger-inverse-active: var(--color-red-600);
     --mg-background-danger-disabled: var(--color-red-900);
 
     --mg-background-avatar: rgb(24, 24, 27);

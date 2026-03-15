@@ -120,6 +120,10 @@
         --ngp-background: var(--mg-background-ui-inverse);
         --ngp-text-primary: var(--mg-text-inverse);
       }
+
+      @variant data-press {
+        --ngp-background: var(--mg-background-ui-inverse-active);
+      }
     }
 
     @variant data-[mgnp-color=primary] {
@@ -129,6 +133,10 @@
 
       @variant data-hover {
         --ngp-background: var(--mg-background-primary);
+      }
+
+      @variant data-press {
+        --ngp-background: var(--mg-background-primary-inverse-active);
       }
     }
 
@@ -140,6 +148,10 @@
       @variant data-hover {
         --ngp-background: var(--mg-background-secondary);
       }
+
+      @variant data-press {
+        --ngp-background: var(--mg-background-secondary-inverse-active);
+      }
     }
 
     @variant data-[mgnp-color=info] {
@@ -149,6 +161,10 @@
 
       @variant data-hover {
         --ngp-background: var(--mg-background-info);
+      }
+
+      @variant data-press {
+        --ngp-background: var(--mg-background-info-inverse-active);
       }
     }
 
@@ -160,6 +176,10 @@
       @variant data-hover {
         --ngp-background: var(--mg-background-success);
       }
+
+      @variant data-press {
+        --ngp-background: var(--mg-background-success-inverse-active);
+      }
     }
 
     @variant data-[mgnp-color=warning] {
@@ -170,6 +190,10 @@
       @variant data-hover {
         --ngp-background: var(--mg-background-warning);
       }
+
+      @variant data-press {
+        --ngp-background: var(--mg-background-warning-inverse-active);
+      }
     }
 
     @variant data-[mgnp-color=danger] {
@@ -179,6 +203,10 @@
 
       @variant data-hover {
         --ngp-background: var(--mg-background-danger);
+      }
+
+      @variant data-press {
+        --ngp-background: var(--mg-background-danger-inverse-active);
       }
     }
   }

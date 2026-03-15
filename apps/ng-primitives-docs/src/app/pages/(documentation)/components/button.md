@@ -13,6 +13,13 @@ focus.
 
 <app-example name="button"></app-example>
 
+## Attributes
+
+| name    | possible values                                                                          | description      |
+| ------- | ---------------------------------------------------------------------------------------- | ---------------- |
+| color   | **ui** / **primary** / **secondary** / **into** / **success** / **warning** / **danger** | define the color |
+| variant | **solid** / **outline**                                                                  | define the style |
+
 ## Theme
 
 <app-file-content name="button"></app-file-content>

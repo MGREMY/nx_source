@@ -1,14 +1,27 @@
 import { getNgPrimitivesCssContent } from '../../utils/file-content-loader';
 
-import { AsyncPipe } from '@angular/common';
-import { ChangeDetectionStrategy, Component, computed, inject, input } from '@angular/core';
+import { AsyncPipe, NgClass } from '@angular/common';
+import { ChangeDetectionStrategy, Component, computed, inject, input, signal } from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
 import { BundledLanguage, BundledTheme, CodeToHastOptions, codeToHtml } from 'shiki';
 
 @Component({
   selector: 'app-file-content',
-  imports: [AsyncPipe],
-  template: `<div [innerHTML]="sanitizedContent() | async"></div>`,
+  imports: [AsyncPipe, NgClass],
+  template: `
+    <div
+      class="*:pb-0 *:mb-0 *:mt-0"
+      [ngClass]="{
+        'max-h-48 overflow-y-clip': isOpen() === false,
+        'max-h-128 overflow-y-auto': isOpen() === true,
+      }"
+      [innerHTML]="sanitizedContent() | async"></div>
+    <button
+      class="w-full items-center h-8 bg-ui-hover hover:cursor-pointer"
+      (click)="isOpen.set(!isOpen())">
+      {{ isOpen() === false ? 'Show all' : 'Collapse' }}
+    </button>
+  `,
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class FileContent {
@@ -16,6 +29,8 @@ export class FileContent {
 
   readonly name = input.required<string>();
   readonly type = input<'ng-primitives-css'>('ng-primitives-css');
+
+  readonly isOpen = signal(false);
 
   readonly language = computed(() => {
     switch (this.type()) {
