@@ -25,6 +25,6 @@ export default class ToastExample {
   private readonly ngpToastManager = inject(NgpToastManager);
 
   show(toast: TemplateRef<void>): void {
-    this.ngpToastManager.show(toast, { placement: 'bottom-end', duration: 100000 });
+    this.ngpToastManager.show(toast, { placement: 'bottom-end' });
   }
 }
