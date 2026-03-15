@@ -103,23 +103,23 @@
 
 @layer base {
   [mgnpCombobox][data-mgnp-component='mgnp-combobox'] {
-    @apply mgnp-combobox;
+    @apply mgnp-combobox transition;
   }
 
   [mgnpComboboxInput][data-mgnp-component='mgnp-combobox-input'] {
-    @apply mgnp-combobox-input;
+    @apply mgnp-combobox-input transition;
   }
 
   [ngpComboboxButton][mgnpButton][data-mgnp-component='mgnp-button'] {
-    @apply mgnp-combobox-button;
+    @apply mgnp-combobox-button transition;
   }
 
   [mgnpComboboxDropdown][data-mgnp-component='mgnp-combobox-dropdown'] {
-    @apply mgnp-combobox-dropdown;
+    @apply mgnp-combobox-dropdown transition;
   }
 
   [mgnpComboboxOption][data-mgnp-component='mgnp-combobox-option'] {
-    @apply mgnp-combobox-option;
+    @apply mgnp-combobox-option transition;
   }
 }
 

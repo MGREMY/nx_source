@@ -52,11 +52,11 @@
 
 @layer base {
   [mgnpMenu][data-mgnp-component='mgnp-menu'] {
-    @apply mgnp-menu;
+    @apply mgnp-menu transition;
   }
 
   [mgnpMenuItem][data-mgnp-component='mgnp-menu-item'] {
-    @apply mgnp-menu-item;
+    @apply mgnp-menu-item transition;
   }
 }
 

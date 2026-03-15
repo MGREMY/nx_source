@@ -37,27 +37,12 @@
     padding-inline: --spacing(4);
     padding-block: --spacing(1);
     border-radius: var(--radius-lg);
-
-    @variant hover {
-      cursor: pointer;
-      background-color: var(--mg-background-hover);
-    }
+    cursor: pointer;
   }
 }
 
-@layer base {
-  .nav {
-    @apply nav;
-  }
-
-  .prose {
-    @apply doc-content;
-  }
-
-  .shiki,
-  .shiki span {
-    background-color: var(--mg-background-ui-secondary) !important;
-  }
+@utility shiki {
+  background-color: var(--mg-background-ui-secondary) !important;
 
   @variant dark {
     .shiki,
@@ -67,5 +52,20 @@
       font-weight: var(--shiki-dark-font-weight) !important;
       text-decoration: var(--shiki-dark-text-decoration) !important;
     }
+  }
+}
+
+@layer base {
+  .nav {
+    @apply nav transition-colors;
+  }
+
+  .prose {
+    @apply doc-content transition-colors;
+  }
+
+  .shiki,
+  .shiki span {
+    @apply shiki transition-colors;
   }
 }

@@ -25,25 +25,25 @@ import { RouterLink, RouterLinkActive } from '@angular/router';
         class="sticky top-16 flex h-[calc(100dvh-140px)] w-full flex-col gap-y-4 overflow-auto overscroll-contain md:h-max md:overflow-visible">
         @for (section of sections; track section.title) {
           <div class="mb-2">
-            <h2 class="mb-4 flex items-center gap-2 text-sm font-semibold text-ui">
+            <h2 class="mb-4 flex items-center gap-2 text-sm font-semibold text-ui transition-colors">
               @if (sectionIcons[section.title]) {
                 <ng-icon
-                  class="text-base text-ui-secondary"
+                  class="text-base text-ui-secondary transition-colors"
                   [name]="sectionIcons[section.title]" />
               }
               {{ section.title }}
             </h2>
             <ul>
               @for (link of section.links; track link) {
-                <li class="text-ui-secondary hover:text-emphasis">
+                <li class="text-ui-secondary hover:text-emphasis transition-colors">
                   <a
-                    class="relative flex h-10 items-center border-l border-ui px-4 outline-hidden focus-visible:ring-2 focus-visible:ring-ui"
+                    class="relative flex h-10 items-center border-l border-ui px-4 outline-hidden focus-visible:ring-2 focus-visible:ring-ui transition-colors"
                     (click)="isOpen.set(false)"
                     [routerLink]="link.link"
-                    routerLinkActive="text-active font-medium before:w-0.5 before:bg-primary before:rounded-lg before:h-6 before:absolute before:left-0 before:-translate-x-1/2">
+                    routerLinkActive="text-active font-medium before:w-0.5 before:bg-primary before:rounded-lg before:h-6 before:absolute before:left-0 before:-translate-x-1/2 before:transition-colors">
                     @if (link.icon) {
                       <ng-icon
-                        class="mr-2 text-base text-ui-secondary"
+                        class="mr-2 text-base text-ui-secondary transition-colors"
                         [name]="link.icon" />
                     }
                     {{ link.name }}

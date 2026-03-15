@@ -45,7 +45,7 @@ import { NgpButton } from 'ng-primitives/button';
           </div>
         </div>
       </nav>
-      <div class="bg-(--mg-border-emphasis) absolute inset-x-0 h-0.5"></div>
+      <div class="bg-(--mg-border-emphasis) transition-colors absolute inset-x-0 h-0.5"></div>
     </header>
 
     <main class="flex overflow-hidden mt-16 p-4 md:max-w-6xl md:mx-auto">

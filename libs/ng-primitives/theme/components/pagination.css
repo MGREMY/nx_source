@@ -4,65 +4,69 @@
     align-items: center;
     gap: --spacing(2);
   }
+}
 
-  [ngpPaginationFirst],
-  [ngpPaginationPrevious],
-  [ngpPaginationButton],
-  [ngpPaginationNext],
-  [ngpPaginationLast] {
-    all: unset;
-    display: flex;
-    cursor: pointer;
-    align-items: center;
-    justify-content: center;
-    outline-style: none;
-    width: --spacing(8);
-    height: --spacing(8);
-    border-radius: var(--radius-lg);
-    font-size: var(--text-sm);
-    font-weight: var(--font-weight-medium);
-    background-color: var(--ngp-background);
-    color: var(--ngp-text-primary);
-    box-shadow: var(--ngp-button-shadow);
+@utility mgnp-pagination-button {
+  all: unset;
+  display: flex;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  outline-style: none;
+  width: --spacing(8);
+  height: --spacing(8);
+  border-radius: var(--radius-lg);
+  font-size: var(--text-sm);
+  font-weight: var(--font-weight-medium);
+  background-color: var(--ngp-background);
+  color: var(--ngp-text-primary);
+  box-shadow: var(--ngp-button-shadow);
 
-    @variant data-hover {
-      @variant not-data-disabled {
-        @variant not-data-selected {
-          background-color: var(--ngp-background-hover);
-        }
+  @variant data-hover {
+    @variant not-data-disabled {
+      @variant not-data-selected {
+        background-color: var(--ngp-background-hover);
       }
     }
+  }
 
-    @variant data-focus-visible {
-      @variant not-data-disabled {
-        outline: 2px solid var(--ngp-focus-ring);
+  @variant data-focus-visible {
+    @variant not-data-disabled {
+      outline: 2px solid var(--ngp-focus-ring);
+    }
+  }
+
+  @variant data-press {
+    @variant not-data-disabled {
+      @variant not-data-selected {
+        background-color: var(--ngp-background-active);
       }
     }
+  }
 
-    @variant data-press {
-      @variant not-data-disabled {
-        @variant not-data-selected {
-          background-color: var(--ngp-background-active);
-        }
-      }
-    }
+  @variant data-disabled {
+    cursor: not-allowed;
+    color: #d2d2d2;
+    box-shadow: none;
+    background-color: var(--ngp-background-disabled);
+  }
 
-    @variant data-disabled {
-      cursor: not-allowed;
-      color: #d2d2d2;
-      box-shadow: none;
-      background-color: var(--ngp-background-disabled);
-    }
-
-    @variant data-selected {
-      background-color: var(--ngp-background-inverse);
-      color: var(--ngp-text-inverse);
-    }
+  @variant data-selected {
+    background-color: var(--ngp-background-inverse);
+    color: var(--ngp-text-inverse);
   }
 }
 
 @layer base {
   [ngpPagination][data-mgnp-component='mgnp-pagination'] {
-    @apply mgnp-pagination;
+    @apply mgnp-pagination transition;
+
+    [ngpPaginationFirst],
+    [ngpPaginationPrevious],
+    [ngpPaginationButton],
+    [ngpPaginationNext],
+    [ngpPaginationLast] {
+      @apply mgnp-pagination-button transition;
+    }
   }
 }

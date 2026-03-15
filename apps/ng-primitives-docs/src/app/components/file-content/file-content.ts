@@ -10,14 +10,14 @@ import { BundledLanguage, BundledTheme, CodeToHastOptions, codeToHtml } from 'sh
   imports: [AsyncPipe, NgClass],
   template: `
     <div
-      class="*:pb-0 *:mb-0 *:mt-0"
+      class="*:pb-0 *:mb-0 *:mt-0 transition-[max-height]"
       [ngClass]="{
         'max-h-48 overflow-y-clip': isOpen() === false,
         'max-h-128 overflow-y-auto': isOpen() === true,
       }"
       [innerHTML]="sanitizedContent() | async"></div>
     <button
-      class="w-full items-center h-8 bg-ui-hover hover:cursor-pointer"
+      class="w-full items-center h-8 bg-ui-hover hover:cursor-pointer transition-colors"
       (click)="isOpen.set(!isOpen())">
       {{ isOpen() === false ? 'Show all' : 'Collapse' }}
     </button>
