@@ -1,3 +1,13 @@
+## 0.6.0
+
+### 🚀 Features
+
+- **ng-primitives:** add toast ([#7](https://github.com/MGREMY/nx_source/pull/7))
+
+### ❤️ Thank You
+
+- MGREMY @MGREMY
+
 ## 0.5.0
 
 ### 🚀 Features
