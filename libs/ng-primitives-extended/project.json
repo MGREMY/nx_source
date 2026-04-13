@@ -11,7 +11,7 @@
       "fallbackCurrentVersionResolver": "disk"
     }
   },
-  "tags": ["ui ng-primitives tailwind tailwindcss"],
+  "tags": ["ui", "ng-primitives", "tailwind", "tailwindcss"],
   "targets": {
     "build": {
       "executor": "@nx/angular:package",
