@@ -15,9 +15,5 @@
     "tailwindcss": "^4.0.0"
   },
   "sideEffects": false,
-  "exports": {
-    "./theme*": {
-      "default": "./theme"
-    }
-  }
+  "style": "./theme/mgnp.css"
 }
