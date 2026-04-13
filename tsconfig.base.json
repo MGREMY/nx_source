@@ -20,13 +20,14 @@
       "@mgremy/ng-primitives/button": ["libs/ng-primitives/button/src/index.ts"],
       "@mgremy/ng-primitives/combobox": ["libs/ng-primitives/combobox/src/index.ts"],
       "@mgremy/ng-primitives/input": ["libs/ng-primitives/input/src/index.ts"],
-      "@mgremy/ng-primitives/loader": ["libs/ng-primitives/loader/src/index.ts"],
       "@mgremy/ng-primitives/menu": ["libs/ng-primitives/menu/src/index.ts"],
       "@mgremy/ng-primitives/navbar": ["libs/ng-primitives/navbar/src/index.ts"],
       "@mgremy/ng-primitives/pagination": ["libs/ng-primitives/pagination/src/index.ts"],
-      "@mgremy/ng-primitives/table": ["libs/ng-primitives/table/src/index.ts"],
       "@mgremy/ng-primitives/toast": ["libs/ng-primitives/toast/src/index.ts"],
       "@mgremy/ng-primitives/tooltip": ["libs/ng-primitives/tooltip/src/index.ts"],
+      "@mgremy/ng-primitives-extended": ["libs/ng-primitives-extended/src/index.ts"],
+      "@mgremy/ng-primitives-extended/loader": ["libs/ng-primitives-extended/loader/src/index.ts"],
+      "@mgremy/ng-primitives-extended/table": ["libs/ng-primitives-extended/table/src/index.ts"],
       "@mgremy/core": ["libs/core/src/index.ts"]
     }
   },
