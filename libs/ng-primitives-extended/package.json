@@ -1,5 +1,5 @@
 {
-  "name": "@mgremy/ng-primitives",
+  "name": "@mgremy/ng-primitives-extended",
   "version": "0.6.0",
   "license": "Apache-2.0",
   "homepage": "https://doc.mgremy.xyz/ng-primitives",
@@ -10,8 +10,8 @@
     "url": "https://github.com/MGREMY/nx_source"
   },
   "peerDependencies": {
+    "@angular/common": "^21.1.0",
     "@angular/core": "^21.1.0",
-    "ng-primitives": "^0.110.0",
     "tailwindcss": "^4.0.0"
   },
   "sideEffects": false,
