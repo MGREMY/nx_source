@@ -1,3 +1,13 @@
+## 0.7.0
+
+### 🚀 Features
+
+- **ng-primitives-extended:** create separate library ([#8](https://github.com/MGREMY/nx_source/pull/8))
+
+### ❤️ Thank You
+
+- MGREMY @MGREMY
+
 ## 0.6.0
 
 ### 🚀 Features
