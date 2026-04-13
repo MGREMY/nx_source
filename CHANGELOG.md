@@ -1,3 +1,13 @@
+## 0.7.1
+
+### 🩹 Fixes
+
+- **ng-primitives:** style import ([78772e6](https://github.com/MGREMY/nx_source/commit/78772e6))
+
+### ❤️ Thank You
+
+- GREMY Miguel @MGREMY
+
 ## 0.7.0
 
 ### 🚀 Features
