@@ -1,3 +1,13 @@
+## 0.8.0
+
+### 🚀 Features
+
+- **ng-primitives-extended:** add docs and add style to components ([#9](https://github.com/MGREMY/nx_source/pull/9))
+
+### ❤️ Thank You
+
+- MGREMY @MGREMY
+
 ## 0.7.2
 
 ### 🩹 Fixes
