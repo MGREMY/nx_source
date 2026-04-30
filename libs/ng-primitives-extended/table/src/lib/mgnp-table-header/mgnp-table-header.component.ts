@@ -4,9 +4,11 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
   selector: 'mgnp-table-header, tr[mgnpTableHeader]',
   imports: [],
   standalone: true,
-  templateUrl: './mgnp-table-header.component.html',
-  styleUrl: './mgnp-table-header.component.css',
+  template: '<ng-content />',
   providers: [],
   changeDetection: ChangeDetectionStrategy.OnPush,
+  host: {
+    'data-mgnp-component': 'mgnp-table-header',
+  },
 })
 export class MgnpTableHeader {}

@@ -5,7 +5,7 @@
   "prefix": "app",
   "sourceRoot": "apps/ng-primitives-docs/src",
   "tags": [],
-  "implicitDependencies": ["ng-primitives"],
+  "implicitDependencies": ["ng-primitives", "ng-primitives-extended"],
   "targets": {
     "build": {
       "executor": "@analogjs/platform:vite",

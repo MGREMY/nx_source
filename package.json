@@ -11,7 +11,8 @@
   },
   "private": true,
   "imports": {
-    "#mgnp.css": "./libs/ng-primitives/theme/mgnp.css"
+    "#mgnp.css": "./libs/ng-primitives/theme/mgnp.css",
+    "#mgnp-extended.css": "./libs/ng-primitives-extended/theme/style.css"
   },
   "dependencies": {
     "@analogjs/content": "^2.3.1",

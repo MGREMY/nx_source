@@ -1,5 +1,0 @@
-@reference "#mgnp.css";
-
-:host {
-  @apply font-semibold;
-}

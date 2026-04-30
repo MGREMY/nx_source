@@ -82,6 +82,7 @@ export class SidebarComponent {
   readonly sectionIcons: Record<string, string> = {
     'Getting Started': 'heroRocketLaunch',
     Components: 'heroBookmark',
+    Extended: 'heroBookmark',
   };
 
   readonly sections = Object.entries(getRouterLinks())
@@ -126,7 +127,7 @@ export class SidebarComponent {
     }, [])
     // sort so that getting started is always first
     .sort((a, b) => {
-      const order = ['Getting Started', 'Components'];
+      const order = ['Getting Started', 'Components', 'Extended'];
 
       // sort based on the order of the section titles
       return order.indexOf(a.title) - order.indexOf(b.title);

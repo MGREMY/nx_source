@@ -4,9 +4,11 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
   selector: 'mgnp-table-footer, tr[mgnpTableFooter]',
   imports: [],
   standalone: true,
-  templateUrl: './mgnp-table-footer.component.html',
-  styleUrl: './mgnp-table-footer.component.css',
+  template: '<ng-content />',
   providers: [],
   changeDetection: ChangeDetectionStrategy.OnPush,
+  host: {
+    'data-mgnp-component': 'mgnp-table-footer',
+  },
 })
 export class MgnpTableFooter {}
