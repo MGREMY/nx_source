@@ -16,6 +16,24 @@ export const getNgPrimitivesCssContent = (componentName: string) => {
   return '';
 };
 
+export const getNgPrimitivesExtendedCssContent = (componentName: string) => {
+  const results = import.meta.glob('../../../../../libs/ng-primitives-extended/theme/**/*.css', {
+    import: 'default',
+    query: '?raw',
+    eager: true,
+  });
+
+  for (const [path, content] of Object.entries(results)) {
+    const splitPath = path.split('/');
+
+    if (splitPath[splitPath.length - 1] === `${componentName}.css`) {
+      return content as string;
+    }
+  }
+
+  return '';
+};
+
 export const getExample = (componentName: string): { path: string; content: unknown }[] | null => {
   const results = import.meta.glob('../examples/**/*.example.ts', {
     import: 'default',

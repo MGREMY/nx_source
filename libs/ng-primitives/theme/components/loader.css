@@ -1,9 +1,0 @@
-@utility mgnp-loader {
-  place-self: center;
-}
-
-@layer base {
-  [data-mgnp-component='mgnp-loader'] {
-    @apply mgnp-loader;
-  }
-}

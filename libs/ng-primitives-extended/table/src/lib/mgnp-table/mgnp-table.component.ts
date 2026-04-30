@@ -5,10 +5,26 @@ import { ChangeDetectionStrategy, Component, input, TemplateRef } from '@angular
   selector: 'mgnp-table, table[mgnpTable]',
   imports: [NgTemplateOutlet],
   standalone: true,
-  templateUrl: './mgnp-table.component.html',
-  styleUrl: './mgnp-table.component.css',
+  template: `
+    <thead>
+      <ng-container [ngTemplateOutlet]="tableHeader()" />
+    </thead>
+    <tbody>
+      @for (item of data(); track $index) {
+        <ng-container
+          [ngTemplateOutlet]="tableBody()"
+          [ngTemplateOutletContext]="{ $implicit: item }" />
+      }
+    </tbody>
+    <tfoot>
+      <ng-container [ngTemplateOutlet]="tableFooter()" />
+    </tfoot>
+  `,
   providers: [],
   changeDetection: ChangeDetectionStrategy.OnPush,
+  host: {
+    'data-mgnp-component': 'mgnp-table',
+  },
 })
 export class MgnpTable {
   readonly tableHeader = input<TemplateRef<unknown>>();

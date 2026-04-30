@@ -1,4 +1,7 @@
-import { getNgPrimitivesCssContent } from '../../utils/file-content-loader';
+import {
+  getNgPrimitivesCssContent,
+  getNgPrimitivesExtendedCssContent,
+} from '../../utils/file-content-loader';
 
 import { AsyncPipe, NgClass } from '@angular/common';
 import { ChangeDetectionStrategy, Component, computed, inject, input, signal } from '@angular/core';
@@ -28,7 +31,7 @@ export class FileContent {
   private readonly sanitizer = inject(DomSanitizer);
 
   readonly name = input.required<string>();
-  readonly type = input<'ng-primitives-css'>('ng-primitives-css');
+  readonly type = input<'ng-primitives-css' | 'ng-primitives-extended-css'>('ng-primitives-css');
 
   readonly isOpen = signal(false);
 
@@ -36,12 +39,16 @@ export class FileContent {
     switch (this.type()) {
       case 'ng-primitives-css':
         return 'css';
+      case 'ng-primitives-extended-css':
+        return 'css';
     }
   });
   readonly code = computed(() => {
     switch (this.type()) {
       case 'ng-primitives-css':
         return getNgPrimitivesCssContent(this.name());
+      case 'ng-primitives-extended-css':
+        return getNgPrimitivesExtendedCssContent(this.name());
     }
   });
   readonly content = computed(() => {

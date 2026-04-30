@@ -35,4 +35,5 @@ In your global CSS file, make sure to import both `TailwindCSS` and `@mgremy/ng-
 ```css
 @import 'tailwindcss';
 @import '@mgremy/ng-primitives';
+@import '@mgremy/ng-primitives-extended';
 ```
