@@ -18,6 +18,7 @@
       "@mgremy/ng-primitives": ["libs/ng-primitives/src/index.ts"],
       "@mgremy/ng-primitives/accordion": ["libs/ng-primitives/accordion/src/index.ts"],
       "@mgremy/ng-primitives/button": ["libs/ng-primitives/button/src/index.ts"],
+      "@mgremy/ng-primitives/checkbox": ["libs/ng-primitives/checkbox/src/index.ts"],
       "@mgremy/ng-primitives/combobox": ["libs/ng-primitives/combobox/src/index.ts"],
       "@mgremy/ng-primitives/input": ["libs/ng-primitives/input/src/index.ts"],
       "@mgremy/ng-primitives/menu": ["libs/ng-primitives/menu/src/index.ts"],
