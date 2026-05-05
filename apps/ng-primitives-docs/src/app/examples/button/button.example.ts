@@ -7,7 +7,7 @@ import { NgpButton } from 'ng-primitives/button';
   imports: [NgpButton, MgnpButton],
   template: `
     <p class="font-bold">Solid</p>
-    <div class="flex flex-wrap gap-4 item-center">
+    <div class="flex flex-wrap gap-4 items-center">
       <button ngpButton mgnpButton>Default</button>
       <button ngpButton mgnpButton color="primary">Primary</button>
       <button ngpButton mgnpButton color="secondary">Secondary</button>
@@ -17,7 +17,7 @@ import { NgpButton } from 'ng-primitives/button';
       <button ngpButton mgnpButton color="danger">Danger</button>
     </div>
     <p class="font-bold">Outline</p>
-    <div class="flex flex-wrap gap-4 item-center">
+    <div class="flex flex-wrap gap-4 items-center">
       <button ngpButton mgnpButton variant="outline">Default</button>
       <button ngpButton mgnpButton variant="outline" color="primary">Primary</button>
       <button ngpButton mgnpButton variant="outline" color="secondary">Secondary</button>
@@ -27,7 +27,7 @@ import { NgpButton } from 'ng-primitives/button';
       <button ngpButton mgnpButton variant="outline" color="danger">Danger</button>
     </div>
     <p class="font-bold">Disabled</p>
-    <div class="flex flex-wrap gap-4 item-center">
+    <div class="flex flex-wrap gap-4 items-center">
       <button ngpButton disabled mgnpButton>Default</button>
       <button ngpButton disabled mgnpButton color="primary">Primary</button>
       <button ngpButton disabled mgnpButton color="secondary">Secondary</button>
