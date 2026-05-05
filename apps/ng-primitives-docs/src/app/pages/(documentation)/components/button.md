@@ -17,7 +17,7 @@ focus.
 
 | name    | possible values                                                                          | description      | default value |
 | ------- | ---------------------------------------------------------------------------------------- | ---------------- | ------------- |
-| color   | **ui** / **primary** / **secondary** / **into** / **success** / **warning** / **danger** | define the color | ui            |
+| color   | **ui** / **primary** / **secondary** / **info** / **success** / **warning** / **danger** | define the color | ui            |
 | variant | **solid** / **outline**                                                                  | define the style | solid         |
 | size    | **xs** / **sm** / **md** / **lg** / **xl**                                               | define the size  | md            |
 
