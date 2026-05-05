@@ -15,10 +15,11 @@ focus.
 
 ## Attributes
 
-| name    | possible values                                                                          | description      |
-| ------- | ---------------------------------------------------------------------------------------- | ---------------- |
-| color   | **ui** / **primary** / **secondary** / **into** / **success** / **warning** / **danger** | define the color |
-| variant | **solid** / **outline**                                                                  | define the style |
+| name    | possible values                                                                          | description      | default value |
+| ------- | ---------------------------------------------------------------------------------------- | ---------------- | ------------- |
+| color   | **ui** / **primary** / **secondary** / **into** / **success** / **warning** / **danger** | define the color | ui            |
+| variant | **solid** / **outline**                                                                  | define the style | solid         |
+| size    | **xs** / **sm** / **md** / **lg** / **xl**                                               | define the size  | md            |
 
 ## Theme
 

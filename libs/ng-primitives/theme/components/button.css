@@ -4,10 +4,7 @@
   height: fit-content;
   width: max-content;
   cursor: pointer;
-  font-weight: var(--font-weight-medium);
   border-radius: var(--radius-lg);
-  padding-block: --spacing(2);
-  padding-inline: --spacing(4);
   color: var(--ngp-text-primary);
   background-color: var(--ngp-background);
   box-shadow: var(--ngp-button-shadow);
@@ -19,6 +16,44 @@
   @variant data-disabled {
     opacity: 50%;
     cursor: default;
+  }
+
+  /* Sizes */
+  @variant data-[mgnp-size=xs] {
+    font-size: var(--text-xs);
+    line-height: var(--text-xs--line-height);
+    padding-block: --spacing(1);
+    padding-inline: --spacing(1.5);
+  }
+
+  @variant data-[mgnp-size=sm] {
+    font-size: var(--text-sm);
+    line-height: var(--text-sm--line-height);
+    padding-block: --spacing(1);
+    padding-inline: --spacing(2);
+  }
+
+  @variant data-[mgnp-size=md] {
+    font-size: var(--text-md);
+    line-height: var(--text-md--line-height);
+    padding-block: --spacing(1.5);
+    padding-inline: --spacing(2.5);
+  }
+
+  @variant data-[mgnp-size=lg] {
+    font-size: var(--text-lg);
+    line-height: var(--text-lg--line-height);
+    padding-block: --spacing(2);
+    padding-inline: --spacing(3);
+    font-weight: var(--font-weight-semibold);
+  }
+
+  @variant data-[mgnp-size=xl] {
+    font-size: var(--text-xl);
+    line-height: var(--text-xl--line-height);
+    padding-block: --spacing(2.5);
+    padding-inline: --spacing(4);
+    font-weight: var(--font-weight-semibold);
   }
 
   /* Solid */
