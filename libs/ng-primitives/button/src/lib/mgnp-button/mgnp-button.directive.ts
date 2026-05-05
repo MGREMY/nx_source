@@ -35,18 +35,14 @@ export type MgnpButtonSize = PropertyType<'xs' | 'sm' | 'md' | 'lg' | 'xl'>;
   host: {
     'data-mgnp-component': 'mgnp-button',
     '[attr.data-mgnp-size]': 'size()',
-    '[attr.data-mgnp-color]': 'color() || null',
-    '[attr.data-mgnp-variant]': 'variant() || null',
+    '[attr.data-mgnp-color]': 'color()',
+    '[attr.data-mgnp-variant]': 'variant()',
   },
 })
 export class MgnpButton {
   protected readonly ngpButton = inject(NgpButton, { optional: true });
-  protected readonly ngpComboboxButton = inject(NgpComboboxButton, {
-    optional: true,
-  });
-  protected readonly ngpMenuTrigger = inject(NgpMenuTrigger, {
-    optional: true,
-  });
+  protected readonly ngpComboboxButton = inject(NgpComboboxButton, { optional: true });
+  protected readonly ngpMenuTrigger = inject(NgpMenuTrigger, { optional: true });
   protected readonly ngpTooltipTrigger = inject(NgpTooltipTrigger, { optional: true });
   protected readonly ngpAccordionTrigger = inject(NgpAccordionTrigger, { optional: true });
 
