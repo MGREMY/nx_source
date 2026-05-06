@@ -1,11 +1,21 @@
 @utility mgnp-accordion {
-  display: block;
-  width: 100%;
-  max-width: --spacing(96);
   border-radius: --spacing(3);
   border: 1px solid var(--ngp-border);
   background-color: var(--ngp-background);
   box-shadow: var(--ngp-shadow);
+
+  @variant data-[orientation=vertical] {
+    display: block;
+    max-width: --spacing(96);
+    width: 100%;
+  }
+
+  @variant data-[orientation=horizontal] {
+    display: flex;
+    flex-direction: row;
+    max-height: --spacing(96);
+    height: 100%;
+  }
 }
 
 @utility mgnp-accordion-content {
@@ -14,11 +24,27 @@
   color: var(--ngp-text-secondary);
 
   @variant data-open {
-    animation: accordion-show var(--default-transition-duration) var(--default-transition-timing-function) forwards;
+    @variant data-[orientation=vertical] {
+      animation: accordion-show var(--default-transition-duration)
+        var(--default-transition-timing-function) forwards;
+    }
+
+    @variant data-[orientation=horizontal] {
+      animation: accordion-show-horizontal var(--default-transition-duration)
+        var(--default-transition-timing-function) forwards;
+    }
   }
 
   @variant data-closed {
-    animation: accordion-hide var(--default-transition-duration) var(--default-transition-timing-function) forwards;
+    @variant data-[orientation=vertical] {
+      animation: accordion-hide var(--default-transition-duration)
+        var(--default-transition-timing-function) forwards;
+    }
+
+    @variant data-[orientation=horizontal] {
+      animation: accordion-hide-horizontal var(--default-transition-duration)
+        var(--default-transition-timing-function) forwards;
+    }
   }
 }
 
@@ -35,13 +61,17 @@
   @variant not-last {
     border-bottom: 1px solid var(--ngp-border);
   }
+
+  @variant data-[orientation=horizontal] {
+    display: flex;
+    flex-direction: row;
+  }
 }
 
 @utility mgnp-accordion-trigger {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 100%;
   outline: none;
   border: none;
   box-shadow: none;
@@ -51,9 +81,20 @@
   padding-right: --spacing(4);
   font-size: --spacing(3.5);
   line-height: --spacing(5);
-  height: --spacing(11);
   border-radius: --spacing(3);
   color: var(--ngp-text-primary);
+
+  @variant data-[orientation=vertical] {
+    width: 100%;
+    height: --spacing(11);
+  }
+
+  @variant data-[orientation=horizontal] {
+    width: --spacing(11);
+    height: 100%;
+    writing-mode: sideways-lr;
+    text-orientation: sideways;
+  }
 
   @variant data-focus-visible {
     overflow: hidden;
@@ -62,7 +103,8 @@
   }
 
   ng-icon {
-    transition: transform var(--default-transition-duration) var(--default-transition-timing-function);
+    transition: transform var(--default-transition-duration)
+      var(--default-transition-timing-function);
   }
 
   @variant data-open {
@@ -106,6 +148,24 @@
     }
     to {
       height: 0;
+    }
+  }
+
+  @keyframes accordion-show-horizontal {
+    from {
+      width: 0;
+    }
+    to {
+      width: var(--ngp-accordion-content-height);
+    }
+  }
+
+  @keyframes accordion-hide-horizontal {
+    from {
+      width: var(--ngp-accordion-content-height);
+    }
+    to {
+      width: 0;
     }
   }
 }
