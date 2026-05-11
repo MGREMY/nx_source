@@ -50,6 +50,8 @@
 }
 
 @utility mgnp-accordion-item {
+  display: flex;
+
   h1,
   h2,
   h3,
@@ -64,12 +66,10 @@
   }
 
   @variant data-[orientation=horizontal] {
-    display: flex;
     flex-direction: row;
   }
 
   @variant data-[orientation=vertical] {
-    display: flex;
     flex-direction: column;
   }
 }
@@ -159,19 +159,19 @@
 
   @keyframes accordion-show-horizontal {
     from {
-      width: 0;
+      max-width: 0;
     }
     to {
-      width: var(--ngp-accordion-content-width);
+      max-width: var(--ngp-accordion-content-width);
     }
   }
 
   @keyframes accordion-hide-horizontal {
     from {
-      width: var(--ngp-accordion-content-width);
+      max-width: var(--ngp-accordion-content-width);
     }
     to {
-      width: 0;
+      max-width: 0;
     }
   }
 }
