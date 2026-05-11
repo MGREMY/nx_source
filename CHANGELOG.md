@@ -1,3 +1,15 @@
+## 0.9.1
+
+### 🩹 Fixes
+
+- pnpm-lock.yaml ([0b16740](https://github.com/MGREMY/nx_source/commit/0b16740))
+- dockerfile ([c3f58f1](https://github.com/MGREMY/nx_source/commit/c3f58f1))
+- update tailwindcss version ([8de9131](https://github.com/MGREMY/nx_source/commit/8de9131))
+
+### ❤️ Thank You
+
+- GREMY Miguel @MGREMY
+
 ## 0.9.0
 
 ### 🚀 Features
