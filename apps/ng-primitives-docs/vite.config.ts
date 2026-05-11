@@ -69,7 +69,7 @@ export default defineConfig(({ mode }) => {
             }),
           ],
           sitemap: {
-            host: 'https://angularprimitives.com/',
+            host: 'https://doc.mgremy.xyz/ng-primitives/',
           },
         },
         content: {
