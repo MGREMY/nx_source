@@ -20,6 +20,7 @@
       "@mgremy/ng-primitives/button": ["libs/ng-primitives/button/src/index.ts"],
       "@mgremy/ng-primitives/checkbox": ["libs/ng-primitives/checkbox/src/index.ts"],
       "@mgremy/ng-primitives/combobox": ["libs/ng-primitives/combobox/src/index.ts"],
+      "@mgremy/ng-primitives/dialog": ["libs/ng-primitives/dialog/src/index.ts"],
       "@mgremy/ng-primitives/input": ["libs/ng-primitives/input/src/index.ts"],
       "@mgremy/ng-primitives/menu": ["libs/ng-primitives/menu/src/index.ts"],
       "@mgremy/ng-primitives/navbar": ["libs/ng-primitives/navbar/src/index.ts"],
