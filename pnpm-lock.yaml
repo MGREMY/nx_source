@@ -288,6 +288,8 @@ importers:
 
   dist/libs/ng-primitives/button: {}
 
+  dist/libs/ng-primitives/checkbox: {}
+
   dist/libs/ng-primitives/combobox: {}
 
   dist/libs/ng-primitives/input: {}
