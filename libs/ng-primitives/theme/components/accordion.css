@@ -25,7 +25,7 @@
 
   @variant data-open {
     @variant data-[orientation=vertical] {
-      animation: accordion-show var(--default-transition-duration)
+      animation: accordion-show-vertical var(--default-transition-duration)
         var(--default-transition-timing-function) forwards;
     }
 
@@ -37,7 +37,7 @@
 
   @variant data-closed {
     @variant data-[orientation=vertical] {
-      animation: accordion-hide var(--default-transition-duration)
+      animation: accordion-hide-vertical var(--default-transition-duration)
         var(--default-transition-timing-function) forwards;
     }
 
@@ -65,6 +65,11 @@
   @variant data-[orientation=horizontal] {
     display: flex;
     flex-direction: row;
+  }
+
+  @variant data-[orientation=vertical] {
+    display: flex;
+    flex-direction: column;
   }
 }
 
@@ -133,21 +138,21 @@
 }
 
 @theme {
-  @keyframes accordion-show {
+  @keyframes accordion-show-vertical {
     from {
-      height: 0;
+      max-height: 0;
     }
     to {
-      height: var(--ngp-accordion-content-height);
+      max-height: var(--ngp-accordion-content-height);
     }
   }
 
-  @keyframes accordion-hide {
+  @keyframes accordion-hide-vertical {
     from {
-      height: var(--ngp-accordion-content-height);
+      max-height: var(--ngp-accordion-content-height);
     }
     to {
-      height: 0;
+      max-height: 0;
     }
   }
 
@@ -156,13 +161,13 @@
       width: 0;
     }
     to {
-      width: var(--ngp-accordion-content-height);
+      width: var(--ngp-accordion-content-width);
     }
   }
 
   @keyframes accordion-hide-horizontal {
     from {
-      width: var(--ngp-accordion-content-height);
+      width: var(--ngp-accordion-content-width);
     }
     to {
       width: 0;

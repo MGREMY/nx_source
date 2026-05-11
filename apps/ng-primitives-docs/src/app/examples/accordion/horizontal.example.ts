@@ -32,7 +32,7 @@ import { NgpButton } from 'ng-primitives/button';
           </button>
         </h3>
         <div ngpAccordionContent mgnpAccordionContent>
-          <div class="px-4 py-0">If you would like to learn more please reach out to us on GitHub.</div>
+          <div class="px-4 py-0 text-nowrap">If you would like to learn more please reach out to us on GitHub.</div>
         </div>
       </div>
 
@@ -45,7 +45,7 @@ import { NgpButton } from 'ng-primitives/button';
           </button>
         </h3>
         <div ngpAccordionContent mgnpAccordionContent>
-          <div class="px-4 py-0">Yes, this is open source and you can use it in your project.</div>
+          <div class="px-4 py-0 text-nowrap">Yes, this is open source and you can use it in your project.</div>
         </div>
       </div>
     </div>
