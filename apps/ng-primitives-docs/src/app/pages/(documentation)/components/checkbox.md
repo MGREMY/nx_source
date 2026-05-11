@@ -13,4 +13,4 @@ Perform state toggling.
 
 ## Theme
 
-<app-file-content name="checkbox"><app-file-content/>
+<app-file-content name="checkbox"></app-file-content>
