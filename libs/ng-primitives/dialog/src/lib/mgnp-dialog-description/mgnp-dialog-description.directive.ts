@@ -13,7 +13,7 @@ const error = new Error(`MgnpDialogDescription must be used with ${options.join(
   },
 })
 export class MgnpDialogDescription {
-  private readonly _ngpDialogDescription = inject(NgpDialogDescription);
+  private readonly _ngpDialogDescription = inject(NgpDialogDescription, { optional: true });
 
   constructor() {
     if (!this._ngpDialogDescription) {

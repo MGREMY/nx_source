@@ -13,7 +13,7 @@ const error = new Error(`MgnpDialogTitle must be used with ${options.join(' / ')
   },
 })
 export class MgnpDialogTitle {
-  private readonly _ngpDialogTitle = inject(NgpDialogTitle);
+  private readonly _ngpDialogTitle = inject(NgpDialogTitle, { optional: true });
 
   constructor() {
     if (!this._ngpDialogTitle) {

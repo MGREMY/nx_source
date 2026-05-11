@@ -13,7 +13,7 @@ const error = new Error(`MgnpDialogOverlay must be used with ${options.join(' / 
   },
 })
 export class MgnpDialogOverlay {
-  private readonly _ngpDialogOverlay = inject(NgpDialogOverlay);
+  private readonly _ngpDialogOverlay = inject(NgpDialogOverlay, { optional: true });
 
   constructor() {
     if (!this._ngpDialogOverlay) {

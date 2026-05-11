@@ -13,7 +13,7 @@ const error = new Error(`MgnpDialog must be used with ${options.join(' / ')}`);
   },
 })
 export class MgnpDialog {
-  private readonly _ngpDialog = inject(NgpDialog);
+  private readonly _ngpDialog = inject(NgpDialog, { optional: true });
 
   constructor() {
     if (!this._ngpDialog) {
