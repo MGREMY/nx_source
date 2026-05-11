@@ -23,29 +23,24 @@
   font-size: --spacing(3.5);
   color: var(--ngp-text-secondary);
 
-  /* TODO : switch to new tailwindcss syntaxe => variant1:variant2 */
-  @variant data-open {
-    @variant data-[orientation=vertical] {
-      animation: accordion-show-vertical var(--default-transition-duration)
-        var(--default-transition-timing-function) forwards;
-    }
-
-    @variant data-[orientation=horizontal] {
-      animation: accordion-show-horizontal var(--default-transition-duration)
-        var(--default-transition-timing-function) forwards;
-    }
+  @variant data-open:data-[orientation=vertical] {
+    animation: accordion-show-vertical var(--default-transition-duration)
+      var(--default-transition-timing-function) forwards;
   }
 
-  @variant data-closed {
-    @variant data-[orientation=vertical] {
-      animation: accordion-hide-vertical var(--default-transition-duration)
-        var(--default-transition-timing-function) forwards;
-    }
+  @variant data-closed:data-[orientation=vertical] {
+    animation: accordion-hide-vertical var(--default-transition-duration)
+      var(--default-transition-timing-function) forwards;
+  }
 
-    @variant data-[orientation=horizontal] {
-      animation: accordion-hide-horizontal var(--default-transition-duration)
-        var(--default-transition-timing-function) forwards;
-    }
+  @variant data-open:data-[orientation=horizontal] {
+    animation: accordion-show-horizontal var(--default-transition-duration)
+      var(--default-transition-timing-function) forwards;
+  }
+
+  @variant data-closed:data-[orientation=horizontal] {
+    animation: accordion-hide-horizontal var(--default-transition-duration)
+      var(--default-transition-timing-function) forwards;
   }
 }
 
