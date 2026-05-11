@@ -1,3 +1,13 @@
+## 0.10.0
+
+### 🚀 Features
+
+- **dialog:** create component & style ([#14](https://github.com/MGREMY/nx_source/pull/14))
+
+### ❤️ Thank You
+
+- MGREMY @MGREMY
+
 ## 0.9.1
 
 ### 🩹 Fixes
