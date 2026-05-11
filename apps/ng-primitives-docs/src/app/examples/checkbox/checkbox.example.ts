@@ -1,7 +1,7 @@
 import { MgnpCheckbox } from '@mgremy/ng-primitives/checkbox';
 
 import { NgIcon, provideIcons } from '@ng-icons/core';
-import { heroCheckMini } from '@ng-icons/heroicons/mini';
+import { heroCheckMini, heroMinusMini } from '@ng-icons/heroicons/mini';
 
 import { Component, signal } from '@angular/core';
 import { NgpCheckbox } from 'ng-primitives/checkbox';
@@ -9,15 +9,24 @@ import { NgpCheckbox } from 'ng-primitives/checkbox';
 @Component({
   imports: [NgpCheckbox, MgnpCheckbox, NgIcon],
   template: `
-    <span ngpCheckbox mgnpCheckbox [(ngpCheckboxChecked)]="basic">
-      @if (basic()) {
+    <span
+      ngpCheckbox
+      mgnpCheckbox
+      [ngpCheckboxIndeterminate]="checked() === undefined"
+      [(ngpCheckboxChecked)]="checked">
+      @if (checked()) {
         <ng-icon name="heroCheckMini" />
+      }
+
+      @if (checked() === undefined) {
+        <ng-icon name="heroMinusMini" />
       }
     </span>
   `,
   providers: [
     provideIcons({
       heroCheckMini,
+      heroMinusMini,
     }),
   ],
   host: {
@@ -25,5 +34,5 @@ import { NgpCheckbox } from 'ng-primitives/checkbox';
   },
 })
 export default class CheckboxExample {
-  readonly basic = signal(true);
+  readonly checked = signal(undefined);
 }

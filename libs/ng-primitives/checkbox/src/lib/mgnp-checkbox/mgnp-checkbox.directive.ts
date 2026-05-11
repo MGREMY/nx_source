@@ -13,10 +13,10 @@ const error = new Error(`MgnpCheckbox must be used with ${options.join(' / ')}`)
   },
 })
 export class MgnpCheckbox {
-  protected readonly ngpCeckbox = inject(NgpCheckbox, { optional: true });
+  protected readonly ngpCheckbox = inject(NgpCheckbox, { optional: true });
 
   constructor() {
-    if (!this.ngpCeckbox) {
+    if (!this.ngpCheckbox) {
       console.error(this);
       throw error;
     }

@@ -19,22 +19,7 @@
     background-color: var(--ngp-background-hover);
   }
 
-  /*
-  TODO : Upgrade
-  Waiting for https://github.com/tailwindlabs/tailwindcss/pull/19996 to be in new version
-  /*
   @variant data-checked, data-indeterminate {
-    border-color: var(--ngp-background-inverse);
-    background-color: var(--ngp-background-inverse);
-  }
-  */
-
-  @variant data-checked {
-    border-color: var(--ngp-background-inverse);
-    background-color: var(--ngp-background-inverse);
-  }
-
-  @variant data-indeterminate {
     border-color: var(--ngp-background-inverse);
     background-color: var(--ngp-background-inverse);
   }

@@ -1,6 +1,6 @@
 ---
 name: 'Checkbox'
-sourceUrl: 'https://github.com/mgremy/nx_source/tree/main/libs/ng-primitives/button'
+sourceUrl: 'https://github.com/mgremy/nx_source/tree/main/libs/ng-primitives/checkbox'
 ---
 
 # Checkbox
