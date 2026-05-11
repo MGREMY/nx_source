@@ -259,8 +259,8 @@ importers:
         specifier: ^0.110.0
         version: 0.110.1(@angular/cdk@21.2.1(@angular/common@21.2.1(@angular/core@21.2.1(@angular/compiler@21.2.1)(rxjs@7.8.2))(rxjs@7.8.2))(@angular/core@21.2.1(@angular/compiler@21.2.1)(rxjs@7.8.2))(@angular/platform-browser@21.2.1(@angular/common@21.2.1(@angular/core@21.2.1(@angular/compiler@21.2.1)(rxjs@7.8.2))(rxjs@7.8.2))(@angular/core@21.2.1(@angular/compiler@21.2.1)(rxjs@7.8.2)))(rxjs@7.8.2))(@angular/common@21.2.1(@angular/core@21.2.1(@angular/compiler@21.2.1)(rxjs@7.8.2))(rxjs@7.8.2))(@angular/core@21.2.1(@angular/compiler@21.2.1)(rxjs@7.8.2))(@angular/forms@21.2.1(@angular/common@21.2.1(@angular/core@21.2.1(@angular/compiler@21.2.1)(rxjs@7.8.2))(rxjs@7.8.2))(@angular/core@21.2.1(@angular/compiler@21.2.1)(rxjs@7.8.2))(@angular/platform-browser@21.2.1(@angular/common@21.2.1(@angular/core@21.2.1(@angular/compiler@21.2.1)(rxjs@7.8.2))(rxjs@7.8.2))(@angular/core@21.2.1(@angular/compiler@21.2.1)(rxjs@7.8.2)))(rxjs@7.8.2))(@floating-ui/dom@1.7.6)(rxjs@7.8.2)(typescript@5.9.3)
       tailwindcss:
-        specifier: ^4.0.0
-        version: 4.2.1
+        specifier: ^4.3.0
+        version: 4.3.0
       tslib:
         specifier: ^2.3.0
         version: 2.8.1
@@ -274,8 +274,8 @@ importers:
         specifier: ^21.1.0
         version: 21.2.1(@angular/compiler@21.2.1)(rxjs@7.8.2)
       tailwindcss:
-        specifier: ^4.0.0
-        version: 4.2.1
+        specifier: ^4.3.0
+        version: 4.3.0
       tslib:
         specifier: ^2.3.0
         version: 2.8.1
@@ -291,6 +291,8 @@ importers:
   dist/libs/ng-primitives/checkbox: {}
 
   dist/libs/ng-primitives/combobox: {}
+
+  dist/libs/ng-primitives/dialog: {}
 
   dist/libs/ng-primitives/input: {}
 
@@ -317,8 +319,8 @@ importers:
         specifier: ^0.110.0
         version: 0.110.1(@angular/cdk@21.2.1(@angular/common@21.2.1(@angular/core@21.2.1(@angular/compiler@21.2.1)(rxjs@7.8.2))(rxjs@7.8.2))(@angular/core@21.2.1(@angular/compiler@21.2.1)(rxjs@7.8.2))(@angular/platform-browser@21.2.1(@angular/common@21.2.1(@angular/core@21.2.1(@angular/compiler@21.2.1)(rxjs@7.8.2))(rxjs@7.8.2))(@angular/core@21.2.1(@angular/compiler@21.2.1)(rxjs@7.8.2)))(rxjs@7.8.2))(@angular/common@21.2.1(@angular/core@21.2.1(@angular/compiler@21.2.1)(rxjs@7.8.2))(rxjs@7.8.2))(@angular/core@21.2.1(@angular/compiler@21.2.1)(rxjs@7.8.2))(@angular/forms@21.2.1(@angular/common@21.2.1(@angular/core@21.2.1(@angular/compiler@21.2.1)(rxjs@7.8.2))(rxjs@7.8.2))(@angular/core@21.2.1(@angular/compiler@21.2.1)(rxjs@7.8.2))(@angular/platform-browser@21.2.1(@angular/common@21.2.1(@angular/core@21.2.1(@angular/compiler@21.2.1)(rxjs@7.8.2))(rxjs@7.8.2))(@angular/core@21.2.1(@angular/compiler@21.2.1)(rxjs@7.8.2)))(rxjs@7.8.2))(@floating-ui/dom@1.7.6)(rxjs@7.8.2)(typescript@5.9.3)
       tailwindcss:
-        specifier: ^4.0.0
-        version: 4.2.1
+        specifier: ^4.3.0
+        version: 4.3.0
 
   libs/ng-primitives-extended:
     dependencies:
@@ -329,8 +331,8 @@ importers:
         specifier: ^21.1.0
         version: 21.2.1(@angular/compiler@21.2.1)(rxjs@7.8.2)
       tailwindcss:
-        specifier: ^4.0.0
-        version: 4.2.1
+        specifier: ^4.3.0
+        version: 4.3.0
 
 packages:
 
@@ -8472,9 +8474,6 @@ packages:
   tagged-tag@1.0.0:
     resolution: {integrity: sha512-yEFYrVhod+hdNyx7g5Bnkkb0G6si8HJurOoOEgC8B/O0uXLHlaey/65KRv6cuWBNhBgHKAROVpc7QyYqE5gFng==}
     engines: {node: '>=20'}
-
-  tailwindcss@4.2.1:
-    resolution: {integrity: sha512-/tBrSQ36vCleJkAOsy9kbNTgaxvGbyOamC30PRePTQe/o1MFwEKHQk4Cn7BNGaPtjp+PuUrByJehM1hgxfq4sw==}
 
   tailwindcss@4.3.0:
     resolution: {integrity: sha512-y6nxMGB1nMW9R6k96e5gdIFzcfL/gTJRNaqGes1YvkLnPVXzWgbqFF2yLC0T8G774n24cx3Pe8XrKoniCOAH+Q==}
@@ -18543,8 +18542,6 @@ snapshots:
   system-architecture@0.1.0: {}
 
   tagged-tag@1.0.0: {}
-
-  tailwindcss@4.2.1: {}
 
   tailwindcss@4.3.0: {}
 
