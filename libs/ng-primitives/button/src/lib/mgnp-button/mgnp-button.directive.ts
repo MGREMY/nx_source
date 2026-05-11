@@ -20,7 +20,10 @@ const error = new Error(`MgnpButton must be used with ${options.join(' / ')}`);
 export type MgnpButtonColor = PropertyType<
   'ui' | 'primary' | 'secondary' | 'info' | 'success' | 'warning' | 'danger'
 >;
+
 export type MgnpButtonVariant = PropertyType<'solid' | 'outline'>;
+
+export type MgnpButtonSize = PropertyType<'xs' | 'sm' | 'md' | 'lg' | 'xl'>;
 
 @Directive({
   selector: `[ngpButton][mgnpButton],
@@ -31,23 +34,21 @@ export type MgnpButtonVariant = PropertyType<'solid' | 'outline'>;
   standalone: true,
   host: {
     'data-mgnp-component': 'mgnp-button',
-    '[attr.data-mgnp-color]': 'color() || null',
-    '[attr.data-mgnp-variant]': 'variant() || null',
+    '[attr.data-mgnp-size]': 'size()',
+    '[attr.data-mgnp-color]': 'color()',
+    '[attr.data-mgnp-variant]': 'variant()',
   },
 })
 export class MgnpButton {
   protected readonly ngpButton = inject(NgpButton, { optional: true });
-  protected readonly ngpComboboxButton = inject(NgpComboboxButton, {
-    optional: true,
-  });
-  protected readonly ngpMenuTrigger = inject(NgpMenuTrigger, {
-    optional: true,
-  });
+  protected readonly ngpComboboxButton = inject(NgpComboboxButton, { optional: true });
+  protected readonly ngpMenuTrigger = inject(NgpMenuTrigger, { optional: true });
   protected readonly ngpTooltipTrigger = inject(NgpTooltipTrigger, { optional: true });
   protected readonly ngpAccordionTrigger = inject(NgpAccordionTrigger, { optional: true });
 
   readonly color = input<MgnpButtonColor>('ui');
   readonly variant = input<MgnpButtonVariant>('solid');
+  readonly size = input<MgnpButtonSize>('md');
 
   constructor() {
     if (

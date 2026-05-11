@@ -58,6 +58,7 @@ import { NgpButton } from 'ng-primitives/button';
           <a
             ngpButton
             mgnpButton
+            size="lg"
             [routerLink]="['/', 'getting-started', 'introduction']">
             Get Started
           </a>
@@ -65,6 +66,7 @@ import { NgpButton } from 'ng-primitives/button';
             <a
               ngpButton
               mgnpButton
+              size="lg"
               color="secondary"
               variant="outline"
               href="https://github.com/MGREMY/nx_source"
@@ -75,6 +77,7 @@ import { NgpButton } from 'ng-primitives/button';
             <a
               ngpButton
               mgnpButton
+              size="lg"
               color="secondary"
               variant="outline"
               href="https://www.npmjs.com/package/@mgremy/ng-primitives"
