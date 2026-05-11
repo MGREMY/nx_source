@@ -23,6 +23,7 @@
   font-size: --spacing(3.5);
   color: var(--ngp-text-secondary);
 
+  /* TODO : switch to new tailwindcss syntaxe => variant1:variant2 */
   @variant data-open {
     @variant data-[orientation=vertical] {
       animation: accordion-show-vertical var(--default-transition-duration)
