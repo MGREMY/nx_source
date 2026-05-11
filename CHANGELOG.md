@@ -1,3 +1,17 @@
+## 0.9.0
+
+### 🚀 Features
+
+- **accordion:** add orientation support ([#12](https://github.com/MGREMY/nx_source/pull/12))
+- **accordion:** switch to new tailwindcss variant syntax ([3cb2d6a](https://github.com/MGREMY/nx_source/commit/3cb2d6a))
+- **button:** add size parameter ([#10](https://github.com/MGREMY/nx_source/pull/10))
+- **checkbox:** create component and style ([#11](https://github.com/MGREMY/nx_source/pull/11))
+
+### ❤️ Thank You
+
+- GREMY Miguel @MGREMY
+- MGREMY @MGREMY
+
 ## 0.8.0
 
 ### 🚀 Features
