@@ -14,12 +14,10 @@ import { NgpCheckbox } from 'ng-primitives/checkbox';
       mgnpCheckbox
       [ngpCheckboxIndeterminate]="checked() === undefined"
       [(ngpCheckboxChecked)]="checked">
-      @if (checked()) {
-        <ng-icon name="heroCheckMini" />
-      }
-
       @if (checked() === undefined) {
         <ng-icon name="heroMinusMini" />
+      } @else if (checked()) {
+        <ng-icon name="heroCheckMini" />
       }
     </span>
   `,
