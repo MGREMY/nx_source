@@ -300,6 +300,8 @@ importers:
 
   dist/libs/ng-primitives/pagination: {}
 
+  dist/libs/ng-primitives/switch: {}
+
   dist/libs/ng-primitives/toast: {}
 
   dist/libs/ng-primitives/tooltip: {}
