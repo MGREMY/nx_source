@@ -1,0 +1,66 @@
+@theme {
+  --mg-animation-translateY-origin: --spacing(-2);
+  --mg-animation-translateY-base: --spacing(0);
+
+  @keyframes show {
+    from {
+      opacity: 0;
+      transform: translateY(var(--mg-animation-translateY-origin)) scale(0.9);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(var(--mg-animation-translateY-base)) scale(1);
+    }
+  }
+
+  @keyframes hide {
+    from {
+      opacity: 1;
+      transform: translateY(var(--mg-animation-translateY-base)) scale(1);
+    }
+    to {
+      opacity: 0;
+      transform: translateY(var(--mg-animation-translateY-origin)) scale(0.9);
+    }
+  }
+
+  @keyframes slide-in {
+    from {
+      opacity: 0;
+      transform: translateY(var(--mg-animation-translateY-origin));
+    }
+    to {
+      opacity: 1;
+      transform: translateY(var(--mg-animation-translateY-base));
+    }
+  }
+
+  @keyframes slide-out {
+    from {
+      opacity: 1;
+      transform: translateY(var(--mg-animation-translateY-base));
+    }
+    to {
+      opacity: 0;
+      transform: translateY(var(--mg-animation-translateY-origin));
+    }
+  }
+
+  @keyframes fade-in {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+
+  @keyframes fade-out {
+    0% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+    }
+  }
+}

@@ -61,11 +61,11 @@
   border: 1px solid var(--ngp-border);
 
   @variant data-enter {
-    animation: combobox-show var(--default-transition-duration) var(--default-transition-timing-function);
+    animation: show var(--default-transition-duration) var(--default-transition-timing-function);
   }
 
   @variant data-exit {
-    animation: combobox-hide var(--default-transition-duration) var(--default-transition-timing-function);
+    animation: hide var(--default-transition-duration) var(--default-transition-timing-function);
   }
 }
 
@@ -120,29 +120,5 @@
 
   [mgnpComboboxOption][data-mgnp-component='mgnp-combobox-option'] {
     @apply mgnp-combobox-option transition;
-  }
-}
-
-@theme {
-  @keyframes combobox-show {
-    0% {
-      opacity: 0;
-      transform: translateY(-10px) scale(0.9);
-    }
-    100% {
-      opacity: 1;
-      transform: translateY(0) scale(1);
-    }
-  }
-
-  @keyframes combobox-hide {
-    0% {
-      opacity: 1;
-      transform: translateY(0) scale(1);
-    }
-    100% {
-      opacity: 0;
-      transform: translateY(-10px) scale(0.9);
-    }
   }
 }
