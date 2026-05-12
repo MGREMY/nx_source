@@ -1,3 +1,13 @@
+## 0.12.0
+
+### 🚀 Features
+
+- **dialog:** create drawer mode ([#18](https://github.com/MGREMY/nx_source/pull/18))
+
+### ❤️ Thank You
+
+- MGREMY @MGREMY
+
 ## 0.11.0
 
 ### 🚀 Features
