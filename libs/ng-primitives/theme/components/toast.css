@@ -16,8 +16,8 @@
   transform: var(--y);
 
   @variant data-enter {
-    opacity: 1;
     --y: translateY(0);
+    opacity: 1;
     animation: mg-slide-in var(--default-transition-duration) var(--default-transition-timing-function);
   }
 

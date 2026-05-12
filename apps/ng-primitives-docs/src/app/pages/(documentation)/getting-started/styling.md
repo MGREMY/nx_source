@@ -7,7 +7,7 @@ icon: heroPaintBrush
 # Styling
 
 `@mgremy/ng-primitives` uses `TailwindCSS` variables in order to style its components. It provides a
-bunch of new `TailwindCSS` tokens based on custom CSS variables, and map the required
+bunch of new `TailwindCSS` tokens based on custom CSS variables, and maps the required
 `ng-primitives` styling variables to its own variables.
 
 In a nutshell, this is how it works :
