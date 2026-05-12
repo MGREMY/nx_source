@@ -1,19 +1,19 @@
 @utility mgnp-tooltip {
   position: absolute;
   border: none;
-  animation: tooltip-show var(--default-transition-duration) var(--default-transition-timing-function);
+  animation: mg-show var(--default-transition-duration) var(--default-transition-timing-function);
   max-width: --spacing(64);
   padding-block: --spacing(2);
   padding-inline: --spacing(3);
   font-size: var(--text-xs);
   line-height: var(--text-xs--line-height);
   border-radius: var(--radius-lg);
-  background-color: var(--ngp-background-inverse);
-  color: var(--ngp-text-inverse);
+  background-color: var(--mg-background-ui-inverse);
+  color: var(--mg-text-inverse);
   transform-origin: var(--ngp-tooltip-transform-origin);
 
   @variant data-exit {
-    animation: tooltip-hide var(--default-transition-duration) var(--default-transition-timing-function);
+    animation: mg-hide var(--default-transition-duration) var(--default-transition-timing-function);
   }
 }
 
@@ -24,7 +24,7 @@
   width: --spacing(2);
   height: --spacing(2);
   border-radius: var(--radius-xs);
-  background-color: var(--ngp-background-inverse);
+  background-color: var(--mg-background-ui-inverse);
 
   @variant data-[placement="top"] {
     top: calc(100% - 5px);
@@ -42,29 +42,5 @@
 
   [mgnpTooltipArrow][data-mgnp-component='mgnp-tooltip-arrow'] {
     @apply mgnp-tooltip-arrow transition;
-  }
-}
-
-@theme {
-  @keyframes tooltip-show {
-    0% {
-      opacity: 0;
-      transform: scale(0.9);
-    }
-    100% {
-      opacity: 1;
-      transform: scale(1);
-    }
-  }
-
-  @keyframes tooltip-hide {
-    0% {
-      opacity: 1;
-      transform: scale(1);
-    }
-    100% {
-      opacity: 0;
-      transform: scale(0.9);
-    }
   }
 }

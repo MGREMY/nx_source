@@ -7,12 +7,12 @@
   border: none;
   box-sizing: border-box;
   border-radius: var(--radius-lg);
-  background-color: var(--ngp-background);
-  box-shadow: var(--ngp-input-shadow);
+  background-color: var(--mg-background-ui);
+  box-shadow: var(--mg-shadow-input);
 
   @variant data-focus {
     outline-offset: 2px;
-    outline: 2px solid var(--ngp-focus-ring);
+    outline: 2px solid var(--mg-ring-ui);
   }
 }
 
@@ -28,7 +28,7 @@
   padding-inline: --spacing(4);
   font-size: var(--text-sm);
   line-height: var(--text-sm--line-height);
-  color: var(--ngp-text);
+  color: var(--mg-text-ui);
 }
 
 @utility mgnp-combobox-button {
@@ -41,7 +41,7 @@
   cursor: pointer;
   box-sizing: border-box;
   box-shadow: none;
-  color: var(--ngp-text);
+  color: var(--mg-text-ui);
 }
 
 @utility mgnp-combobox-dropdown {
@@ -56,16 +56,16 @@
   margin-top: --spacing(1);
   max-height: --spacing(60);
   width: var(--ngp-combobox-width);
-  box-shadow: var(--ngp-shadow-lg);
-  background-color: var(--ngp-background);
-  border: 1px solid var(--ngp-border);
+  box-shadow: var(--mg-shadow-lg);
+  background-color: var(--mg-background-ui);
+  border: 1px solid var(--mg-border-ui);
 
   @variant data-enter {
-    animation: combobox-show var(--default-transition-duration) var(--default-transition-timing-function);
+    animation: mg-show var(--default-transition-duration) var(--default-transition-timing-function);
   }
 
   @variant data-exit {
-    animation: combobox-hide var(--default-transition-duration) var(--default-transition-timing-function);
+    animation: mg-hide var(--default-transition-duration) var(--default-transition-timing-function);
   }
 }
 
@@ -82,18 +82,18 @@
   border-radius: var(--radius-lg);
   font-size: var(--text-sm);
   line-height: var(--text-sm--line-height);
-  color: var(--ngp-text-primary);
+  color: var(--mg-text-ui);
 
   @variant data-hover {
-    background-color: var(--ngp-background-hover);
+    background-color: var(--mg-background-ui-hover);
   }
 
   @variant data-press {
-    background-color: var(--ngp-background-active);
+    background-color: var(--mg-background-ui-active);
   }
 
   @variant data-active {
-    background-color: var(--ngp-background-active);
+    background-color: var(--mg-background-ui-active);
   }
 
   @variant data-disabled {
@@ -120,29 +120,5 @@
 
   [mgnpComboboxOption][data-mgnp-component='mgnp-combobox-option'] {
     @apply mgnp-combobox-option transition;
-  }
-}
-
-@theme {
-  @keyframes combobox-show {
-    0% {
-      opacity: 0;
-      transform: translateY(-10px) scale(0.9);
-    }
-    100% {
-      opacity: 1;
-      transform: translateY(0) scale(1);
-    }
-  }
-
-  @keyframes combobox-hide {
-    0% {
-      opacity: 1;
-      transform: translateY(0) scale(1);
-    }
-    100% {
-      opacity: 0;
-      transform: translateY(-10px) scale(0.9);
-    }
   }
 }

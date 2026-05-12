@@ -5,17 +5,17 @@
   width: max-content;
   padding: --spacing(1);
   border-radius: var(--radius-lg);
-  background: var(--ngp-background);
-  border: 1px solid var(--ngp-border);
-  box-shadow: var(--ngp-shadow-lg);
+  background: var(--mg-background-ui);
+  border: 1px solid var(--mg-border-ui);
+  box-shadow: var(--mg-shadow-lg);
   transform-origin: var(--ngp-menu-transform-origin);
 
   @variant data-enter {
-    animation: menu-show var(--default-transition-duration) var(--default-transition-timing-function);
+    animation: mg-show var(--default-transition-duration) var(--default-transition-timing-function);
   }
 
   @variant data-exit {
-    animation: menu-hide var(--default-transition-duration) var(--default-transition-timing-function);
+    animation: mg-hide var(--default-transition-duration) var(--default-transition-timing-function);
   }
 }
 
@@ -33,16 +33,16 @@
   line-height: var(--text-sm--line-height);
 
   @variant data-hover {
-    background-color: var(--ngp-background-hover);
+    background-color: var(--mg-background-ui-hover);
   }
 
   @variant data-press {
-    background-color: var(--ngp-background-active);
+    background-color: var(--mg-background-ui-active);
   }
 
   @variant data-focus-visible {
     z-index: 1;
-    outline: 2px solid var(--ngp-focus-ring);
+    outline: 2px solid var(--mg-ring-ui);
   }
 
   @variant data-disabled {
@@ -57,29 +57,5 @@
 
   [mgnpMenuItem][data-mgnp-component='mgnp-menu-item'] {
     @apply mgnp-menu-item transition;
-  }
-}
-
-@theme {
-  @keyframes menu-show {
-    0% {
-      opacity: 0;
-      transform: scale(0.9);
-    }
-    100% {
-      opacity: 1;
-      transform: scale(1);
-    }
-  }
-
-  @keyframes menu-hide {
-    0% {
-      opacity: 1;
-      transform: scale(1);
-    }
-    100% {
-      opacity: 0;
-      transform: scale(0.9);
-    }
   }
 }

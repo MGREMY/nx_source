@@ -18,28 +18,28 @@
   border-radius: var(--radius-lg);
   font-size: var(--text-sm);
   font-weight: var(--font-weight-medium);
-  background-color: var(--ngp-background);
-  color: var(--ngp-text-primary);
-  box-shadow: var(--ngp-button-shadow);
+  background-color: var(--mg-background-ui);
+  color: var(--mg-text-ui);
+  box-shadow: var(--mg-shadow-button);
 
   @variant data-hover {
     @variant not-data-disabled {
       @variant not-data-selected {
-        background-color: var(--ngp-background-hover);
+        background-color: var(--mg-background-ui-hover);
       }
     }
   }
 
   @variant data-focus-visible {
     @variant not-data-disabled {
-      outline: 2px solid var(--ngp-focus-ring);
+      outline: 2px solid var(--mg-ring-ui);
     }
   }
 
   @variant data-press {
     @variant not-data-disabled {
       @variant not-data-selected {
-        background-color: var(--ngp-background-active);
+        background-color: var(--mg-background-ui-active);
       }
     }
   }
@@ -48,12 +48,12 @@
     cursor: not-allowed;
     color: #d2d2d2;
     box-shadow: none;
-    background-color: var(--ngp-background-disabled);
+    background-color: var(--mg-background-ui-disabled);
   }
 
   @variant data-selected {
-    background-color: var(--ngp-background-inverse);
-    color: var(--ngp-text-inverse);
+    background-color: var(--mg-background-ui-inverse);
+    color: var(--mg-text-inverse);
   }
 }
 

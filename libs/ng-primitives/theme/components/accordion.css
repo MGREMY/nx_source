@@ -1,8 +1,8 @@
 @utility mgnp-accordion {
   border-radius: --spacing(3);
-  border: 1px solid var(--ngp-border);
-  background-color: var(--ngp-background);
-  box-shadow: var(--ngp-shadow);
+  border: 1px solid var(--mg-border-ui);
+  background-color: var(--mg-background-ui);
+  box-shadow: var(--mg-shadow-ui);
 
   @variant data-[orientation=vertical] {
     display: block;
@@ -21,7 +21,7 @@
 @utility mgnp-accordion-content {
   overflow: hidden;
   font-size: --spacing(3.5);
-  color: var(--ngp-text-secondary);
+  color: var(--mg-text-ui-secondary);
 
   @variant data-open:data-[orientation=vertical] {
     animation: accordion-show-vertical var(--default-transition-duration)
@@ -47,17 +47,8 @@
 @utility mgnp-accordion-item {
   display: flex;
 
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
-    margin: --spacing(0);
-  }
-
   @variant not-last {
-    border-bottom: 1px solid var(--ngp-border);
+    border-bottom: 1px solid var(--mg-border-ui);
   }
 
   @variant data-[orientation=horizontal] {
@@ -66,6 +57,15 @@
 
   @variant data-[orientation=vertical] {
     flex-direction: column;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    margin: --spacing(0);
   }
 }
 
@@ -83,7 +83,7 @@
   font-size: --spacing(3.5);
   line-height: --spacing(5);
   border-radius: --spacing(3);
-  color: var(--ngp-text-primary);
+  color: var(--mg-text-ui);
 
   @variant data-[orientation=vertical] {
     width: 100%;
@@ -99,8 +99,7 @@
 
   @variant data-focus-visible {
     overflow: hidden;
-    font-size: --spacing(3.5);
-    color: var(--ngp-text-secondary);
+    color: var(--mg-text-ui-secondary);
   }
 
   ng-icon {

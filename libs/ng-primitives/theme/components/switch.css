@@ -23,7 +23,7 @@
   outline: none;
   border-radius: calc(infinity* 1px);
   background-color: var(--mg-background-ui);
-  box-shadow: var(--ngp-button-shadow);
+  box-shadow: var(--mg-shadow-button);
   width: --spacing(4);
   height: --spacing(4);
   margin-left: --spacing(1);

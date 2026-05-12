@@ -1,7 +1,7 @@
 import { getExample, getExampleContent } from '../../utils/file-content-loader';
 
-import { provideIcons } from '@ng-icons/core';
-import { lucideCheck, lucideClipboard } from '@ng-icons/lucide';
+import { NgIcon, provideIcons } from '@ng-icons/core';
+import { lucideRefreshCw } from '@ng-icons/lucide';
 
 import { AsyncPipe, NgClass, NgComponentOutlet } from '@angular/common';
 import {
@@ -20,13 +20,14 @@ import { codeToHtml } from 'shiki';
 
 @Component({
   selector: 'app-example',
-  imports: [NgComponentOutlet, NgClass, FormsModule, AsyncPipe],
+  imports: [NgComponentOutlet, NgClass, NgIcon, FormsModule, AsyncPipe],
   template: `
     <div class="relative flex flex-col">
       <div class="absolute inset-x-0 top-0 flex items-center justify-between gap-x-2">
         <div class="flex items-center gap-x-2">
           <!-- Preview/Source Toggle -->
-          <div class="rounded-lg bg-ui-secondary p-0.5 leading-6 border border-ui transition-colors">
+          <div
+            class="rounded-lg bg-ui-secondary p-0.5 leading-6 border border-ui transition-colors">
             <button
               class="w-16 rounded-md px-2 py-1.5 text-xs font-medium outline-hidden hover:cursor-pointer border-ui-secondary transition-colors"
               [ngClass]="{
@@ -74,6 +75,12 @@ import { codeToHtml } from 'shiki';
               </div>
             </div>
           }
+          <button
+            (click)="reloadSelectedExample()"
+            class="flex items-center rounded-md bg-ui text-ui border-ui-secondary transition-colors border px-3 py-2 shadow-xs hover:cursor-pointer outline-hidden">
+            <span class="sr-only">reload</span>
+            <ng-icon name="lucideRefreshCw" />
+          </button>
         </div>
       </div>
 
@@ -95,7 +102,7 @@ import { codeToHtml } from 'shiki';
       </div>
     </div>
   `,
-  providers: [provideIcons({ lucideClipboard, lucideCheck })],
+  providers: [provideIcons({ lucideRefreshCw })],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class Example {
@@ -169,6 +176,15 @@ export class Example {
       },
     }).then((content) => this.sanitizer.bypassSecurityTrustHtml(content));
   });
+
+  reloadSelectedExample(): void {
+    const currentSelectedName = this.selectedName();
+
+    this.selectedName.set('');
+
+    // setTimeout to force signal to be computed before value reset
+    setTimeout(() => this.selectedName.set(currentSelectedName), 0);
+  }
 }
 
 const fromFileName = (value: string): string => value.split('.')[0].split('-').join(' ');
