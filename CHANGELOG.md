@@ -1,3 +1,13 @@
+## 0.11.0
+
+### 🚀 Features
+
+- **switch:** create component & style ([#16](https://github.com/MGREMY/nx_source/pull/16))
+
+### ❤️ Thank You
+
+- MGREMY @MGREMY
+
 ## 0.10.0
 
 ### 🚀 Features
