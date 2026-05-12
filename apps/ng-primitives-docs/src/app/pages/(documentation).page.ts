@@ -49,8 +49,7 @@ import { RouterLink, RouterOutlet } from '@angular/router';
           </a>
         </div>
       </nav>
-      <div
-        class="bg-(--mg-border-emphasis) transition-colors absolute inset-x-0 h-0.5"></div>
+      <div class="bg-(--mg-border-emphasis) transition-colors absolute inset-x-0 h-0.5"></div>
     </header>
 
     <main class="overflow-hidden mt-16 p-8">
