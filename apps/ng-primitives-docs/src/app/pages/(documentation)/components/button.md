@@ -15,6 +15,10 @@ focus.
 
 ## Attributes
 
+### MgnpButton
+
+---
+
 | name    | possible values                                                                          | description      | default value |
 | ------- | ---------------------------------------------------------------------------------------- | ---------------- | ------------- |
 | color   | **ui** / **primary** / **secondary** / **info** / **success** / **warning** / **danger** | define the color | ui            |

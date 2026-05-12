@@ -2,11 +2,29 @@
   background-color: var(--mg-background-ui);
   box-shadow: var(--mg-shadow-button);
   padding: --spacing(6);
-  border-radius: --spacing(2);
-  animation: mg-fade-in var(--default-transition-duration) var(--default-transition-timing-function);
 
-  @variant data-exit {
-    animation: mg-fade-out var(--default-transition-duration) var(--default-transition-timing-function);
+  @variant data-[mgnp-mode='modal'] {
+    border-radius: --spacing(2);
+    animation: mg-fade-in var(--default-transition-duration)
+      var(--default-transition-timing-function);
+
+    @variant data-exit {
+      animation: mg-fade-out var(--default-transition-duration)
+        var(--default-transition-timing-function);
+    }
+  }
+
+  @variant data-[mgnp-mode='drawer'] {
+    width: --spacing(80);
+    max-width: 100%;
+    height: 100%;
+    animation: mg-slide-in var(--default-transition-duration)
+      var(--default-transition-timing-function);
+
+    @variant data-exit {
+      animation: mg-slide-out var(--default-transition-duration)
+        var(--default-transition-timing-function);
+    }
   }
 }
 
@@ -26,18 +44,41 @@
 
 @utility mgnp-dialog-overlay {
   display: flex;
-  justify-content: center;
-  align-items: center;
   position: fixed;
   z-index: 9999;
   background-color: --alpha(var(--mg-background-ui) / 50%);
   backdrop-filter: blur(--spacing(0.5));
   inset: --spacing(0);
-  animation: mg-slide-in var(--default-transition-duration) var(--default-transition-timing-function);
 
-  @variant data-exit {
-    animation: mg-slide-out var(--default-transition-duration)
+  @variant data-[mgnp-mode='modal'] {
+    justify-content: center;
+    align-items: center;
+    animation: mg-fade-in var(--default-transition-duration)
       var(--default-transition-timing-function);
+
+    @variant data-exit {
+      animation: mg-fade-out var(--default-transition-duration)
+        var(--default-transition-timing-function);
+    }
+  }
+
+  @variant data-[mgnp-mode='drawer'] {
+    align-items: stretch;
+    animation: mg-slide-in var(--default-transition-duration)
+      var(--default-transition-timing-function);
+
+    @variant data-[mgnp-drawer-position='start'] {
+      justify-content: flex-start;
+    }
+
+    @variant data-[mgnp-drawer-position='end'] {
+      justify-content: flex-end;
+    }
+
+    @variant data-exit {
+      animation: mg-slide-out var(--default-transition-duration)
+        var(--default-transition-timing-function);
+    }
   }
 }
 

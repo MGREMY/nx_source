@@ -1,4 +1,5 @@
 import { getRouterLinks } from '../../utils/router';
+import { MgnpDialog, MgnpDialogOverlay } from '@mgremy/ng-primitives/dialog';
 
 import { NgIcon, provideIcons } from '@ng-icons/core';
 import {
@@ -9,23 +10,40 @@ import {
 } from '@ng-icons/heroicons/outline';
 
 import { NgTemplateOutlet } from '@angular/common';
-import { ChangeDetectionStrategy, Component, model } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  effect,
+  inject,
+  Injector,
+  model,
+  OnInit,
+  TemplateRef,
+  viewChild,
+} from '@angular/core';
 import { RouterLink, RouterLinkActive } from '@angular/router';
+import { NgpDialog, NgpDialogManager, NgpDialogOverlay } from 'ng-primitives/dialog';
 
 @Component({
   selector: 'app-sidebar',
-  imports: [NgIcon, NgTemplateOutlet, RouterLink, RouterLinkActive],
+  imports: [
+    MgnpDialog,
+    MgnpDialogOverlay,
+    NgpDialog,
+    NgpDialogOverlay,
+    NgIcon,
+    NgTemplateOutlet,
+    RouterLink,
+    RouterLinkActive,
+  ],
   standalone: true,
   template: `
-    <!--eslint-disable @angular-eslint/template/click-events-have-key-events-->
-    <!--eslint-disable @angular-eslint/template/interactive-supports-focus-->
-
     <ng-template #content>
-      <div
-        class="sticky top-16 flex h-[calc(100dvh-140px)] w-full flex-col gap-y-4 overflow-auto overscroll-contain md:h-max md:overflow-visible">
+      <div class="flex flex-col max-w-full max-h-full gap-y-4 overflow-auto">
         @for (section of sections; track section.title) {
           <div class="mb-2">
-            <h2 class="mb-4 flex items-center gap-2 text-sm font-semibold text-ui transition-colors">
+            <h2
+              class="mb-4 flex items-center gap-2 text-sm font-semibold text-ui transition-colors">
               @if (sectionIcons[section.title]) {
                 <ng-icon
                   class="text-base text-ui-secondary transition-colors"
@@ -56,27 +74,36 @@ import { RouterLink, RouterLinkActive } from '@angular/router';
       </div>
     </ng-template>
 
-    @if (isOpen()) {
+    <div class="hidden md:block w-48 xl:w-52">
+      <ng-container [ngTemplateOutlet]="content" />
+    </div>
+
+    <ng-template
+      #drawer
+      let-close="close">
       <div
-        class="fixed inset-0 z-10 bg-inverse/50"
-        (keydown.escape)="isOpen.set(false)"
-        (click)="isOpen.set(false)">
+        ngpDialogOverlay
+        mgnpDialogOverlay
+        mode="drawer"
+        drawerPosition="start">
         <div
-          class="h-full pt-24 w-72 max-w-full bg-ui px-10 shadow-xl"
-          (click)="$event.stopPropagation()">
+          ngpDialog
+          mgnpDialog>
           <ng-container [ngTemplateOutlet]="content" />
         </div>
       </div>
-    } @else {
-      <div class="hidden md:block w-48 xl:w-52">
-        <ng-container [ngTemplateOutlet]="content" />
-      </div>
-    }
+    </ng-template>
   `,
   providers: [provideIcons({ heroRocketLaunch, heroBookmark, heroPaintBrush, heroBookOpen })],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class SidebarComponent {
+export class SidebarComponent implements OnInit {
+  private readonly _ngpDialogManager = inject(NgpDialogManager);
+  private readonly _injector = inject(Injector);
+
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  private readonly _drawer = viewChild<TemplateRef<any>>('drawer');
+
   readonly isOpen = model(false);
 
   readonly sectionIcons: Record<string, string> = {
@@ -132,6 +159,22 @@ export class SidebarComponent {
       // sort based on the order of the section titles
       return order.indexOf(a.title) - order.indexOf(b.title);
     });
+
+  ngOnInit(): void {
+    effect(
+      () => {
+        const isOpen = this.isOpen();
+        const drawer = this._drawer();
+
+        if (isOpen && drawer !== undefined) {
+          this._ngpDialogManager.open(drawer).closed.subscribe(() => {
+            this.isOpen.set(false);
+          });
+        }
+      },
+      { injector: this._injector }
+    );
+  }
 }
 
 interface Section {
