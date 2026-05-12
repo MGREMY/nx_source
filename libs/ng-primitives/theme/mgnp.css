@@ -1,4 +1,16 @@
-@import './ngp_tw.css';
+@import './animation.css';
+
+@import './components/accordion.css';
+@import './components/button.css';
+@import './components/checkbox.css';
+@import './components/combobox.css';
+@import './components/dialog.css';
+@import './components/input.css';
+@import './components/menu.css';
+@import './components/pagination.css';
+@import './components/switch.css';
+@import './components/toast.css';
+@import './components/tooltip.css';
 
 @custom-variant dark (&:where(.dark, .dark *));
 
@@ -133,6 +145,9 @@
   --mg-ring-ui: rgb(59, 130, 246);
   --mg-default-transition-duration: 250ms;
   --mg-default-transition-timing-function: var(--ease-in-out);
+
+  --mg-default-animation-translateY-origin: --spacing(-2);
+  --mg-default-animation-translateY-base: --spacing(0);
 }
 
 @theme {

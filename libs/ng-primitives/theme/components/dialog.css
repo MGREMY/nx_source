@@ -1,12 +1,12 @@
 @utility mgnp-dialog {
   background-color: var(--mg-background-ui);
-  box-shadow: var(--ngp-button-shadow);
+  box-shadow: var(--mg-shadow-button);
   padding: --spacing(6);
   border-radius: --spacing(2);
-  animation: fade-in var(--default-transition-duration) var(--default-transition-timing-function);
+  animation: mg-fade-in var(--default-transition-duration) var(--default-transition-timing-function);
 
   @variant data-exit {
-    animation: fade-out var(--default-transition-duration) var(--default-transition-timing-function);
+    animation: mg-fade-out var(--default-transition-duration) var(--default-transition-timing-function);
   }
 }
 
@@ -33,10 +33,10 @@
   background-color: --alpha(var(--mg-background-ui) / 50%);
   backdrop-filter: blur(--spacing(0.5));
   inset: --spacing(0);
-  animation: slide-in var(--default-transition-duration) var(--default-transition-timing-function);
+  animation: mg-slide-in var(--default-transition-duration) var(--default-transition-timing-function);
 
   @variant data-exit {
-    animation: slide-out var(--default-transition-duration)
+    animation: mg-slide-out var(--default-transition-duration)
       var(--default-transition-timing-function);
   }
 }

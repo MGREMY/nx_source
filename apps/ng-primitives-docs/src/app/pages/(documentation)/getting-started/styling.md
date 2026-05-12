@@ -7,8 +7,8 @@ icon: heroPaintBrush
 # Styling
 
 `@mgremy/ng-primitives` uses `TailwindCSS` variables in order to style its components. It provides a
-bunch of new `TailwindCSS` tokens based on custom CSS variables, and map the required `ng-primitives`
-styling variables to its own variables.
+bunch of new `TailwindCSS` tokens based on custom CSS variables, and map the required
+`ng-primitives` styling variables to its own variables.
 
 In a nutshell, this is how it works :
 
@@ -37,10 +37,10 @@ Theme can be customized by providing new values to `--mg-*` CSS variables.
 
 ## Default styles
 
-### @mgremy/ng-primitives
+### CSS
 
 <app-file-content name="mgnp"></app-file-content>
 
-### ng-primitives mapping
+### Animations
 
-<app-file-content name="ngp_tw"></app-file-content>
+<app-file-content name="animation"></app-file-content>

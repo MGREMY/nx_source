@@ -6,8 +6,8 @@
   justify-content: center;
   background-color: transparent;
   outline: none;
-  border: 1px solid var(--ngp-border);
-  color: var(--ngp-text-inverse);
+  border: 1px solid var(--mg-border-ui);
+  color: var(--mg-text-inverse);
   border-radius: var(--radius-sm);
   font-size: var(--text-base);
   line-height: var(--text-base--line-height);
@@ -16,16 +16,16 @@
   height: --spacing(5);
 
   @variant data-hover {
-    background-color: var(--ngp-background-hover);
+    background-color: var(--mg-background-ui-hover);
   }
 
   @variant data-checked, data-indeterminate {
-    border-color: var(--ngp-background-inverse);
-    background-color: var(--ngp-background-inverse);
+    border-color: var(--mg-background-ui-inverse);
+    background-color: var(--mg-background-ui-inverse);
   }
 
   @variant data-focus-visible {
-    outline: --spacing(0.5) solid var(--ngp-focus-ring);
+    outline: --spacing(0.5) solid var(--mg-ring-ui);
     outline-offset: --spacing(0.5);
   }
 }
