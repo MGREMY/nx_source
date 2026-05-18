@@ -22,8 +22,7 @@
 
 @utility mgnp-table-body {
   @variant not-last {
-    border-bottom-width: 1px;
-    border-bottom-color: var(--mg-border-ui-secondary);
+    border-bottom: 1px solid var(--mg-border-ui-secondary);
   }
 
   & > * {
