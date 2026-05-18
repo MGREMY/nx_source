@@ -12,10 +12,9 @@ import { RouterLink, RouterLinkActive } from '@angular/router';
   template: `
     <section class="w-full">
       <nav mgnpNavbar>
-        <ng-icon
-          name="heroBars4"
-          class="ml-5 rounded-full hover:cursor-pointer md:hidden!"
-          (click)="navbarContent.toggle()" />
+        <button class="inline-flex items-center cursor-pointer">
+          <ng-icon name="heroBars4" class="md:hidden!" (click)="navbarContent.toggle()" />
+        </button>
         <button
           class="inline-flex items-center cursor-pointer"
           (click)="_themeService.setTheme(_themeService.getTheme() === 'light' ? 'dark' : 'light')">
