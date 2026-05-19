@@ -35,8 +35,8 @@ export default class FormFieldExample {
     email: '',
   });
 
-  readonly form = form(this.formModel, (schemaPath) => {
-    required(schemaPath.email);
-    email(schemaPath.email);
+  readonly form = form(this.formModel, (root) => {
+    required(root.email);
+    email(root.email);
   });
 }

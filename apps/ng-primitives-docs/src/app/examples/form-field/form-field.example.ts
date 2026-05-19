@@ -21,13 +21,20 @@ import { NgpInput } from 'ng-primitives/input';
     ReactiveFormsModule,
   ],
   template: `
-    <div [formGroup]="formGroup" ngpFormField mgnpFormField>
-      <label ngpLabel mgnpLabel for="email">Email</label>
-      <p ngpDescription mgnpDescription>Enter your email in order to make this work</p>
-      <input ngpInput mgnpInput name="email" placeholder="email@domain.com" [formControl]="formGroup.controls.email" />
-      <p ngpError mgnpError ngpErrorValidator="required">This field is required</p>
-      <p ngpError mgnpError ngpErrorValidator="email">This field must be an email</p>
-    </div>
+    <form class="grid grid-cols-1 md:grid-cols-2 gap-2" [formGroup]="formGroup">
+      <div ngpFormField mgnpFormField>
+        <label ngpLabel mgnpLabel for="email">Email</label>
+        <p ngpDescription mgnpDescription>Enter your email in order to make this work</p>
+        <input
+          ngpInput
+          mgnpInput
+          name="email"
+          placeholder="email@domain.com"
+          [formControl]="formGroup.controls.email" />
+        <p ngpError mgnpError ngpErrorValidator="required">This field is required.</p>
+        <p ngpError mgnpError ngpErrorValidator="email">This field must be an email.</p>
+      </div>
+    </form>
   `,
 })
 export default class FormFieldExample {
