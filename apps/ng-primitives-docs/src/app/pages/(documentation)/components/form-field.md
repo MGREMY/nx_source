@@ -5,7 +5,7 @@ sourceUrl: 'https://github.com/mgremy/nx_source/tree/main/libs/ng-primitives/for
 
 # Form Field
 
-The Form Field primitive is used to create interactive, with state and error management.
+The Form Field primitive is used to create interactive forms, with state and error management.
 
 ## Usage
 

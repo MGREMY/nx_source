@@ -24,7 +24,7 @@ import { NgpInput } from 'ng-primitives/input';
     <div ngpFormField mgnpFormField>
       <label ngpLabel mgnpLabel for="email">Email</label>
       <p ngpDescription mgnpDescription>Enter your email in order to make this work</p>
-      <input ngpInput mgnpInput placeholder="email@domain.com" [formField]="form.email" />
+      <input ngpInput mgnpInput id="email" placeholder="email@domain.com" [formField]="form.email" />
       <p ngpError mgnpError ngpErrorValidator="required">This field is required</p>
       <p ngpError mgnpError ngpErrorValidator="email">This field must be an email</p>
     </div>

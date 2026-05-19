@@ -28,7 +28,7 @@ import { NgpInput } from 'ng-primitives/input';
         <input
           ngpInput
           mgnpInput
-          name="email"
+          id="email"
           placeholder="email@domain.com"
           [formControl]="formGroup.controls.email" />
         <p ngpError mgnpError ngpErrorValidator="required">This field is required.</p>
