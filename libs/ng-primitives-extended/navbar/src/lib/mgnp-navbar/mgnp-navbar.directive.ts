@@ -6,7 +6,7 @@ import { booleanAttribute, Directive, input } from '@angular/core';
   providers: [],
   host: {
     'data-mgnp-component': 'mgnp-navbar',
-    '[attr.data-is-always-open]': 'this.isAlwaysOpen() === true ? true : null',
+    '[attr.data-is-always-open]': 'isAlwaysOpen() === true ? true : null',
   },
   hostDirectives: [],
   exportAs: 'mgnpNavbar',

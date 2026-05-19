@@ -10,7 +10,7 @@ import { Directive, inject, signal } from '@angular/core';
     'data-mgnp-component': 'mgnp-navbar-content',
     '[attr.data-enter]': 'isOpen() === true ? true : null',
     '[attr.data-exit]': 'isOpen() === false ? true : null',
-    '[attr.data-is-always-open]': 'this._mgnpNavbar.isAlwaysOpen() === true ? true : null',
+    '[attr.data-is-always-open]': '_mgnpNavbar.isAlwaysOpen() === true ? true : null',
   },
   hostDirectives: [],
   exportAs: 'mgnpNavbarContent',
