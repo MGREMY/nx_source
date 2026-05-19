@@ -1,0 +1,78 @@
+@utility mgnp-description {
+  color: var(--mg-text-ui-secondary);
+  font-size: var(--text-sm);
+  line-height: var(--text-sm--line-height);
+  margin-inline: --spacing(0);
+  margin-top: --spacing(0);
+  margin-bottom: --spacing(1);
+}
+
+@utility mgnp-error {
+  display: none;
+  color: var(--mg-text-danger);
+  font-size: var(--text-sm);
+  line-height: var(--text-sm--line-height);
+  margin: --spacing(0);
+
+  @variant data-[validator='fail']:data-dirty {
+    display: block;
+  }
+}
+
+@utility mgnp-form-control {
+  width: 100%;
+  border: none;
+  outline: none;
+  background-color: var(--mg-background-ui);
+  box-shadow: var(--mg-shadow-input);
+  border-radius: var(--radius-lg);
+  padding-block: --spacing(0);
+  padding-inline: --spacing(4);
+  height: --spacing(10);
+
+  @variant focus {
+    outline-offset: 2px;
+    outline: 2px solid var(--mg-ring-ui);
+  }
+
+  ::placeholder {
+    color: var(--mg-text-placeholder);
+  }
+}
+
+@utility mgnp-form-field {
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+  gap: --spacing(1.5);
+}
+
+@utility mgnp-label {
+  color: var(--mg-text-ui);
+  font-size: var(--text-base);
+  line-height: var(--text-base--line-height);
+  font-weight: var(--font-weight-semibold);
+  margin: --spacing(0);
+}
+
+@layer base {
+  [mgnpDescription][data-mgnp-component='mgnp-description'] {
+    @apply mgnp-description transition;
+  }
+
+  [mgnpError][data-mgnp-component='mgnp-error'] {
+    @apply mgnp-error transition;
+  }
+
+  [mgnpFormControl][data-mgnp-component='mgnp-form-control'] {
+    @apply mgnp-form-control transition;
+  }
+
+  [mgnpFormField][data-mgnp-component='mgnp-form-field'] {
+    @apply mgnp-form-field transition;
+  }
+
+  [mgnpLabel][data-mgnp-component='mgnp-label'] {
+    @apply mgnp-label transition;
+  }
+}

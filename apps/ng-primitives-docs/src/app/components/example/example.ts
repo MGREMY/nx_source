@@ -111,9 +111,6 @@ export class Example {
   readonly name = input.required<string>();
 
   readonly mode = signal<'preview' | 'source'>('preview');
-  readonly selectedName = linkedSignal(
-    () => this.availableNames().filter((x) => x === this.name())[0]
-  );
 
   // Get the list of available names
   readonly availableNames = computed<string[]>(() => {
@@ -126,12 +123,16 @@ export class Example {
     });
   });
 
+  readonly selectedName = linkedSignal(
+    () => this.availableNames().filter((x) => x === fromFileName(this.name()))[0]
+  );
+
   // Get available example and content for selected example name
   private readonly availableExamples = computed<{ path: string; content: Type<unknown> }[]>(
     () => getExample(this.name()) as { path: string; content: Type<unknown> }[]
   );
-  private readonly availableContents = computed<{ path: string; content: string }[]>(() =>
-    getExampleContent(this.name())
+  private readonly availableContents = computed<{ path: string; content: string }[]>(
+    () => getExampleContent(this.name()) as { path: string; content: string }[]
   );
 
   private readonly selectedContent = computed(() => {
