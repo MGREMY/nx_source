@@ -32,6 +32,7 @@ import { NgpButton } from 'ng-primitives/button';
         <button
           class="inline-flex items-center cursor-pointer"
           (click)="_themeService.setTheme(_themeService.getTheme() === 'light' ? 'dark' : 'light')">
+          <span class="sr-only">theme toggle</span>
           <ng-icon
             name="heroSun"
             class="dark:hidden! inline-block!" />

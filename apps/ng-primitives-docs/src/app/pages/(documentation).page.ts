@@ -26,15 +26,18 @@ import { RouterLink, RouterOutlet } from '@angular/router';
   template: `
     <header class="fixed top-0 w-full z-100">
       <nav mgnpNavbar>
-        <button class="inline-flex items-center cursor-pointer">
+        <button
+          class="inline-flex items-center cursor-pointer"
+          (click)="isSidebarOpen.set(!isSidebarOpen())">
+          <span class="sr-only">sidebar toggle</span>
           <ng-icon
             name="heroBars4"
-            class="md:hidden!"
-            (click)="isSidebarOpen.set(!isSidebarOpen())" />
+            class="md:hidden!" />
         </button>
         <button
           class="inline-flex items-center cursor-pointer"
           (click)="_themeService.setTheme(_themeService.getTheme() === 'light' ? 'dark' : 'light')">
+          <span class="sr-only">theme toggle</span>
           <ng-icon
             name="heroSun"
             class="dark:hidden! inline-block!" />
