@@ -11,14 +11,12 @@
 }
 
 @utility mgnp-navbar-content {
-  display: flex;
-  visibility: collapse;
   flex-direction: column;
   align-items: center;
   justify-content: end;
 
   @variant data-[is-always-open], md {
-    visibility: visible;
+    display: flex;
     flex: 1;
     flex-direction: row;
     margin: auto;
@@ -34,24 +32,29 @@
 
   @variant not-data-[is-always-open]:max-md {
     @variant data-enter {
-      visibility: visible;
-      flex: none;
+      display: flex;
       flex-basis: 100%;
       order: 9999;
       box-sizing: border-box;
       box-shadow: var(--mg-shadow-ui);
       border-radius: var(--radius-lg);
+      animation: mg-show var(--default-transition-duration)
+        var(--default-transition-timing-function);
+
+      ul {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        border-radius: var(--radius-lg);
+        background-color: var(--mg-background-ui);
+        font-weight: var(--font-weight-medium);
+        gap: --spacing(2);
+        padding: --spacing(4);
+      }
     }
 
-    ul {
-      display: flex;
-      flex-direction: column;
-      width: 100%;
-      border-radius: var(--radius-lg);
-      background-color: var(--mg-background-ui);
-      font-weight: var(--font-weight-medium);
-      gap: --spacing(2);
-      padding: --spacing(4);
+    @variant data-exit {
+      display: none;
     }
   }
 }
