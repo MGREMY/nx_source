@@ -1,0 +1,16 @@
+---
+name: 'Navbar'
+sourceUrl: 'https://github.com/mgremy/nx_source/tree/main/libs/ng-primitives-extended/navbar'
+---
+
+# Navbar
+
+Display a navbar
+
+## Usage
+
+<app-example name="navbar"></app-example>
+
+## Theme
+
+<app-file-content name="navbar" type="ng-primitives-extended-css"></app-file-content>

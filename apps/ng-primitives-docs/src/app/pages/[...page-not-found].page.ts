@@ -1,4 +1,9 @@
 import { APP_THEME_SERVICE } from '@mgremy/core';
+import {
+  MgnpNavbar,
+  MgnpNavbarContent,
+  MgnpNavbarItem,
+} from '@mgremy/ng-primitives-extended/navbar';
 import { MgnpButton } from '@mgremy/ng-primitives/button';
 
 import { NgIcon, provideIcons } from '@ng-icons/core';
@@ -9,40 +14,51 @@ import { RouterLink } from '@angular/router';
 import { NgpButton } from 'ng-primitives/button';
 
 @Component({
-  imports: [NgpButton, MgnpButton, NgIcon, RouterLink],
+  imports: [
+    MgnpNavbar,
+    MgnpNavbarContent,
+    MgnpNavbarItem,
+    MgnpButton,
+    NgpButton,
+    NgIcon,
+    RouterLink,
+  ],
   standalone: true,
   template: `
     <header class="fixed top-0 w-full z-100">
-      <nav class="nav">
-        <div class="flex flex-1 justify-between md:max-w-5xl md:justify-end md:mx-auto">
-          <div class="flex gap-4 items-center">
-            <button
-              class="nav-item"
-              (click)="
-                _themeService.setTheme(_themeService.getTheme() === 'light' ? 'dark' : 'light')
-              ">
-              <ng-icon
-                name="heroSun"
-                class="dark:hidden! inline-block!" />
-              <ng-icon
-                name="heroMoon"
-                class="hidden! dark:inline-block!" />
-            </button>
-          </div>
-          <div class="flex">
-            <button
-              class="nav-item"
-              [routerLink]="['/', 'getting-started', 'introduction']">
-              Documentation
-            </button>
-            <a
-              href="https://github.com/MGREMY/nx_source"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="nav-item">
-              Github
-            </a>
-          </div>
+      <nav
+        mgnpNavbar
+        isAlwaysOpen>
+        <button
+          class="inline-flex items-center cursor-pointer"
+          (click)="_themeService.setTheme(_themeService.getTheme() === 'light' ? 'dark' : 'light')">
+          <span class="sr-only">theme toggle</span>
+          <ng-icon
+            name="heroSun"
+            class="dark:hidden! inline-block!" />
+          <ng-icon
+            name="heroMoon"
+            class="hidden! dark:inline-block!" />
+        </button>
+        <div mgnpNavbarContent>
+          <ul>
+            <li>
+              <button
+                mgnpNavbarItem
+                [routerLink]="['/', 'getting-started', 'introduction']">
+                Documentation
+              </button>
+            </li>
+            <li>
+              <a
+                mgnpNavbarItem
+                href="https://github.com/MGREMY/nx_source"
+                target="_blank"
+                rel="noopener noreferrer">
+                Github
+              </a>
+            </li>
+          </ul>
         </div>
       </nav>
       <div class="bg-(--mg-border-emphasis) transition-colors absolute inset-x-0 h-0.5"></div>
