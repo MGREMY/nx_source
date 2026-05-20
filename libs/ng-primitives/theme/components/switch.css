@@ -34,11 +34,11 @@
 }
 
 @layer base {
-  [mgnpSwitch][data-mgnp-component='mgnp-switch'] {
+  [data-mgnp-component='mgnp-switch'] {
     @apply mgnp-switch transition;
   }
 
-  [mgnpSwitchThumb][data-mgnp-component='mgnp-switch-thumb'] {
+  [data-mgnp-component='mgnp-switch-thumb'] {
     @apply mgnp-switch-thumb transition;
   }
 }

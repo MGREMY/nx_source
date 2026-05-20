@@ -1,24 +1,22 @@
-import { Directive, inject } from '@angular/core';
-import { NgpSwitch } from 'ng-primitives/switch';
-
-const options = ['ngpSwitch'];
-
-const error = new Error(`MgnpSwitch must be used with ${options.join(' / ')}`);
+import { Directive } from '@angular/core';
+import { injectSwitchState, NgpSwitch, provideSwitchState } from 'ng-primitives/switch';
 
 @Directive({
-  selector: '[ngpSwitch][mgnpSwitch]',
+  selector: '[mgnpSwitch]',
   standalone: true,
+  providers: [provideSwitchState()],
   host: {
     'data-mgnp-component': 'mgnp-switch',
   },
+  hostDirectives: [
+    {
+      directive: NgpSwitch,
+      inputs: ['ngpSwitchChecked:checked', 'ngpSwitchDisabled:disabled'],
+      outputs: ['ngpSwitchCheckedChange:checkedChange'],
+    },
+  ],
+  exportAs: 'mgnpSwitch',
 })
 export class MgnpSwitch {
-  private readonly _ngpSwitch = inject(NgpSwitch, { optional: true });
-
-  constructor() {
-    if (!this._ngpSwitch) {
-      console.error(this);
-      throw error;
-    }
-  }
+  protected readonly state = injectSwitchState();
 }
