@@ -20,7 +20,7 @@
 }
 
 @layer base {
-  [mgnpInput][data-mgnp-component='mgnp-input'] {
+  [data-mgnp-component='mgnp-input'] {
     @apply mgnp-input transition;
   }
 }
