@@ -1,0 +1,26 @@
+import { Directive } from '@angular/core';
+import {
+  injectAccordionTriggerState,
+  NgpAccordionTrigger,
+  provideAccordionTriggerState,
+} from 'ng-primitives/accordion';
+
+@Directive({
+  selector: '[mgnpAccordionTrigger]',
+  standalone: true,
+  providers: [provideAccordionTriggerState()],
+  host: {
+    'data-mgnp-component': 'mgnp-accordion-trigger',
+  },
+  hostDirectives: [
+    {
+      directive: NgpAccordionTrigger,
+      inputs: [],
+      outputs: [],
+    },
+  ],
+  exportAs: 'mgnpAccordionTrigger',
+})
+export class MgnpAccordionTrigger {
+  protected readonly state = injectAccordionTriggerState();
+}

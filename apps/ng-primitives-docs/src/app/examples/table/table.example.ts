@@ -30,7 +30,7 @@ import { Component } from '@angular/core';
     </ng-template>
   `,
 })
-export default class LoaderExample {
+export default class TableExample {
   data = Array.from({ length: 5 }, (_, i) => i++).map((x) => ({
     name: `Product ${x}`,
     qty: x,

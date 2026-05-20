@@ -10,9 +10,11 @@
     "url": "https://github.com/MGREMY/nx_source"
   },
   "peerDependencies": {
+    "@angular/cdk": "^21.1.0",
     "@angular/core": "^21.1.0",
-    "ng-primitives": "^0.110.0",
-    "tailwindcss": "^4.3.0"
+    "ng-primitives": "^0.120.0",
+    "tailwindcss": "^4.3.0",
+    "rxjs": "^7.8.0"
   },
   "sideEffects": false,
   "style": "theme/mgnp.css",

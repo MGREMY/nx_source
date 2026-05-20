@@ -115,19 +115,19 @@
 }
 
 @layer base {
-  [mgnpAccordion][data-mgnp-component='mgnp-accordion'] {
+  [data-mgnp-component='mgnp-accordion'] {
     @apply mgnp-accordion transition;
   }
 
-  [mgnpAccordionContent][data-mgnp-component='mgnp-accordion-content'] {
+  [data-mgnp-component='mgnp-accordion-content'] {
     @apply mgnp-accordion-content transition;
   }
 
-  [mgnpAccordionItem][data-mgnp-component='mgnp-accordion-item'] {
+  [data-mgnp-component='mgnp-accordion-item'] {
     @apply mgnp-accordion-item transition;
   }
 
-  [ngpAccordionTrigger][mgnpButton][data-mgnp-component='mgnp-button'] {
+  [data-mgnp-component='mgnp-accordion-trigger'] {
     @apply mgnp-accordion-trigger transition;
   }
 }

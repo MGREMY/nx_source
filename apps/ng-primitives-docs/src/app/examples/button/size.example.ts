@@ -1,17 +1,16 @@
 import { MgnpButton } from '@mgremy/ng-primitives/button';
 
 import { Component } from '@angular/core';
-import { NgpButton } from 'ng-primitives/button';
 
 @Component({
-  imports: [NgpButton, MgnpButton],
+  imports: [MgnpButton],
   template: `
-    <button ngpButton mgnpButton>Normal</button>
-    <button ngpButton mgnpButton size="xs">Extra small</button>
-    <button ngpButton mgnpButton size="sm">Small</button>
-    <button ngpButton mgnpButton size="md">Medium</button>
-    <button ngpButton mgnpButton size="lg">Large</button>
-    <button ngpButton mgnpButton size="xl">Extra large</button>
+    <button mgnpButton>Normal</button>
+    <button mgnpButton size="xs">Extra small</button>
+    <button mgnpButton size="sm">Small</button>
+    <button mgnpButton size="md">Medium</button>
+    <button mgnpButton size="lg">Large</button>
+    <button mgnpButton size="xl">Extra large</button>
   `,
   host: {
     class: 'flex! flex-wrap gap-4 items-center',

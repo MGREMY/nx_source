@@ -1,24 +1,19 @@
-import { Directive, inject } from '@angular/core';
+import { Directive } from '@angular/core';
 import { NgpToast } from 'ng-primitives/toast';
 
-const options = ['ngpToast'];
-
-const error = new Error(`MgnpToast must be used with ${options.join(' / ')}`);
-
 @Directive({
-  selector: '[ngpToast][mgnpToast]',
+  selector: '[mgnpToast]',
   standalone: true,
   host: {
-    'data-mgnp-component': 'mgnp-toast'
+    'data-mgnp-component': 'mgnp-toast',
   },
+  hostDirectives: [
+    {
+      directive: NgpToast,
+      inputs: [],
+      outputs: [],
+    },
+  ],
+  exportAs: 'mgnpToast',
 })
-export class MgnpToast {
-  protected readonly ngpToast = inject(NgpToast, { optional: true });
-
-  constructor() {
-    if (!this.ngpToast) {
-      console.error(this);
-      throw error;
-    }
-  }
-}
+export class MgnpToast {}

@@ -1,24 +1,22 @@
-import { Directive, inject } from '@angular/core';
-import { NgpInput } from 'ng-primitives/input';
-
-const options = ['ngpInput'];
-
-const error = new Error(`MgnpInput must be used with ${options.join(' / ')}`);
+import { Directive } from '@angular/core';
+import { injectInputState, NgpInput, provideInputState } from 'ng-primitives/input';
 
 @Directive({
-  selector: '[ngpInput][mgnpInput]',
+  selector: '[mgnpInput]',
   standalone: true,
+  providers: [provideInputState()],
   host: {
     'data-mgnp-component': 'mgnp-input',
   },
+  hostDirectives: [
+    {
+      directive: NgpInput,
+      inputs: ['disabled:disabled'],
+      outputs: [],
+    },
+  ],
+  exportAs: 'mgnpInput',
 })
 export class MgnpInput {
-  protected readonly ngpInput = inject(NgpInput, { optional: true });
-
-  constructor() {
-    if (!this.ngpInput) {
-      console.error(this);
-      throw error;
-    }
-  }
+  protected readonly state = injectInputState();
 }

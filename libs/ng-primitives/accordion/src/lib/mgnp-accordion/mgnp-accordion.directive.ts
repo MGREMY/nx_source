@@ -1,24 +1,28 @@
-import { Directive, inject } from '@angular/core';
-import { NgpAccordion } from 'ng-primitives/accordion';
-
-const options = ['ngpAccordion'];
-
-const error = new Error(`MgnpAccordion must be used with ${options.join(' / ')}`);
+import { Directive } from '@angular/core';
+import { injectAccordionState, NgpAccordion, provideAccordionState } from 'ng-primitives/accordion';
 
 @Directive({
-  selector: '[ngpAccordion][mgnpAccordion]',
+  selector: '[mgnpAccordion]',
   standalone: true,
+  providers: [provideAccordionState()],
   host: {
     'data-mgnp-component': 'mgnp-accordion',
   },
+  hostDirectives: [
+    {
+      directive: NgpAccordion,
+      inputs: [
+        'ngpAccordionType:type',
+        'ngpAccordionCollapsible:collapsible',
+        'ngpAccordionValue:value',
+        'ngpAccordionDisabled:disabled',
+        'ngpAccordionOrientation:orientation',
+      ],
+      outputs: ['ngpAccordionValueChange:valueChange'],
+    },
+  ],
+  exportAs: 'mgnpAccordion',
 })
 export class MgnpAccordion {
-  protected readonly ngpAccordion = inject(NgpAccordion, { optional: true });
-
-  constructor() {
-    if (!this.ngpAccordion) {
-      console.error(this);
-      throw error;
-    }
-  }
+  protected readonly state = injectAccordionState();
 }

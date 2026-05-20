@@ -1,24 +1,30 @@
-import { Directive, inject } from '@angular/core';
-import { NgpPagination } from 'ng-primitives/pagination';
-
-const options = ['ngpPagination'];
-
-const error = new Error(`MgnpDirective must be used with ${options.join(' / ')}`);
+import { Directive } from '@angular/core';
+import {
+  injectPaginationState,
+  NgpPagination,
+  providePaginationState,
+} from 'ng-primitives/pagination';
 
 @Directive({
-  selector: '[ngpPagination][mgnpPagination]',
+  selector: '[mgnpPagination]',
   standalone: true,
+  providers: [providePaginationState()],
   host: {
     'data-mgnp-component': 'mgnp-pagination',
   },
+  hostDirectives: [
+    {
+      directive: NgpPagination,
+      inputs: [
+        'ngpPaginationPage:page',
+        'ngpPaginationPageCount:pageCount',
+        'ngpPaginationDisabled:disabled',
+      ],
+      outputs: ['ngpPaginationPageChange:pageChange'],
+    },
+  ],
+  exportAs: 'mgnpPagination',
 })
 export class MgnpPagination {
-  protected readonly ngpPagination = inject(NgpPagination, { optional: true });
-
-  constructor() {
-    if (!this.ngpPagination) {
-      console.error(this);
-      throw error;
-    }
-  }
+  protected readonly state = injectPaginationState();
 }

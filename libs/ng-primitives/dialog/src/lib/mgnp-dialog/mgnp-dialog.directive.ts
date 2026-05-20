@@ -1,28 +1,26 @@
 import { MgnpDialogOverlay } from '../mgnp-dialog-overlay/mgnp-dialog-overlay.directive';
 
 import { Directive, inject } from '@angular/core';
-import { NgpDialog } from 'ng-primitives/dialog';
-
-const options = ['ngpDialog'];
-
-const error = new Error(`MgnpDialog must be used with ${options.join(' / ')}`);
+import { injectDialogState, NgpDialog } from 'ng-primitives/dialog';
 
 @Directive({
-  selector: '[ngpDialog][mgnpDialog]',
+  selector: '[mgnpDialog]',
   standalone: true,
+  providers: [],
   host: {
     'data-mgnp-component': 'mgnp-dialog',
-    '[attr.data-mgnp-mode]': '_overlay.mode()',
+    '[attr.data-mgnp-mode]': 'overlay.mode()',
   },
+  hostDirectives: [
+    {
+      directive: NgpDialog,
+      inputs: ['ngpDialogRole:role', 'ngpDialogModal:modal'],
+      outputs: [],
+    },
+  ],
+  exportAs: 'mgnpDialog',
 })
 export class MgnpDialog {
-  protected readonly _overlay = inject(MgnpDialogOverlay);
-  private readonly _ngpDialog = inject(NgpDialog, { optional: true });
-
-  constructor() {
-    if (!this._ngpDialog) {
-      console.error(this);
-      throw error;
-    }
-  }
+  protected readonly overlay = inject(MgnpDialogOverlay);
+  protected readonly state = injectDialogState();
 }

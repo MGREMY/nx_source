@@ -17,6 +17,7 @@
   "dependencies": {
     "@analogjs/content": "^2.3.1",
     "@analogjs/router": "^2.3.1",
+    "@angular/cdk": "^21.1.0",
     "@angular/common": "^21.1.0",
     "@angular/compiler": "^21.1.0",
     "@angular/core": "^21.1.0",
@@ -81,7 +82,7 @@
     "jsdom": "^22.0.0",
     "jsonc-eslint-parser": "^2.1.0",
     "ng-packagr": "^21.1.0",
-    "ng-primitives": "^0.110.1",
+    "ng-primitives": "^0.120.0",
     "nx": "22.5.4",
     "postcss": "^8.4.5",
     "postcss-url": "^10.1.3",

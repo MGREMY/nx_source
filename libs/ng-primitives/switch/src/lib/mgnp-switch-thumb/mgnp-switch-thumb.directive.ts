@@ -1,24 +1,26 @@
-import { Directive, inject } from '@angular/core';
-import { NgpSwitchThumb } from 'ng-primitives/switch';
-
-const options = ['ngpSwitchThumb'];
-
-const error = new Error(`MgnpSwitchThumb must be used with ${options.join(' / ')}`);
+import { Directive } from '@angular/core';
+import {
+  injectSwitchThumbState,
+  NgpSwitchThumb,
+  provideSwitchThumbState,
+} from 'ng-primitives/switch';
 
 @Directive({
-  selector: '[ngpSwitchThumb][mgnpSwitchThumb]',
+  selector: '[mgnpSwitchThumb]',
   standalone: true,
+  providers: [provideSwitchThumbState()],
   host: {
     'data-mgnp-component': 'mgnp-switch-thumb',
   },
+  hostDirectives: [
+    {
+      directive: NgpSwitchThumb,
+      inputs: [],
+      outputs: [],
+    },
+  ],
+  exportAs: 'mgnpSwitchThumb',
 })
 export class MgnpSwitchThumb {
-  private readonly _ngpSwitchThumb = inject(NgpSwitchThumb, { optional: true });
-
-  constructor() {
-    if (!this._ngpSwitchThumb) {
-      console.error(this);
-      throw error;
-    }
-  }
+  protected readonly state = injectSwitchThumbState();
 }

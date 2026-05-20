@@ -1,24 +1,31 @@
-import { Directive, inject } from '@angular/core';
-import { NgpCheckbox } from 'ng-primitives/checkbox';
-
-const options = ['ngpCheckbox'];
-
-const error = new Error(`MgnpCheckbox must be used with ${options.join(' / ')}`);
+import { Directive } from '@angular/core';
+import { injectCheckboxState, NgpCheckbox, provideCheckboxState } from 'ng-primitives/checkbox';
 
 @Directive({
-  selector: `[ngpCheckbox][mgnpCheckbox]`,
+  selector: `[mgnpCheckbox]`,
   standalone: true,
+  providers: [provideCheckboxState()],
   host: {
     'data-mgnp-component': 'mgnp-checkbox',
   },
+  hostDirectives: [
+    {
+      directive: NgpCheckbox,
+      inputs: [
+        'ngpCheckboxChecked:checked',
+        'ngpCheckboxDefaultChecked:defaultChecked',
+        'ngpCheckboxIndeterminate:indeterminate',
+        'ngpCheckboxRequired:required',
+        'ngpCheckboxDisabled:disabled',
+      ],
+      outputs: [
+        'ngpCheckboxCheckedChange:checkedChange',
+        'ngpCheckboxIndeterminateChange:indeterminateChange',
+      ],
+    },
+  ],
+  exportAs: 'mgnpCheckbox',
 })
 export class MgnpCheckbox {
-  protected readonly ngpCheckbox = inject(NgpCheckbox, { optional: true });
-
-  constructor() {
-    if (!this.ngpCheckbox) {
-      console.error(this);
-      throw error;
-    }
-  }
+  protected readonly state = injectCheckboxState();
 }
