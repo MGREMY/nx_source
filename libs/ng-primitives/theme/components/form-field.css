@@ -56,23 +56,23 @@
 }
 
 @layer base {
-  [mgnpDescription][data-mgnp-component='mgnp-description'] {
+  [data-mgnp-component='mgnp-description'] {
     @apply mgnp-description transition;
   }
 
-  [mgnpError][data-mgnp-component='mgnp-error'] {
+  [data-mgnp-component='mgnp-error'] {
     @apply mgnp-error transition;
   }
 
-  [mgnpFormControl][data-mgnp-component='mgnp-form-control'] {
+  [data-mgnp-component='mgnp-form-control'] {
     @apply mgnp-form-control transition;
   }
 
-  [mgnpFormField][data-mgnp-component='mgnp-form-field'] {
+  [data-mgnp-component='mgnp-form-field'] {
     @apply mgnp-form-field transition;
   }
 
-  [mgnpLabel][data-mgnp-component='mgnp-label'] {
+  [data-mgnp-component='mgnp-label'] {
     @apply mgnp-label transition;
   }
 }
