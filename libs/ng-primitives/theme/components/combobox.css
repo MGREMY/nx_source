@@ -2,13 +2,13 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: fit-content;
-  width: fit-content;
   border: none;
   box-sizing: border-box;
   border-radius: var(--radius-lg);
   background-color: var(--mg-background-ui);
   box-shadow: var(--mg-shadow-input);
+  height: --spacing(8);
+  width: --spacing(64);
 
   @variant data-focus {
     outline-offset: 2px;
@@ -17,23 +17,26 @@
 }
 
 @utility mgnp-combobox-input {
-  flex: 1;
   border: none;
   background-color: transparent;
   font-family: inherit;
   outline: none;
   height: auto;
   width: auto;
-  padding-block: --spacing(0);
-  padding-inline: --spacing(4);
   font-size: var(--text-sm);
   line-height: var(--text-sm--line-height);
   color: var(--mg-text-ui);
+  padding-block: --spacing(2);
+  padding-left: --spacing(2);
+
+  @variant [&::only-child] {
+    padding-right: --spacing(2);
+  }
 }
 
 @utility mgnp-combobox-button {
   display: inline-flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   height: 100%;
   background-color: transparent;
@@ -42,10 +45,16 @@
   box-sizing: border-box;
   box-shadow: none;
   color: var(--mg-text-ui);
+  padding-block: --spacing(2);
+  padding-right: --spacing(2);
+
+  @variant [&:only-child] {
+    width: 100%;
+    padding-left: --spacing(2);
+  }
 }
 
 @utility mgnp-combobox-dropdown {
-  padding: --spacing(1);
   outline: none;
   position: absolute;
   min-width: fit-content;
@@ -53,12 +62,13 @@
   overflow-y: auto;
   z-index: 1001;
   border-radius: var(--radius-xl);
-  margin-top: --spacing(1);
   max-height: --spacing(60);
   width: var(--ngp-combobox-width);
   box-shadow: var(--mg-shadow-lg);
   background-color: var(--mg-background-ui);
   border: 1px solid var(--mg-border-ui);
+  padding: --spacing(1);
+  margin-top: --spacing(1);
 
   @variant data-enter {
     animation: mg-show var(--default-transition-duration) var(--default-transition-timing-function);
@@ -75,14 +85,14 @@
   cursor: pointer;
   width: 100%;
   box-sizing: border-box;
-  gap: --spacing(2);
-  padding-block: --spacing(1.5);
-  padding-inline: --spacing(3);
-  height: --spacing(9);
   border-radius: var(--radius-lg);
   font-size: var(--text-sm);
   line-height: var(--text-sm--line-height);
   color: var(--mg-text-ui);
+  gap: --spacing(2);
+  padding-block: --spacing(1.5);
+  padding-inline: --spacing(3);
+  height: --spacing(9);
 
   @variant data-hover {
     background-color: var(--mg-background-ui-hover);
@@ -102,23 +112,23 @@
 }
 
 @layer base {
-  [mgnpCombobox][data-mgnp-component='mgnp-combobox'] {
+  [data-mgnp-component='mgnp-combobox'] {
     @apply mgnp-combobox transition;
   }
 
-  [mgnpComboboxInput][data-mgnp-component='mgnp-combobox-input'] {
+  [data-mgnp-component='mgnp-combobox-input'] {
     @apply mgnp-combobox-input transition;
   }
 
-  [ngpComboboxButton][mgnpButton][data-mgnp-component='mgnp-button'] {
+  [data-mgnp-component='mgnp-combobox-button'] {
     @apply mgnp-combobox-button transition;
   }
 
-  [mgnpComboboxDropdown][data-mgnp-component='mgnp-combobox-dropdown'] {
+  [data-mgnp-component='mgnp-combobox-dropdown'] {
     @apply mgnp-combobox-dropdown transition;
   }
 
-  [mgnpComboboxOption][data-mgnp-component='mgnp-combobox-option'] {
+  [data-mgnp-component='mgnp-combobox-option'] {
     @apply mgnp-combobox-option transition;
   }
 }

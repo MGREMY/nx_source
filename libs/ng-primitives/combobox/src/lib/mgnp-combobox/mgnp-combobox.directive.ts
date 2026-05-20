@@ -1,24 +1,34 @@
-import { Directive, inject } from '@angular/core';
-import { NgpCombobox } from 'ng-primitives/combobox';
-
-const options = ['ngpCombobox'];
-
-const error = new Error(`MgnpCombobox must be used with ${options.join(' / ')}`);
+import { Directive } from '@angular/core';
+import { injectComboboxState, NgpCombobox, provideComboboxState } from 'ng-primitives/combobox';
 
 @Directive({
-  selector: '[ngpCombobox][mgnpCombobox]',
+  selector: '[mgnpCombobox]',
   standalone: true,
+  providers: [provideComboboxState()],
   host: {
     'data-mgnp-component': 'mgnp-combobox',
   },
+  hostDirectives: [
+    {
+      directive: NgpCombobox,
+      inputs: [
+        'ngpComboboxValue:value',
+        'ngpComboboxMultiple:multiple',
+        'ngpComboboxDisabled:disabled',
+        'ngpComboboxAllowDeselect:allowDeselect',
+        'ngpComboboxCompareWith:compareWith',
+        'ngpComboboxDropdownPlacement:dropdownPlacement',
+        'ngpComboboxDropdownContainer:dropdownContainer',
+        'ngpComboboxDropdownFlip:dropdownFlip',
+        'ngpComboboxDropdownOffset:dropdownOffset',
+        'ngpComboboxScrollToOption:scrollToOption',
+        'ngpComboboxOptions:options',
+      ],
+      outputs: ['ngpComboboxValueChange:valueChange', 'ngpComboboxOpenChange:openChange'],
+    },
+  ],
+  exportAs: 'mgnpCombobox',
 })
 export class MgnpCombobox {
-  protected readonly ngpCombobox = inject(NgpCombobox, { optional: true });
-
-  constructor() {
-    if (!this.ngpCombobox) {
-      console.error(this);
-      throw error;
-    }
-  }
+  protected readonly state = injectComboboxState();
 }

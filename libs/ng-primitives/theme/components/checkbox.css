@@ -31,7 +31,7 @@
 }
 
 @layer base {
-  [mgnpCheckbox][data-mgnp-component='mgnp-checkbox'] {
+  [data-mgnp-component='mgnp-checkbox'] {
     @apply mgnp-checkbox transition;
   }
 }
