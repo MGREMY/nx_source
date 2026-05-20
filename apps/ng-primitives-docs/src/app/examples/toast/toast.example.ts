@@ -15,7 +15,7 @@ import { NgpToastManager } from 'ng-primitives/toast';
           <p class="text-lg font-semibold text-ui transition-colors">This is a toast message</p>
           <p class="text-ui-secondary transition-colors">It will disappear in 3 seconds</p>
         </div>
-        <button (click)="dismiss()" ngpButton mgnpButton variant="outline">Dismiss</button>
+        <button (click)="dismiss()" mgnpButton variant="outline">Dismiss</button>
       </div>
     </ng-template>
   `,
