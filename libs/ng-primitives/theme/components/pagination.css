@@ -58,14 +58,14 @@
 }
 
 @layer base {
-  [ngpPagination][data-mgnp-component='mgnp-pagination'] {
+  [data-mgnp-component='mgnp-pagination'] {
     @apply mgnp-pagination transition;
 
-    [ngpPaginationFirst],
-    [ngpPaginationPrevious],
-    [ngpPaginationButton],
-    [ngpPaginationNext],
-    [ngpPaginationLast] {
+    [data-mgnp-component='mgnp-pagination-first'],
+    [data-mgnp-component='mgnp-pagination-previous'],
+    [data-mgnp-component='mgnp-pagination-button'],
+    [data-mgnp-component='mgnp-pagination-next'],
+    [data-mgnp-component='mgnp-pagination-last'] {
       @apply mgnp-pagination-button transition;
     }
   }
