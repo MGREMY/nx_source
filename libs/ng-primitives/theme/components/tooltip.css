@@ -36,11 +36,15 @@
 }
 
 @layer base {
-  [mgnpTooltip][data-mgnp-component='mgnp-tooltip'] {
+  [data-mgnp-component='mgnp-tooltip'] {
     @apply mgnp-tooltip transition;
   }
 
-  [mgnpTooltipArrow][data-mgnp-component='mgnp-tooltip-arrow'] {
+  [data-mgnp-component='mgnp-tooltip-arrow'] {
     @apply mgnp-tooltip-arrow transition;
+  }
+
+  [data-mgnp-component='mgnp-tooltip-trigger'] {
+    @apply mgnp-button transition;
   }
 }
