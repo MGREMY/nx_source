@@ -11,18 +11,9 @@ import { heroMoon, heroQuestionMarkCircle, heroSun } from '@ng-icons/heroicons/o
 
 import { Component, inject } from '@angular/core';
 import { RouterLink } from '@angular/router';
-import { NgpButton } from 'ng-primitives/button';
 
 @Component({
-  imports: [
-    MgnpNavbar,
-    MgnpNavbarContent,
-    MgnpNavbarItem,
-    MgnpButton,
-    NgpButton,
-    NgIcon,
-    RouterLink,
-  ],
+  imports: [MgnpNavbar, MgnpNavbarContent, MgnpNavbarItem, MgnpButton, NgIcon, RouterLink],
   standalone: true,
   template: `
     <header class="fixed top-0 w-full z-100">
@@ -75,13 +66,11 @@ import { NgpButton } from 'ng-primitives/button';
 
         <div class="flex flex-col gap-4 sm:flex-row items-center">
           <a
-            ngpButton
             mgnpButton
             [routerLink]="['/']">
             Go to home
           </a>
           <a
-            ngpButton
             mgnpButton
             [routerLink]="['/', 'getting-started', 'introduction']">
             Go to documentation

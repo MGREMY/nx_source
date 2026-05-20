@@ -11,18 +11,9 @@ import { heroMoon, heroSun } from '@ng-icons/heroicons/outline';
 
 import { Component, inject } from '@angular/core';
 import { RouterLink } from '@angular/router';
-import { NgpButton } from 'ng-primitives/button';
 
 @Component({
-  imports: [
-    MgnpNavbar,
-    MgnpNavbarContent,
-    MgnpNavbarItem,
-    NgpButton,
-    MgnpButton,
-    NgIcon,
-    RouterLink,
-  ],
+  imports: [MgnpNavbar, MgnpNavbarContent, MgnpNavbarItem, MgnpButton, NgIcon, RouterLink],
   standalone: true,
   template: `
     <header class="fixed top-0 w-full z-100">
@@ -72,7 +63,6 @@ import { NgpButton } from 'ng-primitives/button';
         </div>
         <div class="flex flex-col sm:flex-row items-center gap-16">
           <a
-            ngpButton
             mgnpButton
             size="lg"
             [routerLink]="['/', 'getting-started', 'introduction']">
@@ -80,7 +70,6 @@ import { NgpButton } from 'ng-primitives/button';
           </a>
           <div class="flex gap-4">
             <a
-              ngpButton
               mgnpButton
               size="lg"
               color="secondary"
@@ -91,7 +80,6 @@ import { NgpButton } from 'ng-primitives/button';
               Github
             </a>
             <a
-              ngpButton
               mgnpButton
               size="lg"
               color="secondary"

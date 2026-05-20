@@ -22,20 +22,11 @@ import {
   viewChild,
 } from '@angular/core';
 import { RouterLink, RouterLinkActive } from '@angular/router';
-import { NgpDialog, NgpDialogManager, NgpDialogOverlay } from 'ng-primitives/dialog';
+import { NgpDialogManager } from 'ng-primitives/dialog';
 
 @Component({
   selector: 'app-sidebar',
-  imports: [
-    MgnpDialog,
-    MgnpDialogOverlay,
-    NgpDialog,
-    NgpDialogOverlay,
-    NgIcon,
-    NgTemplateOutlet,
-    RouterLink,
-    RouterLinkActive,
-  ],
+  imports: [MgnpDialog, MgnpDialogOverlay, NgIcon, NgTemplateOutlet, RouterLink, RouterLinkActive],
   standalone: true,
   template: `
     <ng-template #content>
@@ -82,13 +73,10 @@ import { NgpDialog, NgpDialogManager, NgpDialogOverlay } from 'ng-primitives/dia
       #drawer
       let-close="close">
       <div
-        ngpDialogOverlay
         mgnpDialogOverlay
         mode="drawer"
         drawerPosition="start">
-        <div
-          ngpDialog
-          mgnpDialog>
+        <div mgnpDialog>
           <ng-container [ngTemplateOutlet]="content" />
         </div>
       </div>
