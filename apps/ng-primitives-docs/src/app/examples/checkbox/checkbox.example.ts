@@ -4,16 +4,11 @@ import { NgIcon, provideIcons } from '@ng-icons/core';
 import { heroCheckMini, heroMinusMini } from '@ng-icons/heroicons/mini';
 
 import { Component, signal } from '@angular/core';
-import { NgpCheckbox } from 'ng-primitives/checkbox';
 
 @Component({
-  imports: [NgpCheckbox, MgnpCheckbox, NgIcon],
+  imports: [MgnpCheckbox, NgIcon],
   template: `
-    <span
-      ngpCheckbox
-      mgnpCheckbox
-      [ngpCheckboxIndeterminate]="checked() === undefined"
-      [(ngpCheckboxChecked)]="checked">
+    <span mgnpCheckbox [indeterminate]="checked() === undefined" [(checked)]="checked">
       @if (checked() === undefined) {
         <ng-icon name="heroMinusMini" />
       } @else if (checked()) {

@@ -28,6 +28,7 @@ export type MgnpButtonSize = PropertyType<'xs' | 'sm' | 'md' | 'lg' | 'xl'>;
       outputs: [],
     },
   ],
+  exportAs: 'mgnpButton',
 })
 export class MgnpButton {
   protected readonly state = injectButtonState();
