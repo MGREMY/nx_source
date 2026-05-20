@@ -1,24 +1,19 @@
-import { Directive, inject } from '@angular/core';
+import { Directive } from '@angular/core';
 import { NgpDialogTitle } from 'ng-primitives/dialog';
 
-const options = ['ngpDialogTitle'];
-
-const error = new Error(`MgnpDialogTitle must be used with ${options.join(' / ')}`);
-
 @Directive({
-  selector: '[ngpDialogTitle][mgnpDialogTitle]',
+  selector: '[mgnpDialogTitle]',
   standalone: true,
   host: {
     'data-mgnp-component': 'mgnp-dialog-title',
   },
+  hostDirectives: [
+    {
+      directive: NgpDialogTitle,
+      inputs: [],
+      outputs: [],
+    },
+  ],
+  exportAs: 'mgnpDialogTitle',
 })
-export class MgnpDialogTitle {
-  private readonly _ngpDialogTitle = inject(NgpDialogTitle, { optional: true });
-
-  constructor() {
-    if (!this._ngpDialogTitle) {
-      console.error(this);
-      throw error;
-    }
-  }
-}
+export class MgnpDialogTitle {}

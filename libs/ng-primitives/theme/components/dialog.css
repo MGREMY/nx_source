@@ -83,19 +83,23 @@
 }
 
 @layer base {
-  [mgnpDialog][data-mgnp-component='mgnp-dialog'] {
+  [data-mgnp-component='mgnp-dialog'] {
     @apply transition mgnp-dialog;
   }
 
-  [mgnpDialogTitle][data-mgnp-component='mgnp-dialog-title'] {
+  [data-mgnp-component='mgnp-dialog-title'] {
     @apply transition mgnp-dialog-title;
   }
 
-  [mgnpDialogDescription][data-mgnp-component='mgnp-dialog-description'] {
+  [data-mgnp-component='mgnp-dialog-description'] {
     @apply transition mgnp-dialog-description;
   }
 
-  [mgnpDialogOverlay][data-mgnp-component='mgnp-dialog-overlay'] {
+  [data-mgnp-component='mgnp-dialog-overlay'] {
     @apply transition mgnp-dialog-overlay;
+  }
+
+  [data-mgnp-component='mgnp-dialog-trigger'] {
+    @apply transition mgnp-button;
   }
 }
