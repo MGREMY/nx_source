@@ -76,6 +76,6 @@ import {
     }),
   ],
 })
-export default class ButtonExample {
+export default class PaginationExample {
   readonly page = signal(1);
 }

@@ -17,7 +17,7 @@ import { NgpInput } from 'ng-primitives/input';
     </div>
   `,
 })
-export default class FormFieldExample {
+export default class SignalFormExample {
   private readonly formModel = signal({
     email: '',
   });

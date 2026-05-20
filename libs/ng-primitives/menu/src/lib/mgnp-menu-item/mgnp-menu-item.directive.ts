@@ -1,24 +1,22 @@
-import { Directive, inject } from '@angular/core';
-import { NgpMenuItem } from 'ng-primitives/menu';
-
-const options = ['ngpMenuItem'];
-
-const error = new Error(`MgnpMenuItem must be used with ${options.join(' / ')}`);
+import { Directive } from '@angular/core';
+import { injectMenuItemState, NgpMenuItem, provideMenuItemState } from 'ng-primitives/menu';
 
 @Directive({
-  selector: '[ngpMenuItem][mgnpMenuItem]',
+  selector: '[mgnpMenuItem]',
   standalone: true,
+  providers: [provideMenuItemState()],
   host: {
     'data-mgnp-component': 'mgnp-menu-item',
   },
+  hostDirectives: [
+    {
+      directive: NgpMenuItem,
+      inputs: ['ngpMenuItemDisabled:disabled', 'ngpMenuItemCloseOnSelect:closeOnSelect'],
+      outputs: [],
+    },
+  ],
+  exportAs: 'mgnpMenuItem',
 })
 export class MgnpMenuItem {
-  protected readonly ngpMenuItem = inject(NgpMenuItem, { optional: true });
-
-  constructor() {
-    if (!this.ngpMenuItem) {
-      console.error(this);
-      throw error;
-    }
-  }
+  protected readonly state = injectMenuItemState();
 }

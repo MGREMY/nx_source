@@ -14,4 +14,4 @@ import { NgpTooltip, NgpTooltipTrigger } from 'ng-primitives/tooltip';
     </ng-template>
   `,
 })
-export default class ButtonExample {}
+export default class TooltipExample {}
