@@ -31,7 +31,7 @@ import {
         'ngpTooltipTriggerUseTextContent:useTextContent',
         'ngpTooltipTriggerTrackPosition:trackPosition',
         'ngpTooltipTriggerScrollBehavior:scrollBehavior',
-        'ngpTooltipTriggerCooldown:colldown',
+        'ngpTooltipTriggerCooldown:cooldown',
         'ngpTooltipTriggerHoverableContent:hoverableContent',
       ],
       outputs: [],
