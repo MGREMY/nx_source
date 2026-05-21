@@ -1,15 +1,38 @@
 import { MgnpCheckbox } from '@mgremy/ng-primitives/checkbox';
+import {
+  MgnpCombobox,
+  MgnpComboboxButton,
+  MgnpComboboxDropdown,
+  MgnpComboboxOption,
+} from '@mgremy/ng-primitives/combobox';
 import { MgnpDescription, MgnpError, MgnpFormField, MgnpLabel } from '@mgremy/ng-primitives/form-field';
 import { MgnpInput } from '@mgremy/ng-primitives/input';
 
 import { NgIcon, provideIcons } from '@ng-icons/core';
 import { heroCheckMini } from '@ng-icons/heroicons/mini';
+import { heroChevronDown } from '@ng-icons/heroicons/outline';
 
 import { Component, signal } from '@angular/core';
 import { email, form, FormField, FormRoot, required } from '@angular/forms/signals';
+import { NgpComboboxPortal } from 'ng-primitives/combobox';
 
 @Component({
-  imports: [MgnpFormField, MgnpLabel, MgnpDescription, MgnpError, MgnpInput, MgnpCheckbox, NgIcon, FormField, FormRoot],
+  imports: [
+    MgnpFormField,
+    MgnpLabel,
+    MgnpDescription,
+    MgnpError,
+    MgnpInput,
+    MgnpCheckbox,
+    MgnpCombobox,
+    MgnpComboboxDropdown,
+    MgnpComboboxButton,
+    MgnpComboboxOption,
+    NgpComboboxPortal,
+    NgIcon,
+    FormField,
+    FormRoot,
+  ],
   template: `
     <form class="grid grid-cols-1 md:grid-cols-2 gap-2" [formRoot]="form">
       <div mgnpFormField>
@@ -28,19 +51,38 @@ import { email, form, FormField, FormRoot, required } from '@angular/forms/signa
         </span>
         <p mgnpError validator="required">Please accept the conditions.</p>
       </div>
+      <div mgnpFormField>
+        <label mgnpLabel for="combobox">Option</label>
+        <div mgnpCombobox id="combobox" [formField]="form.combobox">
+          <button mgnpComboboxButton>
+            {{ form.combobox().value() || 'Select an option' }}
+            <ng-icon name="heroChevronDown" />
+          </button>
+          <div *ngpComboboxPortal mgnpComboboxDropdown>
+            <option mgnpComboboxOption value="option1">Option 1</option>
+            <option mgnpComboboxOption value="option2">Option 2</option>
+            <option mgnpComboboxOption value="option3">Option 3</option>
+          </div>
+        </div>
+        <p mgnpError validator="required">Please accept the conditions.</p>
+      </div>
     </form>
   `,
-  providers: [provideIcons({ heroCheckMini })],
+  providers: [provideIcons({ heroCheckMini, heroChevronDown })],
 })
 export default class SignalFormExample {
   private readonly formModel = signal({
     email: '',
     checked: false,
+    combobox: '',
   });
 
   readonly form = form(this.formModel, (root) => {
     required(root.email);
     email(root.email);
+
     required(root.checked);
+
+    required(root.combobox);
   });
 }
