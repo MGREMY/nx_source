@@ -7,6 +7,7 @@ import {
 } from '@mgremy/ng-primitives/combobox';
 import { MgnpDescription, MgnpError, MgnpFormField, MgnpLabel } from '@mgremy/ng-primitives/form-field';
 import { MgnpInput } from '@mgremy/ng-primitives/input';
+import { MgnpSwitch, MgnpSwitchThumb } from '@mgremy/ng-primitives/switch';
 
 import { NgIcon, provideIcons } from '@ng-icons/core';
 import { heroCheckMini } from '@ng-icons/heroicons/mini';
@@ -31,6 +32,8 @@ import { NgpComboboxPortal } from 'ng-primitives/combobox';
     NgpComboboxPortal,
     NgIcon,
     ReactiveFormsModule,
+    MgnpSwitch,
+    MgnpSwitchThumb,
   ],
   template: `
     <form class="grid grid-cols-1 md:grid-cols-2 gap-2" [formGroup]="formGroup">
@@ -65,6 +68,13 @@ import { NgpComboboxPortal } from 'ng-primitives/combobox';
         </div>
         <p mgnpError validator="required">Please accept the conditions.</p>
       </div>
+      <div mgnpFormField>
+        <label mgnpLabel for="enableFeature">Feature</label>
+        <p mgnpDescription>Do you want to enable the feature ?</p>
+        <button mgnpSwitch id="enableFeature" [formControl]="formGroup.controls.enableFeature">
+          <span mgnpSwitchThumb></span>
+        </button>
+      </div>
     </form>
   `,
   providers: [provideIcons({ heroCheckMini, heroChevronDown })],
@@ -74,5 +84,6 @@ export default class FormFieldExample {
     email: new FormControl('', [Validators.required, Validators.email]),
     checked: new FormControl(false, [Validators.requiredTrue]),
     combobox: new FormControl('', [Validators.required]),
+    enableFeature: new FormControl(false, []),
   });
 }

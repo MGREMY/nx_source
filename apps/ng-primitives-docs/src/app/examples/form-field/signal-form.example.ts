@@ -7,6 +7,7 @@ import {
 } from '@mgremy/ng-primitives/combobox';
 import { MgnpDescription, MgnpError, MgnpFormField, MgnpLabel } from '@mgremy/ng-primitives/form-field';
 import { MgnpInput } from '@mgremy/ng-primitives/input';
+import { MgnpSwitch, MgnpSwitchThumb } from '@mgremy/ng-primitives/switch';
 
 import { NgIcon, provideIcons } from '@ng-icons/core';
 import { heroCheckMini } from '@ng-icons/heroicons/mini';
@@ -32,6 +33,8 @@ import { NgpComboboxPortal } from 'ng-primitives/combobox';
     NgIcon,
     FormField,
     FormRoot,
+    MgnpSwitch,
+    MgnpSwitchThumb,
   ],
   template: `
     <form class="grid grid-cols-1 md:grid-cols-2 gap-2" [formRoot]="form">
@@ -66,23 +69,32 @@ import { NgpComboboxPortal } from 'ng-primitives/combobox';
         </div>
         <p mgnpError validator="required">Please accept the conditions.</p>
       </div>
+      <div mgnpFormField>
+        <label mgnpLabel for="enableFeature">Feature</label>
+        <p mgnpDescription>Do you want to enable the feature ?</p>
+        <button mgnpSwitch id="enableFeature" [formField]="form.enableFeature">
+          <span mgnpSwitchThumb></span>
+        </button>
+      </div>
     </form>
   `,
   providers: [provideIcons({ heroCheckMini, heroChevronDown })],
 })
 export default class SignalFormExample {
-  private readonly formModel = signal({
-    email: '',
-    checked: false,
-    combobox: '',
-  });
+  readonly form = form(
+    signal({
+      email: '',
+      checked: false,
+      combobox: '',
+      enableFeature: false,
+    }),
+    (schema) => {
+      required(schema.email);
+      email(schema.email);
 
-  readonly form = form(this.formModel, (root) => {
-    required(root.email);
-    email(root.email);
+      required(schema.checked);
 
-    required(root.checked);
-
-    required(root.combobox);
-  });
+      required(schema.combobox);
+    }
+  );
 }
