@@ -1,10 +1,16 @@
-import { Directive } from '@angular/core';
+import { Directive, effect } from '@angular/core';
+import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
+import { ControlValueAccessor } from '@angular/forms';
 import { injectComboboxState, NgpCombobox, provideComboboxState } from 'ng-primitives/combobox';
+import { ChangeFn, provideValueAccessor, TouchedFn } from 'ng-primitives/utils';
+
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+type T = any;
 
 @Directive({
   selector: '[mgnpCombobox]',
   standalone: true,
-  providers: [provideComboboxState()],
+  providers: [provideComboboxState(), provideValueAccessor(MgnpCombobox)],
   host: {
     'data-mgnp-component': 'mgnp-combobox',
   },
@@ -29,6 +35,31 @@ import { injectComboboxState, NgpCombobox, provideComboboxState } from 'ng-primi
   ],
   exportAs: 'mgnpCombobox',
 })
-export class MgnpCombobox {
+export class MgnpCombobox implements ControlValueAccessor {
   protected readonly state = injectComboboxState();
+
+  protected onChangeFn?: ChangeFn<T>;
+  protected onTouchedFn?: TouchedFn;
+
+  constructor() {
+    this.state()
+      .valueChange // TODO : pipe(takeUntilDestroyed())
+      .subscribe((value) => this.onChangeFn?.(value));
+  }
+
+  writeValue(value: T): void {
+    this.state().value.set(value);
+  }
+
+  registerOnChange(fn: ChangeFn<T>): void {
+    this.onChangeFn = fn;
+  }
+
+  registerOnTouched(fn: TouchedFn): void {
+    this.onTouchedFn = fn;
+  }
+
+  setDisabledState(value: boolean): void {
+    this.state().disabled.set(value);
+  }
 }

@@ -1,9 +1,13 @@
-import { Directive } from '@angular/core';
+import { PropertyType } from '@mgremy/ng-primitives';
+
+import { Directive, input } from '@angular/core';
 import {
   injectFormFieldState,
   NgpFormField,
   provideFormFieldState,
 } from 'ng-primitives/form-field';
+
+export type MgnpFormFieldType = PropertyType<'control' | 'toggle'>;
 
 @Directive({
   selector: '[mgnpFormField]',
@@ -11,6 +15,7 @@ import {
   providers: [provideFormFieldState()],
   host: {
     'data-mgnp-component': 'mgnp-form-field',
+    '[attr.data-type]': 'type()',
   },
   hostDirectives: [
     {
@@ -23,4 +28,6 @@ import {
 })
 export class MgnpFormField {
   protected readonly state = injectFormFieldState();
+
+  readonly type = input<MgnpFormFieldType>('control');
 }

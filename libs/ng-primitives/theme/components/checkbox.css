@@ -1,5 +1,5 @@
 @utility mgnp-checkbox {
-  display: flex;
+  display: inline-flex;
   flex: none;
   cursor: pointer;
   align-items: center;
