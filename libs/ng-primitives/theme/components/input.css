@@ -1,17 +1,16 @@
 @utility mgnp-input {
-  width: 100%;
+  display: block;
   border: none;
   outline: none;
-  height: --spacing(9);
-  padding-block: --spacing(0);
-  padding-inline: --spacing(4);
-  border-radius: var(--radius-lg);
-  box-shadow: var(--mg-shadow-input);
-  background-color: var(--mg-background-ui);
+  width: 100%;
+  border: var(--mgnp-border, solid 1px var(--mg-border-ui));
+  padding-block: var(--mgnp-padding-block-size, --spacing(2));
+  padding-inline: var(--mgnp-padding-inline-size, --spacing(4));
+  border-radius: var(--mgnp-border-radius, var(--radius-lg));
+  background-color: var(--mgnp-background-color, var(--mg-background-ui));
 
   @variant data-focus {
-    outline-offset: 2px;
-    outline: 2px solid var(--mg-ring-ui);
+    outline: 1px solid var(--mg-ring-ui);
   }
 
   ::placeholder {

@@ -6,12 +6,12 @@ import {
   MgnpComboboxDropdown,
   MgnpComboboxOption,
 } from '@mgremy/ng-primitives/combobox';
-import { MgnpDescription, MgnpError, MgnpFormField, MgnpLabel } from '@mgremy/ng-primitives/form-field';
+import { MgnpDescription, MgnpError, MgnpFormField, MgnpLabel, MgnpLabelGroup } from '@mgremy/ng-primitives/form-field';
 import { MgnpInput } from '@mgremy/ng-primitives/input';
 import { MgnpSwitch, MgnpSwitchThumb } from '@mgremy/ng-primitives/switch';
 
 import { NgIcon, provideIcons } from '@ng-icons/core';
-import { heroCheckMini } from '@ng-icons/heroicons/mini';
+import { heroAtSymbolMini, heroCheckMini, heroPhoneMini } from '@ng-icons/heroicons/mini';
 import { heroChevronDown } from '@ng-icons/heroicons/outline';
 
 import { Component } from '@angular/core';
@@ -22,6 +22,7 @@ import { NgpComboboxPortal } from 'ng-primitives/combobox';
   imports: [
     MgnpFormField,
     MgnpLabel,
+    MgnpLabelGroup,
     MgnpDescription,
     MgnpError,
     MgnpInput,
@@ -42,42 +43,55 @@ import { NgpComboboxPortal } from 'ng-primitives/combobox';
   template: `
     <form class="flex flex-col gap-4" [formGroup]="formGroup" (ngSubmit)="onSubmit()">
       <div mgnpFormField>
-        <span mgnpLabel>Name</span>
-        <input mgnpInput [formControl]="formGroup.controls.name" />
+        <div mgnpLabelGroup>
+          <span mgnpLabel>Name</span>
+          <input mgnpInput [formControl]="formGroup.controls.name" />
+        </div>
         <p mgnpError validator="required">This field is required.</p>
       </div>
       <div mgnpFormField>
-        <span mgnpLabel>Email</span>
-        <input mgnpInput type="email" placeholder="email@domain.com" [formControl]="formGroup.controls.email" />
+        <div mgnpLabelGroup>
+          <span mgnpLabel>Email</span>
+          <input mgnpInput type="email" placeholder="email@domain.com" [formControl]="formGroup.controls.email" />
+          <span mgnpLabel><ng-icon name="heroAtSymbolMini" /></span>
+        </div>
         <p mgnpError validator="required">This field is required.</p>
         <p mgnpError>This field must be an email.</p>
       </div>
       <div mgnpFormField>
-        <span mgnpLabel>Birth date</span>
-        <input mgnpInput type="date" [formControl]="formGroup.controls.birthDate" />
+        <div mgnpLabelGroup>
+          <span mgnpLabel>Birth date</span>
+          <input mgnpInput type="date" [formControl]="formGroup.controls.birthDate" />
+        </div>
         <p mgnpError>This field is required.</p>
       </div>
       <div mgnpFormField>
-        <span mgnpLabel>Phone number</span>
-        <input mgnpInput [formControl]="formGroup.controls.phoneNumber" />
+        <div mgnpLabelGroup>
+          <span mgnpLabel>+33</span>
+          <input mgnpInput placeholder="6.12.34.56.78" [formControl]="formGroup.controls.phoneNumber" />
+          <span mgnpLabel><ng-icon name="heroPhoneMini" /></span>
+        </div>
+        <p mgnpError validator="pattern">The phone number must have the french phone number form.</p>
       </div>
       <div mgnpFormField>
-        <span mgnpLabel>Account type</span>
         <p mgnpDescription>Please select one of the following options.</p>
-        <div mgnpCombobox [formControl]="formGroup.controls.accountType">
-          <button mgnpComboboxButton>
-            {{ formGroup.controls.accountType.value || 'Select an option' }}
-            <ng-icon name="heroChevronDown" />
-          </button>
-          <div *ngpComboboxPortal mgnpComboboxDropdown>
-            <option mgnpComboboxOption value="user">User</option>
-            <option mgnpComboboxOption value="ai">AI</option>
+        <div mgnpLabelGroup>
+          <span mgnpLabel>Account type</span>
+          <div mgnpCombobox [formControl]="formGroup.controls.accountType">
+            <button mgnpComboboxButton>
+              {{ formGroup.controls.accountType.value || 'Select an option' }}
+              <ng-icon name="heroChevronDown" />
+            </button>
+            <div *ngpComboboxPortal mgnpComboboxDropdown>
+              <option mgnpComboboxOption value="user">user</option>
+              <option mgnpComboboxOption value="ai agent">ai agent</option>
+            </div>
           </div>
         </div>
         <p mgnpError validator="required">You must select one of the provided options.</p>
       </div>
       <div mgnpFormField type="toggle">
-        <div>
+        <div class="flex items-center gap-2">
           <span mgnpLabel>I aggree that some data can be send to third party services.</span>
           <span mgnpCheckbox [formControl]="formGroup.controls.acceptTelemetry">
             @if (formGroup.controls.acceptTelemetry.value === true) {
@@ -88,7 +102,7 @@ import { NgpComboboxPortal } from 'ng-primitives/combobox';
         <p mgnpError validator="required">You must accept the conditions.</p>
       </div>
       <div mgnpFormField type="toggle">
-        <div>
+        <div class="flex items-center gap-2">
           <span mgnpLabel>Subscribe to the newsletter</span>
           <button mgnpSwitch [formControl]="formGroup.controls.acceptNewsletter">
             <span mgnpSwitchThumb></span>
@@ -99,14 +113,14 @@ import { NgpComboboxPortal } from 'ng-primitives/combobox';
       <button mgnpButton type="submit" color="primary" variant="outline" [disabled]="formGroup.invalid">Submit</button>
     </form>
   `,
-  providers: [provideIcons({ heroCheckMini, heroChevronDown })],
+  providers: [provideIcons({ heroCheckMini, heroChevronDown, heroAtSymbolMini, heroPhoneMini })],
 })
 export default class FormFieldExample {
   readonly formGroup = new FormGroup({
     name: new FormControl<string>('', [Validators.required]),
     email: new FormControl<string>('', [Validators.required, Validators.email]),
     birthDate: new FormControl<Date | null>(null, [Validators.required]),
-    phoneNumber: new FormControl<string>(''),
+    phoneNumber: new FormControl<string>('', [Validators.pattern('^[0-9]{0,1}[1-9]{1}([. -]?[0-9][0-9]){4}$')]),
     accountType: new FormControl<string | null>(null, [Validators.required]),
     acceptTelemetry: new FormControl<boolean>(false, [Validators.requiredTrue]),
     acceptNewsletter: new FormControl<boolean>(true),
@@ -114,7 +128,8 @@ export default class FormFieldExample {
 
   onSubmit(): void {
     const formValue = this.formGroup.value;
-
     console.log(formValue);
+
+    this.formGroup.reset();
   }
 }

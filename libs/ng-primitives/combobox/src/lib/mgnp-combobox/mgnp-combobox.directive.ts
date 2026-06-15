@@ -1,5 +1,4 @@
-import { Directive, effect } from '@angular/core';
-import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
+import { Directive } from '@angular/core';
 import { ControlValueAccessor } from '@angular/forms';
 import { injectComboboxState, NgpCombobox, provideComboboxState } from 'ng-primitives/combobox';
 import { ChangeFn, provideValueAccessor, TouchedFn } from 'ng-primitives/utils';
@@ -13,6 +12,7 @@ type T = any;
   providers: [provideComboboxState(), provideValueAccessor(MgnpCombobox)],
   host: {
     'data-mgnp-component': 'mgnp-combobox',
+    '(focusout)': 'onTouchedFn?.()',
   },
   hostDirectives: [
     {
