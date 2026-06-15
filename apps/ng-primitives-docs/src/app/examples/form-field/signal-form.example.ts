@@ -92,7 +92,7 @@ import { NgpComboboxPortal } from 'ng-primitives/combobox';
       </div>
       <div mgnpFormField type="toggle">
         <div class="flex items-center gap-2">
-          <span mgnpLabel>I aggree that some data can be send to third party services.</span>
+          <span mgnpLabel>I agree that some data can be sent to third-party services.</span>
           <span mgnpCheckbox [formField]="form.acceptTelemetry">
             @if (form.acceptTelemetry().value() === true) {
               <ng-icon name="heroCheckMini" />

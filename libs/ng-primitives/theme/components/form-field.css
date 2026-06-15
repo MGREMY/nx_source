@@ -18,9 +18,9 @@
 
 @utility mgnp-form-control {
   display: block;
-  border: none;
   outline: none;
   width: 100%;
+  color: var(--mg-text-ui);
   border: var(--mgnp-border, solid 1px var(--mg-border-ui));
   padding-block: var(--mgnp-padding-block-size, --spacing(2));
   padding-inline: var(--mgnp-padding-inline-size, --spacing(4));
@@ -70,7 +70,7 @@
   align-items: stretch;
   border: solid 1px var(--mg-border-ui);
   border-radius: var(--radius-lg);
-  background-color: var(--background-color);
+  background-color: var(--mgnp-background-color);
   gap: --spacing(0);
 
   @variant *:not-last {

@@ -5,7 +5,8 @@ sourceUrl: 'https://github.com/mgremy/nx_source/tree/main/libs/ng-primitives/toa
 
 # Toast
 
-A toast is a non-modal, unobtrusive window element used to display brief, auto-expiring messages to the user.
+A toast is a non-modal, unobtrusive window element used to display brief, auto-expiring messages to
+the user.
 
 ## Usage
 

@@ -92,7 +92,7 @@ import { NgpComboboxPortal } from 'ng-primitives/combobox';
       </div>
       <div mgnpFormField type="toggle">
         <div class="flex items-center gap-2">
-          <span mgnpLabel>I aggree that some data can be send to third party services.</span>
+          <span mgnpLabel>I agree that some data can be sent to third-party services.</span>
           <span mgnpCheckbox [formControl]="formGroup.controls.acceptTelemetry">
             @if (formGroup.controls.acceptTelemetry.value === true) {
               <ng-icon name="heroCheckMini" />
@@ -116,6 +116,16 @@ import { NgpComboboxPortal } from 'ng-primitives/combobox';
   providers: [provideIcons({ heroCheckMini, heroChevronDown, heroAtSymbolMini, heroPhoneMini })],
 })
 export default class FormFieldExample {
+  private readonly initialFormValue = {
+    name: '',
+    email: '',
+    birthDate: null,
+    phoneNumber: '',
+    accountType: null,
+    acceptTelemetry: false,
+    acceptNewsletter: true,
+  };
+
   readonly formGroup = new FormGroup({
     name: new FormControl<string>('', [Validators.required]),
     email: new FormControl<string>('', [Validators.required, Validators.email]),
@@ -130,6 +140,6 @@ export default class FormFieldExample {
     const formValue = this.formGroup.value;
     console.log(formValue);
 
-    this.formGroup.reset();
+    this.formGroup.reset(this.initialFormValue);
   }
 }

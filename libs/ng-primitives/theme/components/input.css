@@ -1,8 +1,8 @@
 @utility mgnp-input {
   display: block;
-  border: none;
   outline: none;
   width: 100%;
+  color: var(--mg-text-ui);
   border: var(--mgnp-border, solid 1px var(--mg-border-ui));
   padding-block: var(--mgnp-padding-block-size, --spacing(2));
   padding-inline: var(--mgnp-padding-inline-size, --spacing(4));

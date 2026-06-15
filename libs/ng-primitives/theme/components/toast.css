@@ -18,7 +18,8 @@
   @variant data-enter {
     --y: translateY(0);
     opacity: 1;
-    animation: mg-slide-in var(--default-transition-duration) var(--default-transition-timing-function);
+    animation: mg-slide-in var(--default-transition-duration)
+      var(--default-transition-timing-function);
   }
 
   @variant data-exit {
