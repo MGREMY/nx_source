@@ -1,5 +1,5 @@
 @utility mgnp-combobox {
-  display: flex;
+  display: inline-flex;
   justify-content: space-between;
   align-items: center;
   border: none;
@@ -8,7 +8,6 @@
   background-color: var(--mg-background-ui);
   box-shadow: var(--mg-shadow-input);
   height: --spacing(8);
-  width: --spacing(64);
 
   @variant data-focus {
     outline-offset: 2px;

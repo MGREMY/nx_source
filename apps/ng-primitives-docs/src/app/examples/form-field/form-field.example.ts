@@ -1,3 +1,4 @@
+import { MgnpButton } from '@mgremy/ng-primitives/button';
 import { MgnpCheckbox } from '@mgremy/ng-primitives/checkbox';
 import {
   MgnpCombobox,
@@ -29,6 +30,9 @@ import { NgpComboboxPortal } from 'ng-primitives/combobox';
     MgnpComboboxDropdown,
     MgnpComboboxButton,
     MgnpComboboxOption,
+    MgnpSwitch,
+    MgnpSwitchThumb,
+    MgnpButton,
     NgpComboboxPortal,
     NgIcon,
     ReactiveFormsModule,
@@ -36,54 +40,81 @@ import { NgpComboboxPortal } from 'ng-primitives/combobox';
     MgnpSwitchThumb,
   ],
   template: `
-    <form class="grid grid-cols-1 md:grid-cols-2 gap-2" [formGroup]="formGroup">
+    <form class="flex flex-col gap-4" [formGroup]="formGroup" (ngSubmit)="onSubmit()">
       <div mgnpFormField>
-        <label mgnpLabel for="email">Email</label>
-        <p mgnpDescription>Enter your email in order to make this work</p>
-        <input mgnpInput id="email" placeholder="email@domain.com" [formControl]="formGroup.controls.email" />
+        <span mgnpLabel>Name</span>
+        <input mgnpInput [formControl]="formGroup.controls.name" />
         <p mgnpError validator="required">This field is required.</p>
-        <p mgnpError validator="email">This field must be an email.</p>
       </div>
       <div mgnpFormField>
-        <label mgnpLabel for="checked">Conditions</label>
-        <span mgnpCheckbox id="checked" [formControl]="formGroup.controls.checked">
-          @if (formGroup.controls.checked.value === true) {
-            <ng-icon name="heroCheckMini" />
-          }
-        </span>
-        <p mgnpError validator="required">Please accept the conditions.</p>
+        <span mgnpLabel>Email</span>
+        <input mgnpInput type="email" placeholder="email@domain.com" [formControl]="formGroup.controls.email" />
+        <p mgnpError validator="required">This field is required.</p>
+        <p mgnpError>This field must be an email.</p>
       </div>
       <div mgnpFormField>
-        <label mgnpLabel for="combobox">Option</label>
-        <div mgnpCombobox id="combobox" [formControl]="formGroup.controls.combobox">
+        <span mgnpLabel>Birth date</span>
+        <input mgnpInput type="date" [formControl]="formGroup.controls.birthDate" />
+        <p mgnpError>This field is required.</p>
+      </div>
+      <div mgnpFormField>
+        <span mgnpLabel>Phone number</span>
+        <input mgnpInput [formControl]="formGroup.controls.phoneNumber" />
+      </div>
+      <div mgnpFormField>
+        <span mgnpLabel>Account type</span>
+        <p mgnpDescription>Please select one of the following options.</p>
+        <div mgnpCombobox [formControl]="formGroup.controls.accountType">
           <button mgnpComboboxButton>
-            {{ formGroup.controls.combobox.value || 'Select an option' }}
+            {{ formGroup.controls.accountType.value || 'Select an option' }}
             <ng-icon name="heroChevronDown" />
           </button>
           <div *ngpComboboxPortal mgnpComboboxDropdown>
-            <option mgnpComboboxOption value="option1">Option 1</option>
-            <option mgnpComboboxOption value="option2">Option 2</option>
-            <option mgnpComboboxOption value="option3">Option 3</option>
+            <option mgnpComboboxOption value="user">User</option>
+            <option mgnpComboboxOption value="ai">AI</option>
           </div>
         </div>
-        <p mgnpError validator="required">Please accept the conditions.</p>
+        <p mgnpError validator="required">You must select one of the provided options.</p>
       </div>
-      <div mgnpFormField>
-        <label mgnpLabel for="enableFeature">Feature</label>
-        <p mgnpDescription>Do you want to enable the feature ?</p>
-        <button mgnpSwitch id="enableFeature" [formControl]="formGroup.controls.enableFeature">
-          <span mgnpSwitchThumb></span>
-        </button>
+      <div mgnpFormField type="toggle">
+        <div>
+          <span mgnpLabel>I aggree that some data can be send to third party services.</span>
+          <span mgnpCheckbox [formControl]="formGroup.controls.acceptTelemetry">
+            @if (formGroup.controls.acceptTelemetry.value === true) {
+              <ng-icon name="heroCheckMini" />
+            }
+          </span>
+        </div>
+        <p mgnpError validator="required">You must accept the conditions.</p>
       </div>
+      <div mgnpFormField type="toggle">
+        <div>
+          <span mgnpLabel>Subscribe to the newsletter</span>
+          <button mgnpSwitch [formControl]="formGroup.controls.acceptNewsletter">
+            <span mgnpSwitchThumb></span>
+          </button>
+        </div>
+      </div>
+
+      <button mgnpButton type="submit" color="primary" variant="outline" [disabled]="formGroup.invalid">Submit</button>
     </form>
   `,
   providers: [provideIcons({ heroCheckMini, heroChevronDown })],
 })
 export default class FormFieldExample {
   readonly formGroup = new FormGroup({
-    email: new FormControl('', [Validators.required, Validators.email]),
-    checked: new FormControl(false, [Validators.requiredTrue]),
-    combobox: new FormControl('', [Validators.required]),
-    enableFeature: new FormControl(false, []),
+    name: new FormControl<string>('', [Validators.required]),
+    email: new FormControl<string>('', [Validators.required, Validators.email]),
+    birthDate: new FormControl<Date | null>(null, [Validators.required]),
+    phoneNumber: new FormControl<string>(''),
+    accountType: new FormControl<string | null>(null, [Validators.required]),
+    acceptTelemetry: new FormControl<boolean>(false, [Validators.requiredTrue]),
+    acceptNewsletter: new FormControl<boolean>(true),
   });
+
+  onSubmit(): void {
+    const formValue = this.formGroup.value;
+
+    console.log(formValue);
+  }
 }

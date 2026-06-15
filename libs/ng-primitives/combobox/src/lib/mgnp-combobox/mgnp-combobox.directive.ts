@@ -1,4 +1,5 @@
 import { Directive, effect } from '@angular/core';
+import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { ControlValueAccessor } from '@angular/forms';
 import { injectComboboxState, NgpCombobox, provideComboboxState } from 'ng-primitives/combobox';
 import { ChangeFn, provideValueAccessor, TouchedFn } from 'ng-primitives/utils';
@@ -41,7 +42,9 @@ export class MgnpCombobox implements ControlValueAccessor {
   protected onTouchedFn?: TouchedFn;
 
   constructor() {
-    effect(() => this.onChangeFn?.(this.state().value()));
+    this.state()
+      .valueChange // TODO : pipe(takeUntilDestroyed())
+      .subscribe((value) => this.onChangeFn?.(value));
   }
 
   writeValue(value: T): void {

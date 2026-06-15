@@ -2,7 +2,6 @@
   display: inline-block;
   border: none;
   height: fit-content;
-  width: max-content;
   cursor: pointer;
   border-radius: var(--radius-lg);
   box-shadow: var(--mg-shadow-button);
