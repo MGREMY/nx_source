@@ -1,5 +1,5 @@
 @utility mgnp-combobox {
-  display: flex;
+  display: inline-flex;
   outline: none;
   width: 100%;
   justify-content: space-between;
