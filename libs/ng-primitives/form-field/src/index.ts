@@ -3,3 +3,4 @@ export * from './lib/mgnp-error/mgnp-error.directive';
 export * from './lib/mgnp-form-control/mgnp-form-control.directive';
 export * from './lib/mgnp-form-field/mgnp-form-field.directive';
 export * from './lib/mgnp-label/mgnp-form-label.directive';
+export * from './lib/mgnp-label-group/mgnp-label-group.directive';

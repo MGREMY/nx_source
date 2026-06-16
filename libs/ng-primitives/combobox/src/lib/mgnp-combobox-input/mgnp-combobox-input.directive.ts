@@ -14,6 +14,6 @@ import { NgpComboboxInput } from 'ng-primitives/combobox';
       outputs: [],
     },
   ],
-  exportAs: 'mgnpComboboxInput'
+  exportAs: 'mgnpComboboxInput',
 })
 export class MgnpComboboxInput {}
