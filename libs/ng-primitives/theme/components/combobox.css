@@ -12,7 +12,11 @@
   background-color: var(--mgnp-background-color, var(--mg-background-ui));
 
   @variant data-focus {
-    outline: 1px solid var(--mg-ring-ui);
+    border: 1px solid var(--mg-background-primary);
+  }
+
+  @variant data-invalid {
+    border: 1px solid var(--mg-background-danger);
   }
 }
 
