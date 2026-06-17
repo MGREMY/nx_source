@@ -1,20 +1,20 @@
 @utility mgnp-accordion {
-  border-radius: --spacing(3);
-  border: 1px solid var(--mg-border-ui);
   background-color: var(--mg-background-ui);
+  border: 1px solid var(--mg-border-ui);
+  border-radius: --spacing(3);
   box-shadow: var(--mg-shadow-ui);
 
   @variant data-[orientation=vertical] {
     display: block;
-    max-width: --spacing(96);
     width: 100%;
+    max-width: --spacing(96);
   }
 
   @variant data-[orientation=horizontal] {
     display: flex;
     flex-direction: row;
-    max-height: --spacing(96);
     height: 100%;
+    max-height: --spacing(96);
   }
 }
 
@@ -47,16 +47,20 @@
 @utility mgnp-accordion-item {
   display: flex;
 
-  @variant not-last {
-    border-bottom: 1px solid var(--mg-border-ui);
-  }
-
   @variant data-[orientation=horizontal] {
     flex-direction: row;
+
+    @variant not-last {
+      border-right: 1px solid var(--mg-border-ui);
+    }
   }
 
   @variant data-[orientation=vertical] {
     flex-direction: column;
+
+    @variant not-last {
+      border-bottom: 1px solid var(--mg-border-ui);
+    }
   }
 
   h1,
@@ -77,29 +81,25 @@
   border: none;
   box-shadow: none;
   background-color: transparent;
+  color: var(--mg-text-ui);
   font-weight: var(--font-weight-medium);
-  padding-left: --spacing(4);
-  padding-right: --spacing(4);
   font-size: --spacing(3.5);
   line-height: --spacing(5);
   border-radius: --spacing(3);
-  color: var(--mg-text-ui);
 
   @variant data-[orientation=vertical] {
     width: 100%;
     height: --spacing(11);
+    padding: --spacing(0) --spacing(4);
   }
 
   @variant data-[orientation=horizontal] {
     width: --spacing(11);
     height: 100%;
+    padding: --spacing(4) --spacing(0);
+
     writing-mode: sideways-lr;
     text-orientation: sideways;
-  }
-
-  @variant data-focus-visible {
-    overflow: hidden;
-    color: var(--mg-text-ui-secondary);
   }
 
   ng-icon {

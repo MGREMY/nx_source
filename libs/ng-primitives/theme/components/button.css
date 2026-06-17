@@ -1,61 +1,54 @@
 @utility mgnp-button {
   display: inline-block;
-  border: none;
   height: fit-content;
   cursor: pointer;
   border-radius: var(--radius-lg);
   box-shadow: var(--mg-shadow-button);
-
-  @variant data-focus-visible {
-    outline: 2px solid var(--mg-ring-ui);
-  }
 
   @variant data-disabled {
     opacity: 50%;
     cursor: default;
   }
 
+  @variant data-focus-visible {
+    outline: 1px solid var(--mg-ring-ui);
+  }
+
   /* Sizes */
   @variant data-[mgnp-size=xs] {
+    padding: --spacing(1) --spacing(1.5);
     font-size: var(--text-xs);
     line-height: var(--text-xs--line-height);
-    padding-block: --spacing(1);
-    padding-inline: --spacing(1.5);
   }
 
   @variant data-[mgnp-size=sm] {
+    padding: --spacing(1) --spacing(2);
     font-size: var(--text-sm);
     line-height: var(--text-sm--line-height);
-    padding-block: --spacing(1);
-    padding-inline: --spacing(2);
   }
 
   @variant data-[mgnp-size=md] {
+    padding: --spacing(1.5) --spacing(1.5);
     font-size: var(--text-base);
     line-height: var(--text-base--line-height);
-    padding-block: --spacing(1.5);
-    padding-inline: --spacing(2.5);
   }
 
   @variant data-[mgnp-size=lg] {
+    padding: --spacing(2) --spacing(3);
     font-size: var(--text-lg);
     line-height: var(--text-lg--line-height);
-    padding-block: --spacing(2);
-    padding-inline: --spacing(3);
     font-weight: var(--font-weight-semibold);
   }
 
   @variant data-[mgnp-size=xl] {
+    padding: --spacing(2.5) --spacing(4);
     font-size: var(--text-xl);
     line-height: var(--text-xl--line-height);
-    padding-block: --spacing(2.5);
-    padding-inline: --spacing(4);
     font-weight: var(--font-weight-semibold);
   }
 
   /* Solid */
   @variant data-[mgnp-variant=solid] {
-    /* Colors */
     @variant data-[mgnp-color=ui] {
       background-color: var(--mg-background-ui);
 
@@ -143,11 +136,10 @@
 
   /* Outline */
   @variant data-[mgnp-variant=outline] {
-    background-color: transparent;
-    color: var(--mg-text-ui);
-
-    /* Colors */
     @variant data-[mgnp-color=ui] {
+      background-color: transparent;
+      color: var(--mg-text-ui);
+
       @variant data-hover {
         background-color: var(--mg-background-ui-inverse);
         color: var(--mg-text-inverse);
@@ -159,12 +151,12 @@
     }
 
     @variant data-[mgnp-color=primary] {
-      @variant not-data-hover {
-        color: var(--mg-text-primary);
-      }
+      background-color: transparent;
+      color: var(--mg-text-primary);
 
       @variant data-hover {
         background-color: var(--mg-background-primary);
+        color: var(--mg-text-inverse);
       }
 
       @variant data-press {
@@ -173,12 +165,12 @@
     }
 
     @variant data-[mgnp-color=secondary] {
-      @variant not-data-hover {
-        color: var(--mg-text-secondary);
-      }
+      background-color: transparent;
+      color: var(--mg-text-secondary);
 
       @variant data-hover {
         background-color: var(--mg-background-secondary);
+        color: var(--mg-text-inverse);
       }
 
       @variant data-press {
@@ -187,12 +179,12 @@
     }
 
     @variant data-[mgnp-color=info] {
-      @variant not-data-hover {
-        color: var(--mg-text-info);
-      }
+      background-color: transparent;
+      color: var(--mg-text-info);
 
       @variant data-hover {
         background-color: var(--mg-background-info);
+        color: var(--mg-text-inverse);
       }
 
       @variant data-press {
@@ -201,12 +193,12 @@
     }
 
     @variant data-[mgnp-color=success] {
-      @variant not-data-hover {
-        color: var(--mg-text-success);
-      }
+      background-color: transparent;
+      color: var(--mg-text-success);
 
       @variant data-hover {
         background-color: var(--mg-background-success);
+        color: var(--mg-text-inverse);
       }
 
       @variant data-press {
@@ -215,12 +207,12 @@
     }
 
     @variant data-[mgnp-color=warning] {
-      @variant not-data-hover {
-        color: var(--mg-text-warning);
-      }
+      background-color: transparent;
+      color: var(--mg-text-warning);
 
       @variant data-hover {
         background-color: var(--mg-background-warning);
+        color: var(--mg-text-inverse);
       }
 
       @variant data-press {
@@ -229,12 +221,12 @@
     }
 
     @variant data-[mgnp-color=danger] {
-      @variant not-data-hover {
-        color: var(--mg-text-danger);
-      }
+      background-color: transparent;
+      color: var(--mg-text-danger);
 
       @variant data-hover {
         background-color: var(--mg-background-danger);
+        color: var(--mg-text-inverse);
       }
 
       @variant data-press {

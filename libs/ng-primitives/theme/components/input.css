@@ -1,20 +1,15 @@
 @utility mgnp-input {
   display: block;
-  outline: none;
   width: 100%;
+  background-color: var(--mg-background-ui);
   color: var(--mg-text-ui);
-  border: var(--mgnp-border, solid 1px var(--mg-border-ui));
-  padding-block: var(--mgnp-padding-block-size, --spacing(2));
-  padding-inline: var(--mgnp-padding-inline-size, --spacing(4));
-  border-radius: var(--mgnp-border-radius, var(--radius-lg));
-  background-color: var(--mgnp-background-color, var(--mg-background-ui));
+  outline: none;
+  border: 1px solid var(--mg-border-ui);
+  border-radius: var(--radius-lg);
+  padding: --spacing(2) --spacing(4);
 
-  @variant data-focus {
-    border: 1px solid var(--mg-background-primary);
-  }
-
-  @variant data-invalid {
-    border: 1px solid var(--mg-background-danger);
+  @variant not-data-pristine:data-invalid {
+    border-color: var(--mg-border-danger);
   }
 
   ::placeholder {

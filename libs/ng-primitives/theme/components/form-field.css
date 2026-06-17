@@ -18,77 +18,87 @@
 
 @utility mgnp-form-control {
   display: block;
-  outline: none;
   width: 100%;
+  background-color: var(--mg-background-ui);
   color: var(--mg-text-ui);
-  border: var(--mgnp-border, solid 1px var(--mg-border-ui));
-  padding-block: var(--mgnp-padding-block-size, --spacing(2));
-  padding-inline: var(--mgnp-padding-inline-size, --spacing(4));
-  border-radius: var(--mgnp-border-radius, var(--radius-lg));
-  background-color: var(--mgnp-background-color, var(--mg-background-ui));
-
-  @variant focus {
-    outline: 1px solid var(--mg-ring-ui);
-  }
+  outline: none;
+  border: 1px solid var(--mg-border-ui);
+  border-radius: var(--radius-lg);
+  padding: --spacing(2) --spacing(4);
 
   ::placeholder {
     color: var(--mg-text-placeholder);
+  }
+
+  @variant not-data-pristine:data-invalid {
+    border-color: var(--mg-border-danger);
   }
 }
 
 @utility mgnp-form-field {
   display: inline-flex;
   flex-direction: column;
+  gap: --spacing(1);
 }
 
-@utility mgnp-label {
-  display: inline-block;
-  padding-block: var(--mgnp-padding-block, --spacing(2));
-  padding-inline: var(--mgnp-padding-inline, --spacing(0));
-  font-weight: var(--mgnp-font-weight, var(--font-weight-semibold));
-  color: var(--mg-text-ui-secondary);
+@utility mgnp-input-group {
+  display: inline-flex;
+  align-items: stretch;
+  border: 0px;
+  border-radius: var(--radius-lg);
+  background-color: var(--mg-background-ui);
 
-  @variant md {
-    text-wrap-mode: nowrap;
+  @variant *:first {
+    border-left-width: 1px;
+    border-top-left-radius: inherit;
+    border-bottom-left-radius: inherit;
   }
+
+  @variant *:not-first {
+    border-top-left-radius: unset;
+    border-bottom-left-radius: unset;
+  }
+
+  @variant *:last {
+    border-right-width: 1px;
+    border-top-right-radius: inherit;
+    border-bottom-right-radius: inherit;
+  }
+
+  @variant *:not-last {
+    border-top-right-radius: unset;
+    border-bottom-right-radius: unset;
+
+    @variant not-has-[+ [data-[mgnp-component='mgnp-input-group-addon']]] {
+      border-right-width: 1px;
+      border-right-style: solid;
+    }
+  }
+}
+
+@utility mgnp-input-group-addon {
+  display: inline-block;
+  text-wrap-mode: nowrap;
+  padding: --spacing(2);
+  background-color: var(--mg-background-ui-secondary);
+  border-color: var(--mg-border-ui);
+  border-style: solid;
+  border-block-width: 1px;
 
   ng-icon {
     vertical-align: middle !important;
   }
 }
 
-@utility mgnp-label-group {
-  --mgnp-padding-block: --spacing(2);
-  --mgnp-padding-inline: --spacing(2);
-  --mgnp-background-color: var(--mg-background-ui);
-  --mgnp-font-weight: var(--font-weight-medium);
-  --mgnp-border-radius: --spacing(0);
-  --mgnp-border: 0px;
+@utility mgnp-label {
+  display: inline-block;
+  padding: --spacing(0);
+  border-color: var(--mg-border-ui);
+  font-weight: var(--font-weight-semibold);
+  color: var(--mg-text-ui-secondary);
 
-  display: inline-flex;
-  flex-direction: row;
-  align-items: stretch;
-  border: solid 1px var(--mg-border-ui);
-  border-radius: var(--radius-lg);
-  background-color: var(--mgnp-background-color);
-  gap: --spacing(0);
-
-  @variant *:not-last {
-    border-right: solid 1px var(--mg-border-ui);
-  }
-
-  @variant *:first {
-    border-top-left-radius: inherit;
-    border-bottom-left-radius: inherit;
-  }
-
-  @variant *:last {
-    border-top-right-radius: inherit;
-    border-bottom-right-radius: inherit;
-  }
-
-  @variant *:data-[mgnp-component='mgnp-label'] {
-    background-color: var(--mg-background-ui-secondary);
+  @variant md {
+    text-wrap-mode: nowrap;
   }
 }
 
@@ -109,11 +119,15 @@
     @apply mgnp-form-field transition;
   }
 
-  [data-mgnp-component='mgnp-label'] {
-    @apply mgnp-label transition;
+  [data-mgnp-component='mgnp-input-group'] {
+    @apply mgnp-input-group transition;
   }
 
-  [data-mgnp-component='mgnp-label-group'] {
-    @apply mgnp-label-group transition;
+  [data-mgnp-component='mgnp-input-group-addon'] {
+    @apply mgnp-input-group-addon transition;
+  }
+
+  [data-mgnp-component='mgnp-label'] {
+    @apply mgnp-label transition;
   }
 }

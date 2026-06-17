@@ -4,33 +4,120 @@
   cursor: pointer;
   align-items: center;
   justify-content: center;
-  background-color: transparent;
   outline: none;
-  border: 1px solid var(--mg-border-ui);
-  color: var(--mg-text-inverse);
-  border-radius: var(--radius-sm);
+  border: 1px solid transparent;
   font-size: var(--text-base);
   line-height: var(--text-base--line-height);
-  padding: --spacing(0);
-  width: --spacing(5);
-  height: --spacing(5);
 
-  @variant data-hover {
-    background-color: var(--mg-background-ui-hover);
+  @variant not-data-pristine:data-invalid {
+    border-color: var(--mg-border-danger);
   }
 
-  @variant data-invalid {
-    border: 1px solid var(--mg-background-danger);
+  /* Sizes */
+  @variant data-[mgnp-size=xs] {
+    width: --spacing(3);
+    height: --spacing(3);
+    border-radius: var(--radius-sm);
+    padding: --spacing(0);
   }
 
-  @variant data-checked, data-indeterminate {
-    border-color: var(--mg-background-ui-inverse);
-    background-color: var(--mg-background-ui-inverse);
+  @variant data-[mgnp-size=sm] {
+    width: --spacing(4);
+    height: --spacing(4);
+    border-radius: var(--radius-sm);
+    padding: --spacing(0);
   }
 
-  @variant data-focus-visible {
-    outline: --spacing(0.5) solid var(--mg-ring-ui);
-    outline-offset: --spacing(0.5);
+  @variant data-[mgnp-size=md] {
+    width: --spacing(5);
+    height: --spacing(5);
+    border-radius: var(--radius-md);
+    padding: --spacing(0);
+  }
+
+  @variant data-[mgnp-size=lg] {
+    width: --spacing(7.5);
+    height: --spacing(7.5);
+    border-radius: var(--radius-lg);
+    padding: --spacing(0);
+  }
+
+  @variant data-[mgnp-size=xl] {
+    width: --spacing(10);
+    height: --spacing(10);
+    border-radius: var(--radius-lg);
+    padding: --spacing(0);
+  }
+
+  /* Colors */
+  @variant data-[mgnp-color=ui] {
+    color: var(--mg-background-ui);
+    border-color: var(--mg-border-ui);
+
+    @variant data-checked, data-indeterminate {
+      background-color: var(--mg-background-ui-inverse);
+      border-color: transparent;
+    }
+  }
+
+  @variant data-[mgnp-color=primary] {
+    color: var(--mg-background-primary);
+    border-color: var(--mg-border-primary);
+
+    @variant data-checked, data-indeterminate {
+      background-color: var(--mg-background-primary-inverse);
+      border-color: transparent;
+    }
+  }
+
+  @variant data-[mgnp-color=secondary] {
+    color: var(--mg-background-secondary);
+    border-color: var(--mg-border-secondary);
+
+    @variant data-checked, data-indeterminate {
+      background-color: var(--mg-background-secondary-inverse);
+      border-color: transparent;
+    }
+  }
+
+  @variant data-[mgnp-color=info] {
+    color: var(--mg-background-info);
+    border-color: var(--mg-border-info);
+
+    @variant data-checked, data-indeterminate {
+      background-color: var(--mg-background-info-inverse);
+      border-color: transparent;
+    }
+  }
+
+  @variant data-[mgnp-color=success] {
+    color: var(--mg-background-success);
+    border-color: var(--mg-border-success);
+
+    @variant data-checked, data-indeterminate {
+      background-color: var(--mg-background-success-inverse);
+      border-color: transparent;
+    }
+  }
+
+  @variant data-[mgnp-color=warning] {
+    color: var(--mg-background-warning);
+    border-color: var(--mg-border-warning);
+
+    @variant data-checked, data-indeterminate {
+      background-color: var(--mg-background-warning-inverse);
+      border-color: transparent;
+    }
+  }
+
+  @variant data-[mgnp-color=danger] {
+    color: var(--mg-background-danger);
+    border-color: var(--mg-border-danger);
+
+    @variant data-checked, data-indeterminate {
+      background-color: var(--mg-background-danger-inverse);
+      border-color: transparent;
+    }
   }
 }
 

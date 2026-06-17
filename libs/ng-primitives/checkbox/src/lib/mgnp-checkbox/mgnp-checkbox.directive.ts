@@ -1,8 +1,16 @@
-import { Directive } from '@angular/core';
+import { PropertyType } from '@mgremy/ng-primitives';
+
+import { Directive, input } from '@angular/core';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { ControlValueAccessor } from '@angular/forms';
 import { injectCheckboxState, NgpCheckbox, provideCheckboxState } from 'ng-primitives/checkbox';
 import { ChangeFn, provideValueAccessor, TouchedFn } from 'ng-primitives/utils';
+
+export type MgnpCheckboxColor = PropertyType<
+  'ui' | 'primary' | 'secondary' | 'info' | 'success' | 'warning' | 'danger'
+>;
+
+export type MgnpCheckboxSize = PropertyType<'xs' | 'sm' | 'md' | 'lg' | 'xl'>;
 
 @Directive({
   selector: `[mgnpCheckbox]`,
@@ -10,6 +18,8 @@ import { ChangeFn, provideValueAccessor, TouchedFn } from 'ng-primitives/utils';
   providers: [provideCheckboxState(), provideValueAccessor(MgnpCheckbox)],
   host: {
     'data-mgnp-component': 'mgnp-checkbox',
+    '[attr.data-mgnp-size]': 'size()',
+    '[attr.data-mgnp-color]': 'color()',
     '(focusout)': 'onTouchedFn?.()',
   },
   hostDirectives: [
@@ -35,6 +45,9 @@ export class MgnpCheckbox implements ControlValueAccessor {
 
   protected onChangeFn?: ChangeFn<boolean>;
   protected onTouchedFn?: TouchedFn;
+
+  readonly color = input<MgnpCheckboxColor>('ui');
+  readonly size = input<MgnpCheckboxSize>('md');
 
   constructor() {
     this.state()
