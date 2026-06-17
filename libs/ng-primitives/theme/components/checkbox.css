@@ -1,128 +1,33 @@
-@utility mgnp-checkbox {
-  display: inline-flex;
-  flex: none;
-  cursor: pointer;
-  align-items: center;
-  justify-content: center;
-  outline: none;
-  border: 1px solid transparent;
-  font-size: var(--text-base);
-  line-height: var(--text-base--line-height);
+@import './checkbox.size.css';
+@import './checkbox.color.css';
 
-  @variant not-data-pristine:data-invalid {
-    border-color: var(--mg-border-danger);
-  }
+@layer components {
+  .mgnp-checkbox {
+    @apply flex flex-none items-center justify-center;
+    @apply outline-none;
+    @apply border border-transparent;
+    @apply text-base;
+    @apply cursor-pointer;
+    @apply transition;
 
-  /* Sizes */
-  @variant data-[mgnp-size=xs] {
-    width: --spacing(3);
-    height: --spacing(3);
-    border-radius: var(--radius-sm);
-    padding: --spacing(0);
-  }
-
-  @variant data-[mgnp-size=sm] {
-    width: --spacing(4);
-    height: --spacing(4);
-    border-radius: var(--radius-sm);
-    padding: --spacing(0);
-  }
-
-  @variant data-[mgnp-size=md] {
-    width: --spacing(5);
-    height: --spacing(5);
-    border-radius: var(--radius-md);
-    padding: --spacing(0);
-  }
-
-  @variant data-[mgnp-size=lg] {
-    width: --spacing(7.5);
-    height: --spacing(7.5);
-    border-radius: var(--radius-lg);
-    padding: --spacing(0);
-  }
-
-  @variant data-[mgnp-size=xl] {
-    width: --spacing(10);
-    height: --spacing(10);
-    border-radius: var(--radius-lg);
-    padding: --spacing(0);
-  }
-
-  /* Colors */
-  @variant data-[mgnp-color=ui] {
-    color: var(--mg-background-ui);
-    border-color: var(--mg-border-ui);
-
-    @variant data-checked, data-indeterminate {
-      background-color: var(--mg-background-ui-inverse);
-      border-color: transparent;
+    @variant not-data-pristine:data-invalid {
+      @apply border-danger;
     }
-  }
 
-  @variant data-[mgnp-color=primary] {
-    color: var(--mg-background-primary);
-    border-color: var(--mg-border-primary);
+    /* Sizes */
+    @apply data-[mgnp-checkbox-size=xs]:mgnp-checkbox-size-xs;
+    @apply data-[mgnp-checkbox-size=sm]:mgnp-checkbox-size-sm;
+    @apply data-[mgnp-checkbox-size=md]:mgnp-checkbox-size-md;
+    @apply data-[mgnp-checkbox-size=lg]:mgnp-checkbox-size-lg;
+    @apply data-[mgnp-checkbox-size=xl]:mgnp-checkbox-size-xl;
 
-    @variant data-checked, data-indeterminate {
-      background-color: var(--mg-background-primary-inverse);
-      border-color: transparent;
-    }
-  }
-
-  @variant data-[mgnp-color=secondary] {
-    color: var(--mg-background-secondary);
-    border-color: var(--mg-border-secondary);
-
-    @variant data-checked, data-indeterminate {
-      background-color: var(--mg-background-secondary-inverse);
-      border-color: transparent;
-    }
-  }
-
-  @variant data-[mgnp-color=info] {
-    color: var(--mg-background-info);
-    border-color: var(--mg-border-info);
-
-    @variant data-checked, data-indeterminate {
-      background-color: var(--mg-background-info-inverse);
-      border-color: transparent;
-    }
-  }
-
-  @variant data-[mgnp-color=success] {
-    color: var(--mg-background-success);
-    border-color: var(--mg-border-success);
-
-    @variant data-checked, data-indeterminate {
-      background-color: var(--mg-background-success-inverse);
-      border-color: transparent;
-    }
-  }
-
-  @variant data-[mgnp-color=warning] {
-    color: var(--mg-background-warning);
-    border-color: var(--mg-border-warning);
-
-    @variant data-checked, data-indeterminate {
-      background-color: var(--mg-background-warning-inverse);
-      border-color: transparent;
-    }
-  }
-
-  @variant data-[mgnp-color=danger] {
-    color: var(--mg-background-danger);
-    border-color: var(--mg-border-danger);
-
-    @variant data-checked, data-indeterminate {
-      background-color: var(--mg-background-danger-inverse);
-      border-color: transparent;
-    }
-  }
-}
-
-@layer base {
-  [data-mgnp-component='mgnp-checkbox'] {
-    @apply mgnp-checkbox transition;
+    /* Colors */
+    @apply data-[mgnp-checkbox-color=ui]:mgnp-checkbox-color-ui;
+    @apply data-[mgnp-checkbox-color=primary]:mgnp-checkbox-color-primary;
+    @apply data-[mgnp-checkbox-color=secondary]:mgnp-checkbox-color-secondary;
+    @apply data-[mgnp-checkbox-color=info]:mgnp-checkbox-color-info;
+    @apply data-[mgnp-checkbox-color=success]:mgnp-checkbox-color-success;
+    @apply data-[mgnp-checkbox-color=warning]:mgnp-checkbox-color-warning;
+    @apply data-[mgnp-checkbox-color=danger]:mgnp-checkbox-color-danger;
   }
 }

@@ -1,0 +1,55 @@
+@utility mgnp-checkbox-color-ui {
+  @apply text-ui border-ui;
+
+  @variant data-checked, data-indeterminate {
+    @apply bg-ui-active border-transparent;
+  }
+}
+
+@utility mgnp-checkbox-color-primary {
+  @apply text-inverse border-primary;
+
+  @variant data-checked, data-indeterminate {
+    @apply bg-primary-active border-transparent;
+  }
+}
+
+@utility mgnp-checkbox-color-secondary {
+  @apply text-inverse border-secondary;
+
+  @variant data-checked, data-indeterminate {
+    @apply bg-secondary-active border-transparent;
+  }
+}
+
+@utility mgnp-checkbox-color-info {
+  @apply text-inverse border-info;
+
+  @variant data-checked, data-indeterminate {
+    @apply bg-info-active border-transparent;
+  }
+}
+
+@utility mgnp-checkbox-color-success {
+  @apply text-inverse border-success;
+
+  @variant data-checked, data-indeterminate {
+    @apply bg-success-active border-transparent;
+  }
+}
+
+@utility mgnp-checkbox-color-warning {
+  @apply text-inverse border-warning;
+
+  @variant data-checked, data-indeterminate {
+    @apply bg-warning-active border-transparent;
+  }
+}
+
+@utility mgnp-checkbox-color-danger {
+  @apply text-inverse border-danger;
+
+  @variant data-checked, data-indeterminate {
+    @apply bg-danger-active border-transparent;
+  }
+}

@@ -17,9 +17,10 @@ export type MgnpCheckboxSize = PropertyType<'xs' | 'sm' | 'md' | 'lg' | 'xl'>;
   standalone: true,
   providers: [provideCheckboxState(), provideValueAccessor(MgnpCheckbox)],
   host: {
-    'data-mgnp-component': 'mgnp-checkbox',
-    '[attr.data-mgnp-size]': 'size()',
-    '[attr.data-mgnp-color]': 'color()',
+    class: 'mgnp-checkbox mgnp-c-checkbox',
+    'data-mgnp-checkbox': '',
+    '[attr.data-mgnp-checkbox-size]': 'size()',
+    '[attr.data-mgnp-checkbox-color]': 'color()',
     '(focusout)': 'onTouchedFn?.()',
   },
   hostDirectives: [
