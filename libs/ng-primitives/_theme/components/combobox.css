@@ -1,0 +1,99 @@
+@layer components {
+  .mgnp-combobox {
+    @apply transition;
+    @apply inline-flex w-full justify-between items-center;
+    @apply py-2 px-2;
+    @apply outline-none;
+    @apply border border-ui rounded-lg;
+    @apply bg-ui;
+
+    @variant not-data-pristine:data-invalid {
+      @apply border-danger;
+    }
+  }
+
+  .mgnp-combobox-input {
+    @apply transition;
+    @apply w-full h-full;
+    @apply outline-none;
+    @apply border-none;
+    @apply bg-transparent;
+    @apply text-ui;
+
+    @variant [&:only-child] {
+      @apply pr-2;
+    }
+  }
+
+  .mgnp-combobox-button {
+    @apply transition;
+    @apply inline-flex justify-between items-center;
+    @apply h-full;
+    @apply bg-transparent;
+    @apply border-none;
+    @apply outline-none;
+    @apply text-ui;
+    @apply cursor-pointer;
+
+    @variant [&:only-child] {
+      @apply w-full;
+      @apply pl-2;
+    }
+  }
+
+  .mgnp-combobox-dropdown {
+    @apply transition;
+    @apply absolute;
+    @apply overflow-y-auto;
+    @apply z-1001;
+    @apply box-border;
+    @apply p-1;
+    @apply mt-1;
+    @apply min-w-fit w-(--ngp-combobox-width);
+    @apply max-h-60;
+    @apply bg-ui;
+    @apply outline-none;
+    @apply border border-ui rounded-lg;
+    @apply shadow-lg;
+
+    @variant data-enter {
+      animation: mg-show var(--default-transition-duration)
+        var(--default-transition-timing-function);
+    }
+
+    @variant data-exit {
+      animation: mg-hide var(--default-transition-duration)
+        var(--default-transition-timing-function);
+    }
+  }
+
+  .mgnp-combobox-option {
+    @apply transition;
+    @apply cursor-pointer;
+    @apply flex items-center;
+    @apply gap-2;
+    @apply w-full;
+    @apply h-9;
+    @apply py-1.5 px-3;
+    @apply box-border;
+    @apply rounded-lg;
+    @apply text-sm;
+    @apply text-ui;
+
+    @variant data-hover {
+      @apply bg-ui-hover;
+    }
+
+    @variant data-press {
+      @apply bg-ui-active;
+    }
+
+    @variant data-active {
+      @apply bg-ui-active;
+    }
+
+    @variant data-disabled {
+      @apply opacity-50;
+    }
+  }
+}

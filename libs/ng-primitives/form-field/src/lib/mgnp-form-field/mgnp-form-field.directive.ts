@@ -10,7 +10,8 @@ import {
   standalone: true,
   providers: [provideFormFieldState()],
   host: {
-    'data-mgnp-component': 'mgnp-form-field',
+    class: 'mgnp-form-field mgnp-c-form-field',
+    'data-mgnp-form-field': '',
   },
   hostDirectives: [
     {

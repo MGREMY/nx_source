@@ -10,7 +10,8 @@ import {
   standalone: true,
   providers: [provideAccordionItemState()],
   host: {
-    'data-mgnp-component': 'mgnp-accordion-item',
+    class: 'mgnp-accordion-item mgnp-c-accordion-item',
+    'data-mgnp-accordion-item': '',
   },
   hostDirectives: [
     {

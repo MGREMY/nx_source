@@ -5,7 +5,8 @@ import { NgpMenuItemIndicator } from 'ng-primitives/menu';
   selector: '[mgnpMenuItemIndicator]',
   standalone: true,
   host: {
-    'data-mgnp-component': 'mgnp-menu-item-indicator',
+    class: 'mgnp-menu-item-indicator mgnp-c-menu-item-indicator',
+    'data-mgnp-menu-item-indicator': '',
   },
   hostDirectives: [
     {

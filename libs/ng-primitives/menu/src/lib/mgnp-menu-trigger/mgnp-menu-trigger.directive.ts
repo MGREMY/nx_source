@@ -10,7 +10,8 @@ import {
   standalone: true,
   providers: [provideMenuTriggerState()],
   host: {
-    'data-mgnp-component': 'mgnp-menu-trigger',
+    class: 'mgnp-menu-trigger mgnp-c-menu-trigger',
+    'data-mgnp-menu-trigger': '',
   },
   hostDirectives: [
     {

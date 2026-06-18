@@ -6,7 +6,8 @@ import { injectAccordionState, NgpAccordion, provideAccordionState } from 'ng-pr
   standalone: true,
   providers: [provideAccordionState()],
   host: {
-    'data-mgnp-component': 'mgnp-accordion',
+    class: 'mgnp-accordion mgnp-c-accordion',
+    'data-mgnp-accordion': '',
   },
   hostDirectives: [
     {

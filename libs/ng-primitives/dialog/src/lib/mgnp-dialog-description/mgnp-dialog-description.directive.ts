@@ -5,7 +5,8 @@ import { NgpDialogDescription } from 'ng-primitives/dialog';
   selector: '[mgnpDialogDescription]',
   standalone: true,
   host: {
-    'data-mgnp-component': 'mgnp-dialog-description',
+    class: 'mgnp-dialog-description mgnp-c-dialog-description',
+    'data-mgnp-dialog-description': '',
   },
   hostDirectives: [
     {

@@ -1,0 +1,98 @@
+@layer components {
+  .mgnp-description {
+    @apply transition;
+    @apply inline;
+    @apply text-ui-secondary;
+    @apply text-sm;
+  }
+
+  .mgnp-error {
+    @apply transition;
+    @apply hidden;
+    @apply text-danger;
+    @apply text-sm;
+
+    @variant data-[validator=fail]:data-dirty {
+      @apply block;
+    }
+  }
+
+  .mgnp-form-control {
+    @apply transition;
+    @apply block;
+    @apply w-full;
+    @apply bg-ui;
+    @apply text-ui;
+    @apply outline-none;
+    @apply border border-ui rounded-lg;
+    @apply py-2 px-4;
+
+    ::placeholder {
+      @apply text-placeholder;
+    }
+
+    @variant not-data-pristine:data-invalid {
+      @apply border-danger;
+    }
+  }
+
+  .mgnp-form-field {
+    @apply transition;
+    @apply inline-flex flex-col;
+    @apply gap-1;
+  }
+
+  .mgnp-input-group {
+    @apply transition;
+    @apply inline-flex items-stretch;
+    @apply border-none rounded-lg;
+    @apply bg-ui;
+
+    @variant * {
+      @variant first {
+        @apply border-l rounded-l-[inherit];
+      }
+
+      @variant last {
+        @apply border-r rounded-r-[inherit];
+      }
+
+      @variant not-first {
+        @apply rounded-l-none;
+      }
+
+      @variant not-last {
+        @apply rounded-r-none;
+      }
+
+      @variant has-[+ .mgnp-input-group-addon] {
+        @apply border-r;
+      }
+    }
+  }
+
+  .mgnp-input-group-addon {
+    @apply transition;
+    @apply inline-block;
+    @apply text-nowrap;
+    @apply p-2;
+    @apply bg-ui-secondary;
+    @apply border-y border-ui;
+
+    ng-icon {
+      @apply align-middle!;
+    }
+  }
+
+  .mgnp-label {
+    @apply transition;
+    @apply inline-block;
+    @apply p-0;
+    @apply border-ui;
+    @apply text-ui-secondary font-semibold;
+
+    @variant md {
+      @apply text-nowrap;
+    }
+  }
+}

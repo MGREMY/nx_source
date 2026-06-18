@@ -5,7 +5,8 @@ import { NgpTooltip } from 'ng-primitives/tooltip';
   selector: '[mgnpTooltip]',
   standalone: true,
   host: {
-    'data-mgnp-component': 'mgnp-tooltip',
+    class: 'mgnp-tooltip mgnp-c-tooltip',
+    'data-mgnp-tooltip': '',
   },
   hostDirectives: [
     {

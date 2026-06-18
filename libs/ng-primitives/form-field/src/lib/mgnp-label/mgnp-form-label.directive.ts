@@ -6,7 +6,8 @@ import { injectLabelState, NgpLabel, provideLabelState } from 'ng-primitives/for
   standalone: true,
   providers: [provideLabelState()],
   host: {
-    'data-mgnp-component': 'mgnp-label',
+    class: 'mgnp-label mgnp-c-label',
+    'data-mgnp-label': '',
   },
   hostDirectives: [
     {

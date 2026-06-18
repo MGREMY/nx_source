@@ -1,0 +1,48 @@
+@layer components {
+  .mgnp-menu {
+    @apply transition;
+    @apply fixed;
+    @apply flex flex-col;
+    @apply w-max;
+    @apply p-1;
+    @apply bg-ui;
+    @apply border border-ui rounded-lg;
+    @apply shadow-lg;
+
+    transform-origin: var(--ngp-menu-transform-origin);
+
+    @variant data-enter {
+      animation: mg-show var(--default-transition-duration)
+        var(--default-transition-timing-function);
+    }
+
+    @variant data-exit {
+      animation: mg-hide var(--default-transition-duration)
+        var(--default-transition-timing-function);
+    }
+  }
+
+  .mgnp-menu-item {
+    @apply transition;
+    @apply text-start;
+    @apply cursor-pointer;
+    @apply min-w-30;
+    @apply py-1.5 px-3.5;
+    @apply bg-transparent;
+    @apply outline-none;
+    @apply border-none rounded-sm;
+    @apply text-sm;
+
+    @variant data-hover {
+      @apply bg-ui-hover;
+    }
+
+    @variant data-press {
+      @apply bg-ui-active;
+    }
+
+    @variant data-disabled {
+      @apply opacity-50;
+    }
+  }
+}

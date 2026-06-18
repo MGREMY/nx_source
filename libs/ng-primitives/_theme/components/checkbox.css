@@ -1,0 +1,33 @@
+@import './checkbox/size.css';
+@import './checkbox/color.css';
+
+@layer components {
+  .mgnp-checkbox {
+    @apply transition;
+    @apply flex flex-none items-center justify-center;
+    @apply outline-none;
+    @apply border border-transparent;
+    @apply text-base;
+    @apply cursor-pointer;
+
+    @variant not-data-pristine:data-invalid {
+      @apply border-danger;
+    }
+
+    /* Sizes */
+    @apply data-[mgnp-checkbox-size=xs]:mgnp-checkbox-size-xs;
+    @apply data-[mgnp-checkbox-size=sm]:mgnp-checkbox-size-sm;
+    @apply data-[mgnp-checkbox-size=md]:mgnp-checkbox-size-md;
+    @apply data-[mgnp-checkbox-size=lg]:mgnp-checkbox-size-lg;
+    @apply data-[mgnp-checkbox-size=xl]:mgnp-checkbox-size-xl;
+
+    /* Colors */
+    @apply data-[mgnp-checkbox-color=ui]:mgnp-checkbox-color-ui;
+    @apply data-[mgnp-checkbox-color=primary]:mgnp-checkbox-color-primary;
+    @apply data-[mgnp-checkbox-color=secondary]:mgnp-checkbox-color-secondary;
+    @apply data-[mgnp-checkbox-color=info]:mgnp-checkbox-color-info;
+    @apply data-[mgnp-checkbox-color=success]:mgnp-checkbox-color-success;
+    @apply data-[mgnp-checkbox-color=warning]:mgnp-checkbox-color-warning;
+    @apply data-[mgnp-checkbox-color=danger]:mgnp-checkbox-color-danger;
+  }
+}

@@ -1,0 +1,31 @@
+@layer components {
+  .mgnp-switch {
+    @apply transition;
+    @apply relative;
+    @apply outline-none;
+    @apply w-10 h-6;
+    @apply p-0;
+    @apply bg-ui-secondary;
+    @apply border border-ui rounded-full;
+
+    @variant data-checked {
+      @apply bg-ui-active;
+      @apply border-ui-secondary;
+    }
+  }
+
+  .mgnp-switch-thumb {
+    @apply transition;
+    @apply block;
+    @apply w-4 h-4;
+    @apply ml-1;
+    @apply outline-none;
+    @apply bg-ui;
+    @apply rounded-full;
+    @apply shadow-button;
+
+    @variant data-checked {
+      @apply translate-x-4;
+    }
+  }
+}

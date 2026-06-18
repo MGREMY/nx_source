@@ -1,0 +1,47 @@
+@layer components {
+  .mgnp-pagination {
+    @apply transition;
+
+    ul {
+      @apply transition;
+      @apply flex items-center;
+      @apply gap-2;
+    }
+  }
+
+  .mgnp-pagination-button,
+  .mgnp-pagination-first,
+  .mgnp-pagination-previous,
+  .mgnp-pagination-next,
+  .mgnp-pagination-last {
+    all: unset;
+
+    @apply transition;
+    @apply flex items-center justify-center;
+    @apply cursor-pointer;
+    @apply w-8 h-8;
+    @apply rounded-lg;
+    @apply bg-ui;
+    @apply text-ui text-sm font-medium;
+    @apply shadow-button;
+
+    @variant not-data-disabled:not-data-selected:data-hover {
+      @apply bg-ui-hover;
+    }
+
+    @variant not-data-disabled:not-data-selected:data-press {
+      @apply bg-ui-active;
+    }
+
+    @variant data-disabled {
+      @apply bg-ui-disabled;
+      @apply text-ui-disabled;
+      @apply shadow-none;
+    }
+
+    @variant data-selected {
+      @apply bg-ui-inverse;
+      @apply text-inverse;
+    }
+  }
+}

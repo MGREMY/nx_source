@@ -10,7 +10,8 @@ import {
   standalone: true,
   providers: [provideTooltipArrowState()],
   host: {
-    'data-mgnp-component': 'mgnp-tooltip-arrow',
+    class: 'mgnp-tooltip-arrow mgnp-c-tooltip-arrow',
+    'data-mgnp-tooltip-arrow': '',
   },
   hostDirectives: [
     {

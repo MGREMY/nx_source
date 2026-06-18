@@ -6,7 +6,8 @@ import { injectMenuItemState, NgpMenuItem, provideMenuItemState } from 'ng-primi
   standalone: true,
   providers: [provideMenuItemState()],
   host: {
-    'data-mgnp-component': 'mgnp-menu-item',
+    class: 'mgnp-menu-item mgnp-c-menu-item',
+    'data-mgnp-menu-item': '',
   },
   hostDirectives: [
     {

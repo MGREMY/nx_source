@@ -1,0 +1,20 @@
+@layer components {
+  .mgnp-input {
+    @apply transition;
+    @apply block;
+    @apply w-full;
+    @apply py-2 px-4;
+    @apply bg-ui;
+    @apply text-ui;
+    @apply outline-none;
+    @apply border border-ui rounded-lg;
+
+    @variant not-data-pristine:data-invalid {
+      @apply border-danger;
+    }
+
+    ::placeholder {
+      @apply text-placeholder;
+    }
+  }
+}

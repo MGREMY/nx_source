@@ -1,0 +1,24 @@
+@utility mgnp-checkbox-size-xs {
+  @apply size-3;
+  @apply rounded-sm;
+}
+
+@utility mgnp-checkbox-size-sm {
+  @apply size-4;
+  @apply rounded-sm;
+}
+
+@utility mgnp-checkbox-size-md {
+  @apply size-5;
+  @apply rounded-md;
+}
+
+@utility mgnp-checkbox-size-lg {
+  @apply size-6;
+  @apply rounded-lg;
+}
+
+@utility mgnp-checkbox-size-xl {
+  @apply size-7;
+  @apply rounded-lg;
+}

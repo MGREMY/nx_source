@@ -6,7 +6,8 @@ import { injectErrorState, NgpError, provideErrorState } from 'ng-primitives/for
   standalone: true,
   providers: [provideErrorState()],
   host: {
-    'data-mgnp-component': 'mgnp-error',
+    class: 'mgnp-error mgnp-c-error',
+    'data-mgnp-error': '',
   },
   hostDirectives: [
     {

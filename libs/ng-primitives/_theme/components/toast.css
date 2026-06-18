@@ -1,0 +1,103 @@
+@layer components {
+  .mgnp-toast {
+    @apply transition;
+    @apply touch-none;
+    @apply absolute;
+    @apply z-(--ngp-toast-z-index);
+    @apply transform-(--y);
+    @apply inline-flex items-center justify-between;
+    @apply w-87.5 h-fit;
+    @apply px-3 py-4;
+    @apply bg-ui;
+    @apply border border-ui rounded-md;
+    @apply box-border shadow-ui;
+
+    @variant data-enter {
+      --y: translateY(0);
+
+      @apply opacity-100;
+      animation: mg-slide-in var(--default-transition-duration)
+        var(--default-transition-timing-function);
+    }
+
+    @variant data-exit {
+      @apply opacity-0;
+      @apply translate-y-full;
+
+      --y: translateY(calc(calc(var(--lift) * var(--ngp-toast-gap)) * -1));
+    }
+
+    @variant data-[visible=false] {
+      @apply opacity-0;
+      @apply pointer-events-none;
+    }
+
+    @variant data-[position-x=start] {
+      @apply left-0;
+    }
+
+    @variant data-[position-x=end] {
+      @apply right-0;
+    }
+
+    @variant data-[position-y=top] {
+      @apply top-0;
+
+      --lift: 1;
+      --lift-amount: calc(var(--lift) * var(--ngp-toast-gap));
+    }
+
+    @variant data-[position-y=bottom] {
+      @apply bottom-0;
+
+      --lift: -1;
+      --lift-amount: calc(var(--lift) * var(--ngp-toast-gap));
+    }
+
+    @variant data-[expanded=true] {
+      --y: translateY(calc(var(--lift) * var(--ngp-toast-offset)));
+
+      @apply h-auto;
+
+      ::after {
+        content: '';
+
+        @apply w-full h-[calc(var(--ngp-toast-gap)+1px)];
+        @apply absolute left-0 bottom-full;
+      }
+    }
+
+    @variant data-[expanded=false]:data-[front=false] {
+      --scale: var(--ngp-toasts-before) * 0.05 + 1;
+      --y: translateY(calc(var(--lift-amount) * var(--ngp-toasts-before)))
+        scale(calc(-1 * var(--scale)));
+
+      @apply h-(--ngp-toast-front-height);
+    }
+
+    @variant data-[swiping=true] {
+      transform: var(--y) translateY(var(--ngp-toast-swipe-amount-y, 0))
+        translateX(var(--ngp-toast-swipe-amount-x, 0));
+
+      @variant data-[swipe-direction=left] {
+        /* Fade out from -45px to -100px swipe */
+        opacity: calc(1 - clamp(0, ((-1 * var(--ngp-toast-swipe-x, 0px)) - 45) / 55, 1));
+      }
+
+      @variant data-[swipe-direction=right] {
+        /* Fade out from 45px to 100px swipe */
+        opacity: calc(1 - clamp(0, (var(--ngp-toast-swipe-x, 0px) - 45) / 55, 1));
+      }
+
+      @variant data-[swipe-direction=top] {
+        /* Fade out from -45px to -100px swipe */
+        opacity: calc(1 - clamp(0, ((-1 * var(--ngp-toast-swipe-y, 0px)) - 45) / 55, 1));
+      }
+
+      @variant data-[swipe-direction=bottom] {
+        /* Fade out from 45px to 100px swipe */
+        opacity: calc(1 - clamp(0, (var(--ngp-toast-swipe-y, 0px) - 45) / 55, 1));
+      }
+    }
+  }
+}

@@ -6,7 +6,8 @@ import { injectInputState, NgpInput, provideInputState } from 'ng-primitives/inp
   standalone: true,
   providers: [provideInputState()],
   host: {
-    'data-mgnp-component': 'mgnp-input',
+    class: 'mgnp-input mgnp-c-input',
+    'data-mgnp-input': '',
   },
   hostDirectives: [
     {

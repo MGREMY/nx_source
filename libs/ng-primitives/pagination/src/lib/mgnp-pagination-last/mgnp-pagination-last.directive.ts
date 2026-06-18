@@ -5,7 +5,8 @@ import { NgpPaginationLast } from 'ng-primitives/pagination';
   selector: '[mgnpPaginationLast]',
   standalone: true,
   host: {
-    'data-mgnp-component': 'mgnp-pagination-last',
+    class: 'mgnp-pagination-last mgnp-c-pagination-last',
+    'data-mgnp-pagination-last': '',
   },
   hostDirectives: [
     {

@@ -10,7 +10,8 @@ import {
   standalone: true,
   providers: [provideDescriptionState()],
   host: {
-    'data-mgnp-component': 'mgnp-description',
+    class: 'mgnp-description mgnp-c-description',
+    'data-mgnp-description': '',
   },
   hostDirectives: [
     {

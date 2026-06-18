@@ -1,0 +1,36 @@
+@layer components {
+  .mgnp-tooltip {
+    @apply transition;
+    @apply absolute;
+    @apply max-w-64;
+    @apply py-3 px-3;
+    @apply border-none rounded-lg;
+    @apply bg-ui-inverse;
+    @apply text-inverse text-xs;
+
+    transform-origin: var(--ngp-tooltip-transform-origin);
+    animation: mg-show var(--default-transition-duration) var(--default-transition-timing-function);
+
+    @variant data-exit {
+      animation: mg-hide var(--default-transition-duration)
+        var(--default-transition-timing-function);
+    }
+  }
+
+  .mgnp-tooltip-arrow {
+    @apply transition;
+    @apply absolute rotate-45;
+    @apply pointer-events-none;
+    @apply w-2 h-2;
+    @apply rounded-xs;
+    @apply bg-ui-inverse;
+
+    @variant data-[placement=top] {
+      @apply top-[calc(100%-5px)];
+    }
+
+    @variant data-[placement=bottom] {
+      @apply bottom-[calc(100%-5px)];
+    }
+  }
+}

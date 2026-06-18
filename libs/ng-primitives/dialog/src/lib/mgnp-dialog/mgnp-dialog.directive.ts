@@ -8,8 +8,9 @@ import { injectDialogState, NgpDialog } from 'ng-primitives/dialog';
   standalone: true,
   providers: [],
   host: {
-    'data-mgnp-component': 'mgnp-dialog',
-    '[attr.data-mgnp-mode]': 'overlay.mode()',
+    class: 'mgnp-dialog mgnp-c-dialog',
+    'data-mgnp-dialog': '',
+    '[attr.data-mgnp-dialog-mode]': 'overlay.mode()',
   },
   hostDirectives: [
     {

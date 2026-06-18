@@ -1,0 +1,50 @@
+@utility mgnp-dialog-mode-modal {
+  @apply rounded-md;
+  animation: mg-fade-in var(--default-transition-duration) var(--default-transition-timing-function);
+
+  @variant data-exit {
+    animation: mg-fade-out var(--default-transition-duration)
+      var(--default-transition-timing-function);
+  }
+}
+
+@utility mgnp-dialog-mode-drawer {
+  @apply w-80 max-w-full;
+  @apply h-full;
+  animation: mg-slide-in var(--default-transition-duration)
+    var(--default-transition-timing-function);
+
+  @variant data-exit {
+    animation: mg-slide-out var(--default-transition-duration)
+      var(--default-transition-timing-function);
+  }
+}
+
+@utility mgnp-dialog-overlay-mode-modal {
+  @apply items-center justify-center;
+  animation: mg-fade-in var(--default-transition-duration) var(--default-transition-timing-function);
+
+  @variant data-exit {
+    animation: mg-fade-out var(--default-transition-duration)
+      var(--default-transition-timing-function);
+  }
+}
+
+@utility mgnp-dialog-overlay-mode-drawer {
+  @apply items-stretch;
+  animation: mg-slide-in var(--default-transition-duration)
+    var(--default-transition-timing-function);
+
+  @variant data-[mgnp-dialog-overlay-position=start] {
+    @apply justify-start;
+  }
+
+  @variant data-[mgnp-dialog-overlay-position=end] {
+    @apply justify-end;
+  }
+
+  @variant data-exit {
+    animation: mg-slide-out var(--default-transition-duration)
+      var(--default-transition-timing-function);
+  }
+}

@@ -1,0 +1,39 @@
+@import './dialog/mode.css';
+
+@layer components {
+  .mgnp-dialog {
+    @apply transition;
+    @apply bg-ui;
+    @apply p-6;
+    @apply shadow-button;
+
+    @apply data-[mgnp-dialog-mode=modal]:mgnp-dialog-mode-modal;
+    @apply data-[mgnp-dialog-mode=drawer]:mgnp-dialog-mode-drawer;
+  }
+
+  .mgnp-dialog-title {
+    @apply transition;
+    @apply my-1;
+    @apply text-lg;
+    @apply text-ui;
+  }
+
+  .mgnp-dialog-description {
+    @apply transition;
+    @apply m-0;
+    @apply text-base;
+    @apply text-ui-disabled;
+  }
+
+  .mgnp-dialog-overlay {
+    @apply transition;
+    @apply flex;
+    @apply fixed;
+    @apply z-9999;
+    @apply bg-ui/50 backdrop-blur-sm;
+    @apply inset-0;
+
+    @apply data-[mgnp-dialog-overlay-mode=modal]:mgnp-dialog-overlay-mode-modal;
+    @apply data-[mgnp-dialog-overlay-mode=drawer]:mgnp-dialog-overlay-mode-drawer;
+  }
+}

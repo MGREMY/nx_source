@@ -5,7 +5,8 @@ import { NgpFormControl } from 'ng-primitives/form-field';
   selector: '[mgnpFormControl]',
   standalone: true,
   host: {
-    'data-mgnp-component': 'mgnp-form-control',
+    class: 'mgnp-form-control mgnp-c-form-control',
+    'data-mgnp-form-control': '',
   },
   hostDirectives: [
     {
