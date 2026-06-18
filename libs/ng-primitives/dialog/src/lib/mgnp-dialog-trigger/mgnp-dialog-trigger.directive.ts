@@ -6,7 +6,7 @@ import { NgpDialogTrigger } from 'ng-primitives/dialog';
   standalone: true,
   host: {
     class: 'mgnp-dialog-trigger mgnp-c-dialog-trigger',
-    'data-mgnp-trigger': '',
+    'data-mgnp-dialog-trigger': '',
   },
   hostDirectives: [
     {

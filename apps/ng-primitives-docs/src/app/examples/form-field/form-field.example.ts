@@ -76,16 +76,16 @@ import { NgpComboboxPortal } from 'ng-primitives/combobox';
       </div>
       <div mgnpFormField>
         <div mgnpInputGroup>
-          <span mgnpInputGroupAddon><p mgnpLabel>+33</p></span>
+          <div mgnpInputGroupAddon><p mgnpLabel>+33</p></div>
           <input mgnpInput placeholder="6.12.34.56.78" [formControl]="formGroup.controls.phoneNumber" />
-          <span mgnpInputGroupAddon><ng-icon name="heroPhoneMini" /></span>
+          <div mgnpInputGroupAddon><ng-icon name="heroPhoneMini" /></div>
         </div>
         <p mgnpError validator="pattern">The phone number must have the french phone number form.</p>
       </div>
       <div mgnpFormField>
         <p mgnpDescription>Choose the corresponding item depending on the account type.</p>
         <div mgnpInputGroup>
-          <span mgnpInputGroupAddon><p mgnpLabel>Account type</p></span>
+          <div mgnpInputGroupAddon><p mgnpLabel>Account type</p></div>
           <div mgnpCombobox [formControl]="formGroup.controls.accountType">
             <button mgnpComboboxButton>
               {{ formGroup.controls.accountType.value || 'Select an option' }}
