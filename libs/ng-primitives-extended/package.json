@@ -15,10 +15,10 @@
     "tailwindcss": "^4.3.0"
   },
   "sideEffects": false,
-  "style": "theme/style.css",
+  "style": "_theme/style.css",
   "exports": {
     ".": {
-      "style": "./theme/style.css"
+      "style": "./_theme/style.css"
     }
   }
 }

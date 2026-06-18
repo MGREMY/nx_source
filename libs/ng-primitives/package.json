@@ -17,10 +17,10 @@
     "rxjs": "^7.8.0"
   },
   "sideEffects": false,
-  "style": "theme/mgnp.css",
+  "style": "_theme/mgnp.css",
   "exports": {
     ".": {
-      "style": "./theme/mgnp.css"
+      "style": "./_theme/mgnp.css"
     }
   }
 }
