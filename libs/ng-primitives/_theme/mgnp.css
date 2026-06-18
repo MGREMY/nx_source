@@ -1,4 +1,5 @@
 @import './animation.css';
+@import './utilities.css';
 
 @import './components/accordion.css';
 @import './components/button.css';
