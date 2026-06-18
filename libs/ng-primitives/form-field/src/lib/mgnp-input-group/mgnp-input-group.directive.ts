@@ -5,7 +5,8 @@ import { Directive } from '@angular/core';
   standalone: true,
   providers: [],
   host: {
-    'data-mgnp-component': 'mgnp-input-group',
+    class: 'mgnp-input-group mgnp-c-input-group',
+    'data-mgnp-input-group': '',
   },
   hostDirectives: [],
   exportAs: 'mgnpInputGroup',

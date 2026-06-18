@@ -1,133 +1,91 @@
-@utility mgnp-description {
-  display: inline;
-  color: var(--mg-text-ui-secondary);
-  font-size: var(--text-sm);
-  line-height: var(--text-sm--line-height);
-}
-
-@utility mgnp-error {
-  display: none;
-  color: var(--mg-text-danger);
-  font-size: var(--text-sm);
-  line-height: var(--text-sm--line-height);
-
-  @variant data-[validator='fail']:data-dirty {
-    display: block;
-  }
-}
-
-@utility mgnp-form-control {
-  display: block;
-  width: 100%;
-  background-color: var(--mg-background-ui);
-  color: var(--mg-text-ui);
-  outline: none;
-  border: 1px solid var(--mg-border-ui);
-  border-radius: var(--radius-lg);
-  padding: --spacing(2) --spacing(4);
-
-  ::placeholder {
-    color: var(--mg-text-placeholder);
+@layer components {
+  .mgnp-description {
+    @apply inline;
+    @apply text-ui-secondary;
+    @apply text-sm;
   }
 
-  @variant not-data-pristine:data-invalid {
-    border-color: var(--mg-border-danger);
-  }
-}
+  .mgnp-error {
+    @apply hidden;
+    @apply text-danger;
+    @apply text-sm;
 
-@utility mgnp-form-field {
-  display: inline-flex;
-  flex-direction: column;
-  gap: --spacing(1);
-}
-
-@utility mgnp-input-group {
-  display: inline-flex;
-  align-items: stretch;
-  border: 0px;
-  border-radius: var(--radius-lg);
-  background-color: var(--mg-background-ui);
-
-  @variant *:first {
-    border-left-width: 1px;
-    border-top-left-radius: inherit;
-    border-bottom-left-radius: inherit;
-  }
-
-  @variant *:not-first {
-    border-top-left-radius: unset;
-    border-bottom-left-radius: unset;
-  }
-
-  @variant *:last {
-    border-right-width: 1px;
-    border-top-right-radius: inherit;
-    border-bottom-right-radius: inherit;
-  }
-
-  @variant *:not-last {
-    border-top-right-radius: unset;
-    border-bottom-right-radius: unset;
-
-    @variant not-has-[+ [data-[mgnp-component='mgnp-input-group-addon']]] {
-      border-right-width: 1px;
-      border-right-style: solid;
+    @variant data-[validator=fail]:data-dirty {
+      @apply block;
     }
   }
-}
 
-@utility mgnp-input-group-addon {
-  display: inline-block;
-  text-wrap-mode: nowrap;
-  padding: --spacing(2);
-  background-color: var(--mg-background-ui-secondary);
-  border-color: var(--mg-border-ui);
-  border-style: solid;
-  border-block-width: 1px;
+  .mgnp-form-control {
+    @apply block;
+    @apply w-full;
+    @apply bg-ui;
+    @apply text-ui;
+    @apply outline-none;
+    @apply border border-ui rounded-lg;
+    @apply py-2 px-4;
 
-  ng-icon {
-    vertical-align: middle !important;
-  }
-}
+    ::placeholder {
+      @apply text-placeholder;
+    }
 
-@utility mgnp-label {
-  display: inline-block;
-  padding: --spacing(0);
-  border-color: var(--mg-border-ui);
-  font-weight: var(--font-weight-semibold);
-  color: var(--mg-text-ui-secondary);
-
-  @variant md {
-    text-wrap-mode: nowrap;
-  }
-}
-
-@layer base {
-  [data-mgnp-component='mgnp-description'] {
-    @apply mgnp-description transition;
+    @variant not-data-pristine:data-invalid {
+      @apply border-danger;
+    }
   }
 
-  [data-mgnp-component='mgnp-error'] {
-    @apply mgnp-error transition;
+  .mgnp-form-field {
+    @apply inline-flex flex-col;
+    @apply gap-1;
   }
 
-  [data-mgnp-component='mgnp-form-control'] {
-    @apply mgnp-form-control transition;
+  .mgnp-input-group {
+    @apply inline-flex items-stretch;
+    @apply border-none rounded-lg;
+    @apply bg-ui;
+
+    @variant * {
+      @variant first {
+        @apply border-l rounded-l-[inherit];
+      }
+
+      @variant last {
+        @apply border-r rounded-r-[inherit];
+      }
+
+      @variant not-first {
+        @apply rounded-l-none;
+      }
+
+      @variant not-last {
+        @apply rounded-r-none;
+      }
+
+      @variant has-[+ .mgnp-input-group-addon] {
+        @apply border-r;
+      }
+    }
   }
 
-  [data-mgnp-component='mgnp-form-field'] {
-    @apply mgnp-form-field transition;
+  .mgnp-input-group-addon {
+    @apply inline-block;
+    @apply text-nowrap;
+    @apply p-2;
+    @apply bg-ui-secondary;
+    @apply border-y border-ui;
+
+    ng-icon {
+      @apply align-middle!;
+    }
   }
 
-  [data-mgnp-component='mgnp-input-group'] {
-    @apply mgnp-input-group transition;
-  }
+  .mgnp-label {
+    @apply inline-block;
+    @apply p-0;
+    @apply border-ui;
+    @apply text-ui-secondary font-semibold;
 
-  [data-mgnp-component='mgnp-input-group-addon'] {
-    @apply mgnp-input-group-addon transition;
-  }
-
-  [data-mgnp-component='mgnp-label'] {
-    @apply mgnp-label transition;
+    @variant md {
+      @apply text-nowrap;
+    }
   }
 }
