@@ -1,0 +1,24 @@
+@utility mgnp-button-size-xs {
+  @apply px-1.5 py-1;
+  @apply text-xs;
+}
+
+@utility mgnp-button-size-sm {
+  @apply px-1.5 py-1;
+  @apply text-sm;
+}
+
+@utility mgnp-button-size-md {
+  @apply px-2 py-1.5;
+  @apply text-base;
+}
+
+@utility mgnp-button-size-lg {
+  @apply px-3 py-2;
+  @apply text-lg font-semibold;
+}
+
+@utility mgnp-button-size-xl {
+  @apply px-4 py-2.5;
+  @apply text-xl font-semibold;
+}
