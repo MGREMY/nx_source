@@ -5,7 +5,8 @@ import { NgpPaginationPrevious } from 'ng-primitives/pagination';
   selector: '[mgnpPaginationPrevious]',
   standalone: true,
   host: {
-    'data-mgnp-component': 'mgnp-pagination-previous',
+    class: 'mgnp-pagination-previous mgnp-c-pagination-previous',
+    'data-mgnp-pagination-previous': '',
   },
   hostDirectives: [
     {

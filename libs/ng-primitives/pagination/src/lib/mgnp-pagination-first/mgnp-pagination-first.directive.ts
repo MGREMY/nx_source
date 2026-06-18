@@ -5,7 +5,8 @@ import { NgpPaginationFirst } from 'ng-primitives/pagination';
   selector: '[mgnpPaginationFirst]',
   standalone: true,
   host: {
-    'data-mgnp-component': 'mgnp-pagination-first',
+    class: 'mgnp-pagination-first mgnp-c-pagination-first',
+    'data-mgnp-pagination-first': '',
   },
   hostDirectives: [
     {

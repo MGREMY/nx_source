@@ -10,7 +10,8 @@ import {
   standalone: true,
   providers: [providePaginationState()],
   host: {
-    'data-mgnp-component': 'mgnp-pagination',
+    class: 'mgnp-pagination mgnp-c-pagination',
+    'data-mgnp-pagination': '',
   },
   hostDirectives: [
     {

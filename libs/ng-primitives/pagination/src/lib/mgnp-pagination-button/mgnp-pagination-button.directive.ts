@@ -5,7 +5,8 @@ import { NgpPaginationButton } from 'ng-primitives/pagination';
   selector: '[mgnpPaginationButton]',
   standalone: true,
   host: {
-    'data-mgnp-component': 'mgnp-pagination-button',
+    class: 'mgnp-pagination-button mgnp-c-pagination-button',
+    'data-mgnp-pagination-button': '',
   },
   hostDirectives: [
     {
