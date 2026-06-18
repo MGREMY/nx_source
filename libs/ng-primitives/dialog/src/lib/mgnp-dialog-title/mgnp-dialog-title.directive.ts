@@ -5,7 +5,8 @@ import { NgpDialogTitle } from 'ng-primitives/dialog';
   selector: '[mgnpDialogTitle]',
   standalone: true,
   host: {
-    'data-mgnp-component': 'mgnp-dialog-title',
+    class: 'mgnp-dialog-title mgnp-c-dialog-title',
+    'data-mgnp-dialog-title': '',
   },
   hostDirectives: [
     {

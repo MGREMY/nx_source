@@ -12,9 +12,10 @@ export type MgnpDialogDrawerPosition = PropertyType<'start' | 'end'>;
   standalone: true,
   providers: [provideDialogState()],
   host: {
-    'data-mgnp-component': 'mgnp-dialog-overlay',
-    '[attr.data-mgnp-mode]': 'mode()',
-    '[attr.data-mgnp-drawer-position]': 'drawerPosition()',
+    class: 'mgnp-dialog-overlay mgnp-c-dialog-overlay',
+    'data-mgnp-dialog-overlay': '',
+    '[attr.data-mgnp-dialog-overlay-mode]': 'mode()',
+    '[attr.data-mgnp-dialog-overlay-position]': 'drawerPosition()',
   },
   hostDirectives: [
     {
