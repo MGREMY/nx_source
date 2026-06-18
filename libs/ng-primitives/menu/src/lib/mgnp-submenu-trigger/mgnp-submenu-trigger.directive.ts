@@ -10,7 +10,8 @@ import {
   standalone: true,
   providers: [provideSubmenuTriggerState()],
   host: {
-    'data-mgnp-component': 'mgnp-submenu-trigger',
+    class: 'mgnp-submenu-trigger mgnp-c-submenu-trigger',
+    'data-mgnp-submenu-trigger': '',
   },
   hostDirectives: [
     {

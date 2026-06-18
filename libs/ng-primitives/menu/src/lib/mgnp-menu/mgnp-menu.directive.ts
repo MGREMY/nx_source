@@ -6,7 +6,8 @@ import { injectMenuState, NgpMenu, provideMenuState } from 'ng-primitives/menu';
   standalone: true,
   providers: [provideMenuState()],
   host: {
-    'data-mgnp-component': 'mgnp-menu',
+    class: 'mgnp-menu mgnp-c-menu',
+    'data-mgnp-menu': '',
   },
   hostDirectives: [
     {

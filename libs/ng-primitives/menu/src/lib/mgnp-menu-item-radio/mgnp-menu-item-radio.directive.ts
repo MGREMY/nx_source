@@ -10,7 +10,8 @@ import {
   standalone: true,
   providers: [provideMenuItemRadioState()],
   host: {
-    'data-mgnp-component': 'mgnp-menu-item-radio',
+    class: 'mgnp-menu-item-radio mgnp-c-menu-item-radio',
+    'data-mgnp-menu-item-radio': '',
   },
   hostDirectives: [
     {

@@ -10,7 +10,8 @@ import {
   standalone: true,
   providers: [provideMenuItemCheckboxState()],
   host: {
-    'data-mgnp-component': 'mgnp-menu-item-checkbox',
+    class: 'mgnp-menu-item-checkbox mgnp-c-menu-item-checkbox',
+    'data-mgnp-menu-item-checkbox': '',
   },
   hostDirectives: [
     {

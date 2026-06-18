@@ -1,65 +1,46 @@
-@utility mgnp-menu {
-  position: fixed;
-  display: flex;
-  flex-direction: column;
-  width: max-content;
-  padding: --spacing(1);
-  border-radius: var(--radius-lg);
-  background: var(--mg-background-ui);
-  border: 1px solid var(--mg-border-ui);
-  box-shadow: var(--mg-shadow-lg);
-  transform-origin: var(--ngp-menu-transform-origin);
+@layer components {
+  .mgnp-menu {
+    @apply fixed;
+    @apply flex flex-col;
+    @apply w-max;
+    @apply p-1;
+    @apply bg-ui;
+    @apply border border-ui rounded-lg;
+    @apply shadow-lg;
 
-  @variant data-enter {
-    animation: mg-show var(--default-transition-duration) var(--default-transition-timing-function);
+    transform-origin: var(--ngp-menu-transform-origin);
+
+    @variant data-enter {
+      animation: mg-show var(--default-transition-duration)
+        var(--default-transition-timing-function);
+    }
+
+    @variant data-exit {
+      animation: mg-hide var(--default-transition-duration)
+        var(--default-transition-timing-function);
+    }
   }
 
-  @variant data-exit {
-    animation: mg-hide var(--default-transition-duration) var(--default-transition-timing-function);
-  }
-}
+  .mgnp-menu-item {
+    @apply text-start;
+    @apply cursor-pointer;
+    @apply min-w-30;
+    @apply py-1.5 px-3.5;
+    @apply bg-transparent;
+    @apply outline-none;
+    @apply border-none rounded-sm;
+    @apply text-sm;
 
-@utility mgnp-menu-item {
-  border: none;
-  background: none;
-  cursor: pointer;
-  text-align: start;
-  outline: none;
-  padding-block: --spacing(1.5);
-  padding-inline: --spacing(3.5);
-  min-width: --spacing(30);
-  border-radius: var(--radius-sm);
-  font-size: var(--text-sm);
-  line-height: var(--text-sm--line-height);
+    @variant data-hover {
+      @apply bg-ui-hover;
+    }
 
-  @variant data-hover {
-    background-color: var(--mg-background-ui-hover);
-  }
+    @variant data-press {
+      @apply bg-ui-active;
+    }
 
-  @variant data-press {
-    background-color: var(--mg-background-ui-active);
-  }
-
-  @variant data-focus-visible {
-    z-index: 1;
-    outline: 2px solid var(--mg-ring-ui);
-  }
-
-  @variant data-disabled {
-    opacity: 50%;
-  }
-}
-
-@layer base {
-  [data-mgnp-component='mgnp-menu'] {
-    @apply mgnp-menu transition;
-  }
-
-  [data-mgnp-component='mgnp-menu-item'] {
-    @apply mgnp-menu-item transition;
-  }
-
-  [data-mgnp-component='mgnp-menu-trigger'] {
-    @apply mgnp-button transition;
+    @variant data-disabled {
+      @apply opacity-50;
+    }
   }
 }
