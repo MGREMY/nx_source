@@ -1,5 +1,5 @@
-@import './checkbox.size.css';
-@import './checkbox.color.css';
+@import './checkbox/size.css';
+@import './checkbox/color.css';
 
 @layer components {
   .mgnp-checkbox {

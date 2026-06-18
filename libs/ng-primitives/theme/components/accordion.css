@@ -1,171 +1,63 @@
-@utility mgnp-accordion {
-  background-color: var(--mg-background-ui);
-  border: 1px solid var(--mg-border-ui);
-  border-radius: --spacing(3);
-  box-shadow: var(--mg-shadow-ui);
+@import './accordion/orientation.css';
 
-  @variant data-[orientation=vertical] {
-    display: block;
-    width: 100%;
-    max-width: --spacing(96);
+@layer components {
+  .mgnp-accordion {
+    @apply bg-ui;
+    @apply border border-ui rounded-lg;
+    @apply shadow-ui;
+    @apply transition;
+
+    @apply data-[orientation=vertical]:mgnp-accordion-orientation-vertical;
+    @apply data-[orientation=horizontal]:mgnp-accordion-orientation-horizontal;
   }
 
-  @variant data-[orientation=horizontal] {
-    display: flex;
-    flex-direction: row;
-    height: 100%;
-    max-height: --spacing(96);
-  }
-}
+  .mgnp-accordion-content {
+    @apply overflow-hidden;
+    @apply transition;
 
-@utility mgnp-accordion-content {
-  overflow: hidden;
-  font-size: --spacing(3.5);
-  color: var(--mg-text-ui-secondary);
-
-  @variant data-open:data-[orientation=vertical] {
-    animation: accordion-show-vertical var(--default-transition-duration)
-      var(--default-transition-timing-function) forwards;
+    @apply data-[orientation=vertical]:mgnp-accordion-content-orientation-vertical;
+    @apply data-[orientation=horizontal]:mgnp-accordion-content-orientation-horizontal;
   }
 
-  @variant data-closed:data-[orientation=vertical] {
-    animation: accordion-hide-vertical var(--default-transition-duration)
-      var(--default-transition-timing-function) forwards;
-  }
+  .mgnp-accordion-item {
+    @apply flex;
+    @apply transition;
 
-  @variant data-open:data-[orientation=horizontal] {
-    animation: accordion-show-horizontal var(--default-transition-duration)
-      var(--default-transition-timing-function) forwards;
-  }
+    @apply data-[orientation=vertical]:mgnp-accordion-item-orientation-vertical;
+    @apply data-[orientation=horizontal]:mgnp-accordion-item-orientation-horizontal;
 
-  @variant data-closed:data-[orientation=horizontal] {
-    animation: accordion-hide-horizontal var(--default-transition-duration)
-      var(--default-transition-timing-function) forwards;
-  }
-}
-
-@utility mgnp-accordion-item {
-  display: flex;
-
-  @variant data-[orientation=horizontal] {
-    flex-direction: row;
-
-    @variant not-last {
-      border-right: 1px solid var(--mg-border-ui);
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      @apply m-0;
+      @apply transition;
     }
   }
 
-  @variant data-[orientation=vertical] {
-    flex-direction: column;
+  .mgnp-accordion-trigger {
+    @apply flex justify-between items-center;
+    @apply outline-none;
+    @apply border-none;
+    @apply shadow-none;
+    @apply bg-transparent;
+    @apply font-medium text-base text-ui;
+    @apply transition;
 
-    @variant not-last {
-      border-bottom: 1px solid var(--mg-border-ui);
-    }
-  }
+    @apply data-[orientation=vertical]:mgnp-accordion-trigger-orientation-vertical;
+    @apply data-[orientation=horizontal]:mgnp-accordion-trigger-orientation-horizontal;
 
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
-    margin: --spacing(0);
-  }
-}
-
-@utility mgnp-accordion-trigger {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  outline: none;
-  border: none;
-  box-shadow: none;
-  background-color: transparent;
-  color: var(--mg-text-ui);
-  font-weight: var(--font-weight-medium);
-  font-size: --spacing(3.5);
-  line-height: --spacing(5);
-  border-radius: --spacing(3);
-
-  @variant data-[orientation=vertical] {
-    width: 100%;
-    height: --spacing(11);
-    padding: --spacing(0) --spacing(4);
-  }
-
-  @variant data-[orientation=horizontal] {
-    width: --spacing(11);
-    height: 100%;
-    padding: --spacing(4) --spacing(0);
-
-    writing-mode: sideways-lr;
-    text-orientation: sideways;
-  }
-
-  ng-icon {
-    transition: transform var(--default-transition-duration)
-      var(--default-transition-timing-function);
-  }
-
-  @variant data-open {
     ng-icon {
-      transform: rotate(180deg);
+      transition: transform var(--default-transition-duration)
+        var(--default-transition-timing-function);
     }
-  }
-}
 
-@layer base {
-  [data-mgnp-component='mgnp-accordion'] {
-    @apply mgnp-accordion transition;
-  }
-
-  [data-mgnp-component='mgnp-accordion-content'] {
-    @apply mgnp-accordion-content transition;
-  }
-
-  [data-mgnp-component='mgnp-accordion-item'] {
-    @apply mgnp-accordion-item transition;
-  }
-
-  [data-mgnp-component='mgnp-accordion-trigger'] {
-    @apply mgnp-accordion-trigger transition;
-  }
-}
-
-@theme {
-  @keyframes accordion-show-vertical {
-    from {
-      max-height: 0;
-    }
-    to {
-      max-height: var(--ngp-accordion-content-height);
-    }
-  }
-
-  @keyframes accordion-hide-vertical {
-    from {
-      max-height: var(--ngp-accordion-content-height);
-    }
-    to {
-      max-height: 0;
-    }
-  }
-
-  @keyframes accordion-show-horizontal {
-    from {
-      max-width: 0;
-    }
-    to {
-      max-width: var(--ngp-accordion-content-width);
-    }
-  }
-
-  @keyframes accordion-hide-horizontal {
-    from {
-      max-width: var(--ngp-accordion-content-width);
-    }
-    to {
-      max-width: 0;
+    @variant data-open {
+      ng-icon {
+        transform: rotate(180deg);
+      }
     }
   }
 }
