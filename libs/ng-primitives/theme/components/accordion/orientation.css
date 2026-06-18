@@ -54,7 +54,7 @@
   writing-mode: sideways-lr;
   text-orientation: sideways;
 
-  @apply w-11 h-full py-4 px-0;
+  @apply w-11 h-full py-0 px-4;
 }
 
 @theme {

@@ -5,7 +5,8 @@ import { NgpComboboxInput } from 'ng-primitives/combobox';
   selector: '[mgnpComboboxInput]',
   standalone: true,
   host: {
-    'data-mgnp-component': 'mgnp-combobox-input',
+    class: 'mgnp-combobox-input mgnp-c-combobox-input',
+    'data-mgnp-combobox-input': '',
   },
   hostDirectives: [
     {

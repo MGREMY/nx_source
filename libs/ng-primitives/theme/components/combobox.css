@@ -1,127 +1,94 @@
-@utility mgnp-combobox {
-  display: inline-flex;
-  width: 100%;
-  justify-content: space-between;
-  align-items: center;
-  padding-block: --spacing(2);
-  padding-inline: --spacing(2);
-  outline: none;
-  border: 1px solid var(--mg-border-ui);
-  border-radius: var(--radius-lg);
-  background-color: var(--mg-background-ui);
+@layer components {
+  .mgnp-combobox {
+    @apply inline-flex w-full justify-between items-center;
+    @apply py-2 px-2;
+    @apply outline-none;
+    @apply border border-ui rounded-lg;
+    @apply bg-ui;
 
-  @variant not-data-pristine:data-invalid {
-    border-color: var(--mg-border-danger);
-  }
-}
-
-@utility mgnp-combobox-input {
-  outline: none;
-  border: none;
-  background-color: transparent;
-  font-family: inherit;
-  height: 100%;
-  width: 100%;
-  color: var(--mg-text-ui);
-
-  @variant [&:only-child] {
-    padding-right: --spacing(2);
-  }
-}
-
-@utility mgnp-combobox-button {
-  display: inline-flex;
-  justify-content: space-between;
-  align-items: center;
-  height: 100%;
-  background-color: transparent;
-  border: none;
-  cursor: pointer;
-  box-sizing: border-box;
-  box-shadow: none;
-  color: var(--mg-text-ui);
-
-  @variant [&:only-child] {
-    width: 100%;
-    padding-left: --spacing(2);
-  }
-}
-
-@utility mgnp-combobox-dropdown {
-  outline: none;
-  position: absolute;
-  min-width: fit-content;
-  box-sizing: border-box;
-  overflow-y: auto;
-  z-index: 1001;
-  border-radius: var(--radius-xl);
-  max-height: --spacing(60);
-  width: var(--ngp-combobox-width);
-  box-shadow: var(--mg-shadow-lg);
-  background-color: var(--mg-background-ui);
-  border: 1px solid var(--mg-border-ui);
-  padding: --spacing(1);
-  margin-top: --spacing(1);
-
-  @variant data-enter {
-    animation: mg-show var(--default-transition-duration) var(--default-transition-timing-function);
+    @variant not-data-pristine:data-invalid {
+      @apply border-danger;
+    }
   }
 
-  @variant data-exit {
-    animation: mg-hide var(--default-transition-duration) var(--default-transition-timing-function);
-  }
-}
+  .mgnp-combobox-input {
+    @apply w-full h-full;
+    @apply outline-none;
+    @apply border-none;
+    @apply bg-transparent;
+    @apply text-ui;
 
-@utility mgnp-combobox-option {
-  display: flex;
-  align-items: center;
-  cursor: pointer;
-  width: 100%;
-  box-sizing: border-box;
-  border-radius: var(--radius-lg);
-  font-size: var(--text-sm);
-  line-height: var(--text-sm--line-height);
-  color: var(--mg-text-ui);
-  gap: --spacing(2);
-  padding-block: --spacing(1.5);
-  padding-inline: --spacing(3);
-  height: --spacing(9);
-
-  @variant data-hover {
-    background-color: var(--mg-background-ui-hover);
+    @variant [&:only-child] {
+      @apply pr-2;
+    }
   }
 
-  @variant data-press {
-    background-color: var(--mg-background-ui-active);
+  .mgnp-combobox-button {
+    @apply inline-flex justify-between items-center;
+    @apply h-full;
+    @apply bg-transparent;
+    @apply border-none;
+    @apply outline-none;
+    @apply text-ui;
+    @apply cursor-pointer;
+
+    @variant [&:only-child] {
+      @apply w-full;
+      @apply pl-2;
+    }
   }
 
-  @variant data-active {
-    background-color: var(--mg-background-ui-active);
+  .mgnp-combobox-dropdown {
+    @apply absolute;
+    @apply overflow-y-auto;
+    @apply z-1001;
+    @apply box-border;
+    @apply p-1;
+    @apply mt-1;
+    @apply min-w-fit w-(--ngp-combobox-width);
+    @apply max-h-60;
+    @apply bg-ui;
+    @apply outline-none;
+    @apply border border-ui rounded-lg;
+    @apply shadow-lg;
+
+    @variant data-enter {
+      animation: mg-show var(--default-transition-duration)
+        var(--default-transition-timing-function);
+    }
+
+    @variant data-exit {
+      animation: mg-hide var(--default-transition-duration)
+        var(--default-transition-timing-function);
+    }
   }
 
-  @variant data-disabled {
-    opacity: 50%;
-  }
-}
+  .mgnp-combobox-option {
+    @apply cursor-pointer;
+    @apply flex items-center;
+    @apply gap-2;
+    @apply w-full;
+    @apply h-9;
+    @apply py-1.5 px-3;
+    @apply box-border;
+    @apply rounded-lg;
+    @apply text-sm;
+    @apply text-ui;
 
-@layer base {
-  [data-mgnp-component='mgnp-combobox'] {
-    @apply mgnp-combobox transition;
-  }
+    @variant data-hover {
+      @apply bg-ui-hover;
+    }
 
-  [data-mgnp-component='mgnp-combobox-input'] {
-    @apply mgnp-combobox-input transition;
-  }
+    @variant data-press {
+      @apply bg-ui-active;
+    }
 
-  [data-mgnp-component='mgnp-combobox-button'] {
-    @apply mgnp-combobox-button transition;
-  }
+    @variant data-active {
+      @apply bg-ui-active;
+    }
 
-  [data-mgnp-component='mgnp-combobox-dropdown'] {
-    @apply mgnp-combobox-dropdown transition;
-  }
-
-  [data-mgnp-component='mgnp-combobox-option'] {
-    @apply mgnp-combobox-option transition;
+    @variant data-disabled {
+      @apply opacity-50;
+    }
   }
 }

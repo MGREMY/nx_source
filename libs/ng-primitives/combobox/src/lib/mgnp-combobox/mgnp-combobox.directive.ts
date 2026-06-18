@@ -3,15 +3,13 @@ import { ControlValueAccessor } from '@angular/forms';
 import { injectComboboxState, NgpCombobox, provideComboboxState } from 'ng-primitives/combobox';
 import { ChangeFn, provideValueAccessor, TouchedFn } from 'ng-primitives/utils';
 
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-type T = any;
-
 @Directive({
   selector: '[mgnpCombobox]',
   standalone: true,
   providers: [provideComboboxState(), provideValueAccessor(MgnpCombobox)],
   host: {
-    'data-mgnp-component': 'mgnp-combobox',
+    class: 'mgnp-combobox mgnp-c-combobox',
+    'data-mgnp-combobox': '',
     '(focusout)': 'onTouchedFn?.()',
   },
   hostDirectives: [
@@ -35,7 +33,7 @@ type T = any;
   ],
   exportAs: 'mgnpCombobox',
 })
-export class MgnpCombobox implements ControlValueAccessor {
+export class MgnpCombobox<T> implements ControlValueAccessor {
   protected readonly state = injectComboboxState();
 
   protected onChangeFn?: ChangeFn<T>;

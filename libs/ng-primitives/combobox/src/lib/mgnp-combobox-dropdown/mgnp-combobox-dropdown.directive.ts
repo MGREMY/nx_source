@@ -5,7 +5,8 @@ import { NgpComboboxDropdown } from 'ng-primitives/combobox';
   selector: '[mgnpComboboxDropdown]',
   standalone: true,
   host: {
-    'data-mgnp-component': 'mgnp-combobox-dropdown',
+    class: 'mgnp-combobox-dropdown mgnp-c-combobox-dropdown',
+    'data-mgnp-combobox-dropdown': '',
   },
   hostDirectives: [
     {
