@@ -16,10 +16,11 @@ export type MgnpButtonSize = PropertyType<'xs' | 'sm' | 'md' | 'lg' | 'xl'>;
   standalone: true,
   providers: [provideButtonState()],
   host: {
-    'data-mgnp-component': 'mgnp-button',
-    '[attr.data-mgnp-size]': 'size()',
-    '[attr.data-mgnp-color]': 'color()',
-    '[attr.data-mgnp-variant]': 'variant()',
+    class: 'mgnp-button mgnp-c-button',
+    'data-mgnp-button': '',
+    '[attr.data-mgnp-button-size]': 'size()',
+    '[attr.data-mgnp-button-color]': 'color()',
+    '[attr.data-mgnp-button-variant]': 'variant()',
   },
   hostDirectives: [
     {

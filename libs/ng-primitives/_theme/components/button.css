@@ -1,243 +1,42 @@
-@utility mgnp-button {
-  display: inline-block;
-  height: fit-content;
-  cursor: pointer;
-  border-radius: var(--radius-lg);
-  box-shadow: var(--mg-shadow-button);
+@import './button/size.css';
+@import './button/color.css';
 
-  @variant data-disabled {
-    opacity: 50%;
-    cursor: default;
-  }
+@layer components {
+  .mgnp-button {
+    @apply transition;
+    @apply inline-block;
+    @apply cursor-pointer;
+    @apply h-fit;
+    @apply rounded-lg;
+    @apply shadow-button;
 
-  @variant data-focus-visible {
-    outline: 1px solid var(--mg-ring-ui);
-  }
-
-  /* Sizes */
-  @variant data-[mgnp-size=xs] {
-    padding: --spacing(1) --spacing(1.5);
-    font-size: var(--text-xs);
-    line-height: var(--text-xs--line-height);
-  }
-
-  @variant data-[mgnp-size=sm] {
-    padding: --spacing(1) --spacing(2);
-    font-size: var(--text-sm);
-    line-height: var(--text-sm--line-height);
-  }
-
-  @variant data-[mgnp-size=md] {
-    padding: --spacing(1.5) --spacing(1.5);
-    font-size: var(--text-base);
-    line-height: var(--text-base--line-height);
-  }
-
-  @variant data-[mgnp-size=lg] {
-    padding: --spacing(2) --spacing(3);
-    font-size: var(--text-lg);
-    line-height: var(--text-lg--line-height);
-    font-weight: var(--font-weight-semibold);
-  }
-
-  @variant data-[mgnp-size=xl] {
-    padding: --spacing(2.5) --spacing(4);
-    font-size: var(--text-xl);
-    line-height: var(--text-xl--line-height);
-    font-weight: var(--font-weight-semibold);
-  }
-
-  /* Solid */
-  @variant data-[mgnp-variant=solid] {
-    @variant data-[mgnp-color=ui] {
-      background-color: var(--mg-background-ui);
-
-      @variant data-hover {
-        background-color: var(--mg-background-ui-hover);
-      }
-
-      @variant data-press {
-        background-color: var(--mg-background-ui-active);
-      }
+    @variant data-disabled {
+      @apply opacity-50 cursor-default;
     }
 
-    @variant data-[mgnp-color=primary] {
-      background-color: var(--mg-background-primary);
+    /* Size */
+    @apply data-[mgnp-button-size=xs]:mgnp-button-size-xs;
+    @apply data-[mgnp-button-size=sm]:mgnp-button-size-sm;
+    @apply data-[mgnp-button-size=md]:mgnp-button-size-md;
+    @apply data-[mgnp-button-size=lg]:mgnp-button-size-lg;
+    @apply data-[mgnp-button-size=xl]:mgnp-button-size-xl;
 
-      @variant data-hover {
-        background-color: var(--mg-background-primary-hover);
-      }
-
-      @variant data-press {
-        background-color: var(--mg-background-primary-active);
-      }
-    }
-
-    @variant data-[mgnp-color=secondary] {
-      background-color: var(--mg-background-secondary);
-
-      @variant data-hover {
-        background-color: var(--mg-background-secondary-hover);
-      }
-
-      @variant data-press {
-        background-color: var(--mg-background-secondary-active);
-      }
-    }
-
-    @variant data-[mgnp-color=info] {
-      background-color: var(--mg-background-info);
-
-      @variant data-hover {
-        background-color: var(--mg-background-info-hover);
-      }
-
-      @variant data-press {
-        background-color: var(--mg-background-info-active);
-      }
-    }
-
-    @variant data-[mgnp-color=success] {
-      background-color: var(--mg-background-success);
-
-      @variant data-hover {
-        background-color: var(--mg-background-success-hover);
-      }
-
-      @variant data-press {
-        background-color: var(--mg-background-success-active);
-      }
-    }
-
-    @variant data-[mgnp-color=warning] {
-      background-color: var(--mg-background-warning);
-
-      @variant data-hover {
-        background-color: var(--mg-background-warning-hover);
-      }
-
-      @variant data-press {
-        background-color: var(--mg-background-warning-active);
-      }
-    }
-
-    @variant data-[mgnp-color=danger] {
-      background-color: var(--mg-background-danger);
-
-      @variant data-hover {
-        background-color: var(--mg-background-danger-hover);
-      }
-
-      @variant data-press {
-        background-color: var(--mg-background-danger-active);
-      }
-    }
-  }
-
-  /* Outline */
-  @variant data-[mgnp-variant=outline] {
-    @variant data-[mgnp-color=ui] {
-      background-color: transparent;
-      color: var(--mg-text-ui);
-
-      @variant data-hover {
-        background-color: var(--mg-background-ui-inverse);
-        color: var(--mg-text-inverse);
-      }
-
-      @variant data-press {
-        background-color: var(--mg-background-ui-inverse-active);
-      }
-    }
-
-    @variant data-[mgnp-color=primary] {
-      background-color: transparent;
-      color: var(--mg-text-primary);
-
-      @variant data-hover {
-        background-color: var(--mg-background-primary);
-        color: var(--mg-text-inverse);
-      }
-
-      @variant data-press {
-        background-color: var(--mg-background-primary-inverse-active);
-      }
-    }
-
-    @variant data-[mgnp-color=secondary] {
-      background-color: transparent;
-      color: var(--mg-text-secondary);
-
-      @variant data-hover {
-        background-color: var(--mg-background-secondary);
-        color: var(--mg-text-inverse);
-      }
-
-      @variant data-press {
-        background-color: var(--mg-background-secondary-inverse-active);
-      }
-    }
-
-    @variant data-[mgnp-color=info] {
-      background-color: transparent;
-      color: var(--mg-text-info);
-
-      @variant data-hover {
-        background-color: var(--mg-background-info);
-        color: var(--mg-text-inverse);
-      }
-
-      @variant data-press {
-        background-color: var(--mg-background-info-inverse-active);
-      }
-    }
-
-    @variant data-[mgnp-color=success] {
-      background-color: transparent;
-      color: var(--mg-text-success);
-
-      @variant data-hover {
-        background-color: var(--mg-background-success);
-        color: var(--mg-text-inverse);
-      }
-
-      @variant data-press {
-        background-color: var(--mg-background-success-inverse-active);
-      }
-    }
-
-    @variant data-[mgnp-color=warning] {
-      background-color: transparent;
-      color: var(--mg-text-warning);
-
-      @variant data-hover {
-        background-color: var(--mg-background-warning);
-        color: var(--mg-text-inverse);
-      }
-
-      @variant data-press {
-        background-color: var(--mg-background-warning-inverse-active);
-      }
-    }
-
-    @variant data-[mgnp-color=danger] {
-      background-color: transparent;
-      color: var(--mg-text-danger);
-
-      @variant data-hover {
-        background-color: var(--mg-background-danger);
-        color: var(--mg-text-inverse);
-      }
-
-      @variant data-press {
-        background-color: var(--mg-background-danger-inverse-active);
-      }
-    }
-  }
-}
-
-@layer base {
-  [data-mgnp-component='mgnp-button'] {
-    @apply mgnp-button transition;
+    /* Color */
+    /* Solid */
+    @apply data-[mgnp-button-variant=solid]:data-[mgnp-button-color=ui]:mgnp-button-color-ui-solid;
+    @apply data-[mgnp-button-variant=solid]:data-[mgnp-button-color=primary]:mgnp-button-color-primary-solid;
+    @apply data-[mgnp-button-variant=solid]:data-[mgnp-button-color=secondary]:mgnp-button-color-secondary-solid;
+    @apply data-[mgnp-button-variant=solid]:data-[mgnp-button-color=info]:mgnp-button-color-info-solid;
+    @apply data-[mgnp-button-variant=solid]:data-[mgnp-button-color=success]:mgnp-button-color-success-solid;
+    @apply data-[mgnp-button-variant=solid]:data-[mgnp-button-color=warning]:mgnp-button-color-warning-solid;
+    @apply data-[mgnp-button-variant=solid]:data-[mgnp-button-color=danger]:mgnp-button-color-danger-solid;
+    /* Outline */
+    @apply data-[mgnp-button-variant=outline]:data-[mgnp-button-color=ui]:mgnp-button-color-ui-outline;
+    @apply data-[mgnp-button-variant=outline]:data-[mgnp-button-color=primary]:mgnp-button-color-primary-outline;
+    @apply data-[mgnp-button-variant=outline]:data-[mgnp-button-color=secondary]:mgnp-button-color-secondary-outline;
+    @apply data-[mgnp-button-variant=outline]:data-[mgnp-button-color=info]:mgnp-button-color-info-outline;
+    @apply data-[mgnp-button-variant=outline]:data-[mgnp-button-color=success]:mgnp-button-color-success-outline;
+    @apply data-[mgnp-button-variant=outline]:data-[mgnp-button-color=warning]:mgnp-button-color-warning-outline;
+    @apply data-[mgnp-button-variant=outline]:data-[mgnp-button-color=danger]:mgnp-button-color-danger-outline;
   }
 }
