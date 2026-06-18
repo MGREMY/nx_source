@@ -5,7 +5,7 @@ import { NgpToast } from 'ng-primitives/toast';
   selector: '[mgnpToast]',
   standalone: true,
   host: {
-    class: 'mgnp-toast',
+    class: 'mgnp-toast mgnp-c-toast',
     'data-mgnp-toast': '',
   },
   hostDirectives: [

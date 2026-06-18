@@ -10,7 +10,8 @@ import {
   standalone: true,
   providers: [provideTooltipTriggerState()],
   host: {
-    'data-mgnp-component': 'mgnp-tooltip-trigger',
+    class: 'mgnp-tooltip-trigger mgnp-c-tooltip-trigger',
+    'data-mgnp-tooltip-trigger': '',
   },
   hostDirectives: [
     {
