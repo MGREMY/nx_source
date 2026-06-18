@@ -3,12 +3,12 @@
 
 @layer components {
   .mgnp-checkbox {
+    @apply transition;
     @apply flex flex-none items-center justify-center;
     @apply outline-none;
     @apply border border-transparent;
     @apply text-base;
     @apply cursor-pointer;
-    @apply transition;
 
     @variant not-data-pristine:data-invalid {
       @apply border-danger;

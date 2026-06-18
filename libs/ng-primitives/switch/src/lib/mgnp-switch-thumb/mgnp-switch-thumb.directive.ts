@@ -10,7 +10,8 @@ import {
   standalone: true,
   providers: [provideSwitchThumbState()],
   host: {
-    'data-mgnp-component': 'mgnp-switch-thumb',
+    class: 'mgnp-switch-thumb mgnp-c-switch-thumb',
+    'data-mgnp-switch-thumb': '',
   },
   hostDirectives: [
     {

@@ -1,5 +1,6 @@
 @layer components {
   .mgnp-input {
+    @apply transition;
     @apply block;
     @apply w-full;
     @apply py-2 px-4;

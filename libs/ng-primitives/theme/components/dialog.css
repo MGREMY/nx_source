@@ -2,6 +2,7 @@
 
 @layer components {
   .mgnp-dialog {
+    @apply transition;
     @apply bg-ui;
     @apply p-6;
     @apply shadow-button;
@@ -11,18 +12,21 @@
   }
 
   .mgnp-dialog-title {
+    @apply transition;
     @apply my-1;
     @apply text-lg;
     @apply text-ui;
   }
 
   .mgnp-dialog-description {
+    @apply transition;
     @apply m-0;
     @apply text-base;
     @apply text-ui-disabled;
   }
 
   .mgnp-dialog-overlay {
+    @apply transition;
     @apply flex;
     @apply fixed;
     @apply z-9999;

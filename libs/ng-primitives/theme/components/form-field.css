@@ -1,11 +1,13 @@
 @layer components {
   .mgnp-description {
+    @apply transition;
     @apply inline;
     @apply text-ui-secondary;
     @apply text-sm;
   }
 
   .mgnp-error {
+    @apply transition;
     @apply hidden;
     @apply text-danger;
     @apply text-sm;
@@ -16,6 +18,7 @@
   }
 
   .mgnp-form-control {
+    @apply transition;
     @apply block;
     @apply w-full;
     @apply bg-ui;
@@ -34,11 +37,13 @@
   }
 
   .mgnp-form-field {
+    @apply transition;
     @apply inline-flex flex-col;
     @apply gap-1;
   }
 
   .mgnp-input-group {
+    @apply transition;
     @apply inline-flex items-stretch;
     @apply border-none rounded-lg;
     @apply bg-ui;
@@ -67,6 +72,7 @@
   }
 
   .mgnp-input-group-addon {
+    @apply transition;
     @apply inline-block;
     @apply text-nowrap;
     @apply p-2;
@@ -79,6 +85,7 @@
   }
 
   .mgnp-label {
+    @apply transition;
     @apply inline-block;
     @apply p-0;
     @apply border-ui;

@@ -1,44 +1,31 @@
-@utility mgnp-switch {
-  position: relative;
-  outline: none;
-  border-radius: calc(infinity* 1px);
-  background-color: var(--mg-background-ui-secondary);
-  border: 1px solid var(--mg-border-ui);
-  width: --spacing(10);
-  height: --spacing(6);
-  padding: --spacing(0);
+@layer components {
+  .mgnp-switch {
+    @apply transition;
+    @apply relative;
+    @apply outline-none;
+    @apply w-10 h-6;
+    @apply p-0;
+    @apply bg-ui-secondary;
+    @apply border border-ui rounded-full;
 
-  @variant data-focus-visible {
-    outline: 2px solid var(--mg-ring-ui);
+    @variant data-checked {
+      @apply bg-ui-active;
+      @apply border-ui-secondary;
+    }
   }
 
-  @variant data-checked {
-    background-color: var(--mg-background-ui-active);
-    border-color: var(--mg-border-ui-secondary);
-  }
-}
+  .mgnp-switch-thumb {
+    @apply transition;
+    @apply block;
+    @apply w-4 h-4;
+    @apply ml-1;
+    @apply outline-none;
+    @apply bg-ui;
+    @apply rounded-full;
+    @apply shadow-button;
 
-@utility mgnp-switch-thumb {
-  display: block;
-  outline: none;
-  border-radius: calc(infinity* 1px);
-  background-color: var(--mg-background-ui);
-  box-shadow: var(--mg-shadow-button);
-  width: --spacing(4);
-  height: --spacing(4);
-  margin-left: --spacing(1);
-
-  @variant data-checked {
-    transform: translateX(--spacing(4));
-  }
-}
-
-@layer base {
-  [data-mgnp-component='mgnp-switch'] {
-    @apply mgnp-switch transition;
-  }
-
-  [data-mgnp-component='mgnp-switch-thumb'] {
-    @apply mgnp-switch-thumb transition;
+    @variant data-checked {
+      @apply translate-x-4;
+    }
   }
 }

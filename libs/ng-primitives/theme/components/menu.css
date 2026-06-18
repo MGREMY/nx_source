@@ -1,5 +1,6 @@
 @layer components {
   .mgnp-menu {
+    @apply transition;
     @apply fixed;
     @apply flex flex-col;
     @apply w-max;
@@ -22,6 +23,7 @@
   }
 
   .mgnp-menu-item {
+    @apply transition;
     @apply text-start;
     @apply cursor-pointer;
     @apply min-w-30;

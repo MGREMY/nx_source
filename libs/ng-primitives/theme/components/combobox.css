@@ -1,5 +1,6 @@
 @layer components {
   .mgnp-combobox {
+    @apply transition;
     @apply inline-flex w-full justify-between items-center;
     @apply py-2 px-2;
     @apply outline-none;
@@ -12,6 +13,7 @@
   }
 
   .mgnp-combobox-input {
+    @apply transition;
     @apply w-full h-full;
     @apply outline-none;
     @apply border-none;
@@ -24,6 +26,7 @@
   }
 
   .mgnp-combobox-button {
+    @apply transition;
     @apply inline-flex justify-between items-center;
     @apply h-full;
     @apply bg-transparent;
@@ -39,6 +42,7 @@
   }
 
   .mgnp-combobox-dropdown {
+    @apply transition;
     @apply absolute;
     @apply overflow-y-auto;
     @apply z-1001;
@@ -64,6 +68,7 @@
   }
 
   .mgnp-combobox-option {
+    @apply transition;
     @apply cursor-pointer;
     @apply flex items-center;
     @apply gap-2;

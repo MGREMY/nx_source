@@ -2,26 +2,26 @@
 
 @layer components {
   .mgnp-accordion {
+    @apply transition;
     @apply bg-ui;
     @apply border border-ui rounded-lg;
     @apply shadow-ui;
-    @apply transition;
 
     @apply data-[orientation=vertical]:mgnp-accordion-orientation-vertical;
     @apply data-[orientation=horizontal]:mgnp-accordion-orientation-horizontal;
   }
 
   .mgnp-accordion-content {
-    @apply overflow-hidden;
     @apply transition;
+    @apply overflow-hidden;
 
     @apply data-[orientation=vertical]:mgnp-accordion-content-orientation-vertical;
     @apply data-[orientation=horizontal]:mgnp-accordion-content-orientation-horizontal;
   }
 
   .mgnp-accordion-item {
-    @apply flex;
     @apply transition;
+    @apply flex;
 
     @apply data-[orientation=vertical]:mgnp-accordion-item-orientation-vertical;
     @apply data-[orientation=horizontal]:mgnp-accordion-item-orientation-horizontal;
@@ -32,19 +32,19 @@
     h4,
     h5,
     h6 {
-      @apply m-0;
       @apply transition;
+      @apply m-0;
     }
   }
 
   .mgnp-accordion-trigger {
+    @apply transition;
     @apply flex justify-between items-center;
     @apply outline-none;
     @apply border-none;
     @apply shadow-none;
     @apply bg-transparent;
     @apply font-medium text-base text-ui;
-    @apply transition;
 
     @apply data-[orientation=vertical]:mgnp-accordion-trigger-orientation-vertical;
     @apply data-[orientation=horizontal]:mgnp-accordion-trigger-orientation-horizontal;

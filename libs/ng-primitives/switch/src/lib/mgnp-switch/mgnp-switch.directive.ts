@@ -9,7 +9,8 @@ import { ChangeFn, provideValueAccessor, TouchedFn } from 'ng-primitives/utils';
   standalone: true,
   providers: [provideSwitchState(), provideValueAccessor(MgnpSwitch)],
   host: {
-    'data-mgnp-component': 'mgnp-switch',
+    class: 'mgnp-switch mgnp-c-switch',
+    'data-mgnp-switch': '',
     '(focusout)': 'onTouchedFn?.()',
   },
   hostDirectives: [

@@ -1,6 +1,9 @@
 @layer components {
   .mgnp-pagination {
+    @apply transition;
+
     ul {
+      @apply transition;
       @apply flex items-center;
       @apply gap-2;
     }
@@ -13,6 +16,7 @@
   .mgnp-pagination-last {
     all: unset;
 
+    @apply transition;
     @apply flex items-center justify-center;
     @apply cursor-pointer;
     @apply w-8 h-8;
