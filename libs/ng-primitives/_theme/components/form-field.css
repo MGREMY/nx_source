@@ -18,12 +18,11 @@
   }
 
   .mgnp-form-control {
-    @apply transition;
+    @apply transition mgnp-focus;
     @apply block;
     @apply w-full;
     @apply bg-ui;
     @apply text-ui;
-    @apply outline-none;
     @apply border border-ui rounded-lg;
     @apply py-2 px-4;
 

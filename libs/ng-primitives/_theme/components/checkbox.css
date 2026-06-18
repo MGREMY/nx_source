@@ -3,9 +3,8 @@
 
 @layer components {
   .mgnp-checkbox {
-    @apply transition;
+    @apply transition mgnp-focus;
     @apply flex flex-none items-center justify-center;
-    @apply outline-none;
     @apply border border-transparent;
     @apply text-base;
     @apply cursor-pointer;
