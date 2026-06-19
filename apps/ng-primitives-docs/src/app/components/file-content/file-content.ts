@@ -1,10 +1,15 @@
-import {
-  getNgPrimitivesCssContent,
-  getNgPrimitivesExtendedCssContent,
-} from '../../utils/file-content-loader';
+import { getFile } from '../../utils/file-content-loader';
 
 import { AsyncPipe, NgClass } from '@angular/common';
-import { ChangeDetectionStrategy, Component, computed, inject, input, signal } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  computed,
+  inject,
+  input,
+  linkedSignal,
+  signal,
+} from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
 import { BundledLanguage, BundledTheme, CodeToHastOptions, codeToHtml } from 'shiki';
 
@@ -12,18 +17,34 @@ import { BundledLanguage, BundledTheme, CodeToHastOptions, codeToHtml } from 'sh
   selector: 'app-file-content',
   imports: [AsyncPipe, NgClass],
   template: `
-    <div
-      class="*:pb-0 *:mb-0 *:mt-0 transition-[max-height]"
-      [ngClass]="{
-        'max-h-48 overflow-y-clip': isOpen() === false,
-        'max-h-128 overflow-y-auto': isOpen() === true,
-      }"
-      [innerHTML]="sanitizedContent() | async"></div>
-    <button
-      class="w-full items-center h-8 bg-ui-hover hover:cursor-pointer transition-colors"
-      (click)="isOpen.set(!isOpen())">
-      {{ isOpen() === false ? 'Show all' : 'Collapse' }}
-    </button>
+    <div class="flex flex-col grow">
+      @if (availableTabs().length > 1) {
+        <div class="flex flex-row justify-around border-b border-b-ui overflow-x-auto">
+          @for (name of availableTabs(); track name) {
+            <button
+              class="w-full min-w-32 items-center py-2 bg-ui hover:cursor-pointer hover:bg-ui-hover transition-colors"
+              [ngClass]="{
+                'border-b border-(--text-color-active) text-active': selectedTab() === name,
+              }"
+              (click)="selectedTab.set(name)">
+              {{ name }}
+            </button>
+          }
+        </div>
+      }
+      <div
+        class="*:pb-0 *:mb-0 *:mt-0 transition-[max-height]"
+        [ngClass]="{
+          'max-h-48 overflow-y-clip': isOpen() === false,
+          'max-h-128 overflow-y-auto': isOpen() === true,
+        }"
+        [innerHTML]="sanitizedContent() | async"></div>
+      <button
+        class="w-full items-center h-8 bg-ui-hover hover:cursor-pointer transition-colors"
+        (click)="isOpen.set(!isOpen())">
+        {{ isOpen() === false ? 'Show all' : 'Collapse' }}
+      </button>
+    </div>
   `,
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
@@ -38,21 +59,22 @@ export class FileContent {
   readonly language = computed(() => {
     switch (this.type()) {
       case 'ng-primitives-css':
-        return 'css';
       case 'ng-primitives-extended-css':
-        return 'css';
+        return 'postcss';
     }
   });
-  readonly code = computed(() => {
+  readonly availableContents = computed(() => {
     switch (this.type()) {
       case 'ng-primitives-css':
-        return getNgPrimitivesCssContent(this.name());
+        return getFile(this.name(), 'ng-primitives');
       case 'ng-primitives-extended-css':
-        return getNgPrimitivesExtendedCssContent(this.name());
+        return getFile(this.name(), 'ng-primitives-extended');
     }
   });
+  readonly availableTabs = computed(() => this.availableContents().map((x) => x.name));
+  readonly selectedTab = linkedSignal(() => this.availableContents()[0].name);
   readonly content = computed(() => {
-    const code = this.code();
+    const code = this.availableContents().filter((x) => x.name === this.selectedTab())[0].content;
     const language = this.language();
     const options: CodeToHastOptions<BundledLanguage, BundledTheme> = {
       lang: language,

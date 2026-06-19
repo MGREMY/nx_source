@@ -1,6 +1,7 @@
 ---
 name: 'Input'
 sourceUrl: 'https://github.com/mgremy/nx_source/tree/main/libs/ng-primitives/input'
+primitiveUrl: 'https://angularprimitives.com/primitives/input'
 ---
 
 # Input
@@ -15,3 +16,15 @@ consistent interaction handling for hover, focus, press and autofill states.
 ## Theme
 
 <app-file-content name="input"></app-file-content>
+
+## Attributes
+
+### MgnpInput
+
+---
+
+## CSS
+
+| directive | class      | custom class |
+| --------- | ---------- | ------------ |
+| MgnpInput | mgnp-input | mgnp-c-input |

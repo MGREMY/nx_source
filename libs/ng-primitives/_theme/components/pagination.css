@@ -37,6 +37,7 @@
       @apply bg-ui-disabled;
       @apply text-ui-disabled;
       @apply shadow-none;
+      @apply cursor-default;
     }
 
     @variant data-selected {

@@ -1,6 +1,7 @@
 ---
 name: 'Toast'
 sourceUrl: 'https://github.com/mgremy/nx_source/tree/main/libs/ng-primitives/toast'
+primitiveUrl: 'https://angularprimitives.com/primitives/toast'
 ---
 
 # Toast
@@ -15,3 +16,15 @@ the user.
 ## Theme
 
 <app-file-content name="toast"></app-file-content>
+
+## Attributes
+
+### MgnpToast
+
+---
+
+## CSS
+
+| directive | class      | custom class |
+| --------- | ---------- | ------------ |
+| MgnpToast | mgnp-toast | mgnp-c-toast |

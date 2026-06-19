@@ -1,4 +1,4 @@
-import { getExample, getExampleContent } from '../../utils/file-content-loader';
+import { getFile } from '../../utils/file-content-loader';
 
 import { NgIcon, provideIcons } from '@ng-icons/core';
 import { lucideRefreshCw } from '@ng-icons/lucide';
@@ -112,61 +112,25 @@ export class Example {
 
   readonly mode = signal<'preview' | 'source'>('preview');
 
-  // Get the list of available names
-  readonly availableNames = computed<string[]>(() => {
-    const examples = this.availableContents();
-
-    return examples.map((x) => {
-      const splitPath = x.path.split('/');
-
-      return fromFileName(splitPath[splitPath.length - 1]);
-    });
-  });
-
   readonly selectedName = linkedSignal(
-    () => this.availableNames().filter((x) => x === fromFileName(this.name()))[0]
+    () => this.availableNames().filter((x) => x === this.name())[0]
+  );
+  readonly availableNames = computed(() => this.contents().map((x) => x.name));
+
+  private readonly examples = computed<{ name: string; content: Type<unknown> }[]>(
+    () => getFile(this.name(), 'example', 'object') as { name: string; content: Type<unknown> }[]
+  );
+  private readonly contents = computed<{ name: string; content: string }[]>(() =>
+    getFile(this.name(), 'example', 'string')
   );
 
-  // Get available example and content for selected example name
-  private readonly availableExamples = computed<{ path: string; content: Type<unknown> }[]>(
-    () => getExample(this.name()) as { path: string; content: Type<unknown> }[]
+  protected readonly selectedExample = computed(
+    () => this.examples().find((x) => x.name === this.selectedName())?.content ?? null
   );
-  private readonly availableContents = computed<{ path: string; content: string }[]>(
-    () => getExampleContent(this.name()) as { path: string; content: string }[]
+  protected readonly selectedContent = computed(
+    () => this.contents().find((x) => x.name === this.selectedName())?.content ?? ''
   );
-
-  private readonly selectedContent = computed(() => {
-    const contents = this.availableContents();
-    const selected = this.selectedName();
-
-    return (
-      contents.find((x) => {
-        const splitPath = x.path.split('/');
-
-        return (
-          splitPath[splitPath.length - 1].split('.')[0] ===
-          toFileName(selected.split(' ').join('-'))
-        );
-      })?.content ?? ''
-    );
-  });
-
-  readonly selectedExample = computed(() => {
-    const contents = this.availableExamples();
-    const selected = this.selectedName();
-
-    return (
-      contents.find((x) => {
-        const splitPath = x.path.split('/');
-
-        return (
-          splitPath[splitPath.length - 1].split('.')[0] ===
-          toFileName(selected.split(' ').join('-'))
-        );
-      })?.content ?? null
-    );
-  });
-  readonly sanitizedContent = computed(async () => {
+  protected readonly sanitizedContent = computed(async () => {
     const code = this.selectedContent();
 
     return await codeToHtml(code.trim(), {
@@ -187,6 +151,3 @@ export class Example {
     setTimeout(() => this.selectedName.set(currentSelectedName), 0);
   }
 }
-
-const fromFileName = (value: string): string => value.split('.')[0].split('-').join(' ');
-const toFileName = (value: string): string => value.split('.')[0].split(' ').join('-');

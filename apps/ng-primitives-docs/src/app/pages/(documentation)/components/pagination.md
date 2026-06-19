@@ -1,6 +1,7 @@
 ---
 name: 'Pagination'
 sourceUrl: 'https://github.com/mgremy/nx_source/tree/main/libs/ng-primitives/pagination'
+primitiveUrl: 'https://angularprimitives.com/primitives/pagination'
 ---
 
 # Pagination
@@ -15,3 +16,40 @@ control is used to navigate through a set of data that is split into multiple pa
 ## Theme
 
 <app-file-content name="pagination"></app-file-content>
+
+## Attributes
+
+### MgnpPagination
+
+---
+
+### MgnpPaginationButton
+
+---
+
+### MgnpPaginationFirst
+
+---
+
+### MgnpPaginationLast
+
+---
+
+### MgnpPaginationNext
+
+---
+
+### MgnpPaginationPrevious
+
+---
+
+## CSS
+
+| directive              | class                    | custom class               |
+| ---------------------- | ------------------------ | -------------------------- |
+| MgnpPagination         | mgnp-pagination          | mgnp-c-pagination          |
+| MgnpPaginationButton   | mgnp-pagination-button   | mgnp-c-pagination-button   |
+| MgnpPaginationFirst    | mgnp-pagination-first    | mgnp-c-pagination-first    |
+| MgnpPaginationLast     | mgnp-pagination-last     | mgnp-c-pagination-last     |
+| MgnpPaginationNext     | mgnp-pagination-next     | mgnp-c-pagination-next     |
+| MgnpPaginationPrevious | mgnp-pagination-previous | mgnp-c-pagination-previous |
