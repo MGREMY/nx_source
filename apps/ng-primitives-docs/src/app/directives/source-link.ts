@@ -123,6 +123,11 @@ export class SourceLink implements AfterViewInit, OnDestroy {
       return;
     }
 
+    // Skip if source link already exists
+    if (h1.querySelector('[data-source-link]')) {
+      return;
+    }
+
     // Wrap existing H1 content (including heading anchor) in a container
     const contentWrapper = this.renderer.createElement('span');
     this.renderer.setAttribute(contentWrapper, 'class', 'inline-flex items-center');
@@ -153,6 +158,7 @@ export class SourceLink implements AfterViewInit, OnDestroy {
     this.renderer.setAttribute(anchor, 'rel', 'noopener noreferrer');
     this.renderer.setAttribute(anchor, 'aria-label', 'View source code on GitHub');
     this.renderer.setAttribute(anchor, 'title', 'View source code');
+    this.renderer.setAttribute(anchor, 'data-source-link', '');
     this.renderer.setAttribute(
       anchor,
       'class',
@@ -175,10 +181,15 @@ export class SourceLink implements AfterViewInit, OnDestroy {
     const h1 = element.querySelector('h1');
     if (!h1) return;
 
-    const wrapper = h1.querySelector('.source-link')
+    const wrapper = h1.querySelector('.source-link');
 
-    // Skip if source link already exists
+    // Skip if wrapper does not exists
     if (!wrapper) {
+      return;
+    }
+
+    // Skip if primitive lint already exists
+    if (wrapper.querySelector('[data-primitive-link]')) {
       return;
     }
 
@@ -189,6 +200,7 @@ export class SourceLink implements AfterViewInit, OnDestroy {
     this.renderer.setAttribute(anchor, 'rel', 'noopener noreferrer');
     this.renderer.setAttribute(anchor, 'aria-label', 'View primitive documentation');
     this.renderer.setAttribute(anchor, 'title', 'View primitive documentation');
+    this.renderer.setAttribute(anchor, 'data-primitive-link', '');
     this.renderer.setAttribute(
       anchor,
       'class',

@@ -42,6 +42,6 @@ A dialog is a floating window that can be used to display information or prompt 
 | directive             | class                   | custom class              |
 | --------------------- | ----------------------- | ------------------------- |
 | MgnpDialog            | mgnp-dialog             | mgnp-c-dialog             |
-| MgnpDialogtitle       | mgnp-dialog-title       | mgnp-c-dialog-title       |
+| MgnpDialogTitle       | mgnp-dialog-title       | mgnp-c-dialog-title       |
 | MgnpDialogDescription | mgnp-dialog-description | mgnp-c-dialog-description |
 | MgnpDialogOverlay     | mgnp-dialog-overlay     | mgnp-c-dialog-overlay     |
