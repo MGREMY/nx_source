@@ -1,6 +1,7 @@
 ---
 name: 'Dialog'
 sourceUrl: 'https://github.com/mgremy/nx_source/tree/main/libs/ng-primitives/dialog'
+primitiveUrl: 'https://angularprimitives.com/primitives/dialog'
 ---
 
 # Dialog
@@ -10,6 +11,10 @@ A dialog is a floating window that can be used to display information or prompt 
 ## Usage
 
 <app-example name="dialog"></app-example>
+
+## Theme
+
+<app-file-content name="dialog"></app-file-content>
 
 ## Attributes
 
@@ -27,13 +32,16 @@ A dialog is a floating window that can be used to display information or prompt 
 
 ### MgnpDialogOverlay
 
----
-
 | name           | possible values        | description                                              | default value |
 | -------------- | ---------------------- | -------------------------------------------------------- | ------------- |
 | mode           | **modal** / **drawer** | define the behavior                                      | modal         |
 | drawerPosition | **start** / **end**    | define the position (only available for mode **drawer**) | end           |
 
-## Theme
+## CSS
 
-<app-file-content name="dialog"></app-file-content>
+| directive             | class                   | custom class              |
+| --------------------- | ----------------------- | ------------------------- |
+| MgnpDialog            | mgnp-dialog             | mgnp-c-dialog             |
+| MgnpDialogtitle       | mgnp-dialog-title       | mgnp-c-dialog-title       |
+| MgnpDialogDescription | mgnp-dialog-description | mgnp-c-dialog-description |
+| MgnpDialogOverlay     | mgnp-dialog-overlay     | mgnp-c-dialog-overlay     |

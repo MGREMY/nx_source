@@ -1,6 +1,7 @@
 ---
 name: 'Button'
 sourceUrl: 'https://github.com/mgremy/nx_source/tree/main/libs/ng-primitives/button'
+primitiveUrl: 'https://angularprimitives.com/primitives/button'
 ---
 
 # Button
@@ -13,11 +14,13 @@ focus.
 
 <app-example name="button"></app-example>
 
+## Theme
+
+<app-file-content name="button"></app-file-content>
+
 ## Attributes
 
 ### MgnpButton
-
----
 
 | name    | possible values                                                                          | description      | default value |
 | ------- | ---------------------------------------------------------------------------------------- | ---------------- | ------------- |
@@ -25,6 +28,8 @@ focus.
 | variant | **solid** / **outline**                                                                  | define the style | solid         |
 | size    | **xs** / **sm** / **md** / **lg** / **xl**                                               | define the size  | md            |
 
-## Theme
+## CSS
 
-<app-file-content name="button"></app-file-content>
+| directive  | class       | custom class  |
+| ---------- | ----------- | ------------- |
+| MgnpButton | mgnp-button | mgnp-c-button |

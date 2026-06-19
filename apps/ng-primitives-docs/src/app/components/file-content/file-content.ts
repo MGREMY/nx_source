@@ -22,7 +22,7 @@ import { BundledLanguage, BundledTheme, CodeToHastOptions, codeToHtml } from 'sh
         <div class="flex flex-row justify-around border-b border-b-ui overflow-x-auto">
           @for (name of availableTabs(); track name) {
             <button
-              class="w-full items-center py-2 bg-ui hover:cursor-pointer hover:bg-ui-hover transition-colors"
+              class="w-full min-w-32 items-center py-2 bg-ui hover:cursor-pointer hover:bg-ui-hover transition-colors"
               [ngClass]="{
                 'border-b border-(--text-color-active) text-active': selectedTab() === name,
               }"
