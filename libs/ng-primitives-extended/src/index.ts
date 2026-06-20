@@ -1,1 +1,1 @@
-export default null;
+export * from './lib/property-type';

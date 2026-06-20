@@ -1,0 +1,40 @@
+@utility mgnp-card {
+  display: flex;
+  gap: --spacing(4);
+
+  @variant data-[mgnp-direction=vertical] {
+    flex-direction: row;
+  }
+
+  @variant data-[mgnp-direction=horizontal] {
+    flex-direction: column;
+  }
+}
+
+@utility mgnp-card-header {
+
+}
+
+@utility mgnp-card-content {
+}
+
+@utility mgnp-card-footer {
+}
+
+@layer base {
+  [data-mgnp-component='mgnp-card'] {
+    @apply mgnp-card transition;
+  }
+
+  [data-mgnp-component='mgnp-card-header'] {
+    @apply mgnp-card-header transition;
+  }
+
+  [data-mgnp-component='mgnp-card-content'] {
+    @apply mgnp-card-content transition;
+  }
+
+  [data-mgnp-component='mgnp-card-footer'] {
+    @apply mgnp-card-footer transition;
+  }
+}
