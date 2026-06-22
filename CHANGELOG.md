@@ -1,3 +1,13 @@
+## 0.17.0
+
+### 🚀 Features
+
+- **dialog:** update size for drawer & modal ([f3ebc2d](https://github.com/MGREMY/nx_source/commit/f3ebc2d))
+
+### ❤️ Thank You
+
+- GREMY Miguel @MGREMY
+
 ## 0.16.0
 
 ### 🚀 Features
