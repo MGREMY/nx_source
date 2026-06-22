@@ -13,8 +13,8 @@ import { Component } from '@angular/core';
 @Component({
   imports: [MgnpAccordion, MgnpAccordionContent, MgnpAccordionItem, MgnpAccordionTrigger, NgIcon],
   template: `
-    <div mgnpAccordion type="single" collapsible>
-      <div mgnpAccordionItem #panel1="ngpAccordionItem" value="item-1">
+    <div mgnpAccordion mgnpAccordionType="single" mgnpAccordionCollapsible>
+      <div mgnpAccordionItem #panel1="ngpAccordionItem" mgnpAccordionItemValue="item-1">
         <h3>
           <button mgnpAccordionTrigger>
             Would you like to learn more?
@@ -27,7 +27,7 @@ import { Component } from '@angular/core';
         </div>
       </div>
 
-      <div mgnpAccordionItem #panel2="ngpAccordionItem" value="item-2">
+      <div mgnpAccordionItem #panel2="ngpAccordionItem" mgnpAccordionItemValue="item-2">
         <h3>
           <button mgnpAccordionTrigger>
             Can I use this in my project?

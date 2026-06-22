@@ -16,13 +16,13 @@ import { Component } from '@angular/core';
     </div>
     <p class="font-bold">Indeterminate</p>
     <div class="flex flex-wrap gap-4 items-center">
-      <span mgnpCheckbox indeterminate></span>
-      <span mgnpCheckbox indeterminate color="primary"></span>
-      <span mgnpCheckbox indeterminate color="secondary"></span>
-      <span mgnpCheckbox indeterminate color="info"></span>
-      <span mgnpCheckbox indeterminate color="success"></span>
-      <span mgnpCheckbox indeterminate color="warning"></span>
-      <span mgnpCheckbox indeterminate color="danger"></span>
+      <span mgnpCheckbox mgnpCheckboxIndeterminate></span>
+      <span mgnpCheckbox mgnpCheckboxIndeterminate color="primary"></span>
+      <span mgnpCheckbox mgnpCheckboxIndeterminate color="secondary"></span>
+      <span mgnpCheckbox mgnpCheckboxIndeterminate color="info"></span>
+      <span mgnpCheckbox mgnpCheckboxIndeterminate color="success"></span>
+      <span mgnpCheckbox mgnpCheckboxIndeterminate color="warning"></span>
+      <span mgnpCheckbox mgnpCheckboxIndeterminate color="danger"></span>
     </div>
   `,
   host: {

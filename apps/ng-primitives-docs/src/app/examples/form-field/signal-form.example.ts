@@ -93,8 +93,8 @@ import { NgpComboboxPortal } from 'ng-primitives/combobox';
               <ng-icon name="heroChevronDown" />
             </button>
             <div *ngpComboboxPortal mgnpComboboxDropdown>
-              <option mgnpComboboxOption value="user">user</option>
-              <option mgnpComboboxOption value="ai agent">ai agent</option>
+              <option mgnpComboboxOption mgnpComboboxOptionValue="user">user</option>
+              <option mgnpComboboxOption mgnpComboboxOptionValue="ai agent">ai agent</option>
             </div>
           </div>
         </div>
