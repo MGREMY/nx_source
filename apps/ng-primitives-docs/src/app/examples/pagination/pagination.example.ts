@@ -28,7 +28,7 @@ import { Component, signal } from '@angular/core';
     NgIcon,
   ],
   template: `
-    <nav mgnpPagination [(page)]="page" pageCount="5" aria-label="Pagination Navigation">
+    <nav mgnpPagination [(mgnpPaginationPage)]="page" mgnpPaginationPageCount="5" aria-label="Pagination Navigation">
       <ul>
         <li>
           <a mgnpPaginationFirst aria-label="First Page">
@@ -41,11 +41,11 @@ import { Component, signal } from '@angular/core';
           </a>
         </li>
 
-        <li><a mgnpPaginationButton page="1" aria-label="Page 1">1</a></li>
-        <li><a mgnpPaginationButton page="2" aria-label="Page 2">2</a></li>
-        <li><a mgnpPaginationButton page="3" aria-label="Page 3">3</a></li>
-        <li><a mgnpPaginationButton page="4" aria-label="Page 4">4</a></li>
-        <li><a mgnpPaginationButton page="5" aria-label="Page 5">5</a></li>
+        <li><a mgnpPaginationButton mgnpPaginationButtonPage="1" aria-label="Page 1">1</a></li>
+        <li><a mgnpPaginationButton mgnpPaginationButtonPage="2" aria-label="Page 2">2</a></li>
+        <li><a mgnpPaginationButton mgnpPaginationButtonPage="3" aria-label="Page 3">3</a></li>
+        <li><a mgnpPaginationButton mgnpPaginationButtonPage="4" aria-label="Page 4">4</a></li>
+        <li><a mgnpPaginationButton mgnpPaginationButtonPage="5" aria-label="Page 5">5</a></li>
 
         <li>
           <a mgnpPaginationNext aria-label="Next Page">

@@ -14,14 +14,14 @@ import { NgpComboboxPortal } from 'ng-primitives/combobox';
 @Component({
   imports: [MgnpCombobox, MgnpComboboxDropdown, MgnpComboboxButton, MgnpComboboxOption, NgpComboboxPortal, NgIcon],
   template: `
-    <div mgnpCombobox [(value)]="selectedOption">
+    <div mgnpCombobox [(mgnpComboboxValue)]="selectedOption">
       <button mgnpComboboxButton>
         <span>{{ selectedOption() || 'Select an option' }}</span>
         <ng-icon name="heroChevronDown" />
       </button>
       <div *ngpComboboxPortal mgnpComboboxDropdown>
         @for (option of options; track option) {
-          <div mgnpComboboxOption [value]="option">
+          <div mgnpComboboxOption [mgnpComboboxOptionValue]="option">
             {{ option }}
           </div>
         }
