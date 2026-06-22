@@ -1,3 +1,13 @@
+## 0.14.1
+
+### 🩹 Fixes
+
+- input name conflicts when multiple components on same element ([b360cb1](https://github.com/MGREMY/nx_source/commit/b360cb1))
+
+### ❤️ Thank You
+
+- GREMY Miguel @MGREMY
+
 ## 0.14.0
 
 ### 🚀 Features
