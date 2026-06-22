@@ -1,3 +1,13 @@
+## 0.15.0
+
+### 🚀 Features
+
+- **pagination:** add form support ([#31](https://github.com/MGREMY/nx_source/pull/31))
+
+### ❤️ Thank You
+
+- Miguel Gremy @MGREMY
+
 ## 0.14.1
 
 ### 🩹 Fixes
