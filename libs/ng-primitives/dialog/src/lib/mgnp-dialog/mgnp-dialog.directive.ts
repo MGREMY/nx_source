@@ -15,7 +15,7 @@ import { injectDialogState, NgpDialog } from 'ng-primitives/dialog';
   hostDirectives: [
     {
       directive: NgpDialog,
-      inputs: ['ngpDialogRole:role', 'ngpDialogModal:modal'],
+      inputs: ['ngpDialogRole:mgnpDialogRole', 'ngpDialogModal:mgnpDialogModal'],
       outputs: [],
     },
   ],

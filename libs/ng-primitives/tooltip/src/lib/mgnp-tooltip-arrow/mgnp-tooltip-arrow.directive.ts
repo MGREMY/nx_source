@@ -16,7 +16,7 @@ import {
   hostDirectives: [
     {
       directive: NgpTooltipArrow,
-      inputs: ['ngpTooltipArrowPadding:padding'],
+      inputs: ['ngpTooltipArrowPadding:mgnpTooltipArrowPadding'],
       outputs: [],
     },
   ],

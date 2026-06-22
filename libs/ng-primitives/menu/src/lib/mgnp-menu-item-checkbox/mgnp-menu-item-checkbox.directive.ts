@@ -16,8 +16,11 @@ import {
   hostDirectives: [
     {
       directive: NgpMenuItemCheckbox,
-      inputs: ['ngpMenuItemCheckboxChecked:checked', 'ngpMenuItemCheckboxDisabled:disabled'],
-      outputs: ['ngpMenuItemCheckboxCheckedChange:checkedChange'],
+      inputs: [
+        'ngpMenuItemCheckboxChecked:mgnpMenuItemCheckboxchecked',
+        'ngpMenuItemCheckboxDisabled:mgnpMenuItemCheckboxDisabled',
+      ],
+      outputs: ['ngpMenuItemCheckboxCheckedChange:mgnpMenuItemCheckboxCheckedChange'],
     },
   ],
   exportAs: 'mgnpMenuItemCheckbox',

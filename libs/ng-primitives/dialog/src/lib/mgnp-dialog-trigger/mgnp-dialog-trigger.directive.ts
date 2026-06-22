@@ -13,10 +13,10 @@ import { NgpDialogTrigger } from 'ng-primitives/dialog';
       directive: NgpDialogTrigger,
       inputs: [
         'ngpDialogTrigger:mgnpDialogTrigger',
-        'ngpDialogTriggerCloseOnEscape:closeOnEscape',
-        'ngpDialogTriggerCloseOnOutsideClick:closeOnOutsideClick',
+        'ngpDialogTriggerCloseOnEscape:mgnpDialogTriggerCloseOnEscape',
+        'ngpDialogTriggerCloseOnOutsideClick:mgnpDialogTriggerCloseOnOutsideClick',
       ],
-      outputs: ['ngpDialogTriggerClosed:closed'],
+      outputs: ['ngpDialogTriggerClosed:mgnpDialogTriggerClosed'],
     },
   ],
   exportAs: 'mgnpDialogTrigger',

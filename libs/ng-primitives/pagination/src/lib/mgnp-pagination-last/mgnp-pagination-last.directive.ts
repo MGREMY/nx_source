@@ -11,7 +11,7 @@ import { NgpPaginationLast } from 'ng-primitives/pagination';
   hostDirectives: [
     {
       directive: NgpPaginationLast,
-      inputs: ['ngpPaginationLastDisabled:disabled'],
+      inputs: ['ngpPaginationLastDisabled:mgnpPaginationLastdisabled'],
       outputs: [],
     },
   ],

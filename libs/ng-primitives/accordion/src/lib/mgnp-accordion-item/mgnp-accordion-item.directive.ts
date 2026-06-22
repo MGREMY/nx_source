@@ -16,7 +16,10 @@ import {
   hostDirectives: [
     {
       directive: NgpAccordionItem,
-      inputs: ['ngpAccordionItemValue:value', 'ngpAccordionItemDisabled:disabled'],
+      inputs: [
+        'ngpAccordionItemValue:mgnpAccordionItemValue',
+        'ngpAccordionItemDisabled:mgnpAccordionItemDisabled',
+      ],
       outputs: [],
     },
   ],

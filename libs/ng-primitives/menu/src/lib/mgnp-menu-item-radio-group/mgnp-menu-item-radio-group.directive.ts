@@ -16,8 +16,8 @@ import {
   hostDirectives: [
     {
       directive: NgpMenuItemRadioGroup,
-      inputs: ['ngpMenuItemRadioGroupValue:value'],
-      outputs: ['ngpMenuItemRadioGroupValueChange:valueChange'],
+      inputs: ['ngpMenuItemRadioGroupValue:mgnpMenuItemRadioGroupValue'],
+      outputs: ['ngpMenuItemRadioGroupValueChange:mgnpMenuItemRadioGroupValueChange'],
     },
   ],
   exportAs: 'mgnpMenuItemRadioGroup',

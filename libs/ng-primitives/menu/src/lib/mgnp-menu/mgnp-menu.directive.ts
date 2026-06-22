@@ -12,7 +12,7 @@ import { injectMenuState, NgpMenu, provideMenuState } from 'ng-primitives/menu';
   hostDirectives: [
     {
       directive: NgpMenu,
-      inputs: ['ngpMenuWrap:wrap'],
+      inputs: ['ngpMenuWrap:mgnpMenuWrap'],
       outputs: [],
     },
   ],

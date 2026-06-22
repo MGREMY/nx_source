@@ -20,7 +20,7 @@ export type MgnpDialogDrawerPosition = PropertyType<'start' | 'end'>;
   hostDirectives: [
     {
       directive: NgpDialogOverlay,
-      inputs: ['ngpDialogOverlayCloseOnClick:closeOnClick'],
+      inputs: ['ngpDialogOverlayCloseOnClick:mgnpDialogOverlayCloseOnClick'],
       outputs: [],
     },
   ],

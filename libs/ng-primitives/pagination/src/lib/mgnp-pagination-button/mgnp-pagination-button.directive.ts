@@ -11,7 +11,10 @@ import { NgpPaginationButton } from 'ng-primitives/pagination';
   hostDirectives: [
     {
       directive: NgpPaginationButton,
-      inputs: ['ngpPaginationButtonPage:page', 'ngpPaginationButtonDisabled:disabled'],
+      inputs: [
+        'ngpPaginationButtonPage:mgnpPaginationButtonPage',
+        'ngpPaginationButtonDisabled:mgnpPaginationButtonDisabled',
+      ],
       outputs: [],
     },
   ],

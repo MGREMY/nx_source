@@ -11,7 +11,7 @@ import { NgpPaginationPrevious } from 'ng-primitives/pagination';
   hostDirectives: [
     {
       directive: NgpPaginationPrevious,
-      inputs: ['ngpPaginationPreviousDisabled:disabled'],
+      inputs: ['ngpPaginationPreviousDisabled:mgnpPaginationPreviousDisabled'],
       outputs: [],
     },
   ],

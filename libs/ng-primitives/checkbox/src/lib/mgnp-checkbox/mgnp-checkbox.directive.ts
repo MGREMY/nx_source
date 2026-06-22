@@ -27,15 +27,15 @@ export type MgnpCheckboxSize = PropertyType<'xs' | 'sm' | 'md' | 'lg' | 'xl'>;
     {
       directive: NgpCheckbox,
       inputs: [
-        'ngpCheckboxChecked:checked',
-        'ngpCheckboxDefaultChecked:defaultChecked',
-        'ngpCheckboxIndeterminate:indeterminate',
-        'ngpCheckboxRequired:required',
-        'ngpCheckboxDisabled:disabled',
+        'ngpCheckboxChecked:mgnpCheckboxChecked',
+        'ngpCheckboxDefaultChecked:mgnpCheckboxDefaultChecked',
+        'ngpCheckboxIndeterminate:mgnpCheckboxIndeterminate',
+        'ngpCheckboxRequired:mgnpCheckboxRequired',
+        'ngpCheckboxDisabled:mgnpCheckboxDisabled',
       ],
       outputs: [
-        'ngpCheckboxCheckedChange:checkedChange',
-        'ngpCheckboxIndeterminateChange:indeterminateChange',
+        'ngpCheckboxCheckedChange:mgnpCheckboxCheckedChange',
+        'ngpCheckboxIndeterminateChange:mgnpCheckboxIndeterminateChange',
       ],
     },
   ],

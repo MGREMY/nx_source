@@ -12,7 +12,10 @@ import { injectMenuItemState, NgpMenuItem, provideMenuItemState } from 'ng-primi
   hostDirectives: [
     {
       directive: NgpMenuItem,
-      inputs: ['ngpMenuItemDisabled:disabled', 'ngpMenuItemCloseOnSelect:closeOnSelect'],
+      inputs: [
+        'ngpMenuItemDisabled:mgnpMenuItemDisabled',
+        'ngpMenuItemCloseOnSelect:mgnpMenuItemCloseOnSelect',
+      ],
       outputs: [],
     },
   ],

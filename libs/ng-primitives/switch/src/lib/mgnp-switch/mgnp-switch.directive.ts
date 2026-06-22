@@ -16,8 +16,8 @@ import { ChangeFn, provideValueAccessor, TouchedFn } from 'ng-primitives/utils';
   hostDirectives: [
     {
       directive: NgpSwitch,
-      inputs: ['ngpSwitchChecked:checked', 'ngpSwitchDisabled:disabled'],
-      outputs: ['ngpSwitchCheckedChange:checkedChange'],
+      inputs: ['ngpSwitchChecked:mgnpSwitchChecked', 'ngpSwitchDisabled:mgnpSwitchDisabled'],
+      outputs: ['ngpSwitchCheckedChange:mgnpSwitchCheckedChange'],
     },
   ],
   exportAs: 'mgnpSwitch',

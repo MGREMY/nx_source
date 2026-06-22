@@ -12,11 +12,11 @@ import { NgpComboboxOption } from 'ng-primitives/combobox';
     {
       directive: NgpComboboxOption,
       inputs: [
-        'ngpComboboxOptionValue:value',
-        'ngpComboboxOptionDisabled:disabled',
-        'ngpComboboxOptionIndex:index',
+        'ngpComboboxOptionValue:mgnpComboboxOptionValue',
+        'ngpComboboxOptionDisabled:mgnpComboboxOptionDisabled',
+        'ngpComboboxOptionIndex:mgnpComboboxOptionIndex',
       ],
-      outputs: ['ngpComboboxOptionActivated:activated'],
+      outputs: ['ngpComboboxOptionActivated:mgnpComboboxOptionActivated'],
     },
   ],
   exportAs: 'mgnpComboboxOption',

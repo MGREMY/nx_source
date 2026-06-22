@@ -17,11 +17,11 @@ import {
     {
       directive: NgpPagination,
       inputs: [
-        'ngpPaginationPage:page',
-        'ngpPaginationPageCount:pageCount',
-        'ngpPaginationDisabled:disabled',
+        'ngpPaginationPage:mgnpPaginationPage',
+        'ngpPaginationPageCount:mgnpPaginationPageCount',
+        'ngpPaginationDisabled:mgnpPaginationDisabled',
       ],
-      outputs: ['ngpPaginationPageChange:pageChange'],
+      outputs: ['ngpPaginationPageChange:mgnpPaginationPageChange'],
     },
   ],
   exportAs: 'mgnpPagination',

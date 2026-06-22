@@ -16,7 +16,10 @@ import {
   hostDirectives: [
     {
       directive: NgpMenuItemRadio,
-      inputs: ['ngpMenuItemRadioValue:value', 'ngpMenuItemRadioDisabled:disabled'],
+      inputs: [
+        'ngpMenuItemRadioValue:mgnpMenuItemRadioValue',
+        'ngpMenuItemRadioDisabled:mgnpMenuItemRadioDisabled',
+      ],
       outputs: [],
     },
   ],
