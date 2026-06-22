@@ -1,3 +1,13 @@
+## 0.16.0
+
+### 🚀 Features
+
+- **combobox:** create portal directive ([ce89635](https://github.com/MGREMY/nx_source/commit/ce89635))
+
+### ❤️ Thank You
+
+- GREMY Miguel @MGREMY
+
 ## 0.15.0
 
 ### 🚀 Features
