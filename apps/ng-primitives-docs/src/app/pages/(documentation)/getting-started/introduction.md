@@ -17,19 +17,8 @@ components, using [TailwindCSS](https://tailwindcss.com/).
 
 ## Usage pattern
 
-Each components requires two parts:
-
-1. **Headless directive** from `ng-primitives` - handle logic, accessibility, keyboard navigation
-2. **Styled directive** from `@mgremy/ng-primitives` - applies TailwindCSS classes
-
 ```html
-<button
-  ngpButton
-  mgnpButton>
+<button mgnpButton>
   Click me
 </button>
 ```
-
-The **_mgnp-\*_** directive must be alongside its corresponding **_ngp-\*_** directive from
-`ng-primitives`. If used incorrectly, the library throws a helpful error message indicating which
-directive pairings is required.
