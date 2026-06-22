@@ -1,4 +1,5 @@
 @utility mgnp-dialog-mode-modal {
+  @apply max-w-8/12 max-h-8/12;
   @apply rounded-md;
   animation: mg-fade-in var(--default-transition-duration) var(--default-transition-timing-function);
 
@@ -9,8 +10,7 @@
 }
 
 @utility mgnp-dialog-mode-drawer {
-  @apply w-80 max-w-full;
-  @apply h-full;
+  @apply max-w-8/12 h-full;
   animation: mg-slide-in var(--default-transition-duration)
     var(--default-transition-timing-function);
 
