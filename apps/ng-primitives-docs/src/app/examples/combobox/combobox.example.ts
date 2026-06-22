@@ -4,13 +4,13 @@ import {
   MgnpComboboxDropdown,
   MgnpComboboxInput,
   MgnpComboboxOption,
+  MgnpComboboxPortal,
 } from '@mgremy/ng-primitives/combobox';
 
 import { NgIcon, provideIcons } from '@ng-icons/core';
 import { heroChevronDown } from '@ng-icons/heroicons/outline';
 
 import { Component, signal } from '@angular/core';
-import { NgpComboboxPortal } from 'ng-primitives/combobox';
 
 @Component({
   imports: [
@@ -19,7 +19,7 @@ import { NgpComboboxPortal } from 'ng-primitives/combobox';
     MgnpComboboxButton,
     MgnpComboboxDropdown,
     MgnpComboboxOption,
-    NgpComboboxPortal,
+    MgnpComboboxPortal,
     NgIcon,
   ],
   template: `
@@ -28,7 +28,7 @@ import { NgpComboboxPortal } from 'ng-primitives/combobox';
       <button mgnpComboboxButton>
         <ng-icon name="heroChevronDown" />
       </button>
-      <div *ngpComboboxPortal mgnpComboboxDropdown>
+      <div *mgnpComboboxPortal mgnpComboboxDropdown>
         @for (option of options; track option) {
           <div mgnpComboboxOption [mgnpComboboxOptionValue]="option">
             {{ option }}
