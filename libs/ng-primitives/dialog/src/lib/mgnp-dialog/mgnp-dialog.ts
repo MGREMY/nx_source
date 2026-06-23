@@ -1,4 +1,4 @@
-import { MgnpDialogOverlay } from '../mgnp-dialog-overlay/mgnp-dialog-overlay.directive';
+import { MgnpDialogOverlay } from '../mgnp-dialog-overlay/mgnp-dialog-overlay';
 
 import { Directive, inject } from '@angular/core';
 import { injectDialogState, NgpDialog } from 'ng-primitives/dialog';
