@@ -10,7 +10,7 @@ export interface ITranslationService {
   init(): void;
   setLanguage(code: string): void;
 
-  instant(key: string): string;
-  instant(key: string[]): string[];
-  instant(key: string | string[]): string | string[];
+  instant(key: string, params?: Record<string, string>): string;
+  instant(key: string[], params?: Record<string, string>): string[];
+  instant(key: string | string[], params?: Record<string, string>): string | string[];
 }
