@@ -1,3 +1,7 @@
+## 0.18.0
+
+This was a version bump only, there were no code changes.
+
 ## 0.17.0
 
 ### 🚀 Features
