@@ -1,3 +1,13 @@
+## 0.19.0
+
+### 🚀 Features
+
+- **core:** add support for parameter in translate service ([78d67f3](https://github.com/MGREMY/nx_source/commit/78d67f3))
+
+### ❤️ Thank You
+
+- GREMY Miguel @MGREMY
+
 ## 0.18.0
 
 This was a version bump only, there were no code changes.
