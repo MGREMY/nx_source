@@ -1,1 +1,1 @@
-export * from './lib/mgnp-checkbox/mgnp-checkbox.directive';
+export * from './lib/mgnp-checkbox/mgnp-checkbox';
