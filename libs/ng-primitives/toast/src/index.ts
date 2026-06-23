@@ -1,1 +1,1 @@
-export * from './lib/mgnp-toast/mgnp-toast.directive';
+export * from './lib/mgnp-toast/mgnp-toast';

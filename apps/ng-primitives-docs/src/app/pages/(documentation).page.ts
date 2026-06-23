@@ -1,4 +1,4 @@
-import { SidebarComponent } from '../components/sidebar/sidebar.component';
+import { SidebarComponent } from '../components/sidebar/sidebar';
 import { APP_THEME_SERVICE } from '@mgremy/core';
 import {
   MgnpNavbar,

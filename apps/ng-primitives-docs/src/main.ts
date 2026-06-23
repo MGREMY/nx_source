@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { AppComponent } from './app/app.component';
+import { AppComponent } from './app/app';
 import { appConfig } from './app/app.config';
 
 import { bootstrapApplication } from '@angular/platform-browser';

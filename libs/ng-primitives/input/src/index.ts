@@ -1,1 +1,1 @@
-export * from './lib/mgnp-input/mgnp-input.directive';
+export * from './lib/mgnp-input/mgnp-input';

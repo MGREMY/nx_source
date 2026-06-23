@@ -1,1 +1,1 @@
-export * from './lib/mgnp-button/mgnp-button.directive';
+export * from './lib/mgnp-button/mgnp-button';

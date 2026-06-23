@@ -1,59 +1,39 @@
-@utility mgnp-table {
-  width: 100%;
-  display: table;
-  table-layout: auto;
-  text-align: left;
-  font-size: var(--text-sm);
-  line-height: var(--text-sm--line-height);
-  border-collapse: collapse;
-}
-
-@utility mgnp-table-header {
-  background-color: var(--mg-background-ui);
-  font-size: var(--text-xs);
-  line-height: var(--text-xs--line-height);
-  text-transform: uppercase;
-
-  & > * {
-    padding-inline: --spacing(6);
-    padding-block: --spacing(3);
-  }
-}
-
-@utility mgnp-table-body {
-  @variant not-last {
-    border-bottom: 1px solid var(--mg-border-ui-secondary);
+@layer components {
+  .mgnp-table {
+    @apply transition;
+    @apply table table-auto;
+    @apply w-full;
+    @apply text-left text-sm;
+    @apply border-collapse;
   }
 
-  & > * {
-    padding-inline: --spacing(6);
-    padding-block: --spacing(3);
+  .mgnp-table-header {
+    @apply transition;
+    @apply bg-ui;
+    @apply text-xs uppercase;
+
+    @variant * {
+      @apply px-6 py-3;
+    }
   }
-}
 
-@utility mgnp-table-footer {
-  font-weight: 600;
-
-  & > * {
-    padding-inline: --spacing(6);
-    padding-block: --spacing(3);
-  }
-}
-
-@layer base {
-  [data-mgnp-component='mgnp-table'] {
-    @apply mgnp-table transition;
-
-    [data-mgnp-component='mgnp-table-header'] {
-      @apply mgnp-table-header transition;
+  .mgnp-table-body {
+    @apply transition;
+    @variant not-last {
+      @apply border-b border-b-ui-secondary;
     }
 
-    [data-mgnp-component='mgnp-table-body'] {
-      @apply mgnp-table-body transition;
+    @variant * {
+      @apply px-6 py-3;
     }
+  }
 
-    [data-mgnp-component='mgnp-table-footer'] {
-      @apply mgnp-table-footer transition;
+  .mgnp-table-footer {
+    @apply transition;
+    @apply font-semibold;
+
+    @variant * {
+      @apply px-6 py-3;
     }
   }
 }

@@ -1,20 +1,13 @@
-@utility mgnp-loader {
-  place-self: center;
-}
+@layer components {
+  .mgnp-loader {
+    @apply transition;
+    @apply self-center;
+  }
 
-@utility mgnp-loader-svg {
-  width: --spacing(8);
-  height: --spacing(8);
-  animation: var(--animate-spin);
-  fill: var(--mg-text-primary);
-}
-
-@layer base {
-  [data-mgnp-component='mgnp-loader'] {
-    @apply mgnp-loader transition;
-
-    svg {
-      @apply mgnp-loader-svg transition;
-    }
+  .mgnp-loader-svg {
+    @apply transition;
+    @apply w-8 h-8;
+    @apply fill-(--mg-text-primary);
+    @apply animate-spin;
   }
 }

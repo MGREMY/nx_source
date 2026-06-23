@@ -1,14 +1,15 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 
 @Component({
-  selector: 'mgnp-table-footer, tr[mgnpTableFooter]',
+  selector: 'mgnp-table-body, tr[mgnpTableBody]',
   imports: [],
   standalone: true,
   template: '<ng-content />',
   providers: [],
   changeDetection: ChangeDetectionStrategy.OnPush,
   host: {
-    'data-mgnp-component': 'mgnp-table-footer',
+    'data-mgnp-table-body': '',
+    class: 'mgnp-table-body mgnp-c-table-body',
   },
 })
-export class MgnpTableFooter {}
+export class MgnpTableBody {}
