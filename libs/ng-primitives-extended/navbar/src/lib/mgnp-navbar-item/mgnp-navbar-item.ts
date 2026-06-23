@@ -1,4 +1,4 @@
-import { MgnpNavbarContent } from '../mgnp-navbar-content/mgnp-navbar-content.directive';
+import { MgnpNavbarContent } from '../mgnp-navbar-content/mgnp-navbar-content';
 
 import { Directive, inject } from '@angular/core';
 
