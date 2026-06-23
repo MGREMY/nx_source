@@ -8,7 +8,8 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
   providers: [],
   changeDetection: ChangeDetectionStrategy.OnPush,
   host: {
-    'data-mgnp-component': 'mgnp-table-footer',
+    'data-mgnp-table-footer': '',
+    class: 'mgnp-table-footer mgnp-c-table-footer',
   },
 })
 export class MgnpTableFooter {}

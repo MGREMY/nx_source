@@ -14,3 +14,9 @@ Display a loader indicator
 ## Theme
 
 <app-file-content name="loader" type="ng-primitives-extended-css"></app-file-content>
+
+## CSS
+
+| directive  | class       | custom class  |
+| ---------- | ----------- | ------------- |
+| MgnpLoader | mgnp-loader | mgnp-c-loader |

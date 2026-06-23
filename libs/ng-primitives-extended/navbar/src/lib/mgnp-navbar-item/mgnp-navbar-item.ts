@@ -7,7 +7,8 @@ import { Directive, inject } from '@angular/core';
   standalone: true,
   providers: [],
   host: {
-    'data-mgnp-component': 'mgnp-navbar-item',
+    'data-mgnp-navbar-item': '',
+    class: 'mgnp-navbar-item mgnp-c-navbar-item',
     '(click)': 'onClick()',
   },
   hostDirectives: [],

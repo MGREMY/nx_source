@@ -7,7 +7,8 @@ import { Directive, inject, signal } from '@angular/core';
   standalone: true,
   providers: [],
   host: {
-    'data-mgnp-component': 'mgnp-navbar-content',
+    'data-mgnp-navbar-content': '',
+    class: 'mgnp-navbar-content mgnp-c-navbar-content',
     '[attr.data-enter]': 'isOpen() === true ? true : null',
     '[attr.data-exit]': 'isOpen() === false ? true : null',
     '[attr.data-is-always-open]': '_mgnpNavbar.isAlwaysOpen() === true ? true : null',

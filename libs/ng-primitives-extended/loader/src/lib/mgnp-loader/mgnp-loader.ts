@@ -6,6 +6,7 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
   standalone: true,
   template: `
     <svg
+      class="mgnp-loader-svg mgnp-c-loader-svg"
       aria-hidden="true"
       viewBox="0 0 100 101"
       fill="none"
@@ -22,7 +23,8 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
   providers: [],
   changeDetection: ChangeDetectionStrategy.OnPush,
   host: {
-    'data-mgnp-component': 'mgnp-loader',
+    'data-mgnp-loader': '',
+    class: 'mgnp-loader mgnp-c-loader',
     role: 'status',
   },
 })

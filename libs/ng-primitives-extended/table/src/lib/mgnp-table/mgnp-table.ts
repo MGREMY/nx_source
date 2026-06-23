@@ -23,7 +23,8 @@ import { ChangeDetectionStrategy, Component, input, TemplateRef } from '@angular
   providers: [],
   changeDetection: ChangeDetectionStrategy.OnPush,
   host: {
-    'data-mgnp-component': 'mgnp-table',
+    'data-mgnp-table': '',
+    class: 'mgnp-table mgnp-c-table',
   },
 })
 export class MgnpTable {

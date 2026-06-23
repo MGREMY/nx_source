@@ -8,7 +8,8 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
   providers: [],
   changeDetection: ChangeDetectionStrategy.OnPush,
   host: {
-    'data-mgnp-component': 'mgnp-table-body',
+    'data-mgnp-table-body': '',
+    class: 'mgnp-table-body mgnp-c-table-body',
   },
 })
 export class MgnpTableBody {}

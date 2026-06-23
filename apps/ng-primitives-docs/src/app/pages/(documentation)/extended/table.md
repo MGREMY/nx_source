@@ -14,3 +14,9 @@ Display a pre-styled table
 ## Theme
 
 <app-file-content name="table" type="ng-primitives-extended-css"></app-file-content>
+
+## CSS
+
+| directive | class      | custom class |
+| --------- | ---------- | ------------ |
+| MgnpTable | mgnp-table | mgnp-c-table |
