@@ -6,7 +6,6 @@ import { ChangeFn, provideValueAccessor, TouchedFn } from 'ng-primitives/utils';
 
 @Directive({
   selector: '[mgnpSwitch]',
-  standalone: true,
   providers: [provideSwitchState(), provideValueAccessor(MgnpSwitch)],
   host: {
     class: 'mgnp-switch mgnp-c-switch',

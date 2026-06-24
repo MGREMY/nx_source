@@ -5,7 +5,6 @@ import { ChangeFn, provideValueAccessor, TouchedFn } from 'ng-primitives/utils';
 
 @Directive({
   selector: '[mgnpCombobox]',
-  standalone: true,
   providers: [provideComboboxState(), provideValueAccessor(MgnpCombobox)],
   host: {
     class: 'mgnp-combobox mgnp-c-combobox',

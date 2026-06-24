@@ -14,7 +14,6 @@ export type MgnpCheckboxSize = PropertyType<'xs' | 'sm' | 'md' | 'lg' | 'xl'>;
 
 @Directive({
   selector: `[mgnpCheckbox]`,
-  standalone: true,
   providers: [provideCheckboxState(), provideValueAccessor(MgnpCheckbox)],
   host: {
     class: 'mgnp-checkbox mgnp-c-checkbox',

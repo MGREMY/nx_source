@@ -3,7 +3,6 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
 @Component({
   selector: 'mgnp-table-body, tr[mgnpTableBody]',
   imports: [],
-  standalone: true,
   template: '<ng-content />',
   providers: [],
   changeDetection: ChangeDetectionStrategy.OnPush,

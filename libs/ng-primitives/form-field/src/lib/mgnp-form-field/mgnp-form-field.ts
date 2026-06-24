@@ -7,7 +7,6 @@ import {
 
 @Directive({
   selector: '[mgnpFormField]',
-  standalone: true,
   providers: [provideFormFieldState()],
   host: {
     class: 'mgnp-form-field mgnp-c-form-field',

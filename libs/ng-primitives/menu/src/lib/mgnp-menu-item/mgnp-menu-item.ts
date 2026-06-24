@@ -3,7 +3,6 @@ import { injectMenuItemState, NgpMenuItem, provideMenuItemState } from 'ng-primi
 
 @Directive({
   selector: '[mgnpMenuItem]',
-  standalone: true,
   providers: [provideMenuItemState()],
   host: {
     class: 'mgnp-menu-item mgnp-c-menu-item',

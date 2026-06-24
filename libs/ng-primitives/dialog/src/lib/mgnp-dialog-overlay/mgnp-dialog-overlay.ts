@@ -9,7 +9,6 @@ export type MgnpDialogDrawerPosition = PropertyType<'start' | 'end'>;
 
 @Directive({
   selector: '[mgnpDialogOverlay]',
-  standalone: true,
   providers: [provideDialogState()],
   host: {
     class: 'mgnp-dialog-overlay mgnp-c-dialog-overlay',

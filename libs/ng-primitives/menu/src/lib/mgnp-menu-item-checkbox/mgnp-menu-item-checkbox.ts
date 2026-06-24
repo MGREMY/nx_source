@@ -7,7 +7,6 @@ import {
 
 @Directive({
   selector: '[mgnpMenuItemCheckbox]',
-  standalone: true,
   providers: [provideMenuItemCheckboxState()],
   host: {
     class: 'mgnp-menu-item-checkbox mgnp-c-menu-item-checkbox',

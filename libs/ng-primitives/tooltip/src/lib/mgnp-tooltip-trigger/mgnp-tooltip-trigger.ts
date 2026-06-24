@@ -7,7 +7,6 @@ import {
 
 @Directive({
   selector: '[mgnpTooltipTrigger]',
-  standalone: true,
   providers: [provideTooltipTriggerState()],
   host: {
     class: 'mgnp-tooltip-trigger mgnp-c-tooltip-trigger',

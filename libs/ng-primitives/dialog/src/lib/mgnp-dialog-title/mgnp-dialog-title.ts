@@ -3,7 +3,6 @@ import { NgpDialogTitle } from 'ng-primitives/dialog';
 
 @Directive({
   selector: '[mgnpDialogTitle]',
-  standalone: true,
   host: {
     class: 'mgnp-dialog-title mgnp-c-dialog-title',
     'data-mgnp-dialog-title': '',

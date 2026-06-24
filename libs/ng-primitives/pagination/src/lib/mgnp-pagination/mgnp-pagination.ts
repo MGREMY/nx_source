@@ -9,7 +9,6 @@ import { ChangeFn, provideValueAccessor, TouchedFn } from 'ng-primitives/utils';
 
 @Directive({
   selector: '[mgnpPagination]',
-  standalone: true,
   providers: [providePaginationState(), provideValueAccessor(MgnpPagination)],
   host: {
     class: 'mgnp-pagination mgnp-c-pagination',

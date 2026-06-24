@@ -3,7 +3,6 @@ import { NgpComboboxButton } from 'ng-primitives/combobox';
 
 @Directive({
   selector: '[mgnpComboboxButton]',
-  standalone: true,
   providers: [],
   host: {
     'class': 'mgnp-combobox-button mgnp-c-combobox-button',

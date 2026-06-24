@@ -13,7 +13,6 @@ export type MgnpButtonSize = PropertyType<'xs' | 'sm' | 'md' | 'lg' | 'xl'>;
 
 @Directive({
   selector: `[mgnpButton]`,
-  standalone: true,
   providers: [provideButtonState()],
   host: {
     class: 'mgnp-button mgnp-c-button',

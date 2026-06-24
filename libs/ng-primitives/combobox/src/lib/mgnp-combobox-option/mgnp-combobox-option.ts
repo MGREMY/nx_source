@@ -3,7 +3,6 @@ import { NgpComboboxOption } from 'ng-primitives/combobox';
 
 @Directive({
   selector: '[mgnpComboboxOption]',
-  standalone: true,
   host: {
     class: 'mgnp-combobox-option mgnp-c-combobox-option',
     'data-mgnp-combobox-option': '',

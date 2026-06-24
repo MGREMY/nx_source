@@ -7,7 +7,6 @@ import {
 
 @Directive({
   selector: '[mgnpMenuItemRadioGroup]',
-  standalone: true,
   providers: [provideMenuItemRadioGroupState()],
   host: {
     class: 'mgnp-menu-item-radio-group mgnp-c-menu-item-radio-group',

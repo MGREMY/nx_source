@@ -9,6 +9,8 @@
   "targets": {
     "build": {
       "executor": "@analogjs/platform:vite",
+      "outputs": ["{workspaceRoot}/dist/apps/ng-primitives-docs"],
+      "defaultConfiguration": "production",
       "options": {
         "configFile": "apps/ng-primitives-docs/vite.config.ts",
         "main": "apps/ng-primitives-docs/src/main.ts",
@@ -23,9 +25,7 @@
           "sourcemap": false,
           "mode": "production"
         }
-      },
-      "outputs": ["{workspaceRoot}/dist/apps/ng-primitives-docs"],
-      "defaultConfiguration": "production"
+      }
     },
     "serve": {
       "executor": "@analogjs/platform:vite-dev-server",
@@ -46,7 +46,17 @@
       }
     },
     "lint": {
-      "executor": "@nx/eslint:lint"
+      "inputs": [
+        "default",
+        "^default",
+        "{workspaceRoot}/.eslintrc.json",
+        "{workspaceRoot}/.eslintignore",
+        "{workspaceRoot}/eslint.config.mjs",
+        "{workspaceRoot}/tools/eslint-rules/**/*",
+        {
+          "externalDependencies": ["eslint"]
+        }
+      ]
     },
     "test": {
       "executor": "@angular/build:unit-test",

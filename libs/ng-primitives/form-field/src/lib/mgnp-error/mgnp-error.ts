@@ -3,7 +3,6 @@ import { injectErrorState, NgpError, provideErrorState } from 'ng-primitives/for
 
 @Directive({
   selector: '[mgnpError]',
-  standalone: true,
   providers: [provideErrorState()],
   host: {
     class: 'mgnp-error mgnp-c-error',

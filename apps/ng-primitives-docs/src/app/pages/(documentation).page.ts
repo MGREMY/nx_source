@@ -22,7 +22,6 @@ import { RouterLink, RouterOutlet } from '@angular/router';
     RouterOutlet,
     SidebarComponent,
   ],
-  standalone: true,
   template: `
     <header class="fixed top-0 w-full z-100">
       <nav mgnpNavbar>

@@ -3,7 +3,6 @@ import { NgpPaginationNext } from 'ng-primitives/pagination';
 
 @Directive({
   selector: '[mgnpPaginationNext]',
-  standalone: true,
   host: {
     class: 'mgnp-pagination-next mgnp-c-pagination-next',
     'data-mgnp-pagination-next': '',

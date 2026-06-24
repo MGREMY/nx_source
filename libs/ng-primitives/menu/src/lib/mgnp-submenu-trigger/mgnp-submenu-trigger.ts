@@ -7,7 +7,6 @@ import {
 
 @Directive({
   selector: '[mgnpSubmenuTrigger]',
-  standalone: true,
   providers: [provideSubmenuTriggerState()],
   host: {
     class: 'mgnp-submenu-trigger mgnp-c-submenu-trigger',

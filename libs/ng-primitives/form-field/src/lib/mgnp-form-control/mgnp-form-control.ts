@@ -3,7 +3,6 @@ import { NgpFormControl } from 'ng-primitives/form-field';
 
 @Directive({
   selector: '[mgnpFormControl]',
-  standalone: true,
   host: {
     class: 'mgnp-form-control mgnp-c-form-control',
     'data-mgnp-form-control': '',

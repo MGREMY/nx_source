@@ -3,7 +3,6 @@ import { NgpMenuItemIndicator } from 'ng-primitives/menu';
 
 @Directive({
   selector: '[mgnpMenuItemIndicator]',
-  standalone: true,
   host: {
     class: 'mgnp-menu-item-indicator mgnp-c-menu-item-indicator',
     'data-mgnp-menu-item-indicator': '',

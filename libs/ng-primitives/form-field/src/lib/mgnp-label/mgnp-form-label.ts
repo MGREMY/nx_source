@@ -3,7 +3,6 @@ import { injectLabelState, NgpLabel, provideLabelState } from 'ng-primitives/for
 
 @Directive({
   selector: '[mgnpLabel]',
-  standalone: true,
   providers: [provideLabelState()],
   host: {
     class: 'mgnp-label mgnp-c-label',

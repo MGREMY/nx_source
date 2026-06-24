@@ -3,7 +3,6 @@ import { injectInputState, NgpInput, provideInputState } from 'ng-primitives/inp
 
 @Directive({
   selector: '[mgnpInput]',
-  standalone: true,
   providers: [provideInputState()],
   host: {
     class: 'mgnp-input mgnp-c-input',

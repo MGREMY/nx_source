@@ -2,7 +2,6 @@ import { Directive } from '@angular/core';
 
 @Directive({
   selector: '[mgnpInputGroupAddon]',
-  standalone: true,
   providers: [],
   host: {
     class: 'mgnp-input-group-addon mgnp-c-input-group-addon',

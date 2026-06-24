@@ -7,7 +7,6 @@ import {
 
 @Directive({
   selector: '[mgnpAccordionItem]',
-  standalone: true,
   providers: [provideAccordionItemState()],
   host: {
     class: 'mgnp-accordion-item mgnp-c-accordion-item',

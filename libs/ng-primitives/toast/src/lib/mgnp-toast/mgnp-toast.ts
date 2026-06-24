@@ -3,7 +3,6 @@ import { NgpToast } from 'ng-primitives/toast';
 
 @Directive({
   selector: '[mgnpToast]',
-  standalone: true,
   host: {
     class: 'mgnp-toast mgnp-c-toast',
     'data-mgnp-toast': '',

@@ -3,7 +3,6 @@ import { NgpPaginationFirst } from 'ng-primitives/pagination';
 
 @Directive({
   selector: '[mgnpPaginationFirst]',
-  standalone: true,
   host: {
     class: 'mgnp-pagination-first mgnp-c-pagination-first',
     'data-mgnp-pagination-first': '',

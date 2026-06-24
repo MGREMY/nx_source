@@ -8,7 +8,6 @@ import { RouterOutlet } from '@angular/router';
 
 @Component({
   imports: [RouterOutlet, PageNavigation, QuickLinks, HeadingAnchor, SourceLink],
-  standalone: true,
   template: `
     <div class="flex gap-x-12">
       <article

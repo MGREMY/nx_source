@@ -4,7 +4,6 @@ import { Directive, inject } from '@angular/core';
 
 @Directive({
   selector: '[mgnpNavbarItem]',
-  standalone: true,
   providers: [],
   host: {
     'data-mgnp-navbar-item': '',

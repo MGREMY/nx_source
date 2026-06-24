@@ -14,7 +14,6 @@ import { RouterLink } from '@angular/router';
 
 @Component({
   imports: [MgnpNavbar, MgnpNavbarContent, MgnpNavbarItem, MgnpButton, NgIcon, RouterLink],
-  standalone: true,
   template: `
     <header class="fixed top-0 w-full z-100">
       <nav

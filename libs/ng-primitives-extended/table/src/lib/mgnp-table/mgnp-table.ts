@@ -4,7 +4,6 @@ import { ChangeDetectionStrategy, Component, input, TemplateRef } from '@angular
 @Component({
   selector: 'mgnp-table, table[mgnpTable]',
   imports: [NgTemplateOutlet],
-  standalone: true,
   template: `
     <thead>
       <ng-container [ngTemplateOutlet]="tableHeader()" />

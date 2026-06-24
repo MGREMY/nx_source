@@ -3,7 +3,6 @@ import { NgpDialogDescription } from 'ng-primitives/dialog';
 
 @Directive({
   selector: '[mgnpDialogDescription]',
-  standalone: true,
   host: {
     class: 'mgnp-dialog-description mgnp-c-dialog-description',
     'data-mgnp-dialog-description': '',

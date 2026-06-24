@@ -2,7 +2,6 @@ import { booleanAttribute, Directive, input } from '@angular/core';
 
 @Directive({
   selector: '[mgnpNavbar], nav[mgnpNavbar]',
-  standalone: true,
   providers: [],
   host: {
     'data-mgnp-navbar': '',

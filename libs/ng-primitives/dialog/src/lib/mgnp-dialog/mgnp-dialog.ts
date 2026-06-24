@@ -5,7 +5,6 @@ import { injectDialogState, NgpDialog } from 'ng-primitives/dialog';
 
 @Directive({
   selector: '[mgnpDialog]',
-  standalone: true,
   providers: [],
   host: {
     class: 'mgnp-dialog mgnp-c-dialog',

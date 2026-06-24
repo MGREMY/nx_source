@@ -7,7 +7,6 @@ import {
 
 @Directive({
   selector: '[mgnpTooltipArrow]',
-  standalone: true,
   providers: [provideTooltipArrowState()],
   host: {
     class: 'mgnp-tooltip-arrow mgnp-c-tooltip-arrow',

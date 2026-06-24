@@ -3,7 +3,6 @@ import { injectAccordionState, NgpAccordion, provideAccordionState } from 'ng-pr
 
 @Directive({
   selector: '[mgnpAccordion]',
-  standalone: true,
   providers: [provideAccordionState()],
   host: {
     class: 'mgnp-accordion mgnp-c-accordion',

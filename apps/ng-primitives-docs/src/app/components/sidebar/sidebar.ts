@@ -27,7 +27,6 @@ import { NgpDialogManager } from 'ng-primitives/dialog';
 @Component({
   selector: 'app-sidebar',
   imports: [MgnpDialog, MgnpDialogOverlay, NgIcon, NgTemplateOutlet, RouterLink, RouterLinkActive],
-  standalone: true,
   template: `
     <ng-template #content>
       <div class="flex flex-col max-w-full max-h-full gap-y-4 overflow-auto">

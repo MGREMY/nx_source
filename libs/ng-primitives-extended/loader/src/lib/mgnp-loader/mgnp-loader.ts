@@ -3,7 +3,6 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
 @Component({
   selector: 'mgnp-loader',
   imports: [],
-  standalone: true,
   template: `
     <svg
       class="mgnp-loader-svg mgnp-c-loader-svg"

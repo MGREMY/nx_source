@@ -1,7 +1,6 @@
 /// <reference types="vitest" />
 
 import analog from '@analogjs/platform';
-import { nxViteTsPaths } from '@nx/vite/plugins/nx-tsconfig-paths.plugin';
 import { globSync } from 'glob';
 import { defineConfig, Plugin } from 'vite';
 
@@ -29,6 +28,9 @@ export default defineConfig(({ mode }) => {
   return {
     root: __dirname,
     base: mode === 'production' ? '/ng-primitives' : '',
+    resolve: {
+      tsconfigPaths: true,
+    },
     optimizeDeps: {
       include: [
         '@angular/common',
@@ -88,7 +90,6 @@ export default defineConfig(({ mode }) => {
           },
         },
       }),
-      nxViteTsPaths(),
       sourceQueryPlugin(),
     ],
     define: {

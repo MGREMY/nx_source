@@ -7,7 +7,6 @@ import {
 
 @Directive({
   selector: '[mgnpSwitchThumb]',
-  standalone: true,
   providers: [provideSwitchThumbState()],
   host: {
     class: 'mgnp-switch-thumb mgnp-c-switch-thumb',

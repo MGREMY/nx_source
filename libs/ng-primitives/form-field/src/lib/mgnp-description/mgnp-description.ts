@@ -7,7 +7,6 @@ import {
 
 @Directive({
   selector: '[mgnpDescription]',
-  standalone: true,
   providers: [provideDescriptionState()],
   host: {
     class: 'mgnp-description mgnp-c-description',

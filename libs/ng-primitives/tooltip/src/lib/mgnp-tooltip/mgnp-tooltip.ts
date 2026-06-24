@@ -3,7 +3,6 @@ import { NgpTooltip } from 'ng-primitives/tooltip';
 
 @Directive({
   selector: '[mgnpTooltip]',
-  standalone: true,
   host: {
     class: 'mgnp-tooltip mgnp-c-tooltip',
     'data-mgnp-tooltip': '',
