@@ -52,7 +52,7 @@ import { RouterLink } from '@angular/router';
             <div mgnpMenu>
               <button mgnpMenuItem>Some</button>
               <button mgnpMenuItem>Other</button>
-              <button mgnpMenuItem>Some</button>
+              <button mgnpMenuItem>Options</button>
               <button mgnpMenuItem>Or</button>
               <button mgnpMenuItem>Actions</button>
             </div>
@@ -64,7 +64,7 @@ import { RouterLink } from '@angular/router';
         </li>
 
         <li mgnpBreadcrumbItem>
-          <a mgnpBreadcrumbLink [routerLink]="['/', 'components']">Components</a>
+          <span>Components</span>
         </li>
 
         <li mgnpBreadcrumbSeparator aria-hidden="true">
