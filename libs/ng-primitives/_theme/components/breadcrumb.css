@@ -1,0 +1,74 @@
+@layer components {
+  .mgnp-breadcrumb {
+    @apply transition;
+    @apply block;
+  }
+
+  .mgnp-breadcrumb-ellipsis {
+    @apply transition mgnp-focus;
+    @apply cursor-pointer;
+    @apply inline-flex items-center justify-center;
+    @apply w-4 h-4;
+    @apply rounded-lg border-none;
+    @apply bg-none;
+    @apply text-ui-tertiary;
+
+    @variant data-hover {
+      @apply bg-ui-hover;
+      @apply text-ui;
+    }
+
+    ng-icon {
+      --ng-icon__size: --spacing(1);
+    }
+  }
+
+  .mgnp-breadcrumb-item {
+    @apply transition;
+    @apply inline-flex items-center gap-1;
+
+    @variant *:has-[.mgnp-breadcrumb-ellipsis] {
+      @apply transition;
+      @apply cursor-pointer;
+      @apply inline-flex items-center justify-center;
+      @apply p-0;
+      @apply border-none;
+      @apply bg-none;
+    }
+  }
+
+  .mgnp-breadcrumb-link {
+    @apply transition mgnp-focus;
+    @apply inline-flex items-center gap-1;
+    @apply decoration-0;
+
+    @variant data-hover {
+      @apply bg-ui-hover;
+      @apply text-ui;
+    }
+  }
+
+  .mgnp-breadcrumb-list {
+    @apply transition;
+    @apply flex flex-wrap items-center gap-2;
+    @apply list-none;
+    @apply m-0 p-0;
+    @apply text-sm text-ui-tertiary;
+  }
+
+  .mgnp-breadcrumb-page {
+    @apply transition;
+    @apply font-medium text-ui;
+  }
+
+  .mgnp-breadcrumb-separator {
+    @apply transition;
+    @apply inline-flex items-center;
+    @apply p-0;
+    @apply text-ui-tertiary;
+
+    ng-icon {
+      --ng-icon__size: --spacing(1);
+    }
+  }
+}

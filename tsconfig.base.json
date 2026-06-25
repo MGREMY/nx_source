@@ -17,6 +17,7 @@
     "paths": {
       "@mgremy/ng-primitives": ["libs/ng-primitives/src/index.ts"],
       "@mgremy/ng-primitives/accordion": ["libs/ng-primitives/accordion/src/index.ts"],
+      "@mgremy/ng-primitives/breadcrumb": ["libs/ng-primitives/breadcrumb/src/index.ts"],
       "@mgremy/ng-primitives/button": ["libs/ng-primitives/button/src/index.ts"],
       "@mgremy/ng-primitives/checkbox": ["libs/ng-primitives/checkbox/src/index.ts"],
       "@mgremy/ng-primitives/combobox": ["libs/ng-primitives/combobox/src/index.ts"],
