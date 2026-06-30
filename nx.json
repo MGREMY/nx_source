@@ -59,6 +59,14 @@
       "options": {
         "targetName": "lint"
       }
+    },
+    {
+      "plugin": "@nx/vitest",
+      "options": {
+        "testTargetName": "test",
+        "testMode": "watch"
+      },
+      "include": ["packages/plugin/**/*"]
     }
   ],
   "generators": {
@@ -77,7 +85,7 @@
     }
   },
   "release": {
-    "projects": ["packages/**", "tools/plugin"],
+    "projects": ["packages/**"],
     "projectsRelationship": "fixed",
     "version": {
       "preVersionCommand": "pnpm exec nx run-many --target=build",

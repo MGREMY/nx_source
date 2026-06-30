@@ -15,6 +15,7 @@
     "#mgnp-extended.css": "./packages/ng-primitives-extended/_theme/style.css"
   },
   "dependencies": {
+    "@nx/devkit": "23.0.0",
     "@analogjs/content": "2.6.1",
     "@analogjs/router": "2.6.1",
     "@angular/cdk": "^21.1.0",
@@ -99,9 +100,12 @@
     "typescript-eslint": "^8.40.0",
     "verdaccio": "6.7.4",
     "vite": "8.1.0",
+    "vite-plugin-static-copy": "^4.1.1",
+    "vite-tsconfig-paths": "^6.1.1",
     "vitest": "^4.0.8"
   },
   "nx": {
     "includedScripts": []
-  }
+  },
+  "generators": "./generators.json"
 }

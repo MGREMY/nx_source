@@ -1,7 +1,7 @@
 {
   "name": "plugin",
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
-  "sourceRoot": "tools/plugin/src",
+  "sourceRoot": "packages/plugin/src",
   "projectType": "library",
   "release": {
     "version": {
@@ -16,28 +16,28 @@
       "executor": "@nx/js:tsc",
       "outputs": ["{options.outputPath}"],
       "options": {
-        "outputPath": "dist/tools/plugin",
-        "main": "tools/plugin/src/index.ts",
-        "tsConfig": "tools/plugin/tsconfig.lib.json",
+        "outputPath": "dist/packages/plugin",
+        "main": "packages/plugin/src/index.ts",
+        "tsConfig": "packages/plugin/tsconfig.lib.json",
         "assets": [
-          "tools/plugin/*.md",
+          "packages/plugin/*.md",
           {
-            "input": "./tools/plugin/src",
+            "input": "./packages/plugin/src",
             "glob": "**/!(*.ts)",
             "output": "./src"
           },
           {
-            "input": "./tools/plugin/src",
+            "input": "./packages/plugin/src",
             "glob": "**/*.d.ts",
             "output": "./src"
           },
           {
-            "input": "./tools/plugin",
+            "input": "./packages/plugin",
             "glob": "generators.json",
             "output": "."
           },
           {
-            "input": "./tools/plugin",
+            "input": "./packages/plugin",
             "glob": "executors.json",
             "output": "."
           }
@@ -50,10 +50,12 @@
       }
     },
     "test": {
-      "executor": "@nx/vitest:test",
-      "outputs": ["{options.reportsDirectory}"],
+      "outputs": [
+        "{projectRoot}/{options.coverage.reportsDirectory}",
+        "{workspaceRoot}/coverage/packages/plugin"
+      ],
       "options": {
-        "reportsDirectory": "coverage/tools/plugin"
+        "coverage.reportsDirectory": "../../coverage/packages/plugin"
       }
     }
   }

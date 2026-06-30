@@ -5,6 +5,8 @@ import { addProjectConfiguration, formatFiles, generateFiles, type Tree } from '
 import * as path from 'path';
 
 export async function presetGenerator(tree: Tree, options: PresetGeneratorSchema) {
+  console.debug(options);
+
   const projectRoot = `libs/${options.name}`;
   addProjectConfiguration(tree, options.name, {
     root: projectRoot,

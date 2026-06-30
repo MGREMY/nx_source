@@ -41,7 +41,7 @@
         "packages/ng-primitives-extended/table/src/index.ts"
       ],
       "@mgremy/core": ["packages/core/src/index.ts"],
-      "@mgremy/plugin": ["./tools/plugin/src/index.ts"]
+      "@mgremy/plugin": ["packages/plugin/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

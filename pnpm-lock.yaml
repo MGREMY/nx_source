@@ -50,6 +50,9 @@ importers:
       '@ngx-translate/http-loader':
         specifier: ^16.0.1
         version: 16.0.1(@angular/common@21.2.1(@angular/core@21.2.1(@angular/compiler@21.2.1)(rxjs@7.8.2))(rxjs@7.8.2))(@angular/core@21.2.1(@angular/compiler@21.2.1)(rxjs@7.8.2))
+      '@nx/devkit':
+        specifier: 23.0.0
+        version: 23.0.0(nx@23.0.0(@swc-node/register@1.11.1(@swc/core@1.15.18(@swc/helpers@0.5.19))(@swc/types@0.1.25)(typescript@5.9.3))(@swc/core@1.15.18(@swc/helpers@0.5.19)))
       front-matter:
         specifier: ^4.0.2
         version: 4.0.2
@@ -126,9 +129,6 @@ importers:
       '@nx/angular':
         specifier: 23.0.0
         version: 23.0.0(fbb0bdf24420e4a1e16aa702a7673506)
-      '@nx/devkit':
-        specifier: 23.0.0
-        version: 23.0.0(nx@23.0.0(@swc-node/register@1.11.1(@swc/core@1.15.18(@swc/helpers@0.5.19))(@swc/types@0.1.25)(typescript@5.9.3))(@swc/core@1.15.18(@swc/helpers@0.5.19)))
       '@nx/eslint':
         specifier: 23.0.0
         version: 23.0.0(ccc988ee22c22b0aabcc4f4c22d9897c)
@@ -255,6 +255,12 @@ importers:
       vite:
         specifier: 8.1.0
         version: 8.1.0(@types/node@22.20.0)(esbuild@0.27.3)(jiti@2.6.1)(less@4.5.1)(sass-embedded@1.97.3)(sass@1.97.3)(terser@5.46.0)(yaml@2.9.0)
+      vite-plugin-static-copy:
+        specifier: ^4.1.1
+        version: 4.1.1(vite@8.1.0(@types/node@22.20.0)(esbuild@0.27.3)(jiti@2.6.1)(less@4.5.1)(sass-embedded@1.97.3)(sass@1.97.3)(terser@5.46.0)(yaml@2.9.0))
+      vite-tsconfig-paths:
+        specifier: ^6.1.1
+        version: 6.1.1(typescript@5.9.3)(vite@8.1.0(@types/node@22.20.0)(esbuild@0.27.3)(jiti@2.6.1)(less@4.5.1)(sass-embedded@1.97.3)(sass@1.97.3)(terser@5.46.0)(yaml@2.9.0))
       vitest:
         specifier: ^4.0.8
         version: 4.0.18(@types/node@22.20.0)(jiti@2.6.1)(jsdom@22.1.0)(less@4.5.1)(lightningcss@1.32.0)(sass-embedded@1.97.3)(sass@1.97.3)(terser@5.46.0)(yaml@2.9.0)
@@ -6328,6 +6334,9 @@ packages:
     resolution: {integrity: sha512-dW7vl+yiAJSp6aCekaVnVJxurRv7DCOLyXqEG3RYMYUg7AuJ2jCqPkZTA8ooqC2vtnkaMcV5WfFBMuEnTu1OQg==}
     engines: {node: '>=20'}
 
+  globrex@0.1.2:
+    resolution: {integrity: sha512-uHJgbwAMwNFf5mLst7IWLNg14x1CkeqglJb/K3doi4dw6q2IvAAmM/Y81kevy83wP+Sst+nutFTYOGg3d1lsxg==}
+
   gopd@1.2.0:
     resolution: {integrity: sha512-ZUKRh6/kUFoAiTAtTYPZJ3hw9wNxx+BIBOijnlG9PnrJsCcSjs1wyyD6vJpaYtgnzDrKYRSqf3OO6Rfa93xsRg==}
     engines: {node: '>= 0.4'}
@@ -9556,6 +9565,17 @@ packages:
   ts-morph@21.0.1:
     resolution: {integrity: sha512-dbDtVdEAncKctzrVZ+Nr7kHpHkv+0JDJb2MjjpBaj8bFeCkePU9rHfMklmhuLFnpeq/EJZk2IhStY6NzqgjOkg==}
 
+  tsconfck@3.1.6:
+    resolution: {integrity: sha512-ks6Vjr/jEw0P1gmOVwutM3B7fWxoWBL2KRDb1JfqGVawBmO5UsvmWOQFGHBPl5yxYz4eERr19E6L7NMv+Fej4w==}
+    engines: {node: ^18 || >=20}
+    deprecated: unmaintained
+    hasBin: true
+    peerDependencies:
+      typescript: ^5.0.0
+    peerDependenciesMeta:
+      typescript:
+        optional: true
+
   tsconfig-paths-webpack-plugin@4.2.0:
     resolution: {integrity: sha512-zbem3rfRS8BgeNK50Zz5SIQgXzLafiHjOwUAvk/38/o1jHn/V5QAgVUcz884or7WYcPaH3N2CIfUc2u0ul7UcA==}
     engines: {node: '>=10.13.0'}
@@ -9907,6 +9927,17 @@ packages:
 
   vfile@6.0.3:
     resolution: {integrity: sha512-KzIbH/9tXat2u30jf+smMwFCsno4wHVdNmzFyL+T/L3UGqqk6JKfVqOFOZEpZSHADH1k40ab6NUIXZq422ov3Q==}
+
+  vite-plugin-static-copy@4.1.1:
+    resolution: {integrity: sha512-GrlA8YklrAfSyxJ4M3fdQLOo9oNkp56IM9FYgX/WtEgeIFkPwhu4wzpufBCIuNKCa6Fn77FkRdYxkHqV0FwjAw==}
+    engines: {node: ^22.0.0 || >=24.0.0}
+    peerDependencies:
+      vite: ^6.0.0 || ^7.0.0 || ^8.0.0
+
+  vite-tsconfig-paths@6.1.1:
+    resolution: {integrity: sha512-2cihq7zliibCCZ8P9cKJrQBkfgdvcFkOOc3Y02o3GWUDLgqjWsZudaoiuOwO/gzTzy17cS5F7ZPo4bsnS4DGkg==}
+    peerDependencies:
+      vite: '*'
 
   vite@7.3.1:
     resolution: {integrity: sha512-w+N7Hifpc3gRjZ63vYBXA56dvvRlNWRczTdmCBBa+CotUzAPf5b7YMdMR/8CQoeYE5LX3W4wj6RYTgonm1b9DA==}
@@ -17392,6 +17423,8 @@ snapshots:
       slash: 5.1.0
       unicorn-magic: 0.4.0
 
+  globrex@0.1.2: {}
+
   gopd@1.2.0: {}
 
   got-cjs@12.5.4:
@@ -21274,6 +21307,10 @@ snapshots:
       '@ts-morph/common': 0.22.0
       code-block-writer: 12.0.0
 
+  tsconfck@3.1.6(typescript@5.9.3):
+    optionalDependencies:
+      typescript: 5.9.3
+
   tsconfig-paths-webpack-plugin@4.2.0:
     dependencies:
       chalk: 4.1.2
@@ -21670,6 +21707,24 @@ snapshots:
     dependencies:
       '@types/unist': 3.0.3
       vfile-message: 4.0.3
+
+  vite-plugin-static-copy@4.1.1(vite@8.1.0(@types/node@22.20.0)(esbuild@0.27.3)(jiti@2.6.1)(less@4.5.1)(sass-embedded@1.97.3)(sass@1.97.3)(terser@5.46.0)(yaml@2.9.0)):
+    dependencies:
+      chokidar: 3.6.0
+      p-map: 7.0.4
+      picocolors: 1.1.1
+      tinyglobby: 0.2.17
+      vite: 8.1.0(@types/node@22.20.0)(esbuild@0.27.3)(jiti@2.6.1)(less@4.5.1)(sass-embedded@1.97.3)(sass@1.97.3)(terser@5.46.0)(yaml@2.9.0)
+
+  vite-tsconfig-paths@6.1.1(typescript@5.9.3)(vite@8.1.0(@types/node@22.20.0)(esbuild@0.27.3)(jiti@2.6.1)(less@4.5.1)(sass-embedded@1.97.3)(sass@1.97.3)(terser@5.46.0)(yaml@2.9.0)):
+    dependencies:
+      debug: 4.4.3
+      globrex: 0.1.2
+      tsconfck: 3.1.6(typescript@5.9.3)
+      vite: 8.1.0(@types/node@22.20.0)(esbuild@0.27.3)(jiti@2.6.1)(less@4.5.1)(sass-embedded@1.97.3)(sass@1.97.3)(terser@5.46.0)(yaml@2.9.0)
+    transitivePeerDependencies:
+      - supports-color
+      - typescript
 
   vite@7.3.1(@types/node@22.20.0)(jiti@2.6.1)(less@4.5.1)(lightningcss@1.32.0)(sass-embedded@1.97.3)(sass@1.97.3)(terser@5.46.0)(yaml@2.9.0):
     dependencies:
