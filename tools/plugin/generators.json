@@ -5,6 +5,11 @@
       "schema": "./src/generators/preset/schema.json",
       "description": "preset generator",
       "x-use-standalone-layout": true
+    },
+    "angular-app": {
+      "factory": "./src/generators/angular-app/angular-app",
+      "schema": "./src/generators/angular-app/schema.json",
+      "description": "angular-app generator"
     }
   }
 }
