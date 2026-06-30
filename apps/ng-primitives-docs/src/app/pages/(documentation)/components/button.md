@@ -1,6 +1,6 @@
 ---
 name: 'Button'
-sourceUrl: 'https://github.com/mgremy/nx_source/tree/main/libs/ng-primitives/button'
+sourceUrl: 'https://github.com/mgremy/nx_source/tree/main/packages/ng-primitives/button'
 primitiveUrl: 'https://angularprimitives.com/primitives/button'
 ---
 

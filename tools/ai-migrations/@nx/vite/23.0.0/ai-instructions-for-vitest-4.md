@@ -183,14 +183,14 @@ Both `maxThreads` and `maxForks` are set with different numbers AND the project 
 // ❌ BEFORE (Vitest 3.x)
 export default defineConfig({
   test: {
-    workspace: ['apps/*', 'libs/*'],
+    workspace: ['apps/*', 'packages/*'],
   },
 });
 
 // ✅ AFTER (Vitest 4.0)
 export default defineConfig({
   test: {
-    projects: ['apps/*', 'libs/*'],
+    projects: ['apps/*', 'packages/*'],
   },
 });
 ```

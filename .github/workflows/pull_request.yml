@@ -35,8 +35,8 @@ jobs:
 
       - name: Print Environment Info
         shell: bash
-        run: pnpx nx report
+        run: pnpm exec nx report
 
       - name: Lint & Build
         shell: bash
-        run: pnpx nx run-many --target=lint,build --all
+        run: pnpm exec nx run-many --target=lint,build --all

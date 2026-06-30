@@ -1,6 +1,6 @@
 ---
 name: 'Navbar'
-sourceUrl: 'https://github.com/mgremy/nx_source/tree/main/libs/ng-primitives-extended/navbar'
+sourceUrl: 'https://github.com/mgremy/nx_source/tree/main/packages/ng-primitives-extended/navbar'
 ---
 
 # Navbar

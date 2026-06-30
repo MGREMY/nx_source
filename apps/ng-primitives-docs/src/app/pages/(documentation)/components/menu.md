@@ -1,6 +1,6 @@
 ---
 name: 'Menu'
-sourceUrl: 'https://github.com/mgremy/nx_source/tree/main/libs/ng-primitives/menu'
+sourceUrl: 'https://github.com/mgremy/nx_source/tree/main/packages/ng-primitives/menu'
 primitiveUrl: 'https://angularprimitives.com/primitives/menu'
 ---
 

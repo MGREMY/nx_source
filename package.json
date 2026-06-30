@@ -4,15 +4,15 @@
   "license": "MIT",
   "scripts": {
     "prepare": "husky",
-    "lint": "pnpx nx run-many --target=lint --all",
-    "build": "pnpx nx run-many --target=build --all",
-    "release": "pnpx nx release --skip-publish",
-    "format": "pnpx prettier . --write"
+    "lint": "pnpm exec nx run-many --target=lint --all",
+    "build": "pnpm exec nx run-many --target=build --all",
+    "release": "pnpm exec nx release --skip-publish",
+    "format": "pnpm exec prettier . --write"
   },
   "private": true,
   "imports": {
-    "#mgnp.css": "./libs/ng-primitives/_theme/mgnp.css",
-    "#mgnp-extended.css": "./libs/ng-primitives-extended/_theme/style.css"
+    "#mgnp.css": "./packages/ng-primitives/_theme/mgnp.css",
+    "#mgnp-extended.css": "./packages/ng-primitives-extended/_theme/style.css"
   },
   "dependencies": {
     "@analogjs/content": "2.6.1",

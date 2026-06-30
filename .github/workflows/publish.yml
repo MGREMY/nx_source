@@ -38,17 +38,17 @@ jobs:
 
       - name: Print Environment Info
         shell: bash
-        run: pnpx nx report
+        run: pnpm exec nx report
 
       - name: Build
         shell: bash
-        run: pnpx nx run-many --target=build --all
+        run: pnpm exec nx run-many --target=build --all
 
       - name: Publish
         shell: bash
         run: |
           echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}" > ~/.npmrc
-          pnpx nx run-many --target=nx-release-publish --all
+          pnpm exec nx run-many --target=nx-release-publish --all
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
           NPM_CONFIG_PROVENANCE: true

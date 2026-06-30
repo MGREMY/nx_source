@@ -1,6 +1,6 @@
 ---
 name: 'Toast'
-sourceUrl: 'https://github.com/mgremy/nx_source/tree/main/libs/ng-primitives/toast'
+sourceUrl: 'https://github.com/mgremy/nx_source/tree/main/packages/ng-primitives/toast'
 primitiveUrl: 'https://angularprimitives.com/primitives/toast'
 ---
 

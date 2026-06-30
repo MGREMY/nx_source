@@ -3,7 +3,7 @@ WORKDIR /app
 COPY package.json pnpm-lock.yaml ./
 RUN npm i -g pnpm && pnpm i --frozen-lockfile --ignore-scripts
 COPY . ./
-RUN pnpx nx run ng-primitives-docs:build
+RUN pnpm exec nx run ng-primitives-docs:build
 
 FROM nginx:alpine
 RUN apk add --no-cache gettext

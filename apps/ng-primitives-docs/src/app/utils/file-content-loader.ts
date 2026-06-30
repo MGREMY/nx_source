@@ -20,7 +20,7 @@ export function getFile(
   const output: { name: string; content: string | unknown }[] = [];
 
   const cssNgPrimitivesContents = import.meta.glob(
-    '../../../../../libs/ng-primitives/_theme/**/*.css',
+    '../../../../../packages/ng-primitives/_theme/**/*.css',
     {
       import: 'default',
       query: '?raw',
@@ -28,7 +28,7 @@ export function getFile(
     }
   );
   const cssNgPrimitivesExtendedContents = import.meta.glob(
-    '../../../../../libs/ng-primitives-extended/_theme/**/*.css',
+    '../../../../../packages/ng-primitives-extended/_theme/**/*.css',
     {
       import: 'default',
       query: '?raw',

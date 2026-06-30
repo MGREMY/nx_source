@@ -1,6 +1,6 @@
 ---
 name: 'Accordion'
-sourceUrl: 'https://github.com/mgremy/nx_source/tree/main/libs/ng-primitives/accordion'
+sourceUrl: 'https://github.com/mgremy/nx_source/tree/main/packages/ng-primitives/accordion'
 primitiveUrl: 'https://angularprimitives.com/primitives/accordion'
 ---
 

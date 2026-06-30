@@ -62,10 +62,10 @@
     }
   },
   "release": {
-    "projects": ["libs/**"],
+    "projects": ["packages/**"],
     "projectsRelationship": "fixed",
     "version": {
-      "preVersionCommand": "pnpx nx run-many --target=build",
+      "preVersionCommand": "pnpm exec nx run-many --target=build",
       "conventionalCommits": true
     },
     "changelog": {

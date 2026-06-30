@@ -1,6 +1,6 @@
 ---
 name: 'Switch'
-sourceUrl: 'https://github.com/mgremy/nx_source/tree/main/libs/ng-primitives/switch'
+sourceUrl: 'https://github.com/mgremy/nx_source/tree/main/packages/ng-primitives/switch'
 primitiveUrl: 'https://angularprimitives.com/primitives/switch'
 ---
 

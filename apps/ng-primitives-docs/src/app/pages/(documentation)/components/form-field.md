@@ -1,6 +1,6 @@
 ---
 name: 'Form Field'
-sourceUrl: 'https://github.com/mgremy/nx_source/tree/main/libs/ng-primitives/form-field'
+sourceUrl: 'https://github.com/mgremy/nx_source/tree/main/packages/ng-primitives/form-field'
 primitiveUrl: 'https://angularprimitives.com/primitives/form-field'
 ---
 

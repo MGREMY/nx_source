@@ -1,6 +1,6 @@
 ---
 name: 'Combobox'
-sourceUrl: 'https://github.com/mgremy/nx_source/tree/main/libs/ng-primitives/combobox'
+sourceUrl: 'https://github.com/mgremy/nx_source/tree/main/packages/ng-primitives/combobox'
 primitiveUrl: 'https://angularprimitives.com/primitives/combobox'
 ---
 

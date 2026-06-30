@@ -551,13 +551,13 @@ Migrating now (while still on v3) clears the v3.2 deprecation warning and is req
 // ❌ DEPRECATED (Vitest 3.2+)
 // vitest.workspace.ts
 import { defineWorkspace } from 'vitest/config';
-export default defineWorkspace(['apps/*', 'libs/*']);
+export default defineWorkspace(['apps/*', 'packages/*']);
 
 // ✅ AFTER (inline in root vitest.config.ts)
 import { defineConfig } from 'vitest/config';
 export default defineConfig({
   test: {
-    projects: ['apps/*', 'libs/*'],
+    projects: ['apps/*', 'packages/*'],
   },
 });
 ```

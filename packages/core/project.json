@@ -1,8 +1,8 @@
 {
-  "name": "ng-primitives",
+  "name": "core",
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
-  "sourceRoot": "libs/ng-primitives/src",
-  "prefix": "mgnp",
+  "sourceRoot": "packages/core/src",
+  "prefix": "mgcore",
   "projectType": "library",
   "release": {
     "version": {
@@ -11,19 +11,19 @@
       "fallbackCurrentVersionResolver": "disk"
     }
   },
-  "tags": ["ui", "ng-primitives", "tailwind", "tailwindcss"],
+  "tags": [],
   "targets": {
     "build": {
       "executor": "@nx/angular:package",
       "outputs": ["{workspaceRoot}/dist/{projectRoot}"],
       "defaultConfiguration": "production",
       "options": {
-        "project": "libs/ng-primitives/ng-package.json",
-        "tsConfig": "libs/ng-primitives/tsconfig.lib.json"
+        "project": "packages/core/ng-package.json",
+        "tsConfig": "packages/core/tsconfig.lib.json"
       },
       "configurations": {
         "production": {
-          "tsConfig": "libs/ng-primitives/tsconfig.lib.prod.json"
+          "tsConfig": "packages/core/tsconfig.lib.prod.json"
         },
         "development": {}
       }

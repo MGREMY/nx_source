@@ -1,7 +1,7 @@
 {
-  "name": "ng-primitives-extended",
+  "name": "ng-primitives",
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
-  "sourceRoot": "libs/ng-primitives-extended/src",
+  "sourceRoot": "packages/ng-primitives/src",
   "prefix": "mgnp",
   "projectType": "library",
   "release": {
@@ -18,12 +18,12 @@
       "outputs": ["{workspaceRoot}/dist/{projectRoot}"],
       "defaultConfiguration": "production",
       "options": {
-        "project": "libs/ng-primitives-extended/ng-package.json",
-        "tsConfig": "libs/ng-primitives-extended/tsconfig.lib.json"
+        "project": "packages/ng-primitives/ng-package.json",
+        "tsConfig": "packages/ng-primitives/tsconfig.lib.json"
       },
       "configurations": {
         "production": {
-          "tsConfig": "libs/ng-primitives-extended/tsconfig.lib.prod.json"
+          "tsConfig": "packages/ng-primitives/tsconfig.lib.prod.json"
         },
         "development": {}
       }

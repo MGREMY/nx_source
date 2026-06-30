@@ -1,6 +1,6 @@
 ---
 name: 'Tooltip'
-sourceUrl: 'https://github.com/mgremy/nx_source/tree/main/libs/ng-primitives/tooltip'
+sourceUrl: 'https://github.com/mgremy/nx_source/tree/main/packages/ng-primitives/tooltip'
 primitiveUrl: 'https://angularprimitives.com/primitives/tooltip'
 ---
 

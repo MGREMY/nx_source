@@ -1,6 +1,6 @@
 ---
 name: 'Table'
-sourceUrl: 'https://github.com/mgremy/nx_source/tree/main/libs/ng-primitives-extended/table'
+sourceUrl: 'https://github.com/mgremy/nx_source/tree/main/packages/ng-primitives-extended/table'
 ---
 
 # Table
