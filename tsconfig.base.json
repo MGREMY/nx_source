@@ -31,10 +31,17 @@
       "@mgremy/ng-primitives/toast": ["packages/ng-primitives/toast/src/index.ts"],
       "@mgremy/ng-primitives/tooltip": ["packages/ng-primitives/tooltip/src/index.ts"],
       "@mgremy/ng-primitives-extended": ["packages/ng-primitives-extended/src/index.ts"],
-      "@mgremy/ng-primitives-extended/loader": ["packages/ng-primitives-extended/loader/src/index.ts"],
-      "@mgremy/ng-primitives-extended/navbar": ["packages/ng-primitives-extended/navbar/src/index.ts"],
-      "@mgremy/ng-primitives-extended/table": ["packages/ng-primitives-extended/table/src/index.ts"],
-      "@mgremy/core": ["packages/core/src/index.ts"]
+      "@mgremy/ng-primitives-extended/loader": [
+        "packages/ng-primitives-extended/loader/src/index.ts"
+      ],
+      "@mgremy/ng-primitives-extended/navbar": [
+        "packages/ng-primitives-extended/navbar/src/index.ts"
+      ],
+      "@mgremy/ng-primitives-extended/table": [
+        "packages/ng-primitives-extended/table/src/index.ts"
+      ],
+      "@mgremy/core": ["packages/core/src/index.ts"],
+      "@mgremy/plugin": ["./tools/plugin/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

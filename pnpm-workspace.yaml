@@ -6,4 +6,5 @@ allowBuilds:
   lmdb: false
   msgpackr-extract: false
   nx: false
+  unrs-resolver: false
 autoInstallPeers: true
