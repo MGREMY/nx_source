@@ -12,11 +12,15 @@ import { getWorkspaceLayout, Tree } from '@nx/devkit';
 type ApplicationSchema = Parameters<typeof applicationGenerator>[1];
 
 export async function addAngularApp(tree: Tree, options: NormalizedOptions) {
+  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+  // @ts-ignore
+  const angularGenerator = await import('@nx/angular/generators');
   const appsDir = getWorkspaceLayout(tree).appsDir;
 
   const appOptions: ApplicationSchema = {
-    name: options.names.name,
-    directory: `${appsDir}/${options.names.fileName}`,
+    name: options.name,
+    directory: `${appsDir}/${options.name}`,
+    prefix: options.prefix,
     linter: 'eslint',
     unitTestRunner: 'vitest-angular' as ApplicationSchema['unitTestRunner'],
     e2eTestRunner: 'playwright' as ApplicationSchema['e2eTestRunner'],
@@ -25,15 +29,11 @@ export async function addAngularApp(tree: Tree, options: NormalizedOptions) {
     skipFormat: true,
     tags: options.tags,
     zoneless: true,
+    ssr: false,
+    skipTests: false,
   };
 
-  await (
-    await import(
-      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-      // @ts-ignore
-      '@nx/angular/generators'
-    )
-  ).applicationGenerator(tree, {
+  await angularGenerator.applicationGenerator(tree, {
     ...appOptions,
   });
 }
