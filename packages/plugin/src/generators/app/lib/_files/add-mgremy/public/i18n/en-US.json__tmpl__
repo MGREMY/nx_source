@@ -25,7 +25,7 @@
       "error": "error",
       "name": "name",
       "message": "message",
-      "unhautorized": "Unhautorized",
+      "unauthorized": "Unauthorized",
       "no_connection": "No connection"
     }
   },

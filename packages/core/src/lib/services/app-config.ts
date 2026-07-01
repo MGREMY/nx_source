@@ -27,15 +27,15 @@ export class ConfigService implements IConfigService {
   private readonly _environment = inject(ENVIRONMENT_VALUE);
   private readonly _windowKey = 'runtime_config';
 
-  private isValidValue(value: string | undefined): boolean {
+  private isValidValue(value: string | undefined | null): boolean {
     // If starts with ${, it's the placeholder used by the build system
-    return value !== undefined && value !== '' && !value.startsWith('${');
+    return value !== undefined && value !== null && value !== '' && !value.startsWith('${');
   }
 
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   private getValue(key: string): any {
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    return (window as any)[this._windowKey][key];
+    return (window as any)[this._windowKey]?.[key];
   }
 
   get appUrl(): string {

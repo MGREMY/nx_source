@@ -28,12 +28,15 @@ import { ActivatedRouteSnapshot, CanActivateFn } from '@angular/router';
   },
  */
 export const hasRoleGuard: CanActivateFn = (route: ActivatedRouteSnapshot) => {
-  const roles: string[] | undefined = route.data['hasRoleGuard']['roles'];
-  const mode: 'all' | 'any' = route.data['hasRoleGuard']['mode'] ?? 'any';
-
-  if (roles === undefined) throw new Error('Role must be passed');
-
   const authService = inject(AUTH_SERVICE);
+  const guardData = route.data['hasRoleGuard'];
+
+  if (guardData?.roles === undefined || !Array.isArray(guardData.roles)) {
+    throw new Error('Role must be passed as an array');
+  }
+
+  const roles: string[] = guardData.roles;
+  const mode: 'all' | 'any' = guardData.mode ?? 'any';
 
   if (authService.isAuthenticated()) {
     const accessToken = authService.getDecodedAccessToken();

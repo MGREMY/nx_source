@@ -131,7 +131,7 @@ describe('app generator', () => {
       expect(tree.exists(joinPathFragments(srcFolderPath, 'app', 'app.config.ts'))).toBeTruthy();
       expect(tree.exists(joinPathFragments(srcFolderPath, 'environments', 'environment.ts'))).toBeTruthy();
       expect(tree.exists(joinPathFragments(srcFolderPath, 'environments', 'environment.development.ts'))).toBeTruthy();
-      expect(tree.exists(joinPathFragments(srcFolderPath, 'environments', 'environment.ts'))).toBeTruthy();
+      expect(tree.exists(joinPathFragments(srcFolderPath, 'environments', 'environment.production.ts'))).toBeTruthy();
     });
   });
 });

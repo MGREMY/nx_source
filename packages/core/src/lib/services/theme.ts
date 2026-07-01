@@ -52,7 +52,7 @@ export class ThemeService implements IThemeService {
 }
 
 export function provideThemeConfig(options?: {
-  service: Type<IThemeService>;
+  service?: Type<IThemeService>;
 }): (Provider | EnvironmentProviders)[] {
   return [{ provide: THEME_SERVICE, useClass: options?.service ?? ThemeService }];
 }

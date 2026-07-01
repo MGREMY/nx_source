@@ -25,9 +25,7 @@ export async function presetGenerator(tree: Tree, options: PresetGeneratorSchema
     addCi(tree, normalizedOptions);
   }
 
-  return () => {
-    formatFiles(tree);
-  };
+  await formatFiles(tree);
 }
 
 export default presetGenerator;

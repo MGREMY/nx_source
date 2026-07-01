@@ -11,7 +11,7 @@
     "login": "connexion",
     "register": "inscription",
     "logout": "déconnexion",
-    "profile": "profile",
+    "profile": "profil",
     "value": "valeur",
     "open": "ouvrir",
     "deleted_items": "items supprimés",
@@ -25,7 +25,7 @@
       "error": "erreur",
       "name": "nom",
       "message": "message",
-      "unhautorized": "Non autorisé",
+      "unauthorized": "Non autorisé",
       "no_connection": "Aucune connexion"
     }
   },

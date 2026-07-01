@@ -64,7 +64,7 @@
       "plugin": "@nx/vitest",
       "options": {
         "testTargetName": "test",
-        "testMode": "watch"
+        "testMode": "run"
       },
       "include": ["packages/plugin/**/*"]
     }

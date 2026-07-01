@@ -17,31 +17,17 @@ export function updateTasks(tree: Tree, options: NormalizedOptions) {
         output: '.',
       },
     ];
-    pkgJson.targets.build.options.styles = [
-      joinPathFragments(appsDir, options.name, 'public', 'css', 'styles.css'),
-    ];
+    pkgJson.targets.build.options.styles = [joinPathFragments(appsDir, options.name, 'public', 'css', 'styles.css')];
     pkgJson.targets.build.configurations.production.fileReplacements = [
       {
-        replace: joinPathFragments(appsDir, options.name, 'src', 'environments', 'environments.ts'),
-        with: joinPathFragments(
-          appsDir,
-          options.name,
-          'src',
-          'environments',
-          'environments.production.ts'
-        ),
+        replace: joinPathFragments(appsDir, options.name, 'src', 'environments', 'environment.ts'),
+        with: joinPathFragments(appsDir, options.name, 'src', 'environments', 'environment.production.ts'),
       },
     ];
     pkgJson.targets.build.configurations.development.fileReplacements = [
       {
-        replace: joinPathFragments(appsDir, options.name, 'src', 'environments', 'environments.ts'),
-        with: joinPathFragments(
-          appsDir,
-          options.name,
-          'src',
-          'environments',
-          'environments.development.ts'
-        ),
+        replace: joinPathFragments(appsDir, options.name, 'src', 'environments', 'environment.ts'),
+        with: joinPathFragments(appsDir, options.name, 'src', 'environments', 'environment.development.ts'),
       },
     ];
     pkgJson.targets.build.defaultConfiguration = 'production';

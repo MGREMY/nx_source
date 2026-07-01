@@ -37,7 +37,7 @@ describe(
     });
 
     it('should have github ci configuration done', async () => {
-      expect(tree.exists(joinPathFragments('.github', 'pull_request.yml')));
+      expect(tree.exists(joinPathFragments('.github', 'workflows', 'pull_request.yml'))).toBeTruthy();
     });
   },
   15 * SECONDS

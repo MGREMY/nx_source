@@ -34,14 +34,13 @@ export default defineConfig(({ mode }) => {
     },
     optimizeDeps: {
       include: [
-        '@angular/common',
-        '@angular/forms',
+        '@angular/**',
         'marked',
         'marked-gfm-heading-id',
         'marked-highlight',
         '@ng-icons/**',
         '@ng-primitives/**',
-        '@mgremy/**/**',
+        '@mgremy/**',
       ],
     },
     build: {
@@ -55,16 +54,7 @@ export default defineConfig(({ mode }) => {
       reporters: ['default'],
       server: {
         deps: {
-          inline: [
-            '@angular/common',
-            '@angular/forms',
-            'marked',
-            'marked-gfm-heading-id',
-            'marked-highlight',
-            '@ng-icons/**',
-            '@ng-primitives/**',
-            '@mgremy/**/**',
-          ],
+          inline: [/angular/, /marked/, /ng-icons/, /ng-primitives/, /mgremy/],
         },
       },
     },

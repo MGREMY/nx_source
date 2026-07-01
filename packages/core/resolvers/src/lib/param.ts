@@ -12,7 +12,7 @@ export const paramResolver = <T extends string | number | boolean>(
 ): ResolveData => ({
   [key]: (route: ActivatedRouteSnapshot) => {
     const paramValue = route.queryParams[key];
-    if (paramValue === undefined || paramValue === null) {
+    if (paramValue === undefined || paramValue === null || paramValue === '') {
       return defaultValue;
     }
     // Type conversion based on defaultValue type
