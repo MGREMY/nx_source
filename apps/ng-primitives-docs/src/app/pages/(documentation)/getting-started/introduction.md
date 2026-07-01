@@ -18,7 +18,5 @@ components, using [TailwindCSS](https://tailwindcss.com/).
 ## Usage pattern
 
 ```html
-<button mgnpButton>
-  Click me
-</button>
+<button mgnpButton>Click me</button>
 ```

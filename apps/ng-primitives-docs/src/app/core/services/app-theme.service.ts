@@ -1,4 +1,4 @@
-import { STORAGE_SERVICE, Theme, IThemeService } from '@mgremy/core';
+import { IThemeService, STORAGE_SERVICE, Theme } from '@mgremy/core';
 
 import { afterNextRender, inject } from '@angular/core';
 

@@ -1,4 +1,4 @@
-import { PossibleFilter } from "./possible-filter";
+import { PossibleFilter } from './possible-filter';
 
 export type TableFilterOption<T> = {
   defaultFilterProperty: keyof T;

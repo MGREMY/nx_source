@@ -5,7 +5,7 @@ import { NgpComboboxButton } from 'ng-primitives/combobox';
   selector: '[mgnpComboboxButton]',
   providers: [],
   host: {
-    'class': 'mgnp-combobox-button mgnp-c-combobox-button',
+    class: 'mgnp-combobox-button mgnp-c-combobox-button',
     'data-mgnp-combobox-button': '',
   },
   hostDirectives: [

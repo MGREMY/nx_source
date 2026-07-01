@@ -50,10 +50,7 @@
       }
     },
     "test": {
-      "outputs": [
-        "{projectRoot}/{options.coverage.reportsDirectory}",
-        "{workspaceRoot}/coverage/packages/plugin"
-      ],
+      "outputs": ["{projectRoot}/{options.coverage.reportsDirectory}", "{workspaceRoot}/coverage/packages/plugin"],
       "options": {
         "coverage.reportsDirectory": "../../coverage/packages/plugin"
       }
