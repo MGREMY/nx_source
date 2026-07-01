@@ -1,4 +1,4 @@
-import { NormalizedOptions } from '../../app/app';
+import { NormalizedOptions } from '../preset';
 
 import { updateNxJson, type Tree } from '@nx/devkit';
 

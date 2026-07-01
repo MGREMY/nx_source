@@ -1,20 +1,40 @@
 import { presetGenerator } from './preset';
 import { PresetGeneratorSchema } from './schema';
 
-import { readProjectConfiguration, Tree } from '@nx/devkit';
+import { joinPathFragments, readNxJson, readProjectConfiguration, Tree } from '@nx/devkit';
 import { createTreeWithEmptyWorkspace } from '@nx/devkit/testing';
 
-describe('preset generator', () => {
-  let tree: Tree;
-  const options: PresetGeneratorSchema = { name: 'test' };
+const SECONDS = 1000;
 
-  beforeEach(() => {
-    tree = createTreeWithEmptyWorkspace();
-  });
+describe(
+  'preset generator',
+  () => {
+    let tree: Tree;
+    const options: PresetGeneratorSchema = {};
 
-  it('should run successfully', async () => {
-    await presetGenerator(tree, options);
-    const config = readProjectConfiguration(tree, 'test');
-    expect(config).toBeDefined();
-  });
-});
+    beforeEach(async () => {
+      tree = createTreeWithEmptyWorkspace({
+        layout: 'apps-libs',
+      });
+
+      await presetGenerator(tree, options);
+    });
+
+    it('should have nx configuration done', async () => {
+      const nxConfig = readNxJson(tree);
+
+      expect(nxConfig).toBeDefined();
+
+      expect(nxConfig?.analytics).toEqual(false);
+      expect(nxConfig?.neverConnectToCloud).toEqual(true);
+    });
+
+    it('should have required files', async () => {
+      const eslintFolderChildren = tree.children(joinPathFragments('tools', 'eslint'));
+
+      expect(eslintFolderChildren).toContain('angular.config.mjs');
+      expect(eslintFolderChildren).toContain('base.config.mjs');
+    });
+  },
+  15 * SECONDS
+);

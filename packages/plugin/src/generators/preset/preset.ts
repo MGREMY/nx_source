@@ -1,21 +1,24 @@
+import { addFiles } from './lib/add-files';
+import { updateConfig } from './lib/update-config';
 import type { PresetGeneratorSchema } from './schema';
 
-import { addProjectConfiguration, formatFiles, generateFiles, type Tree } from '@nx/devkit';
+import { formatFiles, type Tree } from '@nx/devkit';
 
-import * as path from 'path';
+function normalizeOptions(_: PresetGeneratorSchema): NormalizedOptions {
+  return {};
+}
 
-export async function presetGenerator(tree: Tree, options: PresetGeneratorSchema) {
-  console.debug(options);
+export interface NormalizedOptions extends Object {}
 
-  const projectRoot = `libs/${options.name}`;
-  addProjectConfiguration(tree, options.name, {
-    root: projectRoot,
-    projectType: 'library',
-    sourceRoot: `${projectRoot}/src`,
-    targets: {},
-  });
-  generateFiles(tree, path.join(__dirname, 'files'), projectRoot, options);
-  await formatFiles(tree);
+export async function presetGenerator(tree: Tree, options: PresetGeneratorSchema): Promise<() => void> {
+  const normalizedOptions = normalizeOptions(options);
+
+  addFiles(tree, normalizedOptions);
+  updateConfig(tree, normalizeOptions);
+
+  return () => {
+    formatFiles(tree);
+  };
 }
 
 export default presetGenerator;
