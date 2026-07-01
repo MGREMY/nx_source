@@ -24,6 +24,7 @@ export async function addAngularApp(tree: Tree, options: NormalizedOptions) {
     bundler: 'esbuild',
     skipFormat: true,
     tags: options.tags,
+    zoneless: true,
   };
 
   await (

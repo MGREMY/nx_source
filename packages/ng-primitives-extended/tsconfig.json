@@ -2,7 +2,9 @@
   "extends": "../../tsconfig.base.json",
   "compilerOptions": {
     "isolatedModules": true,
-    "target": "es2022",
+    "target": "esnext",
+    "module": "esnext",
+    "lib": ["dom", "es2022"],
     "moduleResolution": "bundler",
     "strict": true,
     "noImplicitOverride": true,
@@ -10,7 +12,6 @@
     "noImplicitReturns": true,
     "noFallthroughCasesInSwitch": true,
     "emitDecoratorMetadata": false,
-    "module": "preserve"
   },
   "angularCompilerOptions": {
     "enableI18nLegacyMessageIdFormat": false,
