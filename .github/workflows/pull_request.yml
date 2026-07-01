@@ -37,6 +37,6 @@ jobs:
         shell: bash
         run: pnpm exec nx report
 
-      - name: Lint & Build
+      - name: Lint, Build & Test
         shell: bash
-        run: pnpm exec nx run-many --target=lint,build --all
+        run: pnpm exec nx run-many --target=lint,build,test --all
