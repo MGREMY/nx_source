@@ -39,6 +39,7 @@
   },
   "devDependencies": {
     "@analogjs/platform": "2.6.1",
+    "@analogjs/vite-plugin-angular": "2.6.1",
     "@analogjs/vitest-angular": "2.6.1",
     "@angular-devkit/core": "^21.1.0",
     "@angular-devkit/schematics": "^21.1.0",
@@ -87,7 +88,7 @@
     "eslint-plugin-playwright": "^1.6.2",
     "glob": "^13.0.6",
     "husky": "^9.1.7",
-    "jsdom": "^22.0.0",
+    "jsdom": "^29.1.1",
     "jsonc-eslint-parser": "^2.1.0",
     "jwt-decode": "^4.0.0",
     "ng-packagr": "^21.1.0",
