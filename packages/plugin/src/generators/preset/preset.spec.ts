@@ -10,7 +10,7 @@ describe(
   'preset generator',
   () => {
     let tree: Tree;
-    const options: PresetGeneratorSchema = {};
+    const options: PresetGeneratorSchema = { ci: 'github' };
 
     beforeEach(async () => {
       tree = createTreeWithEmptyWorkspace({
@@ -34,6 +34,10 @@ describe(
 
       expect(eslintFolderChildren).toContain('angular.config.mjs');
       expect(eslintFolderChildren).toContain('base.config.mjs');
+    });
+
+    it('should have github ci configuration done', async () => {
+      expect(tree.exists(joinPathFragments('.github', 'pull_request.yml')));
     });
   },
   15 * SECONDS

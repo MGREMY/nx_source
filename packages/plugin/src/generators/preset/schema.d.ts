@@ -1,1 +1,3 @@
-export interface PresetGeneratorSchema {}
+export interface PresetGeneratorSchema {
+  ci: 'none' | 'github';
+}

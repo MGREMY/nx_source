@@ -3,6 +3,19 @@
   "$id": "Preset",
   "title": "",
   "type": "object",
-  "properties": {},
+  "properties": {
+    "ci": {
+      "type": "string",
+      "description": "Add CI to the project.",
+      "x-prompt": {
+        "message": "Add CI to the project ?",
+        "type": "list",
+        "items": [
+          { "value": "github", "label": "github" },
+          { "value": "none", "label": "none" }
+        ]
+      }
+    }
+  },
   "required": []
 }
