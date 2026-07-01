@@ -7,8 +7,10 @@ import type { AppGeneratorSchema } from './schema';
 import {
   addDependenciesToPackageJson,
   formatFiles,
+  GeneratorCallback,
   installPackagesTask,
   names,
+  runTasksInSerial,
   type Tree,
 } from '@nx/devkit';
 
@@ -32,8 +34,33 @@ export interface NormalizedOptions {
   skipFormat: boolean;
 }
 
-export async function appGenerator(tree: Tree, options: AppGeneratorSchema): Promise<() => void> {
+export async function appGenerator(tree: Tree, options: AppGeneratorSchema) {
+  const tasks: GeneratorCallback[] = [];
   const normalizedOptions = normalizeOptions(options);
+
+  tasks.push(
+    addDependenciesToPackageJson(
+      tree,
+      {
+        /* tailwind */
+        tailwindcss: '^4.0.0',
+        '@tailwindcss/postcss': '^4.0.0',
+        postcss: '^8.0.0',
+
+        /* mgremy */
+        'ng-primitives': '^0.122.0',
+        '@mgremy/core': '^0.20.0',
+        '@mgremy/ng-primitives': '^0.20.0',
+        '@mgremy/ng-primitives-extended': '^0.20.0',
+
+        /* other */
+        zod: '^4.0.0',
+        '@ng-icons/core': '^31.0.0',
+        '@ng-icons/heroicons': '^31.0.0',
+      },
+      {}
+    )
+  );
 
   await addAngularApp(tree, normalizedOptions);
 
@@ -41,33 +68,12 @@ export async function appGenerator(tree: Tree, options: AppGeneratorSchema): Pro
   addMgremy(tree, normalizedOptions);
   updateTasks(tree, normalizedOptions);
 
-  addDependenciesToPackageJson(
-    tree,
-    {
-      /* tailwind */
-      tailwindcss: '^4.0.0',
-      '@tailwindcss/postcss': '^4.0.0',
-      postcss: '^8.0.0',
-
-      /* mgremy */
-      'ng-primitives': '^0.122.0',
-      '@mgremy/core': '^0.20.0',
-      '@mgremy/ng-primitives': '^0.20.0',
-      '@mgremy/ng-primitives-extended': '^0.20.0',
-
-      /* other */
-      zod: '^4.0.0',
-      '@ng-icons/core': '^31.0.0',
-      '@ng-icons/heroicons': '^31.0.0',
-    },
-    {}
-  );
-
   if (!normalizedOptions.skipFormat) {
     await formatFiles(tree);
   }
 
   return () => {
+    runTasksInSerial(...tasks);
     installPackagesTask(tree);
   };
 }

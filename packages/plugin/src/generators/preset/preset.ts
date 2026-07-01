@@ -15,7 +15,7 @@ export interface NormalizedOptions {
   ci: 'none' | 'github';
 }
 
-export async function presetGenerator(tree: Tree, options: PresetGeneratorSchema): Promise<() => void> {
+export async function presetGenerator(tree: Tree, options: PresetGeneratorSchema) {
   const normalizedOptions = normalizeOptions(options);
 
   addFiles(tree, normalizedOptions);
