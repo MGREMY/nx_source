@@ -1,9 +1,9 @@
-import { APP_STORAGE_SERVICE, AppTheme, IAppThemeService } from '@mgremy/core';
+import { STORAGE_SERVICE, Theme, IThemeService } from '@mgremy/core';
 
 import { afterNextRender, inject } from '@angular/core';
 
-export class AppThemeService implements IAppThemeService {
-  private readonly _storageService = inject(APP_STORAGE_SERVICE);
+export class AppThemeService implements IThemeService {
+  private readonly _storageService = inject(STORAGE_SERVICE);
   private readonly _storageKeys = {
     theme: 'theme.current',
   };
@@ -14,7 +14,7 @@ export class AppThemeService implements IAppThemeService {
     });
   }
 
-  getTheme(): AppTheme {
+  getTheme(): Theme {
     const storageValue = this._storageService.getItem(this._storageKeys.theme);
 
     if (storageValue === undefined || (storageValue !== 'light' && storageValue !== 'dark')) {
@@ -24,7 +24,7 @@ export class AppThemeService implements IAppThemeService {
     return storageValue;
   }
 
-  setTheme(key: AppTheme): void {
+  setTheme(key: Theme): void {
     this._storageService.setItem(this._storageKeys.theme, key);
 
     if (key === 'light') document.documentElement.classList.remove('dark');

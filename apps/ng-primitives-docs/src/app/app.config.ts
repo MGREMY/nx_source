@@ -6,7 +6,7 @@ import { provideApplicationConfig } from './core/config/app.config';
 import { provideDefaultDatePipeConfig } from './core/config/pipe.config';
 import { provideStorageConfig } from './core/config/storage.config';
 import { langInterceptor } from './core/interceptors/lang.interceptor';
-import { APP_ENVIRONMENT_SERVICE } from '@mgremy/core';
+import { ENVIRONMENT_VALUE } from '@mgremy/core';
 
 import { provideNgIconsConfig } from '@ng-icons/core';
 
@@ -41,7 +41,7 @@ export const appConfig: ApplicationConfig = {
       size: '16px',
     }),
     {
-      provide: APP_ENVIRONMENT_SERVICE,
+      provide: ENVIRONMENT_VALUE,
       useValue: environment,
     },
     provideApplicationThemeConfig(),

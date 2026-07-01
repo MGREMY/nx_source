@@ -1,4 +1,4 @@
-import { APP_THEME_SERVICE } from '@mgremy/core';
+import { THEME_SERVICE } from '@mgremy/core';
 import {
   MgnpNavbar,
   MgnpNavbarContent,
@@ -96,5 +96,5 @@ import { RouterLink } from '@angular/router';
   providers: [provideIcons({ heroSun, heroMoon })],
 })
 export default class IndexPage {
-  protected readonly _themeService = inject(APP_THEME_SERVICE);
+  protected readonly _themeService = inject(THEME_SERVICE);
 }

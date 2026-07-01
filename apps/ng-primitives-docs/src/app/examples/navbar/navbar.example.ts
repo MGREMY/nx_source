@@ -1,4 +1,4 @@
-import { APP_THEME_SERVICE } from '@mgremy/core';
+import { THEME_SERVICE } from '@mgremy/core';
 import { MgnpNavbar, MgnpNavbarContent, MgnpNavbarItem } from '@mgremy/ng-primitives-extended/navbar';
 
 import { NgIcon, provideIcons } from '@ng-icons/core';
@@ -55,5 +55,5 @@ import { RouterLink, RouterLinkActive } from '@angular/router';
   providers: [provideIcons({ heroBars4, heroSun, heroMoon })],
 })
 export default class NavbarExample {
-  protected readonly _themeService = inject(APP_THEME_SERVICE);
+  protected readonly _themeService = inject(THEME_SERVICE);
 }

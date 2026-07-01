@@ -1,6 +1,6 @@
-import { Environment } from '@mgremy/core';
+import { IEnvironment } from '@mgremy/core';
 
-export const environment: Environment = {
+export const environment: IEnvironment = {
   production: false,
   appUrl: 'http://localhost:4200',
   appBaseHref: '/',
