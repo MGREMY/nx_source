@@ -8,7 +8,6 @@ import {
   addDependenciesToPackageJson,
   formatFiles,
   GeneratorCallback,
-  installPackagesTask,
   names,
   runTasksInSerial,
   type Tree,
@@ -72,10 +71,7 @@ export async function appGenerator(tree: Tree, options: AppGeneratorSchema) {
     await formatFiles(tree);
   }
 
-  return () => {
-    runTasksInSerial(...tasks);
-    installPackagesTask(tree);
-  };
+  return runTasksInSerial(...tasks);
 }
 
 export default appGenerator;

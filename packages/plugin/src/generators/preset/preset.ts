@@ -3,7 +3,7 @@ import { addFiles } from './lib/add-files';
 import { updateConfig } from './lib/update-config';
 import type { PresetGeneratorSchema } from './schema';
 
-import { formatFiles, type Tree } from '@nx/devkit';
+import { formatFiles, GeneratorCallback, runTasksInSerial, type Tree } from '@nx/devkit';
 
 function normalizeOptions(schema: PresetGeneratorSchema): NormalizedOptions {
   return {
@@ -16,6 +16,7 @@ export interface NormalizedOptions {
 }
 
 export async function presetGenerator(tree: Tree, options: PresetGeneratorSchema) {
+  const tasks: GeneratorCallback[] = [];
   const normalizedOptions = normalizeOptions(options);
 
   addFiles(tree, normalizedOptions);
@@ -26,6 +27,8 @@ export async function presetGenerator(tree: Tree, options: PresetGeneratorSchema
   }
 
   await formatFiles(tree);
+
+  return runTasksInSerial(...tasks);
 }
 
 export default presetGenerator;
