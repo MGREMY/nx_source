@@ -37,11 +37,13 @@ export const notAuthGuard: CanActivateFn = (route: ActivatedRouteSnapshot) => {
   const authService = inject(AUTH_SERVICE);
   const guardData = route.data['notAuthGuard'];
 
-  if (guardData?.returnPath === undefined || !Array.isArray(guardData.returnPath)) {
-    guardData.returnPath = ['/'];
-  }
+  let returnPath: string[];
 
-  const returnPath = guardData.returnPath;
+  if (guardData.returnPath !== undefined && Array.isArray(guardData.returnPath)) {
+    returnPath = guardData.returnPath;
+  } else {
+    returnPath = ['/'];
+  }
 
   if (authService.isAuthenticated()) {
     return router.createUrlTree(returnPath);
