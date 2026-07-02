@@ -8,9 +8,9 @@
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
     "importHelpers": true,
-    "target": "es2015",
+    "target": "esnext",
     "module": "esnext",
-    "lib": ["es2020", "dom"],
+    "lib": ["dom", "es2022"],
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
@@ -34,7 +34,15 @@
       "@mgremy/ng-primitives-extended/loader": ["packages/ng-primitives-extended/loader/src/index.ts"],
       "@mgremy/ng-primitives-extended/navbar": ["packages/ng-primitives-extended/navbar/src/index.ts"],
       "@mgremy/ng-primitives-extended/table": ["packages/ng-primitives-extended/table/src/index.ts"],
-      "@mgremy/core": ["packages/core/src/index.ts"]
+      "@mgremy/core": ["packages/core/src/index.ts"],
+      "@mgremy/core/guards": ["packages/core/guards/src/index.ts"],
+      "@mgremy/core/interceptors": ["packages/core/interceptors/src/index.ts"],
+      "@mgremy/core/models": ["packages/core/models/src/index.ts"],
+      "@mgremy/core/pipes": ["packages/core/pipes/src/index.ts"],
+      "@mgremy/core/resolvers": ["packages/core/resolvers/src/index.ts"],
+      "@mgremy/core/types": ["packages/core/types/src/index.ts"],
+      "@mgremy/core/utils": ["packages/core/utils/src/index.ts"],
+      "@mgremy/plugin": ["packages/plugin/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

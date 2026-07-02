@@ -1,0 +1,41 @@
+import { environment } from '../environments/environment';
+import { routes } from './app.routes';
+
+import {
+  provideAuthConfig,
+  provideConfig,
+  provideEnvironmentConfig,
+  provideStorageConfig,
+  provideThemeConfig,
+  provideTranslationConfig,
+} from '@mgremy/core';
+import { authInterceptor, langInterceptor } from '@mgremy/core/interceptors';
+
+import { provideNgIconsConfig } from '@ng-icons/core';
+
+import { provideHttpClient, withInterceptors, withXsrfConfiguration } from '@angular/common/http';
+import { ApplicationConfig, provideZonelessChangeDetection } from '@angular/core';
+import { provideRouter, withComponentInputBinding } from '@angular/router';
+
+export const appConfig: ApplicationConfig = {
+  providers: [
+    provideZonelessChangeDetection(),
+    provideHttpClient(
+      withXsrfConfiguration({
+        headerName: 'X-XSRF-TOKEN',
+        cookieName: 'XSRF-TOKEN',
+      }),
+      withInterceptors([authInterceptor, langInterceptor])
+    ),
+    provideRouter(routes, withComponentInputBinding()),
+    provideNgIconsConfig({
+      size: '16px',
+    }),
+    provideConfig(),
+    provideThemeConfig(),
+    provideAuthConfig(),
+    provideEnvironmentConfig({ value: environment }),
+    provideStorageConfig(),
+    provideTranslationConfig(),
+  ],
+};

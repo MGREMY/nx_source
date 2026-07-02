@@ -1,0 +1,72 @@
+{
+  "nav": {},
+  "misc": {
+    "actions": "actions",
+    "update": "update",
+    "delete": "delete",
+    "show": "show",
+    "refresh": "refresh",
+    "reset": "reset",
+    "no_data": "no data",
+    "login": "log in",
+    "register": "register",
+    "logout": "log out",
+    "profile": "profile",
+    "value": "value",
+    "open": "open",
+    "deleted_items": "deleted items",
+    "boolean": {
+      "true": "true",
+      "1": "true",
+      "false": "false",
+      "0": "false"
+    },
+    "error": {
+      "error": "error",
+      "name": "name",
+      "message": "message",
+      "unauthorized": "Unauthorized",
+      "no_connection": "No connection"
+    }
+  },
+  "tooltip": {},
+  "pages": {
+    "landing": {
+      "title": "<%= name %>"
+    }
+  },
+  "features": {},
+  "dialog": {},
+  "validation": {},
+  "object": {},
+  "enum": {
+    "filter_request_operator": {
+      "0": "equal",
+      "1": "not equal",
+      "2": "less",
+      "3": "less or equal",
+      "4": "greater",
+      "5": "greater or equal",
+      "6": "contains",
+      "7": "not contains",
+      "8": "start with",
+      "9": "end with"
+    },
+    "filter_request_logic": {
+      "0": "and",
+      "1": "or"
+    }
+  },
+  "models": {
+    "id_token": {
+      "name": "name",
+      "given_name": "given name",
+      "family_name": "family name",
+      "email": "email",
+      "preferred_username": "preferred username",
+      "email_verified": "email verified",
+      "sub": "id",
+      "iss": "issuer"
+    }
+  }
+}

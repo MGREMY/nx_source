@@ -13,7 +13,9 @@ export default [
       parser: tseslint.parser,
       parserOptions: {
         tsconfigRootDir: import.meta.dirname,
-        projectService: ['./tsconfig.json'],
+        projectService: {
+          defaultProject: './tsconfig.json',
+        },
       },
     },
     rules: {

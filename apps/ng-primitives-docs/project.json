@@ -59,7 +59,7 @@
       ]
     },
     "test": {
-      "executor": "@angular/build:unit-test",
+      "executor": "@analogjs/vitest-angular:test",
       "options": {}
     }
   }

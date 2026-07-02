@@ -1,6 +1,7 @@
 /// <reference types="vitest" />
 
 import analog from '@analogjs/platform';
+import angular from '@analogjs/vite-plugin-angular';
 import { globSync } from 'glob';
 import { defineConfig, Plugin } from 'vite';
 
@@ -33,20 +34,32 @@ export default defineConfig(({ mode }) => {
     },
     optimizeDeps: {
       include: [
-        '@angular/common',
-        '@angular/forms',
+        '@angular/**',
         'marked',
         'marked-gfm-heading-id',
         'marked-highlight',
         '@ng-icons/**',
         '@ng-primitives/**',
-        '@mgremy/**/**',
+        '@mgremy/**',
       ],
     },
     build: {
       target: ['es2020'],
     },
+    test: {
+      globals: true,
+      setupFiles: ['src/test-setup.ts'],
+      environment: 'jsdom',
+      include: ['src/**/*.{test,spec}.{js,mjs,cjs,ts,mts,cts,jsx,tsx}'],
+      reporters: ['default'],
+      server: {
+        deps: {
+          inline: [/angular/, /marked/, /ng-icons/, /ng-primitives/, /mgremy/],
+        },
+      },
+    },
     plugins: [
+      angular(),
       analog({
         ssr: false,
         static: true,

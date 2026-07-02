@@ -1,0 +1,23 @@
+{
+  "$schema": "https://json-schema.org/schema",
+  "$id": "Preset",
+  "title": "",
+  "type": "object",
+  "properties": {
+    "ci": {
+      "type": "string",
+      "enum": ["github", "none"],
+      "default": "github",
+      "description": "Add CI to the project.",
+      "x-prompt": {
+        "message": "Add CI to the project ?",
+        "type": "list",
+        "items": [
+          { "value": "github", "label": "github" },
+          { "value": "none", "label": "none" }
+        ]
+      }
+    }
+  },
+  "required": []
+}

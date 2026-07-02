@@ -1,5 +1,5 @@
 import { SidebarComponent } from '../components/sidebar/sidebar';
-import { APP_THEME_SERVICE } from '@mgremy/core';
+import { THEME_SERVICE } from '@mgremy/core';
 import {
   MgnpNavbar,
   MgnpNavbarContent,
@@ -80,7 +80,7 @@ import { RouterLink, RouterOutlet } from '@angular/router';
   providers: [provideIcons({ heroBars4, heroSun, heroMoon })],
 })
 export default class DocumentationPage {
-  protected readonly _themeService = inject(APP_THEME_SERVICE);
+  protected readonly _themeService = inject(THEME_SERVICE);
 
   readonly isSidebarOpen = signal(false);
 }

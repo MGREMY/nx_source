@@ -1,0 +1,72 @@
+{
+  "nav": {},
+  "misc": {
+    "actions": "actions",
+    "update": "mettre à jour",
+    "delete": "supprimer",
+    "show": "afficher",
+    "refresh": "rafraîchir",
+    "reset": "réinitialiser",
+    "no_data": "aucune donnée",
+    "login": "connexion",
+    "register": "inscription",
+    "logout": "déconnexion",
+    "profile": "profil",
+    "value": "valeur",
+    "open": "ouvrir",
+    "deleted_items": "items supprimés",
+    "boolean": {
+      "true": "vrai",
+      "1": "vrai",
+      "false": "faux",
+      "0": "faux"
+    },
+    "error": {
+      "error": "erreur",
+      "name": "nom",
+      "message": "message",
+      "unauthorized": "Non autorisé",
+      "no_connection": "Aucune connexion"
+    }
+  },
+  "tooltip": {},
+  "pages": {
+    "landing": {
+      "title": "<%= name %>"
+    }
+  },
+  "features": {},
+  "dialog": {},
+  "validation": {},
+  "object": {},
+  "enum": {
+    "filter_request_operator": {
+      "0": "égal",
+      "1": "pas égal",
+      "2": "inférieur",
+      "3": "inférieur ou égal",
+      "4": "supérieur",
+      "5": "supérieur ou égal",
+      "6": "contient",
+      "7": "ne contient pas",
+      "8": "commence par",
+      "9": "fini par"
+    },
+    "filter_request_logic": {
+      "0": "and",
+      "1": "or"
+    }
+  },
+  "models": {
+    "id_token": {
+      "name": "nom",
+      "given_name": "prénom",
+      "family_name": "nom de famille",
+      "email": "email",
+      "preferred_username": "nom d'utilisateur préféré",
+      "email_verified": "email vérifié",
+      "sub": "identifiant",
+      "iss": "émetteur"
+    }
+  }
+}

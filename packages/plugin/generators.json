@@ -1,0 +1,15 @@
+{
+  "generators": {
+    "preset": {
+      "factory": "./src/generators/preset/preset",
+      "schema": "./src/generators/preset/schema.json",
+      "description": "preset generator",
+      "x-use-standalone-layout": true
+    },
+    "app": {
+      "factory": "./src/generators/app/app",
+      "schema": "./src/generators/app/schema.json",
+      "description": "app generator"
+    }
+  }
+}

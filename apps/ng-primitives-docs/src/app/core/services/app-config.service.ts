@@ -1,10 +1,10 @@
-import { APP_ENVIRONMENT_SERVICE, IAppConfigService } from '@mgremy/core';
+import { ENVIRONMENT_VALUE, IConfigService } from '@mgremy/core';
 
 import { inject, Injectable } from '@angular/core';
 
 @Injectable({ providedIn: 'root' })
-export class AppConfigService implements IAppConfigService {
-  private readonly _environment = inject(APP_ENVIRONMENT_SERVICE);
+export class AppConfigService implements IConfigService {
+  private readonly _environment = inject(ENVIRONMENT_VALUE);
   private readonly _windowKey = 'runtime_config';
 
   private isValidValue(value: string | undefined): boolean {
