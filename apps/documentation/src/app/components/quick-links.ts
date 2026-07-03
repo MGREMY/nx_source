@@ -18,25 +18,23 @@ import { filter } from 'rxjs/operators';
 @Component({
   selector: 'app-quick-links',
   template: `
-    <div class="w-40 flex-none xl:w-64">
-      <h2 class="text-md mb-2 font-semibold text-ui transition-colors">On this page</h2>
-      <ul>
-        @for (link of links(); track link.id) {
-          <li>
-            <button
-              class="block h-8 cursor-pointer items-center truncate rounded-lg py-1.5 text-ui-secondary hover:text-emphasis transition-colors"
-              [class.pl-4]="link.level === 3"
-              (click)="scrollTo(link.id)">
-              {{ link.text }}
-            </button>
-          </li>
-        }
-      </ul>
-    </div>
+    <h2 class="text-md mb-2 font-semibold text-ui transition-colors">On this page</h2>
+    <ul>
+      @for (link of links(); track link.id) {
+        <li>
+          <button
+            class="block h-8 cursor-pointer items-center truncate rounded-lg py-1.5 text-ui-secondary hover:text-emphasis transition-colors"
+            [class.pl-4]="link.level === 3"
+            (click)="scrollTo(link.id)">
+            {{ link.text }}
+          </button>
+        </li>
+      }
+    </ul>
   `,
   changeDetection: ChangeDetectionStrategy.OnPush,
   host: {
-    class: 'hidden xl:block sticky top-22 w-64 overflow-y-auto',
+    class: 'hidden xl:inline-block h-fit',
   },
 })
 export default class QuickLinks implements AfterViewInit {

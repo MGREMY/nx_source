@@ -1,4 +1,5 @@
 import { AUTH_SERVICE } from '@mgremy/core';
+import { hasProperty } from '@mgremy/core/utils';
 
 import { inject } from '@angular/core';
 import { ActivatedRouteSnapshot, CanActivateFn, Router } from '@angular/router';
@@ -35,14 +36,13 @@ export const authGuard: CanActivateFn = () => {
 export const notAuthGuard: CanActivateFn = (route: ActivatedRouteSnapshot) => {
   const router = inject(Router);
   const authService = inject(AUTH_SERVICE);
-  const guardData = route.data['notAuthGuard'];
+  const guardData: unknown = route.data?.['notAuthGuard'];
 
-  let returnPath: string[];
+  let returnPath: string[] = ['/'];
 
-  if (guardData.returnPath !== undefined && Array.isArray(guardData.returnPath)) {
-    returnPath = guardData.returnPath;
-  } else {
-    returnPath = ['/'];
+  if (hasProperty(guardData, 'returnPath')) {
+    if (Array.isArray(guardData.returnPath)) returnPath = guardData.returnPath;
+    else if (typeof guardData.returnPath === 'string') guardData.returnPath.split('/');
   }
 
   if (authService.isAuthenticated()) {

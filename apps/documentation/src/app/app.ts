@@ -9,15 +9,7 @@ import { NgIcon, provideIcons } from '@ng-icons/core';
 import { heroBars3BottomLeft, heroBars4, heroMoon, heroSun } from '@ng-icons/heroicons/outline';
 
 import { Component, inject, signal } from '@angular/core';
-import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
-import {
-  ActivatedRoute,
-  isActive,
-  Router,
-  RouterLink,
-  RouterLinkActive,
-  RouterOutlet,
-} from '@angular/router';
+import { isActive, Router, RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -50,9 +42,9 @@ import {
             <li>
               <a
                 mgnpNavbarItem
-                [routerLink]="['/', 'documentation']"
+                [routerLink]="['/', 'documentation', 'getting-started', 'introduction']"
                 routerLinkActive
-                [routerLinkActiveOptions]="{ exact: true }">
+                [routerLinkActiveOptions]="{ paths: 'subset' }">
                 Documentation
               </a>
             </li>
@@ -79,10 +71,10 @@ import {
       </nav>
     </header>
 
-    <main class="overflow-scroll mt-16 p-12 md:p-8 relative">
+    <main class="mt-16 p-12 md:p-8 relative">
       @if (_isSidebarDisplayed()) {
         <button
-          class="absolute w-6 h-6 left-4 top-4 inline-flex md:hidden items-center justify-center cursor-pointer"
+          class="absolute w-6 h-6 left-4 top-4 inline-flex xl:hidden items-center justify-center cursor-pointer"
           (click)="toggleSidebar()">
           <ng-icon name="heroBars3BottomLeft" />
         </button>

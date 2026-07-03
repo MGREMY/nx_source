@@ -3,10 +3,16 @@ import { MgnpDialog, MgnpDialogOverlay } from '@mgremy/ng-primitives/dialog';
 
 import { NgIcon, provideIcons } from '@ng-icons/core';
 import {
+  heroAdjustmentsVertical,
+  heroArrowRightOnRectangle,
   heroBookmark,
   heroBookOpen,
+  heroDocumentMagnifyingGlass,
+  heroLockClosed,
   heroPaintBrush,
+  heroQuestionMarkCircle,
   heroRocketLaunch,
+  heroWrenchScrewdriver,
 } from '@ng-icons/heroicons/outline';
 
 import { NgTemplateOutlet } from '@angular/common';
@@ -43,9 +49,7 @@ type Item = {
   selector: 'app-sidebar',
   imports: [NgTemplateOutlet, MgnpDialogOverlay, MgnpDialog, NgIcon, RouterLink, RouterLinkActive],
   template: `
-    <div class="hidden md:block">
-      <ng-container [ngTemplateOutlet]="content" />
-    </div>
+    <ng-container [ngTemplateOutlet]="content" />
 
     <ng-template
       #drawer
@@ -75,10 +79,10 @@ type Item = {
         let-item
         #sectionTemplate>
         <h2 class="flex items-center gap-2 mb-1 text-ui text-lg font-bold transition">
-          @if (_sectionIcons[item.title]) {
+          @if (_itemIcons[item.title]) {
             <ng-icon
               class="transition"
-              [name]="_sectionIcons[item.title]" />
+              [name]="_itemIcons[item.title]" />
           }
           {{ item.title }}
         </h2>
@@ -91,10 +95,11 @@ type Item = {
                   [ngTemplateOutletContext]="{ $implicit: child }" />
               } @else {
                 <a
-                  class="flex items-center gap-2 text-lg mgnp-focus transition"
+                  class="flex items-center hover:bg-ui-hover gap-2 py-1 px-2 text-lg rounded-lg mgnp-focus transition"
                   (click)="toggle(false)"
                   [routerLink]="child.link"
-                  routerLinkActive="text-secondary">
+                  routerLinkActive="text-secondary bg-ui-active"
+                  [routerLinkActiveOptions]="{ exact: true }">
                   @if (child.icon) {
                     <ng-icon
                       class="transition"
@@ -109,10 +114,23 @@ type Item = {
       </ng-template>
     </ng-template>
   `,
-  providers: [provideIcons({ heroRocketLaunch, heroBookmark, heroPaintBrush, heroBookOpen })],
+  providers: [
+    provideIcons({
+      heroRocketLaunch,
+      heroBookmark,
+      heroPaintBrush,
+      heroBookOpen,
+      heroLockClosed,
+      heroDocumentMagnifyingGlass,
+      heroArrowRightOnRectangle,
+      heroQuestionMarkCircle,
+      heroAdjustmentsVertical,
+      heroWrenchScrewdriver,
+    }),
+  ],
   changeDetection: ChangeDetectionStrategy.OnPush,
   host: {
-    class: 'md:w-full md:max-w-1/4',
+    class: 'hidden xl:block',
   },
 })
 export default class AppSidebar {
@@ -120,11 +138,10 @@ export default class AppSidebar {
   private readonly _destroyRef = inject(DestroyRef);
   private readonly _drawer = viewChild<TemplateRef<NgpDialogContext<unknown, unknown>>>('drawer');
 
-  protected readonly _sectionIcons: Record<string, string> = {
+  protected readonly _itemIcons: Record<string, string> = {
     'Getting Started': 'heroRocketLaunch',
-    Components: 'heroBookmark',
-    Extended: 'heroBookmark',
     Core: 'heroBookmark',
+    Services: 'heroAdjustmentsVertical',
   };
 
   protected readonly _items = Object.entries(getRouterLinks())
@@ -244,7 +261,13 @@ export default class AppSidebar {
       return acc;
     }, [])
     .sort((a, b) => {
-      const order = ['core', 'ng-primitives', 'ng-primitives-extended', 'plugin'];
+      const order = [
+        'Getting Started',
+        'Core',
+        'Ng Primitives',
+        'Ng Primitives Extended',
+        'Plugin',
+      ];
 
       return order.indexOf(a.title) - order.indexOf(b.title);
     });
