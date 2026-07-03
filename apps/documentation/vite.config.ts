@@ -15,7 +15,10 @@ function sourceQueryPlugin(): Plugin {
         const source = readFileSync(id.replace('?source', '')).toString();
 
         // Replace the import statement with a string literal
-        code = `export default \`${source.replace(/`/g, '\\`').replace(/\${/g, '\\${')}\`;`;
+        code = `export default \`${source
+          .replace(/\\/g, '\\\\')
+          .replace(/`/g, '\\`')
+          .replace(/\$\{/g, '\\${')}\`;`;
       }
       return code;
     },

@@ -12,9 +12,9 @@ required for some of them.
 
 Each of them must be configured in **app.config.ts**.
 
-- [_ENVIRONMENT_VALUE_](./environment)
-- [_CONFIG_SERVICE_](./config)
-- [_AUTH_SERVICE_](./auth)
-- [_STORAGE_SERVICE_](./storage)
-- [_THEME_SERVICE_](./theme)
-- [_TRANSLATION_SERVICE_](./translation)
+- [ENVIRONMENT_VALUE](/documentation/core/services/environment)
+- [CONFIG_SERVICE](/documentation/core/services/config)
+- [AUTH_SERVICE](/documentation/core/services/auth)
+- [STORAGE_SERVICE](/documentation/core/services/storage)
+- [THEME_SERVICE](/documentation/core/services/theme)
+- [TRANSLATION_SERVICE](/documentation/core/services/translation)

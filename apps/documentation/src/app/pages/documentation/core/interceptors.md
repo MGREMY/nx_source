@@ -12,8 +12,8 @@ sourceUrl: 'https://github.com/mgremy/nx_source/tree/main/packages/core/intercep
 ## authInterceptor
 
 **authInterceptor** provides a standardized way to send **Bearer** tokens throught HTTP requests. In
-order to make it works, the **apiUrl** variable in **CONFIG_SERVICE** must be the same as the
-outgoing HTTP request.
+order to make it works, the HTTP request URL must start with the **apiUrl** variable in
+**CONFIG_SERVICE**.
 
 This is a valid configuration :
 

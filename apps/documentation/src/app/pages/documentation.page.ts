@@ -1,6 +1,5 @@
 import { AppComponent } from '../app';
 import AppSidebar from '../components/app-sidebar';
-import PageNavigation from '../components/page-navigation';
 import QuickLinks from '../components/quick-links';
 import { HeadingAnchor } from '../directives/heading-anchor';
 import { SourceLink } from '../directives/source-link';
@@ -9,7 +8,7 @@ import { Component, inject } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 
 @Component({
-  imports: [AppSidebar, RouterOutlet, PageNavigation, QuickLinks, HeadingAnchor, SourceLink],
+  imports: [AppSidebar, RouterOutlet, QuickLinks, HeadingAnchor, SourceLink],
   template: `
     <div class="flex">
       <app-sidebar
@@ -22,7 +21,6 @@ import { RouterOutlet } from '@angular/router';
         appHeadingAnchor
         appSourceLink>
         <router-outlet />
-        <app-page-navigation />
       </article>
 
       <app-quick-links class="w-1/7 sticky top-18" />

@@ -25,33 +25,19 @@ export const appConfig: ApplicationConfig = {
 This is the default **TRANSLATION_SERVICE** provider :
 
 ```typescript
-export function provideAuthConfig(options?: {
-  service?: Type<IAuthService>;
-  authConfig?: AuthConfig;
+export function provideTranslationConfig(options?: {
+  service?: Type<ITranslationService>;
 }): (Provider | EnvironmentProviders)[] {
-  return [
-    provideOAuthClient(),
-    {
-      provide: AUTH_CONFIG,
-      useFactory: () => {
-        const configService = inject(CONFIG_SERVICE);
+  registerLocaleData(localeFR);
+  registerLocaleData(localeUS);
 
-        return (
-          options?.authConfig ??
-          ({
-            issuer: `${configService.authUrl}/realms/${configService.authRealm}`,
-            clientId: configService.authClientId,
-            responseType: 'code',
-            scope: 'openid offline_access',
-            redirectUri: configService.appUrl,
-            showDebugInformation: false,
-          } as AuthConfig)
-        );
-      },
-      deps: [CONFIG_SERVICE],
-    },
-    { provide: AUTH_SERVICE, useClass: options?.service ?? AuthService },
-    provideAppInitializer(() => inject(AUTH_SERVICE).init()),
+  return [
+    provideHttpClient(),
+    provideTranslateService({
+      loader: provideTranslateHttpLoader({ prefix: '/i18n', suffix: '.json' }),
+    }),
+    { provide: TRANSLATION_SERVICE, useClass: options?.service ?? TranslationService },
+    provideAppInitializer(() => inject(TRANSLATION_SERVICE).init()),
   ];
 }
 ```

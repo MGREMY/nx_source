@@ -19,7 +19,7 @@ It uses **AUTH_SERVICE** to check if the current user is authenticated.
 ### Usage
 
 ```typescript
-export defualt [
+export default [
   {
     path: 'some-strictly-private-path',
     canActivate: [authGuard],
@@ -29,19 +29,19 @@ export defualt [
     canActivate: [notAuthGuard],
     data: {
       notAuthGuard: {
-        returnPath: ['/', 'some', 'return', 'path']
-      }
-    }
+        returnPath: ['/', 'some', 'return', 'path'],
+      },
+    },
   },
   {
     path: 'some-other-strictly-public-route',
     canActivate: [notAuthGuard],
     data: {
       notAuthGuard: {
-        returnPath: '/some/return/path'
-      }
-    }
-  }
+        returnPath: '/some/return/path',
+      },
+    },
+  },
 ] as Routes;
 ```
 
@@ -72,6 +72,8 @@ export default [
         roles: ['admin'],
       },
     },
+  },
+  {
     path: 'some-other-role-protected-route',
     canActivate: [hasRoleGuard],
     data: {

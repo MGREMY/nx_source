@@ -52,10 +52,10 @@ import { isActive, Router, RouterLink, RouterLinkActive, RouterOutlet } from '@a
         </div>
 
         <div class="flex flex-row flex-1 md:flex-none items-center justify-end gap-4">
-          <button class="md:hidden! inline-flex items-center cursor-pointer">
-            <ng-icon
-              name="heroBars4"
-              (click)="navbarContent.toggle()" />
+          <button
+            class="md:hidden! inline-flex items-center cursor-pointer"
+            (click)="navbarContent.toggle()">
+            <ng-icon name="heroBars4" />
           </button>
           <button
             class="inline-flex items-center cursor-pointer"
