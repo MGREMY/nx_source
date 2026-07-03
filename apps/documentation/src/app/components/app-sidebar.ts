@@ -43,56 +43,7 @@ type Item = {
   selector: 'app-sidebar',
   imports: [NgTemplateOutlet, MgnpDialogOverlay, MgnpDialog, NgIcon, RouterLink, RouterLinkActive],
   template: `
-    <ng-template #content>
-      <div class="flex flex-col max-w-full max-h-full p-1 overflow-auto">
-        @for (item of _items; track item.title) {
-          <ng-container
-            [ngTemplateOutlet]="sectionTemplate"
-            [ngTemplateOutletContext]="{ $implicit: item }" />
-        }
-      </div>
-
-      <ng-template
-        #sectionTemplate
-        let-item>
-        @if (item.type === 'section') {
-          <h2 class="mb-1 flex items-center gap-2 text-sm font-semibold transition">
-            @if (_sectionIcons[item.title]) {
-              <ng-icon
-                class="text-base text-ui-secondary transition-colors"
-                [name]="_sectionIcons[item.title]" />
-            }
-            {{ item.title }}
-          </h2>
-          <ul class="mb-2">
-            @for (child of item.children; track child.title) {
-              <li class="ml-2 relative">
-                @if (child.type === 'section') {
-                  <ng-container
-                    [ngTemplateOutlet]="sectionTemplate"
-                    [ngTemplateOutletContext]="{ $implicit: child }" />
-                } @else {
-                  <a
-                    class="flex h-10 items-center text-ui-secondary border-l border-l-ui px-4 mgnp-focus transition-colors"
-                    (click)="toggle(false)"
-                    [routerLink]="child.link"
-                    routerLinkActive="text-secondary! font-medium before:w-0.5 before:bg-secondary-active before:rounded-lg before:h-6 before:absolute before:left-0 before:-translate-x-1/2 before:transition-colors">
-                    @if (child.icon) {
-                      <ng-icon
-                        class="mr-2 text-base text-ui-secondary transition-colors"
-                        [name]="child.icon" />
-                    }
-                    {{ child.title }}
-                  </a>
-                }
-              </li>
-            }
-          </ul>
-        }
-      </ng-template>
-    </ng-template>
-
-    <div class="hidden md:block w-48 xl:w-52">
+    <div class="hidden md:block">
       <ng-container [ngTemplateOutlet]="content" />
     </div>
 
@@ -103,14 +54,66 @@ type Item = {
         mgnpDialogOverlay
         mode="drawer"
         drawerPosition="start">
-        <div mgnpDialog>
+        <div
+          mgnpDialog
+          class="w-full">
           <ng-container [ngTemplateOutlet]="content" />
         </div>
       </div>
     </ng-template>
+
+    <ng-template #content>
+      <div class="flex flex-col max-w-full max-h-full p-1 overflow-auto">
+        @for (item of _items; track item.title) {
+          <ng-container
+            [ngTemplateOutlet]="sectionTemplate"
+            [ngTemplateOutletContext]="{ $implicit: item }" />
+        }
+      </div>
+
+      <ng-template
+        let-item
+        #sectionTemplate>
+        <h2 class="flex items-center gap-2 mb-1 text-ui text-lg font-bold transition">
+          @if (_sectionIcons[item.title]) {
+            <ng-icon
+              class="transition"
+              [name]="_sectionIcons[item.title]" />
+          }
+          {{ item.title }}
+        </h2>
+        <ol class="mb-2">
+          @for (child of item.children; track child.title) {
+            <li class="ml-4">
+              @if (child.type === 'section') {
+                <ng-container
+                  [ngTemplateOutlet]="sectionTemplate"
+                  [ngTemplateOutletContext]="{ $implicit: child }" />
+              } @else {
+                <a
+                  class="flex items-center gap-2 text-lg mgnp-focus transition"
+                  (click)="toggle(false)"
+                  [routerLink]="child.link"
+                  routerLinkActive="text-secondary">
+                  @if (child.icon) {
+                    <ng-icon
+                      class="transition"
+                      [name]="child.icon" />
+                  }
+                  {{ child.title }}
+                </a>
+              }
+            </li>
+          }
+        </ol>
+      </ng-template>
+    </ng-template>
   `,
   providers: [provideIcons({ heroRocketLaunch, heroBookmark, heroPaintBrush, heroBookOpen })],
   changeDetection: ChangeDetectionStrategy.OnPush,
+  host: {
+    class: 'md:w-full md:max-w-1/4',
+  },
 })
 export default class AppSidebar {
   private readonly _ngpDialogManager = inject(NgpDialogManager);
