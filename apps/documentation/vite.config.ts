@@ -26,7 +26,7 @@ function sourceQueryPlugin(): Plugin {
 export default defineConfig(({ mode }) => {
   return {
     root: __dirname,
-    base: '',
+    base: '/',
     resolve: {
       tsconfigPaths: true,
     },
