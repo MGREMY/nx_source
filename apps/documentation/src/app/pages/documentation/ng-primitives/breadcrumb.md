@@ -14,7 +14,7 @@ Help users understand their location within a hierarchy with a fully accessible 
 
 ## Theme
 
-<app-file-content name="breadcrumb"></app-file-content>
+<app-css-content name="breadcrumb"></app-css-content>
 
 ## Attributes
 

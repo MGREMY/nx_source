@@ -14,7 +14,7 @@ A menu is a list of options or commands presented to the user in a dropdown list
 
 ## Theme
 
-<app-file-content name="menu"></app-file-content>
+<app-css-content name="menu"></app-css-content>
 
 ## Attributes
 

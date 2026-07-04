@@ -13,7 +13,7 @@ Display a loader indicator
 
 ## Theme
 
-<app-file-content name="loader" type="ng-primitives-extended-css"></app-file-content>
+<app-css-content name="loader" path="extended"></app-css-content>
 
 ## CSS
 

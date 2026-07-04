@@ -13,7 +13,7 @@ Display a pre-styled table
 
 ## Theme
 
-<app-file-content name="table" type="ng-primitives-extended-css"></app-file-content>
+<app-css-content name="table" path="extended"></app-css-content>
 
 ## CSS
 

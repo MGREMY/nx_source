@@ -14,7 +14,7 @@ Display additional information on hover.
 
 ## Theme
 
-<app-file-content name="tooltip"></app-file-content>
+<app-css-content name="tooltip"></app-css-content>
 
 ## Attributes
 

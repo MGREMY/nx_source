@@ -169,12 +169,12 @@ export class AppExample {
       const match = key.match(nameRegexPattern);
 
       if (match) {
-        const selectedExample = this.examples[key];
-        const selectedSource = this.sources[key];
+        const selectedExample = await this.examples[key]();
+        const selectedSource = await this.sources[key]();
 
-        this.component.set((await selectedExample()) as Type<unknown>);
+        this.component.set(selectedExample as Type<unknown>);
 
-        await codeToHtml((await selectedSource()).trim(), {
+        await codeToHtml(selectedSource.trim(), {
           lang: 'angular-ts',
           themes: {
             light: 'material-theme-lighter',

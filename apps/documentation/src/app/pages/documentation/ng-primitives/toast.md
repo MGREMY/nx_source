@@ -15,7 +15,7 @@ the user.
 
 ## Theme
 
-<app-file-content name="toast"></app-file-content>
+<app-css-content name="toast"></app-css-content>
 
 ## Attributes
 

@@ -14,7 +14,7 @@ Display a series of panels that can be expanded or collapsed.
 
 ## Theme
 
-<app-file-content name="accordion"></app-file-content>
+<app-css-content name="accordion"></app-css-content>
 
 ## Attributes
 

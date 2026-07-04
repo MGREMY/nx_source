@@ -15,7 +15,7 @@ from a list of options while filtering the list based on their input.
 
 ## Theme
 
-<app-file-content name="combobox"></app-file-content>
+<app-css-content name="combobox"></app-css-content>
 
 ## Attributes
 

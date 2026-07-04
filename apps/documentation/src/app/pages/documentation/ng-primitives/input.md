@@ -15,7 +15,7 @@ consistent interaction handling for hover, focus, press and autofill states.
 
 ## Theme
 
-<app-file-content name="input"></app-file-content>
+<app-css-content name="input"></app-css-content>
 
 ## Attributes
 

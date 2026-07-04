@@ -14,7 +14,7 @@ Perform state toggling.
 
 ## Theme
 
-<app-file-content name="switch"></app-file-content>
+<app-css-content name="switch"></app-css-content>
 
 ## Attributes
 

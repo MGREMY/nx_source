@@ -15,7 +15,7 @@ control is used to navigate through a set of data that is split into multiple pa
 
 ## Theme
 
-<app-file-content name="pagination"></app-file-content>
+<app-css-content name="pagination"></app-css-content>
 
 ## Attributes
 

@@ -14,7 +14,7 @@ The Form Field primitive is used to create interactive forms, with state and err
 
 ## Theme
 
-<app-file-content name="form-field"></app-file-content>
+<app-css-content name="form-field"></app-css-content>
 
 ## Attributes
 

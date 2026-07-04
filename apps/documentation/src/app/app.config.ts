@@ -1,5 +1,6 @@
 import { environment } from '../environments/environment';
 import { AppExample } from './components/example';
+import { AppCssContent } from './components/css-content';
 import {
   provideConfig,
   provideEnvironmentConfig,
@@ -59,6 +60,13 @@ export function initializeCustomElements(
         customElements.define(
           'app-example',
           createCustomElement(AppExample, { injector: injector })
+        );
+      }
+
+      if (!customElements.get('app-file-content')) {
+        customElements.define(
+          'app-css-content',
+          createCustomElement(AppCssContent, { injector: injector })
         );
       }
     }

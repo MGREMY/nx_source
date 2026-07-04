@@ -13,7 +13,7 @@ Display a navbar
 
 ## Theme
 
-<app-file-content name="navbar" type="ng-primitives-extended-css"></app-file-content>
+<app-css-content name="navbar" path="extended"></app-css-content>
 
 ## CSS
 

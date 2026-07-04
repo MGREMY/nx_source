@@ -16,7 +16,7 @@ focus.
 
 ## Theme
 
-<app-file-content name="button"></app-file-content>
+<app-css-content name="button"></app-css-content>
 
 ## Attributes
 
