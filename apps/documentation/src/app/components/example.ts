@@ -109,13 +109,13 @@ export class AppExample {
 
   private readonly examples = import.meta.glob('../examples/**/*.ts', {
     import: 'default',
-    eager: true,
+    eager: false,
   });
 
   private readonly sources = import.meta.glob('../examples/**/*.ts', {
     import: 'default',
     query: '?raw',
-    eager: true,
+    eager: false,
   });
 
   readonly name = input.required<string>();
@@ -172,9 +172,9 @@ export class AppExample {
         const selectedExample = this.examples[key];
         const selectedSource = this.sources[key];
 
-        this.component.set(selectedExample as Type<unknown>);
+        this.component.set((await selectedExample()) as Type<unknown>);
 
-        await codeToHtml(selectedSource.trim(), {
+        await codeToHtml((await selectedSource()).trim(), {
           lang: 'angular-ts',
           themes: {
             light: 'material-theme-lighter',
