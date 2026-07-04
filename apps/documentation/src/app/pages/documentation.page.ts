@@ -16,7 +16,7 @@ import { RouterOutlet } from '@angular/router';
         [(isOpen)]="_appComponent.isSidebarOpen" />
 
       <article
-        class="flex flex-col mx-auto prose max-w-full xl:max-w-2xl dark:prose-invert overflow-hidden"
+        class="flex flex-col mx-auto prose w-full max-w-full xl:max-w-2xl dark:prose-invert overflow-hidden"
         data-page-content
         appHeadingAnchor
         appSourceLink>

@@ -9,20 +9,11 @@ import { NgIcon, provideIcons } from '@ng-icons/core';
 import { heroBars3BottomLeft, heroBars4, heroMoon, heroSun } from '@ng-icons/heroicons/outline';
 
 import { Component, inject, signal } from '@angular/core';
-import { isActive, Router, RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
+import { isActive, Router, RouterLink, RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-root',
-  imports: [
-    RouterOutlet,
-    RouterLink,
-    RouterLinkActive,
-    MgnpNavbar,
-    MgnpNavbarContent,
-    MgnpNavbarItem,
-    NgIcon,
-    RouterLinkActive,
-  ],
+  imports: [RouterOutlet, RouterLink, MgnpNavbar, MgnpNavbarContent, MgnpNavbarItem, NgIcon],
   template: `
     <header class="fixed top-0 w-full z-100">
       <nav
@@ -42,9 +33,7 @@ import { isActive, Router, RouterLink, RouterLinkActive, RouterOutlet } from '@a
             <li>
               <a
                 mgnpNavbarItem
-                [routerLink]="['/', 'documentation', 'getting-started', 'introduction']"
-                routerLinkActive
-                [routerLinkActiveOptions]="{ paths: 'subset' }">
+                [routerLink]="['/', 'documentation', 'getting-started', 'introduction']">
                 Documentation
               </a>
             </li>
