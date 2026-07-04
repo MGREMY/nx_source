@@ -15,18 +15,18 @@ In order to configure **AUTH_SERVICE**, you need to call **provideAuthConfig()**
 custom implementation of **IAuthService** and a custom **AuthConf** object, used by
 **angular-oauth2-oidc**.
 
+> The default implementation uses
+> [angular-oauth2-oidc](https://github.com/manfredsteyer/angular-oauth2-oidc) as a backend.
+
 ```typescript
 export const appConfig: ApplicationConfig = {
   providers: [provideAuthConfig()],
 };
 ```
 
-The default implementation uses
-[angular-oauth2-oidc](https://github.com/manfredsteyer/angular-oauth2-oidc) as a backend.
-
-The default **AuthConfig** is built to use keycloak as an SSO.
-
-This is the default **AUTH_SERVICE** provider :
+> The default **AuthConfig** is built to use keycloak as an SSO.
+>
+> This is the default **AUTH_SERVICE** provider :
 
 ```typescript
 export function provideAuthConfig(options?: {

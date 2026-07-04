@@ -14,7 +14,7 @@ and to retrieve it.
 In order to configure **TRANSLATION_SERVICE**, you need to call **provideTranslationConfig()**. You
 can give it a custom **ITranslationService** implementation.
 
-The default implementation uses [ngx-translate](https://ngx-translate.org) as a backend.
+> The default implementation uses [ngx-translate](https://ngx-translate.org) as a backend.
 
 ```typescript
 export const appConfig: ApplicationConfig = {

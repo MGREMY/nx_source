@@ -14,8 +14,6 @@ way to change it.
 In order to configure **THEME_SERVICE**, you need to call **provideThemeConfig()**. You can give it
 a custom **IThemeService** implementation.
 
-The default implementation uses **localStorage** provided by the browser.
-
 ```typescript
 export const appConfig: ApplicationConfig = {
   providers: [provideThemeConfig()],

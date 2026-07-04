@@ -78,7 +78,7 @@ type Item = {
       <ng-template
         let-item
         #sectionTemplate>
-        <h2 class="flex items-center gap-2 mb-1 text-ui text-lg font-bold transition">
+        <h2 class="flex items-center gap-2 mb-1 text-primary text-lg font-bold transition">
           @if (_itemIcons[item.title]) {
             <ng-icon
               class="transition"
@@ -95,7 +95,7 @@ type Item = {
                   [ngTemplateOutletContext]="{ $implicit: child }" />
               } @else {
                 <a
-                  class="flex items-center hover:bg-ui-hover gap-2 py-1 px-2 text-lg rounded-lg mgnp-focus transition"
+                  class="flex items-center font-light hover:bg-ui-hover gap-2 py-1 px-2 text-lg rounded-lg mgnp-focus transition"
                   (click)="toggle(false)"
                   [routerLink]="child.link"
                   routerLinkActive="text-secondary bg-ui-active"

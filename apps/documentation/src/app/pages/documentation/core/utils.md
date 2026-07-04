@@ -26,7 +26,7 @@ export function hasProperty<K extends PropertyKey>(
 
 ## toURLSearchParams
 
-**toURLSearchParams** is a helper giving a generic way to append query parameters to HTML requests.
+**toURLSearchParams** is a helper giving a generic way to append query parameters to HTTP requests.
 You can create handlers and use them in order to add more functionalities.
 
 ### Implementation
