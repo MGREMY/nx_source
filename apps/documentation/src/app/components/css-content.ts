@@ -77,7 +77,7 @@ export class AppCssContent {
     for (const key of styleKeys) {
       // Add css entrypoint for the current component
       if (key.endsWith(`${currentName}.css`)) {
-        detectedTabs.add(`${currentName}.css`);
+        detectedTabs.add(currentName);
         continue;
       }
 
@@ -96,7 +96,7 @@ export class AppCssContent {
       const currentName = this.name();
       if (!currentName) return;
 
-      this.selectedTab.set(`${currentName}.css`);
+      this.selectedTab.set(currentName);
     });
 
     effect(async () => {
@@ -112,7 +112,7 @@ export class AppCssContent {
     const styleKeys = Object.keys(this.styles);
     let nameRegexPattern = new RegExp(`${name}/${tab}\\.css$`);
 
-    if (`${name}.css` === tab) {
+    if (name === tab) {
       nameRegexPattern = new RegExp(`${name}\\.css$`);
     }
 
