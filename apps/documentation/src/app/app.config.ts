@@ -55,7 +55,12 @@ export function initializeCustomElements(
     if (isPlatformBrowser(platform)) {
       const { createCustomElement } = await import('@angular/elements');
 
-      customElements.define('app-example', createCustomElement(AppExample, { injector: injector }));
+      if (!customElements.get('app-example')) {
+        customElements.define(
+          'app-example',
+          createCustomElement(AppExample, { injector: injector })
+        );
+      }
     }
   };
 }

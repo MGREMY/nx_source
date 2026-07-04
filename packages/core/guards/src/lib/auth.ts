@@ -42,7 +42,7 @@ export const notAuthGuard: CanActivateFn = (route: ActivatedRouteSnapshot) => {
 
   if (hasProperty(guardData, 'returnPath')) {
     if (Array.isArray(guardData.returnPath)) returnPath = guardData.returnPath;
-    else if (typeof guardData.returnPath === 'string') guardData.returnPath.split('/');
+    else if (typeof guardData.returnPath === 'string') returnPath = guardData.returnPath.split('/');
   }
 
   if (authService.isAuthenticated()) {
