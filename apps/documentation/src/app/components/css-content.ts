@@ -55,7 +55,7 @@ export class AppCssContent {
     {
       import: 'default',
       query: '?raw',
-      eager: false,
+      eager: true,
     }
   );
 
@@ -120,7 +120,7 @@ export class AppCssContent {
       const match = key.match(nameRegexPattern);
 
       if (match) {
-        const selectedStyle = await this.styles[key]();
+        const selectedStyle = this.styles[key];
 
         await codeToHtml(selectedStyle.trim(), {
           lang: 'postcss',

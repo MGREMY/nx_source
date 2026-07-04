@@ -1,3 +1,5 @@
+import { MgnpLoader } from '@mgremy/ng-primitives-extended/loader';
+
 import { NgIcon, provideIcons } from '@ng-icons/core';
 import { heroArrowPath } from '@ng-icons/heroicons/outline';
 
@@ -19,7 +21,7 @@ import { codeToHtml } from 'shiki';
 
 @Component({
   selector: 'app-example',
-  imports: [NgComponentOutlet, NgClass, NgIcon, FormsModule],
+  imports: [NgComponentOutlet, NgClass, NgIcon, FormsModule, MgnpLoader],
   template: `
     <div class="relative flex flex-col">
       <div class="absolute inset-x-0 top-0 flex items-center justify-between gap-x-2">
@@ -87,7 +89,11 @@ import { codeToHtml } from 'shiki';
         @if (mode() === 'preview') {
           <div
             class="not-prose flex h-full min-h-70 w-full p-8 items-center justify-center rounded-xl border border-ui bg-ui-secondary transition-colors *:contents">
-            <ng-container [ngComponentOutlet]="component()" />
+            @if (isLoading()) {
+              <mgnp-loader />
+            } @else {
+              <ng-container [ngComponentOutlet]="component()" />
+            }
           </div>
         }
 
@@ -120,6 +126,7 @@ export class AppExample {
 
   readonly name = input.required<string>();
 
+  readonly isLoading = signal(false);
   readonly selectedAlternative = signal<string>('');
   readonly component = signal<Type<unknown> | null>(null);
   readonly code = signal<SafeHtml | string>('');
@@ -162,6 +169,8 @@ export class AppExample {
   }
 
   private async loadExample(name: string, alternative: string): Promise<void> {
+    this.isLoading.set(true);
+
     const exampleComponentKeys = Object.keys(this.examples);
     const nameRegexPattern = new RegExp(`${name}/${alternative}\\.example\\.ts$`);
 
@@ -187,6 +196,8 @@ export class AppExample {
         break;
       }
     }
+
+    this.isLoading.set(false);
   }
 
   reloadSelectedExample(): void {
