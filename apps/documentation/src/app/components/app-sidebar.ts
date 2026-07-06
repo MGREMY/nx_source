@@ -12,6 +12,8 @@ import {
   heroPaintBrush,
   heroQuestionMarkCircle,
   heroRocketLaunch,
+  heroSquaresPlus,
+  heroTruck,
   heroWrenchScrewdriver,
 } from '@ng-icons/heroicons/outline';
 
@@ -78,7 +80,7 @@ type Item = {
       <ng-template
         let-item
         #sectionTemplate>
-        <h2 class="flex items-center gap-2 mb-1 text-primary text-lg font-bold transition">
+        <h2 class="flex items-center gap-2 mb-1 text-primary text-base font-bold transition">
           @if (_itemIcons[item.title]) {
             <ng-icon
               class="transition"
@@ -95,7 +97,7 @@ type Item = {
                   [ngTemplateOutletContext]="{ $implicit: child }" />
               } @else {
                 <a
-                  class="flex items-center font-light hover:bg-ui-hover gap-2 py-1 px-2 text-lg rounded-lg mgnp-focus transition"
+                  class="flex items-center font-light hover:bg-ui-hover gap-2 py-1 px-2 text-base rounded-lg mgnp-focus transition"
                   (click)="toggle(false)"
                   [routerLink]="child.link"
                   routerLinkActive="text-secondary bg-ui-active"
@@ -126,6 +128,8 @@ type Item = {
       heroQuestionMarkCircle,
       heroAdjustmentsVertical,
       heroWrenchScrewdriver,
+      heroSquaresPlus,
+      heroTruck,
     }),
   ],
   changeDetection: ChangeDetectionStrategy.OnPush,
@@ -142,6 +146,8 @@ export default class AppSidebar {
     'Getting Started': 'heroRocketLaunch',
     Core: 'heroBookmark',
     Services: 'heroAdjustmentsVertical',
+    'Ng Primitives': 'heroBookmark',
+    Extended: 'heroSquaresPlus',
   };
 
   protected readonly _items = Object.entries(getRouterLinks())

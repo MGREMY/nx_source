@@ -1,6 +1,5 @@
 ---
 name: Pipes
-order: 2
 icon: heroArrowRightOnRectangle
 sourceUrl: 'https://github.com/mgremy/nx_source/tree/main/packages/core/pipes'
 ---

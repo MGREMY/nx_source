@@ -50,7 +50,7 @@ import { codeToHtml } from 'shiki';
 export class AppCssContent {
   private readonly _sanitizer = inject(DomSanitizer);
 
-  private readonly styles = import.meta.glob(
+  private readonly styles = import.meta.glob<string>(
     '../../../../../packages/*/_theme/components/**/*.css',
     {
       import: 'default',
@@ -76,7 +76,7 @@ export class AppCssContent {
 
     for (const key of styleKeys) {
       // Add css entrypoint for the current component
-      if (key.endsWith(`${currentName}.css`)) {
+      if (key.endsWith(`/${currentName}.css`)) {
         detectedTabs.add(currentName);
         continue;
       }

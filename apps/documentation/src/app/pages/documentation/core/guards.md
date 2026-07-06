@@ -1,6 +1,5 @@
 ---
 name: Guards
-order: 0
 icon: heroLockClosed
 sourceUrl: 'https://github.com/mgremy/nx_source/tree/main/packages/core/guards'
 ---

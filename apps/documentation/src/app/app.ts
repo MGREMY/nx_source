@@ -33,7 +33,7 @@ import { isActive, Router, RouterLink, RouterOutlet } from '@angular/router';
             <li>
               <a
                 mgnpNavbarItem
-                [routerLink]="['/', 'documentation', 'getting-started', 'introduction']">
+                [routerLink]="['/', 'documentation', 'ng-primitives', 'introduction']">
                 Documentation
               </a>
             </li>
