@@ -63,7 +63,7 @@ export function initializeCustomElements(
         );
       }
 
-      if (!customElements.get('app-file-content')) {
+      if (!customElements.get('app-css-content')) {
         customElements.define(
           'app-css-content',
           createCustomElement(AppCssContent, { injector: injector })
