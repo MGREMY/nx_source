@@ -25,7 +25,7 @@ import { RouterOutlet } from '@angular/router';
   template: `
     <div class="flex">
       <app-sidebar
-        class="w-1/7"
+        class="w-1/7 sticky top-18"
         [(isOpen)]="_appComponent.isSidebarOpen"
         [tree]="_sidebarTree" />
 

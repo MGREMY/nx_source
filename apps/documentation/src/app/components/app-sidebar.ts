@@ -142,7 +142,7 @@ export class AppSidebarItem {
         drawerPosition="start">
         <div
           mgnpDialog
-          class="w-full">
+          class="w-full overflow-y-auto">
           <ng-container [ngTemplateOutlet]="content" />
         </div>
       </div>
@@ -157,7 +157,7 @@ export class AppSidebarItem {
   providers: [],
   changeDetection: ChangeDetectionStrategy.OnPush,
   host: {
-    class: 'hidden xl:block',
+    class: 'hidden xl:block h-fit',
   },
 })
 export class AppSidebar {
