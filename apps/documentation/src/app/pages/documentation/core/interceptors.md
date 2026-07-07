@@ -20,7 +20,7 @@ apiUrl = https://www.google.com
 HTTP request URL = https://www.google.com/api/v1/users
 ```
 
-Check [here](/documentation/core/services/introduction) to see how to setup **CONFIG_SERVICE**.
+Check [here](/documentation/core/services/config) to see how to setup **CONFIG_SERVICE**.
 
 ### Setup
 
@@ -40,7 +40,7 @@ export const appConfig: ApplicationConfig = {
 **langInterceptor** provides a standardized way to send **Accept-Language** header throught HTTP
 requests. In order to make it works, the **TRANSLATION_SERVICE** must be setup.
 
-Check [here](/documentation/core/services/introduction) to see how to setup **TRANSLATION_SERVICE**.
+Check [here](/documentation/core/services/translation) to see how to setup **TRANSLATION_SERVICE**.
 
 ### Setup
 

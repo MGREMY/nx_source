@@ -20,7 +20,7 @@ npx create-nx-plugin --preset=@mgremy/plugin
 
 ## Angular application
 
-TO generate an NX Angular application, use this command and follow instructions :
+To generate an NX Angular application, use this command and follow instructions :
 
 ```bash
 nx g @mgremy/plugin:app

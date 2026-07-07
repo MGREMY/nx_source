@@ -32,7 +32,7 @@ function myFilter<T>(x: T): boolean {
 **localizedDate** (**LocalizedDatePipe**) takes the same arguments as the Angular's **DatePipe**,
 but instead format the date to the corresponding format using **TRANSLATION_SERVICE**.
 
-Check [here](/documentation/core/services/introduction) to see how to setup **TRANSLATION_SERVICE**.
+Check [here](/documentation/core/services/translation) to see how to setup **TRANSLATION_SERVICE**.
 
 ### Usage
 
