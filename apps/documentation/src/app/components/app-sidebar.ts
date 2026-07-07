@@ -11,11 +11,15 @@ import {
   DestroyRef,
   effect,
   inject,
+  Injector,
   input,
+  linkedSignal,
   model,
+  OnInit,
   signal,
   TemplateRef,
   viewChild,
+  viewChildren,
 } from '@angular/core';
 import { takeUntilDestroyed, toSignal } from '@angular/core/rxjs-interop';
 import { NavigationEnd, Router } from '@angular/router';
@@ -90,6 +94,9 @@ export type SidebarTree = {
 })
 export class AppSidebarItem {
   private readonly _router = inject(Router);
+  private readonly _children = viewChildren(AppSidebarItem);
+
+  readonly item = input.required<SidebarTree>();
 
   readonly currentPath = toSignal(
     this._router.events.pipe(
@@ -98,17 +105,13 @@ export class AppSidebarItem {
     ),
     { initialValue: this._router.url }
   );
-  readonly isOpen = signal(false);
-  readonly isActive = computed(() => {
+  readonly isActive = computed((): boolean => {
     const currentPath = this.currentPath();
-    const path = this.item().path || this.item().tree?.[0].path;
+    const path = this.item().path;
 
-    if (!path) throw new Error('No empty SidebarItem without path is allowed');
-
-    return currentPath.startsWith(path);
+    return path ? currentPath.startsWith(path) : this._children().some((x) => x.isActive());
   });
-
-  readonly item = input.required<SidebarTree>();
+  readonly isOpen = linkedSignal(() => this.isActive());
 
   onClick(): void {
     const children = this.item().tree;
@@ -149,8 +152,11 @@ export class AppSidebarItem {
     </ng-template>
 
     <ng-template #content>
-      @for (child of tree(); track $index) {
-        <app-sidebar-item [item]="child" />
+      @let children = tree();
+      @if (children !== undefined) {
+        @for (child of children; track $index) {
+          <app-sidebar-item [item]="child" />
+        }
       }
     </ng-template>
   `,
@@ -160,25 +166,31 @@ export class AppSidebarItem {
     class: 'hidden xl:block h-fit',
   },
 })
-export class AppSidebar {
+export class AppSidebar implements OnInit {
   private readonly _destroyRef = inject(DestroyRef);
+  private readonly _injector = inject(Injector);
   private readonly _ngpDialogManager = inject(NgpDialogManager);
   private readonly _drawer = viewChild.required<TemplateRef<NgpDialogContext>>('drawer');
 
   readonly isOpen = model<boolean>(false);
-  readonly tree = input<SidebarTree[]>([]);
+  readonly tree = input<SidebarTree[] | undefined>(undefined);
 
-  constructor() {
-    effect(() => {
-      const isOpen = this.isOpen();
-      const drawer = this._drawer();
+  ngOnInit() {
+    effect(
+      () => {
+        const isOpen = this.isOpen();
+        const drawer = this._drawer();
 
-      if (isOpen && drawer) {
-        this._ngpDialogManager
-          .open(drawer)
-          .closed.pipe(takeUntilDestroyed(this._destroyRef))
-          .subscribe(() => this.isOpen.set(false));
-      }
-    });
+        if (this.tree() === undefined) return;
+
+        if (isOpen && drawer) {
+          this._ngpDialogManager
+            .open(drawer)
+            .closed.pipe(takeUntilDestroyed(this._destroyRef))
+            .subscribe(() => this.isOpen.set(false));
+        }
+      },
+      { injector: this._injector }
+    );
   }
 }

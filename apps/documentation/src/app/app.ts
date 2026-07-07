@@ -43,7 +43,7 @@ import { isActive, Router, RouterLink, RouterLinkActive, RouterOutlet } from '@a
               <a
                 mgnpNavbarItem
                 [routerLink]="['/', 'documentation', 'ng-primitives']"
-                routerLinkActive="text-active">
+                routerLinkActive="text-secondary">
                 Documentation
               </a>
             </li>

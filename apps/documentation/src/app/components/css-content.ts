@@ -72,7 +72,7 @@ export class AppCssContent {
 
     const detectedTabs = new Set<string>();
     const styleKeys = Object.keys(this.styles);
-    const nameRegexPattern = new RegExp(`${currentName}/([a-zA-Z0-9-]+)\\.css$`);
+    const nameRegexPattern = new RegExp(`/${currentName}/([a-zA-Z0-9-]+)\\.css$`);
 
     for (const key of styleKeys) {
       // Add css entrypoint for the current component
@@ -110,10 +110,10 @@ export class AppCssContent {
 
   private async loadStyle(name: string, tab: string): Promise<void> {
     const styleKeys = Object.keys(this.styles);
-    let nameRegexPattern = new RegExp(`${name}/${tab}\\.css$`);
+    let nameRegexPattern = new RegExp(`/${name}/${tab}\\.css$`);
 
     if (name === tab) {
-      nameRegexPattern = new RegExp(`${name}\\.css$`);
+      nameRegexPattern = new RegExp(`/${name}\\.css$`);
     }
 
     for (const key of styleKeys) {
