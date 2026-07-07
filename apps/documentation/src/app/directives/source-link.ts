@@ -1,6 +1,6 @@
 import { getRouterLinks } from '../utils/router.helper';
 
-import { lucideCode2 } from '@ng-icons/lucide';
+import { heroCodeBracket } from '@ng-icons/heroicons/outline';
 
 import { isPlatformBrowser } from '@angular/common';
 import {
@@ -166,7 +166,7 @@ export class SourceLink implements AfterViewInit, OnDestroy {
     );
 
     // Add code icon from ng-icons
-    this.renderer.setProperty(anchor, 'innerHTML', lucideCode2);
+    this.renderer.setProperty(anchor, 'innerHTML', heroCodeBracket);
 
     // Append anchor to wrapper, then wrapper to heading
     this.renderer.appendChild(wrapper, anchor);

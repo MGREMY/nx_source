@@ -1,6 +1,6 @@
 import { environment } from '../environments/environment';
-import { AppExample } from './components/example';
 import { AppCssContent } from './components/css-content';
+import { AppExample } from './components/example';
 import {
   provideConfig,
   provideEnvironmentConfig,

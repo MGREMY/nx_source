@@ -18,12 +18,12 @@ import { filter } from 'rxjs/operators';
 @Component({
   selector: 'app-quick-links',
   template: `
-    <h2 class="text-md mb-2 font-semibold text-primary transition-colors">On this page</h2>
+    <h2 class="mb-2 font-semibold text-primary transition-colors">On this page</h2>
     <ul>
       @for (link of links(); track link.id) {
         <li>
           <button
-            class="block h-8 cursor-pointer items-center truncate rounded-lg py-1.5  font-light hover:text-secondary transition-colors"
+            class="block h-8 cursor-pointer items-center truncate rounded-lg py-1.5 font-light hover:text-secondary transition-colors"
             [class.pl-4]="link.level === 3"
             (click)="scrollTo(link.id)">
             {{ link.text }}

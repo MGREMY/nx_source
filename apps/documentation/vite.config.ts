@@ -34,7 +34,7 @@ export default defineConfig(({ mode }) => {
       tsconfigPaths: true,
     },
     build: {
-      target: ['esnext'],
+      target: ['es2020'],
     },
     plugins: [
       analog({

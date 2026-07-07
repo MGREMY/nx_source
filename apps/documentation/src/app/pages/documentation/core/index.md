@@ -1,7 +1,5 @@
 ---
 name: Introduction
-order: 0
-icon: heroBookOpen
 sourceUrl: 'https://github.com/mgremy/nx_source/tree/main/packages/ng-primitives'
 ---
 

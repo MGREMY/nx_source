@@ -7,13 +7,22 @@ import {
 
 import { NgIcon, provideIcons } from '@ng-icons/core';
 import { heroBars3BottomLeft, heroBars4, heroMoon, heroSun } from '@ng-icons/heroicons/outline';
+import { octMarkGithub } from '@ng-icons/octicons';
 
-import { Component, inject, signal } from '@angular/core';
-import { isActive, Router, RouterLink, RouterOutlet } from '@angular/router';
+import { ChangeDetectionStrategy, Component, inject, signal } from '@angular/core';
+import { isActive, Router, RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, RouterLink, MgnpNavbar, MgnpNavbarContent, MgnpNavbarItem, NgIcon],
+  imports: [
+    RouterOutlet,
+    RouterLink,
+    RouterLinkActive,
+    MgnpNavbar,
+    MgnpNavbarContent,
+    MgnpNavbarItem,
+    NgIcon,
+  ],
   template: `
     <header class="fixed top-0 w-full z-100">
       <nav
@@ -33,7 +42,8 @@ import { isActive, Router, RouterLink, RouterOutlet } from '@angular/router';
             <li>
               <a
                 mgnpNavbarItem
-                [routerLink]="['/', 'documentation', 'ng-primitives', 'introduction']">
+                [routerLink]="['/', 'documentation', 'ng-primitives']"
+                routerLinkActive="text-active">
                 Documentation
               </a>
             </li>
@@ -41,11 +51,12 @@ import { isActive, Router, RouterLink, RouterOutlet } from '@angular/router';
         </div>
 
         <div class="flex flex-row flex-1 md:flex-none items-center justify-end gap-4">
-          <button
-            class="md:hidden! inline-flex items-center cursor-pointer"
-            (click)="navbarContent.toggle()">
-            <ng-icon name="heroBars4" />
-          </button>
+          <a
+            class="inline-flex items-center cursor-pointer"
+            href="https://github.com/mgremy/nx_source"
+            target="_blank">
+            <ng-icon name="octMarkGithub" />
+          </a>
           <button
             class="inline-flex items-center cursor-pointer"
             (click)="toggleTheme()">
@@ -55,6 +66,11 @@ import { isActive, Router, RouterLink, RouterOutlet } from '@angular/router';
             <ng-icon
               name="heroMoon"
               class="hidden! dark:inline-block!" />
+          </button>
+          <button
+            class="md:hidden! inline-flex items-center cursor-pointer"
+            (click)="navbarContent.toggle()">
+            <ng-icon name="heroBars4" />
           </button>
         </div>
       </nav>
@@ -72,7 +88,8 @@ import { isActive, Router, RouterLink, RouterOutlet } from '@angular/router';
       <router-outlet />
     </main>
   `,
-  providers: [provideIcons({ heroBars4, heroSun, heroMoon, heroBars3BottomLeft })],
+  providers: [provideIcons({ heroBars4, heroSun, heroMoon, heroBars3BottomLeft, octMarkGithub })],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class AppComponent {
   private readonly _themeService = inject(THEME_SERVICE);
@@ -89,6 +106,6 @@ export class AppComponent {
   }
 
   toggleSidebar(): void {
-    this.isSidebarOpen.update((isOpen) => !isOpen);
+    this.isSidebarOpen.update((x) => !x);
   }
 }

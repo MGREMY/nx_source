@@ -1,6 +1,5 @@
 ---
 name: Resolvers
-icon: heroQuestionMarkCircle
 sourceUrl: 'https://github.com/mgremy/nx_source/tree/main/packages/core/resolvers'
 ---
 

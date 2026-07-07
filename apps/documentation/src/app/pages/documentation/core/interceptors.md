@@ -1,6 +1,5 @@
 ---
 name: Interceptors
-icon: heroDocumentMagnifyingGlass
 sourceUrl: 'https://github.com/mgremy/nx_source/tree/main/packages/core/interceptors'
 ---
 
