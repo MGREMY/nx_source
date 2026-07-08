@@ -16,7 +16,6 @@ import {
   linkedSignal,
   model,
   OnInit,
-  signal,
   TemplateRef,
   viewChild,
   viewChildren,
@@ -152,11 +151,8 @@ export class AppSidebarItem {
     </ng-template>
 
     <ng-template #content>
-      @let children = tree();
-      @if (children !== undefined) {
-        @for (child of children; track $index) {
-          <app-sidebar-item [item]="child" />
-        }
+      @for (child of tree(); track $index) {
+        <app-sidebar-item [item]="child" />
       }
     </ng-template>
   `,
@@ -170,10 +166,11 @@ export class AppSidebar implements OnInit {
   private readonly _destroyRef = inject(DestroyRef);
   private readonly _injector = inject(Injector);
   private readonly _ngpDialogManager = inject(NgpDialogManager);
+
   private readonly _drawer = viewChild.required<TemplateRef<NgpDialogContext>>('drawer');
 
   readonly isOpen = model<boolean>(false);
-  readonly tree = input<SidebarTree[] | undefined>(undefined);
+  readonly tree = input<SidebarTree[]>([]);
 
   ngOnInit() {
     effect(
