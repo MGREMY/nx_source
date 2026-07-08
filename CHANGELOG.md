@@ -1,3 +1,14 @@
+## 0.20.2
+
+### 🩹 Fixes
+
+- package.json don't allow publication
+  ([55dc2b6](https://github.com/MGREMY/nx_source/commit/55dc2b6))
+
+### ❤️ Thank You
+
+- GREMY Miguel @MGREMY
+
 ## 0.20.1
 
 ### 🩹 Fixes
