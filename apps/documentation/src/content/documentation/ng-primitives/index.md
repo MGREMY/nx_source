@@ -29,7 +29,7 @@ pnpm i --save-dev ng-primitives @mgremy/ng-primitives tailwindcss @tailwindcss/p
 
 ## Usage
 
-In your global CSS file, make sure to import bord **TailwindCSS** and **@mgremy/ng-primitives**.
+In your global CSS file, make sure to import both **TailwindCSS** and **@mgremy/ng-primitives**.
 
 ```css
 @import 'tailwindcss';

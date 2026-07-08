@@ -128,7 +128,9 @@ export default class DocumentationPage implements OnInit {
                 ? 1
                 : !a.tree && b.tree && b.tree.length > 0
                   ? -1
-                  : a.order - b.order
+                  : a.order === b.order
+                    ? a.label.localeCompare(b.label)
+                    : a.order - b.order
             ) ?? [];
 
         return;
