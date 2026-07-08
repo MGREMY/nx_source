@@ -27,6 +27,7 @@ import { filter, map } from 'rxjs';
 
 export type SidebarTree = {
   label: string;
+  order: number;
   icon?: string;
 } & (
   | {
@@ -135,7 +136,9 @@ export class AppSidebarItem {
   selector: 'app-sidebar',
   imports: [AppSidebarItem, NgTemplateOutlet, MgnpDialog, MgnpDialogOverlay],
   template: `
-    <ng-container [ngTemplateOutlet]="content" />
+    <div class="hidden xl:inline-block">
+      <ng-container [ngTemplateOutlet]="content" />
+    </div>
 
     <ng-template #drawer>
       <div
@@ -158,9 +161,6 @@ export class AppSidebarItem {
   `,
   providers: [],
   changeDetection: ChangeDetectionStrategy.OnPush,
-  host: {
-    class: 'hidden xl:block h-fit',
-  },
 })
 export class AppSidebar implements OnInit {
   private readonly _destroyRef = inject(DestroyRef);

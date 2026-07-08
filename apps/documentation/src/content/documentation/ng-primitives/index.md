@@ -1,7 +1,6 @@
 ---
-name: Introduction
-order: 0
-icon: heroBookOpen
+name: Index
+icon: heroBookmark
 sourceUrl: 'https://github.com/mgremy/nx_source/tree/main/packages/ng-primitives'
 ---
 

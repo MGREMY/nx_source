@@ -1,7 +1,6 @@
 ---
-name: Introduction
-order: 0
-icon: heroBookOpen
+name: Index
+icon: heroAdjustmentsVertical
 sourceUrl: 'https://github.com/mgremy/nx_source/tree/main/packages/core/src/lib/services'
 ---
 

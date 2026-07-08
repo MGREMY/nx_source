@@ -1,5 +1,6 @@
 ---
 name: Utils
+icon: heroWrenchScrewdriver
 sourceUrl: 'https://github.com/mgremy/nx_source/tree/main/packages/core/utils'
 ---
 

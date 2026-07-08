@@ -1,6 +1,6 @@
 ---
 name: Generator
-order: 0
+icon: heroTruck
 sourceUrl: 'https://github.com/mgremy/nx_source/tree/main/packages/plugin'
 ---
 

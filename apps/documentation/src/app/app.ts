@@ -42,7 +42,7 @@ import { isActive, Router, RouterLink, RouterLinkActive, RouterOutlet } from '@a
             <li>
               <a
                 mgnpNavbarItem
-                [routerLink]="['/', 'documentation', 'ng-primitives']"
+                [routerLink]="['/', 'documentation', 'core']"
                 routerLinkActive="text-secondary">
                 Documentation
               </a>
@@ -76,7 +76,7 @@ import { isActive, Router, RouterLink, RouterLinkActive, RouterOutlet } from '@a
       </nav>
     </header>
 
-    <main class="mt-16 p-12 md:p-8 relative">
+    <main class="mt-16 p-8 relative size-full">
       @if (_isSidebarDisplayed()) {
         <button
           class="absolute w-6 h-6 left-4 top-4 inline-flex xl:hidden items-center justify-center cursor-pointer"
