@@ -1,8 +1,22 @@
+## 0.20.0
+
+### 🚀 Features
+
+- migrate to nx 23 ([37a2241](https://github.com/MGREMY/nx_source/commit/37a2241))
+- add nx generator and preset ([#34](https://github.com/MGREMY/nx_source/pull/34))
+- **ng-primitives:** add breadcrumb component ([#33](https://github.com/MGREMY/nx_source/pull/33))
+
+### ❤️ Thank You
+
+- GREMY Miguel @MGREMY
+- Miguel Gremy @MGREMY
+
 ## 0.19.0
 
 ### 🚀 Features
 
-- **core:** add support for parameter in translate service ([78d67f3](https://github.com/MGREMY/nx_source/commit/78d67f3))
+- **core:** add support for parameter in translate service
+  ([78d67f3](https://github.com/MGREMY/nx_source/commit/78d67f3))
 
 ### ❤️ Thank You
 
@@ -16,7 +30,8 @@ This was a version bump only, there were no code changes.
 
 ### 🚀 Features
 
-- **dialog:** update size for drawer & modal ([f3ebc2d](https://github.com/MGREMY/nx_source/commit/f3ebc2d))
+- **dialog:** update size for drawer & modal
+  ([f3ebc2d](https://github.com/MGREMY/nx_source/commit/f3ebc2d))
 
 ### ❤️ Thank You
 
@@ -26,7 +41,8 @@ This was a version bump only, there were no code changes.
 
 ### 🚀 Features
 
-- **combobox:** create portal directive ([ce89635](https://github.com/MGREMY/nx_source/commit/ce89635))
+- **combobox:** create portal directive
+  ([ce89635](https://github.com/MGREMY/nx_source/commit/ce89635))
 
 ### ❤️ Thank You
 
@@ -46,7 +62,8 @@ This was a version bump only, there were no code changes.
 
 ### 🩹 Fixes
 
-- input name conflicts when multiple components on same element ([b360cb1](https://github.com/MGREMY/nx_source/commit/b360cb1))
+- input name conflicts when multiple components on same element
+  ([b360cb1](https://github.com/MGREMY/nx_source/commit/b360cb1))
 
 ### ❤️ Thank You
 
@@ -60,7 +77,8 @@ This was a version bump only, there were no code changes.
 - rework css implementation ([#26](https://github.com/MGREMY/nx_source/pull/26))
 - add focus style for focusable elements ([#29](https://github.com/MGREMY/nx_source/pull/29))
 - **button:** update styling system ([#28](https://github.com/MGREMY/nx_source/pull/28))
-- **form-field:** add label group and change form component style ([#25](https://github.com/MGREMY/nx_source/pull/25))
+- **form-field:** add label group and change form component style
+  ([#25](https://github.com/MGREMY/nx_source/pull/25))
 - **ng-primitives:** implement host directive ([#21](https://github.com/MGREMY/nx_source/pull/21))
 
 ### ❤️ Thank You
@@ -126,7 +144,8 @@ This was a version bump only, there were no code changes.
 ### 🚀 Features
 
 - **accordion:** add orientation support ([#12](https://github.com/MGREMY/nx_source/pull/12))
-- **accordion:** switch to new tailwindcss variant syntax ([3cb2d6a](https://github.com/MGREMY/nx_source/commit/3cb2d6a))
+- **accordion:** switch to new tailwindcss variant syntax
+  ([3cb2d6a](https://github.com/MGREMY/nx_source/commit/3cb2d6a))
 - **button:** add size parameter ([#10](https://github.com/MGREMY/nx_source/pull/10))
 - **checkbox:** create component and style ([#11](https://github.com/MGREMY/nx_source/pull/11))
 
@@ -139,7 +158,8 @@ This was a version bump only, there were no code changes.
 
 ### 🚀 Features
 
-- **ng-primitives-extended:** add docs and add style to components ([#9](https://github.com/MGREMY/nx_source/pull/9))
+- **ng-primitives-extended:** add docs and add style to components
+  ([#9](https://github.com/MGREMY/nx_source/pull/9))
 
 ### ❤️ Thank You
 
@@ -169,7 +189,8 @@ This was a version bump only, there were no code changes.
 
 ### 🚀 Features
 
-- **ng-primitives-extended:** create separate library ([#8](https://github.com/MGREMY/nx_source/pull/8))
+- **ng-primitives-extended:** create separate library
+  ([#8](https://github.com/MGREMY/nx_source/pull/8))
 
 ### ❤️ Thank You
 
@@ -209,7 +230,8 @@ This was a version bump only, there were no code changes.
 
 ### 🚀 Features
 
-- **ng-primitives:** use only tailwind generation instead of @apply ([5dc6dc8](https://github.com/MGREMY/nx_source/commit/5dc6dc8))
+- **ng-primitives:** use only tailwind generation instead of @apply
+  ([5dc6dc8](https://github.com/MGREMY/nx_source/commit/5dc6dc8))
 - **ng-primitives:** add pagination ([#3](https://github.com/MGREMY/nx_source/pull/3))
 
 ### ❤️ Thank You

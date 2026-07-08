@@ -1,6 +1,6 @@
 {
   "name": "@mgremy/plugin",
-  "version": "0.0.1",
+  "version": "0.20.0",
   "main": "./src/index.js",
   "types": "./src/index.d.ts",
   "dependencies": {
