@@ -18,7 +18,7 @@ import { filter } from 'rxjs/operators';
 @Component({
   selector: 'app-quick-links',
   template: `
-    <div class="hidden xl:inline-block">
+    <div class="hidden xl:inline-block size-full">
       <h2 class="mb-2 font-semibold text-primary transition-colors">On this page</h2>
       <ul>
         @for (link of links(); track link.id) {

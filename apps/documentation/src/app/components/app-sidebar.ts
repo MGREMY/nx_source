@@ -63,9 +63,10 @@ export type SidebarTree = {
         </h2>
       </button>
       @if (item().tree && item().tree!.length > 0) {
-        <button class="cursor-pointer p-1 px-2 rounded-lg hover:bg-ui-hover">
+        <button
+          class="cursor-pointer p-1 px-2 rounded-lg hover:bg-ui-hover"
+          (click)="toggle()">
           <ng-icon
-            (click)="toggle()"
             class="transition"
             [ngClass]="{
               'rotate-180': isOpen(),
@@ -136,7 +137,7 @@ export class AppSidebarItem {
   selector: 'app-sidebar',
   imports: [AppSidebarItem, NgTemplateOutlet, MgnpDialog, MgnpDialogOverlay],
   template: `
-    <div class="hidden xl:inline-block">
+    <div class="hidden xl:inline-block size-full">
       <ng-container [ngTemplateOutlet]="content" />
     </div>
 
