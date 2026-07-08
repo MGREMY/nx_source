@@ -17,7 +17,6 @@ import { ActivatedRouteSnapshot, CanActivateFn } from '@angular/router';
  * @example
   {
     path: 'feat',
-    loadChildren: () => import('./feat/feat.routes'),
     canActivate: [hasRoleGuard],
     data: {
       hasRoleGuard: {
