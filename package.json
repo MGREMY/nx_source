@@ -91,6 +91,7 @@
     "jsdom": "^29.1.1",
     "jsonc-eslint-parser": "^2.1.0",
     "jwt-decode": "^4.0.0",
+    "lint-staged": "^17.0.8",
     "ng-packagr": "^21.1.0",
     "ng-primitives": "^0.120.0",
     "nx": "23.0.0",
