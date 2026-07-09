@@ -1,4 +1,5 @@
 import nx from '@nx/eslint-plugin';
+import jsonParser from 'jsonc-eslint-parser';
 
 export default [
   ...nx.configs['flat/base'],
@@ -26,7 +27,7 @@ export default [
     // Override or add rules here
     rules: {},
     languageOptions: {
-      parser: await import('jsonc-eslint-parser'),
+      parser: jsonParser,
     },
   },
   {
@@ -35,7 +36,7 @@ export default [
       '@nx/nx-plugin-checks': 'error',
     },
     languageOptions: {
-      parser: await import('jsonc-eslint-parser'),
+      parser: jsonParser,
     },
   },
 ];

@@ -1,4 +1,3 @@
-/* eslint-disable @nx/enforce-module-boundaries */
 import baseConfig from '../../eslint.config.mjs';
 import angular from '../../tools/eslint/angular.config.mjs';
 
