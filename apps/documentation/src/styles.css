@@ -16,18 +16,16 @@
 
 @utility doc-content {
   .heading-anchor {
-    display: inline-flex;
-    margin-left: --spacing(2);
-    color: var(--mg-text-placeholder) !important;
+    @apply inline-flex ml-2 text-placeholder! transition-colors;
 
     @variant hover {
-      color: var(--mg-text-accent) !important;
+      @apply text-ui!;
     }
   }
 }
 
 @utility shiki {
-  background-color: color-mix(in srgb, var(--mg-background-ui) 98%, #000) !important;
+  @apply bg-[color-mix(in_srgb,var(--mg-background-ui),#000_2%)]!;
 
   @variant dark {
     .shiki,

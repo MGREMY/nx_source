@@ -39,7 +39,7 @@ import { codeToHtml } from 'shiki';
         }"
         [innerHTML]="style()"></div>
       <button
-        class="w-full items-center h-8 bg-[color-mix(in_srgb,var(--background-color-ui),var(--mg-state-hover-mix))] hover:cursor-pointer transition-colors"
+        class="w-full items-center rounded-b-md h-8 bg-[color-mix(in_srgb,var(--background-color-ui),var(--mg-state-hover-mix))] hover:cursor-pointer transition-colors"
         (click)="isOpen.set(!isOpen())">
         {{ isOpen() === false ? 'Show all' : 'Collapse' }}
       </button>

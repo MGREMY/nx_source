@@ -1,7 +1,10 @@
+@import './breadcrumb/color.css';
+
 @layer components {
   .mgnp-breadcrumb {
     @apply transition;
     @apply block;
+    @apply text-ui/50;
   }
 
   .mgnp-breadcrumb-ellipsis {
@@ -9,14 +12,10 @@
     @apply cursor-pointer;
     @apply inline-flex items-center justify-center;
     @apply w-4 h-4;
-    @apply rounded-lg border-none;
-    @apply bg-none;
-    @apply text-ui/50;
+    @apply rounded-lg border-transparent;
+    @apply bg-transparent;
 
-    @variant data-hover {
-      @apply bg-[color-mix(in_srgb,var(--background-color-ui),var(--mg-state-hover-mix))];
-      @apply text-ui;
-    }
+    @apply data-[mgnp-breadcrumb-ellipsis-color=ui]:mgnp-breadcrumb-ellipsis-color-ui;
 
     ng-icon {
       --ng-icon__size: --spacing(1);
@@ -32,8 +31,8 @@
       @apply cursor-pointer;
       @apply inline-flex items-center justify-center;
       @apply p-0;
-      @apply border-none;
-      @apply bg-none;
+      @apply border-transparent;
+      @apply bg-transparent;
     }
   }
 
@@ -42,10 +41,7 @@
     @apply inline-flex items-center gap-1;
     @apply decoration-0;
 
-    @variant data-hover {
-      @apply bg-[color-mix(in_srgb,var(--background-color-ui),var(--mg-state-hover-mix))];
-      @apply text-ui;
-    }
+    @apply data-[mgnp-breadcrumb-link-color=ui]:mgnp-breadcrumb-link-color-ui;
   }
 
   .mgnp-breadcrumb-list {
@@ -58,7 +54,9 @@
 
   .mgnp-breadcrumb-page {
     @apply transition;
-    @apply font-medium text-ui;
+    @apply font-medium;
+
+    @apply data-[mgnp-breadcrumb-page-color=ui]:mgnp-breadcrumb-page-color-ui;
   }
 
   .mgnp-breadcrumb-separator {

@@ -1,5 +1,11 @@
-import { Directive } from '@angular/core';
-import { NgpBreadcrumbList, provideBreadcrumbListState } from 'ng-primitives/breadcrumbs';
+import { MgnpBreadcrumb } from '../mgnp-breadcrumb/mgnp-breadcrumb';
+
+import { Directive, inject } from '@angular/core';
+import {
+  injectBreadcrumbListState,
+  NgpBreadcrumbList,
+  provideBreadcrumbListState,
+} from 'ng-primitives/breadcrumbs';
 
 @Directive({
   selector: '[mgnpBreadcrumbList]',
@@ -7,6 +13,7 @@ import { NgpBreadcrumbList, provideBreadcrumbListState } from 'ng-primitives/bre
   host: {
     class: 'mgnp-breadcrumb-list mgnp-c-breadcrumb-list',
     'data-mgnp-breadcrumb-list': '',
+    '[attr.data-mgnp-breadcrumb-list-color]': 'breadcrumb.color()',
   },
   hostDirectives: [
     {
@@ -17,4 +24,7 @@ import { NgpBreadcrumbList, provideBreadcrumbListState } from 'ng-primitives/bre
   ],
   exportAs: 'mgnpBreadcrumbList',
 })
-export class MgnpBreadcrumbList {}
+export class MgnpBreadcrumbList {
+  protected readonly state = injectBreadcrumbListState();
+  protected readonly breadcrumb = inject(MgnpBreadcrumb);
+}

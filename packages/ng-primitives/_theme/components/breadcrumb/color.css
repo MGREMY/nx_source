@@ -1,0 +1,15 @@
+@utility mgnp-breadcrumb-ellipsis-color-ui {
+  @variant data-hover {
+    @apply text-ui;
+  }
+}
+
+@utility mgnp-breadcrumb-link-color-ui {
+  @variant data-hover {
+    @apply text-ui;
+  }
+}
+
+@utility mgnp-breadcrumb-page-color-ui {
+  @apply text-ui;
+}

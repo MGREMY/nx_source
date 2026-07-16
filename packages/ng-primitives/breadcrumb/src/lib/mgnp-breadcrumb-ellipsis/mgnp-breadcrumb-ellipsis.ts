@@ -1,5 +1,11 @@
-import { Directive } from '@angular/core';
-import { NgpBreadcrumbEllipsis, provideBreadcrumbEllipsisState } from 'ng-primitives/breadcrumbs';
+import { MgnpBreadcrumb } from '../mgnp-breadcrumb/mgnp-breadcrumb';
+
+import { Directive, inject } from '@angular/core';
+import {
+  injectBreadcrumbEllipsisState,
+  NgpBreadcrumbEllipsis,
+  provideBreadcrumbEllipsisState,
+} from 'ng-primitives/breadcrumbs';
 
 @Directive({
   selector: '[mgnpBreadcrumbEllipsis]',
@@ -7,6 +13,7 @@ import { NgpBreadcrumbEllipsis, provideBreadcrumbEllipsisState } from 'ng-primit
   host: {
     class: 'mgnp-breadcrumb-ellipsis mgnp-c-breadcrumb-ellipsis',
     'data-mgnp-breadcrumb-ellipsis': '',
+    '[attr.data-mgnp-breadcrumb-ellipsis-color]': 'breadcrumb.color()',
   },
   hostDirectives: [
     {
@@ -17,4 +24,7 @@ import { NgpBreadcrumbEllipsis, provideBreadcrumbEllipsisState } from 'ng-primit
   ],
   exportAs: 'mgnpBreadcrumbEllipsis',
 })
-export class MgnpBreadcrumbEllipsis {}
+export class MgnpBreadcrumbEllipsis {
+  protected readonly state = injectBreadcrumbEllipsisState();
+  protected readonly breadcrumb = inject(MgnpBreadcrumb);
+}

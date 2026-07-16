@@ -1,5 +1,13 @@
-import { Directive } from '@angular/core';
-import { NgpBreadcrumbs, provideBreadcrumbsState } from 'ng-primitives/breadcrumbs';
+import { PropertyType } from '@mgremy/ng-primitives';
+
+import { Directive, input } from '@angular/core';
+import {
+  injectBreadcrumbsState,
+  NgpBreadcrumbs,
+  provideBreadcrumbsState,
+} from 'ng-primitives/breadcrumbs';
+
+export type MgnpBreadcrumbColor = PropertyType<'ui'>;
 
 @Directive({
   selector: '[mgnpBreadcrumb]',
@@ -7,6 +15,7 @@ import { NgpBreadcrumbs, provideBreadcrumbsState } from 'ng-primitives/breadcrum
   host: {
     class: 'mgnp-breadcrumb mgnp-c-breadcrumb',
     'data-mgnp-breadcrumb': '',
+    '[attr.data-mgnp-breadcrumb-color]': 'color()',
   },
   hostDirectives: [
     {
@@ -17,4 +26,8 @@ import { NgpBreadcrumbs, provideBreadcrumbsState } from 'ng-primitives/breadcrum
   ],
   exportAs: 'mgnpBreadcrumb',
 })
-export class MgnpBreadcrumb {}
+export class MgnpBreadcrumb {
+  protected readonly state = injectBreadcrumbsState();
+
+  readonly color = input<MgnpBreadcrumbColor>('ui');
+}

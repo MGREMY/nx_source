@@ -30,7 +30,7 @@
   --mg-border-danger: light-dark(var(--color-red-300), var(--color-red-600));
 
   /* Other */
-  --mg-ring-ui: light-dark(var(--color-blue-400), var(--color-blue-800));
+  --mg-ring-ui: light-dark(var(--color-blue-400), var(--color-blue-400));
 
   --mg-state-hover-mix: light-dark(var(--color-black), var(--color-white)) 5%;
   --mg-state-active-mix: light-dark(var(--color-black), var(--color-white)) 15%;
