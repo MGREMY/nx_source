@@ -7,7 +7,7 @@
     @apply inline-block;
     @apply cursor-pointer;
     @apply h-fit;
-    @apply rounded-lg;
+    @apply border rounded-lg;
 
     /* Size */
     @apply data-[mgnp-button-size=xs]:mgnp-button-size-xs;
@@ -26,7 +26,6 @@
     @apply data-[mgnp-button-variant=solid]:data-[mgnp-button-color=warning]:mgnp-button-color-warning-solid;
     @apply data-[mgnp-button-variant=solid]:data-[mgnp-button-color=danger]:mgnp-button-color-danger-solid;
     /* Outline */
-    @apply data-[mgnp-button-variant=outline]:border;
     @apply data-[mgnp-button-variant=outline]:data-[mgnp-button-color=ui]:mgnp-button-color-ui-outline;
     @apply data-[mgnp-button-variant=outline]:data-[mgnp-button-color=primary]:mgnp-button-color-primary-outline;
     @apply data-[mgnp-button-variant=outline]:data-[mgnp-button-color=accent]:mgnp-button-color-accent-outline;

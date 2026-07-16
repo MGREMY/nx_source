@@ -1,33 +1,33 @@
 @theme inline {
   /* Background */
   --mg-background-ui: light-dark(var(--color-stone-50), var(--color-stone-900));
-  --mg-background-primary: light-dark(var(--color-sky-400), var(--color-sky-600));
-  --mg-background-accent: light-dark(var(--color-emerald-400), var(--color-emerald-600));
-  --mg-background-info: light-dark(var(--color-blue-400), var(--color-blue-600));
-  --mg-background-success: light-dark(var(--color-green-400), var(--color-green-600));
-  --mg-background-warning: light-dark(var(--color-yellow-400), var(--color-yellow-600));
-  --mg-background-danger: light-dark(var(--color-red-400), var(--color-red-600));
+  --mg-background-primary: light-dark(var(--color-sky-500), var(--color-sky-500));
+  --mg-background-accent: light-dark(var(--color-emerald-500), var(--color-emerald-500));
+  --mg-background-info: light-dark(var(--color-blue-500), var(--color-blue-500));
+  --mg-background-success: light-dark(var(--color-green-500), var(--color-green-500));
+  --mg-background-warning: light-dark(var(--color-yellow-500), var(--color-yellow-500));
+  --mg-background-danger: light-dark(var(--color-red-500), var(--color-red-500));
 
   /* Text */
   --mg-text-ui: light-dark(var(--color-black), var(--color-white));
-  --mg-text-primary: light-dark(var(--color-sky-800), var(--color-sky-400));
-  --mg-text-accent: light-dark(var(--color-emerald-800), var(--color-emerald-400));
-  --mg-text-info: light-dark(var(--color-blue-800), var(--color-blue-400));
-  --mg-text-success: light-dark(var(--color-green-800), var(--color-green-400));
-  --mg-text-warning: light-dark(var(--color-yellow-800), var(--color-yellow-400));
-  --mg-text-danger: light-dark(var(--color-red-800), var(--color-red-400));
+  --mg-text-primary: light-dark(var(--color-sky-500), var(--color-sky-500));
+  --mg-text-accent: light-dark(var(--color-emerald-500), var(--color-emerald-500));
+  --mg-text-info: light-dark(var(--color-blue-500), var(--color-blue-500));
+  --mg-text-success: light-dark(var(--color-green-500), var(--color-green-500));
+  --mg-text-warning: light-dark(var(--color-yellow-500), var(--color-yellow-500));
+  --mg-text-danger: light-dark(var(--color-red-500), var(--color-red-500));
 
   --mg-text-inverse: light-dark(var(--color-white), var(--color-black));
   --mg-text-placeholder: light-dark(var(--color-stone-400), var(--color-stone-400));
 
   /* Border */
-  --mg-border-ui: light-dark(var(--color-stone-300), var(--color-stone-600));
-  --mg-border-primary: light-dark(var(--color-sky-300), var(--color-sky-600));
-  --mg-border-accent: light-dark(var(--color-emerald-300), var(--color-emerald-600));
-  --mg-border-info: light-dark(var(--color-blue-300), var(--color-blue-600));
-  --mg-border-success: light-dark(var(--color-green-300), var(--color-green-600));
-  --mg-border-warning: light-dark(var(--color-yellow-300), var(--color-yellow-600));
-  --mg-border-danger: light-dark(var(--color-red-300), var(--color-red-600));
+  --mg-border-ui: light-dark(var(--color-stone-300), var(--color-stone-700));
+  --mg-border-primary: light-dark(var(--color-sky-400), var(--color-sky-600));
+  --mg-border-accent: light-dark(var(--color-emerald-400), var(--color-emerald-600));
+  --mg-border-info: light-dark(var(--color-blue-400), var(--color-blue-600));
+  --mg-border-success: light-dark(var(--color-green-400), var(--color-green-600));
+  --mg-border-warning: light-dark(var(--color-yellow-400), var(--color-yellow-600));
+  --mg-border-danger: light-dark(var(--color-red-400), var(--color-red-600));
 
   /* Other */
   --mg-ring-ui: light-dark(var(--color-blue-400), var(--color-blue-400));

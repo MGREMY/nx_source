@@ -1,83 +1,41 @@
-@utility mgnp-checkbox-color-ui {
-  @apply text-ui border-ui;
+@utility mgnp-checkbox-state-* {
+  @variant not-data-pristine:data-invalid {
+    @apply border-danger;
+  }
 
   @variant data-checked {
-    @apply bg-[color-mix(in_srgb,var(--background-color-ui),var(--mg-state-active-mix))] border-transparent;
+    @apply bg-[color-mix(in_srgb,--value(--background-color-*),var(--mg-state-active-mix))] border-transparent;
   }
 
   @variant data-indeterminate {
-    @apply bg-[color-mix(in_srgb,var(--background-color-ui),var(--mg-state-active-mix))]/50 border-transparent;
+    @apply bg-[color-mix(in_srgb,--value(--background-color-*),var(--mg-state-active-mix))]/50 border-transparent;
   }
+}
+
+@utility mgnp-checkbox-color-ui {
+  @apply text-inverse border-ui mgnp-checkbox-state-ui;
 }
 
 @utility mgnp-checkbox-color-primary {
-  @apply text-inverse border-primary;
-
-  @variant data-checked {
-    @apply bg-[color-mix(in_srgb,var(--background-color-primary),var(--mg-state-active-mix))] border-transparent;
-  }
-
-  @variant data-indeterminate {
-    @apply bg-[color-mix(in_srgb,var(--background-color-primary),var(--mg-state-active-mix))]/50 border-transparent;
-  }
+  @apply text-inverse border-primary mgnp-checkbox-state-primary;
 }
 
 @utility mgnp-checkbox-color-accent {
-  @apply text-inverse border-accent;
-
-  @variant data-checked {
-    @apply bg-[color-mix(in_srgb,var(--background-color-accent),var(--mg-state-active-mix))] border-transparent;
-  }
-
-  @variant data-indeterminate {
-    @apply bg-[color-mix(in_srgb,var(--background-color-accent),var(--mg-state-active-mix))]/50 border-transparent;
-  }
+  @apply text-inverse border-accent mgnp-checkbox-state-accent;
 }
 
 @utility mgnp-checkbox-color-info {
-  @apply text-inverse border-info;
-
-  @variant data-checked {
-    @apply bg-[color-mix(in_srgb,var(--background-color-info),var(--mg-state-active-mix))] border-transparent;
-  }
-
-  @variant data-indeterminate {
-    @apply bg-[color-mix(in_srgb,var(--background-color-info),var(--mg-state-active-mix))]/50 border-transparent;
-  }
+  @apply text-inverse border-info mgnp-checkbox-state-info;
 }
 
 @utility mgnp-checkbox-color-success {
-  @apply text-inverse border-success;
-
-  @variant data-checked {
-    @apply bg-[color-mix(in_srgb,var(--background-color-success),var(--mg-state-active-mix))] border-transparent;
-  }
-
-  @variant data-indeterminate {
-    @apply bg-[color-mix(in_srgb,var(--background-color-success),var(--mg-state-active-mix))]/50 border-transparent;
-  }
+  @apply text-inverse border-success mgnp-checkbox-state-success;
 }
 
 @utility mgnp-checkbox-color-warning {
-  @apply text-inverse border-warning;
-
-  @variant data-checked {
-    @apply bg-[color-mix(in_srgb,var(--background-color-warning),var(--mg-state-active-mix))] border-transparent;
-  }
-
-  @variant data-indeterminate {
-    @apply bg-[color-mix(in_srgb,var(--background-color-warning),var(--mg-state-active-mix))]/50 border-transparent;
-  }
+  @apply text-inverse border-warning mgnp-checkbox-state-warning;
 }
 
 @utility mgnp-checkbox-color-danger {
-  @apply text-inverse border-danger;
-
-  @variant data-checked {
-    @apply bg-[color-mix(in_srgb,var(--background-color-danger),var(--mg-state-active-mix))] border-transparent;
-  }
-
-  @variant data-indeterminate {
-    @apply bg-[color-mix(in_srgb,var(--background-color-danger),var(--mg-state-active-mix))]/50 border-transparent;
-  }
+  @apply text-inverse border-danger mgnp-checkbox-state-danger;
 }

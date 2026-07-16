@@ -1,4 +1,5 @@
 import { MgnpLoader } from '@mgremy/ng-primitives-extended/loader';
+import { MgnpButton } from '@mgremy/ng-primitives/button';
 
 import { NgIcon, provideIcons } from '@ng-icons/core';
 import { heroArrowPath } from '@ng-icons/heroicons/outline';
@@ -21,7 +22,7 @@ import { codeToHtml } from 'shiki';
 
 @Component({
   selector: 'app-example',
-  imports: [NgComponentOutlet, NgClass, NgIcon, FormsModule, MgnpLoader],
+  imports: [NgComponentOutlet, NgClass, NgIcon, FormsModule, MgnpLoader, MgnpButton],
   template: `
     <div class="relative flex flex-col">
       <div class="absolute inset-x-0 top-0 flex items-center justify-between gap-x-2">
@@ -77,8 +78,10 @@ import { codeToHtml } from 'shiki';
             </div>
           }
           <button
+            mgnpButton
+            size="lg"
             (click)="reloadSelectedExample()"
-            class="flex items-center rounded-md bg-ui mgnp-bg-state-ui text-ui border-ui transition-colors border px-3 py-2 shadow-xs hover:cursor-pointer outline-hidden">
+            class="flex items-center">
             <span class="sr-only">reload</span>
             <ng-icon name="heroArrowPath" />
           </button>

@@ -9,10 +9,6 @@
     @apply text-base;
     @apply cursor-pointer;
 
-    @variant not-data-pristine:data-invalid {
-      @apply border-danger;
-    }
-
     /* Sizes */
     @apply data-[mgnp-checkbox-size=xs]:mgnp-checkbox-size-xs;
     @apply data-[mgnp-checkbox-size=sm]:mgnp-checkbox-size-sm;

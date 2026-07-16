@@ -1,30 +1,30 @@
 /* Solid */
 @utility mgnp-button-color-ui-solid {
-  @apply bg-ui mgnp-bg-state-ui;
+  @apply bg-ui border-ui mgnp-bg-state-ui;
 }
 
 @utility mgnp-button-color-primary-solid {
-  @apply bg-primary mgnp-bg-state-primary text-inverse;
+  @apply bg-primary border-primary mgnp-bg-state-primary text-inverse;
 }
 
 @utility mgnp-button-color-accent-solid {
-  @apply bg-accent mgnp-bg-state-accent text-inverse;
+  @apply bg-accent border-accent mgnp-bg-state-accent text-inverse;
 }
 
 @utility mgnp-button-color-info-solid {
-  @apply bg-info mgnp-bg-state-info text-inverse;
+  @apply bg-info border-info mgnp-bg-state-info text-inverse;
 }
 
 @utility mgnp-button-color-success-solid {
-  @apply bg-success mgnp-bg-state-success text-inverse;
+  @apply bg-success border-success mgnp-bg-state-success text-inverse;
 }
 
 @utility mgnp-button-color-warning-solid {
-  @apply bg-warning mgnp-bg-state-warning text-inverse;
+  @apply bg-warning border-warning mgnp-bg-state-warning text-inverse;
 }
 
 @utility mgnp-button-color-danger-solid {
-  @apply bg-danger mgnp-bg-state-danger text-inverse;
+  @apply bg-danger border-danger mgnp-bg-state-danger text-inverse;
 }
 
 /* Outline */

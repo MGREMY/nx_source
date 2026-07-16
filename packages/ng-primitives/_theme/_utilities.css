@@ -7,23 +7,19 @@
 }
 
 @utility mgnp-bg-state-* {
-  @variant hover,data-hover {
-    background-color: color-mix(in srgb, --value(--background-color- *), var(--mg-state-hover-mix));
+  @variant data-hover {
+    @apply bg-[color-mix(in_srgb,--value(--background-color-*),var(--mg-state-hover-mix))];
   }
 
   @variant data-press {
-    background-color: color-mix(
-      in srgb,
-      --value(--background-color- *),
-      var(--mg-state-active-mix)
-    );
+    @apply bg-[color-mix(in_srgb,--value(--background-color-*),var(--mg-state-active-mix))];
   }
 
-  @variant disabled,data-disabled {
+  @variant data-disabled {
     @apply opacity-50 cursor-default;
   }
 }
 
 @utility bg-secondary-* {
-  background-color: color-mix(in srgb, --value(--background-color-*), light-dark(#000, #fff) 5%);
+  @apply bg-[color-mix(in_srgb,--value(--background-color-*),light-dark(#000,#fff)_5%)];
 }
