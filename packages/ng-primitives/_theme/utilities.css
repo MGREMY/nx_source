@@ -1,7 +1,0 @@
-@utility mgnp-focus {
-  @apply outline-(--mg-ring-ui) -outline-offset-1;
-
-  @variant data-focus,data-focus-visible {
-    @apply outline;
-  }
-}

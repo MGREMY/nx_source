@@ -1,0 +1,29 @@
+@utility mgnp-focus {
+  @apply outline-(--mg-ring-ui) -outline-offset-1;
+
+  @variant focus-visible,data-focus-visible {
+    @apply outline;
+  }
+}
+
+@utility mgnp-bg-state-* {
+  @variant hover,data-hover {
+    background-color: color-mix(in srgb, --value(--background-color- *), var(--mg-state-hover-mix));
+  }
+
+  @variant data-press {
+    background-color: color-mix(
+      in srgb,
+      --value(--background-color- *),
+      var(--mg-state-active-mix)
+    );
+  }
+
+  @variant disabled,data-disabled {
+    @apply opacity-50 cursor-default;
+  }
+}
+
+@utility bg-secondary-* {
+  background-color: color-mix(in srgb, --value(--background-color-*), #000 5%);
+}
