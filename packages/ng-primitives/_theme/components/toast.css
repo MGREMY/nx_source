@@ -10,7 +10,7 @@
     @apply px-3 py-4;
     @apply bg-ui;
     @apply border border-ui rounded-md;
-    @apply box-border shadow-ui;
+    @apply box-border shadow-sm;
 
     @variant data-enter {
       --y: translateY(0);

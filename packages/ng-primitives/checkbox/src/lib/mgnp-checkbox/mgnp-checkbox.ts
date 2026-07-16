@@ -7,7 +7,7 @@ import { injectCheckboxState, NgpCheckbox, provideCheckboxState } from 'ng-primi
 import { ChangeFn, provideValueAccessor, TouchedFn } from 'ng-primitives/utils';
 
 export type MgnpCheckboxColor = PropertyType<
-  'ui' | 'primary' | 'secondary' | 'info' | 'success' | 'warning' | 'danger'
+  'ui' | 'primary' | 'accent' | 'info' | 'success' | 'warning' | 'danger'
 >;
 
 export type MgnpCheckboxSize = PropertyType<'xs' | 'sm' | 'md' | 'lg' | 'xl'>;

@@ -11,10 +11,10 @@
     @apply w-4 h-4;
     @apply rounded-lg border-none;
     @apply bg-none;
-    @apply text-ui-tertiary;
+    @apply text-ui/50;
 
     @variant data-hover {
-      @apply bg-ui-hover;
+      @apply bg-[color-mix(in_srgb,var(--background-color-ui),var(--mg-state-hover-mix))];
       @apply text-ui;
     }
 
@@ -43,7 +43,7 @@
     @apply decoration-0;
 
     @variant data-hover {
-      @apply bg-ui-hover;
+      @apply bg-[color-mix(in_srgb,var(--background-color-ui),var(--mg-state-hover-mix))];
       @apply text-ui;
     }
   }
@@ -53,7 +53,7 @@
     @apply flex flex-wrap items-center gap-2;
     @apply list-none;
     @apply m-0 p-0;
-    @apply text-sm text-ui-tertiary;
+    @apply text-sm text-ui/50;
   }
 
   .mgnp-breadcrumb-page {
@@ -65,7 +65,7 @@
     @apply transition;
     @apply inline-flex items-center;
     @apply p-0;
-    @apply text-ui-tertiary;
+    @apply text-ui/50;
 
     ng-icon {
       --ng-icon__size: --spacing(1);

@@ -23,7 +23,7 @@
     /* Colors */
     @apply data-[mgnp-checkbox-color=ui]:mgnp-checkbox-color-ui;
     @apply data-[mgnp-checkbox-color=primary]:mgnp-checkbox-color-primary;
-    @apply data-[mgnp-checkbox-color=secondary]:mgnp-checkbox-color-secondary;
+    @apply data-[mgnp-checkbox-color=accent]:mgnp-checkbox-color-accent;
     @apply data-[mgnp-checkbox-color=info]:mgnp-checkbox-color-info;
     @apply data-[mgnp-checkbox-color=success]:mgnp-checkbox-color-success;
     @apply data-[mgnp-checkbox-color=warning]:mgnp-checkbox-color-warning;

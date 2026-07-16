@@ -23,26 +23,25 @@
     @apply rounded-lg;
     @apply bg-ui;
     @apply text-ui text-sm font-medium;
-    @apply shadow-button;
+    @apply shadow-md;
 
     @variant not-data-disabled:not-data-selected:data-hover {
-      @apply bg-ui-hover;
+      @apply bg-[color-mix(in_srgb,var(--background-color-ui),var(--mg-state-hover-mix))];
     }
 
     @variant not-data-disabled:not-data-selected:data-press {
-      @apply bg-ui-active;
+      @apply bg-[color-mix(in_srgb,var(--background-color-ui),var(--mg-state-active-mix))];
     }
 
     @variant data-disabled {
-      @apply bg-ui-disabled;
-      @apply text-ui-disabled;
+      @apply bg-ui/33;
+      @apply text-ui/33;
       @apply shadow-none;
       @apply cursor-default;
     }
 
     @variant data-selected {
-      @apply bg-ui-inverse;
-      @apply text-inverse;
+      @apply bg-[color-mix(in_srgb,var(--background-color-ui),var(--mg-state-active-mix))];
     }
   }
 }

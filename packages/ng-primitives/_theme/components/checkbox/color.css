@@ -2,11 +2,11 @@
   @apply text-ui border-ui;
 
   @variant data-checked {
-    @apply bg-ui-active border-transparent;
+    @apply bg-[color-mix(in_srgb,var(--background-color-ui),var(--mg-state-active-mix))] border-transparent;
   }
 
   @variant data-indeterminate {
-    @apply bg-ui-active/50 border-transparent;
+    @apply bg-[color-mix(in_srgb,var(--background-color-ui),var(--mg-state-active-mix))]/50 border-transparent;
   }
 }
 
@@ -14,23 +14,23 @@
   @apply text-inverse border-primary;
 
   @variant data-checked {
-    @apply bg-primary-active border-transparent;
+    @apply bg-[color-mix(in_srgb,var(--background-color-primary),var(--mg-state-active-mix))] border-transparent;
   }
 
   @variant data-indeterminate {
-    @apply bg-primary-active/50 border-transparent;
+    @apply bg-[color-mix(in_srgb,var(--background-color-primary),var(--mg-state-active-mix))]/50 border-transparent;
   }
 }
 
-@utility mgnp-checkbox-color-secondary {
-  @apply text-inverse border-secondary;
+@utility mgnp-checkbox-color-accent {
+  @apply text-inverse border-accent;
 
   @variant data-checked {
-    @apply bg-secondary-active border-transparent;
+    @apply bg-[color-mix(in_srgb,var(--background-color-accent),var(--mg-state-active-mix))] border-transparent;
   }
 
   @variant data-indeterminate {
-    @apply bg-secondary-active/50 border-transparent;
+    @apply bg-[color-mix(in_srgb,var(--background-color-accent),var(--mg-state-active-mix))]/50 border-transparent;
   }
 }
 
@@ -38,11 +38,11 @@
   @apply text-inverse border-info;
 
   @variant data-checked {
-    @apply bg-info-active border-transparent;
+    @apply bg-[color-mix(in_srgb,var(--background-color-info),var(--mg-state-active-mix))] border-transparent;
   }
 
   @variant data-indeterminate {
-    @apply bg-info-active/50 border-transparent;
+    @apply bg-[color-mix(in_srgb,var(--background-color-info),var(--mg-state-active-mix))]/50 border-transparent;
   }
 }
 
@@ -50,11 +50,11 @@
   @apply text-inverse border-success;
 
   @variant data-checked {
-    @apply bg-success-active border-transparent;
+    @apply bg-[color-mix(in_srgb,var(--background-color-success),var(--mg-state-active-mix))] border-transparent;
   }
 
   @variant data-indeterminate {
-    @apply bg-success-active/50 border-transparent;
+    @apply bg-[color-mix(in_srgb,var(--background-color-success),var(--mg-state-active-mix))]/50 border-transparent;
   }
 }
 
@@ -62,11 +62,11 @@
   @apply text-inverse border-warning;
 
   @variant data-checked {
-    @apply bg-warning-active border-transparent;
+    @apply bg-[color-mix(in_srgb,var(--background-color-warning),var(--mg-state-active-mix))] border-transparent;
   }
 
   @variant data-indeterminate {
-    @apply bg-warning-active/50 border-transparent;
+    @apply bg-[color-mix(in_srgb,var(--background-color-warning),var(--mg-state-active-mix))]/50 border-transparent;
   }
 }
 
@@ -74,10 +74,10 @@
   @apply text-inverse border-danger;
 
   @variant data-checked {
-    @apply bg-danger-active border-transparent;
+    @apply bg-[color-mix(in_srgb,var(--background-color-danger),var(--mg-state-active-mix))] border-transparent;
   }
 
   @variant data-indeterminate {
-    @apply bg-danger-active/50 border-transparent;
+    @apply bg-[color-mix(in_srgb,var(--background-color-danger),var(--mg-state-active-mix))]/50 border-transparent;
   }
 }

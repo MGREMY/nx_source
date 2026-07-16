@@ -2,7 +2,7 @@
   .mgnp-description {
     @apply transition;
     @apply inline;
-    @apply text-ui-secondary;
+    @apply text-ui/75;
     @apply text-sm;
   }
 
@@ -75,7 +75,7 @@
     @apply inline-block;
     @apply text-nowrap;
     @apply p-2;
-    @apply bg-ui-secondary;
+    @apply bg-ui/75;
     @apply border-y border-ui;
 
     ng-icon {
@@ -88,7 +88,7 @@
     @apply inline-block;
     @apply p-0;
     @apply border-ui;
-    @apply text-ui-secondary font-semibold;
+    @apply text-ui/75 font-semibold;
 
     @variant md {
       @apply text-nowrap;

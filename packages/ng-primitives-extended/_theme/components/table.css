@@ -20,7 +20,7 @@
   .mgnp-table-body {
     @apply transition;
     @variant not-last {
-      @apply border-b border-b-ui-secondary;
+      @apply border-b border-b-ui/75;
     }
 
     @variant * {

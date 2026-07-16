@@ -33,11 +33,11 @@
     @apply text-sm;
 
     @variant data-hover {
-      @apply bg-ui-hover;
+      @apply bg-[color-mix(in_srgb,var(--background-color-ui),var(--mg-state-hover-mix))];
     }
 
     @variant data-press {
-      @apply bg-ui-active;
+      @apply bg-[color-mix(in_srgb,var(--background-color-ui),var(--mg-state-active-mix))];
     }
 
     @variant data-disabled {

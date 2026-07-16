@@ -5,7 +5,7 @@
     @apply transition;
     @apply bg-ui;
     @apply border border-ui rounded-lg;
-    @apply shadow-ui;
+    @apply shadow-sm;
 
     @apply data-[orientation=vertical]:mgnp-accordion-orientation-vertical;
     @apply data-[orientation=horizontal]:mgnp-accordion-orientation-horizontal;

@@ -5,8 +5,7 @@
     @apply max-w-64;
     @apply py-3 px-3;
     @apply border-none rounded-lg;
-    @apply bg-ui-inverse;
-    @apply text-inverse text-xs;
+    @apply text-xs;
 
     transform-origin: var(--ngp-tooltip-transform-origin);
     animation: mg-show var(--default-transition-duration) var(--default-transition-timing-function);
@@ -23,7 +22,7 @@
     @apply pointer-events-none;
     @apply w-2 h-2;
     @apply rounded-xs;
-    @apply bg-ui-inverse;
+    /*@apply bg-ui-inverse;*/
 
     @variant data-[placement=top] {
       @apply top-[calc(100%-5px)];

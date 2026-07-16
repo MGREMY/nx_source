@@ -162,7 +162,7 @@ export class SourceLink implements AfterViewInit, OnDestroy {
     this.renderer.setAttribute(
       anchor,
       'class',
-      'inline-flex items-center justify-center w-7 h-7 text-placeholder hover:text-secondary [&>svg]:w-5 [&>svg]:h-5'
+      'inline-flex items-center justify-center w-7 h-7 text-placeholder hover:text-accent [&>svg]:w-5 [&>svg]:h-5'
     );
 
     // Add code icon from ng-icons
@@ -204,7 +204,7 @@ export class SourceLink implements AfterViewInit, OnDestroy {
     this.renderer.setAttribute(
       anchor,
       'class',
-      'inline-flex items-center justify-center w-7 h-7 text-placeholder hover:text-secondary [&>svg]:w-5 [&>svg]:h-5'
+      'inline-flex items-center justify-center w-7 h-7 text-placeholder hover:text-accent [&>svg]:w-5 [&>svg]:h-5'
     );
 
     // Add code icon from ng-icons

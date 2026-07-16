@@ -5,7 +5,7 @@
     @apply transition;
     @apply bg-ui;
     @apply p-6;
-    @apply shadow-button;
+    @apply shadow-md;
 
     @apply data-[mgnp-dialog-mode=modal]:mgnp-dialog-mode-modal;
     @apply data-[mgnp-dialog-mode=drawer]:mgnp-dialog-mode-drawer;
@@ -22,7 +22,7 @@
     @apply transition;
     @apply m-0;
     @apply text-base;
-    @apply text-ui-disabled;
+    @apply text-ui/75;
   }
 
   .mgnp-dialog-overlay {

@@ -4,12 +4,12 @@
     @apply relative;
     @apply w-10 h-6;
     @apply p-0;
-    @apply bg-ui-secondary;
+    @apply bg-ui/75;
     @apply border border-ui rounded-full;
 
     @variant data-checked {
-      @apply bg-ui-active;
-      @apply border-ui-secondary;
+      @apply bg-[color-mix(in_srgb,var(--background-color-ui),var(--mg-state-active-mix))];
+      @apply border-ui/75;
     }
   }
 
@@ -20,7 +20,7 @@
     @apply ml-1;
     @apply bg-ui;
     @apply rounded-full;
-    @apply shadow-button;
+    @apply shadow-md;
 
     @variant data-checked {
       @apply translate-x-4;

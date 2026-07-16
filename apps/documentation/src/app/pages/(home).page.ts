@@ -13,23 +13,23 @@ import { RouterLink } from '@angular/router';
           <h1 class="font-bold text-4xl sm:text-6xl text-primary">@mgremy</h1>
           <ul class="list-inside">
             <li>
-              <span class="text-secondary font-semibold">
+              <span class="text-accent font-semibold">
                 {{ componentCount }}+ styled components
               </span>
               - Built on headless
               <span class="italic font-bold">ng-primitives</span>
             </li>
             <li>
-              <span class="text-secondary font-semibold">Tailwindcss 4</span>
+              <span class="text-accent font-semibold">Tailwindcss 4</span>
               - Fully themed with CSS custom properties
             </li>
             <li>
-              <span class="text-secondary font-semibold">Accessible by default</span>
+              <span class="text-accent font-semibold">Accessible by default</span>
               - WAI-ARIA compliant via
               <span class="italic font-bold">ng-primitives</span>
             </li>
             <li>
-              <span class="text-secondary font-semibold">Zoneless ready</span>
+              <span class="text-accent font-semibold">Zoneless ready</span>
               - Build for Angular's future
             </li>
           </ul>
@@ -45,7 +45,7 @@ import { RouterLink } from '@angular/router';
             <a
               mgnpButton
               size="lg"
-              color="secondary"
+              color="accent"
               variant="outline"
               href="https://github.com/MGREMY/nx_source"
               target="_blank"
@@ -55,7 +55,7 @@ import { RouterLink } from '@angular/router';
             <a
               mgnpButton
               size="lg"
-              color="secondary"
+              color="accent"
               variant="outline"
               href="https://www.npmjs.com/package/@mgremy/ng-primitives"
               target="_blank"

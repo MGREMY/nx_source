@@ -8,7 +8,7 @@ import { Component } from '@angular/core';
     <div class="flex flex-wrap gap-4 items-center">
       <span mgnpCheckbox></span>
       <span mgnpCheckbox color="primary"></span>
-      <span mgnpCheckbox color="secondary"></span>
+      <span mgnpCheckbox color="accent"></span>
       <span mgnpCheckbox color="info"></span>
       <span mgnpCheckbox color="success"></span>
       <span mgnpCheckbox color="warning"></span>
@@ -18,7 +18,7 @@ import { Component } from '@angular/core';
     <div class="flex flex-wrap gap-4 items-center">
       <span mgnpCheckbox mgnpCheckboxIndeterminate></span>
       <span mgnpCheckbox mgnpCheckboxIndeterminate color="primary"></span>
-      <span mgnpCheckbox mgnpCheckboxIndeterminate color="secondary"></span>
+      <span mgnpCheckbox mgnpCheckboxIndeterminate color="accent"></span>
       <span mgnpCheckbox mgnpCheckboxIndeterminate color="info"></span>
       <span mgnpCheckbox mgnpCheckboxIndeterminate color="success"></span>
       <span mgnpCheckbox mgnpCheckboxIndeterminate color="warning"></span>

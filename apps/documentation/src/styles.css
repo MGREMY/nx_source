@@ -21,13 +21,13 @@
     color: var(--mg-text-placeholder) !important;
 
     @variant hover {
-      color: var(--mg-text-secondary) !important;
+      color: var(--mg-text-accent) !important;
     }
   }
 }
 
 @utility shiki {
-  background-color: var(--mg-background-ui-secondary) !important;
+  background-color: color-mix(in srgb, var(--mg-background-ui) 98%, #000) !important;
 
   @variant dark {
     .shiki,

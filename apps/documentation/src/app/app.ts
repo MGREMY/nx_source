@@ -43,7 +43,7 @@ import { isActive, Router, RouterLink, RouterLinkActive, RouterOutlet } from '@a
               <a
                 mgnpNavbarItem
                 [routerLink]="['/', 'documentation', 'core']"
-                routerLinkActive="text-secondary">
+                routerLinkActive="text-accent">
                 Documentation
               </a>
             </li>
