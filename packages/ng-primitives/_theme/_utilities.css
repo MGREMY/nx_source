@@ -25,5 +25,5 @@
 }
 
 @utility bg-secondary-* {
-  background-color: color-mix(in srgb, --value(--background-color-*), #000 5%);
+  background-color: color-mix(in srgb, --value(--background-color-*), light-dark(#000, #fff) 5%);
 }

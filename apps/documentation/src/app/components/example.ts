@@ -88,7 +88,7 @@ import { codeToHtml } from 'shiki';
       <div class="relative mt-10 w-full flex-1">
         @if (mode() === 'preview') {
           <div
-            class="not-prose flex h-full min-h-70 w-full p-8 items-center justify-center rounded-xl border border-ui bg-[color-mix(in_srgb,var(--background-color-ui),#000_2%)] transition-colors *:contents">
+            class="not-prose flex h-full min-h-70 w-full p-8 items-center justify-center rounded-xl border border-ui bg-[color-mix(in_srgb,var(--background-color-ui),light-dark(#000,#fff)_2%)] transition-colors *:contents">
             @if (isLoading()) {
               <mgnp-loader />
             } @else {

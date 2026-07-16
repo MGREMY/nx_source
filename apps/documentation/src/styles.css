@@ -25,7 +25,7 @@
 }
 
 @utility shiki {
-  @apply bg-[color-mix(in_srgb,var(--mg-background-ui),#000_2%)]!;
+  @apply bg-[color-mix(in_srgb,var(--mg-background-ui),light-dark(#000,#fff)_2%)]!;
 
   @variant dark {
     .shiki,

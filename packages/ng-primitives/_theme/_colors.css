@@ -18,7 +18,7 @@
   --mg-text-danger: light-dark(var(--color-red-800), var(--color-red-400));
 
   --mg-text-inverse: light-dark(var(--color-white), var(--color-black));
-  --mg-text-placeholder: light-dark(var(--color-stone-400), var(--color-stone-800));
+  --mg-text-placeholder: light-dark(var(--color-stone-400), var(--color-stone-400));
 
   /* Border */
   --mg-border-ui: light-dark(var(--color-stone-300), var(--color-stone-600));
