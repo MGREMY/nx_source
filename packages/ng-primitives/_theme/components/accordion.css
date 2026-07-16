@@ -1,14 +1,16 @@
+@import './accordion/color.css';
 @import './accordion/orientation.css';
 
 @layer components {
   .mgnp-accordion {
     @apply transition;
-    @apply bg-ui;
-    @apply border border-ui rounded-lg;
+    @apply border rounded-lg;
     @apply shadow-sm;
 
     @apply data-[orientation=vertical]:mgnp-accordion-orientation-vertical;
     @apply data-[orientation=horizontal]:mgnp-accordion-orientation-horizontal;
+
+    @apply data-[mgnp-accordion-color=ui]:mgnp-accordion-color-ui;
   }
 
   .mgnp-accordion-content {
@@ -43,10 +45,12 @@
     @apply border-none;
     @apply shadow-none;
     @apply bg-transparent;
-    @apply font-medium text-base text-ui;
+    @apply font-medium text-base;
 
     @apply data-[orientation=vertical]:mgnp-accordion-trigger-orientation-vertical;
     @apply data-[orientation=horizontal]:mgnp-accordion-trigger-orientation-horizontal;
+
+    @apply data-[mgnp-accordion-trigger-color=ui]:mgnp-accordion-trigger-color-ui;
 
     ng-icon {
       transition: transform var(--default-transition-duration)

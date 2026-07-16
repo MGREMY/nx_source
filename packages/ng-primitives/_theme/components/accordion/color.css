@@ -1,0 +1,7 @@
+@utility mgnp-accordion-color-ui {
+  @apply bg-ui border-ui;
+}
+
+@utility mgnp-accordion-trigger-color-ui {
+  @apply text-ui;
+}

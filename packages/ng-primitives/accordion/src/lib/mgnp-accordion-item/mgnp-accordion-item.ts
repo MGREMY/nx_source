@@ -1,4 +1,6 @@
-import { Directive } from '@angular/core';
+import { MgnpAccordion } from '../mgnp-accordion/mgnp-accordion';
+
+import { Directive, inject } from '@angular/core';
 import {
   injectAccordionItemState,
   NgpAccordionItem,
@@ -11,6 +13,7 @@ import {
   host: {
     class: 'mgnp-accordion-item mgnp-c-accordion-item',
     'data-mgnp-accordion-item': '',
+    '[attr.data-mgnp-accordion-item-color]': 'accordion.color()',
   },
   hostDirectives: [
     {
@@ -26,4 +29,5 @@ import {
 })
 export class MgnpAccordionItem {
   protected readonly state = injectAccordionItemState();
+  protected readonly accordion = inject(MgnpAccordion);
 }
