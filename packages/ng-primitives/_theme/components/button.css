@@ -8,11 +8,6 @@
     @apply cursor-pointer;
     @apply h-fit;
     @apply rounded-lg;
-    @apply shadow-button;
-
-    @variant data-disabled {
-      @apply opacity-50 cursor-default;
-    }
 
     /* Size */
     @apply data-[mgnp-button-size=xs]:mgnp-button-size-xs;
@@ -25,15 +20,16 @@
     /* Solid */
     @apply data-[mgnp-button-variant=solid]:data-[mgnp-button-color=ui]:mgnp-button-color-ui-solid;
     @apply data-[mgnp-button-variant=solid]:data-[mgnp-button-color=primary]:mgnp-button-color-primary-solid;
-    @apply data-[mgnp-button-variant=solid]:data-[mgnp-button-color=secondary]:mgnp-button-color-secondary-solid;
+    @apply data-[mgnp-button-variant=solid]:data-[mgnp-button-color=accent]:mgnp-button-color-accent-solid;
     @apply data-[mgnp-button-variant=solid]:data-[mgnp-button-color=info]:mgnp-button-color-info-solid;
     @apply data-[mgnp-button-variant=solid]:data-[mgnp-button-color=success]:mgnp-button-color-success-solid;
     @apply data-[mgnp-button-variant=solid]:data-[mgnp-button-color=warning]:mgnp-button-color-warning-solid;
     @apply data-[mgnp-button-variant=solid]:data-[mgnp-button-color=danger]:mgnp-button-color-danger-solid;
     /* Outline */
+    @apply data-[mgnp-button-variant=outline]:border;
     @apply data-[mgnp-button-variant=outline]:data-[mgnp-button-color=ui]:mgnp-button-color-ui-outline;
     @apply data-[mgnp-button-variant=outline]:data-[mgnp-button-color=primary]:mgnp-button-color-primary-outline;
-    @apply data-[mgnp-button-variant=outline]:data-[mgnp-button-color=secondary]:mgnp-button-color-secondary-outline;
+    @apply data-[mgnp-button-variant=outline]:data-[mgnp-button-color=accent]:mgnp-button-color-accent-outline;
     @apply data-[mgnp-button-variant=outline]:data-[mgnp-button-color=info]:mgnp-button-color-info-outline;
     @apply data-[mgnp-button-variant=outline]:data-[mgnp-button-color=success]:mgnp-button-color-success-outline;
     @apply data-[mgnp-button-variant=outline]:data-[mgnp-button-color=warning]:mgnp-button-color-warning-outline;

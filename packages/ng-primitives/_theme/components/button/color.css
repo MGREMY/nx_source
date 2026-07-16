@@ -1,169 +1,66 @@
 /* Solid */
 @utility mgnp-button-color-ui-solid {
-  @apply bg-ui;
-
-  @variant data-hover {
-    @apply bg-ui-hover;
-  }
-
-  @variant data-press {
-    @apply bg-ui-active;
-  }
+  @apply bg-ui mgnp-bg-state-ui;
 }
 
 @utility mgnp-button-color-primary-solid {
-  @apply bg-primary;
-
-  @variant data-hover {
-    @apply bg-primary-hover;
-  }
-
-  @variant data-press {
-    @apply bg-primary-active;
-  }
+  @apply bg-primary mgnp-bg-state-primary text-inverse;
 }
 
-@utility mgnp-button-color-secondary-solid {
-  @apply bg-secondary;
-
-  @variant data-hover {
-    @apply bg-secondary-hover;
-  }
-
-  @variant data-press {
-    @apply bg-secondary-active;
-  }
+@utility mgnp-button-color-accent-solid {
+  @apply bg-accent mgnp-bg-state-accent text-inverse;
 }
 
 @utility mgnp-button-color-info-solid {
-  @apply bg-info;
-
-  @variant data-hover {
-    @apply bg-info-hover;
-  }
-
-  @variant data-press {
-    @apply bg-info-active;
-  }
+  @apply bg-info mgnp-bg-state-info text-inverse;
 }
 
 @utility mgnp-button-color-success-solid {
-  @apply bg-success;
-
-  @variant data-hover {
-    @apply bg-success-hover;
-  }
-
-  @variant data-press {
-    @apply bg-success-active;
-  }
+  @apply bg-success mgnp-bg-state-success text-inverse;
 }
 
 @utility mgnp-button-color-warning-solid {
-  @apply bg-warning;
-
-  @variant data-hover {
-    @apply bg-warning-hover;
-  }
-
-  @variant data-press {
-    @apply bg-warning-active;
-  }
+  @apply bg-warning mgnp-bg-state-warning text-inverse;
 }
 
 @utility mgnp-button-color-danger-solid {
-  @apply bg-danger;
-
-  @variant data-hover {
-    @apply bg-danger-hover;
-  }
-
-  @variant data-press {
-    @apply bg-danger-active;
-  }
+  @apply bg-danger mgnp-bg-state-danger text-inverse;
 }
 
 /* Outline */
 @utility mgnp-button-color-ui-outline {
-  @apply bg-transparent text-ui;
+  @apply bg-transparent text-ui border-ui mgnp-bg-state-ui;
 
-  @variant data-hover {
-    @apply bg-ui-inverse text-inverse;
+  /* Invert scheme so the outline style works for ui color */
+  @variant not-dark:data-hover {
+    @apply scheme-dark;
   }
 
-  @variant data-press {
-    @apply bg-ui-inverse;
+  @variant dark:data-hover {
+    @apply scheme-light;
   }
 }
 
 @utility mgnp-button-color-primary-outline {
-  @apply bg-transparent text-primary;
-
-  @variant data-hover {
-    @apply bg-primary-inverse text-inverse;
-  }
-
-  @variant data-press {
-    @apply bg-primary-inverse;
-  }
+  @apply bg-transparent text-primary data-hover:text-inverse border-primary mgnp-bg-state-primary;
 }
 
-@utility mgnp-button-color-secondary-outline {
-  @apply bg-transparent text-secondary;
-
-  @variant data-hover {
-    @apply bg-secondary-inverse text-inverse;
-  }
-
-  @variant data-press {
-    @apply bg-secondary-inverse;
-  }
+@utility mgnp-button-color-accent-outline {
+  @apply bg-transparent text-accent data-hover:text-inverse border-accent mgnp-bg-state-accent;
 }
 
 @utility mgnp-button-color-info-outline {
-  @apply bg-transparent text-info;
-
-  @variant data-hover {
-    @apply bg-info-inverse text-inverse;
-  }
-
-  @variant data-press {
-    @apply bg-info-inverse;
-  }
+  @apply bg-transparent text-info data-hover:text-inverse border-info mgnp-bg-state-info;
 }
 
 @utility mgnp-button-color-success-outline {
-  @apply bg-transparent text-success;
-
-  @variant data-hover {
-    @apply bg-success-inverse text-inverse;
-  }
-
-  @variant data-press {
-    @apply bg-success-inverse;
-  }
+  @apply bg-transparent text-success data-hover:text-inverse border-success mgnp-bg-state-success;
 }
 
 @utility mgnp-button-color-warning-outline {
-  @apply bg-transparent text-warning;
-
-  @variant data-hover {
-    @apply bg-warning-inverse text-inverse;
-  }
-
-  @variant data-press {
-    @apply bg-warning-inverse;
-  }
+  @apply bg-transparent text-warning data-hover:text-inverse border-warning mgnp-bg-state-warning;
 }
 
 @utility mgnp-button-color-danger-outline {
-  @apply bg-transparent text-danger;
-
-  @variant data-hover {
-    @apply bg-danger-inverse text-inverse;
-  }
-
-  @variant data-press {
-    @apply bg-danger-inverse;
-  }
+  @apply bg-transparent text-danger data-hover:text-inverse border-danger mgnp-bg-state-danger;
 }

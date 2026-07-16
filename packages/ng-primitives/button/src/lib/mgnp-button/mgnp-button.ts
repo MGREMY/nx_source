@@ -4,7 +4,7 @@ import { Directive, input } from '@angular/core';
 import { injectButtonState, NgpButton, provideButtonState } from 'ng-primitives/button';
 
 export type MgnpButtonColor = PropertyType<
-  'ui' | 'primary' | 'secondary' | 'info' | 'success' | 'warning' | 'danger'
+  'ui' | 'primary' | 'accent' | 'info' | 'success' | 'warning' | 'danger'
 >;
 
 export type MgnpButtonVariant = PropertyType<'solid' | 'outline'>;
