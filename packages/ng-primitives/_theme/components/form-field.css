@@ -1,16 +1,20 @@
+@import './form-field/color.css';
+
 @layer components {
   .mgnp-description {
     @apply mgnp-base;
     @apply inline;
-    @apply text-ui/75;
     @apply text-sm;
+
+    @apply data-[mgnp-description-color=ui]:mgnp-description-color-ui;
   }
 
   .mgnp-error {
     @apply mgnp-base;
     @apply hidden;
-    @apply text-danger;
     @apply text-sm;
+
+    @apply data-[mgnp-error-color=ui]:mgnp-error-color-ui;
 
     @variant data-[validator=fail]:data-dirty {
       @apply block;
@@ -21,18 +25,10 @@
     @apply mgnp-base mgnp-focus;
     @apply block;
     @apply w-full;
-    @apply bg-ui;
-    @apply text-ui;
-    @apply border border-ui rounded-lg;
+    @apply border rounded-lg;
     @apply py-2 px-4;
 
-    ::placeholder {
-      @apply text-placeholder;
-    }
-
-    @variant not-data-pristine:data-invalid {
-      @apply border-danger;
-    }
+    @apply data-[mgnp-form-control-color=ui]:mgnp-form-control-color-ui;
   }
 
   .mgnp-form-field {
@@ -45,7 +41,8 @@
     @apply mgnp-base;
     @apply inline-flex items-stretch;
     @apply border-none rounded-lg;
-    @apply bg-ui;
+
+    @apply data-[mgnp-input-group-color=ui]:mgnp-input-group-color-ui;
 
     @variant * {
       @variant first {
@@ -75,8 +72,9 @@
     @apply inline-block;
     @apply text-nowrap;
     @apply p-2;
-    @apply bg-ui/75;
-    @apply border-y border-ui;
+    @apply border-y;
+
+    @apply data-[mgnp-input-group-addon-color=ui]:mgnp-input-group-addon-color-ui;
 
     ng-icon {
       @apply align-middle!;
@@ -87,8 +85,9 @@
     @apply mgnp-base;
     @apply inline-block;
     @apply p-0;
-    @apply border-ui;
-    @apply text-ui/75 font-semibold;
+    @apply font-semibold;
+
+    @apply data-[mgnp-label-color=ui]:mgnp-label-color-ui;
 
     @variant md {
       @apply text-nowrap;

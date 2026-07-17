@@ -1,0 +1,33 @@
+@utility mgnp-form-control-state {
+  @variant not-data-pristine:data-invalid {
+    @apply border-danger;
+  }
+}
+
+@utility mgnp-description-color-ui {
+  @apply text-ui/75;
+}
+
+@utility mgnp-error-color-ui {
+  @apply text-danger;
+}
+
+@utility mgnp-form-control-color-ui {
+  @apply bg-ui text-ui border-ui mgnp-form-control-state;
+
+  ::placeholder {
+    @apply text-placeholder;
+  }
+}
+
+@utility mgnp-input-group-color-ui {
+  @apply bg-ui;
+}
+
+@utility mgnp-input-group-addon-color-ui {
+  @apply bg-ui/75 border-ui;
+}
+
+@utility mgnp-label-color-ui {
+  @apply text-ui/75 border-ui;
+}
