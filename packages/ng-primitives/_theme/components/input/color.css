@@ -1,0 +1,13 @@
+@utility mgnp-input-state {
+  @variant not-data-pristine:data-invalid {
+    @apply border-danger;
+  }
+}
+
+@utility mgnp-input-color-ui {
+  @apply bg-ui text-ui border-ui mgnp-input-state;
+
+  ::placeholder {
+    @apply text-placeholder;
+  }
+}

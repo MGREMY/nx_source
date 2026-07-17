@@ -1,5 +1,9 @@
-import { Directive } from '@angular/core';
+import { PropertyType } from '@mgremy/ng-primitives';
+
+import { Directive, input } from '@angular/core';
 import { injectInputState, NgpInput, provideInputState } from 'ng-primitives/input';
+
+export type MgnpInputColor = PropertyType<'ui'>;
 
 @Directive({
   selector: '[mgnpInput]',
@@ -7,6 +11,7 @@ import { injectInputState, NgpInput, provideInputState } from 'ng-primitives/inp
   host: {
     class: 'mgnp-input mgnp-c-input',
     'data-mgnp-input': '',
+    '[attr.data-mgnp-input-color]': 'color()',
   },
   hostDirectives: [
     {
@@ -19,4 +24,6 @@ import { injectInputState, NgpInput, provideInputState } from 'ng-primitives/inp
 })
 export class MgnpInput {
   protected readonly state = injectInputState();
+
+  readonly color = input<MgnpInputColor>('ui');
 }
