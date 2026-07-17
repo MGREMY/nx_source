@@ -1,6 +1,6 @@
 @layer components {
   .mgnp-toast {
-    @apply transition;
+    @apply mgnp-base;
     @apply touch-none;
     @apply absolute;
     @apply z-(--ngp-toast-z-index);
@@ -15,9 +15,7 @@
     @variant data-enter {
       --y: translateY(0);
 
-      @apply opacity-100;
-      animation: mg-slide-in var(--default-transition-duration)
-        var(--default-transition-timing-function);
+      @apply opacity-100 animate-mg-slide-in;
     }
 
     @variant data-exit {

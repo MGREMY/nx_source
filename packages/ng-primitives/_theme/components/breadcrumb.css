@@ -2,13 +2,13 @@
 
 @layer components {
   .mgnp-breadcrumb {
-    @apply transition;
+    @apply mgnp-base;
     @apply block;
     @apply text-ui/50;
   }
 
   .mgnp-breadcrumb-ellipsis {
-    @apply transition mgnp-focus;
+    @apply mgnp-base mgnp-focus;
     @apply cursor-pointer;
     @apply inline-flex items-center justify-center;
     @apply w-4 h-4;
@@ -23,11 +23,11 @@
   }
 
   .mgnp-breadcrumb-item {
-    @apply transition;
+    @apply mgnp-base;
     @apply inline-flex items-center gap-1;
 
     @variant *:has-[.mgnp-breadcrumb-ellipsis] {
-      @apply transition;
+      @apply mgnp-base;
       @apply cursor-pointer;
       @apply inline-flex items-center justify-center;
       @apply p-0;
@@ -37,7 +37,7 @@
   }
 
   .mgnp-breadcrumb-link {
-    @apply transition mgnp-focus;
+    @apply mgnp-base mgnp-focus;
     @apply inline-flex items-center gap-1;
     @apply decoration-0;
 
@@ -45,7 +45,7 @@
   }
 
   .mgnp-breadcrumb-list {
-    @apply transition;
+    @apply mgnp-base;
     @apply flex flex-wrap items-center gap-2;
     @apply list-none;
     @apply m-0 p-0;
@@ -53,14 +53,14 @@
   }
 
   .mgnp-breadcrumb-page {
-    @apply transition;
+    @apply mgnp-base;
     @apply font-medium;
 
     @apply data-[mgnp-breadcrumb-page-color=ui]:mgnp-breadcrumb-page-color-ui;
   }
 
   .mgnp-breadcrumb-separator {
-    @apply transition;
+    @apply mgnp-base;
     @apply inline-flex items-center;
     @apply p-0;
     @apply text-ui/50;

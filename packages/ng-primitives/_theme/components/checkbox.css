@@ -3,7 +3,7 @@
 
 @layer components {
   .mgnp-checkbox {
-    @apply transition mgnp-focus;
+    @apply mgnp-base mgnp-focus;
     @apply flex flex-none items-center justify-center;
     @apply border border-transparent;
     @apply text-base;

@@ -1,6 +1,6 @@
 @layer components {
   .mgnp-combobox {
-    @apply transition mgnp-focus;
+    @apply mgnp-base mgnp-focus;
     @apply inline-flex w-full justify-between items-center;
     @apply py-2 px-2;
     @apply border border-ui rounded-lg;
@@ -12,7 +12,7 @@
   }
 
   .mgnp-combobox-input {
-    @apply transition;
+    @apply mgnp-base;
     @apply w-full h-full;
     @apply border-none;
     @apply outline-none;
@@ -25,7 +25,7 @@
   }
 
   .mgnp-combobox-button {
-    @apply transition;
+    @apply mgnp-base;
     @apply inline-flex justify-between items-center;
     @apply h-full;
     @apply bg-transparent;
@@ -41,7 +41,7 @@
   }
 
   .mgnp-combobox-dropdown {
-    @apply transition;
+    @apply mgnp-base;
     @apply absolute;
     @apply overflow-y-auto;
     @apply z-1001;
@@ -55,18 +55,16 @@
     @apply shadow-lg;
 
     @variant data-enter {
-      animation: mg-show var(--default-transition-duration)
-        var(--default-transition-timing-function);
+      @apply animate-mg-show;
     }
 
     @variant data-exit {
-      animation: mg-hide var(--default-transition-duration)
-        var(--default-transition-timing-function);
+      @apply animate-mg-hide;
     }
   }
 
   .mgnp-combobox-option {
-    @apply transition;
+    @apply mgnp-base;
     @apply cursor-pointer;
     @apply flex items-center;
     @apply gap-2;

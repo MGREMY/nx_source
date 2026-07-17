@@ -1,6 +1,6 @@
 @layer components {
   .mgnp-switch {
-    @apply transition mgnp-focus;
+    @apply mgnp-base mgnp-focus;
     @apply relative;
     @apply w-10 h-6;
     @apply p-0;
@@ -14,7 +14,7 @@
   }
 
   .mgnp-switch-thumb {
-    @apply transition;
+    @apply mgnp-base;
     @apply block;
     @apply w-4 h-4;
     @apply ml-1;

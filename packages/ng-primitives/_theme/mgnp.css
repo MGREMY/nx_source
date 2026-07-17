@@ -17,6 +17,7 @@
 @import './components/tooltip.css';
 
 @custom-variant dark (&:where(.dark, .dark *));
+@custom-variant light (&:where(:not(.dark, .dark *)));
 
 @theme inline {
   --mg-default-transition-duration: 250ms;
@@ -36,7 +37,7 @@
     @apply scheme-dark;
   }
 
-  @variant not-dark {
+  @variant light {
     @apply scheme-light;
   }
 }

@@ -32,12 +32,12 @@
   @apply bg-transparent text-ui border-ui mgnp-bg-state-ui;
 
   /* Invert scheme so the outline style works for ui color */
-  @variant not-dark:data-hover {
-    @apply scheme-dark;
-  }
-
   @variant dark:data-hover {
     @apply scheme-light;
+  }
+
+  @variant light:data-hover {
+    @apply scheme-dark;
   }
 }
 

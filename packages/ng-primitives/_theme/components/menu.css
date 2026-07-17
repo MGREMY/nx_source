@@ -1,6 +1,6 @@
 @layer components {
   .mgnp-menu {
-    @apply transition;
+    @apply mgnp-base;
     @apply fixed;
     @apply flex flex-col;
     @apply w-max;
@@ -12,18 +12,16 @@
     transform-origin: var(--ngp-menu-transform-origin);
 
     @variant data-enter {
-      animation: mg-show var(--default-transition-duration)
-        var(--default-transition-timing-function);
+      @apply animate-mg-show;
     }
 
     @variant data-exit {
-      animation: mg-hide var(--default-transition-duration)
-        var(--default-transition-timing-function);
+      @apply animate-mg-hide;
     }
   }
 
   .mgnp-menu-item {
-    @apply transition mgnp-focus;
+    @apply mgnp-base mgnp-focus;
     @apply text-start;
     @apply cursor-pointer;
     @apply min-w-30;

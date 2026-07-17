@@ -1,3 +1,7 @@
+@utility mgnp-base {
+  @apply motion-safe:transition;
+}
+
 @utility mgnp-focus {
   @apply outline-(--mg-ring-ui) -outline-offset-1;
 

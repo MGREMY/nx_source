@@ -3,7 +3,7 @@
 
 @layer components {
   .mgnp-accordion {
-    @apply transition;
+    @apply mgnp-base;
     @apply border rounded-lg;
     @apply shadow-sm;
 
@@ -14,7 +14,7 @@
   }
 
   .mgnp-accordion-content {
-    @apply transition;
+    @apply mgnp-base;
     @apply overflow-hidden;
 
     @apply data-[orientation=vertical]:mgnp-accordion-content-orientation-vertical;
@@ -22,7 +22,7 @@
   }
 
   .mgnp-accordion-item {
-    @apply transition;
+    @apply mgnp-base;
     @apply flex;
 
     @apply data-[orientation=vertical]:mgnp-accordion-item-orientation-vertical;
@@ -34,13 +34,13 @@
     h4,
     h5,
     h6 {
-      @apply transition;
+      @apply mgnp-base;
       @apply m-0;
     }
   }
 
   .mgnp-accordion-trigger {
-    @apply transition mgnp-focus;
+    @apply mgnp-base mgnp-focus;
     @apply flex justify-between items-center;
     @apply border-none;
     @apply shadow-none;
@@ -53,8 +53,7 @@
     @apply data-[mgnp-accordion-trigger-color=ui]:mgnp-accordion-trigger-color-ui;
 
     ng-icon {
-      transition: transform var(--default-transition-duration)
-        var(--default-transition-timing-function);
+      @apply motion-safe:transition-[transform_var(--default-transition-duration),var(--default-transition-timing-function)];
     }
 
     @variant data-open {

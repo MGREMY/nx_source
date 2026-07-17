@@ -1,9 +1,9 @@
 @layer components {
   .mgnp-pagination {
-    @apply transition;
+    @apply mgnp-base;
 
     ul {
-      @apply transition;
+      @apply mgnp-base;
       @apply flex items-center;
       @apply gap-2;
     }
@@ -16,7 +16,7 @@
   .mgnp-pagination-last {
     all: unset;
 
-    @apply transition mgnp-focus;
+    @apply mgnp-base mgnp-focus;
     @apply flex items-center justify-center;
     @apply cursor-pointer;
     @apply w-8 h-8;

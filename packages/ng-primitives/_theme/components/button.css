@@ -3,7 +3,7 @@
 
 @layer components {
   .mgnp-button {
-    @apply transition mgnp-focus;
+    @apply mgnp-base mgnp-focus;
     @apply inline-block;
     @apply cursor-pointer;
     @apply h-fit;

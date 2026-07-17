@@ -1,23 +1,21 @@
 @layer components {
   .mgnp-tooltip {
-    @apply transition;
+    @apply mgnp-base;
     @apply absolute;
     @apply max-w-64;
     @apply py-3 px-3;
     @apply border-none rounded-lg;
     @apply text-xs;
 
-    transform-origin: var(--ngp-tooltip-transform-origin);
-    animation: mg-show var(--default-transition-duration) var(--default-transition-timing-function);
+    @apply origin-(--ngp-tooltip-transform-origin) animate-mg-show;
 
     @variant data-exit {
-      animation: mg-hide var(--default-transition-duration)
-        var(--default-transition-timing-function);
+      @apply animate-mg-hide;
     }
   }
 
   .mgnp-tooltip-arrow {
-    @apply transition;
+    @apply mgnp-base;
     @apply absolute rotate-45;
     @apply pointer-events-none;
     @apply w-2 h-2;
