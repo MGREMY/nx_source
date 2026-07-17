@@ -1,7 +1,11 @@
-import { Directive } from '@angular/core';
+import { PropertyType } from '@mgremy/ng-primitives';
+
+import { Directive, input } from '@angular/core';
 import { ControlValueAccessor } from '@angular/forms';
 import { injectComboboxState, NgpCombobox, provideComboboxState } from 'ng-primitives/combobox';
 import { ChangeFn, provideValueAccessor, TouchedFn } from 'ng-primitives/utils';
+
+export type MgnpComboboxColor = PropertyType<'ui'>;
 
 @Directive({
   selector: '[mgnpCombobox]',
@@ -9,6 +13,7 @@ import { ChangeFn, provideValueAccessor, TouchedFn } from 'ng-primitives/utils';
   host: {
     class: 'mgnp-combobox mgnp-c-combobox',
     'data-mgnp-combobox': '',
+    '[attr.data-mgnp-combobox-color]': 'color()',
     '(focusout)': 'onTouchedFn?.()',
   },
   hostDirectives: [
@@ -37,6 +42,8 @@ import { ChangeFn, provideValueAccessor, TouchedFn } from 'ng-primitives/utils';
 })
 export class MgnpCombobox<T> implements ControlValueAccessor {
   protected readonly state = injectComboboxState();
+
+  readonly color = input<MgnpComboboxColor>('ui');
 
   protected onChangeFn?: ChangeFn<T>;
   protected onTouchedFn?: TouchedFn;

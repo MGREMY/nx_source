@@ -1,14 +1,13 @@
+@import './combobox/color.css';
+
 @layer components {
   .mgnp-combobox {
     @apply mgnp-base mgnp-focus;
     @apply inline-flex w-full justify-between items-center;
     @apply py-2 px-2;
-    @apply border border-ui rounded-lg;
-    @apply bg-ui;
+    @apply border rounded-lg;
 
-    @variant not-data-pristine:data-invalid {
-      @apply border-danger;
-    }
+    @apply data-[mgnp-combobox-color=ui]:mgnp-combobox-color-ui;
   }
 
   .mgnp-combobox-input {
@@ -17,7 +16,8 @@
     @apply border-none;
     @apply outline-none;
     @apply bg-transparent;
-    @apply text-ui;
+
+    @apply data-[mgnp-combobox-input-color=ui]:mgnp-combobox-input-color-ui;
 
     @variant [&:only-child] {
       @apply pr-2;
@@ -31,8 +31,9 @@
     @apply bg-transparent;
     @apply border-none;
     @apply outline-none;
-    @apply text-ui;
     @apply cursor-pointer;
+
+    @apply data-[mgnp-combobox-button-color=ui]:mgnp-combobox-button-color-ui;
 
     @variant [&:only-child] {
       @apply w-full;
@@ -50,9 +51,10 @@
     @apply mt-1;
     @apply min-w-fit w-(--ngp-combobox-width);
     @apply max-h-60;
-    @apply bg-ui;
-    @apply border border-ui rounded-lg;
+    @apply border rounded-lg;
     @apply shadow-lg;
+
+    @apply data-[mgnp-combobox-dropdown-color=ui]:mgnp-combobox-dropdown-color-ui;
 
     @variant data-enter {
       @apply animate-mg-show;
@@ -74,22 +76,7 @@
     @apply box-border;
     @apply rounded-lg;
     @apply text-sm;
-    @apply text-ui;
 
-    @variant data-hover {
-      @apply bg-[color-mix(in_srgb,var(--background-color-ui),var(--mg-state-hover-mix))];
-    }
-
-    @variant data-press {
-      @apply bg-[color-mix(in_srgb,var(--background-color-ui),var(--mg-state-active-mix))];
-    }
-
-    @variant data-active {
-      @apply bg-[color-mix(in_srgb,var(--background-color-ui),var(--mg-state-active-mix))];
-    }
-
-    @variant data-disabled {
-      @apply opacity-50;
-    }
+    @apply data-[mgnp-combobox-option-color=ui]:mgnp-combobox-option-color-ui;
   }
 }
