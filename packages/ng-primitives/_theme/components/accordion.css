@@ -53,7 +53,7 @@
     @apply data-[mgnp-accordion-trigger-color=ui]:mgnp-accordion-trigger-color-ui;
 
     ng-icon {
-      @apply motion-safe:transition-[transform_var(--default-transition-duration),var(--default-transition-timing-function)];
+      @apply motion-safe:transition-[transform_var(--default-transition-duration)_var(--default-transition-timing-function)];
     }
 
     @variant data-open {

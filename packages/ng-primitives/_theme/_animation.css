@@ -65,7 +65,7 @@
 @theme {
   --animate-mg-show: mg-show var(--default-transition-duration)
     var(--default-transition-timing-function);
-  --animate-mg-hide: mg-show var(--default-transition-duration)
+  --animate-mg-hide: mg-hide var(--default-transition-duration)
     var(--default-transition-timing-function);
 
   --animate-mg-slide-in: mg-slide-in var(--default-transition-duration)
