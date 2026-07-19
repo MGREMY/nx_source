@@ -40,11 +40,12 @@
   }
 
   .mgnp-accordion-trigger {
+    --mgnp-rotate-icon: 0deg;
+
     @apply mgnp-base mgnp-focus;
     @apply flex justify-between items-center;
     @apply border-none;
     @apply shadow-none;
-    @apply bg-transparent;
     @apply font-medium text-base;
 
     @apply data-[orientation=vertical]:mgnp-accordion-trigger-orientation-vertical;
@@ -53,13 +54,12 @@
     @apply data-[mgnp-accordion-trigger-color=ui]:mgnp-accordion-trigger-color-ui;
 
     ng-icon {
-      @apply motion-safe:transition-[transform_var(--default-transition-duration)_var(--default-transition-timing-function)];
+      @apply motion-safe:transition-transform;
+      @apply rotate-(--mgnp-rotate-icon);
     }
 
     @variant data-open {
-      ng-icon {
-        transform: rotate(180deg);
-      }
+      --mgnp-rotate-icon: 180deg;
     }
   }
 }
