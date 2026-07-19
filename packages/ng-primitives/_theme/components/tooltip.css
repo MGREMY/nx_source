@@ -20,7 +20,6 @@
     @apply pointer-events-none;
     @apply w-2 h-2;
     @apply rounded-xs;
-    /*@apply bg-ui-inverse;*/
 
     @variant data-[placement=top] {
       @apply top-[calc(100%-5px)];
