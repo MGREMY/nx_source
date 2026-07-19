@@ -1,3 +1,5 @@
+@import './menu/color.css';
+
 @layer components {
   .mgnp-menu {
     @apply mgnp-base;
@@ -5,9 +7,10 @@
     @apply flex flex-col;
     @apply w-max;
     @apply p-1;
-    @apply bg-ui;
-    @apply border border-ui rounded-lg;
+    @apply border rounded-lg;
     @apply shadow-lg;
+
+    @apply data-[mgnp-menu-color=ui]:mgnp-menu-color-ui;
 
     transform-origin: var(--ngp-menu-transform-origin);
 

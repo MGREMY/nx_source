@@ -1,4 +1,6 @@
-import { Directive } from '@angular/core';
+import { MgnpMenu } from '../mgnp-menu/mgnp-menu';
+
+import { Directive, inject } from '@angular/core';
 import {
   injectMenuItemRadioState,
   NgpMenuItemRadio,
@@ -11,6 +13,7 @@ import {
   host: {
     class: 'mgnp-menu-item-radio mgnp-c-menu-item-radio',
     'data-mgnp-menu-item-radio': '',
+    '[attr.data-mgnp-menu-item-radio]': 'menu.color()',
   },
   hostDirectives: [
     {
@@ -26,4 +29,5 @@ import {
 })
 export class MgnpMenuItemRadio {
   protected readonly state = injectMenuItemRadioState();
+  protected readonly menu = inject(MgnpMenu);
 }

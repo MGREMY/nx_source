@@ -1,4 +1,6 @@
-import { Directive } from '@angular/core';
+import { MgnpMenu } from '../mgnp-menu/mgnp-menu';
+
+import { Directive, inject } from '@angular/core';
 import {
   injectSubmenuTriggerState,
   NgpSubmenuTrigger,
@@ -11,6 +13,7 @@ import {
   host: {
     class: 'mgnp-submenu-trigger mgnp-c-submenu-trigger',
     'data-mgnp-submenu-trigger': '',
+    '[attr.data-mgnp-sumenu-trigger-color]': 'menu.color()',
   },
   hostDirectives: [
     {
@@ -29,4 +32,5 @@ import {
 })
 export class MgnpSubmenuTrigger {
   protected readonly state = injectSubmenuTriggerState();
+  protected readonly menu = inject(MgnpMenu);
 }

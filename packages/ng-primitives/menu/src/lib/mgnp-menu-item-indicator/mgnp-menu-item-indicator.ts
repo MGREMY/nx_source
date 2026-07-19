@@ -1,4 +1,6 @@
-import { Directive } from '@angular/core';
+import { MgnpMenu } from '../mgnp-menu/mgnp-menu';
+
+import { Directive, inject } from '@angular/core';
 import { NgpMenuItemIndicator } from 'ng-primitives/menu';
 
 @Directive({
@@ -6,6 +8,7 @@ import { NgpMenuItemIndicator } from 'ng-primitives/menu';
   host: {
     class: 'mgnp-menu-item-indicator mgnp-c-menu-item-indicator',
     'data-mgnp-menu-item-indicator': '',
+    '[attr.data-mgnp-menu-item-indicator-color]': 'menu.color()',
   },
   hostDirectives: [
     {
@@ -16,4 +19,6 @@ import { NgpMenuItemIndicator } from 'ng-primitives/menu';
   ],
   exportAs: 'mgnpMenuItemIndicator',
 })
-export class MgnpMenuItemIndicator {}
+export class MgnpMenuItemIndicator {
+  protected readonly menu = inject(MgnpMenu);
+}
