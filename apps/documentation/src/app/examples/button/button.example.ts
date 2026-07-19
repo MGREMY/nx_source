@@ -6,7 +6,7 @@ import { Component } from '@angular/core';
   imports: [MgnpButton],
   template: `
     <p class="font-bold">Solid</p>
-    <div class="flex flex-wrap gap-4 items-center">
+    <div class="flex flex-wrap gap-4 items-center justify-center">
       <button mgnpButton>Default</button>
       <button mgnpButton color="primary">Primary</button>
       <button mgnpButton color="accent">Accent</button>
@@ -16,7 +16,7 @@ import { Component } from '@angular/core';
       <button mgnpButton color="danger">Danger</button>
     </div>
     <p class="font-bold">Outline</p>
-    <div class="flex flex-wrap gap-4 items-center">
+    <div class="flex flex-wrap gap-4 items-center justify-center">
       <button mgnpButton variant="outline">Default</button>
       <button mgnpButton variant="outline" color="primary">Primary</button>
       <button mgnpButton variant="outline" color="accent">Accent</button>
@@ -26,7 +26,7 @@ import { Component } from '@angular/core';
       <button mgnpButton variant="outline" color="danger">Danger</button>
     </div>
     <p class="font-bold">Disabled</p>
-    <div class="flex flex-wrap gap-4 items-center">
+    <div class="flex flex-wrap gap-4 items-center justify-center">
       <button mgnpButton disabled>Default</button>
       <button mgnpButton disabled color="primary">Primary</button>
       <button mgnpButton disabled color="accent">Accent</button>

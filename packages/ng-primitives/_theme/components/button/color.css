@@ -1,66 +1,49 @@
 /* Solid */
-@utility mgnp-button-color-ui-solid {
-  @apply bg-ui border-ui mgnp-bg-state-ui;
+@utility mgnp-button-color-solid-* {
+  @apply text-inverse;
+  @apply bg-[--value(--background-color-*)];
+  @apply border-[--value(--border-color-*)];
+
+  @variant data-hover {
+    @apply bg-[color-mix(in_srgb,--value(--background-color-*),var(--mg-state-hover-mix))];
+  }
+
+  @variant data-press {
+    @apply bg-[color-mix(in_srgb,--value(--background-color-*),var(--mg-state-active-mix))];
+  }
 }
 
-@utility mgnp-button-color-primary-solid {
-  @apply bg-primary border-primary mgnp-bg-state-primary text-inverse;
-}
-
-@utility mgnp-button-color-accent-solid {
-  @apply bg-accent border-accent mgnp-bg-state-accent text-inverse;
-}
-
-@utility mgnp-button-color-info-solid {
-  @apply bg-info border-info mgnp-bg-state-info text-inverse;
-}
-
-@utility mgnp-button-color-success-solid {
-  @apply bg-success border-success mgnp-bg-state-success text-inverse;
-}
-
-@utility mgnp-button-color-warning-solid {
-  @apply bg-warning border-warning mgnp-bg-state-warning text-inverse;
-}
-
-@utility mgnp-button-color-danger-solid {
-  @apply bg-danger border-danger mgnp-bg-state-danger text-inverse;
+@utility mgnp-button-color-solid-ui {
+  @apply text-ui;
 }
 
 /* Outline */
-@utility mgnp-button-color-ui-outline {
-  @apply bg-transparent text-ui border-ui mgnp-bg-state-ui;
+@utility mgnp-button-color-outline-* {
+  @apply text-[--value(--text-color-*)];
+  @apply bg-transparent;
+  @apply border-[--value(--border-color-*)];
 
+  @variant data-hover {
+    @apply text-inverse;
+    @apply bg-[color-mix(in_srgb,--value(--background-color-*),var(--mg-state-hover-mix))];
+  }
+
+  @variant data-press {
+    @apply bg-[color-mix(in_srgb,--value(--background-color-*),var(--mg-state-active-mix))];
+  }
+}
+
+@utility mgnp-button-color-outline-ui {
   /* Invert scheme so the outline style works for ui color */
-  @variant dark:data-hover {
-    @apply scheme-light;
+  @variant data-hover {
+    @apply text-ui;
+
+    @variant dark {
+      @apply scheme-light;
+    }
+
+    @variant light {
+      @apply scheme-dark;
+    }
   }
-
-  @variant light:data-hover {
-    @apply scheme-dark;
-  }
-}
-
-@utility mgnp-button-color-primary-outline {
-  @apply bg-transparent text-primary data-hover:text-inverse border-primary mgnp-bg-state-primary;
-}
-
-@utility mgnp-button-color-accent-outline {
-  @apply bg-transparent text-accent data-hover:text-inverse border-accent mgnp-bg-state-accent;
-}
-
-@utility mgnp-button-color-info-outline {
-  @apply bg-transparent text-info data-hover:text-inverse border-info mgnp-bg-state-info;
-}
-
-@utility mgnp-button-color-success-outline {
-  @apply bg-transparent text-success data-hover:text-inverse border-success mgnp-bg-state-success;
-}
-
-@utility mgnp-button-color-warning-outline {
-  @apply bg-transparent text-warning data-hover:text-inverse border-warning mgnp-bg-state-warning;
-}
-
-@utility mgnp-button-color-danger-outline {
-  @apply bg-transparent text-danger data-hover:text-inverse border-danger mgnp-bg-state-danger;
 }
