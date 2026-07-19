@@ -1,0 +1,12 @@
+@utility mgnp-switch-color-ui {
+  @apply bg-ui/75 border-ui;
+
+  @variant data-checked {
+    @apply bg-[color-mix(in_srgb,var(--background-color-ui),var(--mg-state-active-mix))];
+    @apply border-ui/75;
+  }
+}
+
+@utility mgnp-switch-thumb-color-ui {
+  @apply bg-ui;
+}
