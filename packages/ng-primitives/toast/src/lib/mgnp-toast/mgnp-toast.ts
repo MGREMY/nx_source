@@ -1,11 +1,16 @@
-import { Directive } from '@angular/core';
+import { PropertyType } from '@mgremy/ng-primitives';
+
+import { Directive, input } from '@angular/core';
 import { NgpToast } from 'ng-primitives/toast';
+
+export type MgnpToastColor = PropertyType<'ui'>;
 
 @Directive({
   selector: '[mgnpToast]',
   host: {
     class: 'mgnp-toast mgnp-c-toast',
     'data-mgnp-toast': '',
+    '[attr.data-mgnp-toast-color]': 'color()',
   },
   hostDirectives: [
     {
@@ -16,4 +21,6 @@ import { NgpToast } from 'ng-primitives/toast';
   ],
   exportAs: 'mgnpToast',
 })
-export class MgnpToast {}
+export class MgnpToast {
+  readonly color = input<MgnpToastColor>('ui');
+}

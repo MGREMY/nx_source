@@ -1,3 +1,5 @@
+@import './toast/color.css';
+
 @layer components {
   .mgnp-toast {
     @apply mgnp-base;
@@ -8,9 +10,10 @@
     @apply inline-flex items-center justify-between;
     @apply w-87.5 h-fit;
     @apply px-3 py-4;
-    @apply bg-ui;
-    @apply border border-ui rounded-md;
+    @apply border rounded-md;
     @apply box-border shadow-sm;
+
+    @apply data-[mgnp-toast-color=ui]:mgnp-toast-color-ui;
 
     @variant data-enter {
       --y: translateY(0);
