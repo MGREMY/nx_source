@@ -4,7 +4,8 @@
   .mgnp-breadcrumb {
     @apply mgnp-base;
     @apply block;
-    @apply text-ui/50;
+
+    @apply data-[mgnp-breadcrumb-color=ui]:mgnp-breadcrumb-color-ui;
   }
 
   .mgnp-breadcrumb-ellipsis {
@@ -12,8 +13,7 @@
     @apply cursor-pointer;
     @apply inline-flex items-center justify-center;
     @apply w-4 h-4;
-    @apply rounded-lg border-transparent;
-    @apply bg-transparent;
+    @apply rounded-lg;
 
     @apply data-[mgnp-breadcrumb-ellipsis-color=ui]:mgnp-breadcrumb-ellipsis-color-ui;
 
@@ -31,8 +31,8 @@
       @apply cursor-pointer;
       @apply inline-flex items-center justify-center;
       @apply p-0;
-      @apply border-transparent;
       @apply bg-transparent;
+      @apply border-transparent;
     }
   }
 
@@ -49,7 +49,7 @@
     @apply flex flex-wrap items-center gap-2;
     @apply list-none;
     @apply m-0 p-0;
-    @apply text-sm text-ui/50;
+    @apply text-sm;
   }
 
   .mgnp-breadcrumb-page {
@@ -63,7 +63,6 @@
     @apply mgnp-base;
     @apply inline-flex items-center;
     @apply p-0;
-    @apply text-ui/50;
 
     ng-icon {
       --ng-icon__size: --spacing(1);
