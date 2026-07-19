@@ -1,0 +1,104 @@
+@utility mgnp-pagination-button-color-ui {
+  @apply bg-ui text-ui;
+
+  @variant not-data-disabled:not-data-selected:data-hover {
+    @apply bg-[color-mix(in_srgb,var(--background-color-ui),var(--mg-state-hover-mix))];
+  }
+
+  @variant not-data-disabled:not-data-selected:data-press {
+    @apply bg-[color-mix(in_srgb,var(--background-color-ui),var(--mg-state-active-mix))];
+  }
+
+  @variant data-disabled {
+    @apply bg-ui/33;
+    @apply text-ui/33;
+  }
+
+  @variant data-selected {
+    @apply bg-[color-mix(in_srgb,var(--background-color-ui),var(--mg-state-active-mix))];
+  }
+}
+
+@utility mgnp-pagination-first-color-ui {
+  @apply bg-ui text-ui;
+
+  @variant not-data-disabled:not-data-selected:data-hover {
+    @apply bg-[color-mix(in_srgb,var(--background-color-ui),var(--mg-state-hover-mix))];
+  }
+
+  @variant not-data-disabled:not-data-selected:data-press {
+    @apply bg-[color-mix(in_srgb,var(--background-color-ui),var(--mg-state-active-mix))];
+  }
+
+  @variant data-disabled {
+    @apply bg-ui/33;
+    @apply text-ui/33;
+  }
+
+  @variant data-selected {
+    @apply bg-[color-mix(in_srgb,var(--background-color-ui),var(--mg-state-active-mix))];
+  }
+}
+
+@utility mgnp-pagination-last-color-ui {
+  @apply bg-ui text-ui;
+
+  @variant not-data-disabled:not-data-selected:data-hover {
+    @apply bg-[color-mix(in_srgb,var(--background-color-ui),var(--mg-state-hover-mix))];
+  }
+
+  @variant not-data-disabled:not-data-selected:data-press {
+    @apply bg-[color-mix(in_srgb,var(--background-color-ui),var(--mg-state-active-mix))];
+  }
+
+  @variant data-disabled {
+    @apply bg-ui/33;
+    @apply text-ui/33;
+  }
+
+  @variant data-selected {
+    @apply bg-[color-mix(in_srgb,var(--background-color-ui),var(--mg-state-active-mix))];
+  }
+}
+
+@utility mgnp-pagination-previous-color-ui {
+  @apply bg-ui text-ui;
+
+  @variant not-data-disabled:not-data-selected:data-hover {
+    @apply bg-[color-mix(in_srgb,var(--background-color-ui),var(--mg-state-hover-mix))];
+  }
+
+  @variant not-data-disabled:not-data-selected:data-press {
+    @apply bg-[color-mix(in_srgb,var(--background-color-ui),var(--mg-state-active-mix))];
+  }
+
+  @variant data-disabled {
+    @apply bg-ui/33;
+    @apply text-ui/33;
+  }
+
+  @variant data-selected {
+    @apply bg-[color-mix(in_srgb,var(--background-color-ui),var(--mg-state-active-mix))];
+  }
+}
+
+@utility mgnp-pagination-next-color-ui {
+  @apply bg-ui text-ui;
+
+  @variant not-data-disabled:not-data-selected:data-hover {
+    @apply bg-[color-mix(in_srgb,var(--background-color-ui),var(--mg-state-hover-mix))];
+  }
+
+  @variant not-data-disabled:not-data-selected:data-press {
+    @apply bg-[color-mix(in_srgb,var(--background-color-ui),var(--mg-state-active-mix))];
+  }
+
+  @variant data-disabled {
+    @apply bg-ui/33;
+    @apply text-ui/33;
+  }
+
+  @variant data-selected {
+    @apply bg-[color-mix(in_srgb,var(--background-color-ui),var(--mg-state-active-mix))];
+  }
+}

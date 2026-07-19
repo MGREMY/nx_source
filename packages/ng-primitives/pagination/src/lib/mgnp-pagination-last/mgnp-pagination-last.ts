@@ -1,4 +1,6 @@
-import { Directive } from '@angular/core';
+import { MgnpPagination } from '../mgnp-pagination/mgnp-pagination';
+
+import { Directive, inject } from '@angular/core';
 import { NgpPaginationLast } from 'ng-primitives/pagination';
 
 @Directive({
@@ -6,6 +8,7 @@ import { NgpPaginationLast } from 'ng-primitives/pagination';
   host: {
     class: 'mgnp-pagination-last mgnp-c-pagination-last',
     'data-mgnp-pagination-last': '',
+    '[attr.data-mgnp-pagination-last-color]': 'pagination.color()',
   },
   hostDirectives: [
     {
@@ -16,4 +19,6 @@ import { NgpPaginationLast } from 'ng-primitives/pagination';
   ],
   exportAs: 'mgnpPaginationLast',
 })
-export class MgnpPaginationLast {}
+export class MgnpPaginationLast {
+  protected readonly pagination = inject(MgnpPagination);
+}

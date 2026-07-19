@@ -1,3 +1,5 @@
+@import './pagination/color.css';
+
 @layer components {
   .mgnp-pagination {
     @apply mgnp-base;
@@ -9,10 +11,44 @@
     }
   }
 
-  .mgnp-pagination-button,
-  .mgnp-pagination-first,
-  .mgnp-pagination-previous,
-  .mgnp-pagination-next,
+  .mgnp-pagination-button {
+    all: unset;
+
+    @apply mgnp-base mgnp-focus;
+    @apply flex items-center justify-center;
+    @apply cursor-pointer;
+    @apply w-8 h-8;
+    @apply rounded-lg;
+    @apply text-sm font-medium;
+    @apply shadow-md;
+
+    @apply data-[mgnp-pagination-button-color=ui]:mgnp-pagination-button-color-ui;
+
+    @variant data-disabled {
+      @apply shadow-none;
+      @apply cursor-default;
+    }
+  }
+
+  .mgnp-pagination-first {
+    all: unset;
+
+    @apply mgnp-base mgnp-focus;
+    @apply flex items-center justify-center;
+    @apply cursor-pointer;
+    @apply w-8 h-8;
+    @apply rounded-lg;
+    @apply text-sm font-medium;
+    @apply shadow-md;
+
+    @apply data-[mgnp-pagination-first-color=ui]:mgnp-pagination-first-color-ui;
+
+    @variant data-disabled {
+      @apply shadow-none;
+      @apply cursor-default;
+    }
+  }
+
   .mgnp-pagination-last {
     all: unset;
 
@@ -21,27 +57,52 @@
     @apply cursor-pointer;
     @apply w-8 h-8;
     @apply rounded-lg;
-    @apply bg-ui;
-    @apply text-ui text-sm font-medium;
+    @apply text-sm font-medium;
     @apply shadow-md;
 
-    @variant not-data-disabled:not-data-selected:data-hover {
-      @apply bg-[color-mix(in_srgb,var(--background-color-ui),var(--mg-state-hover-mix))];
-    }
-
-    @variant not-data-disabled:not-data-selected:data-press {
-      @apply bg-[color-mix(in_srgb,var(--background-color-ui),var(--mg-state-active-mix))];
-    }
+    @apply data-[mgnp-pagination-last-color=ui]:mgnp-pagination-last-color-ui;
 
     @variant data-disabled {
-      @apply bg-ui/33;
-      @apply text-ui/33;
       @apply shadow-none;
       @apply cursor-default;
     }
+  }
 
-    @variant data-selected {
-      @apply bg-[color-mix(in_srgb,var(--background-color-ui),var(--mg-state-active-mix))];
+  .mgnp-pagination-previous {
+    all: unset;
+
+    @apply mgnp-base mgnp-focus;
+    @apply flex items-center justify-center;
+    @apply cursor-pointer;
+    @apply w-8 h-8;
+    @apply rounded-lg;
+    @apply text-sm font-medium;
+    @apply shadow-md;
+
+    @apply data-[mgnp-pagination-previous-color=ui]:mgnp-pagination-previous-color-ui;
+
+    @variant data-disabled {
+      @apply shadow-none;
+      @apply cursor-default;
+    }
+  }
+
+  .mgnp-pagination-next {
+    all: unset;
+
+    @apply mgnp-base mgnp-focus;
+    @apply flex items-center justify-center;
+    @apply cursor-pointer;
+    @apply w-8 h-8;
+    @apply rounded-lg;
+    @apply text-sm font-medium;
+    @apply shadow-md;
+
+    @apply data-[mgnp-pagination-next-color=ui]:mgnp-pagination-next-color-ui;
+
+    @variant data-disabled {
+      @apply shadow-none;
+      @apply cursor-default;
     }
   }
 }

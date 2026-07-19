@@ -1,4 +1,6 @@
-import { Directive } from '@angular/core';
+import { MgnpPagination } from '../mgnp-pagination/mgnp-pagination';
+
+import { Directive, inject } from '@angular/core';
 import { NgpPaginationFirst } from 'ng-primitives/pagination';
 
 @Directive({
@@ -6,6 +8,7 @@ import { NgpPaginationFirst } from 'ng-primitives/pagination';
   host: {
     class: 'mgnp-pagination-first mgnp-c-pagination-first',
     'data-mgnp-pagination-first': '',
+    '[attr.data-mgnp-pagination-first-color]': 'pagination.color()',
   },
   hostDirectives: [
     {
@@ -16,4 +19,6 @@ import { NgpPaginationFirst } from 'ng-primitives/pagination';
   ],
   exportAs: 'mgnpPaginationFirst',
 })
-export class MgnpPaginationFirst {}
+export class MgnpPaginationFirst {
+  protected readonly pagination = inject(MgnpPagination);
+}
