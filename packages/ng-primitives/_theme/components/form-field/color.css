@@ -1,5 +1,5 @@
 @utility mgnp-description-color-* {
-  @apply text-[--color-mix(in_srgb,--value(--text-color-*),var(--mg-color-secondary-mix))];
+  @apply text-[color-mix(in_srgb,--value(--text-color-*),var(--mg-color-secondary-mix))];
 }
 
 @utility mgnp-form-control-color-* {

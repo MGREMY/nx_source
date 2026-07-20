@@ -28,7 +28,7 @@ export type MgnpTableColor = PropertyType<'ui'>;
   host: {
     'data-mgnp-table': '',
     class: 'mgnp-table mgnp-c-table',
-    '[attr.data-mgnp-table-header-color]': 'color()',
+    '[attr.data-mgnp-table-color]': 'color()',
   },
 })
 export class MgnpTable {
