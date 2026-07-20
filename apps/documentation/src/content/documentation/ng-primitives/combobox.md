@@ -17,27 +17,9 @@ from a list of options while filtering the list based on their input.
 
 <app-css-content name="combobox"></app-css-content>
 
-## Attributes
+## Metadata
 
-### MgnpCombobox
-
----
-
-### MgnpComboboxButton
-
----
-
-### MgnpComboboxDropdown
-
----
-
-### MgnpComboboxInput
-
----
-
-### MgnpComboboxOption
-
----
+<app-metadata name="combobox"></app-metadata>
 
 ## CSS
 

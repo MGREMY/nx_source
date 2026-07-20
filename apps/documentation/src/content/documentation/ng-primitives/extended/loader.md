@@ -15,6 +15,10 @@ Display a loader indicator
 
 <app-css-content name="loader" path="extended"></app-css-content>
 
+## Metadata
+
+<app-metadata name="loader"></app-metadata>
+
 ## CSS
 
 | directive  | class       | custom class  |

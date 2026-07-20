@@ -16,35 +16,9 @@ The Form Field primitive is used to create interactive forms, with state and err
 
 <app-css-content name="form-field"></app-css-content>
 
-## Attributes
+## Metadata
 
-### MgnpDescription
-
----
-
-### MgnpError
-
----
-
-### MgnpFormControl
-
----
-
-### MgnpFormField
-
----
-
-### MgnpInputGroup
-
----
-
-### MgnpInputGroupAddon
-
----
-
-### MgnpLabel
-
----
+<app-metadata name="form-field"></app-metadata>
 
 ## CSS
 

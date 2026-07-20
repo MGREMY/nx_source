@@ -16,15 +16,9 @@ Perform state toggling.
 
 <app-css-content name="switch"></app-css-content>
 
-## Attributes
+## Metadata
 
-### MgnpSwitch
-
----
-
-### MgnpSwitchThumb
-
----
+<app-metadata name="switch"></app-metadata>
 
 ## CSS
 

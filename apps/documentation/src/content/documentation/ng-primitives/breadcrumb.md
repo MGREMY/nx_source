@@ -16,37 +16,9 @@ Help users understand their location within a hierarchy with a fully accessible 
 
 <app-css-content name="breadcrumb"></app-css-content>
 
-## Attributes
+## Metadata
 
-### MgnpBreadcrumb
-
-| name  | possible values | description      | default value |
-| ----- | --------------- | ---------------- | ------------- |
-| color | **ui**          | define the color | ui            |
-
-### MgnpBreadcrumbEllipsis
-
----
-
-### MgnpBreadcrumbItem
-
----
-
-### MgnpBreadcrumbLink
-
----
-
-### MgnpBreadcrumbList
-
----
-
-### MgnpBreadcrumbPage
-
----
-
-### MgnpBreadcrumbSeparator
-
----
+<app-metadata name="breadcrumb"></app-metadata>
 
 ## CSS
 

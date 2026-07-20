@@ -15,6 +15,10 @@ Display a pre-styled table
 
 <app-css-content name="table" path="extended"></app-css-content>
 
+## Metadata
+
+<app-metadata name="table"></app-metadata>
+
 ## CSS
 
 | directive | class      | custom class |

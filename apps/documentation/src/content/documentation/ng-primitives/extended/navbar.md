@@ -15,6 +15,10 @@ Display a navbar
 
 <app-css-content name="navbar" path="extended"></app-css-content>
 
+## Metadata
+
+<app-metadata name="navbar"></app-metadata>
+
 ## CSS
 
 | directive  | class       | custom class  |

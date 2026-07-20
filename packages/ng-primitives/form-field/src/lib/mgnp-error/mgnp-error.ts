@@ -14,7 +14,7 @@ import { injectErrorState, NgpError, provideErrorState } from 'ng-primitives/for
   hostDirectives: [
     {
       directive: NgpError,
-      inputs: ['ngpErrorValidator:validator'],
+      inputs: ['ngpErrorValidator:mgnpErrorValidator'],
       outputs: [],
     },
   ],

@@ -18,15 +18,9 @@ focus.
 
 <app-css-content name="button"></app-css-content>
 
-## Attributes
+## Metadata
 
-### MgnpButton
-
-| name    | possible values                                                                       | description      | default value |
-| ------- | ------------------------------------------------------------------------------------- | ---------------- | ------------- |
-| color   | **ui** / **primary** / **accent** / **info** / **success** / **warning** / **danger** | define the color | ui            |
-| variant | **solid** / **outline**                                                               | define the style | solid         |
-| size    | **xs** / **sm** / **md** / **lg** / **xl**                                            | define the size  | md            |
+<app-metadata name="button"></app-metadata>
 
 ## CSS
 

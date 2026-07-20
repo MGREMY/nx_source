@@ -17,11 +17,9 @@ the user.
 
 <app-css-content name="toast"></app-css-content>
 
-## Attributes
+## Metadata
 
-### MgnpToast
-
----
+<app-metadata name="toast"></app-metadata>
 
 ## CSS
 

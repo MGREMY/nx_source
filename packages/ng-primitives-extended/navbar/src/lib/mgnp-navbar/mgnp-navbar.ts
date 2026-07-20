@@ -18,5 +18,5 @@ export type MgnpNavbarColor = PropertyType<'ui'>;
 })
 export class MgnpNavbar {
   readonly color = input<MgnpNavbarColor>('ui');
-  readonly isAlwaysOpen = input(false, { transform: booleanAttribute });
+  readonly isAlwaysOpen = input<unknown, boolean>(false, { transform: booleanAttribute });
 }

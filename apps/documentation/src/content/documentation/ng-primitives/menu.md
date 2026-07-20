@@ -16,39 +16,9 @@ A menu is a list of options or commands presented to the user in a dropdown list
 
 <app-css-content name="menu"></app-css-content>
 
-## Attributes
+## Metadata
 
-### MgnpMenu
-
----
-
-### MgnpMenuItem
-
----
-
-### MgnpMenuItemCheckbox
-
----
-
-### MgnpMenuItemIndicator
-
----
-
-### MgnpMenuItemRadio
-
----
-
-### MgnpMenuItemRadioGroup
-
----
-
-### MgnpMenuTrigger
-
----
-
-### MgnpSubmenuTrigger
-
----
+<app-metadata name="menu"></app-metadata>
 
 ## CSS
 

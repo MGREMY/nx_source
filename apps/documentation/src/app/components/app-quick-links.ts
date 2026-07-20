@@ -36,7 +36,7 @@ import { filter } from 'rxjs/operators';
   `,
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export default class QuickLinks implements AfterViewInit {
+export default class AppQuickLinks implements AfterViewInit {
   private readonly router = inject(Router);
   private readonly platformId = inject(PLATFORM_ID);
   private readonly injector = inject(Injector);

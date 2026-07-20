@@ -207,6 +207,18 @@ function parseFile(filePath: string): ParsedDirective[] {
                               .replace(/['"`]/gm, '')
                           );
                       }
+                    } else if (typeArgument.isKind(SyntaxKind.LiteralType)) {
+                      const literal = typeArgument.asKind(SyntaxKind.LiteralType);
+                      if (literal) {
+                        possibleValues = [
+                          // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+                          literal
+                            .getLiteral()
+                            .asKind(SyntaxKind.StringLiteral)!
+                            .getText()
+                            .replace(/['"`]/gm, ''),
+                        ];
+                      }
                     }
                   }
                 }
@@ -324,7 +336,7 @@ export async function componentMetadataGeneratorGenerator(
       const outputPath = joinPathFragments(
         'tmp',
         project.data.root,
-        componentName,
+        'metadata',
         `${componentName}.json`
       );
 
@@ -332,7 +344,7 @@ export async function componentMetadataGeneratorGenerator(
     }
   }
   return {
-    outOfSyncMessage: 'Component metadata has been generated.',
+    outOfSyncMessage: 'Component metadata has not been generated.',
   };
 }
 

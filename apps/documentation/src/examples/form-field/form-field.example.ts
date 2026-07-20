@@ -56,7 +56,7 @@ import { NgpComboboxPortal } from 'ng-primitives/combobox';
           <div mgnpInputGroupAddon><p mgnpLabel>Name</p></div>
           <input mgnpInput [formControl]="formGroup.controls.name" />
         </div>
-        <p mgnpError validator="required">This field is required.</p>
+        <p mgnpError mgnpErrorValidator="required">This field is required.</p>
       </div>
       <div mgnpFormField>
         <div mgnpInputGroup>
@@ -64,7 +64,7 @@ import { NgpComboboxPortal } from 'ng-primitives/combobox';
           <input mgnpInput type="email" placeholder="email@domain.com" [formControl]="formGroup.controls.email" />
           <span mgnpInputGroupAddon><ng-icon name="heroAtSymbolMini" /></span>
         </div>
-        <p mgnpError validator="required">This field is required.</p>
+        <p mgnpError mgnpErrorValidator="required">This field is required.</p>
         <p mgnpError>This field must be an email.</p>
       </div>
       <div mgnpFormField>
@@ -80,7 +80,7 @@ import { NgpComboboxPortal } from 'ng-primitives/combobox';
           <input mgnpInput placeholder="6.12.34.56.78" [formControl]="formGroup.controls.phoneNumber" />
           <div mgnpInputGroupAddon><ng-icon name="heroPhoneMini" /></div>
         </div>
-        <p mgnpError validator="pattern">The phone number must have the french phone number form.</p>
+        <p mgnpError mgnpErrorValidator="pattern">The phone number must have the french phone number form.</p>
       </div>
       <div mgnpFormField>
         <p mgnpDescription>Choose the corresponding item depending on the account type.</p>
@@ -97,7 +97,7 @@ import { NgpComboboxPortal } from 'ng-primitives/combobox';
             </div>
           </div>
         </div>
-        <p mgnpError validator="required">You must select one of the provided options.</p>
+        <p mgnpError mgnpErrorValidator="required">You must select one of the provided options.</p>
       </div>
       <div mgnpFormField type="toggle">
         <div class="flex items-center justify-between gap-2">
@@ -108,7 +108,7 @@ import { NgpComboboxPortal } from 'ng-primitives/combobox';
             }
           </span>
         </div>
-        <p mgnpError validator="required">You must accept the conditions.</p>
+        <p mgnpError mgnpErrorValidator="required">You must accept the conditions.</p>
       </div>
       <div mgnpFormField type="toggle">
         <div class="flex items-center justify-between gap-2">

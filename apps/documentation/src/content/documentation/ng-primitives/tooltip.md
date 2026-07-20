@@ -16,19 +16,9 @@ Display additional information on hover.
 
 <app-css-content name="tooltip"></app-css-content>
 
-## Attributes
+## Metadata
 
-### MgnpTooltip
-
----
-
-### MgnpTooltipArrow
-
----
-
-### MgnpTooltipTrigger
-
----
+<app-metadata name="tooltip"></app-metadata>
 
 ## CSS
 

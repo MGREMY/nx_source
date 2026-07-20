@@ -33,6 +33,11 @@ export default defineConfig(({ mode }) => {
     resolve: {
       tsconfigPaths: true,
     },
+    server: {
+      fs: {
+        allow: ['.'],
+      },
+    },
     build: {
       target: ['es2020'],
     },

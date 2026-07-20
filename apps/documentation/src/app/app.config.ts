@@ -1,6 +1,7 @@
 import { environment } from '../environments/environment';
-import { AppCssContent } from './components/css-content';
-import { AppExample } from './components/example';
+import { AppCssContent } from './components/app-css-content';
+import { AppExample } from './components/app-example';
+import { AppMetadata } from './components/app-metadata';
 import {
   provideConfig,
   provideEnvironmentConfig,
@@ -67,6 +68,13 @@ export function initializeCustomElements(
         customElements.define(
           'app-css-content',
           createCustomElement(AppCssContent, { injector: injector })
+        );
+      }
+
+      if (!customElements.get('app-metadata')) {
+        customElements.define(
+          'app-metadata',
+          createCustomElement(AppMetadata, { injector: injector })
         );
       }
     }
