@@ -11,6 +11,7 @@
       "executor": "@analogjs/platform:vite",
       "outputs": ["{workspaceRoot}/dist/apps/documentation"],
       "defaultConfiguration": "production",
+      "syncGenerators": ["@mgremy/nx-source-plugin:component-metadata-generator"],
       "options": {
         "configFile": "apps/documentation/vite.config.ts",
         "main": "apps/documentation/src/main.ts",

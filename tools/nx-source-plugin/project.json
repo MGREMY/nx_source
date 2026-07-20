@@ -1,0 +1,41 @@
+{
+  "name": "nx-source-plugin",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "tools/nx-source-plugin/src",
+  "projectType": "library",
+  "tags": [],
+  "targets": {
+    "build": {
+      "executor": "@nx/js:tsc",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/tools/nx-source-plugin",
+        "main": "tools/nx-source-plugin/src/index.ts",
+        "tsConfig": "tools/nx-source-plugin/tsconfig.lib.json",
+        "assets": [
+          "tools/nx-source-plugin/*.md",
+          {
+            "input": "./tools/nx-source-plugin/src",
+            "glob": "**/!(*.ts)",
+            "output": "./src"
+          },
+          {
+            "input": "./tools/nx-source-plugin/src",
+            "glob": "**/*.d.ts",
+            "output": "./src"
+          },
+          {
+            "input": "./tools/nx-source-plugin",
+            "glob": "generators.json",
+            "output": "."
+          },
+          {
+            "input": "./tools/nx-source-plugin",
+            "glob": "executors.json",
+            "output": "."
+          }
+        ]
+      }
+    }
+  }
+}
