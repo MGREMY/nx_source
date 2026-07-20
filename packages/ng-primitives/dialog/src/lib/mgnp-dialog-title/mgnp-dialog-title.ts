@@ -1,4 +1,6 @@
-import { Directive } from '@angular/core';
+import { MgnpDialogOverlay } from '../mgnp-dialog-overlay/mgnp-dialog-overlay';
+
+import { Directive, inject } from '@angular/core';
 import { NgpDialogTitle } from 'ng-primitives/dialog';
 
 @Directive({
@@ -6,6 +8,9 @@ import { NgpDialogTitle } from 'ng-primitives/dialog';
   host: {
     class: 'mgnp-dialog-title mgnp-c-dialog-title',
     'data-mgnp-dialog-title': '',
+    '[attr.data-mgnp-dialog-title-color]': 'overlay.color()',
+    '[attr.data-mgnp-dialog-title-mode]': 'overlay.mode()',
+    '[attr.data-mgnp-dialog-title-position]': 'overlay.drawerPosition()',
   },
   hostDirectives: [
     {
@@ -16,4 +21,6 @@ import { NgpDialogTitle } from 'ng-primitives/dialog';
   ],
   exportAs: 'mgnpDialogTitle',
 })
-export class MgnpDialogTitle {}
+export class MgnpDialogTitle {
+  protected readonly overlay = inject(MgnpDialogOverlay);
+}
