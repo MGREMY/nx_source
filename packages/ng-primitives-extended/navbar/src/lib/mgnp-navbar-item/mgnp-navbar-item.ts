@@ -1,4 +1,5 @@
 import { MgnpNavbarContent } from '../mgnp-navbar-content/mgnp-navbar-content';
+import { MgnpNavbar } from '../mgnp-navbar/mgnp-navbar';
 
 import { Directive, inject } from '@angular/core';
 
@@ -8,15 +9,17 @@ import { Directive, inject } from '@angular/core';
   host: {
     'data-mgnp-navbar-item': '',
     class: 'mgnp-navbar-item mgnp-c-navbar-item',
+    '[attr.data-mgnp-navbar-item-color]': 'navbar.color()',
     '(click)': 'onClick()',
   },
   hostDirectives: [],
   exportAs: 'mgnpNavbarItem',
 })
 export class MgnpNavbarItem {
-  private readonly _mgnpNavbarContent = inject(MgnpNavbarContent);
+  protected readonly navbar = inject(MgnpNavbar);
+  protected readonly navbarContent = inject(MgnpNavbarContent);
 
   protected onClick(): void {
-    this._mgnpNavbarContent.toggle(false);
+    this.navbarContent.toggle(false);
   }
 }

@@ -56,7 +56,7 @@ import { codeToHtml } from 'shiki';
           @if (availableAlternatives().size > 1) {
             <div class="relative hidden sm:block">
               <select
-                class="appearance-none rounded-md bg-ui mgnp-bg-state-ui text-ui border-ui transition-colors border px-3 py-2 pr-8 text-xs font-medium shadow-xs hover:cursor-pointer outline-hidden focus-visible:z-10"
+                class="appearance-none rounded-md bg-ui bg-state-ui text-ui border-ui transition-colors border px-3 py-2 pr-8 text-xs font-medium shadow-xs hover:cursor-pointer outline-hidden focus-visible:z-10"
                 aria-label="Select example style"
                 [(ngModel)]="selectedAlternative">
                 @for (name of availableAlternatives(); track name) {

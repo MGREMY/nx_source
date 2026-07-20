@@ -38,6 +38,29 @@
   }
 }
 
+@utility bg-state-* {
+  @variant data-hover {
+    background-color: color-mix(in srgb, --value(--background-color- *), var(--mg-state-hover-mix));
+  }
+
+  @variant data-press {
+    background-color: color-mix(
+      in srgb,
+      --value(--background-color- *),
+      var(--mg-state-active-mix)
+    );
+  }
+
+  @variant data-disabled {
+    opacity: 50%;
+    cursor: default;
+  }
+}
+
+@utility bg-secondary-* {
+  @apply bg-[color-mix(in_srgb,--value(--background-color-*),light-dark(#000,#fff)_5%)];
+}
+
 @layer base {
   .prose {
     @apply doc-content transition-colors;

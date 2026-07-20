@@ -1,18 +1,23 @@
+@import './navbar/color.css';
+
 @layer components {
   .mgnp-navbar {
     @apply transition;
     @apply flex flex-wrap items-center gap-8;
     @apply mx-auto p-4;
     @apply max-w-[100vw];
-    @apply bg-secondary-ui;
-    @apply border-b border-b-ui;
+    @apply border-b;
+
+    @apply data-[mgnp-navbar-color=ui]:mgnp-navbar-color-ui;
   }
 
   .mgnp-navbar-content {
     @apply transition;
     @apply flex-col items-center justify-end;
 
-    @variant data-[is-always-open], md {
+    @apply data-[mgnp-navbar-content-color=ui]:mgnp-navbar-content-color-ui;
+
+    @variant data-[mgnp-navbar-content-is-always-open], md {
       @apply flex flex-1 flex-row;
       @apply m-auto;
 
@@ -22,26 +27,23 @@
       }
     }
 
-    @variant not-data-[is-always-open]:max-md {
-      @variant data-enter {
+    @variant not-data-[mgnp-navbar-content-is-always-open]:max-md {
+      @variant data-[mgnp-navbar-content-enter] {
         @apply flex basis-full;
         @apply order-last;
         @apply box-border rounded-lg;
-
-        animation: mg-show var(--default-transition-duration)
-          var(--default-transition-timing-function);
+        @apply animate-mg-show;
 
         ul {
           @apply flex flex-col gap-2;
           @apply w-full;
           @apply p-4;
           @apply rounded-lg;
-          @apply bg-ui;
           @apply font-medium;
         }
       }
 
-      @variant data-exit {
+      @variant data-[mgnp-navbar-content-exit] {
         @apply hidden;
       }
     }
