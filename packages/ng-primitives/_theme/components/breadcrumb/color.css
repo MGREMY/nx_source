@@ -1,5 +1,5 @@
 @utility mgnp-breadcrumb-color-* {
-  @apply text-[--value(--text-color-*)]/50;
+  @apply text-[color-mix(in_srgb,--value(--text-color-*),var(--mg-color-secondary-mix))];
 }
 
 @utility mgnp-breadcrumb-ellipsis-color-* {
