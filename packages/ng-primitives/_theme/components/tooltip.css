@@ -1,13 +1,17 @@
+@import './tooltip/color.css';
+
 @layer components {
   .mgnp-tooltip {
     @apply mgnp-base;
     @apply absolute;
     @apply max-w-64;
     @apply py-3 px-3;
-    @apply border-none rounded-lg;
+    @apply rounded-lg;
     @apply text-xs;
+    @apply origin-(--ngp-tooltip-transform-origin);
+    @apply animate-mg-show;
 
-    @apply origin-(--ngp-tooltip-transform-origin) animate-mg-show;
+    @apply data-[mgnp-tooltip-color=ui]:mgnp-tooltip-color-ui;
 
     @variant data-exit {
       @apply animate-mg-hide;
@@ -20,6 +24,8 @@
     @apply pointer-events-none;
     @apply w-2 h-2;
     @apply rounded-xs;
+
+    @apply data-[mgnp-tooltip-arrow-color=ui]:mgnp-tooltip-arrow-color-ui;
 
     @variant data-[placement=top] {
       @apply top-[calc(100%-5px)];
