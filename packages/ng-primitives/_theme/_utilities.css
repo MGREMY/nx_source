@@ -10,16 +10,6 @@
   }
 }
 
-@utility mgnp-disabled {
-  @variant data-disabled {
-    @apply opacity-50 cursor-default;
-  }
-}
-
-@utility bg-secondary-* {
-  @apply bg-[color-mix(in_srgb,--value(--background-color-*),light-dark(#000,#fff)_5%)];
-}
-
 /* TODO: delete */
 @utility mgnp-bg-state-* {
   @variant data-hover {
@@ -40,4 +30,14 @@
     opacity: 50%;
     cursor: default;
   }
+}
+
+@utility mgnp-disabled {
+  @variant data-disabled {
+    @apply opacity-50 cursor-default;
+  }
+}
+
+@utility bg-secondary-* {
+  @apply bg-[color-mix(in_srgb,--value(--background-color-*),light-dark(#000,#fff)_5%)];
 }

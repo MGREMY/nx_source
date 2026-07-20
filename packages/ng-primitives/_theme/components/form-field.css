@@ -13,8 +13,7 @@
     @apply mgnp-base;
     @apply hidden;
     @apply text-sm;
-
-    @apply data-[mgnp-error-color=ui]:mgnp-error-color-ui;
+    @apply text-danger;
 
     @variant data-[validator=fail]:data-dirty {
       @apply block;
