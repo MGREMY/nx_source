@@ -1,3 +1,4 @@
-@utility mgnp-toast-color-ui {
-  @apply bg-ui border-ui;
+@utility mgnp-toast-color-* {
+  @apply bg-[--value(--background-color-*)];
+  @apply border-[--value(--border-color-*)];
 }
