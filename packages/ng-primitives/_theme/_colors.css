@@ -10,12 +10,12 @@
 
   /* Text */
   --mg-text-ui: light-dark(var(--color-black), var(--color-white));
-  --mg-text-primary: light-dark(var(--color-sky-500), var(--color-sky-500));
-  --mg-text-accent: light-dark(var(--color-emerald-500), var(--color-emerald-500));
-  --mg-text-info: light-dark(var(--color-blue-500), var(--color-blue-500));
-  --mg-text-success: light-dark(var(--color-green-500), var(--color-green-500));
-  --mg-text-warning: light-dark(var(--color-yellow-500), var(--color-yellow-500));
-  --mg-text-danger: light-dark(var(--color-red-500), var(--color-red-500));
+  --mg-text-primary: light-dark(var(--color-sky-700), var(--color-sky-300));
+  --mg-text-accent: light-dark(var(--color-emerald-700), var(--color-emerald-300));
+  --mg-text-info: light-dark(var(--color-blue-700), var(--color-blue-300));
+  --mg-text-success: light-dark(var(--color-green-700), var(--color-green-300));
+  --mg-text-warning: light-dark(var(--color-yellow-700), var(--color-yellow-300));
+  --mg-text-danger: light-dark(var(--color-red-700), var(--color-red-300));
 
   --mg-text-inverse: light-dark(var(--color-white), var(--color-black));
   --mg-text-placeholder: light-dark(var(--color-stone-400), var(--color-stone-400));
