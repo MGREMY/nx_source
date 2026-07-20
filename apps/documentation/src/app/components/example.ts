@@ -116,12 +116,12 @@ import { codeToHtml } from 'shiki';
 export class AppExample {
   private readonly _sanitizer = inject(DomSanitizer);
 
-  private readonly examples = import.meta.glob('../examples/**/*.ts', {
+  private readonly examples = import.meta.glob('../../examples/**/*.ts', {
     import: 'default',
     eager: false,
   });
 
-  private readonly sources = import.meta.glob('../examples/**/*.ts', {
+  private readonly sources = import.meta.glob('../../examples/**/*.ts', {
     import: 'default',
     query: '?raw',
     eager: false,
