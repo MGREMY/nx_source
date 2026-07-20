@@ -9,10 +9,9 @@
     @apply p-1;
     @apply border rounded-lg;
     @apply shadow-lg;
+    @apply origin-(--ngp-menu-transform-origin);
 
     @apply data-[mgnp-menu-color=ui]:mgnp-menu-color-ui;
-
-    transform-origin: var(--ngp-menu-transform-origin);
 
     @variant data-enter {
       @apply animate-mg-show;
@@ -29,20 +28,9 @@
     @apply cursor-pointer;
     @apply min-w-30;
     @apply py-1.5 px-3.5;
-    @apply bg-transparent;
-    @apply border-none rounded-sm;
+    @apply rounded-sm;
     @apply text-sm;
 
-    @variant data-hover {
-      @apply bg-[color-mix(in_srgb,var(--background-color-ui),var(--mg-state-hover-mix))];
-    }
-
-    @variant data-press {
-      @apply bg-[color-mix(in_srgb,var(--background-color-ui),var(--mg-state-active-mix))];
-    }
-
-    @variant data-disabled {
-      @apply opacity-50;
-    }
+    @apply data-[mgnp-menu-item-color=ui]:mgnp-menu-item-color-ui;
   }
 }
