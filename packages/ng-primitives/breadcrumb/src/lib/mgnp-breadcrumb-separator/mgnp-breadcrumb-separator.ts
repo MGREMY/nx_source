@@ -1,5 +1,11 @@
-import { Directive } from '@angular/core';
-import { NgpBreadcrumbSeparator, provideBreadcrumbSeparatorState } from 'ng-primitives/breadcrumbs';
+import { MgnpBreadcrumb } from '../mgnp-breadcrumb/mgnp-breadcrumb';
+
+import { Directive, inject } from '@angular/core';
+import {
+  injectBreadcrumbSeparatorState,
+  NgpBreadcrumbSeparator,
+  provideBreadcrumbSeparatorState,
+} from 'ng-primitives/breadcrumbs';
 
 @Directive({
   selector: '[mgnpBreadcrumbSeparator]',
@@ -7,6 +13,7 @@ import { NgpBreadcrumbSeparator, provideBreadcrumbSeparatorState } from 'ng-prim
   host: {
     class: 'mgnp-breadcrumb-separator mgnp-c-breadcrumb-separator',
     'data-mgnp-breadcrumb-separator': '',
+    '[attr.data-mgnp-breadcrumb-separator-color]': 'breadcrumb.color()',
   },
   hostDirectives: [
     {
@@ -17,4 +24,7 @@ import { NgpBreadcrumbSeparator, provideBreadcrumbSeparatorState } from 'ng-prim
   ],
   exportAs: 'mgnpBreadcrumbSeparator',
 })
-export class MgnpBreadcrumbSeparator {}
+export class MgnpBreadcrumbSeparator {
+  protected readonly state = injectBreadcrumbSeparatorState();
+  protected readonly breadcrumb = inject(MgnpBreadcrumb);
+}

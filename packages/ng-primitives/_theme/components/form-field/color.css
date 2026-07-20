@@ -1,0 +1,31 @@
+@utility mgnp-description-color-* {
+  @apply text-[color-mix(in_srgb,--value(--text-color-*),var(--mg-color-secondary-mix))];
+}
+
+@utility mgnp-form-control-color-* {
+  @apply bg-[--value(--background-color-*)];
+  @apply border-[--value(--border-color-*)];
+  @apply text-[--value(--text-color-*)];
+
+  ::placeholder {
+    @apply text-placeholder;
+  }
+
+  @variant not-data-pristine:data-invalid {
+    @apply border-danger;
+  }
+}
+
+@utility mgnp-input-group-color-* {
+  @apply bg-[--value(--background-color-*)];
+}
+
+@utility mgnp-input-group-addon-color-* {
+  @apply bg-[--value(--background-color-*)]/75;
+  @apply border-[--value(--border-color-*)];
+}
+
+@utility mgnp-label-color-* {
+  @apply text-[color-mix(in_srgb,--value(--text-color-*),var(--mg-color-secondary-mix))];
+  @apply border-[--value(--border-color-*)];
+}

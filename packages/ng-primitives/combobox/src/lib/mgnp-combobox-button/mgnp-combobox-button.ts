@@ -1,4 +1,6 @@
-import { Directive } from '@angular/core';
+import { MgnpCombobox } from '../mgnp-combobox/mgnp-combobox';
+
+import { Directive, inject } from '@angular/core';
 import { NgpComboboxButton } from 'ng-primitives/combobox';
 
 @Directive({
@@ -7,6 +9,7 @@ import { NgpComboboxButton } from 'ng-primitives/combobox';
   host: {
     class: 'mgnp-combobox-button mgnp-c-combobox-button',
     'data-mgnp-combobox-button': '',
+    '[attr.data-mgnp-combobox-button-color]': 'combobox.color()',
   },
   hostDirectives: [
     {
@@ -17,4 +20,6 @@ import { NgpComboboxButton } from 'ng-primitives/combobox';
   ],
   exportAs: 'mgnpComboboxButton',
 })
-export class MgnpComboboxButton {}
+export class MgnpComboboxButton {
+  protected readonly combobox = inject(MgnpCombobox);
+}

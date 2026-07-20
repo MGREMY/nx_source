@@ -1,83 +1,16 @@
-@utility mgnp-checkbox-color-ui {
-  @apply text-ui border-ui;
+@utility mgnp-checkbox-color-* {
+  @apply text-inverse;
+  @apply border-[--value(--border-color-*)];
+
+  @variant not-data-pristine:data-invalid {
+    @apply border-danger;
+  }
 
   @variant data-checked {
-    @apply bg-ui-active border-transparent;
+    @apply bg-[color-mix(in_srgb,--value(--background-color-*),var(--mg-state-active-mix))] border-transparent;
   }
 
   @variant data-indeterminate {
-    @apply bg-ui-active/50 border-transparent;
-  }
-}
-
-@utility mgnp-checkbox-color-primary {
-  @apply text-inverse border-primary;
-
-  @variant data-checked {
-    @apply bg-primary-active border-transparent;
-  }
-
-  @variant data-indeterminate {
-    @apply bg-primary-active/50 border-transparent;
-  }
-}
-
-@utility mgnp-checkbox-color-secondary {
-  @apply text-inverse border-secondary;
-
-  @variant data-checked {
-    @apply bg-secondary-active border-transparent;
-  }
-
-  @variant data-indeterminate {
-    @apply bg-secondary-active/50 border-transparent;
-  }
-}
-
-@utility mgnp-checkbox-color-info {
-  @apply text-inverse border-info;
-
-  @variant data-checked {
-    @apply bg-info-active border-transparent;
-  }
-
-  @variant data-indeterminate {
-    @apply bg-info-active/50 border-transparent;
-  }
-}
-
-@utility mgnp-checkbox-color-success {
-  @apply text-inverse border-success;
-
-  @variant data-checked {
-    @apply bg-success-active border-transparent;
-  }
-
-  @variant data-indeterminate {
-    @apply bg-success-active/50 border-transparent;
-  }
-}
-
-@utility mgnp-checkbox-color-warning {
-  @apply text-inverse border-warning;
-
-  @variant data-checked {
-    @apply bg-warning-active border-transparent;
-  }
-
-  @variant data-indeterminate {
-    @apply bg-warning-active/50 border-transparent;
-  }
-}
-
-@utility mgnp-checkbox-color-danger {
-  @apply text-inverse border-danger;
-
-  @variant data-checked {
-    @apply bg-danger-active border-transparent;
-  }
-
-  @variant data-indeterminate {
-    @apply bg-danger-active/50 border-transparent;
+    @apply bg-[color-mix(in_srgb,--value(--background-color-*),var(--mg-state-active-mix))]/50 border-transparent;
   }
 }

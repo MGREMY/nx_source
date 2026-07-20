@@ -1,0 +1,9 @@
+@utility mgnp-accordion-color-* {
+  @apply bg-[--value(--background-color-*)];
+  @apply border-[--value(--border-color-*)];
+}
+
+@utility mgnp-accordion-trigger-color-* {
+  @apply bg-transparent;
+  @apply text-[--value(--text-color-*)];
+}

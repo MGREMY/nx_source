@@ -1,16 +1,19 @@
+@import './form-field/color.css';
+
 @layer components {
   .mgnp-description {
-    @apply transition;
+    @apply mgnp-base;
     @apply inline;
-    @apply text-ui-secondary;
     @apply text-sm;
+
+    @apply data-[mgnp-description-color=ui]:mgnp-description-color-ui;
   }
 
   .mgnp-error {
-    @apply transition;
+    @apply mgnp-base;
     @apply hidden;
-    @apply text-danger;
     @apply text-sm;
+    @apply text-danger;
 
     @variant data-[validator=fail]:data-dirty {
       @apply block;
@@ -18,34 +21,27 @@
   }
 
   .mgnp-form-control {
-    @apply transition mgnp-focus;
+    @apply mgnp-base mgnp-focus;
     @apply block;
     @apply w-full;
-    @apply bg-ui;
-    @apply text-ui;
-    @apply border border-ui rounded-lg;
+    @apply border rounded-lg;
     @apply py-2 px-4;
 
-    ::placeholder {
-      @apply text-placeholder;
-    }
-
-    @variant not-data-pristine:data-invalid {
-      @apply border-danger;
-    }
+    @apply data-[mgnp-form-control-color=ui]:mgnp-form-control-color-ui;
   }
 
   .mgnp-form-field {
-    @apply transition;
+    @apply mgnp-base;
     @apply inline-flex flex-col;
     @apply gap-1;
   }
 
   .mgnp-input-group {
-    @apply transition;
+    @apply mgnp-base;
     @apply inline-flex items-stretch;
     @apply border-none rounded-lg;
-    @apply bg-ui;
+
+    @apply data-[mgnp-input-group-color=ui]:mgnp-input-group-color-ui;
 
     @variant * {
       @variant first {
@@ -71,12 +67,13 @@
   }
 
   .mgnp-input-group-addon {
-    @apply transition;
+    @apply mgnp-base;
     @apply inline-block;
     @apply text-nowrap;
     @apply p-2;
-    @apply bg-ui-secondary;
-    @apply border-y border-ui;
+    @apply border-y;
+
+    @apply data-[mgnp-input-group-addon-color=ui]:mgnp-input-group-addon-color-ui;
 
     ng-icon {
       @apply align-middle!;
@@ -84,11 +81,12 @@
   }
 
   .mgnp-label {
-    @apply transition;
+    @apply mgnp-base;
     @apply inline-block;
     @apply p-0;
-    @apply border-ui;
-    @apply text-ui-secondary font-semibold;
+    @apply font-semibold;
+
+    @apply data-[mgnp-label-color=ui]:mgnp-label-color-ui;
 
     @variant md {
       @apply text-nowrap;

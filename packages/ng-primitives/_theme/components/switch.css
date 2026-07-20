@@ -1,26 +1,25 @@
+@import './switch/color.css';
+
 @layer components {
   .mgnp-switch {
-    @apply transition mgnp-focus;
+    @apply mgnp-base mgnp-focus;
     @apply relative;
     @apply w-10 h-6;
     @apply p-0;
-    @apply bg-ui-secondary;
-    @apply border border-ui rounded-full;
+    @apply border rounded-full;
 
-    @variant data-checked {
-      @apply bg-ui-active;
-      @apply border-ui-secondary;
-    }
+    @apply data-[mgnp-switch-color=ui]:mgnp-switch-color-ui;
   }
 
   .mgnp-switch-thumb {
-    @apply transition;
+    @apply mgnp-base;
     @apply block;
     @apply w-4 h-4;
     @apply ml-1;
-    @apply bg-ui;
     @apply rounded-full;
-    @apply shadow-button;
+    @apply shadow-md;
+
+    @apply data-[mgnp-switch-thumb-color=ui]:mgnp-switch-thumb-color-ui;
 
     @variant data-checked {
       @apply translate-x-4;

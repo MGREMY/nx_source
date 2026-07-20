@@ -3,12 +3,10 @@
 
 @layer components {
   .mgnp-button {
-    @apply transition mgnp-focus;
-    @apply inline-block;
+    @apply select-none mgnp-base mgnp-focus;
+    @apply inline-flex items-center justify-center gap-1.5;
     @apply cursor-pointer;
-    @apply h-fit;
-    @apply rounded-lg;
-    @apply shadow-button;
+    @apply border rounded-lg;
 
     @variant data-disabled {
       @apply opacity-50 cursor-default;
@@ -22,21 +20,24 @@
     @apply data-[mgnp-button-size=xl]:mgnp-button-size-xl;
 
     /* Color */
-    /* Solid */
-    @apply data-[mgnp-button-variant=solid]:data-[mgnp-button-color=ui]:mgnp-button-color-ui-solid;
-    @apply data-[mgnp-button-variant=solid]:data-[mgnp-button-color=primary]:mgnp-button-color-primary-solid;
-    @apply data-[mgnp-button-variant=solid]:data-[mgnp-button-color=secondary]:mgnp-button-color-secondary-solid;
-    @apply data-[mgnp-button-variant=solid]:data-[mgnp-button-color=info]:mgnp-button-color-info-solid;
-    @apply data-[mgnp-button-variant=solid]:data-[mgnp-button-color=success]:mgnp-button-color-success-solid;
-    @apply data-[mgnp-button-variant=solid]:data-[mgnp-button-color=warning]:mgnp-button-color-warning-solid;
-    @apply data-[mgnp-button-variant=solid]:data-[mgnp-button-color=danger]:mgnp-button-color-danger-solid;
-    /* Outline */
-    @apply data-[mgnp-button-variant=outline]:data-[mgnp-button-color=ui]:mgnp-button-color-ui-outline;
-    @apply data-[mgnp-button-variant=outline]:data-[mgnp-button-color=primary]:mgnp-button-color-primary-outline;
-    @apply data-[mgnp-button-variant=outline]:data-[mgnp-button-color=secondary]:mgnp-button-color-secondary-outline;
-    @apply data-[mgnp-button-variant=outline]:data-[mgnp-button-color=info]:mgnp-button-color-info-outline;
-    @apply data-[mgnp-button-variant=outline]:data-[mgnp-button-color=success]:mgnp-button-color-success-outline;
-    @apply data-[mgnp-button-variant=outline]:data-[mgnp-button-color=warning]:mgnp-button-color-warning-outline;
-    @apply data-[mgnp-button-variant=outline]:data-[mgnp-button-color=danger]:mgnp-button-color-danger-outline;
+    @variant data-[mgnp-button-variant=solid] {
+      @apply data-[mgnp-button-color=ui]:mgnp-button-color-solid-ui;
+      @apply data-[mgnp-button-color=primary]:mgnp-button-color-solid-primary;
+      @apply data-[mgnp-button-color=accent]:mgnp-button-color-solid-accent;
+      @apply data-[mgnp-button-color=info]:mgnp-button-color-solid-info;
+      @apply data-[mgnp-button-color=success]:mgnp-button-color-solid-success;
+      @apply data-[mgnp-button-color=warning]:mgnp-button-color-solid-warning;
+      @apply data-[mgnp-button-color=danger]:mgnp-button-color-solid-danger;
+    }
+
+    @variant data-[mgnp-button-variant=outline] {
+      @apply data-[mgnp-button-color=ui]:mgnp-button-color-outline-ui;
+      @apply data-[mgnp-button-color=primary]:mgnp-button-color-outline-primary;
+      @apply data-[mgnp-button-color=accent]:mgnp-button-color-outline-accent;
+      @apply data-[mgnp-button-color=info]:mgnp-button-color-outline-info;
+      @apply data-[mgnp-button-color=success]:mgnp-button-color-outline-success;
+      @apply data-[mgnp-button-color=warning]:mgnp-button-color-outline-warning;
+      @apply data-[mgnp-button-color=danger]:mgnp-button-color-outline-danger;
+    }
   }
 }

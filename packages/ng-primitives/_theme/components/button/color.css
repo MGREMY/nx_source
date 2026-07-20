@@ -1,169 +1,49 @@
 /* Solid */
-@utility mgnp-button-color-ui-solid {
-  @apply bg-ui;
+@utility mgnp-button-color-solid-* {
+  @apply text-inverse;
+  @apply bg-[--value(--background-color-*)];
+  @apply border-[--value(--border-color-*)];
 
   @variant data-hover {
-    @apply bg-ui-hover;
+    @apply bg-[color-mix(in_srgb,--value(--background-color-*),var(--mg-state-hover-mix))];
   }
 
   @variant data-press {
-    @apply bg-ui-active;
+    @apply bg-[color-mix(in_srgb,--value(--background-color-*),var(--mg-state-active-mix))];
   }
 }
 
-@utility mgnp-button-color-primary-solid {
-  @apply bg-primary;
-
-  @variant data-hover {
-    @apply bg-primary-hover;
-  }
-
-  @variant data-press {
-    @apply bg-primary-active;
-  }
-}
-
-@utility mgnp-button-color-secondary-solid {
-  @apply bg-secondary;
-
-  @variant data-hover {
-    @apply bg-secondary-hover;
-  }
-
-  @variant data-press {
-    @apply bg-secondary-active;
-  }
-}
-
-@utility mgnp-button-color-info-solid {
-  @apply bg-info;
-
-  @variant data-hover {
-    @apply bg-info-hover;
-  }
-
-  @variant data-press {
-    @apply bg-info-active;
-  }
-}
-
-@utility mgnp-button-color-success-solid {
-  @apply bg-success;
-
-  @variant data-hover {
-    @apply bg-success-hover;
-  }
-
-  @variant data-press {
-    @apply bg-success-active;
-  }
-}
-
-@utility mgnp-button-color-warning-solid {
-  @apply bg-warning;
-
-  @variant data-hover {
-    @apply bg-warning-hover;
-  }
-
-  @variant data-press {
-    @apply bg-warning-active;
-  }
-}
-
-@utility mgnp-button-color-danger-solid {
-  @apply bg-danger;
-
-  @variant data-hover {
-    @apply bg-danger-hover;
-  }
-
-  @variant data-press {
-    @apply bg-danger-active;
-  }
+@utility mgnp-button-color-solid-ui {
+  @apply text-ui;
 }
 
 /* Outline */
-@utility mgnp-button-color-ui-outline {
-  @apply bg-transparent text-ui;
+@utility mgnp-button-color-outline-* {
+  @apply text-[--value(--text-color-*)];
+  @apply bg-transparent;
+  @apply border-[--value(--border-color-*)];
 
   @variant data-hover {
-    @apply bg-ui-inverse text-inverse;
+    @apply text-inverse;
+    @apply bg-[color-mix(in_srgb,--value(--background-color-*),var(--mg-state-hover-mix))];
   }
 
   @variant data-press {
-    @apply bg-ui-inverse;
+    @apply bg-[color-mix(in_srgb,--value(--background-color-*),var(--mg-state-active-mix))];
   }
 }
 
-@utility mgnp-button-color-primary-outline {
-  @apply bg-transparent text-primary;
-
+@utility mgnp-button-color-outline-ui {
+  /* Invert scheme so the outline style works for ui color */
   @variant data-hover {
-    @apply bg-primary-inverse text-inverse;
-  }
+    @apply text-ui;
 
-  @variant data-press {
-    @apply bg-primary-inverse;
-  }
-}
+    @variant dark {
+      @apply scheme-light;
+    }
 
-@utility mgnp-button-color-secondary-outline {
-  @apply bg-transparent text-secondary;
-
-  @variant data-hover {
-    @apply bg-secondary-inverse text-inverse;
-  }
-
-  @variant data-press {
-    @apply bg-secondary-inverse;
-  }
-}
-
-@utility mgnp-button-color-info-outline {
-  @apply bg-transparent text-info;
-
-  @variant data-hover {
-    @apply bg-info-inverse text-inverse;
-  }
-
-  @variant data-press {
-    @apply bg-info-inverse;
-  }
-}
-
-@utility mgnp-button-color-success-outline {
-  @apply bg-transparent text-success;
-
-  @variant data-hover {
-    @apply bg-success-inverse text-inverse;
-  }
-
-  @variant data-press {
-    @apply bg-success-inverse;
-  }
-}
-
-@utility mgnp-button-color-warning-outline {
-  @apply bg-transparent text-warning;
-
-  @variant data-hover {
-    @apply bg-warning-inverse text-inverse;
-  }
-
-  @variant data-press {
-    @apply bg-warning-inverse;
-  }
-}
-
-@utility mgnp-button-color-danger-outline {
-  @apply bg-transparent text-danger;
-
-  @variant data-hover {
-    @apply bg-danger-inverse text-inverse;
-  }
-
-  @variant data-press {
-    @apply bg-danger-inverse;
+    @variant light {
+      @apply scheme-dark;
+    }
   }
 }

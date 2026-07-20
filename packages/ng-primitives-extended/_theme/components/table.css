@@ -1,3 +1,5 @@
+@import './table/color.css';
+
 @layer components {
   .mgnp-table {
     @apply transition;
@@ -9,8 +11,9 @@
 
   .mgnp-table-header {
     @apply transition;
-    @apply bg-ui;
     @apply text-xs uppercase;
+
+    @apply data-[mgnp-table-header-color=ui]:mgnp-table-header-color-ui;
 
     @variant * {
       @apply px-6 py-3;
@@ -19,9 +22,8 @@
 
   .mgnp-table-body {
     @apply transition;
-    @variant not-last {
-      @apply border-b border-b-ui-secondary;
-    }
+
+    @apply data-[mgnp-table-body-color=ui]:mgnp-table-body-color-ui;
 
     @variant * {
       @apply px-6 py-3;

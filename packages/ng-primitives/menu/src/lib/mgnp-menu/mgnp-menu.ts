@@ -1,5 +1,9 @@
-import { Directive } from '@angular/core';
+import { PropertyType } from '@mgremy/ng-primitives';
+
+import { Directive, input } from '@angular/core';
 import { injectMenuState, NgpMenu, provideMenuState } from 'ng-primitives/menu';
+
+export type MgnpMenuColor = PropertyType<'ui'>;
 
 @Directive({
   selector: '[mgnpMenu]',
@@ -7,6 +11,7 @@ import { injectMenuState, NgpMenu, provideMenuState } from 'ng-primitives/menu';
   host: {
     class: 'mgnp-menu mgnp-c-menu',
     'data-mgnp-menu': '',
+    '[attr.data-mgnp-menu-color]': 'color()',
   },
   hostDirectives: [
     {
@@ -19,4 +24,6 @@ import { injectMenuState, NgpMenu, provideMenuState } from 'ng-primitives/menu';
 })
 export class MgnpMenu {
   protected readonly state = injectMenuState();
+
+  readonly color = input<MgnpMenuColor>('ui');
 }

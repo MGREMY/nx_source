@@ -1,0 +1,13 @@
+@utility mgnp-switch-color-* {
+  @apply bg-[color-mix(in_srgb,--value(--background-color-*),var(--mg-state-hover-mix))];
+  @apply border-[--value(--border-color-*)];
+
+  @variant data-checked {
+    @apply bg-[color-mix(in_srgb,--value(--background-color-*),var(--mg-state-active-mix))];
+    @apply border-[--value(--border-color-*)]/75;
+  }
+}
+
+@utility mgnp-switch-thumb-color-* {
+  @apply bg-[--value(--background-color-*)];
+}

@@ -1,0 +1,12 @@
+@utility mgnp-navbar-color-* {
+  @apply bg-[color-mix(in_srgb,--value(--background-color-*),var(--mg-state-hover-mix))];
+  @apply border-[--value(--border-color-*)];
+}
+
+@utility mgnp-navbar-content-color-* {
+  @variant not-data-[is-always-open]:max-md {
+    ul {
+      @apply bg-[--value(--background-color-*)];
+    }
+  }
+}

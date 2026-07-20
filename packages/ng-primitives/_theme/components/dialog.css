@@ -1,39 +1,45 @@
+@import './dialog/color.css';
 @import './dialog/mode.css';
 
 @layer components {
   .mgnp-dialog {
-    @apply transition;
-    @apply bg-ui;
+    @apply mgnp-base;
     @apply p-6;
-    @apply shadow-button;
+    @apply shadow-md;
 
     @apply data-[mgnp-dialog-mode=modal]:mgnp-dialog-mode-modal;
     @apply data-[mgnp-dialog-mode=drawer]:mgnp-dialog-mode-drawer;
+
+    @apply data-[mgnp-dialog-color=ui]:mgnp-dialog-color-ui;
   }
 
   .mgnp-dialog-title {
-    @apply transition;
+    @apply mgnp-base;
     @apply my-1;
     @apply text-lg;
-    @apply text-ui;
+
+    @apply data-[mgnp-dialog-title-color=ui]:mgnp-dialog-title-color-ui;
   }
 
   .mgnp-dialog-description {
-    @apply transition;
+    @apply mgnp-base;
     @apply m-0;
     @apply text-base;
-    @apply text-ui-disabled;
+
+    @apply data-[mgnp-dialog-description-color=ui]:mgnp-dialog-description-color-ui;
   }
 
   .mgnp-dialog-overlay {
-    @apply transition;
+    @apply mgnp-base;
     @apply flex;
     @apply fixed;
     @apply z-9999;
-    @apply bg-ui/50 backdrop-blur-sm;
+    @apply backdrop-blur-sm;
     @apply inset-0;
 
     @apply data-[mgnp-dialog-overlay-mode=modal]:mgnp-dialog-overlay-mode-modal;
     @apply data-[mgnp-dialog-overlay-mode=drawer]:mgnp-dialog-overlay-mode-drawer;
+
+    @apply data-[mgnp-dialog-overlay-color=ui]:mgnp-dialog-overlay-color-ui;
   }
 }

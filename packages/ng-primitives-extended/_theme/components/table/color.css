@@ -1,0 +1,10 @@
+@utility mgnp-table-header-color-* {
+  @apply bg-[--value(--background-color-*)];
+}
+
+@utility mgnp-table-body-color-* {
+  @variant not-last {
+    @apply border-[--value(--border-color-*)]/75;
+    @apply border-b;
+  }
+}

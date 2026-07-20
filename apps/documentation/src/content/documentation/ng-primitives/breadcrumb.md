@@ -20,7 +20,9 @@ Help users understand their location within a hierarchy with a fully accessible 
 
 ### MgnpBreadcrumb
 
----
+| name  | possible values | description      | default value |
+| ----- | --------------- | ---------------- | ------------- |
+| color | **ui**          | define the color | ui            |
 
 ### MgnpBreadcrumbEllipsis
 

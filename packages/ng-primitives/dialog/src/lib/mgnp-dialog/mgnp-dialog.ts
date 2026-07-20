@@ -9,6 +9,8 @@ import { injectDialogState, NgpDialog } from 'ng-primitives/dialog';
   host: {
     class: 'mgnp-dialog mgnp-c-dialog',
     'data-mgnp-dialog': '',
+    '[attr.data-mgnp-dialog-color]': 'overlay.color()',
+    '[attr.data-mgnp-dialog-position]': 'overlay.drawerPosition()',
     '[attr.data-mgnp-dialog-mode]': 'overlay.mode()',
   },
   hostDirectives: [

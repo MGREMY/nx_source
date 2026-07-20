@@ -20,10 +20,10 @@ Perform state toggling.
 
 ### MgnpCheckbox
 
-| name  | possible values                                                                          | description      | default value |
-| ----- | ---------------------------------------------------------------------------------------- | ---------------- | ------------- |
-| color | **ui** / **primary** / **secondary** / **info** / **success** / **warning** / **danger** | define the color | ui            |
-| size  | **xs** / **sm** / **md** / **lg** / **xl**                                               | define the size  | md            |
+| name  | possible values                                                                       | description      | default value |
+| ----- | ------------------------------------------------------------------------------------- | ---------------- | ------------- |
+| color | **ui** / **primary** / **accent** / **info** / **success** / **warning** / **danger** | define the color | ui            |
+| size  | **xs** / **sm** / **md** / **lg** / **xl**                                            | define the size  | md            |
 
 ## CSS
 

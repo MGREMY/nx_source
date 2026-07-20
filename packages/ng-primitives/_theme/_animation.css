@@ -61,3 +61,20 @@
     }
   }
 }
+
+@theme {
+  --animate-mg-show: mg-show var(--default-transition-duration)
+    var(--default-transition-timing-function);
+  --animate-mg-hide: mg-hide var(--default-transition-duration)
+    var(--default-transition-timing-function);
+
+  --animate-mg-slide-in: mg-slide-in var(--default-transition-duration)
+    var(--default-transition-timing-function);
+  --animate-mg-slide-out: mg-slide-out var(--default-transition-duration)
+    var(--default-transition-timing-function);
+
+  --animate-mg-fade-in: mg-fade-in var(--default-transition-duration)
+    var(--default-transition-timing-function);
+  --animate-mg-fade-out: mg-fade-out var(--default-transition-duration)
+    var(--default-transition-timing-function);
+}

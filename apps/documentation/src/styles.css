@@ -16,18 +16,16 @@
 
 @utility doc-content {
   .heading-anchor {
-    display: inline-flex;
-    margin-left: --spacing(2);
-    color: var(--mg-text-placeholder) !important;
+    @apply inline-flex ml-2 text-placeholder! transition-colors;
 
     @variant hover {
-      color: var(--mg-text-secondary) !important;
+      @apply text-ui!;
     }
   }
 }
 
 @utility shiki {
-  background-color: var(--mg-background-ui-secondary) !important;
+  @apply bg-[color-mix(in_srgb,var(--mg-background-ui),light-dark(#000,#fff)_2%)]!;
 
   @variant dark {
     .shiki,
@@ -38,6 +36,29 @@
       text-decoration: var(--shiki-dark-text-decoration) !important;
     }
   }
+}
+
+@utility bg-state-* {
+  @variant data-hover {
+    background-color: color-mix(in srgb, --value(--background-color- *), var(--mg-state-hover-mix));
+  }
+
+  @variant data-press {
+    background-color: color-mix(
+      in srgb,
+      --value(--background-color- *),
+      var(--mg-state-active-mix)
+    );
+  }
+
+  @variant data-disabled {
+    opacity: 50%;
+    cursor: default;
+  }
+}
+
+@utility bg-secondary-* {
+  @apply bg-[color-mix(in_srgb,--value(--background-color-*),light-dark(#000,#fff)_5%)];
 }
 
 @layer base {

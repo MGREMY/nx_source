@@ -8,15 +8,17 @@ import { Directive, inject, signal } from '@angular/core';
   host: {
     'data-mgnp-navbar-content': '',
     class: 'mgnp-navbar-content mgnp-c-navbar-content',
-    '[attr.data-enter]': 'isOpen() === true ? true : null',
-    '[attr.data-exit]': 'isOpen() === false ? true : null',
-    '[attr.data-is-always-open]': '_mgnpNavbar.isAlwaysOpen() === true ? true : null',
+    '[attr.data-mgnp-navbar-content-color]': 'navbar.color()',
+    '[attr.data-mgnp-navbar-content-enter]': 'isOpen() === true ? true : null',
+    '[attr.data-mgnp-navbar-content-exit]': 'isOpen() === false ? true : null',
+    '[attr.data-mgnp-navbar-content-is-always-open]':
+      'navbar.isAlwaysOpen() === true ? true : null',
   },
   hostDirectives: [],
   exportAs: 'mgnpNavbarContent',
 })
 export class MgnpNavbarContent {
-  protected readonly _mgnpNavbar = inject(MgnpNavbar);
+  protected readonly navbar = inject(MgnpNavbar);
 
   private readonly _isOpen = signal(false);
   readonly isOpen = this._isOpen.asReadonly();

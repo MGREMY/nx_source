@@ -1,4 +1,6 @@
-import { Directive } from '@angular/core';
+import { PropertyType } from '@mgremy/ng-primitives';
+
+import { Directive, input } from '@angular/core';
 import { ControlValueAccessor } from '@angular/forms';
 import {
   injectPaginationState,
@@ -7,12 +9,15 @@ import {
 } from 'ng-primitives/pagination';
 import { ChangeFn, provideValueAccessor, TouchedFn } from 'ng-primitives/utils';
 
+export type MgnpPaginationColor = PropertyType<'ui'>;
+
 @Directive({
   selector: '[mgnpPagination]',
   providers: [providePaginationState(), provideValueAccessor(MgnpPagination)],
   host: {
     class: 'mgnp-pagination mgnp-c-pagination',
     'data-mgnp-pagination': '',
+    '[attr.data-mgnp-pagination-color]': 'color()',
     '(focusout)': 'onTouched?.()',
   },
   hostDirectives: [
@@ -30,6 +35,8 @@ import { ChangeFn, provideValueAccessor, TouchedFn } from 'ng-primitives/utils';
 })
 export class MgnpPagination implements ControlValueAccessor {
   protected readonly state = injectPaginationState();
+
+  readonly color = input<MgnpPaginationColor>('ui');
 
   protected onChange?: ChangeFn<number>;
   protected onTouched?: TouchedFn;

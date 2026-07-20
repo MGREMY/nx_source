@@ -1,39 +1,34 @@
 @utility mgnp-dialog-mode-modal {
   @apply max-w-8/12 max-h-8/12;
   @apply rounded-md;
-  animation: mg-fade-in var(--default-transition-duration) var(--default-transition-timing-function);
+  @apply animate-mg-fade-in;
 
   @variant data-exit {
-    animation: mg-fade-out var(--default-transition-duration)
-      var(--default-transition-timing-function);
+    @apply animate-mg-fade-out;
   }
 }
 
 @utility mgnp-dialog-mode-drawer {
   @apply max-w-8/12 h-full;
-  animation: mg-slide-in var(--default-transition-duration)
-    var(--default-transition-timing-function);
+  @apply animate-mg-slide-in;
 
   @variant data-exit {
-    animation: mg-slide-out var(--default-transition-duration)
-      var(--default-transition-timing-function);
+    @apply animate-mg-slide-out;
   }
 }
 
 @utility mgnp-dialog-overlay-mode-modal {
   @apply items-center justify-center;
-  animation: mg-fade-in var(--default-transition-duration) var(--default-transition-timing-function);
+  @apply animate-mg-fade-in;
 
   @variant data-exit {
-    animation: mg-fade-out var(--default-transition-duration)
-      var(--default-transition-timing-function);
+    @apply animate-mg-fade-out;
   }
 }
 
 @utility mgnp-dialog-overlay-mode-drawer {
   @apply items-stretch;
-  animation: mg-slide-in var(--default-transition-duration)
-    var(--default-transition-timing-function);
+  @apply animate-mg-slide-in;
 
   @variant data-[mgnp-dialog-overlay-position=start] {
     @apply justify-start;
@@ -44,7 +39,6 @@
   }
 
   @variant data-exit {
-    animation: mg-slide-out var(--default-transition-duration)
-      var(--default-transition-timing-function);
+    @apply animate-mg-slide-out;
   }
 }

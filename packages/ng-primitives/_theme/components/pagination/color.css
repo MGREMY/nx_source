@@ -1,0 +1,109 @@
+@utility mgnp-pagination-button-color-* {
+  @apply bg-[--value(--background-color-*)];
+  @apply text-[--value(-text-color-*-)];
+
+  @variant not-data-disabled:not-data-selected:data-hover {
+    @apply bg-[color-mix(in_srgb,--value(--background-color-*),var(--mg-state-hover-mix))];
+  }
+
+  @variant not-data-disabled:not-data-selected:data-press {
+    @apply bg-[color-mix(in_srgb,--value(--background-color-*),var(--mg-state-active-mix))];
+  }
+
+  @variant data-disabled {
+    @apply bg-[--value(--background-color-*)]/33;
+    @apply text-[--value(--text-color-*)]/33;
+  }
+
+  @variant data-selected {
+    @apply bg-[color-mix(in_srgb,--value(--background-color-*),var(--mg-state-active-mix))];
+  }
+}
+
+@utility mgnp-pagination-first-color-* {
+  @apply bg-[--value(--background-color-*)];
+  @apply text-[--value(-text-color-*-)];
+
+  @variant not-data-disabled:not-data-selected:data-hover {
+    @apply bg-[color-mix(in_srgb,--value(--background-color-*),var(--mg-state-hover-mix))];
+  }
+
+  @variant not-data-disabled:not-data-selected:data-press {
+    @apply bg-[color-mix(in_srgb,--value(--background-color-*),var(--mg-state-active-mix))];
+  }
+
+  @variant data-disabled {
+    @apply bg-[--value(--background-color-*)]/33;
+    @apply text-[--value(--text-color-*)]/33;
+  }
+
+  @variant data-selected {
+    @apply bg-[color-mix(in_srgb,--value(--background-color-*),var(--mg-state-active-mix))];
+  }
+}
+
+@utility mgnp-pagination-last-color-* {
+  @apply bg-[--value(--background-color-*)];
+  @apply text-[--value(-text-color-*-)];
+
+  @variant not-data-disabled:not-data-selected:data-hover {
+    @apply bg-[color-mix(in_srgb,--value(--background-color-*),var(--mg-state-hover-mix))];
+  }
+
+  @variant not-data-disabled:not-data-selected:data-press {
+    @apply bg-[color-mix(in_srgb,--value(--background-color-*),var(--mg-state-active-mix))];
+  }
+
+  @variant data-disabled {
+    @apply bg-[--value(--background-color-*)]/33;
+    @apply text-[--value(--text-color-*)]/33;
+  }
+
+  @variant data-selected {
+    @apply bg-[color-mix(in_srgb,--value(--background-color-*),var(--mg-state-active-mix))];
+  }
+}
+
+@utility mgnp-pagination-previous-color-* {
+  @apply bg-[--value(--background-color-*)];
+  @apply text-[--value(-text-color-*-)];
+
+  @variant not-data-disabled:not-data-selected:data-hover {
+    @apply bg-[color-mix(in_srgb,--value(--background-color-*),var(--mg-state-hover-mix))];
+  }
+
+  @variant not-data-disabled:not-data-selected:data-press {
+    @apply bg-[color-mix(in_srgb,--value(--background-color-*),var(--mg-state-active-mix))];
+  }
+
+  @variant data-disabled {
+    @apply bg-[--value(--background-color-*)]/33;
+    @apply text-[--value(--text-color-*)]/33;
+  }
+
+  @variant data-selected {
+    @apply bg-[color-mix(in_srgb,--value(--background-color-*),var(--mg-state-active-mix))];
+  }
+}
+
+@utility mgnp-pagination-next-color-* {
+  @apply bg-[--value(--background-color-*)];
+  @apply text-[--value(-text-color-*-)];
+
+  @variant not-data-disabled:not-data-selected:data-hover {
+    @apply bg-[color-mix(in_srgb,--value(--background-color-*),var(--mg-state-hover-mix))];
+  }
+
+  @variant not-data-disabled:not-data-selected:data-press {
+    @apply bg-[color-mix(in_srgb,--value(--background-color-*),var(--mg-state-active-mix))];
+  }
+
+  @variant data-disabled {
+    @apply bg-[--value(--background-color-*)]/33;
+    @apply text-[--value(--text-color-*)]/33;
+  }
+
+  @variant data-selected {
+    @apply bg-[color-mix(in_srgb,--value(--background-color-*),var(--mg-state-active-mix))];
+  }
+}

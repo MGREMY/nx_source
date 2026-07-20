@@ -21,9 +21,9 @@ import { codeToHtml } from 'shiki';
         <div class="flex flex-row justify-around border-b border-b-ui overflow-x-auto">
           @for (name of availableTabs(); track name) {
             <button
-              class="w-full min-w-32 items-center py-2 bg-ui hover:cursor-pointer hover:bg-ui-hover transition-colors"
+              class="w-full min-w-32 items-center py-2 bg-ui hover:cursor-pointer hover:bg-[color-mix(in_srgb,var(--background-color-ui),var(--mg-state-hover-mix))] transition-colors"
               [ngClass]="{
-                'border-b border-(--text-color-active) text-active': selectedTab() === name,
+                'border-b border-(--text-color-accent) text-accent': selectedTab() === name,
               }"
               (click)="selectedTab.set(name)">
               {{ name }}
@@ -39,7 +39,7 @@ import { codeToHtml } from 'shiki';
         }"
         [innerHTML]="style()"></div>
       <button
-        class="w-full items-center h-8 bg-ui-hover hover:cursor-pointer transition-colors"
+        class="w-full items-center rounded-b-md h-8 bg-[color-mix(in_srgb,var(--background-color-ui),var(--mg-state-hover-mix))] hover:cursor-pointer transition-colors"
         (click)="isOpen.set(!isOpen())">
         {{ isOpen() === false ? 'Show all' : 'Collapse' }}
       </button>

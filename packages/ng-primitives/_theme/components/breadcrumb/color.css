@@ -1,0 +1,22 @@
+@utility mgnp-breadcrumb-color-* {
+  @apply text-[color-mix(in_srgb,--value(--text-color-*),var(--mg-color-secondary-mix))];
+}
+
+@utility mgnp-breadcrumb-ellipsis-color-* {
+  @apply bg-transparent;
+  @apply border-transparent;
+
+  @variant data-hover {
+    @apply text-[--value(--text-color-*)];
+  }
+}
+
+@utility mgnp-breadcrumb-link-color-* {
+  @variant data-hover {
+    @apply text-[--value(--text-color-*)];
+  }
+}
+
+@utility mgnp-breadcrumb-page-color-* {
+  @apply text-[--value(--text-color-*)];
+}

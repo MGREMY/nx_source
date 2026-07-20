@@ -1,0 +1,21 @@
+@utility mgnp-menu-color-* {
+  @apply bg-[--value(--background-color-*)];
+  @apply border-[--value(--border-color-*)];
+}
+
+@utility mgnp-menu-item-color-* {
+  @apply bg-transparent;
+  @apply border-none;
+
+  @variant data-hover {
+    @apply bg-[color-mix(in_srgb,--value(--background-color-*),var(--mg-state-hover-mix))];
+  }
+
+  @variant data-press {
+    @apply bg-[color-mix(in_srgb,--value(--background-color-*),var(--mg-state-active-mix))];
+  }
+
+  @variant data-disabled {
+    @apply opacity-50;
+  }
+}

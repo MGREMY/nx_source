@@ -3,15 +3,11 @@
 
 @layer components {
   .mgnp-checkbox {
-    @apply transition mgnp-focus;
+    @apply mgnp-base mgnp-focus;
     @apply flex flex-none items-center justify-center;
     @apply border border-transparent;
     @apply text-base;
     @apply cursor-pointer;
-
-    @variant not-data-pristine:data-invalid {
-      @apply border-danger;
-    }
 
     /* Sizes */
     @apply data-[mgnp-checkbox-size=xs]:mgnp-checkbox-size-xs;
@@ -23,7 +19,7 @@
     /* Colors */
     @apply data-[mgnp-checkbox-color=ui]:mgnp-checkbox-color-ui;
     @apply data-[mgnp-checkbox-color=primary]:mgnp-checkbox-color-primary;
-    @apply data-[mgnp-checkbox-color=secondary]:mgnp-checkbox-color-secondary;
+    @apply data-[mgnp-checkbox-color=accent]:mgnp-checkbox-color-accent;
     @apply data-[mgnp-checkbox-color=info]:mgnp-checkbox-color-info;
     @apply data-[mgnp-checkbox-color=success]:mgnp-checkbox-color-success;
     @apply data-[mgnp-checkbox-color=warning]:mgnp-checkbox-color-warning;

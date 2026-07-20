@@ -1,0 +1,15 @@
+@utility mgnp-dialog-color-* {
+  @apply bg-[--value(--background-color-*)];
+}
+
+@utility mgnp-dialog-title-color-* {
+  @apply text-[--value(--text-color-*)];
+}
+
+@utility mgnp-dialog-description-color-* {
+  @apply text-[color-mix(in_srgb,--value(--text-color-*),var(--mg-color-secondary-mix))];
+}
+
+@utility mgnp-dialog-overlay-color-* {
+  @apply bg-[--value(--background-color-*)]/50;
+}

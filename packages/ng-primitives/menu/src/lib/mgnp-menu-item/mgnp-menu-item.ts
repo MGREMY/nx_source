@@ -1,4 +1,6 @@
-import { Directive } from '@angular/core';
+import { MgnpMenu } from '../mgnp-menu/mgnp-menu';
+
+import { Directive, inject } from '@angular/core';
 import { injectMenuItemState, NgpMenuItem, provideMenuItemState } from 'ng-primitives/menu';
 
 @Directive({
@@ -7,6 +9,7 @@ import { injectMenuItemState, NgpMenuItem, provideMenuItemState } from 'ng-primi
   host: {
     class: 'mgnp-menu-item mgnp-c-menu-item',
     'data-mgnp-menu-item': '',
+    '[attr.data-mgnp-menu-item-color]': 'menu.color()',
   },
   hostDirectives: [
     {
@@ -22,4 +25,5 @@ import { injectMenuItemState, NgpMenuItem, provideMenuItemState } from 'ng-primi
 })
 export class MgnpMenuItem {
   protected readonly state = injectMenuItemState();
+  protected readonly menu = inject(MgnpMenu);
 }

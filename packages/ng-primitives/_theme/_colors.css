@@ -1,0 +1,81 @@
+@theme inline {
+  /* Background */
+  --mg-background-ui: light-dark(var(--color-stone-50), var(--color-stone-900));
+  --mg-background-primary: light-dark(var(--color-sky-500), var(--color-sky-500));
+  --mg-background-accent: light-dark(var(--color-emerald-500), var(--color-emerald-500));
+  --mg-background-info: light-dark(var(--color-blue-500), var(--color-blue-500));
+  --mg-background-success: light-dark(var(--color-green-500), var(--color-green-500));
+  --mg-background-warning: light-dark(var(--color-yellow-500), var(--color-yellow-500));
+  --mg-background-danger: light-dark(var(--color-red-500), var(--color-red-500));
+
+  /* Text */
+  --mg-text-ui: light-dark(var(--color-black), var(--color-white));
+  --mg-text-primary: light-dark(var(--color-sky-700), var(--color-sky-300));
+  --mg-text-accent: light-dark(var(--color-emerald-700), var(--color-emerald-300));
+  --mg-text-info: light-dark(var(--color-blue-700), var(--color-blue-300));
+  --mg-text-success: light-dark(var(--color-green-700), var(--color-green-300));
+  --mg-text-warning: light-dark(var(--color-yellow-700), var(--color-yellow-300));
+  --mg-text-danger: light-dark(var(--color-red-700), var(--color-red-300));
+
+  --mg-text-inverse: light-dark(var(--color-white), var(--color-black));
+  --mg-text-placeholder: light-dark(var(--color-stone-400), var(--color-stone-400));
+
+  /* Border */
+  --mg-border-ui: light-dark(var(--color-stone-300), var(--color-stone-700));
+  --mg-border-primary: light-dark(var(--color-sky-400), var(--color-sky-600));
+  --mg-border-accent: light-dark(var(--color-emerald-400), var(--color-emerald-600));
+  --mg-border-info: light-dark(var(--color-blue-400), var(--color-blue-600));
+  --mg-border-success: light-dark(var(--color-green-400), var(--color-green-600));
+  --mg-border-warning: light-dark(var(--color-yellow-400), var(--color-yellow-600));
+  --mg-border-danger: light-dark(var(--color-red-400), var(--color-red-600));
+
+  /* Other */
+  --mg-ring-ui: light-dark(var(--color-blue-400), var(--color-blue-400));
+
+  --mg-state-hover-mix: light-dark(var(--color-black), var(--color-white)) 5%;
+  --mg-state-active-mix: light-dark(var(--color-black), var(--color-white)) 15%;
+  --mg-color-secondary-mix: light-dark(var(--mg-text-inverse), var(--mg-text-inverse)) 50%;
+}
+
+/* Tailwind */
+@theme {
+  /* Background */
+  --background-color-ui: var(--mg-background-ui);
+  --background-color-primary: var(--mg-background-primary);
+  --background-color-accent: var(--mg-background-accent);
+  --background-color-info: var(--mg-background-info);
+  --background-color-success: var(--mg-background-success);
+  --background-color-warning: var(--mg-background-warning);
+  --background-color-danger: var(--mg-background-danger);
+
+  /* Text */
+  --text-color-ui: var(--mg-text-ui);
+  --text-color-primary: var(--mg-text-primary);
+  --text-color-accent: var(--mg-text-accent);
+  --text-color-info: var(--mg-text-info);
+  --text-color-success: var(--mg-text-success);
+  --text-color-warning: var(--mg-text-warning);
+  --text-color-danger: var(--mg-text-danger);
+
+  --text-color-inverse: var(--mg-text-inverse);
+  --text-color-placeholder: var(--mg-text-placeholder);
+
+  /* Border */
+  --border-color-ui: var(--mg-border-ui);
+  --divide-color-ui: var(--mg-border-ui);
+  --border-color-primary: var(--mg-border-primary);
+  --divide-color-primary: var(--mg-border-primary);
+  --border-color-accent: var(--mg-border-accent);
+  --divide-color-accent: var(--mg-border-accent);
+  --border-color-info: var(--mg-border-info);
+  --divide-color-info: var(--mg-border-info);
+  --border-color-success: var(--mg-border-success);
+  --divide-color-success: var(--mg-border-success);
+  --border-color-warning: var(--mg-border-warning);
+  --divide-color-warning: var(--mg-border-warning);
+  --border-color-danger: var(--mg-border-danger);
+  --divide-color-danger: var(--mg-border-danger);
+
+  /* Other */
+  --ring-color-ui: var(--mg-ring-ui);
+}

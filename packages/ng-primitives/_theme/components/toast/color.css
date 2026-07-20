@@ -1,0 +1,4 @@
+@utility mgnp-toast-color-* {
+  @apply bg-[--value(--background-color-*)];
+  @apply border-[--value(--border-color-*)];
+}

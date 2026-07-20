@@ -1,48 +1,108 @@
+@import './pagination/color.css';
+
 @layer components {
   .mgnp-pagination {
-    @apply transition;
+    @apply mgnp-base;
 
     ul {
-      @apply transition;
+      @apply mgnp-base;
       @apply flex items-center;
       @apply gap-2;
     }
   }
 
-  .mgnp-pagination-button,
-  .mgnp-pagination-first,
-  .mgnp-pagination-previous,
-  .mgnp-pagination-next,
-  .mgnp-pagination-last {
+  .mgnp-pagination-button {
     all: unset;
 
-    @apply transition mgnp-focus;
+    @apply mgnp-base mgnp-focus;
     @apply flex items-center justify-center;
     @apply cursor-pointer;
     @apply w-8 h-8;
     @apply rounded-lg;
-    @apply bg-ui;
-    @apply text-ui text-sm font-medium;
-    @apply shadow-button;
+    @apply text-sm font-medium;
+    @apply shadow-md;
 
-    @variant not-data-disabled:not-data-selected:data-hover {
-      @apply bg-ui-hover;
-    }
-
-    @variant not-data-disabled:not-data-selected:data-press {
-      @apply bg-ui-active;
-    }
+    @apply data-[mgnp-pagination-button-color=ui]:mgnp-pagination-button-color-ui;
 
     @variant data-disabled {
-      @apply bg-ui-disabled;
-      @apply text-ui-disabled;
       @apply shadow-none;
       @apply cursor-default;
     }
+  }
 
-    @variant data-selected {
-      @apply bg-ui-inverse;
-      @apply text-inverse;
+  .mgnp-pagination-first {
+    all: unset;
+
+    @apply mgnp-base mgnp-focus;
+    @apply flex items-center justify-center;
+    @apply cursor-pointer;
+    @apply w-8 h-8;
+    @apply rounded-lg;
+    @apply text-sm font-medium;
+    @apply shadow-md;
+
+    @apply data-[mgnp-pagination-first-color=ui]:mgnp-pagination-first-color-ui;
+
+    @variant data-disabled {
+      @apply shadow-none;
+      @apply cursor-default;
+    }
+  }
+
+  .mgnp-pagination-last {
+    all: unset;
+
+    @apply mgnp-base mgnp-focus;
+    @apply flex items-center justify-center;
+    @apply cursor-pointer;
+    @apply w-8 h-8;
+    @apply rounded-lg;
+    @apply text-sm font-medium;
+    @apply shadow-md;
+
+    @apply data-[mgnp-pagination-last-color=ui]:mgnp-pagination-last-color-ui;
+
+    @variant data-disabled {
+      @apply shadow-none;
+      @apply cursor-default;
+    }
+  }
+
+  .mgnp-pagination-previous {
+    all: unset;
+
+    @apply mgnp-base mgnp-focus;
+    @apply flex items-center justify-center;
+    @apply cursor-pointer;
+    @apply w-8 h-8;
+    @apply rounded-lg;
+    @apply text-sm font-medium;
+    @apply shadow-md;
+
+    @apply data-[mgnp-pagination-previous-color=ui]:mgnp-pagination-previous-color-ui;
+
+    @variant data-disabled {
+      @apply shadow-none;
+      @apply cursor-default;
+    }
+  }
+
+  .mgnp-pagination-next {
+    all: unset;
+
+    @apply mgnp-base mgnp-focus;
+    @apply flex items-center justify-center;
+    @apply cursor-pointer;
+    @apply w-8 h-8;
+    @apply rounded-lg;
+    @apply text-sm font-medium;
+    @apply shadow-md;
+
+    @apply data-[mgnp-pagination-next-color=ui]:mgnp-pagination-next-color-ui;
+
+    @variant data-disabled {
+      @apply shadow-none;
+      @apply cursor-default;
     }
   }
 }

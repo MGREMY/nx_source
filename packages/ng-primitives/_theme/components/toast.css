@@ -1,6 +1,8 @@
+@import './toast/color.css';
+
 @layer components {
   .mgnp-toast {
-    @apply transition;
+    @apply mgnp-base;
     @apply touch-none;
     @apply absolute;
     @apply z-(--ngp-toast-z-index);
@@ -8,16 +10,15 @@
     @apply inline-flex items-center justify-between;
     @apply w-87.5 h-fit;
     @apply px-3 py-4;
-    @apply bg-ui;
-    @apply border border-ui rounded-md;
-    @apply box-border shadow-ui;
+    @apply border rounded-md;
+    @apply box-border shadow-sm;
+
+    @apply data-[mgnp-toast-color=ui]:mgnp-toast-color-ui;
 
     @variant data-enter {
       --y: translateY(0);
 
-      @apply opacity-100;
-      animation: mg-slide-in var(--default-transition-duration)
-        var(--default-transition-timing-function);
+      @apply opacity-100 animate-mg-slide-in;
     }
 
     @variant data-exit {

@@ -1,22 +1,21 @@
+@import './breadcrumb/color.css';
+
 @layer components {
   .mgnp-breadcrumb {
-    @apply transition;
+    @apply mgnp-base;
     @apply block;
+
+    @apply data-[mgnp-breadcrumb-color=ui]:mgnp-breadcrumb-color-ui;
   }
 
   .mgnp-breadcrumb-ellipsis {
-    @apply transition mgnp-focus;
+    @apply mgnp-base mgnp-focus;
     @apply cursor-pointer;
     @apply inline-flex items-center justify-center;
     @apply w-4 h-4;
-    @apply rounded-lg border-none;
-    @apply bg-none;
-    @apply text-ui-tertiary;
+    @apply rounded-lg;
 
-    @variant data-hover {
-      @apply bg-ui-hover;
-      @apply text-ui;
-    }
+    @apply data-[mgnp-breadcrumb-ellipsis-color=ui]:mgnp-breadcrumb-ellipsis-color-ui;
 
     ng-icon {
       --ng-icon__size: --spacing(1);
@@ -24,48 +23,46 @@
   }
 
   .mgnp-breadcrumb-item {
-    @apply transition;
+    @apply mgnp-base;
     @apply inline-flex items-center gap-1;
 
     @variant *:has-[.mgnp-breadcrumb-ellipsis] {
-      @apply transition;
+      @apply mgnp-base;
       @apply cursor-pointer;
       @apply inline-flex items-center justify-center;
       @apply p-0;
-      @apply border-none;
-      @apply bg-none;
+      @apply bg-transparent;
+      @apply border-transparent;
     }
   }
 
   .mgnp-breadcrumb-link {
-    @apply transition mgnp-focus;
+    @apply mgnp-base mgnp-focus;
     @apply inline-flex items-center gap-1;
     @apply decoration-0;
 
-    @variant data-hover {
-      @apply bg-ui-hover;
-      @apply text-ui;
-    }
+    @apply data-[mgnp-breadcrumb-link-color=ui]:mgnp-breadcrumb-link-color-ui;
   }
 
   .mgnp-breadcrumb-list {
-    @apply transition;
+    @apply mgnp-base;
     @apply flex flex-wrap items-center gap-2;
     @apply list-none;
     @apply m-0 p-0;
-    @apply text-sm text-ui-tertiary;
+    @apply text-sm;
   }
 
   .mgnp-breadcrumb-page {
-    @apply transition;
-    @apply font-medium text-ui;
+    @apply mgnp-base;
+    @apply font-medium;
+
+    @apply data-[mgnp-breadcrumb-page-color=ui]:mgnp-breadcrumb-page-color-ui;
   }
 
   .mgnp-breadcrumb-separator {
-    @apply transition;
+    @apply mgnp-base;
     @apply inline-flex items-center;
     @apply p-0;
-    @apply text-ui-tertiary;
 
     ng-icon {
       --ng-icon__size: --spacing(1);

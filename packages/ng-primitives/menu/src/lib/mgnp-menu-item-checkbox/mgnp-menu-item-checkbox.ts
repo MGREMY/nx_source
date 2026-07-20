@@ -1,4 +1,6 @@
-import { Directive } from '@angular/core';
+import { MgnpMenu } from '../mgnp-menu/mgnp-menu';
+
+import { Directive, inject } from '@angular/core';
 import {
   injectMenuItemCheckboxState,
   NgpMenuItemCheckbox,
@@ -11,6 +13,7 @@ import {
   host: {
     class: 'mgnp-menu-item-checkbox mgnp-c-menu-item-checkbox',
     'data-mgnp-menu-item-checkbox': '',
+    '[attr.data-mgnp-menu-item-checkbox-color]': 'menu.color()',
   },
   hostDirectives: [
     {
@@ -26,4 +29,5 @@ import {
 })
 export class MgnpMenuItemCheckbox {
   protected readonly state = injectMenuItemCheckboxState();
+  protected readonly menu = inject(MgnpMenu);
 }

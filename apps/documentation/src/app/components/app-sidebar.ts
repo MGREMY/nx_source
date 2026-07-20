@@ -46,10 +46,10 @@ export type SidebarTree = {
   template: `
     <div class="flex items-center">
       <button
-        class="cursor-pointer p-1 pl-2 w-full rounded-lg  hover:bg-ui-hover"
+        class="cursor-pointer p-1 pl-2 w-full rounded-lg  hover:bg-[color-mix(in_srgb,var(--background-color-ui),var(--mg-state-hover-mix))]"
         (click)="onClick()"
         [ngClass]="{
-          'text-secondary': isActive(),
+          'text-accent': isActive(),
         }">
         <h2 class="flex items-center justify-between gap-2 mb-1 transition">
           <span class="flex items-center gap-2">
@@ -64,7 +64,7 @@ export type SidebarTree = {
       </button>
       @if (item().tree && item().tree!.length > 0) {
         <button
-          class="cursor-pointer p-1 px-2 rounded-lg hover:bg-ui-hover"
+          class="cursor-pointer p-1 px-2 rounded-lg hover:bg-[color-mix(in_srgb,var(--background-color-ui),var(--mg-state-hover-mix))]"
           (click)="toggle()">
           <ng-icon
             class="transition"

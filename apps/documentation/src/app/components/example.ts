@@ -1,4 +1,5 @@
 import { MgnpLoader } from '@mgremy/ng-primitives-extended/loader';
+import { MgnpButton } from '@mgremy/ng-primitives/button';
 
 import { NgIcon, provideIcons } from '@ng-icons/core';
 import { heroArrowPath } from '@ng-icons/heroicons/outline';
@@ -21,28 +22,28 @@ import { codeToHtml } from 'shiki';
 
 @Component({
   selector: 'app-example',
-  imports: [NgComponentOutlet, NgClass, NgIcon, FormsModule, MgnpLoader],
+  imports: [NgComponentOutlet, NgClass, NgIcon, FormsModule, MgnpLoader, MgnpButton],
   template: `
     <div class="relative flex flex-col">
       <div class="absolute inset-x-0 top-0 flex items-center justify-between gap-x-2">
         <div class="flex items-center gap-x-2">
           <!-- Preview/Source Toggle -->
           <div
-            class="rounded-lg bg-ui-secondary p-0.5 leading-6 border border-ui transition-colors">
+            class="rounded-lg bg-secondary-ui p-0.5 leading-6 border border-ui transition-colors">
             <button
-              class="w-16 rounded-md px-2 py-1.5 text-xs font-medium outline-hidden hover:cursor-pointer border-ui-secondary transition-colors"
+              class="w-16 rounded-md px-2 py-1.5 text-xs font-medium outline-hidden hover:cursor-pointer border-ui transition-colors"
               [ngClass]="{
                 'bg-ui text-ui shadow-xs border': mode() === 'preview',
-                'text-ui-tertiary hover:text-ui': mode() !== 'preview',
+                'text-ui/33 hover:text-ui': mode() !== 'preview',
               }"
               (click)="mode.set('preview')">
               Preview
             </button>
             <button
-              class="w-16 rounded-md px-2 py-1.5 text-xs font-medium outline-hidden hover:cursor-pointer border-ui-secondary transition-colors"
+              class="w-16 rounded-md px-2 py-1.5 text-xs font-medium outline-hidden hover:cursor-pointer border-ui transition-colors"
               [ngClass]="{
                 'bg-ui text-ui shadow-xs border': mode() === 'source',
-                'text-ui-tertiary hover:text-ui': mode() !== 'source',
+                'text-ui/33 hover:text-ui': mode() !== 'source',
               }"
               (click)="mode.set('source')">
               Source
@@ -55,7 +56,7 @@ import { codeToHtml } from 'shiki';
           @if (availableAlternatives().size > 1) {
             <div class="relative hidden sm:block">
               <select
-                class="appearance-none rounded-md bg-ui text-ui border-ui-secondary transition-colors border px-3 py-2 pr-8 text-xs font-medium shadow-xs hover:cursor-pointer outline-hidden focus-visible:z-10"
+                class="appearance-none rounded-md bg-ui bg-state-ui text-ui border-ui transition-colors border px-3 py-2 pr-8 text-xs font-medium shadow-xs hover:cursor-pointer outline-hidden focus-visible:z-10"
                 aria-label="Select example style"
                 [(ngModel)]="selectedAlternative">
                 @for (name of availableAlternatives(); track name) {
@@ -77,8 +78,10 @@ import { codeToHtml } from 'shiki';
             </div>
           }
           <button
+            mgnpButton
+            size="lg"
             (click)="reloadSelectedExample()"
-            class="flex items-center rounded-md bg-ui text-ui border-ui-secondary transition-colors border px-3 py-2 shadow-xs hover:cursor-pointer outline-hidden">
+            class="flex items-center">
             <span class="sr-only">reload</span>
             <ng-icon name="heroArrowPath" />
           </button>
@@ -88,7 +91,7 @@ import { codeToHtml } from 'shiki';
       <div class="relative mt-10 w-full flex-1">
         @if (mode() === 'preview') {
           <div
-            class="not-prose flex h-full min-h-70 w-full p-8 items-center justify-center rounded-xl border border-ui bg-ui-disabled transition-colors *:contents">
+            class="not-prose flex h-full min-h-70 w-full p-8 items-center justify-center rounded-xl border border-ui bg-[color-mix(in_srgb,var(--background-color-ui),light-dark(#000,#fff)_2%)] transition-colors *:contents">
             @if (isLoading()) {
               <mgnp-loader />
             } @else {
@@ -113,12 +116,12 @@ import { codeToHtml } from 'shiki';
 export class AppExample {
   private readonly _sanitizer = inject(DomSanitizer);
 
-  private readonly examples = import.meta.glob('../examples/**/*.ts', {
+  private readonly examples = import.meta.glob('../../examples/**/*.ts', {
     import: 'default',
     eager: false,
   });
 
-  private readonly sources = import.meta.glob('../examples/**/*.ts', {
+  private readonly sources = import.meta.glob('../../examples/**/*.ts', {
     import: 'default',
     query: '?raw',
     eager: false,

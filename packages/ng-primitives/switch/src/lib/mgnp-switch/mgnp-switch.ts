@@ -1,8 +1,12 @@
-import { Directive } from '@angular/core';
+import { PropertyType } from '@mgremy/ng-primitives';
+
+import { Directive, input } from '@angular/core';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { ControlValueAccessor } from '@angular/forms';
 import { injectSwitchState, NgpSwitch, provideSwitchState } from 'ng-primitives/switch';
 import { ChangeFn, provideValueAccessor, TouchedFn } from 'ng-primitives/utils';
+
+export type MgnpSwitchColor = PropertyType<'ui'>;
 
 @Directive({
   selector: '[mgnpSwitch]',
@@ -10,6 +14,7 @@ import { ChangeFn, provideValueAccessor, TouchedFn } from 'ng-primitives/utils';
   host: {
     class: 'mgnp-switch mgnp-c-switch',
     'data-mgnp-switch': '',
+    '[attr.data-mgnp-switch-color]': 'color()',
     '(focusout)': 'onTouchedFn?.()',
   },
   hostDirectives: [
@@ -23,6 +28,8 @@ import { ChangeFn, provideValueAccessor, TouchedFn } from 'ng-primitives/utils';
 })
 export class MgnpSwitch implements ControlValueAccessor {
   protected readonly state = injectSwitchState();
+
+  readonly color = input<MgnpSwitchColor>('ui');
 
   protected onChangeFn?: ChangeFn<boolean>;
   protected onTouchedFn?: TouchedFn;

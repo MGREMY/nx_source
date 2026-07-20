@@ -1,4 +1,6 @@
-import { Directive } from '@angular/core';
+import { MgnpFormField } from '../mgnp-form-field/mgnp-form-field';
+
+import { Directive, inject } from '@angular/core';
 
 @Directive({
   selector: '[mgnpInputGroup]',
@@ -6,8 +8,11 @@ import { Directive } from '@angular/core';
   host: {
     class: 'mgnp-input-group mgnp-c-input-group',
     'data-mgnp-input-group': '',
+    '[attr.data-mgnp-input-group-color]': 'formField.color()',
   },
   hostDirectives: [],
   exportAs: 'mgnpInputGroup',
 })
-export class MgnpInputGroup {}
+export class MgnpInputGroup {
+  protected readonly formField = inject(MgnpFormField);
+}
