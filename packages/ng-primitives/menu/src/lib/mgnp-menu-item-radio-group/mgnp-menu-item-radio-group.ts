@@ -13,7 +13,7 @@ import {
   host: {
     class: 'mgnp-menu-item-radio-group mgnp-c-menu-item-radio-group',
     'data-mgnp-menu-item-radio-group': '',
-    '[attr.data-menu-item-radio-group-color]': 'menu.color()',
+    '[attr.data-mgnp-menu-item-radio-group-color]': 'menu.color()',
   },
   hostDirectives: [
     {

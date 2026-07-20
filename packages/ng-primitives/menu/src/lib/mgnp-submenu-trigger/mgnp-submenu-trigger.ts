@@ -13,7 +13,7 @@ import {
   host: {
     class: 'mgnp-submenu-trigger mgnp-c-submenu-trigger',
     'data-mgnp-submenu-trigger': '',
-    '[attr.data-mgnp-sumenu-trigger-color]': 'menu.color()',
+    '[attr.data-mgnp-submenu-trigger-color]': 'menu.color()',
   },
   hostDirectives: [
     {

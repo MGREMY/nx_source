@@ -64,7 +64,7 @@ export class SourceLink implements AfterViewInit {
       const attributes = this.getCurrentContentAttributes();
       const wrapper = this.getWrapper();
 
-      if (!attributes) return;
+      if (!attributes?.primitiveUrl || !attributes?.sourceUrl) return;
 
       if (attributes.sourceUrl) {
         this.addSourceLink(wrapper, { sourceUrl: attributes.sourceUrl });
@@ -78,7 +78,7 @@ export class SourceLink implements AfterViewInit {
   }
 
   private getCurrentContentAttributes(): ContentAttributes | undefined {
-    const currentRoute = this.currentRoute();
+    const currentRoute = this.currentRoute()?.replace(/[?#].*$/, '');
 
     for (const content of this.contents) {
       const filename = content.filename
@@ -181,7 +181,7 @@ export class SourceLink implements AfterViewInit {
     this.renderer.setProperty(
       anchor,
       'innerHTML',
-      '<svg width="64px" height="64px" viewBox="0 0 32.00 32.00" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" fill="#000000" stroke="#000000" stroke-width="0.00032"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path fill="#444444" d="M15.937 11.355l-2.057 4.879h4.433l-2.358-4.924-0.019 0.044zM15.964 4.3l-11.279 3.969 1.782 14.777 9.508 5.226 9.557-5.297 1.782-14.776-11.351-3.899zM20.744 21.849l-1.531-3.545h-6.25l-1.398 3.497-2.601 0.048 6.973-15.513 7.216 15.513h-2.41z"></path> </g></svg>'
+      '<svg viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" fill="currentColor" stroke="none" stroke-width="0.00032"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M15.937 11.355l-2.057 4.879h4.433l-2.358-4.924-0.019 0.044zM15.964 4.3l-11.279 3.969 1.782 14.777 9.508 5.226 9.557-5.297 1.782-14.776-11.351-3.899zM20.744 21.849l-1.531-3.545h-6.25l-1.398 3.497-2.601 0.048 6.973-15.513 7.216 15.513h-2.41z"></path></g></svg>'
     );
 
     // Append anchor to wrapper, then wrapper to heading
