@@ -21,6 +21,10 @@ consistent interaction handling for hover, focus, press and autofill states.
 
 <app-metadata name="input"></app-metadata>
 
+## Examples
+
+<app-examples name="input"></app-examples>
+
 ## CSS
 
 | directive | class      | custom class |

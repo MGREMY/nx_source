@@ -20,6 +20,10 @@ Perform state toggling.
 
 <app-metadata name="checkbox"></app-metadata>
 
+## Examples
+
+<app-examples name="checkbox"></app-examples>
+
 ## CSS
 
 | directive    | class         | custom class    |

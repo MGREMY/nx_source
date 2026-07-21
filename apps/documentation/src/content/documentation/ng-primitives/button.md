@@ -22,6 +22,10 @@ focus.
 
 <app-metadata name="button"></app-metadata>
 
+## Examples
+
+<app-examples name="button"></app-examples>
+
 ## CSS
 
 | directive  | class       | custom class  |

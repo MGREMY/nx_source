@@ -21,6 +21,10 @@ the user.
 
 <app-metadata name="toast"></app-metadata>
 
+## Examples
+
+<app-examples name="toast"></app-examples>
+
 ## CSS
 
 | directive | class      | custom class |

@@ -20,6 +20,10 @@ The Form Field primitive is used to create interactive forms, with state and err
 
 <app-metadata name="form-field"></app-metadata>
 
+## Examples
+
+<app-examples name="form-field"></app-examples>
+
 ## CSS
 
 | directive           | class                  | custom class             |

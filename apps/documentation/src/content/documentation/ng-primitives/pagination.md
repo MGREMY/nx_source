@@ -21,6 +21,10 @@ control is used to navigate through a set of data that is split into multiple pa
 
 <app-metadata name="pagination"></app-metadata>
 
+## Examples
+
+<app-examples name="pagination"></app-examples>
+
 ## CSS
 
 | directive              | class                    | custom class               |

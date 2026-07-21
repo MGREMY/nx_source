@@ -21,6 +21,10 @@ from a list of options while filtering the list based on their input.
 
 <app-metadata name="combobox"></app-metadata>
 
+## Examples
+
+<app-examples name="combobox"></app-examples>
+
 ## CSS
 
 | directive            | class                  | custom class             |

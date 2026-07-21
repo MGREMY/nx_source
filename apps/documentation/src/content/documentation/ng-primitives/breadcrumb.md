@@ -20,6 +20,10 @@ Help users understand their location within a hierarchy with a fully accessible 
 
 <app-metadata name="breadcrumb"></app-metadata>
 
+## Examples
+
+<app-examples name="breadcrumb"></app-examples>
+
 ## CSS
 
 | directive               | class                     | custom class                |

@@ -20,6 +20,10 @@ Perform state toggling.
 
 <app-metadata name="switch"></app-metadata>
 
+## Examples
+
+<app-examples name="switch"></app-examples>
+
 ## CSS
 
 | directive       | class             | custom class        |

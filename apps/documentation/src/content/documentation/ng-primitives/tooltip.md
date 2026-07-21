@@ -20,6 +20,10 @@ Display additional information on hover.
 
 <app-metadata name="tooltip"></app-metadata>
 
+## Examples
+
+<app-examples name="tooltip"></app-examples>
+
 ## CSS
 
 | directive          | class                | custom class           |

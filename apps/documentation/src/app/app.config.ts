@@ -1,6 +1,6 @@
 import { environment } from '../environments/environment';
 import { AppCssContent } from './components/app-css-content';
-import { AppExample } from './components/app-example';
+import { AppExamples } from './components/app-examples';
 import { AppMetadata } from './components/app-metadata';
 import { AppPreview } from './components/app-preview';
 import {
@@ -60,8 +60,8 @@ export function initializeCustomElements(
 
       if (!customElements.get('app-example')) {
         customElements.define(
-          'app-example',
-          createCustomElement(AppExample, { injector: injector })
+          'app-examples',
+          createCustomElement(AppExamples, { injector: injector })
         );
       }
 

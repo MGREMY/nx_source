@@ -20,6 +20,10 @@ A menu is a list of options or commands presented to the user in a dropdown list
 
 <app-metadata name="menu"></app-metadata>
 
+## Examples
+
+<app-examples name="menu"></app-examples>
+
 ## CSS
 
 | directive              | class                      | custom class                 |
