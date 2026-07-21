@@ -1,6 +1,6 @@
 /// <reference types="vitest" />
 
-import analog from '@analogjs/platform';
+import analog, { PrerenderContentFile } from '@analogjs/platform';
 import { defineConfig, Plugin } from 'vite';
 
 import { readFileSync } from 'fs';
@@ -10,9 +10,9 @@ function sourceQueryPlugin(): Plugin {
     name: 'source-query-plugin',
     transform(code: string, id: string) {
       // Check if the import has a ?source query
-      if (id.includes('?source')) {
+      if (id.match(/[?&]source/)) {
         // Get the source file path
-        const source = readFileSync(id.replace('?source', '')).toString();
+        const source = readFileSync(id.split('?')[0]).toString();
 
         // Replace the import statement with a string literal
         code = `export default \`${source
@@ -33,6 +33,11 @@ export default defineConfig(({ mode }) => {
     resolve: {
       tsconfigPaths: true,
     },
+    server: {
+      fs: {
+        allow: ['../..'],
+      },
+    },
     build: {
       target: ['es2020'],
     },
@@ -47,6 +52,30 @@ export default defineConfig(({ mode }) => {
             with: `apps/documentation/src/environments/environment.${mode}.ts`,
           },
         ],
+        prerender: {
+          routes: [
+            '/',
+            {
+              contentDir: 'src/content/documentation',
+              recursive: true,
+              transform: (file: PrerenderContentFile) => {
+                if (file.attributes['attrOnly']) {
+                  return false;
+                }
+
+                if (file.name === 'index') {
+                  return `/documentation/${file.relativePath}`;
+                }
+
+                return file.relativePath
+                  ? `/documentation/${file.relativePath}/${file.name}`
+                  : `/documentation/${file.relativePath}`;
+              },
+              staticData: true,
+            },
+          ],
+          discover: true,
+        },
         content: {
           highlighter: 'shiki',
           shikiOptions: {

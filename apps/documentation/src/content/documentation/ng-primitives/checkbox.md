@@ -10,20 +10,17 @@ Perform state toggling.
 
 ## Usage
 
-<app-example name="checkbox"></app-example>
+<app-preview name="checkbox"></app-preview>
+
+<app-examples name="checkbox"></app-examples>
 
 ## Theme
 
 <app-css-content name="checkbox"></app-css-content>
 
-## Attributes
+## Metadata
 
-### MgnpCheckbox
-
-| name  | possible values                                                                       | description      | default value |
-| ----- | ------------------------------------------------------------------------------------- | ---------------- | ------------- |
-| color | **ui** / **primary** / **accent** / **info** / **success** / **warning** / **danger** | define the color | ui            |
-| size  | **xs** / **sm** / **md** / **lg** / **xl**                                            | define the size  | md            |
+<app-metadata name="checkbox"></app-metadata>
 
 ## CSS
 

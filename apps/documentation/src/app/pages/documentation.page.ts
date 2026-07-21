@@ -1,6 +1,6 @@
 import { AppComponent } from '../app';
+import AppQuickLinks from '../components/app-quick-links';
 import { AppSidebar, SidebarTree } from '../components/app-sidebar';
-import QuickLinks from '../components/quick-links';
 import { HeadingAnchor } from '../directives/heading-anchor';
 import { SourceLink } from '../directives/source-link';
 
@@ -20,7 +20,7 @@ interface ContentAttributes {
 }
 
 @Component({
-  imports: [AppSidebar, RouterOutlet, QuickLinks, HeadingAnchor, SourceLink],
+  imports: [AppSidebar, RouterOutlet, AppQuickLinks, HeadingAnchor, SourceLink],
   template: `
     <div class="flex">
       <app-sidebar

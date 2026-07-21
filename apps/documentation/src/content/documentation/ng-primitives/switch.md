@@ -10,21 +10,17 @@ Perform state toggling.
 
 ## Usage
 
-<app-example name="switch"></app-example>
+<app-preview name="switch"></app-preview>
+
+<app-examples name="switch"></app-examples>
 
 ## Theme
 
 <app-css-content name="switch"></app-css-content>
 
-## Attributes
+## Metadata
 
-### MgnpSwitch
-
----
-
-### MgnpSwitchThumb
-
----
+<app-metadata name="switch"></app-metadata>
 
 ## CSS
 

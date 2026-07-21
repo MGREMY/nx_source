@@ -1,0 +1,9 @@
+{
+  "generators": {
+    "component-metadata-generator": {
+      "factory": "./src/generators/component-metadata-generator/component-metadata-generator",
+      "schema": "./src/generators/component-metadata-generator/schema.json",
+      "description": "component-metadata-generator generator"
+    }
+  }
+}

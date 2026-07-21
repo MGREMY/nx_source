@@ -9,11 +9,17 @@ Display a loader indicator
 
 ## Usage
 
-<app-example name="loader"></app-example>
+<app-preview name="loader"></app-preview>
+
+<app-examples name="loader"></app-examples>
 
 ## Theme
 
 <app-css-content name="loader" path="extended"></app-css-content>
+
+## Metadata
+
+<app-metadata name="loader"></app-metadata>
 
 ## CSS
 

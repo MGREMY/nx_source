@@ -11,37 +11,17 @@ control is used to navigate through a set of data that is split into multiple pa
 
 ## Usage
 
-<app-example name="pagination"></app-example>
+<app-preview name="pagination"></app-preview>
+
+<app-examples name="pagination"></app-examples>
 
 ## Theme
 
 <app-css-content name="pagination"></app-css-content>
 
-## Attributes
+## Metadata
 
-### MgnpPagination
-
----
-
-### MgnpPaginationButton
-
----
-
-### MgnpPaginationFirst
-
----
-
-### MgnpPaginationLast
-
----
-
-### MgnpPaginationNext
-
----
-
-### MgnpPaginationPrevious
-
----
+<app-metadata name="pagination"></app-metadata>
 
 ## CSS
 

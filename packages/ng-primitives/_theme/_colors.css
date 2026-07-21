@@ -34,7 +34,8 @@
 
   --mg-state-hover-mix: light-dark(var(--color-black), var(--color-white)) 5%;
   --mg-state-active-mix: light-dark(var(--color-black), var(--color-white)) 15%;
-  --mg-color-secondary-mix: light-dark(var(--mg-text-inverse), var(--mg-text-inverse)) 50%;
+  --mg-color-secondary-mix: light-dark(var(--mg-text-inverse), var(--mg-text-inverse)) 25%;
+  --mg-color-tertiary-mix: light-dark(var(--mg-text-inverse), var(--mg-text-inverse)) 50%;
 }
 
 /* Tailwind */

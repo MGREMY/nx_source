@@ -10,32 +10,17 @@ A dialog is a floating window that can be used to display information or prompt 
 
 ## Usage
 
-<app-example name="dialog"></app-example>
+<app-preview name="dialog"></app-preview>
+
+<app-examples name="dialog"></app-examples>
 
 ## Theme
 
 <app-css-content name="dialog"></app-css-content>
 
-## Attributes
+## Metadata
 
-### MgnpDialog
-
----
-
-### MgnpDialogTitle
-
----
-
-### MgnpDialogDescription
-
----
-
-### MgnpDialogOverlay
-
-| name           | possible values        | description                                              | default value |
-| -------------- | ---------------------- | -------------------------------------------------------- | ------------- |
-| mode           | **modal** / **drawer** | define the behavior                                      | modal         |
-| drawerPosition | **start** / **end**    | define the position (only available for mode **drawer**) | end           |
+<app-metadata name="dialog"></app-metadata>
 
 ## CSS
 

@@ -9,11 +9,17 @@ Display a pre-styled table
 
 ## Usage
 
-<app-example name="table"></app-example>
+<app-preview name="table"></app-preview>
+
+<app-examples name="table"></app-examples>
 
 ## Theme
 
 <app-css-content name="table" path="extended"></app-css-content>
+
+## Metadata
+
+<app-metadata name="table"></app-metadata>
 
 ## CSS
 

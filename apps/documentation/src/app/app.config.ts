@@ -1,6 +1,8 @@
 import { environment } from '../environments/environment';
-import { AppCssContent } from './components/css-content';
-import { AppExample } from './components/example';
+import { AppCssContent } from './components/app-css-content';
+import { AppExamples } from './components/app-examples';
+import { AppMetadata } from './components/app-metadata';
+import { AppPreview } from './components/app-preview';
 import {
   provideConfig,
   provideEnvironmentConfig,
@@ -25,11 +27,13 @@ import {
   provideBrowserGlobalErrorListeners,
   provideZonelessChangeDetection,
 } from '@angular/core';
+import { provideClientHydration } from '@angular/platform-browser';
 import { withComponentInputBinding } from '@angular/router';
 
 export const appConfig: ApplicationConfig = {
   providers: [
     provideZonelessChangeDetection(),
+    provideClientHydration(),
     provideBrowserGlobalErrorListeners(),
     provideHttpClient(withFetch(), withInterceptors([langInterceptor, requestContextInterceptor])),
     provideFileRouter(withComponentInputBinding()),
@@ -56,10 +60,17 @@ export function initializeCustomElements(
     if (isPlatformBrowser(platform)) {
       const { createCustomElement } = await import('@angular/elements');
 
-      if (!customElements.get('app-example')) {
+      if (!customElements.get('app-examples')) {
         customElements.define(
-          'app-example',
-          createCustomElement(AppExample, { injector: injector })
+          'app-examples',
+          createCustomElement(AppExamples, { injector: injector })
+        );
+      }
+
+      if (!customElements.get('app-preview')) {
+        customElements.define(
+          'app-preview',
+          createCustomElement(AppPreview, { injector: injector })
         );
       }
 
@@ -67,6 +78,13 @@ export function initializeCustomElements(
         customElements.define(
           'app-css-content',
           createCustomElement(AppCssContent, { injector: injector })
+        );
+      }
+
+      if (!customElements.get('app-metadata')) {
+        customElements.define(
+          'app-metadata',
+          createCustomElement(AppMetadata, { injector: injector })
         );
       }
     }

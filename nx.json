@@ -99,6 +99,9 @@
       }
     }
   },
+  "sync": {
+    "applyChanges": true
+  },
   "analytics": false,
   "neverConnectToCloud": true,
   "migrate": {

@@ -10,29 +10,17 @@ Display a series of panels that can be expanded or collapsed.
 
 ## Usage
 
-<app-example name="accordion"></app-example>
+<app-preview name="accordion"></app-preview>
+
+<app-examples name="accordion"></app-examples>
 
 ## Theme
 
 <app-css-content name="accordion"></app-css-content>
 
-## Attributes
+## Metadata
 
-### MgnpAccordion
-
----
-
-### MgnpAccordionContent
-
----
-
-### MgnpAccordionItem
-
----
-
-### MgnpAccordionTrigger
-
----
+<app-metadata name="accordion"></app-metadata>
 
 ## CSS
 

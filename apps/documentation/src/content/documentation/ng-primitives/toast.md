@@ -11,17 +11,17 @@ the user.
 
 ## Usage
 
-<app-example name="toast"></app-example>
+<app-preview name="toast"></app-preview>
+
+<app-examples name="toast"></app-examples>
 
 ## Theme
 
 <app-css-content name="toast"></app-css-content>
 
-## Attributes
+## Metadata
 
-### MgnpToast
-
----
+<app-metadata name="toast"></app-metadata>
 
 ## CSS
 

@@ -48,7 +48,8 @@
       "@mgremy/core/resolvers": ["packages/core/resolvers/src/index.ts"],
       "@mgremy/core/types": ["packages/core/types/src/index.ts"],
       "@mgremy/core/utils": ["packages/core/utils/src/index.ts"],
-      "@mgremy/plugin": ["packages/plugin/src/index.ts"]
+      "@mgremy/plugin": ["packages/plugin/src/index.ts"],
+      "@mgremy/nx-source-plugin": ["./tools/nx-source-plugin/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

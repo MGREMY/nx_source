@@ -11,17 +11,17 @@ consistent interaction handling for hover, focus, press and autofill states.
 
 ## Usage
 
-<app-example name="input"></app-example>
+<app-preview name="input"></app-preview>
+
+<app-examples name="input"></app-examples>
 
 ## Theme
 
 <app-css-content name="input"></app-css-content>
 
-## Attributes
+## Metadata
 
-### MgnpInput
-
----
+<app-metadata name="input"></app-metadata>
 
 ## CSS
 

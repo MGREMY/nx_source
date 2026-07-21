@@ -9,11 +9,17 @@ Display a navbar
 
 ## Usage
 
-<app-example name="navbar"></app-example>
+<app-preview name="navbar"></app-preview>
+
+<app-examples name="navbar"></app-examples>
 
 ## Theme
 
 <app-css-content name="navbar" path="extended"></app-css-content>
+
+## Metadata
+
+<app-metadata name="navbar"></app-metadata>
 
 ## CSS
 

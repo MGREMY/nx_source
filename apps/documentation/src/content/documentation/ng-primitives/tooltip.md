@@ -10,25 +10,17 @@ Display additional information on hover.
 
 ## Usage
 
-<app-example name="tooltip"></app-example>
+<app-preview name="tooltip"></app-preview>
+
+<app-examples name="tooltip"></app-examples>
 
 ## Theme
 
 <app-css-content name="tooltip"></app-css-content>
 
-## Attributes
+## Metadata
 
-### MgnpTooltip
-
----
-
-### MgnpTooltipArrow
-
----
-
-### MgnpTooltipTrigger
-
----
+<app-metadata name="tooltip"></app-metadata>
 
 ## CSS
 
