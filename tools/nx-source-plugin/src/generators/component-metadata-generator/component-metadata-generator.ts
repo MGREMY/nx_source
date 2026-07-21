@@ -1,4 +1,15 @@
 // tools/nx-source-plugin/src/generators/component-metadata-generator/component-metadata-generator.ts
+/**
+ * Component Metadata Generator
+ *
+ * Scan ng-primitives and ng-ptimitives-extended packages, find all `@Component`/`@Directive`
+ * decorated classes, extracts their metadata (inputs with type/possible values,
+ * outputs, host directives, selectors), and writes one JSON file per component group to tmp/
+ *
+ * Registered as sync generator on the documentation app's build target.
+ * Runs via `nx sync` or `nx build documentation --sync`
+ * Also runs automatically in dev, when asked to sync the workspace
+ */
 import { ComponentMetadataGeneratorGeneratorSchema } from './schema';
 
 import { createProjectGraphAsync, joinPathFragments, type Tree } from '@nx/devkit';
@@ -45,6 +56,11 @@ interface ComponentGroup {
   directives: ParsedDirective[];
 }
 
+/**
+ * Recursivly finds all .ts files in a directory, exluding text and story files.
+ * @param dir Directory to scan
+ * @returns The list of TS file path
+ */
 function findTsFiles(dir: string): string[] {
   const files: string[] = [];
 
@@ -71,6 +87,18 @@ function findTsFiles(dir: string): string[] {
   return files;
 }
 
+/**
+ * Parses the `hostDirectives` property of a `@Component`/`@Directive` decorator.
+ *
+ * Handles the shape:
+ *   hostDirectives: [{
+ *     directive: NgpAccordion,
+ *     inputs: ['ngpAccordionType:mgnpAccordionType', ...],
+ *     outputs: ['ngpAccordionValueChange:mgnpAccordionValueChange']
+ *   }]
+ * @param prop The host directive definition
+ * @returns The parsed host directive entries
+ */
 function parseHostDirectives(prop: PropertyAssignment): HostDirectiveEntry[] {
   const initializer = prop.getInitializer();
 
@@ -116,6 +144,17 @@ function parseHostDirectives(prop: PropertyAssignment): HostDirectiveEntry[] {
   return results;
 }
 
+/**
+ * Parse a single .ts file and extracts metadata from any `@Component`/`@Directive` classes.
+ *
+ * For each decorated class, extracts:
+ * - Decorator-level: selector, exportAs, hostDirective
+ * - Class members: input() signals (with type + possible values via type alias resolution)
+ *                  outputs() signals
+ * - Host directive inputs/outputs remappings (format: remoteName:localName)
+ * @param filePath Typescript file to parse
+ * @returns The parsed directive entries
+ */
 function parseFile(filePath: string): ParsedDirective[] {
   const content = readFileSync(filePath, 'utf-8');
   const project = new Project({
@@ -132,7 +171,7 @@ function parseFile(filePath: string): ParsedDirective[] {
 
     if (!decorator) continue;
 
-    const decoratorType = componentDecorator ? 'component' : 'directive';
+    const decoratorType = componentDecorator ? 'component' : 'directive'; // Skip class without `@Component`/`@Directive`
     const callExpression = decorator.getCallExpression();
 
     if (!callExpression) continue;
@@ -143,6 +182,7 @@ function parseFile(filePath: string): ParsedDirective[] {
 
     const decoratorObj = firstArg as ObjectLiteralExpression;
 
+    // Decorator properties
     const selectorProp = decoratorObj.getProperty('selector') as PropertyAssignment;
     const selector = selectorProp?.getInitializer()?.getText().replace(/['"`]/g, '') ?? '';
 
@@ -157,6 +197,7 @@ function parseFile(filePath: string): ParsedDirective[] {
     const inputs: ParsedInput[] = [];
     const outputs: ParsedOutput[] = [];
 
+    // Class member inputs/outputs
     for (const member of classDecl.getMembers()) {
       if (!member.isKind(SyntaxKind.PropertyDeclaration)) continue;
 
@@ -168,10 +209,14 @@ function parseFile(filePath: string): ParsedDirective[] {
 
       const functionName = callExpr.getExpression().getText();
 
+      // Detect input()/input.required() signals
       if (functionName === 'input' || functionName === 'input.required') {
         const typeArgs = callExpr.getTypeArguments();
         const typeText = typeArgs.length > 0 ? typeArgs[0].getText() : 'unknown';
 
+        // Resolve the type alias to extract literal possible values.
+        // Example: MgnpButtonColor = PropertyType<'ui' | 'primary' | ...>
+        //          -> resolves to ['ui', 'primary']
         let possibleValues: string[] = [];
         if (typeArgs.length > 0) {
           const typeArg = typeArgs[0];
@@ -236,7 +281,10 @@ function parseFile(filePath: string): ParsedDirective[] {
           possibleValues,
           defaultValue,
         });
-      } else if (functionName === 'output') {
+      }
+
+      // Detect output() signals
+      if (functionName === 'output') {
         const typeArgs = callExpr.getTypeArguments();
         const typeText = typeArgs.length > 0 ? typeArgs[0].getText() : 'unknown';
 
@@ -247,6 +295,7 @@ function parseFile(filePath: string): ParsedDirective[] {
       }
     }
 
+    // Host directive input/output remapping
     for (const hd of hostDirectives) {
       for (const inputStr of hd.inputs) {
         const parts = inputStr.split(':');
@@ -300,10 +349,14 @@ export async function componentMetadataGeneratorGenerator(
   ];
 
   for (const project of projects) {
+    // Resolve the absolute path of project root
     const projectRoot = join(workspaceRoot, project.data.root);
+    // Get all files in the project exept for index.ts
     const tsFiles = findTsFiles(projectRoot).filter(
       (f) => f.includes(joinPathFragments('src', 'lib')) && !f.includes('index.ts')
     );
+
+    // Group files by components (accordion, accordion-item, ... -> accordion)
     const componentGroups = new Map<string, string[]>();
 
     for (const filePath of tsFiles) {
@@ -317,6 +370,7 @@ export async function componentMetadataGeneratorGenerator(
       componentGroups.get(componentGroup)?.push(filePath);
     }
 
+    // Parse each component group abnd write JSON output
     for (const [componentName, files] of componentGroups) {
       const directives: ParsedDirective[] = [];
 
@@ -340,6 +394,7 @@ export async function componentMetadataGeneratorGenerator(
         `${componentName}.json`
       );
 
+      // Output: tmp/packages/ng-primitives/accordion/accordion.json
       tree.write(outputPath, JSON.stringify(componentGroup, null, 2));
     }
   }

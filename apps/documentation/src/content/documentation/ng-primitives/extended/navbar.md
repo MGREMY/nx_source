@@ -11,6 +11,8 @@ Display a navbar
 
 <app-preview name="navbar"></app-example>
 
+<app-examples name="navbar"></app-examples>
+
 ## Theme
 
 <app-css-content name="navbar" path="extended"></app-css-content>

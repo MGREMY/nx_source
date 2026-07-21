@@ -11,6 +11,8 @@ Display a loader indicator
 
 <app-preview name="loader"></app-preview>
 
+<app-examples name="loader"></app-examples>
+
 ## Theme
 
 <app-css-content name="loader" path="extended"></app-css-content>
