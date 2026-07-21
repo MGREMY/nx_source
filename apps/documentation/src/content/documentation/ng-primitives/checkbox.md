@@ -10,7 +10,7 @@ Perform state toggling.
 
 ## Usage
 
-<app-example name="checkbox"></app-example>
+<app-preview name="checkbox"></app-example>
 
 ## Theme
 

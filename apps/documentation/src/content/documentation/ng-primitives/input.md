@@ -11,7 +11,7 @@ consistent interaction handling for hover, focus, press and autofill states.
 
 ## Usage
 
-<app-example name="input"></app-example>
+<app-preview name="input"></app-preview>
 
 ## Theme
 

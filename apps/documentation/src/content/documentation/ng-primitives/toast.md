@@ -11,7 +11,7 @@ the user.
 
 ## Usage
 
-<app-example name="toast"></app-example>
+<app-preview name="toast"></app-preview>
 
 ## Theme
 

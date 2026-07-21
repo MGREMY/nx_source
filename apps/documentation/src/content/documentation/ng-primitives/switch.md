@@ -10,7 +10,7 @@ Perform state toggling.
 
 ## Usage
 
-<app-example name="switch"></app-example>
+<app-preview name="switch"></app-preview>
 
 ## Theme
 

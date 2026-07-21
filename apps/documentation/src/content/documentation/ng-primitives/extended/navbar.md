@@ -9,7 +9,7 @@ Display a navbar
 
 ## Usage
 
-<app-example name="navbar"></app-example>
+<app-preview name="navbar"></app-example>
 
 ## Theme
 

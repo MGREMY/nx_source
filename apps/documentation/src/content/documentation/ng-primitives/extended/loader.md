@@ -9,7 +9,7 @@ Display a loader indicator
 
 ## Usage
 
-<app-example name="loader"></app-example>
+<app-preview name="loader"></app-preview>
 
 ## Theme
 

@@ -12,7 +12,7 @@ focus.
 
 ## Usage
 
-<app-example name="button"></app-example>
+<app-preview name="button"></app-preview>
 
 ## Theme
 

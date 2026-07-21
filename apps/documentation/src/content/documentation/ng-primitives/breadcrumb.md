@@ -10,7 +10,7 @@ Help users understand their location within a hierarchy with a fully accessible 
 
 ## Usage
 
-<app-example name="breadcrumb"></app-example>
+<app-preview name="breadcrumb"></app-preview>
 
 ## Theme
 

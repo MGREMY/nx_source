@@ -9,7 +9,7 @@ Display a pre-styled table
 
 ## Usage
 
-<app-example name="table"></app-example>
+<app-preview name="table"></app-preview>
 
 ## Theme
 

@@ -10,7 +10,7 @@ Display additional information on hover.
 
 ## Usage
 
-<app-example name="tooltip"></app-example>
+<app-preview name="tooltip"></app-preview>
 
 ## Theme
 

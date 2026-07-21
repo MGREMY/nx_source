@@ -10,7 +10,7 @@ Display a series of panels that can be expanded or collapsed.
 
 ## Usage
 
-<app-example name="accordion"></app-example>
+<app-preview name="accordion"></app-preview>
 
 ## Theme
 

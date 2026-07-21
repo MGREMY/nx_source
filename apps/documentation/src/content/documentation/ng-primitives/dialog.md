@@ -10,7 +10,7 @@ A dialog is a floating window that can be used to display information or prompt 
 
 ## Usage
 
-<app-example name="dialog"></app-example>
+<app-preview name="dialog"></app-preview>
 
 ## Theme
 

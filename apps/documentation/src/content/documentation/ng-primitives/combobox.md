@@ -11,7 +11,7 @@ from a list of options while filtering the list based on their input.
 
 ## Usage
 
-<app-example name="combobox"></app-example>
+<app-preview name="combobox"></app-preview>
 
 ## Theme
 

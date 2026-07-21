@@ -2,6 +2,7 @@ import { environment } from '../environments/environment';
 import { AppCssContent } from './components/app-css-content';
 import { AppExample } from './components/app-example';
 import { AppMetadata } from './components/app-metadata';
+import { AppPreview } from './components/app-preview';
 import {
   provideConfig,
   provideEnvironmentConfig,
@@ -61,6 +62,13 @@ export function initializeCustomElements(
         customElements.define(
           'app-example',
           createCustomElement(AppExample, { injector: injector })
+        );
+      }
+
+      if (!customElements.get('app-preview')) {
+        customElements.define(
+          'app-preview',
+          createCustomElement(AppPreview, { injector: injector })
         );
       }
 
