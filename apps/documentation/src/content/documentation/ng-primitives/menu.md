@@ -12,6 +12,8 @@ A menu is a list of options or commands presented to the user in a dropdown list
 
 <app-preview name="menu"></app-preview>
 
+<app-examples name="menu"></app-examples>
+
 ## Theme
 
 <app-css-content name="menu"></app-css-content>
@@ -19,10 +21,6 @@ A menu is a list of options or commands presented to the user in a dropdown list
 ## Metadata
 
 <app-metadata name="menu"></app-metadata>
-
-## Examples
-
-<app-examples name="menu"></app-examples>
 
 ## CSS
 

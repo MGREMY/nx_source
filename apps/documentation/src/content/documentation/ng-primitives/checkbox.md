@@ -10,7 +10,9 @@ Perform state toggling.
 
 ## Usage
 
-<app-preview name="checkbox"></app-example>
+<app-preview name="checkbox"></app-preview>
+
+<app-examples name="checkbox"></app-examples>
 
 ## Theme
 
@@ -19,10 +21,6 @@ Perform state toggling.
 ## Metadata
 
 <app-metadata name="checkbox"></app-metadata>
-
-## Examples
-
-<app-examples name="checkbox"></app-examples>
 
 ## CSS
 

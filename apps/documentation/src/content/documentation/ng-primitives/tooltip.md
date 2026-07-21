@@ -12,6 +12,8 @@ Display additional information on hover.
 
 <app-preview name="tooltip"></app-preview>
 
+<app-examples name="tooltip"></app-examples>
+
 ## Theme
 
 <app-css-content name="tooltip"></app-css-content>
@@ -19,10 +21,6 @@ Display additional information on hover.
 ## Metadata
 
 <app-metadata name="tooltip"></app-metadata>
-
-## Examples
-
-<app-examples name="tooltip"></app-examples>
 
 ## CSS
 

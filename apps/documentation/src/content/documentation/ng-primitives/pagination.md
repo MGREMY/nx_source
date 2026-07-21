@@ -13,6 +13,8 @@ control is used to navigate through a set of data that is split into multiple pa
 
 <app-preview name="pagination"></app-preview>
 
+<app-examples name="pagination"></app-examples>
+
 ## Theme
 
 <app-css-content name="pagination"></app-css-content>
@@ -20,10 +22,6 @@ control is used to navigate through a set of data that is split into multiple pa
 ## Metadata
 
 <app-metadata name="pagination"></app-metadata>
-
-## Examples
-
-<app-examples name="pagination"></app-examples>
 
 ## CSS
 

@@ -12,6 +12,8 @@ Perform state toggling.
 
 <app-preview name="switch"></app-preview>
 
+<app-examples name="switch"></app-examples>
+
 ## Theme
 
 <app-css-content name="switch"></app-css-content>
@@ -19,10 +21,6 @@ Perform state toggling.
 ## Metadata
 
 <app-metadata name="switch"></app-metadata>
-
-## Examples
-
-<app-examples name="switch"></app-examples>
 
 ## CSS
 

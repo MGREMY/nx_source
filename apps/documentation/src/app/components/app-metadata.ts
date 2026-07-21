@@ -79,9 +79,7 @@ export class AppMetadata {
     const metadatas = Object.entries(this.metadatas);
 
     for (const metadata of metadatas) {
-      const splitPath = metadata[0].split('/');
-
-      if (splitPath[splitPath.length - 1] === `${name}.json`) {
+      if (metadata[0].endsWith(`${name}.json`)) {
         await metadata[1]()
           .then((x) => JSON.parse(x) as ComponentGroup)
           .then((x) => this.selectedMetadata.set(x))
@@ -109,15 +107,15 @@ export class AppMetadata {
       if (directive.inputs.length === 0 || directive.inputs.every((x) => x.fromHostDirective)) {
         markdown.push('-----');
       } else {
-        markdown.push('| name | possible values | default value |');
-        markdown.push('|---|---|---|');
+        markdown.push('| name | type | possible values | default value |');
+        markdown.push('|---|---|---|---|');
         for (const input of directive.inputs) {
           if (input.fromHostDirective) continue;
 
           const possibleValues = input.possibleValues?.map((x) => `**${x}**`).join(' / ') ?? '';
           const defaultValue = input.defaultValue ?? '';
 
-          markdown.push(`| ${input.name} | ${possibleValues} | ${defaultValue} |`);
+          markdown.push(`| ${input.name} | ${input.type} | ${possibleValues} | ${defaultValue} |`);
         }
       }
 

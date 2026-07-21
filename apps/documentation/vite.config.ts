@@ -12,7 +12,7 @@ function sourceQueryPlugin(): Plugin {
       // Check if the import has a ?source query
       if (id.match(/[?&]source/)) {
         // Get the source file path
-        const source = readFileSync(id.replace(/[?&]source/, '')).toString();
+        const source = readFileSync(id.split('?')[0]).toString();
 
         // Replace the import statement with a string literal
         code = `export default \`${source

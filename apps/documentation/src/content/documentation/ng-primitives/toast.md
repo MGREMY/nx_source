@@ -13,6 +13,8 @@ the user.
 
 <app-preview name="toast"></app-preview>
 
+<app-examples name="toast"></app-examples>
+
 ## Theme
 
 <app-css-content name="toast"></app-css-content>
@@ -20,10 +22,6 @@ the user.
 ## Metadata
 
 <app-metadata name="toast"></app-metadata>
-
-## Examples
-
-<app-examples name="toast"></app-examples>
 
 ## CSS
 

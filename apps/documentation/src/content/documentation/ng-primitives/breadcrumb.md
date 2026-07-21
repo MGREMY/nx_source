@@ -12,6 +12,8 @@ Help users understand their location within a hierarchy with a fully accessible 
 
 <app-preview name="breadcrumb"></app-preview>
 
+<app-examples name="breadcrumb"></app-examples>
+
 ## Theme
 
 <app-css-content name="breadcrumb"></app-css-content>
@@ -19,10 +21,6 @@ Help users understand their location within a hierarchy with a fully accessible 
 ## Metadata
 
 <app-metadata name="breadcrumb"></app-metadata>
-
-## Examples
-
-<app-examples name="breadcrumb"></app-examples>
 
 ## CSS
 

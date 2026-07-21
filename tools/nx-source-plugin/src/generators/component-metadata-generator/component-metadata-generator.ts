@@ -303,7 +303,7 @@ function parseFile(filePath: string): ParsedDirective[] {
         inputs.push({
           name: localName,
           type: 'unknown',
-          fromHostDirective: `${hd.directive}:${parts[0]}`,
+          fromHostDirective: `${hd.directive.trim()}:${parts[0].trim()}`,
         });
       }
 
@@ -312,7 +312,7 @@ function parseFile(filePath: string): ParsedDirective[] {
         const localName = parts[1] || parts[0];
         outputs.push({
           name: localName,
-          fromHostDirective: `${hd.directive}:${parts[0]}`,
+          fromHostDirective: `${hd.directive.trim()}:${parts[0].trim()}`,
         });
       }
     }
@@ -339,7 +339,9 @@ export async function componentMetadataGeneratorGenerator(
 
   if (!ngPrimitives || !ngPrimitivesExtended) {
     console.warn('Could not find ng-primitives or ng-primitives-extended in project graph');
-    return { outOfSyncMessage: '' };
+    return {
+      outOfSyncMessage: 'Could not find ng-primitives or ng-primitives-extended in project graph',
+    };
   }
 
   const workspaceRoot = tree.root;
@@ -398,9 +400,6 @@ export async function componentMetadataGeneratorGenerator(
       tree.write(outputPath, JSON.stringify(componentGroup, null, 2));
     }
   }
-  return {
-    outOfSyncMessage: 'Component metadata has not been generated.',
-  };
 }
 
 export default componentMetadataGeneratorGenerator;

@@ -13,6 +13,8 @@ from a list of options while filtering the list based on their input.
 
 <app-preview name="combobox"></app-preview>
 
+<app-examples name="combobox"></app-examples>
+
 ## Theme
 
 <app-css-content name="combobox"></app-css-content>
@@ -20,10 +22,6 @@ from a list of options while filtering the list based on their input.
 ## Metadata
 
 <app-metadata name="combobox"></app-metadata>
-
-## Examples
-
-<app-examples name="combobox"></app-examples>
 
 ## CSS
 

@@ -14,6 +14,8 @@ focus.
 
 <app-preview name="button"></app-preview>
 
+<app-examples name="button"></app-examples>
+
 ## Theme
 
 <app-css-content name="button"></app-css-content>
@@ -21,10 +23,6 @@ focus.
 ## Metadata
 
 <app-metadata name="button"></app-metadata>
-
-## Examples
-
-<app-examples name="button"></app-examples>
 
 ## CSS
 

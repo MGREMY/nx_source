@@ -119,13 +119,13 @@ export class AppPreview {
     this.isLoading.set(true);
 
     const expectedFileName = `../../previews/${name}.ts`;
-    const preview = Object.entries(this.previews).find((x) => x[0] === expectedFileName);
-    const source = Object.entries(this.sources).find((x) => x[0] === expectedFileName);
+    const preview = this.previews[expectedFileName];
+    const source = this.sources[expectedFileName];
 
     if (!preview || !source) return;
 
-    await preview[1]().then((x) => this.preview.set(x as Type<unknown>));
-    await source[1]()
+    await preview().then((x) => this.preview.set(x as Type<unknown>));
+    await source()
       .then((x) => x.trim())
       .then(
         async (x) =>

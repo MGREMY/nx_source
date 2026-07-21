@@ -58,7 +58,7 @@ export function initializeCustomElements(
     if (isPlatformBrowser(platform)) {
       const { createCustomElement } = await import('@angular/elements');
 
-      if (!customElements.get('app-example')) {
+      if (!customElements.get('app-examples')) {
         customElements.define(
           'app-examples',
           createCustomElement(AppExamples, { injector: injector })

@@ -9,7 +9,7 @@ Display a navbar
 
 ## Usage
 
-<app-preview name="navbar"></app-example>
+<app-preview name="navbar"></app-preview>
 
 <app-examples name="navbar"></app-examples>
 
