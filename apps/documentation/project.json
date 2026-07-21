@@ -9,7 +9,7 @@
   "targets": {
     "build": {
       "executor": "@analogjs/platform:vite",
-      "outputs": ["{workspaceRoot}/dist/apps/documentation"],
+      "outputs": ["{options.outputPath}"],
       "defaultConfiguration": "production",
       "syncGenerators": ["@mgremy/nx-source-plugin:component-metadata-generator"],
       "options": {

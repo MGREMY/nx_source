@@ -119,26 +119,21 @@ export class AppPreview {
     this.isLoading.set(true);
 
     const expectedFileName = `../../previews/${name}.ts`;
-    const preview = this.previews[expectedFileName];
-    const source = this.sources[expectedFileName];
+    const preview = this.previews[expectedFileName]();
+    const source = this.sources[expectedFileName]();
 
     if (!preview || !source) return;
 
-    await preview().then((x) => this.preview.set(x as Type<unknown>));
-    await source()
-      .then((x) => x.trim())
-      .then(
-        async (x) =>
-          await codeToHtml(x, {
-            lang: 'angular-ts',
-            themes: {
-              light: 'material-theme-lighter',
-              dark: 'material-theme-darker',
-            },
-          })
-      )
-      .then(this.sanitizer.bypassSecurityTrustHtml)
-      .then((x) => this.code.set(x));
+    this.preview.set((await preview) as Type<unknown>);
+    this.code.set(
+      await codeToHtml((await source).trim(), {
+        lang: 'angular-ts',
+        themes: {
+          light: 'material-theme-lighter',
+          dark: 'material-theme-darker',
+        },
+      }).then(this.sanitizer.bypassSecurityTrustHtml)
+    );
 
     this.isLoading.set(false);
   }

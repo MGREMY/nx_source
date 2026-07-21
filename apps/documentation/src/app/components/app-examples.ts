@@ -175,29 +175,22 @@ export class AppExamples {
     // Map 2 arrays with same key to 1 array with the key, value from x and value from y
     const array = previews.map((x) => ({
       name: x[0],
-      preview: x[1],
+      preview: x[1](),
       // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-      source: sources.find((y) => y[0] === x[0])![1],
+      source: sources.find((y) => y[0] === x[0])![1](),
     }));
 
     const items: { preview: Type<unknown> | null; code: SafeHtml | string; name: string }[] = [];
 
     for (const item of array) {
-      const p = (await item.preview()) as Type<unknown>;
-      const s = await item
-        .source()
-        .then((x) => x.trim())
-        .then(
-          async (x) =>
-            await codeToHtml(x, {
-              lang: 'angular-ts',
-              themes: {
-                light: 'material-theme-lighter',
-                dark: 'material-theme-darker',
-              },
-            })
-        )
-        .then(this.sanitizer.bypassSecurityTrustHtml);
+      const p = (await item.preview) as Type<unknown>;
+      const s = await codeToHtml((await item.source).trim(), {
+        lang: 'angular-ts',
+        themes: {
+          light: 'material-theme-lighter',
+          dark: 'material-theme-darker',
+        },
+      }).then(this.sanitizer.bypassSecurityTrustHtml);
 
       const name = item.name.replace(expectedFilePath, '').replace('.ts', '').replace('-', ' ');
 
