@@ -24,6 +24,7 @@
     }
 
     @variant data-press {
+      @apply text-inverse;
       @apply bg-[color-mix(in_srgb,--value(--background-color-*),var(--mg-state-active-mix))];
     }
   }
@@ -45,6 +46,10 @@
       @variant light {
         @apply scheme-dark;
       }
+    }
+
+    @variant data-press {
+      @apply text-ui;
     }
   }
 }
