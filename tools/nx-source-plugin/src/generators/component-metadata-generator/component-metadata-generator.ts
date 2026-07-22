@@ -57,7 +57,7 @@ interface ComponentGroup {
 }
 
 /**
- * Recursivly finds all .ts files in a directory, exluding text and story files.
+ * Recursivly finds all .ts files in a directory, exluding test and story files.
  * @param dir Directory to scan
  * @returns The list of TS file path
  */
