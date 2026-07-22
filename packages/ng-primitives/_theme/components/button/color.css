@@ -36,7 +36,7 @@
   }
 
   @variant data-[mgnp-button-variant=outline] {
-    @variant data-hover {
+    @variant data-hover,data-press {
       @apply text-ui;
 
       @variant dark {
@@ -46,10 +46,6 @@
       @variant light {
         @apply scheme-dark;
       }
-    }
-
-    @variant data-press {
-      @apply text-ui;
     }
   }
 }
