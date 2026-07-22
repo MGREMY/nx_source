@@ -20,24 +20,12 @@
     @apply data-[mgnp-button-size=xl]:mgnp-button-size-xl;
 
     /* Color */
-    @variant data-[mgnp-button-variant=solid] {
-      @apply data-[mgnp-button-color=ui]:mgnp-button-color-solid-ui;
-      @apply data-[mgnp-button-color=primary]:mgnp-button-color-solid-primary;
-      @apply data-[mgnp-button-color=accent]:mgnp-button-color-solid-accent;
-      @apply data-[mgnp-button-color=info]:mgnp-button-color-solid-info;
-      @apply data-[mgnp-button-color=success]:mgnp-button-color-solid-success;
-      @apply data-[mgnp-button-color=warning]:mgnp-button-color-solid-warning;
-      @apply data-[mgnp-button-color=danger]:mgnp-button-color-solid-danger;
-    }
-
-    @variant data-[mgnp-button-variant=outline] {
-      @apply data-[mgnp-button-color=ui]:mgnp-button-color-outline-ui;
-      @apply data-[mgnp-button-color=primary]:mgnp-button-color-outline-primary;
-      @apply data-[mgnp-button-color=accent]:mgnp-button-color-outline-accent;
-      @apply data-[mgnp-button-color=info]:mgnp-button-color-outline-info;
-      @apply data-[mgnp-button-color=success]:mgnp-button-color-outline-success;
-      @apply data-[mgnp-button-color=warning]:mgnp-button-color-outline-warning;
-      @apply data-[mgnp-button-color=danger]:mgnp-button-color-outline-danger;
-    }
+    @apply data-[mgnp-button-color=ui]:mgnp-button-color-ui;
+    @apply data-[mgnp-button-color=primary]:mgnp-button-color-primary;
+    @apply data-[mgnp-button-color=accent]:mgnp-button-color-accent;
+    @apply data-[mgnp-button-color=info]:mgnp-button-color-info;
+    @apply data-[mgnp-button-color=success]:mgnp-button-color-success;
+    @apply data-[mgnp-button-color=warning]:mgnp-button-color-warning;
+    @apply data-[mgnp-button-color=danger]:mgnp-button-color-danger;
   }
 }

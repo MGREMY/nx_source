@@ -1,49 +1,51 @@
-/* Solid */
-@utility mgnp-button-color-solid-* {
-  @apply text-inverse;
-  @apply bg-[--value(--background-color-*)];
+@utility mgnp-button-color-* {
   @apply border-[--value(--border-color-*)];
 
-  @variant data-hover {
-    @apply bg-[color-mix(in_srgb,--value(--background-color-*),var(--mg-state-hover-mix))];
-  }
-
-  @variant data-press {
-    @apply bg-[color-mix(in_srgb,--value(--background-color-*),var(--mg-state-active-mix))];
-  }
-}
-
-@utility mgnp-button-color-solid-ui {
-  @apply text-ui;
-}
-
-/* Outline */
-@utility mgnp-button-color-outline-* {
-  @apply text-[--value(--text-color-*)];
-  @apply bg-transparent;
-  @apply border-[--value(--border-color-*)];
-
-  @variant data-hover {
+  @variant data-[mgnp-button-variant=solid] {
     @apply text-inverse;
-    @apply bg-[color-mix(in_srgb,--value(--background-color-*),var(--mg-state-hover-mix))];
-  }
+    @apply bg-[--value(--background-color-*)];
 
-  @variant data-press {
-    @apply bg-[color-mix(in_srgb,--value(--background-color-*),var(--mg-state-active-mix))];
-  }
-}
-
-@utility mgnp-button-color-outline-ui {
-  /* Invert scheme so the outline style works for ui color */
-  @variant data-hover {
-    @apply text-ui;
-
-    @variant dark {
-      @apply scheme-light;
+    @variant data-hover {
+      @apply bg-[color-mix(in_srgb,--value(--background-color-*),var(--mg-state-hover-mix))];
     }
 
-    @variant light {
-      @apply scheme-dark;
+    @variant data-press {
+      @apply bg-[color-mix(in_srgb,--value(--background-color-*),var(--mg-state-active-mix))];
+    }
+  }
+
+  @variant data-[mgnp-button-variant=outline] {
+    @apply text-[--value(--text-color-*)];
+    @apply bg-transparent;
+
+    @variant data-hover {
+      @apply text-inverse;
+      @apply bg-[color-mix(in_srgb,--value(--background-color-*),var(--mg-state-hover-mix))];
+    }
+
+    @variant data-press {
+      @apply text-inverse;
+      @apply bg-[color-mix(in_srgb,--value(--background-color-*),var(--mg-state-active-mix))];
+    }
+  }
+}
+
+@utility mgnp-button-color-ui {
+  @variant data-[mgnp-button-variant=solid] {
+    @apply text-ui;
+  }
+
+  @variant data-[mgnp-button-variant=outline] {
+    @variant data-hover,data-press {
+      @apply text-ui;
+
+      @variant dark {
+        @apply scheme-light;
+      }
+
+      @variant light {
+        @apply scheme-dark;
+      }
     }
   }
 }
