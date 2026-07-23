@@ -93,6 +93,18 @@ function findTsFiles(dir: string): string[] {
   return files;
 }
 
+/**
+ * Parse the `host` property of a `@Component`/`@Directive` decorator.
+ *
+ * Handle the shape:
+ *   host: {
+ *     class: 'mgnp-accordion mgnp-c-accordion',
+ *     'data-mgnp-accordion': '',
+ *     '[attr.data-mgnp-accordion-color]': 'color()',
+ *   }
+ * @param prop The host definition
+ * @returns The parsed host entries
+ */
 function parseHost(prop: PropertyAssignment): HostEntry[] {
   const initializer = prop.getInitializer();
 
