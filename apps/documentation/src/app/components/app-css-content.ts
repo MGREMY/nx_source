@@ -1,32 +1,29 @@
 import { NgClass } from '@angular/common';
-import {
-  ChangeDetectionStrategy,
-  Component,
-  computed,
-  effect,
-  inject,
-  input,
-  signal,
-  untracked,
-} from '@angular/core';
+import { ChangeDetectionStrategy, Component, effect, inject, input, signal } from '@angular/core';
 import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 import { codeToHtml } from 'shiki';
+
+type ComponentGroup = {
+  name: string;
+  content: string;
+};
 
 @Component({
   selector: 'app-css-content',
   imports: [NgClass],
   template: `
     <div class="flex flex-col grow">
-      @if (availableTabs().size > 1) {
+      @if (selectedMetadata() && selectedMetadata()!.length > 1) {
         <div class="flex flex-row justify-around border-b border-b-ui overflow-x-auto">
-          @for (name of availableTabs(); track name) {
+          @for (componentGroup of selectedMetadata(); track componentGroup.name) {
             <button
               class="w-full min-w-32 items-center py-2 bg-ui hover:cursor-pointer hover:bg-[color-mix(in_srgb,var(--background-color-ui),var(--mg-state-hover-mix))] transition-colors"
               [ngClass]="{
-                'border-b border-(--text-color-accent) text-accent': selectedTab() === name,
+                'border-b border-(--text-color-accent) text-accent':
+                  selectedStyle() === componentGroup.name,
               }"
-              (click)="selectedTab.set(name)">
-              {{ name }}
+              (click)="selectedStyle.set(componentGroup.name)">
+              {{ componentGroup.name }}
             </button>
           }
         </div>
@@ -48,92 +45,87 @@ import { codeToHtml } from 'shiki';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class AppCssContent {
-  private readonly _sanitizer = inject(DomSanitizer);
+  private readonly sanitizer = inject(DomSanitizer);
 
-  private readonly styles = import.meta.glob<string>(
-    '../../../../../packages/*/_theme/components/**/*.css',
+  private readonly metadatas = import.meta.glob<string>(
+    '../../../../../tmp/packages/**/css/*.json',
     {
       import: 'default',
-      query: '?raw',
-      eager: true,
+      query: '?source',
+      eager: false,
     }
   );
 
   readonly name = input.required<string>();
-  readonly path = input<'ng-primitives' | 'extended'>('ng-primitives');
 
+  readonly isLoading = signal(false);
   readonly isOpen = signal(false);
-  readonly selectedTab = signal<string>('');
+  readonly selectedMetadata = signal<ComponentGroup[] | undefined>(undefined);
+  readonly selectedStyle = signal<string>('');
   readonly style = signal<SafeHtml | string>('');
 
-  readonly availableTabs = computed(() => {
-    const currentName = this.name();
-    if (!currentName) return new Set<string>();
-
-    const detectedTabs = new Set<string>();
-    const styleKeys = Object.keys(this.styles);
-    const nameRegexPattern = new RegExp(`/${currentName}/([a-zA-Z0-9-]+)\\.css$`);
-
-    for (const key of styleKeys) {
-      // Add css entrypoint for the current component
-      if (key.endsWith(`/${currentName}.css`)) {
-        detectedTabs.add(currentName);
-        continue;
-      }
-
-      const match = key.match(nameRegexPattern);
-
-      if (match && match[1]) {
-        detectedTabs.add(match[1]);
-      }
-    }
-
-    return detectedTabs;
-  });
-
   constructor() {
-    effect(() => {
-      const currentName = this.name();
-      if (!currentName) return;
+    effect(async () => {
+      const name = this.name();
+      if (!name) return;
 
-      this.selectedTab.set(currentName);
+      await this.loadMetadata(name);
     });
 
     effect(async () => {
-      const currentName = untracked(this.name);
-      const selectedTab = this.selectedTab();
-      if (!selectedTab) return;
+      const selectedMetadata = this.selectedMetadata();
+      const selectedStyle = this.selectedStyle();
+      if (!selectedMetadata || !selectedStyle) return;
 
-      await this.loadStyle(currentName, selectedTab);
+      await this.generateStyle();
     });
   }
 
-  private async loadStyle(name: string, tab: string): Promise<void> {
-    const styleKeys = Object.keys(this.styles);
-    let nameRegexPattern = new RegExp(`/${name}/${tab}\\.css$`);
+  private async loadMetadata(name: string): Promise<void> {
+    this.isLoading.set(true);
 
-    if (name === tab) {
-      nameRegexPattern = new RegExp(`/${name}\\.css$`);
-    }
+    const metadatas = Object.entries(this.metadatas);
 
-    for (const key of styleKeys) {
-      const match = key.match(nameRegexPattern);
+    for (const metadata of metadatas) {
+      if (metadata[0].endsWith(`${name}.json`)) {
+        await metadata[1]()
+          .then((x) => JSON.parse(x) as ComponentGroup[])
+          .then((x) =>
+            x.sort((y, z) =>
+              // If y.name === name, first
+              // Else If z.name === name, first
+              // Else compare string
+              y.name === name ? -1 : z.name === name ? 1 : y.name.localeCompare(z.name)
+            )
+          )
+          .then((x) => this.selectedMetadata.set(x))
+          .then(() => this.isLoading.set(false));
 
-      if (match) {
-        const selectedStyle = this.styles[key];
+        // Default set the selected style to the metadata file name (without extension)
+        this.selectedStyle.set(name);
 
-        await codeToHtml(selectedStyle.trim(), {
-          lang: 'postcss',
-          themes: {
-            light: 'material-theme-lighter',
-            dark: 'material-theme-darker',
-          },
-        })
-          .then((x) => this._sanitizer.bypassSecurityTrustHtml(x))
-          .then((x) => this.style.set(x));
-
-        break;
+        return;
       }
     }
+
+    this.isLoading.set(false);
+  }
+
+  private async generateStyle(): Promise<void> {
+    const selectedStyle = this.selectedStyle();
+    const selectedMetadata = this.selectedMetadata();
+    const componentGroup = selectedMetadata?.find((x) => x.name === selectedStyle);
+
+    if (!componentGroup) return;
+
+    this.style.set(
+      await codeToHtml(componentGroup.content.trim(), {
+        lang: 'postcss',
+        themes: {
+          light: 'material-theme-lighter',
+          dark: 'material-theme-darker',
+        },
+      }).then(this.sanitizer.bypassSecurityTrustHtml)
+    );
   }
 }
