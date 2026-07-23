@@ -1,5 +1,11 @@
 import { computed, signal, WritableSignal } from '@angular/core';
 
+/**
+ * Manages the filtering, input synchronization, and open/close behavior of a combobox.
+ *
+ * Wires together the input text, the selected value, and the filtered option list. Handles
+ * updating the input display when a value is selected and resetting the filter on close.
+ */
 export class ComboboxFilter<T> {
   private readonly _options: T[];
   private readonly _inputValue: WritableSignal<string>;
@@ -55,6 +61,21 @@ export class ComboboxFilter<T> {
   }
 }
 
+/**
+ * Creates a `ComboboxFilter<T>` instance that manages filtering of combobox options.
+ *
+ * By default, works with string options and values. For complex option types (e.g. objects),
+ * provide a `valueMapper` to convert an option to its string representation (used for display
+ * and input), and a `filterMapper` to customize whether an option passes the filter based on
+ * the raw input string (e.g. filtering only by name or email fields of an object).
+ *
+ * @template T - The type of each option in the combobox.
+ * @param config.options - The full list of options to filter.
+ * @param config.inputValue - A writable signal holding the current input string.
+ * @param config.value - A writable signal holding the currently selected value.
+ * @param config.valueMapper - Maps an option `T` to its string representation. Defaults to casting to string.
+ * @param config.filterMapper - Predicate returning `true` if the option should appear given the filter string. Defaults to a case-insensitive substring match.
+ */
 export function comboboxFilter<T>(config: {
   options: T[];
   inputValue: WritableSignal<string>;
@@ -71,6 +92,14 @@ export function comboboxFilter<T>(config: {
   );
 }
 
+/**
+ * Creates reactive signals for managing a combobox value and input state.
+ *
+ * Returns an object with an `input` signal (the current text input string) and a
+ * `value` signal (the currently selected value, or `undefined` if none).
+ *
+ * @template T - The type of the selected value.
+ */
 export function comboboxValue<T>(): {
   input: WritableSignal<string>;
   value: WritableSignal<T | undefined>;
