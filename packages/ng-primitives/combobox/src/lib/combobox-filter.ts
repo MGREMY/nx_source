@@ -22,9 +22,9 @@ export class ComboboxFilter<T> {
     this._options = options;
     this._inputValue = inputValue;
     this._value = value;
-    this._valueMapper = valueMapper || ((v) => v as unknown as string);
+    this._valueMapper = valueMapper ?? ((v) => v as unknown as string);
     this._filterMapper =
-      filterMapper || ((o, v) => String(o).toLowerCase().includes(v.toLowerCase()));
+      filterMapper ?? ((o, v) => String(o).toLowerCase().includes(v.toLowerCase()));
   }
 
   onFilterChange(event: Event): void {
