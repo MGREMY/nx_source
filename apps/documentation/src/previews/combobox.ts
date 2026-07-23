@@ -14,23 +14,29 @@ import { Component, signal } from '@angular/core';
 @Component({
   imports: [MgnpCombobox, MgnpComboboxButton, MgnpComboboxDropdown, MgnpComboboxOption, MgnpComboboxPortal, NgIcon],
   template: `
-    <div mgnpCombobox [(mgnpComboboxValue)]="selectedOption">
-      <button mgnpComboboxButton>
-        <span>{{ selectedOption() || 'Select an option' }}</span>
-        <ng-icon name="heroChevronDown" />
-      </button>
-      <div *mgnpComboboxPortal mgnpComboboxDropdown>
-        @for (option of options; track option) {
-          <div mgnpComboboxOption [mgnpComboboxOptionValue]="option">
-            {{ option }}
+    <div class="flex flex-col gap-2 w-full">
+      @for (color of _colors; track $index) {
+        <div mgnpCombobox [(mgnpComboboxValue)]="selectedOption" [color]="color">
+          <button mgnpComboboxButton>
+            <span>{{ selectedOption() || 'Select an option' }}</span>
+            <ng-icon name="heroChevronDown" />
+          </button>
+          <div *mgnpComboboxPortal mgnpComboboxDropdown>
+            @for (option of options; track option) {
+              <div mgnpComboboxOption [mgnpComboboxOptionValue]="option">
+                {{ option }}
+              </div>
+            }
           </div>
-        }
-      </div>
+        </div>
+      }
     </div>
   `,
   providers: [provideIcons({ heroChevronDown })],
 })
 export default class Combobox {
+  readonly _colors = ['ui', 'primary', 'accent', 'info', 'success', 'warning', 'danger'];
+
   readonly options = ['option 1', 'option 2', 'option 3'];
   readonly selectedOption = signal<string>('');
 }

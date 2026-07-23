@@ -5,7 +5,9 @@ import { ControlValueAccessor } from '@angular/forms';
 import { injectComboboxState, NgpCombobox, provideComboboxState } from 'ng-primitives/combobox';
 import { ChangeFn, provideValueAccessor, TouchedFn } from 'ng-primitives/utils';
 
-export type MgnpComboboxColor = PropertyType<'ui'>;
+export type MgnpComboboxColor = PropertyType<
+  'ui' | 'primary' | 'accent' | 'info' | 'success' | 'warning' | 'danger'
+>;
 
 @Directive({
   selector: '[mgnpCombobox]',

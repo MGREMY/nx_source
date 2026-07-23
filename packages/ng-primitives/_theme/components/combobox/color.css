@@ -1,11 +1,12 @@
 @utility mgnp-combobox-color-* {
-  @apply bg-[--value(--background-color-*)];
+  @apply bg-ui;
   @apply border-[--value(--border-color-*)];
 
   @variant not-data-pristine:data-invalid {
     @apply border-danger;
   }
 }
+
 @utility mgnp-combobox-input-color-* {
   @apply text-[--value(--text-color-*)];
 }
@@ -14,16 +15,16 @@
   @apply text-[--value(--text-color-*)];
 }
 
-@utility mgnp-combobox-dropdown-color-* {
-  @apply bg-[--value(--background-color-*)];
-  @apply border-[--value(--border-color-*)];
+@utility mgnp-combobox-dropdown-color {
+  @apply bg-ui;
+  @apply border-ui;
 }
 
 @utility mgnp-combobox-option-color-* {
-  @apply text-[color-mix(in_srgb,--value(--text-color-*),var(--mg-color-secondary-mix))];
+  @apply text-[color-mix(in_srgb,var(--text-color-ui),var(--mg-color-secondary-mix))];
 
   @variant data-hover,data-active {
-    @apply bg-[color-mix(in_srgb,--value(--background-color-*),var(--mg-state-hover-mix))];
+    @apply bg-[color-mix(in_srgb,var(--background-color-ui),var(--mg-state-hover-mix))];
   }
 
   @variant data-selected {

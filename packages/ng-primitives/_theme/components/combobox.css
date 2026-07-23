@@ -8,6 +8,12 @@
     @apply border rounded-lg;
 
     @apply data-[mgnp-combobox-color=ui]:mgnp-combobox-color-ui;
+    @apply data-[mgnp-combobox-color=primary]:mgnp-combobox-color-ui;
+    @apply data-[mgnp-combobox-color=accent]:mgnp-combobox-color-ui;
+    @apply data-[mgnp-combobox-color=info]:mgnp-combobox-color-ui;
+    @apply data-[mgnp-combobox-color=success]:mgnp-combobox-color-ui;
+    @apply data-[mgnp-combobox-color=warning]:mgnp-combobox-color-ui;
+    @apply data-[mgnp-combobox-color=danger]:mgnp-combobox-color-ui;
   }
 
   .mgnp-combobox-input {
@@ -18,6 +24,12 @@
     @apply bg-transparent;
 
     @apply data-[mgnp-combobox-input-color=ui]:mgnp-combobox-input-color-ui;
+    @apply data-[mgnp-combobox-input-color=primary]:mgnp-combobox-input-color-primary;
+    @apply data-[mgnp-combobox-input-color=accent]:mgnp-combobox-input-color-accent;
+    @apply data-[mgnp-combobox-input-color=info]:mgnp-combobox-input-color-info;
+    @apply data-[mgnp-combobox-input-color=success]:mgnp-combobox-input-color-success;
+    @apply data-[mgnp-combobox-input-color=warning]:mgnp-combobox-input-color-warning;
+    @apply data-[mgnp-combobox-input-color=danger]:mgnp-combobox-input-color-danger;
 
     @variant [&:only-child] {
       @apply pr-2;
@@ -34,6 +46,12 @@
     @apply cursor-pointer;
 
     @apply data-[mgnp-combobox-button-color=ui]:mgnp-combobox-button-color-ui;
+    @apply data-[mgnp-combobox-button-color=primary]:mgnp-combobox-button-color-primary;
+    @apply data-[mgnp-combobox-button-color=accent]:mgnp-combobox-button-color-accent;
+    @apply data-[mgnp-combobox-button-color=info]:mgnp-combobox-button-color-info;
+    @apply data-[mgnp-combobox-button-color=success]:mgnp-combobox-button-color-success;
+    @apply data-[mgnp-combobox-button-color=warning]:mgnp-combobox-button-color-warning;
+    @apply data-[mgnp-combobox-button-color=danger]:mgnp-combobox-button-color-danger;
 
     @variant [&:only-child] {
       @apply w-full;
@@ -54,7 +72,13 @@
     @apply border rounded-lg;
     @apply shadow-lg;
 
-    @apply data-[mgnp-combobox-dropdown-color=ui]:mgnp-combobox-dropdown-color-ui;
+    @apply data-[mgnp-combobox-dropdown-color=ui]:mgnp-combobox-dropdown-color;
+    @apply data-[mgnp-combobox-dropdown-color=primary]:mgnp-combobox-dropdown-color;
+    @apply data-[mgnp-combobox-dropdown-color=accent]:mgnp-combobox-dropdown-color;
+    @apply data-[mgnp-combobox-dropdown-color=info]:mgnp-combobox-dropdown-color;
+    @apply data-[mgnp-combobox-dropdown-color=success]:mgnp-combobox-dropdown-color;
+    @apply data-[mgnp-combobox-dropdown-color=warning]:mgnp-combobox-dropdown-color;
+    @apply data-[mgnp-combobox-dropdown-color=danger]:mgnp-combobox-dropdown-color;
 
     @variant data-enter {
       @apply animate-mg-show-y;
@@ -78,5 +102,11 @@
     @apply text-sm;
 
     @apply data-[mgnp-combobox-option-color=ui]:mgnp-combobox-option-color-ui;
+    @apply data-[mgnp-combobox-option-color=primary]:mgnp-combobox-option-color-primary;
+    @apply data-[mgnp-combobox-option-color=accent]:mgnp-combobox-option-color-accent;
+    @apply data-[mgnp-combobox-option-color=info]:mgnp-combobox-option-color-info;
+    @apply data-[mgnp-combobox-option-color=success]:mgnp-combobox-option-color-success;
+    @apply data-[mgnp-combobox-option-color=warning]:mgnp-combobox-option-color-warning;
+    @apply data-[mgnp-combobox-option-color=danger]:mgnp-combobox-option-color-danger;
   }
 }
