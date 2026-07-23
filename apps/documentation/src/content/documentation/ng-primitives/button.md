@@ -23,9 +23,3 @@ focus.
 ## Metadata
 
 <app-metadata name="button"></app-metadata>
-
-## CSS
-
-| directive  | class       | custom class  |
-| ---------- | ----------- | ------------- |
-| MgnpButton | mgnp-button | mgnp-c-button |

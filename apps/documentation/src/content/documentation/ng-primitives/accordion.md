@@ -21,12 +21,3 @@ Display a series of panels that can be expanded or collapsed.
 ## Metadata
 
 <app-metadata name="accordion"></app-metadata>
-
-## CSS
-
-| directive            | class                  | custom class             |
-| -------------------- | ---------------------- | ------------------------ |
-| MgnpAccordion        | mgnp-accordion         | mgnp-c-accordion         |
-| MgnpAccordionContent | mgnp-accordion-content | mgnp-c-accordion-content |
-| MgnpAccordionItem    | mgnp-accordion-item    | mgnp-c-accordion-item    |
-| MgnpAccordionTrigger | mgnp-accordion-trigger | mgnp-c-accordion-trigger |

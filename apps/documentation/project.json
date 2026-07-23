@@ -11,7 +11,10 @@
       "executor": "@analogjs/platform:vite",
       "outputs": ["{options.outputPath}"],
       "defaultConfiguration": "production",
-      "syncGenerators": ["@mgremy/nx-source-plugin:component-metadata-generator"],
+      "syncGenerators": [
+        "@mgremy/nx-source-plugin:component-metadata-generator",
+        "@mgremy/nx-source-plugin:component-css-generator"
+      ],
       "options": {
         "configFile": "apps/documentation/vite.config.ts",
         "main": "apps/documentation/src/main.ts",

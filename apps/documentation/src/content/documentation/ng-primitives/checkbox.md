@@ -21,9 +21,3 @@ Perform state toggling.
 ## Metadata
 
 <app-metadata name="checkbox"></app-metadata>
-
-## CSS
-
-| directive    | class         | custom class    |
-| ------------ | ------------- | --------------- |
-| MgnpCheckbox | mgnp-checkbox | mgnp-c-checkbox |

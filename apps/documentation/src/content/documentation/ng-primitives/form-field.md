@@ -21,15 +21,3 @@ The Form Field primitive is used to create interactive forms, with state and err
 ## Metadata
 
 <app-metadata name="form-field"></app-metadata>
-
-## CSS
-
-| directive           | class                  | custom class             |
-| ------------------- | ---------------------- | ------------------------ |
-| MgnpDescription     | mgnp-description       | mgnp-c-description       |
-| MgnpError           | mgnp-error             | mgnp-c-error             |
-| MgnpFormControl     | mgnp-form-control      | mgnp-c-form-control      |
-| MgnpFormField       | mgnp-form-field        | mgnp-c-form-field        |
-| MgnpInputGroup      | mgnp-input-group       | mgnp-c-input-group       |
-| MgnpInputGroupAddon | mgnp-input-group-addon | mgnp-c-input-group-addon |
-| MgnpLabel           | mgnp-label             | mgnp-c-label             |

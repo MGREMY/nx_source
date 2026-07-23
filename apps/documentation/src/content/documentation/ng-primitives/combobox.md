@@ -22,13 +22,3 @@ from a list of options while filtering the list based on their input.
 ## Metadata
 
 <app-metadata name="combobox"></app-metadata>
-
-## CSS
-
-| directive            | class                  | custom class             |
-| -------------------- | ---------------------- | ------------------------ |
-| MgnpCombobox         | mgnp-combobox          | mgnp-c-combobox          |
-| MgnpComboboxButton   | mgnp-combobox-button   | mgnp-c-combobox-button   |
-| MgnpComboboxDropdown | mgnp-combobox-dropdown | mgnp-c-combobox-dropdown |
-| MgnpComboboxInput    | mgnp-combobox-input    | mgnp-c-combobox-input    |
-| MgnpComboboxOption   | mgnp-combobox-option   | mgnp-c-combobox-option   |

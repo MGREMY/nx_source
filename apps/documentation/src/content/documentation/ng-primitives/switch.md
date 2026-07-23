@@ -21,10 +21,3 @@ Perform state toggling.
 ## Metadata
 
 <app-metadata name="switch"></app-metadata>
-
-## CSS
-
-| directive       | class             | custom class        |
-| --------------- | ----------------- | ------------------- |
-| MgnpSwitch      | mgnp-switch       | mgnp-c-switch       |
-| MgnpSwitchThumb | mgnp-switch-thumb | mgnp-c-switch-thumb |

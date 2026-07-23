@@ -4,6 +4,11 @@
       "factory": "./src/generators/component-metadata-generator/component-metadata-generator",
       "schema": "./src/generators/component-metadata-generator/schema.json",
       "description": "component-metadata-generator generator"
+    },
+    "component-css-generator": {
+      "factory": "./src/generators/component-css-generator/component-css-generator",
+      "schema": "./src/generators/component-css-generator/schema.json",
+      "description": "component-css-generator generator"
     }
   }
 }

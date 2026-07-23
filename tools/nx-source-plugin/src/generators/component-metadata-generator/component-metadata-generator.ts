@@ -33,6 +33,11 @@ interface ParsedOutput {
   fromHostDirective?: string;
 }
 
+interface HostEntry {
+  name: string;
+  value: string;
+}
+
 interface HostDirectiveEntry {
   directive: string;
   inputs: string[];
@@ -44,6 +49,7 @@ interface ParsedDirective {
   type: 'component' | 'directive';
   selector: string;
   exportAs: string;
+  host: HostEntry[];
   inputs: ParsedInput[];
   outputs: ParsedOutput[];
   hostDirectives: HostDirectiveEntry[];
@@ -57,7 +63,7 @@ interface ComponentGroup {
 }
 
 /**
- * Recursivly finds all .ts files in a directory, exluding text and story files.
+ * Recursivly finds all .ts files in a directory, exluding test and story files.
  * @param dir Directory to scan
  * @returns The list of TS file path
  */
@@ -85,6 +91,42 @@ function findTsFiles(dir: string): string[] {
   }
 
   return files;
+}
+
+/**
+ * Parse the `host` property of a `@Component`/`@Directive` decorator.
+ *
+ * Handle the shape:
+ *   host: {
+ *     class: 'mgnp-accordion mgnp-c-accordion',
+ *     'data-mgnp-accordion': '',
+ *     '[attr.data-mgnp-accordion-color]': 'color()',
+ *   }
+ * @param prop The host definition
+ * @returns The parsed host entries
+ */
+function parseHost(prop: PropertyAssignment): HostEntry[] {
+  const initializer = prop.getInitializer();
+
+  if (!initializer?.isKind(SyntaxKind.ObjectLiteralExpression)) return [];
+
+  const results: HostEntry[] = [];
+
+  for (const property of initializer.getProperties()) {
+    if (!property.isKind(SyntaxKind.PropertyAssignment)) continue;
+
+    const obj = property as PropertyAssignment;
+
+    const name = obj.getName();
+    const value = obj.getInitializer()?.getText() ?? '';
+
+    results.push({
+      name,
+      value,
+    });
+  }
+
+  return results;
 }
 
 /**
@@ -188,6 +230,9 @@ function parseFile(filePath: string): ParsedDirective[] {
 
     const exportAsProp = decoratorObj.getProperty('exportAs') as PropertyAssignment;
     const exportAs = exportAsProp?.getInitializer()?.getText().replace(/['"`]/g, '') ?? '';
+
+    const hostProp = decoratorObj.getProperty('host');
+    const host: HostEntry[] = hostProp ? parseHost(hostProp as PropertyAssignment) : [];
 
     const hostDirectivesProp = decoratorObj.getProperty('hostDirectives');
     const hostDirectives: HostDirectiveEntry[] = hostDirectivesProp
@@ -321,6 +366,7 @@ function parseFile(filePath: string): ParsedDirective[] {
       type: decoratorType,
       selector,
       exportAs,
+      host,
       inputs,
       outputs,
       hostDirectives,

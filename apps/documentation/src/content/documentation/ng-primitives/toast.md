@@ -22,9 +22,3 @@ the user.
 ## Metadata
 
 <app-metadata name="toast"></app-metadata>
-
-## CSS
-
-| directive | class      | custom class |
-| --------- | ---------- | ------------ |
-| MgnpToast | mgnp-toast | mgnp-c-toast |
