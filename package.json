@@ -93,7 +93,7 @@
     "jwt-decode": "^4.0.0",
     "lint-staged": "^17.0.8",
     "ng-packagr": "^21.1.0",
-    "ng-primitives": "^0.120.0",
+    "ng-primitives": "^0.127.0",
     "nx": "23.0.0",
     "postcss": "^8.4.5",
     "postcss-url": "^10.1.3",
