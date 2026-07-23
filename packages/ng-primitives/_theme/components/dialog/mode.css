@@ -1,7 +1,14 @@
+@utility mgnp-dialog-mode {
+  @apply max-w-8/12;
+}
+
 @utility mgnp-dialog-mode-modal {
-  @apply max-w-8/12 max-h-8/12;
+  @apply mgnp-dialog-mode max-h-8/12;
   @apply rounded-md;
-  @apply animate-mg-fade-in;
+
+  @variant data-enter {
+    @apply animate-mg-fade-in;
+  }
 
   @variant data-exit {
     @apply animate-mg-fade-out;
@@ -9,16 +16,18 @@
 }
 
 @utility mgnp-dialog-mode-drawer {
-  @apply max-w-8/12 h-full;
-  @apply animate-mg-slide-in;
+  @apply h-full;
+
+  @variant data-enter {
+    @apply animate-mg-show-x;
+  }
 
   @variant data-exit {
-    @apply animate-mg-slide-out;
+    @apply animate-mg-hide-x;
   }
 }
 
-@utility mgnp-dialog-overlay-mode-modal {
-  @apply items-center justify-center;
+@utility mgnp-dialog-overlay-mode {
   @apply animate-mg-fade-in;
 
   @variant data-exit {
@@ -26,9 +35,14 @@
   }
 }
 
+@utility mgnp-dialog-overlay-mode-modal {
+  @apply mgnp-dialog-overlay-mode;
+  @apply items-center justify-center;
+}
+
 @utility mgnp-dialog-overlay-mode-drawer {
+  @apply mgnp-dialog-overlay-mode;
   @apply items-stretch;
-  @apply animate-mg-slide-in;
 
   @variant data-[mgnp-dialog-overlay-position=start] {
     @apply justify-start;
@@ -36,9 +50,5 @@
 
   @variant data-[mgnp-dialog-overlay-position=end] {
     @apply justify-end;
-  }
-
-  @variant data-exit {
-    @apply animate-mg-slide-out;
   }
 }

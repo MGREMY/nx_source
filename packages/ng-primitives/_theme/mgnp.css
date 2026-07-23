@@ -25,6 +25,9 @@
 
   --mg-default-animation-translateY-origin: --spacing(-2);
   --mg-default-animation-translateY-base: --spacing(0);
+
+  --mg-default-animation-translateX-origin: --spacing(-2);
+  --mg-default-animation-translateX-base: --spacing(0);
 }
 
 @theme {

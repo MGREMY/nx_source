@@ -32,7 +32,7 @@
         @apply flex basis-full;
         @apply order-last;
         @apply box-border rounded-lg;
-        @apply animate-mg-show;
+        @apply animate-mg-show-y;
 
         ul {
           @apply flex flex-col gap-2;
