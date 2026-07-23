@@ -20,18 +20,14 @@
 }
 
 @utility mgnp-combobox-option-color-* {
-  @apply text-[--value(--text-color-*)];
+  @apply text-[color-mix(in_srgb,--value(--text-color-*),var(--mg-color-secondary-mix))];
 
-  @variant data-hover {
+  @variant data-hover,data-active {
     @apply bg-[color-mix(in_srgb,--value(--background-color-*),var(--mg-state-hover-mix))];
   }
 
-  @variant data-press {
-    @apply bg-[color-mix(in_srgb,--value(--background-color-*),var(--mg-state-active-mix))];
-  }
-
-  @variant data-active {
-    @apply bg-[color-mix(in_srgb,--value(--background-color-*),var(--mg-state-active-mix))];
+  @variant data-selected {
+    @apply text-[--value(--text-color-*)];
   }
 
   @variant data-disabled {

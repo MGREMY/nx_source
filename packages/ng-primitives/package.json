@@ -12,7 +12,7 @@
   "peerDependencies": {
     "@angular/cdk": "^21.1.0",
     "@angular/core": "^21.1.0",
-    "ng-primitives": "^0.120.0",
+    "ng-primitives": "^0.127.0",
     "tailwindcss": "^4.3.0",
     "rxjs": "^7.8.0"
   },
