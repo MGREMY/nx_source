@@ -13,6 +13,10 @@ type ComponentGroup = {
     type: 'component' | 'directive';
     selector: string;
     exportAs: string;
+    host: {
+      name: string;
+      value: string;
+    }[];
     inputs: {
       name: string;
       type: string;
@@ -158,6 +162,25 @@ export class AppMetadata {
               }
             }
           }
+        }
+      }
+
+      markdown.push('#### CSS classes');
+      if (!directive.host || directive.host.length === 0) {
+        markdown.push('-----');
+      } else {
+        markdown.push('| class | custom class |');
+        markdown.push('| --- | --- |');
+
+        for (const hostDefinition of directive.host) {
+          if (hostDefinition.name !== 'class') continue;
+
+          const value = hostDefinition.value.replaceAll("'", '');
+
+          const clazz = value.split(' ').find((x) => !x.includes('-c-'));
+          const customClazz = value.split(' ').find((x) => x.startsWith('mgnp-c-'));
+
+          markdown.push(`| ${clazz} | ${customClazz} |`);
         }
       }
     }

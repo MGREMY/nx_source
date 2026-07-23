@@ -21,12 +21,3 @@ A dialog is a floating window that can be used to display information or prompt 
 ## Metadata
 
 <app-metadata name="dialog"></app-metadata>
-
-## CSS
-
-| directive             | class                   | custom class              |
-| --------------------- | ----------------------- | ------------------------- |
-| MgnpDialog            | mgnp-dialog             | mgnp-c-dialog             |
-| MgnpDialogTitle       | mgnp-dialog-title       | mgnp-c-dialog-title       |
-| MgnpDialogDescription | mgnp-dialog-description | mgnp-c-dialog-description |
-| MgnpDialogOverlay     | mgnp-dialog-overlay     | mgnp-c-dialog-overlay     |

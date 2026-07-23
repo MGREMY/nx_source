@@ -21,11 +21,3 @@ Display additional information on hover.
 ## Metadata
 
 <app-metadata name="tooltip"></app-metadata>
-
-## CSS
-
-| directive          | class                | custom class           |
-| ------------------ | -------------------- | ---------------------- |
-| MgnpTooltip        | mgnp-tooltip         | mgnp-c-tooltip         |
-| MgnpTooltipArrow   | mgnp-tooltip-arrow   | mgnp-c-tooltip-arrow   |
-| MgnpTooltipTrigger | mgnp-tooltip-trigger | mgnp-c-tooltip-trigger |

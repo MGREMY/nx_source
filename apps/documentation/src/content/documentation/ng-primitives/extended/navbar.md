@@ -20,9 +20,3 @@ Display a navbar
 ## Metadata
 
 <app-metadata name="navbar"></app-metadata>
-
-## CSS
-
-| directive  | class       | custom class  |
-| ---------- | ----------- | ------------- |
-| MgnpNavbar | mgnp-navbar | mgnp-c-navbar |

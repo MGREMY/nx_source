@@ -22,9 +22,3 @@ consistent interaction handling for hover, focus, press and autofill states.
 ## Metadata
 
 <app-metadata name="input"></app-metadata>
-
-## CSS
-
-| directive | class      | custom class |
-| --------- | ---------- | ------------ |
-| MgnpInput | mgnp-input | mgnp-c-input |

@@ -20,9 +20,3 @@ Display a loader indicator
 ## Metadata
 
 <app-metadata name="loader"></app-metadata>
-
-## CSS
-
-| directive  | class       | custom class  |
-| ---------- | ----------- | ------------- |
-| MgnpLoader | mgnp-loader | mgnp-c-loader |
