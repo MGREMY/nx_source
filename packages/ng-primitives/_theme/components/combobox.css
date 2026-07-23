@@ -57,11 +57,11 @@
     @apply data-[mgnp-combobox-dropdown-color=ui]:mgnp-combobox-dropdown-color-ui;
 
     @variant data-enter {
-      @apply animate-mg-show;
+      @apply animate-mg-show-y;
     }
 
     @variant data-exit {
-      @apply animate-mg-hide;
+      @apply animate-mg-hide-y;
     }
   }
 

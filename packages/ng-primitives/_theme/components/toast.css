@@ -18,7 +18,7 @@
     @variant data-enter {
       --y: translateY(0);
 
-      @apply opacity-100 animate-mg-slide-in;
+      @apply opacity-100 animate-mg-show-y;
     }
 
     @variant data-exit {

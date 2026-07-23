@@ -9,12 +9,12 @@
     @apply rounded-lg;
     @apply text-xs;
     @apply origin-(--ngp-tooltip-transform-origin);
-    @apply animate-mg-show;
+    @apply animate-mg-show-y;
 
     @apply data-[mgnp-tooltip-color=ui]:mgnp-tooltip-color-ui;
 
     @variant data-exit {
-      @apply animate-mg-hide;
+      @apply animate-mg-hide-y;
     }
   }
 

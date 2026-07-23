@@ -1,45 +1,53 @@
 @theme {
-  @keyframes mg-show {
+  @keyframes mg-show-x {
     from {
       opacity: 0;
-      transform: translateY(var(--mg-default-animation-translateY-origin)) scale(0.9);
+      transform: translateX(var(--mg-show-origin, var(--mg-default-animation-translateX-origin)))
+        scale(0.9);
     }
     to {
       opacity: 1;
-      transform: translateY(var(--mg-default-animation-translateY-base)) scale(1);
+      transform: translateX(var(--mg-show-base, var(--mg-default-animation-translateX-base)))
+        scale(1);
     }
   }
 
-  @keyframes mg-hide {
+  @keyframes mg-show-y {
     from {
-      opacity: 1;
-      transform: translateY(var(--mg-default-animation-translateY-base)) scale(1);
+      opacity: 0;
+      transform: translateY(var(--mg-show-origin, var(--mg-default-animation-translateY-origin)))
+        scale(0.9);
     }
     to {
-      opacity: 0;
-      transform: translateY(var(--mg-default-animation-translateY-origin)) scale(0.9);
+      opacity: 1;
+      transform: translateY(var(--mg-show-base, var(--mg-default-animation-translateY-base)))
+        scale(1);
     }
   }
 
-  @keyframes mg-slide-in {
+  @keyframes mg-hide-x {
     from {
-      opacity: 0;
-      transform: translateY(var(--mg-default-animation-translateY-origin));
+      opacity: 1;
+      transform: translateX(var(--mg-hide-origin, var(--mg-default-animation-translateX-base)))
+        scale(1);
     }
     to {
-      opacity: 1;
-      transform: translateY(var(--mg-default-animation-translateY-base));
+      opacity: 0;
+      transform: translateX(var(--mg-hide-base, var(--mg-default-animation-translateX-origin)))
+        scale(0.9);
     }
   }
 
-  @keyframes mg-slide-out {
+  @keyframes mg-hide-y {
     from {
       opacity: 1;
-      transform: translateY(var(--mg-default-animation-translateY-base));
+      transform: translateY(var(--mg-hide-origin, var(--mg-default-animation-translateY-base)))
+        scale(1);
     }
     to {
       opacity: 0;
-      transform: translateY(var(--mg-default-animation-translateY-origin));
+      transform: translateY(var(--mg-hide-base, var(--mg-default-animation-translateY-origin)))
+        scale(0.9);
     }
   }
 
@@ -63,14 +71,14 @@
 }
 
 @theme {
-  --animate-mg-show: mg-show var(--default-transition-duration)
+  --animate-mg-show-x: mg-show-x var(--default-transition-duration)
     var(--default-transition-timing-function);
-  --animate-mg-hide: mg-hide var(--default-transition-duration)
+  --animate-mg-show-y: mg-show-y var(--default-transition-duration)
     var(--default-transition-timing-function);
 
-  --animate-mg-slide-in: mg-slide-in var(--default-transition-duration)
+  --animate-mg-hide-x: mg-hide-x var(--default-transition-duration)
     var(--default-transition-timing-function);
-  --animate-mg-slide-out: mg-slide-out var(--default-transition-duration)
+  --animate-mg-hide-y: mg-hide-y var(--default-transition-duration)
     var(--default-transition-timing-function);
 
   --animate-mg-fade-in: mg-fade-in var(--default-transition-duration)
