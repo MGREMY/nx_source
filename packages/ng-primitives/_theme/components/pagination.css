@@ -23,6 +23,12 @@
     @apply shadow-md;
 
     @apply data-[mgnp-pagination-button-color=ui]:mgnp-pagination-button-color-ui;
+    @apply data-[mgnp-pagination-button-color=primary]:mgnp-pagination-button-color-primary;
+    @apply data-[mgnp-pagination-button-color=accent]:mgnp-pagination-button-color-accent;
+    @apply data-[mgnp-pagination-button-color=info]:mgnp-pagination-button-color-info;
+    @apply data-[mgnp-pagination-button-color=success]:mgnp-pagination-button-color-success;
+    @apply data-[mgnp-pagination-button-color=warning]:mgnp-pagination-button-color-warning;
+    @apply data-[mgnp-pagination-button-color=danger]:mgnp-pagination-button-color-danger;
 
     @variant data-disabled {
       @apply shadow-none;
@@ -42,6 +48,12 @@
     @apply shadow-md;
 
     @apply data-[mgnp-pagination-first-color=ui]:mgnp-pagination-first-color-ui;
+    @apply data-[mgnp-pagination-first-color=primary]:mgnp-pagination-first-color-primary;
+    @apply data-[mgnp-pagination-first-color=accent]:mgnp-pagination-first-color-accent;
+    @apply data-[mgnp-pagination-first-color=info]:mgnp-pagination-first-color-info;
+    @apply data-[mgnp-pagination-first-color=success]:mgnp-pagination-first-color-success;
+    @apply data-[mgnp-pagination-first-color=warning]:mgnp-pagination-first-color-warning;
+    @apply data-[mgnp-pagination-first-color=danger]:mgnp-pagination-first-color-danger;
 
     @variant data-disabled {
       @apply shadow-none;
@@ -61,6 +73,12 @@
     @apply shadow-md;
 
     @apply data-[mgnp-pagination-last-color=ui]:mgnp-pagination-last-color-ui;
+    @apply data-[mgnp-pagination-last-color=primary]:mgnp-pagination-last-color-primary;
+    @apply data-[mgnp-pagination-last-color=accent]:mgnp-pagination-last-color-accent;
+    @apply data-[mgnp-pagination-last-color=info]:mgnp-pagination-last-color-info;
+    @apply data-[mgnp-pagination-last-color=success]:mgnp-pagination-last-color-success;
+    @apply data-[mgnp-pagination-last-color=warning]:mgnp-pagination-last-color-warning;
+    @apply data-[mgnp-pagination-last-color=danger]:mgnp-pagination-last-color-danger;
 
     @variant data-disabled {
       @apply shadow-none;
@@ -80,6 +98,12 @@
     @apply shadow-md;
 
     @apply data-[mgnp-pagination-previous-color=ui]:mgnp-pagination-previous-color-ui;
+    @apply data-[mgnp-pagination-previous-color=primary]:mgnp-pagination-previous-color-primary;
+    @apply data-[mgnp-pagination-previous-color=accent]:mgnp-pagination-previous-color-accent;
+    @apply data-[mgnp-pagination-previous-color=info]:mgnp-pagination-previous-color-info;
+    @apply data-[mgnp-pagination-previous-color=success]:mgnp-pagination-previous-color-success;
+    @apply data-[mgnp-pagination-previous-color=warning]:mgnp-pagination-previous-color-warning;
+    @apply data-[mgnp-pagination-previous-color=danger]:mgnp-pagination-previous-color-danger;
 
     @variant data-disabled {
       @apply shadow-none;
@@ -99,6 +123,12 @@
     @apply shadow-md;
 
     @apply data-[mgnp-pagination-next-color=ui]:mgnp-pagination-next-color-ui;
+    @apply data-[mgnp-pagination-next-color=primary]:mgnp-pagination-next-color-primary;
+    @apply data-[mgnp-pagination-next-color=accent]:mgnp-pagination-next-color-accent;
+    @apply data-[mgnp-pagination-next-color=info]:mgnp-pagination-next-color-info;
+    @apply data-[mgnp-pagination-next-color=success]:mgnp-pagination-next-color-success;
+    @apply data-[mgnp-pagination-next-color=warning]:mgnp-pagination-next-color-warning;
+    @apply data-[mgnp-pagination-next-color=danger]:mgnp-pagination-next-color-danger;
 
     @variant data-disabled {
       @apply shadow-none;
