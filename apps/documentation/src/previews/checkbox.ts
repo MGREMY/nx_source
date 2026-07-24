@@ -12,7 +12,7 @@ import { Component } from '@angular/core';
       <span class="justify-self-center">Indeterminate</span>
       @for (color of _colors; track $index) {
         <span>{{ color }}</span>
-        <span class="justify-self-center" mgnpCheckbox [color]="color"></span>
+        <span class="justify-self-end" mgnpCheckbox [color]="color"></span>
         <span class="justify-self-center" mgnpCheckbox mgnpCheckboxIndeterminate [color]="color"></span>
       }
     </div>

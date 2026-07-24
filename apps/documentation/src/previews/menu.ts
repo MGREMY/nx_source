@@ -6,9 +6,15 @@ import { Component } from '@angular/core';
 @Component({
   imports: [MgnpMenu, MgnpMenuItem, MgnpMenuTrigger, MgnpButton],
   template: `
-    <div class="flex flex-wrap gap-2 w-full items-center justify-center">
+    <div class="grid grid-cols-[max-content_1fr] gap-2 w-full items-center justify-center">
       @for (color of _colors; track $index) {
-        <button mgnpButton [aria-label]="'Open' + color + 'menu'" [color]="color" [mgnpMenuTrigger]="menu">
+        <span>{{ color }}</span>
+        <button
+          class="max-w-1/2 justify-self-center"
+          mgnpButton
+          [aria-label]="'Open' + color + 'menu'"
+          [color]="color"
+          [mgnpMenuTrigger]="menu">
           Open menu
         </button>
 

@@ -34,7 +34,7 @@ import { RouterLink } from '@angular/router';
     <div class="grid grid-cols-[max-content_1fr] gap-x-4 gap-y-2 w-full items-center">
       @for (color of _colors; track $index) {
         <span>{{ color }}</span>
-        <nav class="justify-self-center" aria-label="Breadcrumb" mgnpBreadcrumb [color]="color">
+        <nav class="justify-self-end" aria-label="Breadcrumb" mgnpBreadcrumb [color]="color">
           <ol mgnpBreadcrumbList>
             <li mgnpBreadcrumbItem>
               <a mgnpBreadcrumbLink [routerLink]="['/']">Home</a>

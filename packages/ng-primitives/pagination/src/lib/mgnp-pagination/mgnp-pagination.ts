@@ -9,7 +9,9 @@ import {
 } from 'ng-primitives/pagination';
 import { ChangeFn, provideValueAccessor, TouchedFn } from 'ng-primitives/utils';
 
-export type MgnpPaginationColor = PropertyType<'ui'>;
+export type MgnpPaginationColor = PropertyType<
+  'ui' | 'primary' | 'accent' | 'info' | 'success' | 'warning' | 'danger'
+>;
 
 @Directive({
   selector: '[mgnpPagination]',
