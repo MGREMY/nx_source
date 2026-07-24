@@ -8,7 +8,9 @@ import { Component } from '@angular/core';
   template: `
     <div class="flex flex-wrap gap-2 w-full items-center justify-center">
       @for (color of _colors; track $index) {
-        <button mgnpButton [color]="color" [mgnpMenuTrigger]="menu">Open menu</button>
+        <button mgnpButton [aria-label]="'Open' + color + 'menu'" [color]="color" [mgnpMenuTrigger]="menu">
+          Open menu
+        </button>
 
         <ng-template #menu>
           <div mgnpMenu [color]="color">
