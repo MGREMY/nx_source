@@ -12,6 +12,12 @@
     @apply animate-mg-show-y;
 
     @apply data-[mgnp-tooltip-color=ui]:mgnp-tooltip-color-ui;
+    @apply data-[mgnp-tooltip-color=primary]:mgnp-tooltip-color-primary;
+    @apply data-[mgnp-tooltip-color=accent]:mgnp-tooltip-color-accent;
+    @apply data-[mgnp-tooltip-color=info]:mgnp-tooltip-color-info;
+    @apply data-[mgnp-tooltip-color=success]:mgnp-tooltip-color-success;
+    @apply data-[mgnp-tooltip-color=warning]:mgnp-tooltip-color-warning;
+    @apply data-[mgnp-tooltip-color=danger]:mgnp-tooltip-color-danger;
 
     @variant data-exit {
       @apply animate-mg-hide-y;
@@ -19,13 +25,11 @@
   }
 
   .mgnp-tooltip-arrow {
-    @apply mgnp-base;
+    @apply mgnp-base mgnp-tooltip-arrow-color;
     @apply absolute rotate-45;
     @apply pointer-events-none;
     @apply w-2 h-2;
     @apply rounded-xs;
-
-    @apply data-[mgnp-tooltip-arrow-color=ui]:mgnp-tooltip-arrow-color-ui;
 
     @variant data-[placement=top] {
       @apply top-[calc(100%-5px)];
