@@ -1,9 +1,10 @@
 @utility mgnp-tooltip-color-* {
-  @apply bg-[color-mix(in_srgb,--value(--background-color-*),var(--mg-state-hover-mix))];
+  @apply bg-[color-mix(in_srgb,var(--background-color-ui),var(--mg-state-hover-mix))];
   @apply border-none;
+  @apply text-[--value(--text-color-*)];
 }
 
-@utility mgnp-tooltip-arrow-color-* {
-  @apply bg-[color-mix(in_srgb,--value(--background-color-*),var(--mg-state-hover-mix))];
+@utility mgnp-tooltip-arrow-color {
+  @apply bg-[color-mix(in_srgb,var(--background-color-ui),var(--mg-state-hover-mix))];
   @apply border-none;
 }

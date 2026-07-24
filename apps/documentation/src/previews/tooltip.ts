@@ -6,11 +6,18 @@ import { Component } from '@angular/core';
 @Component({
   imports: [MgnpButton, MgnpTooltip, MgnpTooltipTrigger],
   template: `
-    <button mgnpButton [mgnpTooltipTrigger]="tooltip">Hover me</button>
+    <div class="grid grid-cols-[max-content_1fr] gap-2 items-center w-full">
+      @for (color of _colors; track $index) {
+        <span>{{ color }}</span>
+        <button class="justify-self-center" mgnpButton [color]="color" [mgnpTooltipTrigger]="tooltip">Hover me</button>
 
-    <ng-template #tooltip>
-      <div mgnpTooltip>Tooltip content</div>
-    </ng-template>
+        <ng-template #tooltip>
+          <div mgnpTooltip [color]="color">Tooltip content</div>
+        </ng-template>
+      }
+    </div>
   `,
 })
-export default class Tooltip {}
+export default class Tooltip {
+  readonly _colors = ['ui', 'primary', 'accent', 'info', 'success', 'warning', 'danger'];
+}
