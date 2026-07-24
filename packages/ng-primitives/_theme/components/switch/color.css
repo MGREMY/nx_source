@@ -8,6 +8,6 @@
   }
 }
 
-@utility mgnp-switch-thumb-color-* {
-  @apply bg-[--value(--background-color-*)];
+@utility mgnp-switch-thumb-color {
+  @apply bg-ui;
 }

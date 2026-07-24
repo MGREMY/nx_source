@@ -9,17 +9,21 @@
     @apply border rounded-full;
 
     @apply data-[mgnp-switch-color=ui]:mgnp-switch-color-ui;
+    @apply data-[mgnp-switch-color=primary]:mgnp-switch-color-primary;
+    @apply data-[mgnp-switch-color=accent]:mgnp-switch-color-accent;
+    @apply data-[mgnp-switch-color=info]:mgnp-switch-color-info;
+    @apply data-[mgnp-switch-color=success]:mgnp-switch-color-success;
+    @apply data-[mgnp-switch-color=warning]:mgnp-switch-color-warning;
+    @apply data-[mgnp-switch-color=danger]:mgnp-switch-color-danger;
   }
 
   .mgnp-switch-thumb {
-    @apply mgnp-base;
+    @apply mgnp-base mgnp-switch-thumb-color;
     @apply block;
     @apply w-4 h-4;
     @apply ml-1;
     @apply rounded-full;
     @apply shadow-md;
-
-    @apply data-[mgnp-switch-thumb-color=ui]:mgnp-switch-thumb-color-ui;
 
     @variant data-checked {
       @apply translate-x-4;

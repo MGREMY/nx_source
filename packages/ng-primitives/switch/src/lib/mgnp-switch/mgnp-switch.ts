@@ -6,7 +6,9 @@ import { ControlValueAccessor } from '@angular/forms';
 import { injectSwitchState, NgpSwitch, provideSwitchState } from 'ng-primitives/switch';
 import { ChangeFn, provideValueAccessor, TouchedFn } from 'ng-primitives/utils';
 
-export type MgnpSwitchColor = PropertyType<'ui'>;
+export type MgnpSwitchColor = PropertyType<
+  'ui' | 'primary' | 'accent' | 'info' | 'success' | 'warning' | 'danger'
+>;
 
 @Directive({
   selector: '[mgnpSwitch]',
