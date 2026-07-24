@@ -7,7 +7,9 @@ import {
   provideBreadcrumbsState,
 } from 'ng-primitives/breadcrumbs';
 
-export type MgnpBreadcrumbColor = PropertyType<'ui'>;
+export type MgnpBreadcrumbColor = PropertyType<
+  'ui' | 'primary' | 'accent' | 'info' | 'success' | 'warning' | 'danger'
+>;
 
 @Directive({
   selector: '[mgnpBreadcrumb]',

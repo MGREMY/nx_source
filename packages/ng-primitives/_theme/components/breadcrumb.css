@@ -6,6 +6,12 @@
     @apply block;
 
     @apply data-[mgnp-breadcrumb-color=ui]:mgnp-breadcrumb-color-ui;
+    @apply data-[mgnp-breadcrumb-color=primary]:mgnp-breadcrumb-color-primary;
+    @apply data-[mgnp-breadcrumb-color=accent]:mgnp-breadcrumb-color-accent;
+    @apply data-[mgnp-breadcrumb-color=info]:mgnp-breadcrumb-color-info;
+    @apply data-[mgnp-breadcrumb-color=success]:mgnp-breadcrumb-color-success;
+    @apply data-[mgnp-breadcrumb-color=warning]:mgnp-breadcrumb-color-warning;
+    @apply data-[mgnp-breadcrumb-color=danger]:mgnp-breadcrumb-color-danger;
   }
 
   .mgnp-breadcrumb-ellipsis {
@@ -16,6 +22,12 @@
     @apply rounded-lg;
 
     @apply data-[mgnp-breadcrumb-ellipsis-color=ui]:mgnp-breadcrumb-ellipsis-color-ui;
+    @apply data-[mgnp-breadcrumb-ellipsis-color=primary]:mgnp-breadcrumb-ellipsis-color-primary;
+    @apply data-[mgnp-breadcrumb-ellipsis-color=accent]:mgnp-breadcrumb-ellipsis-color-accent;
+    @apply data-[mgnp-breadcrumb-ellipsis-color=info]:mgnp-breadcrumb-ellipsis-color-info;
+    @apply data-[mgnp-breadcrumb-ellipsis-color=success]:mgnp-breadcrumb-ellipsis-color-success;
+    @apply data-[mgnp-breadcrumb-ellipsis-color=warning]:mgnp-breadcrumb-ellipsis-color-warning;
+    @apply data-[mgnp-breadcrumb-ellipsis-color=danger]:mgnp-breadcrumb-ellipsis-color-danger;
 
     ng-icon {
       --ng-icon__size: --spacing(1);
@@ -42,6 +54,12 @@
     @apply decoration-0;
 
     @apply data-[mgnp-breadcrumb-link-color=ui]:mgnp-breadcrumb-link-color-ui;
+    @apply data-[mgnp-breadcrumb-link-color=primary]:mgnp-breadcrumb-link-color-primary;
+    @apply data-[mgnp-breadcrumb-link-color=accent]:mgnp-breadcrumb-link-color-accent;
+    @apply data-[mgnp-breadcrumb-link-color=info]:mgnp-breadcrumb-link-color-info;
+    @apply data-[mgnp-breadcrumb-link-color=success]:mgnp-breadcrumb-link-color-success;
+    @apply data-[mgnp-breadcrumb-link-color=warning]:mgnp-breadcrumb-link-color-warning;
+    @apply data-[mgnp-breadcrumb-link-color=danger]:mgnp-breadcrumb-link-color-danger;
   }
 
   .mgnp-breadcrumb-list {
@@ -57,6 +75,12 @@
     @apply font-medium;
 
     @apply data-[mgnp-breadcrumb-page-color=ui]:mgnp-breadcrumb-page-color-ui;
+    @apply data-[mgnp-breadcrumb-page-color=primary]:mgnp-breadcrumb-page-color-primary;
+    @apply data-[mgnp-breadcrumb-page-color=accent]:mgnp-breadcrumb-page-color-accent;
+    @apply data-[mgnp-breadcrumb-page-color=info]:mgnp-breadcrumb-page-color-info;
+    @apply data-[mgnp-breadcrumb-page-color=success]:mgnp-breadcrumb-page-color-success;
+    @apply data-[mgnp-breadcrumb-page-color=warning]:mgnp-breadcrumb-page-color-warning;
+    @apply data-[mgnp-breadcrumb-page-color=danger]:mgnp-breadcrumb-page-color-danger;
   }
 
   .mgnp-breadcrumb-separator {
