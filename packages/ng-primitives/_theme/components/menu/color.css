@@ -1,18 +1,18 @@
-@utility mgnp-menu-color-* {
-  @apply bg-[--value(--background-color-*)];
-  @apply border-[--value(--border-color-*)];
+@utility mgnp-menu-color {
+  @apply bg-ui;
+  @apply border-ui;
 }
 
 @utility mgnp-menu-item-color-* {
-  @apply bg-transparent;
-  @apply border-none;
+  @apply text-[color-mix(in_srgb,var(--text-color-ui),var(--mg-color-secondary-mix))];
 
   @variant data-hover {
-    @apply bg-[color-mix(in_srgb,--value(--background-color-*),var(--mg-state-hover-mix))];
+    @apply bg-[color-mix(in_srgb,var(--background-color-ui),var(--mg-state-hover-mix))];
+    @apply text-[--value(--text-color-*)];
   }
 
   @variant data-press {
-    @apply bg-[color-mix(in_srgb,--value(--background-color-*),var(--mg-state-active-mix))];
+    @apply bg-[color-mix(in_srgb,--value(--background-color-ui),var(--mg-state-active-mix))];
   }
 
   @variant data-disabled {

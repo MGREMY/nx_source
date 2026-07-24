@@ -2,7 +2,7 @@
 
 @layer components {
   .mgnp-menu {
-    @apply mgnp-base;
+    @apply mgnp-base mgnp-menu-color;
     @apply fixed;
     @apply flex flex-col;
     @apply w-max;
@@ -10,8 +10,6 @@
     @apply border rounded-lg;
     @apply shadow-lg;
     @apply origin-(--ngp-menu-transform-origin);
-
-    @apply data-[mgnp-menu-color=ui]:mgnp-menu-color-ui;
 
     @variant data-enter {
       @apply animate-mg-show-y;
@@ -32,5 +30,11 @@
     @apply text-sm;
 
     @apply data-[mgnp-menu-item-color=ui]:mgnp-menu-item-color-ui;
+    @apply data-[mgnp-menu-item-color=primary]:mgnp-menu-item-color-primary;
+    @apply data-[mgnp-menu-item-color=accent]:mgnp-menu-item-color-accent;
+    @apply data-[mgnp-menu-item-color=info]:mgnp-menu-item-color-info;
+    @apply data-[mgnp-menu-item-color=success]:mgnp-menu-item-color-success;
+    @apply data-[mgnp-menu-item-color=warning]:mgnp-menu-item-color-warning;
+    @apply data-[mgnp-menu-item-color=danger]:mgnp-menu-item-color-danger;
   }
 }
