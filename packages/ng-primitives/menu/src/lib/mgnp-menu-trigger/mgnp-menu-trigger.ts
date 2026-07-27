@@ -36,5 +36,5 @@ import {
   exportAs: 'mgnpMenuTrigger',
 })
 export class MgnpMenuTrigger {
-  protected readonly state = injectMenuTriggerState();
+  readonly state = injectMenuTriggerState();
 }

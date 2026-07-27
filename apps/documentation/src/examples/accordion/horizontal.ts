@@ -14,12 +14,12 @@ import { Component } from '@angular/core';
   imports: [MgnpAccordion, MgnpAccordionContent, MgnpAccordionItem, MgnpAccordionTrigger, NgIcon],
   template: `
     <div mgnpAccordion mgnpAccordionType="single" mgnpAccordionOrientation="horizontal" mgnpAccordionCollapsible="">
-      <div mgnpAccordionItem #panel1="ngpAccordionItem" mgnpAccordionItemValue="item-1">
+      <div mgnpAccordionItem #panel1="mgnpAccordionItem" mgnpAccordionItemValue="item-1">
         <h3>
           <button mgnpAccordionTrigger>
             Would you like to learn more?
 
-            <ng-icon [attr.data-open]="panel1.open()" name="heroChevronDownMini" />
+            <ng-icon [attr.data-open]="panel1.state().open()" name="heroChevronDownMini" />
           </button>
         </h3>
         <div mgnpAccordionContent>
@@ -27,12 +27,12 @@ import { Component } from '@angular/core';
         </div>
       </div>
 
-      <div mgnpAccordionItem #panel2="ngpAccordionItem" mgnpAccordionItemValue="item-2">
+      <div mgnpAccordionItem #panel2="mgnpAccordionItem" mgnpAccordionItemValue="item-2">
         <h3>
           <button mgnpAccordionTrigger>
             Can I use this in my project?
 
-            <ng-icon [attr.data-open]="panel2.open()" name="heroChevronDownMini" />
+            <ng-icon [attr.data-open]="panel2.state().open()" name="heroChevronDownMini" />
           </button>
         </h3>
         <div mgnpAccordionContent>

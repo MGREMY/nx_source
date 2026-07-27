@@ -1,11 +1,11 @@
 import { MgnpDialogOverlay } from '../mgnp-dialog-overlay/mgnp-dialog-overlay';
 
 import { Directive, inject } from '@angular/core';
-import { injectDialogState, NgpDialog } from 'ng-primitives/dialog';
+import { injectDialogState, NgpDialog, provideDialogState } from 'ng-primitives/dialog';
 
 @Directive({
   selector: '[mgnpDialog]',
-  providers: [],
+  providers: [provideDialogState()],
   host: {
     class: 'mgnp-dialog mgnp-c-dialog',
     'data-mgnp-dialog': '',
@@ -24,5 +24,6 @@ import { injectDialogState, NgpDialog } from 'ng-primitives/dialog';
 })
 export class MgnpDialog {
   protected readonly overlay = inject(MgnpDialogOverlay);
-  protected readonly state = injectDialogState();
+
+  readonly state = injectDialogState();
 }

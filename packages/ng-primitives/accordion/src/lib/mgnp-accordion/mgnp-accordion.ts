@@ -29,7 +29,7 @@ export type MgnpAccordionColor = PropertyType<'ui'>;
   exportAs: 'mgnpAccordion',
 })
 export class MgnpAccordion {
-  protected readonly state = injectAccordionState();
+  readonly state = injectAccordionState();
 
   readonly color = input<MgnpAccordionColor>('ui');
 }

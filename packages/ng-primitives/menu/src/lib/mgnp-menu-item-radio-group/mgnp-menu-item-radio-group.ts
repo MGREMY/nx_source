@@ -25,6 +25,7 @@ import {
   exportAs: 'mgnpMenuItemRadioGroup',
 })
 export class MgnpMenuItemRadioGroup {
-  protected readonly state = injectMenuItemRadioGroupState();
   protected readonly menu = inject(MgnpMenu);
+
+  readonly state = injectMenuItemRadioGroupState();
 }

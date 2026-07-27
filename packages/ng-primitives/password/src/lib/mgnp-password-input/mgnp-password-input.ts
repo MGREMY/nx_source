@@ -24,5 +24,5 @@ import {
   exportAs: 'mgnpPasswordInput',
 })
 export class MgnpPasswordInput {
-  public readonly state = injectPasswordInputState();
+  readonly state = injectPasswordInputState();
 }

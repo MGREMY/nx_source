@@ -29,7 +29,7 @@ export type MgnpSwitchColor = PropertyType<
   exportAs: 'mgnpSwitch',
 })
 export class MgnpSwitch implements ControlValueAccessor {
-  protected readonly state = injectSwitchState();
+  readonly state = injectSwitchState();
 
   readonly color = input<MgnpSwitchColor>('ui');
 

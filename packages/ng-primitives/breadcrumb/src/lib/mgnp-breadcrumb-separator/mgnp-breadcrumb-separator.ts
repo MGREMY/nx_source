@@ -25,6 +25,7 @@ import {
   exportAs: 'mgnpBreadcrumbSeparator',
 })
 export class MgnpBreadcrumbSeparator {
-  protected readonly state = injectBreadcrumbSeparatorState();
   protected readonly breadcrumb = inject(MgnpBreadcrumb);
+
+  readonly state = injectBreadcrumbSeparatorState();
 }

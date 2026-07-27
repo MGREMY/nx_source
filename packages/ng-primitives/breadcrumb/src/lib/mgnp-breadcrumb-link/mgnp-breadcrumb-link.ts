@@ -25,6 +25,7 @@ import {
   exportAs: 'mgnpBreadcrumbLink',
 })
 export class MgnpBreadcrumbLink {
-  protected readonly state = injectBreadcrumbLinkState();
   protected readonly breadcrumb = inject(MgnpBreadcrumb);
+
+  readonly state = injectBreadcrumbLinkState();
 }

@@ -41,7 +41,7 @@ export type MgnpCheckboxSize = PropertyType<'xs' | 'sm' | 'md' | 'lg' | 'xl'>;
   exportAs: 'mgnpCheckbox',
 })
 export class MgnpCheckbox implements ControlValueAccessor {
-  protected readonly state = injectCheckboxState();
+  readonly state = injectCheckboxState();
 
   protected onChangeFn?: ChangeFn<boolean>;
   protected onTouchedFn?: TouchedFn;

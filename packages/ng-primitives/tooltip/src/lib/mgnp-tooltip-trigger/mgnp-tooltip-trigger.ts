@@ -40,5 +40,5 @@ import {
   exportAs: 'mgnpTooltipTrigger',
 })
 export class MgnpTooltipTrigger {
-  protected readonly state = injectTooltipTriggerState();
+  readonly state = injectTooltipTriggerState();
 }

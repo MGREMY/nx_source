@@ -21,6 +21,7 @@ import { injectLabelState, NgpLabel, provideLabelState } from 'ng-primitives/for
   exportAs: 'mgnpLabel',
 })
 export class MgnpLabel {
-  protected readonly state = injectLabelState();
   protected readonly formField = inject(MgnpFormField);
+
+  readonly state = injectLabelState();
 }

@@ -31,7 +31,7 @@ export type MgnpButtonSize = PropertyType<'xs' | 'sm' | 'md' | 'lg' | 'xl'>;
   exportAs: 'mgnpButton',
 })
 export class MgnpButton {
-  protected readonly state = injectButtonState();
+  readonly state = injectButtonState();
 
   readonly color = input<MgnpButtonColor>('ui');
   readonly variant = input<MgnpButtonVariant>('solid');

@@ -25,6 +25,7 @@ import {
   exportAs: 'mgnpTooltipArrow',
 })
 export class MgnpTooltipArrow {
-  protected readonly state = injectTooltipArrowState();
   protected readonly tooltip = inject(MgnpTooltip);
+
+  readonly state = injectTooltipArrowState();
 }

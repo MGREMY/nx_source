@@ -25,6 +25,7 @@ import {
   exportAs: 'mgnpSwitchThumb',
 })
 export class MgnpSwitchThumb {
-  protected readonly state = injectSwitchThumbState();
   protected readonly switch = inject(MgnpSwitch);
+
+  readonly state = injectSwitchThumbState();
 }

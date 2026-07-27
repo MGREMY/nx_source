@@ -1,12 +1,13 @@
 import { PropertyType } from '@mgremy/ng-primitives';
 
 import { Directive, input } from '@angular/core';
-import { NgpTooltip } from 'ng-primitives/tooltip';
+import { injectTooltipState, NgpTooltip, provideTooltipState } from 'ng-primitives/tooltip';
 
 export type MgnpTooltipColor = PropertyType<'ui'>;
 
 @Directive({
   selector: '[mgnpTooltip]',
+  providers: [provideTooltipState()],
   host: {
     class: 'mgnp-tooltip mgnp-c-tooltip',
     'data-mgnp-tooltip': '',
@@ -22,5 +23,7 @@ export type MgnpTooltipColor = PropertyType<'ui'>;
   exportAs: 'mgnpTooltip',
 })
 export class MgnpTooltip {
+  readonly state = injectTooltipState();
+
   readonly color = input<MgnpTooltipColor>('ui');
 }

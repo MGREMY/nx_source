@@ -21,7 +21,7 @@ import {
   viewChildren,
 } from '@angular/core';
 import { takeUntilDestroyed, toSignal } from '@angular/core/rxjs-interop';
-import { NavigationEnd, Router } from '@angular/router';
+import { IsActiveMatchOptions, NavigationEnd, Router } from '@angular/router';
 import { NgpDialogContext, NgpDialogManager } from 'ng-primitives/dialog';
 import { filter, map } from 'rxjs';
 
@@ -110,7 +110,9 @@ export class AppSidebarItem {
     const currentPath = this.currentPath();
     const path = this.item().path;
 
-    return path ? currentPath.startsWith(path) : this._children().some((x) => x.isActive());
+    if (path && path.split('?')[0].split('&')[0].split('#')[0] === currentPath) return true;
+
+    return this._children().some((x) => x.isActive());
   });
   readonly isOpen = linkedSignal(() => this.isActive());
 

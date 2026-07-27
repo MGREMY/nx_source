@@ -23,7 +23,7 @@ export type MgnpMenuColor = PropertyType<'ui'>;
   exportAs: 'mgnpMenu',
 })
 export class MgnpMenu {
-  protected readonly state = injectMenuState();
+  readonly state = injectMenuState();
 
   readonly color = input<MgnpMenuColor>('ui');
 }

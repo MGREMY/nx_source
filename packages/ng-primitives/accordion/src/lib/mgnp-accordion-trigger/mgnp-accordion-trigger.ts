@@ -25,6 +25,7 @@ import {
   exportAs: 'mgnpAccordionTrigger',
 })
 export class MgnpAccordionTrigger {
-  protected readonly state = injectAccordionTriggerState();
   protected readonly accordion = inject(MgnpAccordion);
+
+  readonly state = injectAccordionTriggerState();
 }

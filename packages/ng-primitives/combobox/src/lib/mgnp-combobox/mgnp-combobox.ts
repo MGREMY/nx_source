@@ -43,7 +43,7 @@ export type MgnpComboboxColor = PropertyType<
   exportAs: 'mgnpCombobox',
 })
 export class MgnpCombobox<T> implements ControlValueAccessor {
-  protected readonly state = injectComboboxState();
+  readonly state = injectComboboxState();
 
   readonly color = input<MgnpComboboxColor>('ui');
 

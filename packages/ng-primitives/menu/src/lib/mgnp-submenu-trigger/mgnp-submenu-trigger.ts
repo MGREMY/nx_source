@@ -31,6 +31,7 @@ import {
   exportAs: 'mgnpSubmenuTrigger',
 })
 export class MgnpSubmenuTrigger {
-  protected readonly state = injectSubmenuTriggerState();
   protected readonly menu = inject(MgnpMenu);
+
+  readonly state = injectSubmenuTriggerState();
 }

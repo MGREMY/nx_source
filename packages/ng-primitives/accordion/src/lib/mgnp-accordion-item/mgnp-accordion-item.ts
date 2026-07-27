@@ -28,6 +28,7 @@ import {
   exportAs: 'mgnpAccordionItem',
 })
 export class MgnpAccordionItem {
-  protected readonly state = injectAccordionItemState();
   protected readonly accordion = inject(MgnpAccordion);
+
+  readonly state = injectAccordionItemState();
 }

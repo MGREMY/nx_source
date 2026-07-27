@@ -21,5 +21,5 @@ import { injectPasswordState, NgpPassword, providePasswordState } from 'ng-primi
   exportAs: 'mgnpPassword',
 })
 export class MgnpPassword {
-  public readonly state = injectPasswordState();
+  readonly state = injectPasswordState();
 }

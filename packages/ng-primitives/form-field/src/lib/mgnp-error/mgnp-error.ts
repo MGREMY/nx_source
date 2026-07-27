@@ -21,6 +21,7 @@ import { injectErrorState, NgpError, provideErrorState } from 'ng-primitives/for
   exportAs: 'mgnpError',
 })
 export class MgnpError {
-  protected readonly state = injectErrorState();
   protected readonly formField = inject(MgnpFormField);
+
+  readonly state = injectErrorState();
 }

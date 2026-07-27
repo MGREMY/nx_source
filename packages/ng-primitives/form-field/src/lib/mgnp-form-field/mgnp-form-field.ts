@@ -27,7 +27,7 @@ export type MgnpFormFieldColor = PropertyType<'ui'>;
   exportAs: 'mgnpFormField',
 })
 export class MgnpFormField {
-  protected readonly state = injectFormFieldState();
+  readonly state = injectFormFieldState();
 
   readonly color = input<MgnpFormFieldColor>('ui');
 }

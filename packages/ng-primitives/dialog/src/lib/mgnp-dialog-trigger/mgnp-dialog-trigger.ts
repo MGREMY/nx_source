@@ -1,8 +1,13 @@
 import { Directive } from '@angular/core';
-import { NgpDialogTrigger } from 'ng-primitives/dialog';
+import {
+  injectDialogTriggerState,
+  NgpDialogTrigger,
+  provideDialogTriggerState,
+} from 'ng-primitives/dialog';
 
 @Directive({
   selector: '[mgnpDialogTrigger]',
+  providers: [provideDialogTriggerState()],
   host: {
     class: 'mgnp-dialog-trigger mgnp-c-dialog-trigger',
     'data-mgnp-dialog-trigger': '',
@@ -20,4 +25,6 @@ import { NgpDialogTrigger } from 'ng-primitives/dialog';
   ],
   exportAs: 'mgnpDialogTrigger',
 })
-export class MgnpDialogTrigger {}
+export class MgnpDialogTrigger {
+  readonly state = injectDialogTriggerState();
+}

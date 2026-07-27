@@ -29,7 +29,7 @@ export type MgnpBreadcrumbColor = PropertyType<
   exportAs: 'mgnpBreadcrumb',
 })
 export class MgnpBreadcrumb {
-  protected readonly state = injectBreadcrumbsState();
+  readonly state = injectBreadcrumbsState();
 
   readonly color = input<MgnpBreadcrumbColor>('ui');
 }

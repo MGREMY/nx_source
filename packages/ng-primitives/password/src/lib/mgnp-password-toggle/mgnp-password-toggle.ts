@@ -26,5 +26,5 @@ import {
   exportAs: 'mgnpPasswordToggle',
 })
 export class MgnpPasswordToggle {
-  public readonly state = injectPasswordToggleState();
+  readonly state = injectPasswordToggleState();
 }

@@ -1,7 +1,11 @@
 import { PropertyType } from '@mgremy/ng-primitives';
 
 import { Directive, input } from '@angular/core';
-import { NgpDialogOverlay, provideDialogState } from 'ng-primitives/dialog';
+import {
+  injectDialogOverlayState,
+  NgpDialogOverlay,
+  provideDialogOverlayState,
+} from 'ng-primitives/dialog';
 
 export type MgnpDialogOverlayColor = PropertyType<'ui'>;
 
@@ -11,7 +15,7 @@ export type MgnpDialogDrawerPosition = PropertyType<'start' | 'end'>;
 
 @Directive({
   selector: '[mgnpDialogOverlay]',
-  providers: [provideDialogState()],
+  providers: [provideDialogOverlayState()],
   host: {
     class: 'mgnp-dialog-overlay mgnp-c-dialog-overlay',
     'data-mgnp-dialog-overlay': '',
@@ -29,6 +33,8 @@ export type MgnpDialogDrawerPosition = PropertyType<'start' | 'end'>;
   exportAs: 'mgnpDialogOverlay',
 })
 export class MgnpDialogOverlay {
+  readonly state = injectDialogOverlayState();
+
   readonly color = input<MgnpDialogOverlayColor>('ui');
   readonly mode = input<MgnpDialogOverlayMode>('modal');
   readonly drawerPosition = input<MgnpDialogDrawerPosition>('end');

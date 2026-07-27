@@ -23,7 +23,7 @@ export type MgnpInputColor = PropertyType<'ui'>;
   exportAs: 'mgnpInput',
 })
 export class MgnpInput {
-  protected readonly state = injectInputState();
+  readonly state = injectInputState();
 
   readonly color = input<MgnpInputColor>('ui');
 }

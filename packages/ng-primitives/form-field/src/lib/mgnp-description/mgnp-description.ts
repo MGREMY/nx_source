@@ -25,6 +25,7 @@ import {
   exportAs: 'mgnpDescription',
 })
 export class MgnpDescription {
-  protected readonly state = injectDescriptionState();
   protected readonly formField = inject(MgnpFormField);
+
+  readonly state = injectDescriptionState();
 }

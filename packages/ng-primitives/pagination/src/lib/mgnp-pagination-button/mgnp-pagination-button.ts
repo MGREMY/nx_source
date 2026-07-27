@@ -1,10 +1,15 @@
 import { MgnpPagination } from '../mgnp-pagination/mgnp-pagination';
 
 import { Directive, inject } from '@angular/core';
-import { NgpPaginationButton } from 'ng-primitives/pagination';
+import {
+  injectPaginationButtonState,
+  NgpPaginationButton,
+  providePaginationButtonState,
+} from 'ng-primitives/pagination';
 
 @Directive({
   selector: '[mgnpPaginationButton]',
+  providers: [providePaginationButtonState()],
   host: {
     class: 'mgnp-pagination-button mgnp-c-pagination-button',
     'data-mgnp-pagination-button': '',
@@ -24,4 +29,6 @@ import { NgpPaginationButton } from 'ng-primitives/pagination';
 })
 export class MgnpPaginationButton {
   protected readonly pagination = inject(MgnpPagination);
+
+  readonly state = injectPaginationButtonState();
 }

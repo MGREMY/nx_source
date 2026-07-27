@@ -28,6 +28,7 @@ import {
   exportAs: 'mgnpMenuItemCheckbox',
 })
 export class MgnpMenuItemCheckbox {
-  protected readonly state = injectMenuItemCheckboxState();
   protected readonly menu = inject(MgnpMenu);
+
+  readonly state = injectMenuItemCheckboxState();
 }

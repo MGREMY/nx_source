@@ -24,6 +24,7 @@ import { injectMenuItemState, NgpMenuItem, provideMenuItemState } from 'ng-primi
   exportAs: 'mgnpMenuItem',
 })
 export class MgnpMenuItem {
-  protected readonly state = injectMenuItemState();
   protected readonly menu = inject(MgnpMenu);
+
+  readonly state = injectMenuItemState();
 }

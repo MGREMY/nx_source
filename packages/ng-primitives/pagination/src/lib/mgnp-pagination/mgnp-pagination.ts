@@ -36,7 +36,7 @@ export type MgnpPaginationColor = PropertyType<
   exportAs: 'mgnpPagination',
 })
 export class MgnpPagination implements ControlValueAccessor {
-  protected readonly state = injectPaginationState();
+  readonly state = injectPaginationState();
 
   readonly color = input<MgnpPaginationColor>('ui');
 

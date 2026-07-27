@@ -25,6 +25,7 @@ import {
   exportAs: 'mgnpBreadcrumbEllipsis',
 })
 export class MgnpBreadcrumbEllipsis {
-  protected readonly state = injectBreadcrumbEllipsisState();
   protected readonly breadcrumb = inject(MgnpBreadcrumb);
+
+  readonly state = injectBreadcrumbEllipsisState();
 }
