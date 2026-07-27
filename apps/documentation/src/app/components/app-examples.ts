@@ -7,7 +7,6 @@ import { heroArrowPath } from '@ng-icons/heroicons/outline';
 import { NgClass, NgComponentOutlet } from '@angular/common';
 import {
   ChangeDetectionStrategy,
-  ChangeDetectorRef,
   Component,
   effect,
   inject,

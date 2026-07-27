@@ -9,5 +9,11 @@
     @apply border rounded-lg;
 
     @apply data-[mgnp-input-color=ui]:mgnp-input-color-ui;
+    @apply data-[mgnp-input-color=primary]:mgnp-input-color-primary;
+    @apply data-[mgnp-input-color=accent]:mgnp-input-color-accent;
+    @apply data-[mgnp-input-color=info]:mgnp-input-color-info;
+    @apply data-[mgnp-input-color=success]:mgnp-input-color-success;
+    @apply data-[mgnp-input-color=warning]:mgnp-input-color-warning;
+    @apply data-[mgnp-input-color=danger]:mgnp-input-color-danger;
   }
 }

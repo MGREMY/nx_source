@@ -15,10 +15,17 @@ import {
   MgnpLabel,
 } from '@mgremy/ng-primitives/form-field';
 import { MgnpInput } from '@mgremy/ng-primitives/input';
+import { MgnpPassword, MgnpPasswordInput, MgnpPasswordToggle } from '@mgremy/ng-primitives/password';
 import { MgnpSwitch, MgnpSwitchThumb } from '@mgremy/ng-primitives/switch';
 
 import { NgIcon, provideIcons } from '@ng-icons/core';
-import { heroAtSymbolMini, heroCheckMini, heroPhoneMini } from '@ng-icons/heroicons/mini';
+import {
+  heroAtSymbolMini,
+  heroCheckMini,
+  heroEyeMini,
+  heroEyeSlashMini,
+  heroPhoneMini,
+} from '@ng-icons/heroicons/mini';
 import { heroChevronDown } from '@ng-icons/heroicons/outline';
 
 import { Component } from '@angular/core';
@@ -42,6 +49,9 @@ import { NgpComboboxPortal } from 'ng-primitives/combobox';
     MgnpSwitch,
     MgnpSwitchThumb,
     MgnpButton,
+    MgnpPassword,
+    MgnpPasswordInput,
+    MgnpPasswordToggle,
     NgpComboboxPortal,
     NgIcon,
     ReactiveFormsModule,
@@ -66,6 +76,16 @@ import { NgpComboboxPortal } from 'ng-primitives/combobox';
         </div>
         <p mgnpError mgnpErrorValidator="required">This field is required.</p>
         <p mgnpError>This field must be an email.</p>
+      </div>
+      <div mgnpFormField>
+        <p mgnpLabel>Password</p>
+        <div mgnpPassword #password="mgnpPassword">
+          <input mgnpInput mgnpPasswordInput type="password" [formControl]="formGroup.controls.password" />
+          <button mgnpButton mgnpPasswordToggle>
+            <ng-icon [name]="password.state().visible() ? 'heroEyeSlashMini' : 'heroEyeMini'" />
+          </button>
+        </div>
+        <p mgnpError mgnpErrorValidator="required">This field is required.</p>
       </div>
       <div mgnpFormField>
         <div mgnpInputGroup>
@@ -122,12 +142,15 @@ import { NgpComboboxPortal } from 'ng-primitives/combobox';
       <button mgnpButton type="submit" color="primary" variant="outline" [disabled]="formGroup.invalid">Submit</button>
     </form>
   `,
-  providers: [provideIcons({ heroCheckMini, heroChevronDown, heroAtSymbolMini, heroPhoneMini })],
+  providers: [
+    provideIcons({ heroCheckMini, heroChevronDown, heroAtSymbolMini, heroPhoneMini, heroEyeMini, heroEyeSlashMini }),
+  ],
 })
 export default class FormField {
   private readonly initialFormValue = {
     name: '',
     email: '',
+    password: '',
     birthDate: null,
     phoneNumber: '',
     accountType: null,
@@ -138,6 +161,7 @@ export default class FormField {
   readonly formGroup = new FormGroup({
     name: new FormControl<string>('', [Validators.required]),
     email: new FormControl<string>('', [Validators.required, Validators.email]),
+    password: new FormControl<string>('', [Validators.required]),
     birthDate: new FormControl<Date | null>(null, [Validators.required]),
     phoneNumber: new FormControl<string>('', [Validators.pattern('^[0-9]{0,1}[1-9]{1}([. -]?[0-9][0-9]){4}$')]),
     accountType: new FormControl<string | null>(null, [Validators.required]),

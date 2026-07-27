@@ -7,7 +7,7 @@ import { SourceLink } from '../directives/source-link';
 import * as ICON from '@ng-icons/heroicons/outline';
 
 import { injectContentFiles } from '@analogjs/content';
-import { ChangeDetectionStrategy, Component, inject, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject, OnInit, viewChild } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 
 interface ContentAttributes {
@@ -36,12 +36,16 @@ interface ContentAttributes {
         <router-outlet />
       </article>
 
-      <app-quick-links class="p-1 w-1/7 sticky top-18 max-h-192 h-full overflow-auto" />
+      <app-quick-links
+        #quickLinks
+        class="p-1 w-1/7 sticky top-18 max-h-192 h-full overflow-auto" />
     </div>
   `,
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export default class DocumentationPage implements OnInit {
+  private readonly quickLinks = viewChild<AppQuickLinks>('quickLinks');
+
   protected readonly _appComponent = inject(AppComponent);
   readonly contents = injectContentFiles<ContentAttributes>();
 
@@ -147,5 +151,9 @@ export default class DocumentationPage implements OnInit {
     for (const sidebarTree of this.sidebarTree) {
       normalizeSidebarTree(sidebarTree, '');
     }
+  }
+
+  reloadQuickLinks(): void {
+    this.quickLinks()?.updateLinks();
   }
 }
