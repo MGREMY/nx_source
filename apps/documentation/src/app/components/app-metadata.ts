@@ -1,7 +1,17 @@
 import { MgnpLoader } from '@mgremy/ng-primitives-extended/loader';
 
 import { MarkdownComponent } from '@analogjs/content';
-import { ChangeDetectionStrategy, Component, effect, input, signal } from '@angular/core';
+import {
+  afterNextRender,
+  ChangeDetectionStrategy,
+  Component,
+  effect,
+  ElementRef,
+  inject,
+  Injector,
+  input,
+  signal,
+} from '@angular/core';
 import { marked } from 'marked';
 
 type ComponentGroup = {
@@ -44,13 +54,18 @@ type ComponentGroup = {
     @if (isLoading()) {
       <mgnp-loader />
     } @else {
-      <analog-markdown [content]="markdown()" />
+      <analog-markdown
+        id=""
+        [content]="markdown()" />
     }
   `,
   providers: [],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class AppMetadata {
+  private readonly elementRef = inject(ElementRef<HTMLElement>);
+  private readonly injector = inject(Injector);
+
   private readonly metadatas = import.meta.glob<string>(
     '../../../../../tmp/packages/**/metadata/*.json',
     {
@@ -104,7 +119,7 @@ export class AppMetadata {
     const markdown: string[] = [];
 
     for (const directive of metadata.directives) {
-      markdown.push(`### ${directive.name}`);
+      markdown.push(`<h3 id="metadata-directive-${directive.name}">${directive.name}</h3>`);
       markdown.push('');
 
       markdown.push('#### Inputs');
@@ -186,5 +201,14 @@ export class AppMetadata {
     }
 
     this.markdown.set(await marked(markdown.join('\n')));
+
+    afterNextRender(
+      () => {
+        this.elementRef.nativeElement.dispatchEvent(
+          new CustomEvent('metadatasLoaded', { bubbles: true })
+        );
+      },
+      { injector: this.injector }
+    );
   }
 }

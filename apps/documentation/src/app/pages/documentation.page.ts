@@ -32,7 +32,9 @@ interface ContentAttributes {
         class="flex flex-col mx-auto prose size-full max-w-full xl:max-w-2xl dark:prose-invert overflow-hidden"
         data-page-content
         appHeadingAnchor
-        appSourceLink>
+        appSourceLink
+        (examplesLoaded)="reloadQuickLinks()"
+        (metadatasLoaded)="reloadQuickLinks()">
         <router-outlet />
       </article>
 

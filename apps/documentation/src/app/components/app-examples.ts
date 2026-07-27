@@ -6,10 +6,13 @@ import { heroArrowPath } from '@ng-icons/heroicons/outline';
 
 import { NgClass, NgComponentOutlet } from '@angular/common';
 import {
+  afterNextRender,
   ChangeDetectionStrategy,
   Component,
   effect,
+  ElementRef,
   inject,
+  Injector,
   input,
   model,
   signal,
@@ -112,10 +115,9 @@ export class AppExample {
       </div>
     } @else {
       @if (items().length > 0) {
+        <h2 id="examples">Examples</h2>
         @for (item of items(); track $index) {
-          <h2>Examples</h2>
-
-          <h3>{{ item.name }}</h3>
+          <h3 [id]="'example-' + item.name">{{ item.name }}</h3>
           <app-example
             [code]="item.code"
             [preview]="item.preview" />
@@ -127,6 +129,8 @@ export class AppExample {
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class AppExamples {
+  private readonly elementRef = inject(ElementRef<HTMLElement>);
+  private readonly injector = inject(Injector);
   private readonly sanitizer = inject(DomSanitizer);
 
   private readonly previews = import.meta.glob('../../examples/**/*.ts', {
@@ -198,5 +202,14 @@ export class AppExamples {
 
     this.items.set(items);
     this.isLoading.set(false);
+
+    afterNextRender(
+      () => {
+        this.elementRef.nativeElement.dispatchEvent(
+          new CustomEvent('examplesLoaded', { bubbles: true })
+        );
+      },
+      { injector: this.injector }
+    );
   }
 }
