@@ -68,6 +68,17 @@
       opacity: 0;
     }
   }
+
+  @keyframes mg-blink {
+    0%,
+    50% {
+      opacity: 1;
+    }
+    51%,
+    100% {
+      opacity: 0;
+    }
+  }
 }
 
 @theme {
@@ -85,4 +96,7 @@
     var(--default-transition-timing-function);
   --animate-mg-fade-out: mg-fade-out var(--default-transition-duration)
     var(--default-transition-timing-function);
+
+  --animate-mg-blink: mg-blink calc(var(--default-transition-duration) * 4)
+    var(--default-transition-timing-function) infinite;
 }

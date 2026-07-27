@@ -1,0 +1,24 @@
+@utility mgnp-input-otp-slot-size-xs {
+  @apply size-8;
+  @apply text-sm font-medium;
+}
+
+@utility mgnp-input-otp-slot-size-sm {
+  @apply size-10;
+  @apply text-base font-medium;
+}
+
+@utility mgnp-input-otp-slot-size-md {
+  @apply size-12;
+  @apply text-xl font-medium;
+}
+
+@utility mgnp-input-otp-slot-size-lg {
+  @apply size-14;
+  @apply text-2xl font-medium;
+}
+
+@utility mgnp-input-otp-slot-size-xl {
+  @apply size-16;
+  @apply text-3xl font-medium;
+}

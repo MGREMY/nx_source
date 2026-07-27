@@ -1,0 +1,39 @@
+@import './input-otp/color.css';
+@import './input-otp/size.css';
+
+@layer components {
+  .mgnp-input-otp {
+    @apply mgnp-base;
+    @apply relative;
+    @apply inline-flex flex-row items-center justify-center gap-2;
+    @apply w-full;
+  }
+
+  .mgnp-input-otp-input {
+    @apply absolute sr-only;
+  }
+
+  .mgnp-input-otp-slot {
+    @apply mgnp-base mgnp-focus;
+    @apply relative;
+    @apply flex items-center justify-center;
+    @apply cursor-pointer;
+    @apply border rounded-lg;
+
+    /* Sizes */
+    @apply data-[mgnp-input-otp-slot-size=xs]:mgnp-input-otp-slot-size-xs;
+    @apply data-[mgnp-input-otp-slot-size=sm]:mgnp-input-otp-slot-size-sm;
+    @apply data-[mgnp-input-otp-slot-size=md]:mgnp-input-otp-slot-size-md;
+    @apply data-[mgnp-input-otp-slot-size=lg]:mgnp-input-otp-slot-size-lg;
+    @apply data-[mgnp-input-otp-slot-size=xl]:mgnp-input-otp-slot-size-xl;
+
+    /* Colors */
+    @apply data-[mgnp-input-otp-slot-color=ui]:mgnp-input-otp-slot-color-ui;
+    @apply data-[mgnp-input-otp-slot-color=primary]:mgnp-input-otp-slot-color-primary;
+    @apply data-[mgnp-input-otp-slot-color=accent]:mgnp-input-otp-slot-color-accent;
+    @apply data-[mgnp-input-otp-slot-color=info]:mgnp-input-otp-slot-color-info;
+    @apply data-[mgnp-input-otp-slot-color=success]:mgnp-input-otp-slot-color-success;
+    @apply data-[mgnp-input-otp-slot-color=warning]:mgnp-input-otp-slot-color-warning;
+    @apply data-[mgnp-input-otp-slot-color=danger]:mgnp-input-otp-slot-color-danger;
+  }
+}
