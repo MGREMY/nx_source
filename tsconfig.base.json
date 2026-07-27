@@ -24,6 +24,7 @@
       "@mgremy/ng-primitives/dialog": ["packages/ng-primitives/dialog/src/index.ts"],
       "@mgremy/ng-primitives/form-field": ["packages/ng-primitives/form-field/src/index.ts"],
       "@mgremy/ng-primitives/input": ["packages/ng-primitives/input/src/index.ts"],
+      "@mgremy/ng-primitives/input-otp": ["packages/ng-primitives/input-otp/src/index.ts"],
       "@mgremy/ng-primitives/menu": ["packages/ng-primitives/menu/src/index.ts"],
       "@mgremy/ng-primitives/navbar": ["packages/ng-primitives/navbar/src/index.ts"],
       "@mgremy/ng-primitives/pagination": ["packages/ng-primitives/pagination/src/index.ts"],

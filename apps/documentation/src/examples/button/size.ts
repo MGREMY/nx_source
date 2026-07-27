@@ -5,15 +5,14 @@ import { Component } from '@angular/core';
 @Component({
   imports: [MgnpButton],
   template: `
-    <button mgnpButton>Normal</button>
-    <button mgnpButton size="xs">Extra small</button>
-    <button mgnpButton size="sm">Small</button>
-    <button mgnpButton size="md">Medium</button>
-    <button mgnpButton size="lg">Large</button>
-    <button mgnpButton size="xl">Extra large</button>
+    @for (size of _sizes; track $index) {
+      <button mgnpButton [size]="size">{{ size }}</button>
+    }
   `,
   host: {
     class: 'flex! flex-wrap gap-4 items-center',
   },
 })
-export default class SizeExample {}
+export default class SizeExample {
+  readonly _sizes = ['xs', 'sm', 'md', 'lg', 'xl'];
+}

@@ -1,0 +1,17 @@
+@utility mgnp-input-otp-slot-color-* {
+  @apply bg-ui;
+  @apply border-[--value(--border-color-*)];
+  @apply text-[--value(--text-color-*)];
+
+  ::placeholder {
+    @apply text-placeholder;
+  }
+
+  @variant data-caret {
+    @apply after:content-[''];
+    @apply after:absolute;
+    @apply after:bg-[color-mix(in_srgb,--value(--background-color-*),var(--mg-state-active-mix))];
+    @apply after:w-px after:h-6;
+    @apply after:animate-mg-blink;
+  }
+}
