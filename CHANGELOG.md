@@ -1,3 +1,13 @@
+## 0.22.0
+
+### 🚀 Features
+
+- make states public ([561423e](https://github.com/MGREMY/nx_source/commit/561423e))
+
+### ❤️ Thank You
+
+- GREMY Miguel @MGREMY
+
 ## 0.21.0
 
 ### 🚀 Features
