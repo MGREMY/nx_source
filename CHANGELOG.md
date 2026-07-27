@@ -1,3 +1,32 @@
+## 0.21.0
+
+### 🚀 Features
+
+- simplify colors ([#36](https://github.com/MGREMY/nx_source/pull/36))
+- ⚠️ **angular:** angular 22 ([#50](https://github.com/MGREMY/nx_source/pull/50))
+- **breadcrumb:** add colors ([#43](https://github.com/MGREMY/nx_source/pull/43))
+- **combobox:** add filter capabilities ([#41](https://github.com/MGREMY/nx_source/pull/41))
+- **combobox:** add main colors ([222759d](https://github.com/MGREMY/nx_source/commit/222759d))
+- **input-otp:** add input-otp ([#49](https://github.com/MGREMY/nx_source/pull/49))
+- **menu:** add colors ([#44](https://github.com/MGREMY/nx_source/pull/44))
+- **pagination:** add colors ([#45](https://github.com/MGREMY/nx_source/pull/45))
+- **password:** create directive and style ([#48](https://github.com/MGREMY/nx_source/pull/48))
+- **switch:** add colors ([#46](https://github.com/MGREMY/nx_source/pull/46))
+- **tooltip:** add colors ([#47](https://github.com/MGREMY/nx_source/pull/47))
+
+### 🩹 Fixes
+
+- **modal:** animations ([#40](https://github.com/MGREMY/nx_source/pull/40))
+
+### ⚠️ Breaking Changes
+
+- **angular:** angular 22 ([#50](https://github.com/MGREMY/nx_source/pull/50))
+
+### ❤️ Thank You
+
+- GREMY Miguel @MGREMY
+- Miguel Gremy @MGREMY
+
 ## 0.20.2
 
 ### 🩹 Fixes
