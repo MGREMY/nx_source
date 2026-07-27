@@ -10,8 +10,8 @@
     "url": "https://github.com/MGREMY/nx_source"
   },
   "peerDependencies": {
-    "@angular/common": "^21.1.0",
-    "@angular/core": "^21.1.0",
+    "@angular/common": "^22.0.0",
+    "@angular/core": "^22.0.0",
     "tailwindcss": "^4.3.0"
   },
   "sideEffects": false,
