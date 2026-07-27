@@ -18,6 +18,7 @@ export type MgnpInputOtpSize = PropertyType<'xs' | 'sm' | 'md' | 'lg' | 'xl'>;
     class: 'mgnp-input-otp mgnp-c-input-otp',
     'data-mgnp-input-otp': '',
     '[attr.data-mgnp-input-otp-color]': 'color()',
+    '(focusout)': 'onTouched?.()',
   },
   hostDirectives: [
     {
@@ -46,8 +47,8 @@ export class MgnpInputOtp implements ControlValueAccessor {
 
   readonly value = model<string>('');
 
-  private onChange?: ChangeFn<string>;
-  private onTouched?: TouchedFn;
+  protected onChange?: ChangeFn<string>;
+  protected onTouched?: TouchedFn;
 
   constructor() {
     this.state()
@@ -64,8 +65,8 @@ export class MgnpInputOtp implements ControlValueAccessor {
       });
   }
 
-  writeValue(value: string): void {
-    this.value.set(value);
+  writeValue(value: string | null | undefined): void {
+    this.state().updateValue(value ?? '');
   }
 
   registerOnChange(fn: ChangeFn<string>): void {
