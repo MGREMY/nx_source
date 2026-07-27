@@ -15,10 +15,17 @@ import {
   MgnpLabel,
 } from '@mgremy/ng-primitives/form-field';
 import { MgnpInput } from '@mgremy/ng-primitives/input';
+import { MgnpPassword, MgnpPasswordInput, MgnpPasswordToggle } from '@mgremy/ng-primitives/password';
 import { MgnpSwitch, MgnpSwitchThumb } from '@mgremy/ng-primitives/switch';
 
 import { NgIcon, provideIcons } from '@ng-icons/core';
-import { heroAtSymbolMini, heroCheckMini, heroPhoneMini } from '@ng-icons/heroicons/mini';
+import {
+  heroAtSymbolMini,
+  heroCheckMini,
+  heroEyeMini,
+  heroEyeSlashMini,
+  heroPhoneMini,
+} from '@ng-icons/heroicons/mini';
 import { heroChevronDown } from '@ng-icons/heroicons/outline';
 
 import { Component, signal } from '@angular/core';
@@ -42,6 +49,9 @@ import { NgpComboboxPortal } from 'ng-primitives/combobox';
     MgnpSwitch,
     MgnpSwitchThumb,
     MgnpButton,
+    MgnpPassword,
+    MgnpPasswordInput,
+    MgnpPasswordToggle,
     NgpComboboxPortal,
     NgIcon,
     FormField,
@@ -67,6 +77,16 @@ import { NgpComboboxPortal } from 'ng-primitives/combobox';
         </div>
         <p mgnpError mgnpErrorValidator="required">This field is required.</p>
         <p mgnpError>This field must be an email.</p>
+      </div>
+      <div mgnpFormField>
+        <p mgnpLabel>Password</p>
+        <div mgnpPassword #password="mgnpPassword">
+          <input mgnpInput mgnpPasswordInput type="password" [formField]="form.password" />
+          <button mgnpButton mgnpPasswordToggle>
+            <ng-icon [name]="password.state().visible() ? 'heroEyeSlashMini' : 'heroEyeMini'" />
+          </button>
+        </div>
+        <p mgnpError mgnpErrorValidator="required">This field is required.</p>
       </div>
       <div mgnpFormField>
         <div mgnpInputGroup>
@@ -123,12 +143,15 @@ import { NgpComboboxPortal } from 'ng-primitives/combobox';
       <button mgnpButton type="submit" color="primary" variant="outline" [disabled]="form().invalid()">Submit</button>
     </form>
   `,
-  providers: [provideIcons({ heroCheckMini, heroChevronDown, heroAtSymbolMini, heroPhoneMini })],
+  providers: [
+    provideIcons({ heroCheckMini, heroChevronDown, heroAtSymbolMini, heroPhoneMini, heroEyeMini, heroEyeSlashMini }),
+  ],
 })
 export default class SignalFormExample {
   private readonly initialFormValue = {
     name: '',
     email: '',
+    password: '',
     birthDate: null,
     phoneNumber: '',
     accountType: null,
@@ -143,6 +166,8 @@ export default class SignalFormExample {
 
       required(root.email);
       email(root.email);
+
+      required(root.password);
 
       required(root.birthDate);
 

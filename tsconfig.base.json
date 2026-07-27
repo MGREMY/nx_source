@@ -27,6 +27,7 @@
       "@mgremy/ng-primitives/menu": ["packages/ng-primitives/menu/src/index.ts"],
       "@mgremy/ng-primitives/navbar": ["packages/ng-primitives/navbar/src/index.ts"],
       "@mgremy/ng-primitives/pagination": ["packages/ng-primitives/pagination/src/index.ts"],
+      "@mgremy/ng-primitives/password": ["packages/ng-primitives/password/src/index.ts"],
       "@mgremy/ng-primitives/switch": ["packages/ng-primitives/switch/src/index.ts"],
       "@mgremy/ng-primitives/toast": ["packages/ng-primitives/toast/src/index.ts"],
       "@mgremy/ng-primitives/tooltip": ["packages/ng-primitives/tooltip/src/index.ts"],

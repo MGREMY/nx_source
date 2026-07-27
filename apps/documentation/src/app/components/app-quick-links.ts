@@ -41,6 +41,7 @@ export default class AppQuickLinks implements AfterViewInit {
   private readonly platformId = inject(PLATFORM_ID);
   private readonly injector = inject(Injector);
   private readonly changeDetector = inject(ChangeDetectorRef);
+
   protected readonly links = signal<HeadingData[]>([]);
 
   constructor() {
@@ -52,8 +53,7 @@ export default class AppQuickLinks implements AfterViewInit {
       .subscribe(() => {
         afterNextRender(
           () => {
-            this.links.set(getHeadingList());
-            this.changeDetector.detectChanges();
+            this.updateLinks();
           },
           { injector: this.injector }
         );
@@ -71,6 +71,11 @@ export default class AppQuickLinks implements AfterViewInit {
       top: document.getElementById(id)?.offsetTop,
       behavior: 'smooth',
     });
+  }
+
+  updateLinks(): void {
+    this.links.set(getHeadingList());
+    this.changeDetector.detectChanges();
   }
 }
 
