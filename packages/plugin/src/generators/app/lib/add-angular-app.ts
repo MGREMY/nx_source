@@ -6,7 +6,7 @@ import { NormalizedOptions } from '../app';
 // this project's classic `node` module resolution does not consult. Reference
 // the built declaration directly so the type resolves; the runtime entry is
 // imported below via `@nx/angular/generators`.
-import type { applicationGenerator } from '@nx/angular/dist/generators';
+import { applicationGenerator } from '@nx/angular/generators';
 import { getWorkspaceLayout, Tree } from '@nx/devkit';
 
 type ApplicationSchema = Parameters<typeof applicationGenerator>[1];
