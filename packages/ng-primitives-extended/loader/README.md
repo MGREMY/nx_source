@@ -1,4 +1,4 @@
-# @mgremy/ng-primitives/src/lib/loader
+# @mgremy/ng-primitives/loader
 
 Secondary entry point of `@mgremy/ng-primitives`. It can be used by importing from
 `@mgremy/ng-primitives/loader`.

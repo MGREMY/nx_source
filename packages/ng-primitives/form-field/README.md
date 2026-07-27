@@ -1,4 +1,4 @@
-# @mgremy/ng-primitives/src/lib/form-field
+# @mgremy/ng-primitives/form-field
 
 Secondary entry point of `@mgremy/ng-primitives`. It can be used by importing from
 `@mgremy/ng-primitives/form-field`.
