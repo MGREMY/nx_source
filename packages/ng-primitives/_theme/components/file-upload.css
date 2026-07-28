@@ -1,0 +1,34 @@
+@import './file-upload/color.css';
+
+@layer components {
+  .mgnp-file-upload {
+    @apply mgnp-base mgnp-focus;
+    @apply inline-block;
+    @apply cursor-pointer;
+    @apply px-8 py-4;
+    @apply border border-dashed rounded-lg;
+
+    @apply data-[mgnp-file-upload-color=ui]:mgnp-file-upload-color-ui;
+    @apply data-[mgnp-file-upload-color=primary]:mgnp-file-upload-color-primary;
+    @apply data-[mgnp-file-upload-color=accent]:mgnp-file-upload-color-accent;
+    @apply data-[mgnp-file-upload-color=info]:mgnp-file-upload-color-info;
+    @apply data-[mgnp-file-upload-color=success]:mgnp-file-upload-color-success;
+    @apply data-[mgnp-file-upload-color=warning]:mgnp-file-upload-color-warning;
+    @apply data-[mgnp-file-upload-color=danger]:mgnp-file-upload-color-danger;
+  }
+
+  .mgnp-file-dropzone {
+    @apply mgnp-base mgnp-focus;
+    @apply inline-block;
+    @apply px-8 py-4;
+    @apply border border-dashed rounded-lg;
+
+    @apply data-[mgnp-file-dropzone-color=ui]:mgnp-file-upload-color-ui;
+    @apply data-[mgnp-file-dropzone-color=primary]:mgnp-file-upload-color-primary;
+    @apply data-[mgnp-file-dropzone-color=accent]:mgnp-file-upload-color-accent;
+    @apply data-[mgnp-file-dropzone-color=info]:mgnp-file-upload-color-info;
+    @apply data-[mgnp-file-dropzone-color=success]:mgnp-file-upload-color-success;
+    @apply data-[mgnp-file-dropzone-color=warning]:mgnp-file-upload-color-warning;
+    @apply data-[mgnp-file-dropzone-color=danger]:mgnp-file-upload-color-danger;
+  }
+}
