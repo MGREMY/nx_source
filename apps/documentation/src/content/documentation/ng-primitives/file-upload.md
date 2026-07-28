@@ -6,7 +6,7 @@ primitiveUrl: 'https://angularprimitives.com/primitives/file-upload'
 
 # File Upload
 
-The file upload primitive allows you to trigger a file upload from any element, giving you the more
+The file upload primitive allows you to trigger a file upload from any element, giving you more
 control over the appearance and behavior compared to the native file input.
 
 ## Usage

@@ -12,7 +12,7 @@ import { Component } from '@angular/core';
       mgnpFileDropzone
       (mgnpFileDropzoneSelected)="onFileSelected($event)"
       (mgnpFileDropzoneRejected)="onFileRejected()"
-      mgnpFileUploadMultiple>
+      mgnpFileDropzoneMultiple>
       <div class="flex flex-col gap-3 items-center justify-center">
         <ng-icon name="heroDocumentArrowUp" />
         <span class="font-semibold text-lg">Drag and drop files here.</span>
