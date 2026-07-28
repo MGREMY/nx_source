@@ -1,6 +1,7 @@
 import { PropertyType } from '@mgremy/ng-primitives';
 
 import { Directive, input } from '@angular/core';
+import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { ControlValueAccessor } from '@angular/forms';
 import {
   injectNumberFieldState,
@@ -20,6 +21,7 @@ export type MgnpNumberFieldColor = PropertyType<
     class: 'mgnp-number-field mgnp-c-number-field',
     'data-mgnp-number-field': '',
     '[attr.data-mgnp-number-field-color]': 'color()',
+    '(focusout)': 'onTouchedFn?.()',
   },
   hostDirectives: [
     {
@@ -48,7 +50,7 @@ export class MgnpNumberField implements ControlValueAccessor {
 
   constructor() {
     this.state()
-      .valueChange // TODO : pipe(takeUntilDestroyed())
+      .valueChange.pipe(takeUntilDestroyed())
       .subscribe((value) => this.onChangeFn?.(value));
   }
 
