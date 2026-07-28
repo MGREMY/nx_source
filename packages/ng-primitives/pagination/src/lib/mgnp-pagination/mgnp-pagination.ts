@@ -1,6 +1,7 @@
 import { PropertyType } from '@mgremy/ng-primitives';
 
 import { Directive, input } from '@angular/core';
+import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { ControlValueAccessor } from '@angular/forms';
 import {
   injectPaginationState,
@@ -45,7 +46,7 @@ export class MgnpPagination implements ControlValueAccessor {
 
   constructor() {
     this.state()
-      .pageChange // TODO pipe(takeUntilDestroy())
+      .pageChange.pipe(takeUntilDestroyed())
       .subscribe((value) => this.onChange?.(value));
   }
 
