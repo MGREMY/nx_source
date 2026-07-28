@@ -1,0 +1,34 @@
+@utility mgnp-number-field-input-color {
+  @apply bg-ui;
+}
+
+@utility mgnp-number-field-input-color-* {
+  @apply bg-transparent;
+  @apply border-[--value(--border-color-*)];
+}
+
+@utility mgnp-number-field-increment-color-* {
+  @apply bg-transparent;
+  @apply border-[--value(--border-color-*)];
+
+  @variant data-hover {
+    @apply bg-[color-mix(in_srgb,var(--background-color-ui),var(--mg-state-hover-mix))];
+  }
+
+  @variant data-press {
+    @apply bg-[color-mix(in_srgb,var(--background-color-ui),var(--mg-state-active-mix))];
+  }
+}
+
+@utility mgnp-number-field-decrement-color-* {
+  @apply bg-transparent;
+  @apply border-[--value(--border-color-*)];
+
+  @variant data-hover {
+    @apply bg-[color-mix(in_srgb,var(--background-color-ui),var(--mg-state-hover-mix))];
+  }
+
+  @variant data-press {
+    @apply bg-[color-mix(in_srgb,var(--background-color-ui),var(--mg-state-active-mix))];
+  }
+}

@@ -5,6 +5,7 @@ import {
   MgnpComboboxButton,
   MgnpComboboxDropdown,
   MgnpComboboxOption,
+  MgnpComboboxPortal,
 } from '@mgremy/ng-primitives/combobox';
 import {
   MgnpDescription,
@@ -15,6 +16,12 @@ import {
   MgnpLabel,
 } from '@mgremy/ng-primitives/form-field';
 import { MgnpInput } from '@mgremy/ng-primitives/input';
+import {
+  MgnpNumberField,
+  MgnpNumberFieldDecrement,
+  MgnpNumberFieldIncrement,
+  MgnpNumberFieldInput,
+} from '@mgremy/ng-primitives/number-field';
 import { MgnpPassword, MgnpPasswordInput, MgnpPasswordToggle } from '@mgremy/ng-primitives/password';
 import { MgnpSwitch, MgnpSwitchThumb } from '@mgremy/ng-primitives/switch';
 
@@ -29,7 +36,7 @@ import {
 import { heroChevronDown } from '@ng-icons/heroicons/outline';
 
 import { Component, signal } from '@angular/core';
-import { email, form, FormField, FormRoot, pattern, required } from '@angular/forms/signals';
+import { email, form, FormField, FormRoot, min, pattern, required } from '@angular/forms/signals';
 import { NgpComboboxPortal } from 'ng-primitives/combobox';
 
 @Component({
@@ -46,13 +53,17 @@ import { NgpComboboxPortal } from 'ng-primitives/combobox';
     MgnpComboboxDropdown,
     MgnpComboboxButton,
     MgnpComboboxOption,
+    MgnpComboboxPortal,
     MgnpSwitch,
     MgnpSwitchThumb,
     MgnpButton,
     MgnpPassword,
     MgnpPasswordInput,
     MgnpPasswordToggle,
-    NgpComboboxPortal,
+    MgnpNumberField,
+    MgnpNumberFieldInput,
+    MgnpNumberFieldIncrement,
+    MgnpNumberFieldDecrement,
     NgIcon,
     FormField,
     FormRoot,
@@ -104,6 +115,16 @@ import { NgpComboboxPortal } from 'ng-primitives/combobox';
         <p mgnpError mgnpErrorValidator="pattern">The phone number must have the french phone number form.</p>
       </div>
       <div mgnpFormField>
+        <p mgnpLabel>What is the meaning of life ?</p>
+        <div mgnpNumberField mgnpNumberFieldMin="0" [formField]="form.LifeMeaning">
+          <button mgnpNumberFieldDecrement>-</button>
+          <input mgnpNumberFieldInput />
+          <button mgnpNumberFieldIncrement>+</button>
+        </div>
+        <p mgnpError mgnpErrorValidator="required">You must say what is, for you, the meaning of life.</p>
+        <p mgnpError mgnpErrorValidator="min">The meaning of life must be at least 0.</p>
+      </div>
+      <div mgnpFormField>
         <p mgnpDescription>Choose the corresponding item depending on the account type.</p>
         <div mgnpInputGroup>
           <div mgnpInputGroupAddon><p mgnpLabel>Account type</p></div>
@@ -112,7 +133,7 @@ import { NgpComboboxPortal } from 'ng-primitives/combobox';
               {{ form.accountType().value() || 'Select an option' }}
               <ng-icon name="heroChevronDown" />
             </button>
-            <div *ngpComboboxPortal mgnpComboboxDropdown>
+            <div *mgnpComboboxPortal mgnpComboboxDropdown>
               <option mgnpComboboxOption mgnpComboboxOptionValue="user">user</option>
               <option mgnpComboboxOption mgnpComboboxOptionValue="ai agent">ai agent</option>
             </div>
@@ -154,6 +175,7 @@ export default class SignalFormExample {
     password: '',
     birthDate: null,
     phoneNumber: '',
+    LifeMeaning: 42,
     accountType: null,
     acceptTelemetry: false,
     acceptNewsletter: true,
@@ -172,6 +194,9 @@ export default class SignalFormExample {
       required(root.birthDate);
 
       pattern(root.phoneNumber, /^[0-9]{0,1}[1-9]{1}([. -]?[0-9][0-9]){4}$/);
+
+      required(root.LifeMeaning);
+      min(root.LifeMeaning, 0);
 
       required(root.accountType);
 

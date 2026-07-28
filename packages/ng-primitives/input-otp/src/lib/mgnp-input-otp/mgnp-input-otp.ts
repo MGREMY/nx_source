@@ -1,6 +1,6 @@
 import { PropertyType } from '@mgremy/ng-primitives';
 
-import { Directive, input, model } from '@angular/core';
+import { Directive, input } from '@angular/core';
 import { ControlValueAccessor } from '@angular/forms';
 import { injectInputOtpState, NgpInputOtp, provideInputOtpState } from 'ng-primitives/input-otp';
 import { ChangeFn, provideValueAccessor, TouchedFn } from 'ng-primitives/utils';
@@ -45,8 +45,6 @@ export class MgnpInputOtp implements ControlValueAccessor {
   readonly color = input<MgnpInputOtpColor>('ui');
   readonly size = input<MgnpInputOtpSize>('md');
 
-  readonly value = model<string>('');
-
   protected onChange?: ChangeFn<string>;
   protected onTouched?: TouchedFn;
 
@@ -54,7 +52,6 @@ export class MgnpInputOtp implements ControlValueAccessor {
     this.state()
       .valueChange // TODO : pipe(takeUntilDestroyed())
       .subscribe((value) => {
-        this.value.set(value);
         this.onChange?.(value);
       });
 
