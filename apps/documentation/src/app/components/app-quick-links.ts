@@ -35,6 +35,7 @@ import { filter } from 'rxjs/operators';
     </div>
   `,
   changeDetection: ChangeDetectionStrategy.OnPush,
+  exportAs: 'appQuickLinks',
 })
 export default class AppQuickLinks implements AfterViewInit {
   private readonly router = inject(Router);
@@ -62,7 +63,7 @@ export default class AppQuickLinks implements AfterViewInit {
 
   ngAfterViewInit(): void {
     if (isPlatformBrowser(this.platformId)) {
-      this.links.set(getHeadingList());
+      this.updateLinks();
     }
   }
 

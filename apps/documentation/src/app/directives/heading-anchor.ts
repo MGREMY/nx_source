@@ -1,10 +1,12 @@
 import { isPlatformBrowser } from '@angular/common';
 import {
+  afterNextRender,
   AfterViewInit,
   DestroyRef,
   Directive,
   ElementRef,
   inject,
+  Injector,
   PLATFORM_ID,
   Renderer2,
 } from '@angular/core';
@@ -18,30 +20,39 @@ import { filter } from 'rxjs/operators';
  */
 @Directive({
   selector: '[appHeadingAnchor]',
+  exportAs: 'appHeadingAnchor',
 })
 export class HeadingAnchor implements AfterViewInit {
   private readonly elementRef = inject(ElementRef);
-  private readonly renderer = inject(Renderer2);
   private readonly platformId = inject(PLATFORM_ID);
+  private readonly injector = inject(Injector);
+  private readonly renderer = inject(Renderer2);
   private readonly router = inject(Router);
-  private readonly destroyRef = inject(DestroyRef);
+
+  constructor() {
+    this.router.events
+      .pipe(
+        takeUntilDestroyed(),
+        filter((event) => event instanceof NavigationEnd)
+      )
+      .subscribe(() => {
+        afterNextRender(
+          () => {
+            this.updateAnchors();
+          },
+          { injector: this.injector }
+        );
+      });
+  }
 
   ngAfterViewInit(): void {
     if (isPlatformBrowser(this.platformId)) {
-      // Add anchors to headings initially
       this.addAnchorsToHeadings();
-
-      // Re-add anchors when navigation changes (for route transitions)
-      this.router.events
-        .pipe(
-          takeUntilDestroyed(this.destroyRef),
-          filter((event) => event instanceof NavigationEnd)
-        )
-        .subscribe(() => {
-          // Use setTimeout to ensure content is rendered
-          setTimeout(() => this.addAnchorsToHeadings(), 0);
-        });
     }
+  }
+
+  updateAnchors(): void {
+    this.addAnchorsToHeadings();
   }
 
   private addAnchorsToHeadings(): void {

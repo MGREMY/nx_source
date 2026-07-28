@@ -33,13 +33,17 @@ interface ContentAttributes {
         data-page-content
         appHeadingAnchor
         appSourceLink
+        #headingAnchor="appHeadingAnchor"
+        #sourceLink="appSourceLink"
         (examplesLoaded)="reloadQuickLinks()"
-        (metadatasLoaded)="reloadQuickLinks()">
+        (examplesLoaded)="reloadHeadingAnchor()"
+        (metadatasLoaded)="reloadQuickLinks()"
+        (metadatasLoaded)="reloadHeadingAnchor()">
         <router-outlet />
       </article>
 
       <app-quick-links
-        #quickLinks
+        #quickLinks="appQuickLinks"
         class="p-1 w-1/7 sticky top-18 max-h-192 h-full overflow-auto" />
     </div>
   `,
@@ -47,6 +51,7 @@ interface ContentAttributes {
 })
 export default class DocumentationPage implements OnInit {
   private readonly quickLinks = viewChild<AppQuickLinks>('quickLinks');
+  private readonly headingAnchor = viewChild<HeadingAnchor>('headingAnchor');
 
   protected readonly _appComponent = inject(AppComponent);
   readonly contents = injectContentFiles<ContentAttributes>();
@@ -157,5 +162,9 @@ export default class DocumentationPage implements OnInit {
 
   reloadQuickLinks(): void {
     this.quickLinks()?.updateLinks();
+  }
+
+  reloadHeadingAnchor(): void {
+    this.headingAnchor()?.updateAnchors();
   }
 }

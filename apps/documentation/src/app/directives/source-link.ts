@@ -26,6 +26,7 @@ interface ContentAttributes {
  */
 @Directive({
   selector: '[appSourceLink]',
+  exportAs: 'appSourceLink',
 })
 export class SourceLink implements AfterViewInit {
   private readonly elementRef = inject(ElementRef);

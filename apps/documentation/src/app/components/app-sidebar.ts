@@ -21,7 +21,7 @@ import {
   viewChildren,
 } from '@angular/core';
 import { takeUntilDestroyed, toSignal } from '@angular/core/rxjs-interop';
-import { IsActiveMatchOptions, NavigationEnd, Router } from '@angular/router';
+import { NavigationEnd, Router } from '@angular/router';
 import { NgpDialogContext, NgpDialogManager } from 'ng-primitives/dialog';
 import { filter, map } from 'rxjs';
 
@@ -110,7 +110,7 @@ export class AppSidebarItem {
     const currentPath = this.currentPath();
     const path = this.item().path;
 
-    if (path && path.split('?')[0].split('&')[0].split('#')[0] === currentPath) return true;
+    if (path && currentPath.split('?')[0].split('&')[0].split('#')[0] === path) return true;
 
     return this._children().some((x) => x.isActive());
   });
@@ -150,7 +150,7 @@ export class AppSidebarItem {
         drawerPosition="start">
         <div
           mgnpDialog
-          class="w-full overflow-y-auto">
+          class="w-8/12 overflow-y-auto">
           <ng-container [ngTemplateOutlet]="content" />
         </div>
       </div>
