@@ -1,7 +1,11 @@
 import { PropertyType } from '@mgremy/ng-primitives';
 
 import { Directive, input } from '@angular/core';
-import { NgpFileDropzone, provideFileDropzoneState } from 'ng-primitives/file-upload';
+import {
+  injectFileDropzoneState,
+  NgpFileDropzone,
+  provideFileDropzoneState,
+} from 'ng-primitives/file-upload';
 
 export type MgnpFileDropzoneColor = PropertyType<
   'ui' | 'primary' | 'accent' | 'info' | 'success' | 'warning' | 'danger'
@@ -34,5 +38,7 @@ export type MgnpFileDropzoneColor = PropertyType<
   exportAs: 'mgnpFileDropzone',
 })
 export class MgnpFileDropzone {
+  readonly state = injectFileDropzoneState();
+
   readonly color = input<MgnpFileDropzoneColor>('ui');
 }

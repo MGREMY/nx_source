@@ -14,6 +14,7 @@
 @import './components/input-otp.css';
 @import './components/input.css';
 @import './components/menu.css';
+@import './components/number-field.css';
 @import './components/pagination.css';
 @import './components/password.css';
 @import './components/switch.css';

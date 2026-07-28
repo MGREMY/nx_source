@@ -1,0 +1,63 @@
+@import './number-field/color.css';
+
+@layer components {
+  .mgnp-number-field {
+    @apply mgnp-base;
+    @apply flex flex-row w-full;
+    @apply rounded-lg;
+    @apply mgnp-number-field-input-color;
+
+    @variant * {
+      @apply border-t border-b;
+
+      @variant first {
+        @apply border-l rounded-l-lg;
+      }
+
+      @variant last {
+        @apply border-r rounded-r-lg;
+      }
+    }
+  }
+
+  .mgnp-number-field-input {
+    @apply mgnp-base mgnp-focus;
+    @apply w-full px-4 py-2;
+
+    @apply data-[mgnp-number-field-input-color=ui]:mgnp-number-field-input-color-ui;
+    @apply data-[mgnp-number-field-input-color=primary]:mgnp-number-field-input-color-primary;
+    @apply data-[mgnp-number-field-input-color=accent]:mgnp-number-field-input-color-accent;
+    @apply data-[mgnp-number-field-input-color=info]:mgnp-number-field-input-color-info;
+    @apply data-[mgnp-number-field-input-color=success]:mgnp-number-field-input-color-success;
+    @apply data-[mgnp-number-field-input-color=warning]:mgnp-number-field-input-color-warning;
+    @apply data-[mgnp-number-field-input-color=danger]:mgnp-number-field-input-color-danger;
+  }
+
+  .mgnp-number-field-increment {
+    @apply mgnp-base mgnp-focus;
+    @apply cursor-pointer;
+    @apply w-10 px-4 py-2;
+
+    @apply data-[mgnp-number-field-increment-color=ui]:mgnp-number-field-increment-color-ui;
+    @apply data-[mgnp-number-field-increment-color=primary]:mgnp-number-field-increment-color-primary;
+    @apply data-[mgnp-number-field-increment-color=accent]:mgnp-number-field-increment-color-accent;
+    @apply data-[mgnp-number-field-increment-color=info]:mgnp-number-field-increment-color-info;
+    @apply data-[mgnp-number-field-increment-color=success]:mgnp-number-field-increment-color-success;
+    @apply data-[mgnp-number-field-increment-color=warning]:mgnp-number-field-increment-color-warning;
+    @apply data-[mgnp-number-field-increment-color=danger]:mgnp-number-field-increment-color-danger;
+  }
+
+  .mgnp-number-field-decrement {
+    @apply mgnp-base mgnp-focus;
+    @apply cursor-pointer;
+    @apply w-10 px-4 py-2;
+
+    @apply data-[mgnp-number-field-decrement-color=ui]:mgnp-number-field-decrement-color-ui;
+    @apply data-[mgnp-number-field-decrement-color=primary]:mgnp-number-field-decrement-color-primary;
+    @apply data-[mgnp-number-field-decrement-color=accent]:mgnp-number-field-decrement-color-accent;
+    @apply data-[mgnp-number-field-decrement-color=info]:mgnp-number-field-decrement-color-info;
+    @apply data-[mgnp-number-field-decrement-color=success]:mgnp-number-field-decrement-color-success;
+    @apply data-[mgnp-number-field-decrement-color=warning]:mgnp-number-field-decrement-color-warning;
+    @apply data-[mgnp-number-field-decrement-color=danger]:mgnp-number-field-decrement-color-danger;
+  }
+}

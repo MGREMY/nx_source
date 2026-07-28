@@ -1,7 +1,11 @@
 import { PropertyType } from '@mgremy/ng-primitives';
 
 import { Directive, input } from '@angular/core';
-import { NgpFileUpload, provideFileUploadState } from 'ng-primitives/file-upload';
+import {
+  injectFileUploadState,
+  NgpFileUpload,
+  provideFileUploadState,
+} from 'ng-primitives/file-upload';
 
 export type MgnpFileUploadColor = PropertyType<
   'ui' | 'primary' | 'accent' | 'info' | 'success' | 'warning' | 'danger'
@@ -36,5 +40,7 @@ export type MgnpFileUploadColor = PropertyType<
   exportAs: 'mgnpFileUpload',
 })
 export class MgnpFileUpload {
+  readonly state = injectFileUploadState();
+
   readonly color = input<MgnpFileUploadColor>('ui');
 }
