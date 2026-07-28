@@ -1,0 +1,9 @@
+@utility mgnp-file-upload-color-* {
+  @apply bg-ui;
+  @apply border-[--value(--border-color-*)];
+}
+
+@utility mgnp-file-dropzone-color-* {
+  @apply bg-ui;
+  @apply border-[--value(--border-color-*)];
+}
