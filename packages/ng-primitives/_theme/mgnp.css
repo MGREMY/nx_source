@@ -17,6 +17,7 @@
 @import './components/number-field.css';
 @import './components/pagination.css';
 @import './components/password.css';
+@import './components/popover.css';
 @import './components/switch.css';
 @import './components/toast.css';
 @import './components/tooltip.css';

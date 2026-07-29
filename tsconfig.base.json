@@ -30,6 +30,7 @@
       "@mgremy/ng-primitives/number-field": ["./packages/ng-primitives/number-field/src/index.ts"],
       "@mgremy/ng-primitives/pagination": ["./packages/ng-primitives/pagination/src/index.ts"],
       "@mgremy/ng-primitives/password": ["./packages/ng-primitives/password/src/index.ts"],
+      "@mgremy/ng-primitives/popover": ["./packages/ng-primitives/popover/src/index.ts"],
       "@mgremy/ng-primitives/switch": ["./packages/ng-primitives/switch/src/index.ts"],
       "@mgremy/ng-primitives/toast": ["./packages/ng-primitives/toast/src/index.ts"],
       "@mgremy/ng-primitives/tooltip": ["./packages/ng-primitives/tooltip/src/index.ts"],

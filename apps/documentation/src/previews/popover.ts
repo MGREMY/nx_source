@@ -1,10 +1,10 @@
 import { MgnpButton } from '@mgremy/ng-primitives/button';
-import { MgnpMenu, MgnpMenuItem, MgnpMenuTrigger } from '@mgremy/ng-primitives/menu';
+import { MgnpPopover, MgnpPopoverTrigger } from '@mgremy/ng-primitives/popover';
 
 import { Component } from '@angular/core';
 
 @Component({
-  imports: [MgnpMenu, MgnpMenuItem, MgnpMenuTrigger, MgnpButton],
+  imports: [MgnpPopover, MgnpPopoverTrigger, MgnpButton],
   template: `
     <div class="grid grid-cols-[max-content_1fr] gap-2 w-full items-center justify-center">
       @for (color of _colors; track $index) {
@@ -12,23 +12,21 @@ import { Component } from '@angular/core';
         <button
           class="max-w-1/2 justify-self-center"
           mgnpButton
-          [aria-label]="'Open ' + color + ' menu'"
+          [aria-label]="'Open ' + color + ' popover'"
           [color]="color"
-          [mgnpMenuTrigger]="menu">
-          Open menu
+          [mgnpPopoverTrigger]="popover">
+          Open popover
         </button>
 
-        <ng-template #menu>
-          <div mgnpMenu [color]="color">
-            <button mgnpMenuItem>Item 1</button>
-            <button mgnpMenuItem>Item 2</button>
-            <button mgnpMenuItem>Item 3</button>
+        <ng-template #popover>
+          <div mgnpPopover [color]="color">
+            <span>Popover content</span>
           </div>
         </ng-template>
       }
     </div>
   `,
 })
-export default class Menu {
+export default class Popover {
   readonly _colors = ['ui', 'primary', 'accent', 'info', 'success', 'warning', 'danger'];
 }
