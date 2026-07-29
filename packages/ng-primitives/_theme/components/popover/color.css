@@ -1,0 +1,9 @@
+@utility mgnp-popover-color-* {
+  @apply bg-ui;
+  @apply border-[--value(--border-color-*)];
+}
+
+@utility mgnp-popover-arrow-color-* {
+  @apply bg-ui;
+  @apply border-[--value(--border-color-*)];
+}

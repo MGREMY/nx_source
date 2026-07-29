@@ -1,0 +1,53 @@
+@import './popover/color.css';
+
+@layer components {
+  .mgnp-popover {
+    @apply mgnp-base;
+    @apply absolute;
+    @apply max-w-64;
+    @apply py-3 px-3;
+    @apply border rounded-lg;
+    @apply text-xs;
+    @apply origin-(--ngp-popover-transform-origin);
+
+    @apply data-[mgnp-popover-color=ui]:mgnp-popover-color-ui;
+    @apply data-[mgnp-popover-color=primary]:mgnp-popover-color-primary;
+    @apply data-[mgnp-popover-color=accent]:mgnp-popover-color-accent;
+    @apply data-[mgnp-popover-color=info]:mgnp-popover-color-info;
+    @apply data-[mgnp-popover-color=success]:mgnp-popover-color-success;
+    @apply data-[mgnp-popover-color=warning]:mgnp-popover-color-warning;
+    @apply data-[mgnp-popover-color=danger]:mgnp-popover-color-danger;
+
+    @variant data-enter {
+      @apply animate-mg-show-y;
+    }
+
+    @variant data-exit {
+      @apply animate-mg-hide-y;
+    }
+  }
+
+  .mgnp-popover-arrow {
+    @apply mgnp-base;
+    @apply absolute rotate-45;
+    @apply pointer-events-none;
+    @apply w-2 h-2;
+    @apply border rounded-xs;
+
+    @apply data-[mgnp-popover-arrow-color=ui]:mgnp-popover-arrow-color-ui;
+    @apply data-[mgnp-popover-arrow-color=primary]:mgnp-popover-arrow-color-primary;
+    @apply data-[mgnp-popover-arrow-color=accent]:mgnp-popover-arrow-color-accent;
+    @apply data-[mgnp-popover-arrow-color=info]:mgnp-popover-arrow-color-info;
+    @apply data-[mgnp-popover-arrow-color=success]:mgnp-popover-arrow-color-success;
+    @apply data-[mgnp-popover-arrow-color=warning]:mgnp-popover-arrow-color-warning;
+    @apply data-[mgnp-popover-arrow-color=danger]:mgnp-popover-arrow-color-danger;
+
+    @variant data-[placement=top] {
+      @apply top-[calc(100%-5px)];
+    }
+
+    @variant data-[placement=bottom] {
+      @apply bottom-[calc(100%-5px)];
+    }
+  }
+}
