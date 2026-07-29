@@ -12,7 +12,7 @@ import { Component } from '@angular/core';
         <button
           class="max-w-1/2 justify-self-center"
           mgnpButton
-          [aria-label]="'Open' + color + 'menu'"
+          [aria-label]="'Open ' + color + ' popover'"
           [color]="color"
           [mgnpPopoverTrigger]="popover">
           Open popover
