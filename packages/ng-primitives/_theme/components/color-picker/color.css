@@ -1,0 +1,21 @@
+@utility mgnp-color-area-thumb-color-* {
+  @apply border-[--value(--border-color-*)];
+}
+
+@utility mgnp-color-field-color-* {
+  @apply bg-ui;
+  @apply border-[--value(--border-color-*)];
+  @apply text-[--value(--text-color-*)];
+}
+
+@utility mgnp-color-picker-color {
+  @apply bg-ui;
+}
+
+@utility mgnp-color-slider-thumb-color-* {
+  @apply border-[--value(--border-color-*)];
+}
+
+@utility mgnp-color-wheel-thumb-color-* {
+  @apply border-[--value(--border-color-*)];
+}
