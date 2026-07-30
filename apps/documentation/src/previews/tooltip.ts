@@ -6,10 +6,10 @@ import { Component } from '@angular/core';
 @Component({
   imports: [MgnpButton, MgnpTooltip, MgnpTooltipTrigger],
   template: `
-    <div class="grid grid-rows-2 gap-2 w-full items-center justify-center">
+    <div class="flex flex-col gap-2 w-full items-center justify-center">
       @for (color of _colors; track $index) {
-        <span class="place-self-center">{{ color }}</span>
-        <button class="place-self-center" mgnpButton [color]="color" [mgnpTooltipTrigger]="tooltip">Hover me</button>
+        <span>{{ color }}</span>
+        <button mgnpButton [color]="color" [mgnpTooltipTrigger]="tooltip">Hover me</button>
 
         <ng-template #tooltip>
           <div mgnpTooltip [color]="color">Tooltip content</div>

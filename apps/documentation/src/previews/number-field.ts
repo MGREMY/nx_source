@@ -10,10 +10,10 @@ import { Component } from '@angular/core';
 @Component({
   imports: [MgnpNumberField, MgnpNumberFieldInput, MgnpNumberFieldIncrement, MgnpNumberFieldDecrement],
   template: `
-    <div class="grid grid-rows-2 gap-2 w-full items-center justify-center">
+    <div class="flex flex-col gap-2 w-full items-center justify-center">
       @for (color of _colors; track $index) {
-        <span class="place-self-center">{{ color }}</span>
-        <div class="place-self-center" mgnpNumberField [color]="color">
+        <span>{{ color }}</span>
+        <div mgnpNumberField [color]="color">
           <button mgnpNumberFieldDecrement>-</button>
           <input mgnpNumberFieldInput />
           <button mgnpNumberFieldIncrement>+</button>

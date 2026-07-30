@@ -5,10 +5,10 @@ import { Component } from '@angular/core';
 @Component({
   imports: [MgnpInputOtp, MgnpInputOtpInput, MgnpInputOtpSlot],
   template: `
-    <div class="grid grid-rows-2 gap-y-2 w-full items-center justify-center">
+    <div class="flex flex-col gap-y-2 w-full items-center justify-center">
       @for (color of _colors; track $index) {
-        <span class="place-self-center">{{ color }}</span>
-        <div class="place-self-center" mgnpInputOtp [color]="color">
+        <span>{{ color }}</span>
+        <div mgnpInputOtp [color]="color">
           <input mgnpInputOtpInput />
 
           @for (_ of slots; track $index) {

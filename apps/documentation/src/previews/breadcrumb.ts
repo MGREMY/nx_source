@@ -31,10 +31,10 @@ import { RouterLink } from '@angular/router';
     RouterLink,
   ],
   template: `
-    <div class="grid grid-rows-2 gap-2 w-full items-center justify-center">
+    <div class="flex flex-col gap-2 w-full items-center justify-center">
       @for (color of _colors; track $index) {
-        <span class="place-self-center">{{ color }}</span>
-        <nav class="place-self-center" aria-label="Breadcrumb" mgnpBreadcrumb [color]="color">
+        <span>{{ color }}</span>
+        <nav aria-label="Breadcrumb" mgnpBreadcrumb [color]="color">
           <ol mgnpBreadcrumbList>
             <li mgnpBreadcrumbItem>
               <a mgnpBreadcrumbLink [routerLink]="['/']">Home</a>

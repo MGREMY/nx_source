@@ -8,11 +8,10 @@ import { Component } from '@angular/core';
 @Component({
   imports: [MgnpFileUpload, NgIcon],
   template: `
-    <div class="grid grid-rows-2 gap-y-2 w-full items-center justify-center">
+    <div class="flex flex-col gap-y-2 w-full items-center justify-center">
       @for (color of _colors; track $index) {
-        <span class="place-self-center">{{ color }}</span>
+        <span>{{ color }}</span>
         <div
-          class="place-self-center"
           mgnpFileUpload
           [color]="color"
           (mgnpFileUploadSelected)="onFileSelected($event)"

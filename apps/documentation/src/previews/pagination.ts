@@ -15,7 +15,7 @@ import {
   heroChevronRight,
 } from '@ng-icons/heroicons/outline';
 
-import { Component, signal } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   imports: [
@@ -28,15 +28,10 @@ import { Component, signal } from '@angular/core';
     NgIcon,
   ],
   template: `
-    <div class="grid grid-rows-2 gap-2 w-full items-center justify-center">
+    <div class="flex flex-col gap-2 w-full items-center justify-center">
       @for (color of _colors; track $index) {
-        <span class="place-self-center">{{ color }}</span>
-        <nav
-          class="place-self-center"
-          mgnpPagination
-          [color]="color"
-          mgnpPaginationPageCount="5"
-          aria-label="Pagination Navigation">
+        <span>{{ color }}</span>
+        <nav mgnpPagination [color]="color" mgnpPaginationPageCount="5" aria-label="Pagination Navigation">
           <ul>
             <li>
               <a mgnpPaginationFirst aria-label="First Page">
