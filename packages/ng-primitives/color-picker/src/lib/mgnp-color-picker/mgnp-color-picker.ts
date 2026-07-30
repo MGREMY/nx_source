@@ -22,6 +22,7 @@ export type MgnpColorPickerColor = PropertyType<
     class: 'mgnp-color-picker mgnp-c-color-picker',
     'data-mgnp-color-picker': '',
     '[attr.data-mgnp-color-picker-color]': 'color()',
+    '(focusout)': 'onTouchedFn?.()',
   },
   hostDirectives: [
     {

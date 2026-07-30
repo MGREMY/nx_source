@@ -28,14 +28,13 @@ import { Component, signal } from '@angular/core';
     NgIcon,
   ],
   template: `
-    <div class="grid grid-cols-[max-content_1fr] gap-2 items-center w-full">
+    <div class="grid grid-rows-2 gap-2 w-full items-center justify-center">
       @for (color of _colors; track $index) {
-        <span>{{ color }}</span>
+        <span class="place-self-center">{{ color }}</span>
         <nav
-          class="justify-self-end"
+          class="place-self-center"
           mgnpPagination
           [color]="color"
-          [(mgnpPaginationPage)]="page"
           mgnpPaginationPageCount="5"
           aria-label="Pagination Navigation">
           <ul>
@@ -82,6 +81,4 @@ import { Component, signal } from '@angular/core';
 })
 export default class Pagination {
   readonly _colors = ['ui', 'primary', 'accent', 'info', 'success', 'warning', 'danger'];
-
-  readonly page = signal(1);
 }

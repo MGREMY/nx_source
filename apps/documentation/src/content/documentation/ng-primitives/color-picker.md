@@ -9,8 +9,11 @@ primitiveUrl: 'https://angularprimitives.com/primitives/color-picker'
 A composable, accessible color picker: a 2D area, channel sliders and hex/channel fields that share
 one color value.
 
-> To use `MgnpColorWheel` or `ColorSwatchPicker` with angular forms (reactive forms or signal
-> forms), it must be used inside `MgnpColorPicker`
+> To use `MgnpColorWheel` or `MgnpColorSwatchPicker` with Angular forms (reactive or signal), they
+> must be placed inside `MgnpColorPicker`.
+>
+> If used without `MgnpColorPicker`, you must manually bind each component to its corresponding
+> color value (for example a signal containing the selected value).
 
 ## Usage
 

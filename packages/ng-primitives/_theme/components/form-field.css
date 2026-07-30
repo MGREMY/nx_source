@@ -68,7 +68,7 @@
 
   .mgnp-input-group-addon {
     @apply mgnp-base;
-    @apply inline-block;
+    @apply inline-flex items-center;
     @apply text-nowrap;
     @apply p-2;
     @apply border-y;

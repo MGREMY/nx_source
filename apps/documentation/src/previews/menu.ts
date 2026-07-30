@@ -6,11 +6,11 @@ import { Component } from '@angular/core';
 @Component({
   imports: [MgnpMenu, MgnpMenuItem, MgnpMenuTrigger, MgnpButton],
   template: `
-    <div class="grid grid-cols-[max-content_1fr] gap-2 w-full items-center justify-center">
+    <div class="grid grid-rows-2 gap-2 w-full items-center justify-center">
       @for (color of _colors; track $index) {
-        <span>{{ color }}</span>
+        <span class="place-self-center">{{ color }}</span>
         <button
-          class="max-w-1/2 justify-self-center"
+          class="place-self-center"
           mgnpButton
           [aria-label]="'Open ' + color + ' menu'"
           [color]="color"

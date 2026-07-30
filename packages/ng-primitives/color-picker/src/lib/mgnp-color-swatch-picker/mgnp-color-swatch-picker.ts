@@ -6,11 +6,10 @@ import {
   NgpColorSwatchPicker,
   provideColorSwatchPickerState,
 } from 'ng-primitives/color';
-import { provideValueAccessor } from 'ng-primitives/utils';
 
 @Directive({
   selector: '[mgnpColorSwatchPicker]',
-  providers: [provideColorSwatchPickerState(), provideValueAccessor(MgnpColorSwatchPicker)],
+  providers: [provideColorSwatchPickerState()],
   host: {
     class: 'mgnp-color-swatch-picker mgnp-c-color-swatch-picker',
     'data-mgnp-color-swatch-picker': '',

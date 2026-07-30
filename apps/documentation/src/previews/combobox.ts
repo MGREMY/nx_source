@@ -14,10 +14,10 @@ import { Component, signal } from '@angular/core';
 @Component({
   imports: [MgnpCombobox, MgnpComboboxButton, MgnpComboboxDropdown, MgnpComboboxOption, MgnpComboboxPortal, NgIcon],
   template: `
-    <div class="grid grid-cols-[max-content_1fr] gap-x-4 gap-y-2 w-full items-center">
+    <div class="grid grid-rows-2 gap-y-2 w-full items-center justify-center">
       @for (color of _colors; track $index) {
-        <span>{{ color }}</span>
-        <div mgnpCombobox [(mgnpComboboxValue)]="selectedOption" [color]="color">
+        <span class="place-self-center">{{ color }}</span>
+        <div class="place-self-center" mgnpCombobox [(mgnpComboboxValue)]="selectedOption" [color]="color">
           <button mgnpComboboxButton>
             <span>{{ selectedOption() || 'Select an option' }}</span>
             <ng-icon name="heroChevronDown" />

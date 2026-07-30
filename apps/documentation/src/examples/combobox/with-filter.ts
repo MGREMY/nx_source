@@ -46,11 +46,10 @@ import { Component } from '@angular/core';
   providers: [provideIcons({ heroChevronDown })],
 })
 export default class WithoutInputExample {
-  readonly options = ['option 1', 'option 2', 'option 3'];
   readonly comboboxValue = comboboxValue<string>();
 
   readonly comboboxFilter = comboboxFilter({
-    options: this.options,
+    options: ['option 1', 'option 2', 'option 3'],
     inputValue: this.comboboxValue.input,
     value: this.comboboxValue.value,
     filterMapper: (o, v) => o.toLowerCase().includes(v.toLowerCase()),

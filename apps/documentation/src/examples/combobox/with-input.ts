@@ -29,7 +29,7 @@ import { Component, signal } from '@angular/core';
         <ng-icon name="heroChevronDown" />
       </button>
       <div *mgnpComboboxPortal mgnpComboboxDropdown>
-        @for (option of options; track option) {
+        @for (option of _options; track option) {
           <div mgnpComboboxOption [mgnpComboboxOptionValue]="option">
             {{ option }}
           </div>
@@ -40,6 +40,6 @@ import { Component, signal } from '@angular/core';
   providers: [provideIcons({ heroChevronDown })],
 })
 export default class WithoutInputExample {
-  readonly options = ['option 1', 'option 2', 'option 3'];
+  readonly _options = ['option 1', 'option 2', 'option 3'];
   readonly selectedOption = signal<string>('');
 }

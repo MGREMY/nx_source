@@ -10,7 +10,7 @@ import {
   MgnpColorSwatch,
 } from '@mgremy/ng-primitives/color-picker';
 
-import { Component, signal } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   imports: [
@@ -24,10 +24,10 @@ import { Component, signal } from '@angular/core';
     MgnpColorSwatch,
   ],
   template: `
-    <div class="grid grid-cols-[max-content_1fr] gap-x-4 gap-y-2 w-full items-center">
+    <div class="grid grid-rows-2 gap-2 w-full items-center justify-center">
       @for (color of _colors; track $index) {
-        <span>{{ color }}</span>
-        <div mgnpColorPicker class="justify-self-center" [color]="color" [(mgnpColorPickerValue)]="selectedColor">
+        <span class="place-self-center">{{ color }}</span>
+        <div class="place-self-center" mgnpColorPicker [color]="color" [mgnpColorPickerDefaultValue]="c">
           <div mgnpColorArea mgnpColorAreaXChannel="saturation" mgnpColorAreaYChannel="brightness">
             <div mgnpColorAreaThumb></div>
           </div>
@@ -38,7 +38,7 @@ import { Component, signal } from '@angular/core';
           </div>
 
           <div class="flex flex-row gap-4 items-center">
-            <div [mgnpColorSwatch]="selectedColor()"></div>
+            <div mgnpColorSwatch></div>
             <input mgnpColorField aria-label="Hex" />
           </div>
         </div>
@@ -48,6 +48,5 @@ import { Component, signal } from '@angular/core';
 })
 export default class ColorPicker {
   readonly _colors = ['ui', 'primary', 'accent', 'info', 'success', 'warning', 'danger'];
-
-  readonly selectedColor = signal<Color>(Color.parse('#00a6f4'));
+  readonly c = Color.parse('#00a6f4');
 }

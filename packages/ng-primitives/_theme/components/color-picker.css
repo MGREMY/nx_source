@@ -3,10 +3,11 @@
 @layer components {
   .mgnp-color-area {
     @apply relative;
-    background: var(--ngp-color-area-background);
     @apply w-full h-40;
     @apply rounded-lg shadow-xs;
     @apply touch-none select-none;
+
+    background: var(--ngp-color-area-background);
   }
 
   .mgnp-color-area-thumb {
@@ -17,12 +18,6 @@
     @apply border-2 rounded-full shadow-sm;
     @apply transform-[translate(-50%,-50%)];
 
-    ::before {
-      @apply content-none;
-      @apply absolute top-1/2 left-1/2;
-      @apply size-11;
-    }
-
     @apply not-data-mgnp-color-area-thumb-color:mgnp-color-area-thumb-color-ui;
     @apply data-[mgnp-color-area-thumb-color=ui]:mgnp-color-area-thumb-color-ui;
     @apply data-[mgnp-color-area-thumb-color=primary]:mgnp-color-area-thumb-color-primary;
@@ -31,6 +26,12 @@
     @apply data-[mgnp-color-area-thumb-color=success]:mgnp-color-area-thumb-color-success;
     @apply data-[mgnp-color-area-thumb-color=warning]:mgnp-color-area-thumb-color-warning;
     @apply data-[mgnp-color-area-thumb-color=danger]:mgnp-color-area-thumb-color-danger;
+  }
+
+  .mgnp-color-area-thumb::before {
+    @apply content-none;
+    @apply absolute top-1/2 left-1/2;
+    @apply size-11;
   }
 
   .mgnp-color-field {
@@ -52,7 +53,7 @@
 
   .mgnp-color-picker {
     @apply mgnp-base mgnp-color-picker-color;
-    @apply flex flex-col gap-3 items-center;
+    @apply inline-flex flex-col gap-3 items-center;
     @apply w-full max-w-60;
     @apply p-3;
     @apply rounded-lg;
@@ -73,12 +74,6 @@
     @apply border-2 rounded-full shadow-sm;
     @apply transform-[translate(-50%,-50%)];
 
-    ::before {
-      @apply content-none;
-      @apply absolute top-1/2 left-1/2;
-      @apply size-11;
-    }
-
     @apply not-data-mgnp-color-slider-thumb-color:mgnp-color-slider-thumb-color-ui;
     @apply data-[mgnp-color-slider-thumb-color=ui]:mgnp-color-slider-thumb-color-ui;
     @apply data-[mgnp-color-slider-thumb-color=primary]:mgnp-color-slider-thumb-color-primary;
@@ -89,19 +84,27 @@
     @apply data-[mgnp-color-slider-thumb-color=danger]:mgnp-color-slider-thumb-color-danger;
   }
 
+  .mgnp-color-slider-thumb::before {
+    @apply content-none;
+    @apply absolute top-1/2 left-1/2;
+    @apply size-11;
+  }
+
   .mgnp-color-slider-track {
     @apply absolute;
-    background: var(--ngp-color-slider-background);
     @apply inset-0;
     @apply rounded-full;
     @apply inset-shadow-sm;
+
+    background: var(--ngp-color-slider-background);
   }
 
   .mgnp-color-swatch {
     @apply shrink-0 size-8.5;
-    background: var(--ngp-color-swatch-color);
     @apply rounded-lg;
     @apply shadow-md;
+
+    background: var(--ngp-color-swatch-color);
   }
 
   .mgnp-color-swatch-picker {
@@ -123,10 +126,11 @@
   .mgnp-color-swatch-picker-item {
     @apply motion-safe:transition-[scale,border-color];
     @apply shrink-0 size-8.5;
-    background: var(--ngp-color-swatch-color);
     @apply rounded-lg;
     @apply shadow-md;
     @apply cursor-pointer;
+
+    background: var(--ngp-color-swatch-color);
 
     @variant data-selected {
       @apply border-2 border-ui;
@@ -136,11 +140,11 @@
 
   .mgnp-color-wheel {
     @apply relative;
-    background: var(--ngp-color-wheel-background);
     @apply w-45 h-auto aspect-square;
     @apply rounded-full shadow-xs;
     @apply touch-none select-none;
 
+    background: var(--ngp-color-wheel-background);
     mask: radial-gradient(
       farthest-side,
       transparent calc(100% - --spacing(6.5)),
@@ -156,13 +160,6 @@
     @apply border-2 rounded-full shadow-sm;
     @apply transform-[rotate(var(--ngp-color-wheel-hue))_translateY(--spacing(-19.25))];
 
-    ::before {
-      @apply content-none;
-      @apply absolute top-1/2 left-1/2;
-      @apply size-11;
-      @apply transform-[translate(-50%,-50%)];
-    }
-
     @apply not-data-mgnp-color-wheel-thumb-color:mgnp-color-wheel-thumb-color-ui;
     @apply data-[mgnp-color-wheel-thumb-color=ui]:mgnp-color-wheel-thumb-color-ui;
     @apply data-[mgnp-color-wheel-thumb-color=primary]:mgnp-color-wheel-thumb-color-primary;
@@ -171,5 +168,12 @@
     @apply data-[mgnp-color-wheel-thumb-color=success]:mgnp-color-wheel-thumb-color-success;
     @apply data-[mgnp-color-wheel-thumb-color=warning]:mgnp-color-wheel-thumb-color-warning;
     @apply data-[mgnp-color-wheel-thumb-color=danger]:mgnp-color-wheel-thumb-color-danger;
+  }
+
+  .mgnp-color-wheel-thumb::before {
+    @apply content-none;
+    @apply absolute top-1/2 left-1/2;
+    @apply size-11;
+    @apply transform-[translate(-50%,-50%)];
   }
 }
