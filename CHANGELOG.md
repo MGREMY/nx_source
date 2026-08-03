@@ -1,3 +1,19 @@
+## 0.23.0
+
+### 🚀 Features
+
+- **color-picker:** add color-picker ([#54](https://github.com/MGREMY/nx_source/pull/54))
+- **file-upload:** add file-upload ([#51](https://github.com/MGREMY/nx_source/pull/51))
+- **number-field:** add number-field ([#52](https://github.com/MGREMY/nx_source/pull/52))
+- **pagination:** add takeUntilDestroy on observable subscribe
+  ([aae73b2](https://github.com/MGREMY/nx_source/commit/aae73b2))
+- **popover:** add popover ([#53](https://github.com/MGREMY/nx_source/pull/53))
+
+### ❤️ Thank You
+
+- GREMY Miguel @MGREMY
+- Miguel Gremy @MGREMY
+
 ## 0.22.0
 
 ### 🚀 Features
