@@ -11,7 +11,7 @@ import { Component } from '@angular/core';
         <div mgnpInputOtp [size]="size">
           <input mgnpInputOtpInput />
 
-          @for (_ of slots(); track $index) {
+          @for (_ of slots; track $index) {
             <div mgnpInputOtpSlot></div>
           }
         </div>
