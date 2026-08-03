@@ -1,6 +1,6 @@
 import { MgnpInputOtp, MgnpInputOtpInput, MgnpInputOtpSlot } from '@mgremy/ng-primitives/input-otp';
 
-import { Component, computed, signal } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   imports: [MgnpInputOtp, MgnpInputOtpInput, MgnpInputOtpSlot],
@@ -8,10 +8,10 @@ import { Component, computed, signal } from '@angular/core';
     <div class="grid grid-cols-[max-content_1fr] gap-x-4 gap-y-2 w-full items-center">
       @for (size of _sizes; track $index) {
         <span>{{ size }}</span>
-        <div mgnpInputOtp [size]="size" [(mgnpInputOtpValue)]="value">
+        <div mgnpInputOtp [size]="size">
           <input mgnpInputOtpInput />
 
-          @for (_ of slots(); track $index) {
+          @for (_ of slots; track $index) {
             <div mgnpInputOtpSlot></div>
           }
         </div>
@@ -24,9 +24,5 @@ import { Component, computed, signal } from '@angular/core';
 })
 export default class SizeExample {
   readonly _sizes = ['xs', 'sm', 'md', 'lg', 'xl'];
-
-  readonly value = signal<string>('');
-  readonly length = signal<number>(6);
-
-  readonly slots = computed(() => Array.from({ length: this.length() }, (_, i) => i));
+  readonly slots = Array.from({ length: 6 }, (_, i) => i);
 }

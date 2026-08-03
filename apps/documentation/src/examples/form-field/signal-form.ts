@@ -37,7 +37,6 @@ import { heroChevronDown } from '@ng-icons/heroicons/outline';
 
 import { Component, signal } from '@angular/core';
 import { email, form, FormField, FormRoot, min, pattern, required } from '@angular/forms/signals';
-import { NgpComboboxPortal } from 'ng-primitives/combobox';
 
 @Component({
   imports: [

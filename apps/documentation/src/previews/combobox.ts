@@ -9,17 +9,17 @@ import {
 import { NgIcon, provideIcons } from '@ng-icons/core';
 import { heroChevronDown } from '@ng-icons/heroicons/outline';
 
-import { Component, signal } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   imports: [MgnpCombobox, MgnpComboboxButton, MgnpComboboxDropdown, MgnpComboboxOption, MgnpComboboxPortal, NgIcon],
   template: `
-    <div class="grid grid-cols-[max-content_1fr] gap-x-4 gap-y-2 w-full items-center">
+    <div class="flex flex-col gap-y-2 w-full items-center justify-center">
       @for (color of _colors; track $index) {
         <span>{{ color }}</span>
-        <div mgnpCombobox [(mgnpComboboxValue)]="selectedOption" [color]="color">
+        <div mgnpCombobox #combobox="mgnpCombobox" [color]="color">
           <button mgnpComboboxButton>
-            <span>{{ selectedOption() || 'Select an option' }}</span>
+            <span>{{ combobox.state().value() || 'Select an option' }}</span>
             <ng-icon name="heroChevronDown" />
           </button>
           <div *mgnpComboboxPortal mgnpComboboxDropdown>
@@ -37,7 +37,5 @@ import { Component, signal } from '@angular/core';
 })
 export default class Combobox {
   readonly _colors = ['ui', 'primary', 'accent', 'info', 'success', 'warning', 'danger'];
-
   readonly options = ['option 1', 'option 2', 'option 3'];
-  readonly selectedOption = signal<string>('');
 }

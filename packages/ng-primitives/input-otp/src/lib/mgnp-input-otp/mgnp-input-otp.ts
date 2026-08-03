@@ -1,6 +1,7 @@
 import { PropertyType } from '@mgremy/ng-primitives';
 
 import { Directive, input } from '@angular/core';
+import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { ControlValueAccessor } from '@angular/forms';
 import { injectInputOtpState, NgpInputOtp, provideInputOtpState } from 'ng-primitives/input-otp';
 import { ChangeFn, provideValueAccessor, TouchedFn } from 'ng-primitives/utils';
@@ -50,13 +51,13 @@ export class MgnpInputOtp implements ControlValueAccessor {
 
   constructor() {
     this.state()
-      .valueChange // TODO : pipe(takeUntilDestroyed())
+      .valueChange.pipe(takeUntilDestroyed())
       .subscribe((value) => {
         this.onChange?.(value);
       });
 
     this.state()
-      .complete // TODO : pipe(takeUntilDestroyed())
+      .complete.pipe(takeUntilDestroyed())
       .subscribe(() => {
         this.onTouched?.();
       });
@@ -72,9 +73,5 @@ export class MgnpInputOtp implements ControlValueAccessor {
 
   registerOnTouched(fn: TouchedFn): void {
     this.onTouched = fn;
-  }
-
-  setDisabledState(isDisabled: boolean): void {
-    this.state().disabled.set(isDisabled);
   }
 }

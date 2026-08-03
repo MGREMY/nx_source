@@ -8,7 +8,7 @@ import { Component } from '@angular/core';
 @Component({
   imports: [MgnpFileUpload, NgIcon],
   template: `
-    <div class="grid grid-cols-[max-content_1fr] gap-x-4 gap-y-2 w-full items-center">
+    <div class="flex flex-col gap-y-2 w-full items-center justify-center">
       @for (color of _colors; track $index) {
         <span>{{ color }}</span>
         <div

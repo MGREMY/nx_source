@@ -6,15 +6,10 @@ import { Component } from '@angular/core';
 @Component({
   imports: [MgnpPopover, MgnpPopoverTrigger, MgnpButton],
   template: `
-    <div class="grid grid-cols-[max-content_1fr] gap-2 w-full items-center justify-center">
+    <div class="flex flex-col gap-2 w-full items-center justify-center">
       @for (color of _colors; track $index) {
         <span>{{ color }}</span>
-        <button
-          class="max-w-1/2 justify-self-center"
-          mgnpButton
-          [aria-label]="'Open ' + color + ' popover'"
-          [color]="color"
-          [mgnpPopoverTrigger]="popover">
+        <button mgnpButton [aria-label]="'Open ' + color + ' popover'" [color]="color" [mgnpPopoverTrigger]="popover">
           Open popover
         </button>
 
