@@ -1,0 +1,98 @@
+@utility mgnp-date-picker-color {
+  @apply bg-ui;
+}
+
+@utility mgnp-date-picker-label-color-* {
+  @apply text-[--value(--text-color-*)];
+}
+
+@utility mgnp-date-picker-date-button-color-* {
+  @apply text-[color-mix(in_srgb,--value(--text-color-*),var(--mg-color-secondary-mix))];
+
+  @variant data-today {
+    @apply text-[--value(--text-color-*)];
+  }
+
+  @variant data-hover {
+    @apply text-inverse;
+    @apply bg-[color-mix(in_srgb,--value(--background-color-*),var(--mg-state-hover-mix))];
+  }
+
+  @variant data-press {
+    @apply text-inverse;
+    @apply bg-[color-mix(in_srgb,--value(--background-color-*),var(--mg-state-active-mix))];
+  }
+
+  @variant data-selected {
+    @apply text-inverse;
+    @apply bg-[color-mix(in_srgb,--value(--background-color-*),var(--mg-state-active-mix))];
+  }
+
+  @variant data-disabled,data-outside-month {
+    @apply text-[color-mix(in_srgb,--value(--text-color-*),var(--mg-color-tertiary-mix))];
+  }
+
+  @variant data-range-end {
+    @apply rounded-r-md rounded-l-none;
+  }
+
+  @variant data-range-start {
+    @apply rounded-l-md rounded-r-none;
+  }
+
+  @variant data-range-between {
+    @apply rounded-none;
+    @apply bg-[color-mix(in_srgb,--value(--background-color-*),var(--mg-state-active-mix))]/33;
+  }
+}
+
+@utility mgnp-date-picker-date-button-color-ui {
+  @variant data-hover {
+    @apply text-ui;
+    @apply bg-[color-mix(in_srgb,var(--background-color-ui),var(--mg-state-hover-mix))];
+  }
+
+  @variant data-press {
+    @apply text-ui;
+    @apply bg-[color-mix(in_srgb,var(--background-color-ui),var(--mg-state-active-mix))];
+  }
+
+  @variant data-selected {
+    @apply text-ui;
+    @apply bg-[color-mix(in_srgb,var(--background-color-ui),var(--mg-state-active-mix))];
+  }
+}
+
+@utility mgnp-date-picker-previous-month-color-* {
+  @apply border-[--value(--border-color-*)];
+
+  @variant data-hover {
+    @apply bg-[color-mix(in_srgb,--value(--background-color-*),var(--mg-state-hover-mix))];
+  }
+
+  @variant data-press {
+    @apply bg-[color-mix(in_srgb,--value(--background-color-*),var(--mg-state-active-mix))];
+  }
+
+  @variant data-disabled {
+    @apply cursor-default;
+    @apply opacity-50;
+  }
+}
+
+@utility mgnp-date-picker-next-month-color-* {
+  @apply border-[--value(--border-color-*)];
+
+  @variant data-hover {
+    @apply bg-[color-mix(in_srgb,--value(--background-color-*),var(--mg-state-hover-mix))];
+  }
+
+  @variant data-press {
+    @apply bg-[color-mix(in_srgb,--value(--background-color-*),var(--mg-state-active-mix))];
+  }
+
+  @variant data-disabled {
+    @apply cursor-default;
+    @apply opacity-50;
+  }
+}

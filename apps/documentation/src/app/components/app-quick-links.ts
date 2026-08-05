@@ -86,6 +86,7 @@ function getHeadingList(): HeadingData[] {
 
   return Array.from(headings ?? [])
     .filter((x) => !x.closest('app-example'))
+    .filter((x) => !x.closest('app-preview'))
     .map((heading) => {
       return {
         level: parseInt(heading.tagName.slice(1)),

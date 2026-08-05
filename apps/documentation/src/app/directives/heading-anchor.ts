@@ -2,7 +2,6 @@ import { isPlatformBrowser } from '@angular/common';
 import {
   afterNextRender,
   AfterViewInit,
-  DestroyRef,
   Directive,
   ElementRef,
   inject,
