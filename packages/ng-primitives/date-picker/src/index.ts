@@ -9,3 +9,5 @@ export * from './lib/mgnp-date-picker-next-month/mgnp-date-picker-next-month';
 export * from './lib/mgnp-date-picker-previous-month/mgnp-date-picker-previous-month';
 export * from './lib/mgnp-date-picker-row-render/mgnp-date-picker-row-render';
 export * from './lib/mgnp-date-range-picker/mgnp-date-range-picker';
+
+export * from './lib/mgnp-date-range';
