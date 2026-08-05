@@ -57,7 +57,7 @@ export class MgnpDateRangePicker<T = Date> implements ControlValueAccessor {
   protected onChangeFn?: ChangeFn<MgnpDateRange<T>>;
   protected onTouchedFn?: TouchedFn;
 
-  contructor() {
+  constructor() {
     this.state()
       .startDateChange.pipe(takeUntilDestroyed())
       .subscribe((value) => this.onChangeFn?.({ start: value, end: this.state().endDate() }));
