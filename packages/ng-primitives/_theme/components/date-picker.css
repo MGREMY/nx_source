@@ -1,0 +1,91 @@
+@import './date-picker/color.css';
+
+@layer components {
+  .mgnp-date-picker {
+    @apply mgnp-base mgnp-date-picker-color;
+    @apply inline-block w-full;
+    @apply rounded-lg shadow-sm;
+    @apply p-3;
+  }
+
+  .mgnp-date-picker-date-button {
+    all: unset;
+    @apply mgnp-base mgnp-focus;
+    @apply cursor-pointer;
+    @apply size-full;
+    @apply rounded-md;
+
+    @apply data-[mgnp-date-picker-date-button-color=ui]:mgnp-date-picker-date-button-color-ui;
+    @apply data-[mgnp-date-picker-date-button-color=primary]:mgnp-date-picker-date-button-color-primary;
+    @apply data-[mgnp-date-picker-date-button-color=accent]:mgnp-date-picker-date-button-color-accent;
+    @apply data-[mgnp-date-picker-date-button-color=info]:mgnp-date-picker-date-button-color-info;
+    @apply data-[mgnp-date-picker-date-button-color=success]:mgnp-date-picker-date-button-color-success;
+    @apply data-[mgnp-date-picker-date-button-color=warning]:mgnp-date-picker-date-button-color-warning;
+    @apply data-[mgnp-date-picker-date-button-color=danger]:mgnp-date-picker-date-button-color-danger;
+  }
+
+  .mgnp-date-picker-grid {
+    @apply mgnp-base;
+    @apply table-auto w-full text-center;
+  }
+
+  .mgnp-date-picker-header {
+    @apply mgnp-base;
+    @apply flex items-center justify-between;
+    @apply h-9 mb-4;
+  }
+
+  .mgnp-date-picker-label {
+    @apply mgnp-base;
+    @apply font-semibold;
+
+    @apply data-[mgnp-date-picker-label-color=ui]:mgnp-date-picker-label-color-ui;
+    @apply data-[mgnp-date-picker-label-color=primary]:mgnp-date-picker-label-color-primary;
+    @apply data-[mgnp-date-picker-label-color=accent]:mgnp-date-picker-label-color-accent;
+    @apply data-[mgnp-date-picker-label-color=info]:mgnp-date-picker-label-color-info;
+    @apply data-[mgnp-date-picker-label-color=success]:mgnp-date-picker-label-color-success;
+    @apply data-[mgnp-date-picker-label-color=warning]:mgnp-date-picker-label-color-warning;
+    @apply data-[mgnp-date-picker-label-color=danger]:mgnp-date-picker-label-color-danger;
+  }
+
+  .mgnp-date-picker-previous-month {
+    all: unset;
+    @apply mgnp-base mgnp-focus;
+    @apply cursor-pointer;
+    @apply bg-ui;
+    @apply flex items-center justify-center size-8;
+    @apply rounded-md border;
+
+    @apply data-[mgnp-date-picker-previous-month-color=ui]:mgnp-date-picker-previous-month-color-ui;
+    @apply data-[mgnp-date-picker-previous-month-color=primary]:mgnp-date-picker-previous-month-color-primary;
+    @apply data-[mgnp-date-picker-previous-month-color=accent]:mgnp-date-picker-previous-month-color-accent;
+    @apply data-[mgnp-date-picker-previous-month-color=info]:mgnp-date-picker-previous-month-color-info;
+    @apply data-[mgnp-date-picker-previous-month-color=success]:mgnp-date-picker-previous-month-color-success;
+    @apply data-[mgnp-date-picker-previous-month-color=warning]:mgnp-date-picker-previous-month-color-warning;
+    @apply data-[mgnp-date-picker-previous-month-color=danger]:mgnp-date-picker-previous-month-color-danger;
+  }
+
+  .mgnp-date-picker-next-month {
+    all: unset;
+    @apply mgnp-base mgnp-focus;
+    @apply cursor-pointer;
+    @apply bg-ui;
+    @apply flex items-center justify-center size-8;
+    @apply rounded-md border;
+
+    @apply data-[mgnp-date-picker-next-month-color=ui]:mgnp-date-picker-next-month-color-ui;
+    @apply data-[mgnp-date-picker-next-month-color=primary]:mgnp-date-picker-next-month-color-primary;
+    @apply data-[mgnp-date-picker-next-month-color=accent]:mgnp-date-picker-next-month-color-accent;
+    @apply data-[mgnp-date-picker-next-month-color=info]:mgnp-date-picker-next-month-color-info;
+    @apply data-[mgnp-date-picker-next-month-color=success]:mgnp-date-picker-next-month-color-success;
+    @apply data-[mgnp-date-picker-next-month-color=warning]:mgnp-date-picker-next-month-color-warning;
+    @apply data-[mgnp-date-picker-next-month-color=danger]:mgnp-date-picker-next-month-color-danger;
+  }
+
+  .mgnp-date-range-picker {
+    @apply mgnp-base mgnp-date-picker-color;
+    @apply inline-block w-full;
+    @apply rounded-lg shadow-sm;
+    @apply p-3;
+  }
+}
