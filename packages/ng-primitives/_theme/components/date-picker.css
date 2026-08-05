@@ -12,7 +12,7 @@
     all: unset;
     @apply mgnp-base mgnp-focus;
     @apply cursor-pointer;
-    @apply size-full;
+    @apply flex size-full items-center justify-center;
     @apply rounded-md;
 
     @apply data-[mgnp-date-picker-date-button-color=ui]:mgnp-date-picker-date-button-color-ui;
@@ -26,7 +26,7 @@
 
   .mgnp-date-picker-grid {
     @apply mgnp-base;
-    @apply table-auto w-full text-center;
+    @apply table-auto w-full;
   }
 
   .mgnp-date-picker-header {
