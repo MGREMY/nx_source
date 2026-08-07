@@ -8,8 +8,21 @@ import {
   MgnpComboboxPortal,
 } from '@mgremy/ng-primitives/combobox';
 import {
+  MgnpDatePicker,
+  MgnpDatePickerCell,
+  MgnpDatePickerCellRender,
+  MgnpDatePickerDateButton,
+  MgnpDatePickerGrid,
+  MgnpDatePickerHeader,
+  MgnpDatePickerLabel,
+  MgnpDatePickerNextMonth,
+  MgnpDatePickerPreviousMonth,
+  MgnpDatePickerRowRender,
+} from '@mgremy/ng-primitives/date-picker';
+import {
   MgnpDescription,
   MgnpError,
+  MgnpFormControl,
   MgnpFormField,
   MgnpInputGroup,
   MgnpInputGroupAddon,
@@ -23,18 +36,22 @@ import {
   MgnpNumberFieldInput,
 } from '@mgremy/ng-primitives/number-field';
 import { MgnpPassword, MgnpPasswordInput, MgnpPasswordToggle } from '@mgremy/ng-primitives/password';
+import { MgnpPopover, MgnpPopoverTrigger } from '@mgremy/ng-primitives/popover';
 import { MgnpSwitch, MgnpSwitchThumb } from '@mgremy/ng-primitives/switch';
 
 import { NgIcon, provideIcons } from '@ng-icons/core';
 import {
   heroAtSymbolMini,
   heroCheckMini,
+  heroChevronLeftMini,
+  heroChevronRightMini,
   heroEyeMini,
   heroEyeSlashMini,
   heroPhoneMini,
 } from '@ng-icons/heroicons/mini';
 import { heroChevronDown } from '@ng-icons/heroicons/outline';
 
+import { DatePipe } from '@angular/common';
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 
@@ -67,6 +84,20 @@ import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angula
     ReactiveFormsModule,
     MgnpSwitch,
     MgnpSwitchThumb,
+    MgnpDatePicker,
+    MgnpDatePickerPreviousMonth,
+    MgnpDatePickerNextMonth,
+    MgnpDatePickerLabel,
+    MgnpDatePickerGrid,
+    MgnpDatePickerHeader,
+    MgnpDatePickerRowRender,
+    MgnpDatePickerCell,
+    MgnpDatePickerCellRender,
+    MgnpDatePickerDateButton,
+    DatePipe,
+    MgnpPopover,
+    MgnpPopoverTrigger,
+    MgnpFormControl,
   ],
   template: `
     <form class="flex flex-col gap-4" [formGroup]="formGroup" (ngSubmit)="onSubmit()">
@@ -100,9 +131,16 @@ import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angula
       <div mgnpFormField>
         <div mgnpInputGroup>
           <div mgnpInputGroupAddon><p mgnpLabel>Birth date</p></div>
-          <input mgnpInput type="date" [formControl]="formGroup.controls.birthDate" />
+          <input
+            [mgnpPopoverTrigger]="datePickerPopover"
+            [mgnpPopoverTriggerContext]="{ control: formGroup.controls.birthDate }"
+            [formControl]="formGroup.controls.birthDate"
+            [value]="formGroup.controls.birthDate.value | date: 'longDate'"
+            placeholder="Select a date"
+            mgnpFormControl
+            readonly />
         </div>
-        <p mgnpError>This field is required.</p>
+        <p mgnpError mgnpErrorValidator="required">This field is required.</p>
       </div>
       <div mgnpFormField>
         <div mgnpInputGroup>
@@ -161,9 +199,54 @@ import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angula
 
       <button mgnpButton type="submit" color="primary" variant="outline" [disabled]="formGroup.invalid">Submit</button>
     </form>
+
+    <ng-template #datePickerPopover let-ctx>
+      <div mgnpPopover>
+        <div mgnpDatePicker #datePicker="mgnpDatePicker" [formControl]="ctx().control">
+          <div mgnpDatePickerHeader>
+            <button mgnpDatePickerPreviousMonth aria-label="previous month">
+              <ng-icon name="heroChevronLeftMini" />
+            </button>
+            <h2 mgnpDatePickerLabel>{{ datePicker.state().focusedDate() | date: 'longDate' }}</h2>
+            <button mgnpDatePickerNextMonth aria-label="next-month">
+              <ng-icon name="heroChevronRightMini" />
+            </button>
+          </div>
+          <table mgnpDatePickerGrid>
+            <thead>
+              <tr>
+                <th scope="col" abbr="Sunday">S</th>
+                <th scope="col" abbr="Monday">M</th>
+                <th scope="col" abbr="Tuesday">T</th>
+                <th scope="col" abbr="Wednesday">W</th>
+                <th scope="col" abbr="Thursday">T</th>
+                <th scope="col" abbr="Friday">F</th>
+                <th scope="col" abbr="Saturday">S</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *mgnpDatePickerRowRender>
+                <td *mgnpDatePickerCellRender="let date" mgnpDatePickerCell>
+                  <button mgnpDatePickerDateButton>{{ date.getDate() }}</button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </ng-template>
   `,
   providers: [
-    provideIcons({ heroCheckMini, heroChevronDown, heroAtSymbolMini, heroPhoneMini, heroEyeMini, heroEyeSlashMini }),
+    provideIcons({
+      heroCheckMini,
+      heroChevronDown,
+      heroAtSymbolMini,
+      heroPhoneMini,
+      heroEyeMini,
+      heroEyeSlashMini,
+      heroChevronLeftMini,
+      heroChevronRightMini,
+    }),
   ],
 })
 export default class FormField {
@@ -173,7 +256,7 @@ export default class FormField {
     password: '',
     birthDate: null,
     phoneNumber: '',
-    LifeMeaning: 42,
+    lifeMeaning: 42,
     accountType: null,
     acceptTelemetry: false,
     acceptNewsletter: true,
@@ -185,18 +268,22 @@ export default class FormField {
     password: new FormControl<string>(this.initialFormValue.password, [Validators.required]),
     birthDate: new FormControl<Date | null>(this.initialFormValue.birthDate, [Validators.required]),
     phoneNumber: new FormControl<string>(this.initialFormValue.phoneNumber, [
-      Validators.pattern('^[0-9]{0,1}[1-9]{1}([. -]?[0-9][0-9]){4}$'),
+      Validators.pattern(/^[0-9]{0,1}[1-9]{1}([. -]?[0-9][0-9]){4}$/),
     ]),
-    lifeMeaning: new FormControl<number>(this.initialFormValue.LifeMeaning, [Validators.required, Validators.min(0)]),
+    lifeMeaning: new FormControl<number>(this.initialFormValue.lifeMeaning, [Validators.required, Validators.min(0)]),
     accountType: new FormControl<string | null>(this.initialFormValue.accountType, [Validators.required]),
     acceptTelemetry: new FormControl<boolean>(this.initialFormValue.acceptTelemetry, [Validators.requiredTrue]),
     acceptNewsletter: new FormControl<boolean>(this.initialFormValue.acceptNewsletter),
   });
 
   onSubmit(): void {
-    const formValue = this.formGroup.value;
-    console.log(formValue);
+    console.log(this.formGroup.value);
 
     this.formGroup.reset(this.initialFormValue);
+    this.formGroup.markAsPristine();
+  }
+
+  log(obj: any): void {
+    console.log(obj);
   }
 }

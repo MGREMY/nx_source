@@ -1,14 +1,13 @@
-import { PropertyType } from '@mgremy/ng-primitives';
+import { MgnpValueAccessor, PropertyType } from '@mgremy/ng-primitives';
 
 import { Directive, input } from '@angular/core';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
-import { ControlValueAccessor } from '@angular/forms';
 import {
   injectNumberFieldState,
   NgpNumberField,
   provideNumberFieldState,
 } from 'ng-primitives/number-field';
-import { ChangeFn, provideValueAccessor, TouchedFn } from 'ng-primitives/utils';
+import { provideValueAccessor } from 'ng-primitives/utils';
 
 export type MgnpNumberFieldColor = PropertyType<
   'ui' | 'primary' | 'accent' | 'info' | 'success' | 'warning' | 'danger'
@@ -21,7 +20,6 @@ export type MgnpNumberFieldColor = PropertyType<
     class: 'mgnp-number-field mgnp-c-number-field',
     'data-mgnp-number-field': '',
     '[attr.data-mgnp-number-field-color]': 'color()',
-    '(focusout)': 'onTouchedFn?.()',
   },
   hostDirectives: [
     {
@@ -40,33 +38,24 @@ export type MgnpNumberFieldColor = PropertyType<
   ],
   exportAs: 'mgnpNumberField',
 })
-export class MgnpNumberField implements ControlValueAccessor {
+export class MgnpNumberField extends MgnpValueAccessor<number | null> {
   readonly state = injectNumberFieldState();
 
   readonly color = input<MgnpNumberFieldColor>('ui');
 
-  protected onChangeFn?: ChangeFn<number | null>;
-  protected onTouchedFn?: TouchedFn;
-
   constructor() {
+    super();
+
     this.state()
       .valueChange.pipe(takeUntilDestroyed())
-      .subscribe((value) => this.onChangeFn?.(value));
+      .subscribe((value) => this.formHandler.onChangedFn()?.(value));
   }
 
   writeValue(value: number | null): void {
     this.state().setValue(value);
   }
 
-  registerOnChange(fn: ChangeFn<number | null>): void {
-    this.onChangeFn = fn;
-  }
-
-  registerOnTouched(fn: TouchedFn): void {
-    this.onTouchedFn = fn;
-  }
-
-  setDisabledState(isDisabled: boolean): void {
+  override setDisabledState(isDisabled: boolean): void {
     this.state().setDisabled(isDisabled);
   }
 }

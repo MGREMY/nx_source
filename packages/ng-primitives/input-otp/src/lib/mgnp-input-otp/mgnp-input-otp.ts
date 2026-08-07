@@ -1,10 +1,9 @@
-import { PropertyType } from '@mgremy/ng-primitives';
+import { MgnpValueAccessor, PropertyType } from '@mgremy/ng-primitives';
 
 import { Directive, input } from '@angular/core';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
-import { ControlValueAccessor } from '@angular/forms';
 import { injectInputOtpState, NgpInputOtp, provideInputOtpState } from 'ng-primitives/input-otp';
-import { ChangeFn, provideValueAccessor, TouchedFn } from 'ng-primitives/utils';
+import { provideValueAccessor } from 'ng-primitives/utils';
 
 export type MgnpInputOtpColor = PropertyType<
   'ui' | 'primary' | 'accent' | 'info' | 'success' | 'warning' | 'danger'
@@ -19,7 +18,6 @@ export type MgnpInputOtpSize = PropertyType<'xs' | 'sm' | 'md' | 'lg' | 'xl'>;
     class: 'mgnp-input-otp mgnp-c-input-otp',
     'data-mgnp-input-otp': '',
     '[attr.data-mgnp-input-otp-color]': 'color()',
-    '(focusout)': 'onTouched?.()',
   },
   hostDirectives: [
     {
@@ -40,38 +38,25 @@ export type MgnpInputOtpSize = PropertyType<'xs' | 'sm' | 'md' | 'lg' | 'xl'>;
   ],
   exportAs: 'mgnpInputOtp',
 })
-export class MgnpInputOtp implements ControlValueAccessor {
+export class MgnpInputOtp extends MgnpValueAccessor<string> {
   readonly state = injectInputOtpState();
 
   readonly color = input<MgnpInputOtpColor>('ui');
   readonly size = input<MgnpInputOtpSize>('md');
 
-  protected onChange?: ChangeFn<string>;
-  protected onTouched?: TouchedFn;
-
   constructor() {
+    super();
+
     this.state()
       .valueChange.pipe(takeUntilDestroyed())
-      .subscribe((value) => {
-        this.onChange?.(value);
-      });
+      .subscribe((value) => this.formHandler.onChangedFn()?.(value));
 
     this.state()
       .complete.pipe(takeUntilDestroyed())
-      .subscribe(() => {
-        this.onTouched?.();
-      });
+      .subscribe(() => this.formHandler.onTouchedFn()?.());
   }
 
   writeValue(value: string | null | undefined): void {
     this.state().updateValue(value ?? '');
-  }
-
-  registerOnChange(fn: ChangeFn<string>): void {
-    this.onChange = fn;
-  }
-
-  registerOnTouched(fn: TouchedFn): void {
-    this.onTouched = fn;
   }
 }

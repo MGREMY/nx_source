@@ -28,4 +28,6 @@
 @utility mgnp-label-color-* {
   @apply text-[color-mix(in_srgb,--value(--text-color-*),var(--mg-color-secondary-mix))];
   @apply border-[--value(--border-color-*)];
+
+  @apply after:text-accent;
 }

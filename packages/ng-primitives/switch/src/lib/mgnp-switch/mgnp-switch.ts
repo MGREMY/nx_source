@@ -1,10 +1,9 @@
-import { PropertyType } from '@mgremy/ng-primitives';
+import { MgnpValueAccessor, PropertyType } from '@mgremy/ng-primitives';
 
 import { Directive, input } from '@angular/core';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
-import { ControlValueAccessor } from '@angular/forms';
 import { injectSwitchState, NgpSwitch, provideSwitchState } from 'ng-primitives/switch';
-import { ChangeFn, provideValueAccessor, TouchedFn } from 'ng-primitives/utils';
+import { provideValueAccessor } from 'ng-primitives/utils';
 
 export type MgnpSwitchColor = PropertyType<
   'ui' | 'primary' | 'accent' | 'info' | 'success' | 'warning' | 'danger'
@@ -17,7 +16,6 @@ export type MgnpSwitchColor = PropertyType<
     class: 'mgnp-switch mgnp-c-switch',
     'data-mgnp-switch': '',
     '[attr.data-mgnp-switch-color]': 'color()',
-    '(focusout)': 'onTouchedFn?.()',
   },
   hostDirectives: [
     {
@@ -28,33 +26,24 @@ export type MgnpSwitchColor = PropertyType<
   ],
   exportAs: 'mgnpSwitch',
 })
-export class MgnpSwitch implements ControlValueAccessor {
+export class MgnpSwitch extends MgnpValueAccessor<boolean> {
   readonly state = injectSwitchState();
 
   readonly color = input<MgnpSwitchColor>('ui');
 
-  protected onChangeFn?: ChangeFn<boolean>;
-  protected onTouchedFn?: TouchedFn;
-
   constructor() {
+    super();
+
     this.state()
       .checkedChange.pipe(takeUntilDestroyed())
-      .subscribe((value) => this.onChangeFn?.(value));
+      .subscribe((value) => this.formHandler.onChangedFn()?.(value));
   }
 
   writeValue(value: boolean): void {
     this.state().setChecked(value);
   }
 
-  registerOnChange(fn: ChangeFn<boolean>): void {
-    this.onChangeFn = fn;
-  }
-
-  registerOnTouched(fn: TouchedFn): void {
-    this.onTouchedFn = fn;
-  }
-
-  setDisabledState(value: boolean): void {
+  override setDisabledState(value: boolean): void {
     this.state().setDisabled(value);
   }
 }

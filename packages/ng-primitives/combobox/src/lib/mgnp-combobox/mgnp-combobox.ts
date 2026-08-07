@@ -1,9 +1,8 @@
-import { PropertyType } from '@mgremy/ng-primitives';
+import { MgnpValueAccessor, PropertyType } from '@mgremy/ng-primitives';
 
 import { Directive, input } from '@angular/core';
-import { ControlValueAccessor } from '@angular/forms';
 import { injectComboboxState, NgpCombobox, provideComboboxState } from 'ng-primitives/combobox';
-import { ChangeFn, provideValueAccessor, TouchedFn } from 'ng-primitives/utils';
+import { provideValueAccessor } from 'ng-primitives/utils';
 
 export type MgnpComboboxColor = PropertyType<
   'ui' | 'primary' | 'accent' | 'info' | 'success' | 'warning' | 'danger'
@@ -16,7 +15,6 @@ export type MgnpComboboxColor = PropertyType<
     class: 'mgnp-combobox mgnp-c-combobox',
     'data-mgnp-combobox': '',
     '[attr.data-mgnp-combobox-color]': 'color()',
-    '(focusout)': 'onTouchedFn?.()',
   },
   hostDirectives: [
     {
@@ -42,33 +40,24 @@ export type MgnpComboboxColor = PropertyType<
   ],
   exportAs: 'mgnpCombobox',
 })
-export class MgnpCombobox<T> implements ControlValueAccessor {
+export class MgnpCombobox<T> extends MgnpValueAccessor<T | undefined> {
   readonly state = injectComboboxState();
 
   readonly color = input<MgnpComboboxColor>('ui');
 
-  protected onChangeFn?: ChangeFn<T>;
-  protected onTouchedFn?: TouchedFn;
-
   constructor() {
+    super();
+
     this.state()
       .valueChange // TODO : pipe(takeUntilDestroyed())
-      .subscribe((value) => this.onChangeFn?.(value));
+      .subscribe((value) => this.formHandler.onChangedFn()?.(value));
   }
 
   writeValue(value: T): void {
     this.state().value.set(value);
   }
 
-  registerOnChange(fn: ChangeFn<T>): void {
-    this.onChangeFn = fn;
-  }
-
-  registerOnTouched(fn: TouchedFn): void {
-    this.onTouchedFn = fn;
-  }
-
-  setDisabledState(value: boolean): void {
+  override setDisabledState(value: boolean): void {
     this.state().disabled.set(value);
   }
 }

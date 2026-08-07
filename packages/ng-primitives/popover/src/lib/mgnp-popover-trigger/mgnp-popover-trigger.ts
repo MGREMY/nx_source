@@ -32,6 +32,7 @@ import {
         'ngpPopoverTriggerAnchor:mgnpPopoverTriggerAnchor',
         'ngpPopoverTriggerTrackPosition:mgnpPopoverTriggerTrackPosition',
         'ngpPopoverTriggerCooldown:mgnpPopoverTriggerCooldown',
+        'ngpPopoverTriggerKeepMounted:mgnpPopoverTriggerKeepMounted',
       ],
       outputs: ['ngpPopoverTriggerOpenChange:mgnpPopoverTriggerOpenChange'],
     },

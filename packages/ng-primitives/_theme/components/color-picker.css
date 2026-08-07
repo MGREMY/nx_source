@@ -37,7 +37,7 @@
   .mgnp-color-field {
     @apply mgnp-base mgnp-focus;
     @apply block;
-    @apply w-full;
+    @apply w-full h-max;
     @apply py-2 px-4;
     @apply border rounded-lg;
 

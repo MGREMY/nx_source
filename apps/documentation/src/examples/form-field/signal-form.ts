@@ -8,8 +8,21 @@ import {
   MgnpComboboxPortal,
 } from '@mgremy/ng-primitives/combobox';
 import {
+  MgnpDatePicker,
+  MgnpDatePickerCell,
+  MgnpDatePickerCellRender,
+  MgnpDatePickerDateButton,
+  MgnpDatePickerGrid,
+  MgnpDatePickerHeader,
+  MgnpDatePickerLabel,
+  MgnpDatePickerNextMonth,
+  MgnpDatePickerPreviousMonth,
+  MgnpDatePickerRowRender,
+} from '@mgremy/ng-primitives/date-picker';
+import {
   MgnpDescription,
   MgnpError,
+  MgnpFormControl,
   MgnpFormField,
   MgnpInputGroup,
   MgnpInputGroupAddon,
@@ -23,20 +36,36 @@ import {
   MgnpNumberFieldInput,
 } from '@mgremy/ng-primitives/number-field';
 import { MgnpPassword, MgnpPasswordInput, MgnpPasswordToggle } from '@mgremy/ng-primitives/password';
+import { MgnpPopover, MgnpPopoverTrigger } from '@mgremy/ng-primitives/popover';
 import { MgnpSwitch, MgnpSwitchThumb } from '@mgremy/ng-primitives/switch';
 
 import { NgIcon, provideIcons } from '@ng-icons/core';
 import {
   heroAtSymbolMini,
   heroCheckMini,
+  heroChevronLeftMini,
+  heroChevronRightMini,
   heroEyeMini,
   heroEyeSlashMini,
   heroPhoneMini,
 } from '@ng-icons/heroicons/mini';
 import { heroChevronDown } from '@ng-icons/heroicons/outline';
 
+import { DatePipe } from '@angular/common';
 import { Component, signal } from '@angular/core';
 import { email, form, FormField, FormRoot, min, pattern, required } from '@angular/forms/signals';
+
+type FormType = {
+  name: string;
+  email: string;
+  password: string;
+  birthDate: Date | null;
+  phoneNumber: string;
+  lifeMeaning: number;
+  accountType: string | null;
+  acceptTelemetry: boolean;
+  acceptNewsletter: boolean;
+};
 
 @Component({
   imports: [
@@ -68,6 +97,20 @@ import { email, form, FormField, FormRoot, min, pattern, required } from '@angul
     FormRoot,
     MgnpSwitch,
     MgnpSwitchThumb,
+    MgnpDatePicker,
+    MgnpDatePickerPreviousMonth,
+    MgnpDatePickerNextMonth,
+    MgnpDatePickerLabel,
+    MgnpDatePickerGrid,
+    MgnpDatePickerHeader,
+    MgnpDatePickerRowRender,
+    MgnpDatePickerCell,
+    MgnpDatePickerCellRender,
+    MgnpDatePickerDateButton,
+    DatePipe,
+    MgnpPopover,
+    MgnpPopoverTrigger,
+    MgnpFormControl,
   ],
   template: `
     <form class="flex flex-col gap-4" [formRoot]="form">
@@ -101,7 +144,13 @@ import { email, form, FormField, FormRoot, min, pattern, required } from '@angul
       <div mgnpFormField>
         <div mgnpInputGroup>
           <div mgnpInputGroupAddon><p mgnpLabel>Birth date</p></div>
-          <input mgnpInput type="date" [formField]="form.birthDate" />
+          <input
+            [mgnpPopoverTrigger]="datePickerPopover"
+            [mgnpPopoverTriggerContext]="{ field: form.birthDate }"
+            [value]="form.birthDate().value() | date: 'longDate'"
+            placeholder="Select a date"
+            readonly
+            mgnpFormControl />
         </div>
         <p mgnpError>This field is required.</p>
       </div>
@@ -115,7 +164,7 @@ import { email, form, FormField, FormRoot, min, pattern, required } from '@angul
       </div>
       <div mgnpFormField>
         <p mgnpLabel>What is the meaning of life ?</p>
-        <div mgnpNumberField mgnpNumberFieldMin="0" [formField]="form.LifeMeaning">
+        <div mgnpNumberField mgnpNumberFieldMin="0" [formField]="form.lifeMeaning">
           <button mgnpNumberFieldDecrement>-</button>
           <input mgnpNumberFieldInput />
           <button mgnpNumberFieldIncrement>+</button>
@@ -162,26 +211,71 @@ import { email, form, FormField, FormRoot, min, pattern, required } from '@angul
 
       <button mgnpButton type="submit" color="primary" variant="outline" [disabled]="form().invalid()">Submit</button>
     </form>
+
+    <ng-template #datePickerPopover let-ctx>
+      <div mgnpPopover>
+        <div mgnpDatePicker #datePicker="mgnpDatePicker" [formField]="ctx().field">
+          <div mgnpDatePickerHeader>
+            <button mgnpDatePickerPreviousMonth aria-label="previous month">
+              <ng-icon name="heroChevronLeftMini" />
+            </button>
+            <h2 mgnpDatePickerLabel>{{ datePicker.state().focusedDate() | date: 'longDate' }}</h2>
+            <button mgnpDatePickerNextMonth aria-label="next-month">
+              <ng-icon name="heroChevronRightMini" />
+            </button>
+          </div>
+          <table mgnpDatePickerGrid>
+            <thead>
+              <tr>
+                <th scope="col" abbr="Sunday">S</th>
+                <th scope="col" abbr="Monday">M</th>
+                <th scope="col" abbr="Tuesday">T</th>
+                <th scope="col" abbr="Wednesday">W</th>
+                <th scope="col" abbr="Thursday">T</th>
+                <th scope="col" abbr="Friday">F</th>
+                <th scope="col" abbr="Saturday">S</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *mgnpDatePickerRowRender>
+                <td *mgnpDatePickerCellRender="let date" mgnpDatePickerCell>
+                  <button mgnpDatePickerDateButton>{{ date.getDate() }}</button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </ng-template>
   `,
   providers: [
-    provideIcons({ heroCheckMini, heroChevronDown, heroAtSymbolMini, heroPhoneMini, heroEyeMini, heroEyeSlashMini }),
+    provideIcons({
+      heroCheckMini,
+      heroChevronDown,
+      heroAtSymbolMini,
+      heroPhoneMini,
+      heroEyeMini,
+      heroEyeSlashMini,
+      heroChevronLeftMini,
+      heroChevronRightMini,
+    }),
   ],
 })
 export default class SignalFormExample {
-  private readonly initialFormValue = {
+  private readonly initialFormValue: FormType = {
     name: '',
     email: '',
     password: '',
     birthDate: null,
     phoneNumber: '',
-    LifeMeaning: 42,
+    lifeMeaning: 42,
     accountType: null,
     acceptTelemetry: false,
     acceptNewsletter: true,
   };
 
   readonly form = form(
-    signal(this.initialFormValue),
+    signal({ ...this.initialFormValue }),
     (root) => {
       required(root.name);
 
@@ -194,8 +288,8 @@ export default class SignalFormExample {
 
       pattern(root.phoneNumber, /^[0-9]{0,1}[1-9]{1}([. -]?[0-9][0-9]){4}$/);
 
-      required(root.LifeMeaning);
-      min(root.LifeMeaning, 0);
+      required(root.lifeMeaning);
+      min(root.lifeMeaning, 0);
 
       required(root.accountType);
 
@@ -203,9 +297,10 @@ export default class SignalFormExample {
     },
     {
       submission: {
-        action: async (field) => {
-          console.log(field().value());
-          this.form().reset(this.initialFormValue);
+        action: async (f) => {
+          console.log(f().value());
+
+          f().reset({ ...this.initialFormValue });
 
           return;
         },

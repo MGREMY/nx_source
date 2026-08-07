@@ -91,5 +91,11 @@
     @variant md {
       @apply text-nowrap;
     }
+
+    @variant data-required {
+      @apply after:content-['*'];
+      @apply after:pl-1;
+      @apply after:font-bold;
+    }
   }
 }

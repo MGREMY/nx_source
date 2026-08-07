@@ -1,10 +1,9 @@
-import { PropertyType } from '@mgremy/ng-primitives';
+import { MgnpValueAccessor, PropertyType } from '@mgremy/ng-primitives';
 
 import { Directive, input } from '@angular/core';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
-import { ControlValueAccessor } from '@angular/forms';
 import { injectCheckboxState, NgpCheckbox, provideCheckboxState } from 'ng-primitives/checkbox';
-import { ChangeFn, provideValueAccessor, TouchedFn } from 'ng-primitives/utils';
+import { provideValueAccessor } from 'ng-primitives/utils';
 
 export type MgnpCheckboxColor = PropertyType<
   'ui' | 'primary' | 'accent' | 'info' | 'success' | 'warning' | 'danger'
@@ -20,7 +19,6 @@ export type MgnpCheckboxSize = PropertyType<'xs' | 'sm' | 'md' | 'lg' | 'xl'>;
     'data-mgnp-checkbox': '',
     '[attr.data-mgnp-checkbox-size]': 'size()',
     '[attr.data-mgnp-checkbox-color]': 'color()',
-    '(focusout)': 'onTouchedFn?.()',
   },
   hostDirectives: [
     {
@@ -40,34 +38,25 @@ export type MgnpCheckboxSize = PropertyType<'xs' | 'sm' | 'md' | 'lg' | 'xl'>;
   ],
   exportAs: 'mgnpCheckbox',
 })
-export class MgnpCheckbox implements ControlValueAccessor {
+export class MgnpCheckbox extends MgnpValueAccessor<boolean> {
   readonly state = injectCheckboxState();
-
-  protected onChangeFn?: ChangeFn<boolean>;
-  protected onTouchedFn?: TouchedFn;
 
   readonly color = input<MgnpCheckboxColor>('ui');
   readonly size = input<MgnpCheckboxSize>('md');
 
   constructor() {
+    super();
+
     this.state()
       .checkedChange.pipe(takeUntilDestroyed())
-      .subscribe((value) => this.onChangeFn?.(value));
+      .subscribe((value) => this.formHandler.onChangedFn()?.(value));
   }
 
   writeValue(value: boolean): void {
     this.state().setChecked(value);
   }
 
-  registerOnChange(fn: ChangeFn<boolean>): void {
-    this.onChangeFn = fn;
-  }
-
-  registerOnTouched(fn: TouchedFn): void {
-    this.onTouchedFn = fn;
-  }
-
-  setDisabledState(value: boolean): void {
+  override setDisabledState(value: boolean): void {
     this.state().setDisabled(value);
   }
 }
