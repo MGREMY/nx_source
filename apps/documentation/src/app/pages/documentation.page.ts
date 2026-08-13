@@ -1,13 +1,14 @@
-import { AppComponent } from '../app';
 import AppQuickLinks from '../components/app-quick-links';
 import { AppSidebar, SidebarTree } from '../components/app-sidebar';
 import { HeadingAnchor } from '../directives/heading-anchor';
 import { SourceLink } from '../directives/source-link';
 
+import { NgIcon, provideIcons } from '@ng-icons/core';
 import * as ICON from '@ng-icons/heroicons/outline';
+import { heroBars3BottomLeft } from '@ng-icons/heroicons/outline';
 
 import { injectContentFiles } from '@analogjs/content';
-import { ChangeDetectionStrategy, Component, inject, OnInit, viewChild } from '@angular/core';
+import { ChangeDetectionStrategy, Component, OnInit, signal } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 
 interface ContentAttributes {
@@ -20,41 +21,52 @@ interface ContentAttributes {
 }
 
 @Component({
-  imports: [AppSidebar, RouterOutlet, AppQuickLinks, HeadingAnchor, SourceLink],
+  imports: [AppSidebar, RouterOutlet, AppQuickLinks, HeadingAnchor, SourceLink, NgIcon],
   template: `
-    <div class="flex">
-      <app-sidebar
-        class="p-1 w-1/7 sticky top-18 max-h-192 h-full overflow-auto"
-        [(isOpen)]="_appComponent.isSidebarOpen"
-        [tree]="sidebarTree" />
+    @if (!sidebarOpen()) {
+      <button
+        class="absolute w-6 h-6 left-4 top-16 inline-flex lg:hidden items-center justify-center cursor-pointer"
+        (click)="toggleSidebar()">
+        <ng-icon name="heroBars3BottomLeft" />
+      </button>
+    }
 
-      <article
-        class="flex flex-col mx-auto prose size-full max-w-full xl:max-w-2xl dark:prose-invert overflow-hidden"
-        data-page-content
-        appHeadingAnchor
-        appSourceLink
-        #headingAnchor="appHeadingAnchor"
-        #sourceLink="appSourceLink"
-        (examplesLoaded)="reloadQuickLinks()"
-        (examplesLoaded)="reloadHeadingAnchor()"
-        (metadatasLoaded)="reloadQuickLinks()"
-        (metadatasLoaded)="reloadHeadingAnchor()">
-        <router-outlet />
-      </article>
+    <div
+      class="flex min-h-[calc(100vh-(--spacing(16)))] max-h-[calc(100vh-(--spacing(16)))] divide-x divide-ui p-6 gap-8">
+      <aside class="sticky left-0 hidden z-1 pr-2 lg:inline-block w-sm overflow-y-scroll">
+        <app-sidebar
+          [(isOpen)]="sidebarOpen"
+          [tree]="sidebarTree" />
+      </aside>
 
-      <app-quick-links
-        #quickLinks="appQuickLinks"
-        class="p-1 w-1/7 sticky top-18 max-h-192 h-full overflow-auto" />
+      <main class="flex gap-6 w-full">
+        <article
+          class="prose dark:prose-invert max-w-none flex-auto overflow-y-scroll scrollbar-none"
+          data-page-content
+          appHeadingAnchor
+          appSourceLink
+          #headingAnchor="appHeadingAnchor"
+          #sourceLink="appSourceLink"
+          (examplesLoaded)="quickLinks.updateLinks()"
+          (examplesLoaded)="headingAnchor.updateAnchors()"
+          (metadatasLoaded)="quickLinks.updateLinks()"
+          (metadatasLoaded)="headingAnchor.updateAnchors()">
+          <router-outlet />
+        </article>
+
+        <app-quick-links
+          #quickLinks="appQuickLinks"
+          class="hidden xl:inline-block w-56" />
+      </main>
     </div>
   `,
+  providers: [provideIcons({ heroBars3BottomLeft })],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export default class DocumentationPage implements OnInit {
-  private readonly quickLinks = viewChild<AppQuickLinks>('quickLinks');
-  private readonly headingAnchor = viewChild<HeadingAnchor>('headingAnchor');
+  protected readonly contents = injectContentFiles<ContentAttributes>();
 
-  protected readonly _appComponent = inject(AppComponent);
-  readonly contents = injectContentFiles<ContentAttributes>();
+  readonly sidebarOpen = signal(false);
 
   readonly sidebarTree = [] as SidebarTree[];
 
@@ -160,11 +172,7 @@ export default class DocumentationPage implements OnInit {
     }
   }
 
-  reloadQuickLinks(): void {
-    this.quickLinks()?.updateLinks();
-  }
-
-  reloadHeadingAnchor(): void {
-    this.headingAnchor()?.updateAnchors();
+  toggleSidebar(): void {
+    this.sidebarOpen.update((x) => !x);
   }
 }

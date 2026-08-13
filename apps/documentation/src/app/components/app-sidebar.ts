@@ -139,9 +139,7 @@ export class AppSidebarItem {
   selector: 'app-sidebar',
   imports: [AppSidebarItem, NgTemplateOutlet, MgnpDialog, MgnpDialogOverlay],
   template: `
-    <div class="hidden xl:inline-block size-full">
-      <ng-container [ngTemplateOutlet]="content" />
-    </div>
+    <ng-container [ngTemplateOutlet]="content" />
 
     <ng-template #drawer>
       <div
@@ -150,7 +148,7 @@ export class AppSidebarItem {
         drawerPosition="start">
         <div
           mgnpDialog
-          class="w-8/12 overflow-y-auto">
+          class="w-10/12 overflow-y-auto">
           <ng-container [ngTemplateOutlet]="content" />
         </div>
       </div>

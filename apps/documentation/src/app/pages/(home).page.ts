@@ -7,7 +7,7 @@ import { RouterLink } from '@angular/router';
 @Component({
   imports: [RouterLink, MgnpButton],
   template: `
-    <section class="flex flex-col items-center">
+    <main class="flex flex-col items-center p-6">
       <div class="grid grid-cols-1 w-full gap-6 lg:gap-0 lg:w-3/4 lg:grid-cols-2">
         <div class="flex flex-col items-center justify-center gap-6">
           <h1 class="font-bold text-4xl sm:text-6xl text-primary">@mgremy</h1>
@@ -65,7 +65,7 @@ import { RouterLink } from '@angular/router';
           </div>
         </div>
       </div>
-    </section>
+    </main>
   `,
   changeDetection: ChangeDetectionStrategy.OnPush,
 })

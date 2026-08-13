@@ -6,11 +6,11 @@ import {
 } from '@mgremy/ng-primitives-extended/navbar';
 
 import { NgIcon, provideIcons } from '@ng-icons/core';
-import { heroBars3BottomLeft, heroBars4, heroMoon, heroSun } from '@ng-icons/heroicons/outline';
+import { heroBars4, heroMoon, heroSun } from '@ng-icons/heroicons/outline';
 import { octMarkGithub } from '@ng-icons/octicons';
 
-import { ChangeDetectionStrategy, Component, inject, signal } from '@angular/core';
-import { isActive, Router, RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
+import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
+import { RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -24,7 +24,7 @@ import { isActive, Router, RouterLink, RouterLinkActive, RouterOutlet } from '@a
     NgIcon,
   ],
   template: `
-    <header class="fixed top-0 w-full z-100">
+    <header class="sticky top-0 z-60 h-16">
       <nav
         mgnpNavbar
         class="border-b-2 border-b-primary">
@@ -77,36 +77,19 @@ import { isActive, Router, RouterLink, RouterLinkActive, RouterOutlet } from '@a
       </nav>
     </header>
 
-    <main class="mt-16 p-8 relative size-full">
-      @if (_isSidebarDisplayed()) {
-        <button
-          class="absolute w-6 h-6 left-4 top-4 inline-flex xl:hidden items-center justify-center cursor-pointer"
-          (click)="toggleSidebar()">
-          <ng-icon name="heroBars3BottomLeft" />
-        </button>
-      }
-
-      <router-outlet />
-    </main>
+    <router-outlet />
   `,
-  providers: [provideIcons({ heroBars4, heroSun, heroMoon, heroBars3BottomLeft, octMarkGithub })],
+  providers: [provideIcons({ heroBars4, heroSun, heroMoon, octMarkGithub })],
   changeDetection: ChangeDetectionStrategy.OnPush,
+  host: { class: 'block min-h-screen' },
 })
 export class AppComponent {
   private readonly _themeService = inject(THEME_SERVICE);
-  private readonly _router = inject(Router);
-
-  protected readonly _isSidebarDisplayed = isActive('/documentation', this._router);
-  readonly isSidebarOpen = signal(false);
 
   toggleTheme(): void {
     const currentTheme = this._themeService.getTheme();
 
     if (currentTheme === 'light') this._themeService.setTheme('dark');
     else if (currentTheme === 'dark') this._themeService.setTheme('light');
-  }
-
-  toggleSidebar(): void {
-    this.isSidebarOpen.update((x) => !x);
   }
 }
