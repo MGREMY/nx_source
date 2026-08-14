@@ -1,7 +1,7 @@
 @layer components {
   .mgnp-loader {
     @apply transition;
-    @apply self-center;
+    @apply self-center mx-auto;
   }
 
   .mgnp-loader-svg {

@@ -7,6 +7,7 @@
   --mg-background-success: light-dark(var(--color-green-500), var(--color-green-500));
   --mg-background-warning: light-dark(var(--color-yellow-500), var(--color-yellow-500));
   --mg-background-danger: light-dark(var(--color-red-500), var(--color-red-500));
+  --mg-background-inverse: light-dark(var(--color-black), var(--color-white));
 
   /* Text */
   --mg-text-ui: light-dark(var(--color-black), var(--color-white));
@@ -48,6 +49,7 @@
   --background-color-success: var(--mg-background-success);
   --background-color-warning: var(--mg-background-warning);
   --background-color-danger: var(--mg-background-danger);
+  --background-color-inverse: var(--mg-background-inverse);
 
   /* Text */
   --text-color-ui: var(--mg-text-ui);
