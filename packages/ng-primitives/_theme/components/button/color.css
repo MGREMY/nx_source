@@ -39,13 +39,8 @@
     @variant data-hover,data-press {
       @apply text-ui;
 
-      @variant dark {
-        @apply scheme-light;
-      }
-
-      @variant light {
-        @apply scheme-dark;
-      }
+      @apply dark:scheme-light;
+      @apply light:scheme-dark;
     }
   }
 }

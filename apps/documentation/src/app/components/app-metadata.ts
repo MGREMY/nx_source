@@ -62,14 +62,54 @@ type ComponentGroup = {
             {{ directive.name }}
           </h3>
 
+          @if (directive.hostDirectives.length > 0) {
+            @for (hostDirective of directive.hostDirectives; track $index) {
+              <h4 class="ml-4 mt-4 text-lg">
+                Host directive mapping -
+                <span class="font-normal text-secondary">{{ hostDirective.directive }}</span>
+              </h4>
+
+              @if (hostDirective.inputs.length > 0 || hostDirective.outputs.length > 0) {
+                <div class="ml-8 mt-2 border border-ui rounded-md *:last:border-b-0">
+                  <div
+                    class="grid grid-cols-[0.5fr_1fr_1fr] border-b border-b-ui px-4 py-1 bg-[color-mix(in_srgb,var(--background-color-ui),var(--mg-state-hover-mix))]">
+                    <span>Type</span>
+                    <span>Name</span>
+                    <span>Forwarded to</span>
+                  </div>
+
+                  @for (input of hostDirective.inputs; track $index) {
+                    @let inputSplit = input.split(':');
+
+                    <div class="grid grid-cols-[0.5fr_1fr_1fr] border-b border-b-ui px-4 py-1">
+                      <code class="font-semibold">Input</code>
+                      <code class="text-secondary">{{ inputSplit[1] }}</code>
+                      <code class="text-secondary">{{ inputSplit[0] }}</code>
+                    </div>
+                  }
+
+                  @for (outputs of hostDirective.outputs; track $index) {
+                    @let outputsSplit = outputs.split(':');
+
+                    <div class="grid grid-cols-[0.5fr_1fr_1fr] border-b border-b-ui px-4 py-1">
+                      <code class="font-semibold">Output</code>
+                      <code class="text-secondary">{{ outputsSplit[1] }}</code>
+                      <code class="text-secondary">{{ outputsSplit[0] }}</code>
+                    </div>
+                  }
+                </div>
+              }
+            }
+          }
+
           @if (
             directive.inputs.length !== 0 && !directive.inputs.every((x) => x.fromHostDirective)
           ) {
             <h4 class="ml-4 mt-4 text-lg font-semibold">Inputs</h4>
 
-            <div class="ml-8 mt-2 border border-ui rounded-md text-center *:last:border-b-0">
+            <div class="ml-8 mt-2 border border-ui rounded-md *:last:border-b-0">
               <div
-                class="grid grid-cols-[1.5fr_1fr_2fr_1fr] border-b border-b-ui px-2 py-1 bg-[color-mix(in_srgb,var(--background-color-ui),var(--mg-state-hover-mix))]">
+                class="grid grid-cols-[0.75fr_1fr_2fr_1fr] border-b border-b-ui px-4 py-1 bg-[color-mix(in_srgb,var(--background-color-ui),var(--mg-state-hover-mix))]">
                 <span>Name</span>
                 <span>Type</span>
                 <span>Possible values</span>
@@ -79,13 +119,13 @@ type ComponentGroup = {
               @let inputs = directive.inputs.filter((x) => !x.fromHostDirective);
 
               @for (input of inputs; track $index) {
-                <div class="grid grid-cols-[1.5fr_1fr_2fr_1fr] border-b border-b-ui px-2 py-1">
-                  <span>{{ input.name }}</span>
-                  <span>{{ input.type }}</span>
+                <div class="grid grid-cols-[0.75fr_1fr_2fr_1fr] border-b border-b-ui px-4 py-1">
+                  <code>{{ input.name }}</code>
+                  <code class="text-secondary">{{ input.type }}</code>
                   <span>
                     @if (input.possibleValues) {
                       @for (possibleValue of input.possibleValues; track $index) {
-                        <span class="font-semibold">{{ possibleValue }}</span>
+                        <code class="font-semibold">{{ possibleValue }}</code>
 
                         @if ($index < input.possibleValues.length - 1) {
                           /
@@ -93,7 +133,7 @@ type ComponentGroup = {
                       }
                     }
                   </span>
-                  <span>{{ input.defaultValue }}</span>
+                  <code class="text-secondary">{{ input.defaultValue }}</code>
                 </div>
               }
             </div>
@@ -102,11 +142,11 @@ type ComponentGroup = {
           @if (
             directive.outputs.length !== 0 && !directive.outputs.every((x) => x.fromHostDirective)
           ) {
-            <h4 class="ml-4 mt-4 text-lg font-semibold">Inputs</h4>
+            <h4 class="ml-4 mt-4 text-lg font-semibold">Ouputs</h4>
 
-            <div class="ml-8 mt-2 border border-ui rounded-md text-center *:last:border-b-0">
+            <div class="ml-8 mt-2 border border-ui rounded-md *:last:border-b-0">
               <div
-                class="grid grid-cols-[1.5fr_1fr] border-b border-b-ui px-2 py-1 bg-[color-mix(in_srgb,var(--background-color-ui),var(--mg-state-hover-mix))]">
+                class="grid grid-cols-[1fr_1fr] border-b border-b-ui px-2 py-1 bg-[color-mix(in_srgb,var(--background-color-ui),var(--mg-state-hover-mix))]">
                 <span>Name</span>
                 <span>Type</span>
               </div>
@@ -114,62 +154,20 @@ type ComponentGroup = {
               @let outputs = directive.outputs.filter((x) => !x.fromHostDirective);
 
               @for (output of outputs; track $index) {
-                <div class="grid grid-cols-[1.5fr_1fr] border-b border-b-ui px-2 py-1">
-                  <span>{{ output.name }}</span>
-                  <span>{{ output.type }}</span>
+                <div class="grid grid-cols-[1fr_1fr] border-b border-b-ui px-4 py-1">
+                  <code>{{ output.name }}</code>
+                  <code class="text-secondary">{{ output.type }}</code>
                 </div>
               }
             </div>
           }
 
-          @if (directive.hostDirectives.length > 0) {
-            @for (hostDirective of directive.hostDirectives; track $index) {
-              <h4 class="ml-4 mt-4 text-lg font-semibold">
-                Host directive mapping -
-                <span class="font-normal">{{ hostDirective.directive }}</span>
-              </h4>
-
-              @if (hostDirective.inputs.length > 0 || hostDirective.outputs.length > 0) {
-                <div class="ml-8 mt-2 border border-ui rounded-md text-center *:last:border-b-0">
-                  <div
-                    class="grid grid-cols-[1fr_1.5fr_1.5fr] border-b border-b-ui px-2 py-1 bg-[color-mix(in_srgb,var(--background-color-ui),var(--mg-state-hover-mix))]">
-                    <span>Type</span>
-                    <span>Name</span>
-                    <span>Forwarded to</span>
-                  </div>
-
-                  @for (input of hostDirective.inputs; track $index) {
-                    @let inputSplit = input.split(':');
-
-                    <div class="grid grid-cols-[1fr_1.5fr_1.5fr] border-b border-b-ui px-2 py-1">
-                      <span class="font-semibold">Input</span>
-                      <span>{{ inputSplit[1] }}</span>
-                      <span>{{ inputSplit[0] }}</span>
-                    </div>
-                  }
-
-                  @for (outputs of hostDirective.outputs; track $index) {
-                    @let outputsSplit = outputs.split(':');
-
-                    <div class="grid grid-cols-[1fr_1.5fr_1.5fr] border-b border-b-ui px-2 py-1">
-                      <span class="font-semibold">Output</span>
-                      <span>{{ outputsSplit[1] }}</span>
-                      <span>{{ outputsSplit[0] }}</span>
-                    </div>
-                  }
-                </div>
-              } @else {
-                <div class="h-px my-8 bg-(--border-color-ui) border-0"></div>
-              }
-            }
-          }
-
           @if (directive.host && directive.host.length > 0) {
             <h4 class="ml-4 mt-4 text-lg font-semibold">CSS</h4>
 
-            <div class="ml-8 mt-2 border border-ui rounded-md text-center *:last:border-b-0">
+            <div class="ml-8 mt-2 border border-ui rounded-md *:last:border-b-0">
               <div
-                class="grid grid-cols-[1fr_1fr] border-b border-b-ui px-2 py-1 bg-[color-mix(in_srgb,var(--background-color-ui),var(--mg-state-hover-mix))]">
+                class="grid grid-cols-[1fr_1fr] border-b border-b-ui px-4 py-1 bg-[color-mix(in_srgb,var(--background-color-ui),var(--mg-state-hover-mix))]">
                 <span>Class</span>
                 <span>Custom class</span>
               </div>
@@ -180,13 +178,17 @@ type ComponentGroup = {
                   @let class = value.split(' ').find((x) => !x.includes('-c-'));
                   @let customClass = value.split(' ').find((x) => x.includes('-c-'));
 
-                  <div class="grid grid-cols-[1fr_1fr] border-b border-b-ui px-2 py-1">
-                    <span>{{ class }}</span>
-                    <span>{{ customClass }}</span>
+                  <div class="grid grid-cols-[1fr_1fr] border-b border-b-ui px-4 py-1">
+                    <code class="text-secondary">{{ class }}</code>
+                    <code class="text-secondary">{{ customClass }}</code>
                   </div>
                 }
               }
             </div>
+          }
+
+          @if ($index < metadata.directives.length - 1) {
+            <div class="h-px my-8 bg-(--border-color-ui) border-0"></div>
           }
         }
       }
@@ -194,7 +196,7 @@ type ComponentGroup = {
   `,
   providers: [],
   changeDetection: ChangeDetectionStrategy.OnPush,
-  host: { class: 'not-prose' },
+  host: { class: 'not-prose text-ui' },
 })
 export class AppMetadata {
   private readonly elementRef = inject(ElementRef<HTMLElement>);

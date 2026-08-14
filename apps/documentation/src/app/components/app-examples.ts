@@ -4,7 +4,7 @@ import { MgnpButton } from '@mgremy/ng-primitives/button';
 import { NgIcon, provideIcons } from '@ng-icons/core';
 import { heroArrowPath } from '@ng-icons/heroicons/outline';
 
-import { NgClass, NgComponentOutlet } from '@angular/common';
+import { NgClass, NgComponentOutlet, TitleCasePipe } from '@angular/common';
 import {
   afterNextRender,
   ChangeDetectionStrategy,
@@ -25,8 +25,8 @@ import { codeToHtml } from 'shiki';
   selector: 'app-example',
   imports: [NgComponentOutlet, NgClass, NgIcon, MgnpButton],
   template: `
-    <div class="relative flex flex-col">
-      <div class="absolute inset-x-0 top-0 flex items-center justify-between gap-x-2">
+    <div class="flex flex-col">
+      <div class="flex items-center justify-between gap-x-2">
         <div class="flex items-center gap-x-2">
           <!-- Preview/Source Toggle -->
           <div
@@ -35,7 +35,7 @@ import { codeToHtml } from 'shiki';
               class="w-16 rounded-md px-2 py-1.5 text-xs font-medium outline-hidden hover:cursor-pointer border-ui transition-colors"
               [ngClass]="{
                 'bg-ui text-ui shadow-xs border': mode() === 'preview',
-                'text-ui/33 hover:text-ui': mode() !== 'preview',
+                'text-secondary hover:text-ui': mode() !== 'preview',
               }"
               (click)="mode.set('preview')">
               Preview
@@ -44,7 +44,7 @@ import { codeToHtml } from 'shiki';
               class="w-16 rounded-md px-2 py-1.5 text-xs font-medium outline-hidden hover:cursor-pointer border-ui transition-colors"
               [ngClass]="{
                 'bg-ui text-ui shadow-xs border': mode() === 'source',
-                'text-ui/33 hover:text-ui': mode() !== 'source',
+                'text-secondary hover:text-ui': mode() !== 'source',
               }"
               (click)="mode.set('source')">
               Source
@@ -64,16 +64,16 @@ import { codeToHtml } from 'shiki';
         </div>
       </div>
 
-      <div class="relative mt-10 w-full flex-1">
+      <div class="mt-2 w-full flex-1">
         @if (mode() === 'preview') {
           <div
-            class="not-prose flex h-full min-h-70 w-full p-8 items-center justify-center rounded-xl border border-ui bg-[color-mix(in_srgb,var(--background-color-ui),light-dark(#000,#fff)_2%)] transition-colors *:contents">
+            class="not-prose flex h-full min-h-70 w-full p-8 items-center justify-center bg-[color-mix(in_srgb,var(--background-color-ui),light-dark(#000,#fff)_2%)] rounded-xl border border-ui transition-colors *:contents">
             <ng-container [ngComponentOutlet]="preview()" />
           </div>
         }
 
         <div
-          class="rounded-xl bg-transparent transition-colors"
+          class="rounded-xl"
           [hidden]="mode() !== 'source'">
           <div
             class="h-fit *:mt-0"
@@ -107,7 +107,7 @@ export class AppExample {
 
 @Component({
   selector: 'app-examples',
-  imports: [AppExample, MgnpLoader],
+  imports: [AppExample, MgnpLoader, TitleCasePipe],
   template: `
     @if (isLoading()) {
       <div class="flex items-center justify-center">
@@ -117,7 +117,9 @@ export class AppExample {
       @if (items().length > 0) {
         <h2 id="examples">Examples</h2>
         @for (item of items(); track $index) {
-          <h3 [id]="'example-' + item.name">{{ item.name }}</h3>
+          <h3 [id]="'example-' + item.name">
+            {{ item.name | titlecase }}
+          </h3>
           <app-example
             [code]="item.code"
             [preview]="item.preview" />

@@ -14,13 +14,14 @@ type ComponentGroup = {
   template: `
     <div class="flex flex-col grow">
       @if (selectedMetadata() && selectedMetadata()!.length > 1) {
-        <div class="flex flex-row justify-around border-b border-b-ui overflow-x-auto">
+        <div
+          class="flex flex-row justify-around border-b border-b-ui overflow-x-auto transition-colors">
           @for (componentGroup of selectedMetadata(); track componentGroup.name) {
             <button
-              class="w-full min-w-32 items-center py-2 bg-ui hover:cursor-pointer hover:bg-[color-mix(in_srgb,var(--background-color-ui),var(--mg-state-hover-mix))] transition-colors"
+              class="w-full min-w-32 items-center py-2 border-b hover:cursor-pointer hover:bg-[color-mix(in_srgb,var(--background-color-ui),var(--mg-state-hover-mix))] transition-colors"
               [ngClass]="{
-                'border-b border-(--text-color-accent) text-accent':
-                  selectedStyle() === componentGroup.name,
+                'border-(--text-color-accent) text-accent': selectedStyle() === componentGroup.name,
+                'border-transparent text-secondary': selectedStyle() !== componentGroup.name,
               }"
               (click)="selectedStyle.set(componentGroup.name)">
               {{ componentGroup.name }}
@@ -37,7 +38,7 @@ type ComponentGroup = {
         [innerHTML]="style()"></div>
       <button
         class="w-full items-center rounded-b-md h-8 bg-[color-mix(in_srgb,var(--background-color-ui),var(--mg-state-hover-mix))] hover:cursor-pointer transition-colors"
-        (click)="isOpen.set(!isOpen())">
+        (click)="isOpen.update((x) => !x)">
         {{ isOpen() === false ? 'Show all' : 'Collapse' }}
       </button>
     </div>

@@ -23,9 +23,8 @@ import { filter } from 'rxjs/operators';
       @for (link of links(); track link.id) {
         <li>
           <button
-            class="block h-8 cursor-pointer items-center truncate rounded-lg py-1.5 font-light hover:text-accent transition-colors"
-            [class.pl-4]="link.level === 3"
-            (click)="scrollTo(link.id)">
+            class="block h-8 cursor-pointer items-center truncate rounded-lg py-1.5 font-light text-secondary hover:text-accent transition-colors"
+            [class.pl-4]="link.level === 3">
             {{ link.text }}
           </button>
         </li>
@@ -63,13 +62,6 @@ export default class AppQuickLinks implements AfterViewInit {
     if (isPlatformBrowser(this.platformId)) {
       this.updateLinks();
     }
-  }
-
-  scrollTo(id: string): void {
-    window.scrollTo({
-      top: document.getElementById(id)?.offsetTop,
-      behavior: 'smooth',
-    });
   }
 
   updateLinks(): void {

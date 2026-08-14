@@ -32,14 +32,14 @@ interface ContentAttributes {
     }
 
     <div
-      class="flex min-h-[calc(100vh-(--spacing(16)))] max-h-[calc(100vh-(--spacing(16)))] divide-x divide-ui p-6 gap-8">
+      class="flex min-h-[calc(100vh-(--spacing(16)))] max-h-[calc(100vh-(--spacing(16)))] divide-x divide-ui px-6 pt-3 pb-0 gap-8">
       <aside class="sticky left-0 hidden z-1 pr-2 lg:inline-block w-sm overflow-y-scroll">
         <app-sidebar
           [(isOpen)]="sidebarOpen"
           [tree]="sidebarTree" />
       </aside>
 
-      <main class="flex gap-6 w-full">
+      <main class="flex gap-6 min-h-0 w-full">
         <article
           class="prose dark:prose-invert max-w-none flex-auto overflow-y-scroll scrollbar-none"
           data-page-content

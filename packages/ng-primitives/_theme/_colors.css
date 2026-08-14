@@ -18,6 +18,7 @@
   --mg-text-warning: light-dark(var(--color-yellow-700), var(--color-yellow-300));
   --mg-text-danger: light-dark(var(--color-red-700), var(--color-red-300));
 
+  --mg-text-secondary: color-mix(in srgb, var(--mg-text-ui), var(--mg-text-inverse) 33%);
   --mg-text-inverse: light-dark(var(--color-white), var(--color-black));
   --mg-text-placeholder: light-dark(var(--color-stone-400), var(--color-stone-400));
 
@@ -60,6 +61,7 @@
   --text-color-warning: var(--mg-text-warning);
   --text-color-danger: var(--mg-text-danger);
 
+  --text-color-secondary: var(--mg-text-secondary);
   --text-color-inverse: var(--mg-text-inverse);
   --text-color-placeholder: var(--mg-text-placeholder);
 
