@@ -19,7 +19,6 @@
 
     @variant data-[mgnp-navbar-content-is-always-open], md {
       @apply flex flex-1 flex-row;
-      @apply m-auto;
 
       ul {
         @apply flex flex-row gap-4;

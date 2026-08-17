@@ -32,7 +32,7 @@ import { RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
           class="cursor-pointer"
           [routerLink]="['/']">
           <span class="sr-only">Brand</span>
-          <span class="text-xl md:text-2xl font-semibold whitespace-nowrap">Documentation</span>
+          <span class="text-xl font-semibold whitespace-nowrap">Documentation</span>
         </a>
 
         <div
