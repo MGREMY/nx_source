@@ -32,7 +32,7 @@ interface ContentAttributes {
     }
 
     <div
-      class="flex min-h-[calc(100vh-(--spacing(16)))] max-h-[calc(100vh-(--spacing(16)))] divide-x divide-ui px-6 pt-6 lg:pt-3 pb-0 gap-8">
+      class="flex min-h-[calc(100dvh-(--spacing(16)))] max-h-[calc(100dvh-(--spacing(16)))] divide-x divide-ui px-6 pt-6 lg:pt-3 pb-0 gap-8">
       <aside class="sticky left-0 hidden z-1 pr-2 lg:inline-block w-sm overflow-y-scroll">
         <app-sidebar
           [(isOpen)]="sidebarOpen"
