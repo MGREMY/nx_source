@@ -1,5 +1,9 @@
 import { MgnpLoader } from '@mgremy/ng-primitives-extended/loader';
 
+import { NgIcon, provideIcons } from '@ng-icons/core';
+import { heroChevronDownMini } from '@ng-icons/heroicons/mini';
+
+import { NgClass } from '@angular/common';
 import {
   afterNextRender,
   ChangeDetectionStrategy,
@@ -47,7 +51,7 @@ type ComponentGroup = {
 
 @Component({
   selector: 'app-metadata',
-  imports: [MgnpLoader],
+  imports: [MgnpLoader, NgIcon, NgClass],
   template: `
     @if (isLoading()) {
       <mgnp-loader />
@@ -70,31 +74,85 @@ type ComponentGroup = {
               </h4>
 
               @if (hostDirective.inputs.length > 0 || hostDirective.outputs.length > 0) {
-                <div class="ml-8 mt-2 border border-ui rounded-md *:last:border-b-0">
+                <div class="md:ml-8 mt-2 border border-ui rounded-md *:last:border-b-0">
                   <div
-                    class="grid grid-cols-[0.5fr_1fr_1fr] border-b border-b-ui px-4 py-1 bg-[color-mix(in_srgb,var(--background-color-ui),var(--mg-state-hover-mix))]">
-                    <span>Type</span>
+                    class="grid grid-cols-[1fr] sm:grid-cols-[0.5fr_1fr] md:grid-cols-[0.5fr_1fr_1fr] border-b border-b-ui px-4 py-1 bg-[color-mix(in_srgb,var(--background-color-ui),var(--mg-state-hover-mix))]">
+                    <span class="hidden sm:inline">Type</span>
                     <span>Name</span>
-                    <span>Forwarded to</span>
+                    <span class="hidden md:inline">Forwarded to</span>
                   </div>
 
                   @for (input of hostDirective.inputs; track $index) {
                     @let inputSplit = input.split(':');
+                    @let rowName =
+                      'metadata-directive-' + directive.name + 'inputs-' + inputSplit[1];
 
-                    <div class="grid grid-cols-[0.5fr_1fr_1fr] border-b border-b-ui px-4 py-1">
-                      <code class="font-semibold">Input</code>
-                      <code class="text-secondary">{{ inputSplit[1] }}</code>
-                      <code class="text-secondary">{{ inputSplit[0] }}</code>
+                    @let name = inputSplit[1];
+                    @let forwardedTo = inputSplit[0];
+
+                    <button
+                      (click)="toggleRow(rowName)"
+                      class="overflow-hidden cursor-pointer w-full items-center text-start grid grid-cols-[1fr_auto] sm:grid-cols-[0.5fr_1fr_auto] md:grid-cols-[0.5fr_1fr_1fr_auto] border-b border-b-ui px-4 py-1">
+                      <code class="hidden sm:inline font-semibold">Input</code>
+                      <code class="text-secondary">{{ name }}</code>
+                      <code class="hidden md:inline text-secondary">{{ forwardedTo }}</code>
+                      <ng-icon
+                        class="transition-transform"
+                        [ngClass]="{ 'rotate-180': expandedRows().includes(rowName) }"
+                        name="heroChevronDownMini" />
+                    </button>
+                    <div
+                      class="px-4 py-2 bg-[color-mix(in_srgb,var(--background-color-ui),var(--mg-state-hover-mix))]"
+                      [ngClass]="{
+                        hidden: !expandedRows().includes(rowName),
+                      }">
+                      <dl class="overflow-x-auto text-start grid grid-cols-[1fr_3fr] gap-2.5">
+                        <dt class="font-medium">Type</dt>
+                        <dd class="text-secondary">Input</dd>
+
+                        <dt class="font-medium">Name</dt>
+                        <dd class="text-secondary">{{ name }}</dd>
+
+                        <dt class="font-medium">Forwarded to</dt>
+                        <dd class="text-secondary">{{ forwardedTo }}</dd>
+                      </dl>
                     </div>
                   }
 
                   @for (outputs of hostDirective.outputs; track $index) {
-                    @let outputsSplit = outputs.split(':');
+                    @let outputSplit = outputs.split(':');
+                    @let rowName =
+                      'metadata-directive-' + directive.name + 'outputs-' + outputSplit[1];
 
-                    <div class="grid grid-cols-[0.5fr_1fr_1fr] border-b border-b-ui px-4 py-1">
-                      <code class="font-semibold">Output</code>
-                      <code class="text-secondary">{{ outputsSplit[1] }}</code>
-                      <code class="text-secondary">{{ outputsSplit[0] }}</code>
+                    @let name = outputSplit[1];
+                    @let forwardedTo = outputSplit[0];
+
+                    <button
+                      (click)="toggleRow(rowName)"
+                      class="overflow-hidden cursor-pointer w-full text-start grid grid-cols-[1fr_auto] sm:grid-cols-[0.5fr_1fr_auto] md:grid-cols-[0.5fr_1fr_1fr_auto] border-b border-b-ui px-4 py-1">
+                      <code class="hidden sm:inline font-semibold">Output</code>
+                      <code class="text-secondary">{{ name }}</code>
+                      <code class="hidden md:inline text-secondary">{{ forwardedTo }}</code>
+                      <ng-icon
+                        class="transition-transform"
+                        [ngClass]="{ 'rotate-180': expandedRows().includes(rowName) }"
+                        name="heroChevronDownMini" />
+                    </button>
+                    <div
+                      class="px-4 py-2 bg-[color-mix(in_srgb,var(--background-color-ui),var(--mg-state-hover-mix))]"
+                      [ngClass]="{
+                        hidden: !expandedRows().includes(rowName),
+                      }">
+                      <dl class="overflow-x-auto text-start grid grid-cols-[1fr_3fr] gap-2.5">
+                        <dt class="font-medium">Type</dt>
+                        <dd class="text-secondary">Input</dd>
+
+                        <dt class="font-medium">Name</dt>
+                        <dd class="text-secondary">{{ name }}</dd>
+
+                        <dt class="font-medium">Forwarded to</dt>
+                        <dd class="text-secondary">{{ forwardedTo }}</dd>
+                      </dl>
                     </div>
                   }
                 </div>
@@ -107,33 +165,52 @@ type ComponentGroup = {
           ) {
             <h4 class="ml-4 mt-4 text-lg font-semibold">Inputs</h4>
 
-            <div class="ml-8 mt-2 border border-ui rounded-md *:last:border-b-0">
+            <div class="md:ml-8 mt-2 border border-ui rounded-md *:last:border-b-0">
               <div
-                class="grid grid-cols-[0.75fr_1fr_2fr_1fr] border-b border-b-ui px-4 py-1 bg-[color-mix(in_srgb,var(--background-color-ui),var(--mg-state-hover-mix))]">
+                class="grid grid-cols-[1fr_auto] sm:grid-cols-[0.75fr_1fr_auto] md:grid-cols-[0.75fr_1fr_2fr_1fr_auto] border-b border-b-ui px-4 py-1 bg-[color-mix(in_srgb,var(--background-color-ui),var(--mg-state-hover-mix))]">
                 <span>Name</span>
-                <span>Type</span>
-                <span>Possible values</span>
-                <span>Default value</span>
+                <span class="hidden sm:inline">Type</span>
+                <span class="hidden md:inline">Possible values</span>
+                <span class="hidden md:inline">Default value</span>
               </div>
 
               @let inputs = directive.inputs.filter((x) => !x.fromHostDirective);
 
               @for (input of inputs; track $index) {
-                <div class="grid grid-cols-[0.75fr_1fr_2fr_1fr] border-b border-b-ui px-4 py-1">
-                  <code>{{ input.name }}</code>
-                  <code class="text-secondary">{{ input.type }}</code>
-                  <span>
-                    @if (input.possibleValues) {
-                      @for (possibleValue of input.possibleValues; track $index) {
-                        <code class="font-semibold">{{ possibleValue }}</code>
+                @let rowName = 'metadata-directive-inputs-' + input.name;
 
-                        @if ($index < input.possibleValues.length - 1) {
-                          /
-                        }
-                      }
-                    }
-                  </span>
-                  <code class="text-secondary">{{ input.defaultValue }}</code>
+                @let name = input.name;
+                @let type = input.type;
+                @let possibleValues = input.possibleValues?.join(' / ') ?? '';
+                @let defaultValue = input.defaultValue;
+
+                <button
+                  (click)="toggleRow(rowName)"
+                  class="overflow-hidden cursor-pointer w-full items-center text-start grid grid-cols-[1fr_auto] sm:grid-cols-[0.75fr_1fr_auto] md:grid-cols-[0.75fr_1fr_2fr_1fr_auto] border-b border-b-ui px-4 py-1">
+                  <code>{{ name }}</code>
+                  <code class="hidden sm:inline text-secondary">{{ type }}</code>
+                  <code class="hidden md:inline font-semibold">{{ possibleValues }}</code>
+                  <code class="hidden md:inline text-secondary">{{ input.defaultValue }}</code>
+                  <ng-icon
+                    class="transition-transform"
+                    [ngClass]="{ 'rotate-180': expandedRows().includes(rowName) }"
+                    name="heroChevronDownMini" />
+                </button>
+                <div
+                  class="px-4 py-2 bg-[color-mix(in_srgb,var(--background-color-ui),var(--mg-state-hover-mix))]"
+                  [ngClass]="{
+                    hidden: !expandedRows().includes(rowName),
+                  }">
+                  <dl class="overflow-x-auto text-start grid grid-cols-[1fr_3fr] gap-2.5">
+                    <dt class="font-medium">Type</dt>
+                    <dd class="text-secondary">{{ type }}</dd>
+
+                    <dt class="font-medium">Posssible values</dt>
+                    <dd class="text-secondary font-semibold">{{ possibleValues }}</dd>
+
+                    <dt class="font-medium">Default value</dt>
+                    <dd class="text-secondary font-semibold">{{ defaultValue }}</dd>
+                  </dl>
                 </div>
               }
             </div>
@@ -144,19 +221,40 @@ type ComponentGroup = {
           ) {
             <h4 class="ml-4 mt-4 text-lg font-semibold">Ouputs</h4>
 
-            <div class="ml-8 mt-2 border border-ui rounded-md *:last:border-b-0">
+            <div class="md:ml-8 mt-2 border border-ui rounded-md *:last:border-b-0">
               <div
-                class="grid grid-cols-[1fr_1fr] border-b border-b-ui px-2 py-1 bg-[color-mix(in_srgb,var(--background-color-ui),var(--mg-state-hover-mix))]">
+                class="grid grid-cols-[1fr_auto] sm:grid-cols-[1fr_1fr_auto] border-b border-b-ui px-2 py-1 bg-[color-mix(in_srgb,var(--background-color-ui),var(--mg-state-hover-mix))]">
                 <span>Name</span>
-                <span>Type</span>
+                <span class="hidden sm:inline">Type</span>
               </div>
 
               @let outputs = directive.outputs.filter((x) => !x.fromHostDirective);
 
               @for (output of outputs; track $index) {
-                <div class="grid grid-cols-[1fr_1fr] border-b border-b-ui px-4 py-1">
-                  <code>{{ output.name }}</code>
-                  <code class="text-secondary">{{ output.type }}</code>
+                @let rowName = 'metadata-directive-outputs-' + output.name;
+
+                @let name = output.name;
+                @let type = output.type;
+
+                <button
+                  (click)="toggleRow(rowName)"
+                  class="overflow-hidden cursor-pointer w-full items-center text-start grid grid-cols-[1fr_auto] sm:grid-cols-[1fr_1fr_auto] border-b border-b-ui px-4 py-1">
+                  <code>{{ name }}</code>
+                  <code class="hidden sm:inline text-secondary">{{ type }}</code>
+                  <ng-icon
+                    class="transition-transform"
+                    [ngClass]="{ 'rotate-180': expandedRows().includes(rowName) }"
+                    name="heroChevronDownMini" />
+                </button>
+                <div
+                  class="px-4 py-2 bg-[color-mix(in_srgb,var(--background-color-ui),var(--mg-state-hover-mix))]"
+                  [ngClass]="{
+                    hidden: !expandedRows().includes(rowName),
+                  }">
+                  <dl class="overflow-x-auto text-start grid grid-cols-[1fr_3fr] gap-2.5">
+                    <dt class="font-medium">Type</dt>
+                    <dd class="text-secondary">{{ type }}</dd>
+                  </dl>
                 </div>
               }
             </div>
@@ -165,22 +263,44 @@ type ComponentGroup = {
           @if (directive.host && directive.host.length > 0) {
             <h4 class="ml-4 mt-4 text-lg font-semibold">CSS</h4>
 
-            <div class="ml-8 mt-2 border border-ui rounded-md *:last:border-b-0">
+            <div class="md:ml-8 mt-2 border border-ui rounded-md *:last:border-b-0">
               <div
-                class="grid grid-cols-[1fr_1fr] border-b border-b-ui px-4 py-1 bg-[color-mix(in_srgb,var(--background-color-ui),var(--mg-state-hover-mix))]">
+                class="grid grid-cols-[1fr_auto] sm:grid-cols-[1fr_1fr_auto] border-b border-b-ui px-4 py-1 bg-[color-mix(in_srgb,var(--background-color-ui),var(--mg-state-hover-mix))]">
                 <span>Class</span>
-                <span>Custom class</span>
+                <span class="hidden sm:inline">Custom class</span>
               </div>
 
               @for (host of directive.host; track $index) {
+                @let rowName = 'metadata-directive-css-' + directive.name;
+
                 @if (host.name === 'class') {
                   @let value = host.value.replaceAll("'", '');
+
                   @let class = value.split(' ').find((x) => !x.includes('-c-'));
                   @let customClass = value.split(' ').find((x) => x.includes('-c-'));
 
-                  <div class="grid grid-cols-[1fr_1fr] border-b border-b-ui px-4 py-1">
+                  <button
+                    (click)="toggleRow(rowName)"
+                    class="overflow-hidden cursor-pointer w-full items-center text-start grid grid-cols-[1fr_auto] sm:grid-cols-[1fr_1fr_auto] border-b border-b-ui px-4 py-1">
                     <code class="text-secondary">{{ class }}</code>
-                    <code class="text-secondary">{{ customClass }}</code>
+                    <code class="hidden sm:inline text-secondary">{{ customClass }}</code>
+                    <ng-icon
+                      class="transition-transform"
+                      [ngClass]="{ 'rotate-180': expandedRows().includes(rowName) }"
+                      name="heroChevronDownMini" />
+                  </button>
+                  <div
+                    class="px-4 py-2 bg-[color-mix(in_srgb,var(--background-color-ui),var(--mg-state-hover-mix))]"
+                    [ngClass]="{
+                      hidden: !expandedRows().includes(rowName),
+                    }">
+                    <dl class="overflow-x-auto text-start grid grid-cols-[1fr_3fr] gap-2.5">
+                      <dt class="font-medium">Class</dt>
+                      <dd class="text-secondary">{{ class }}</dd>
+
+                      <dt class="font-medium">Custom class</dt>
+                      <dd class="text-secondary">{{ customClass }}</dd>
+                    </dl>
                   </div>
                 }
               }
@@ -194,7 +314,7 @@ type ComponentGroup = {
       }
     }
   `,
-  providers: [],
+  providers: [provideIcons({ heroChevronDownMini })],
   changeDetection: ChangeDetectionStrategy.OnPush,
   host: { class: 'not-prose text-ui' },
 })
@@ -215,6 +335,7 @@ export class AppMetadata {
 
   readonly isLoading = signal(false);
   readonly selectedMetadata = signal<ComponentGroup | undefined>(undefined);
+  readonly expandedRows = signal<string[]>([]);
 
   constructor() {
     effect(async () => {
@@ -233,6 +354,13 @@ export class AppMetadata {
       },
       { injector: this.injector }
     );
+  }
+
+  toggleRow(name: string): void {
+    const exists = this.expandedRows().includes(name);
+
+    if (exists) this.expandedRows.update((r) => r.filter((x) => x !== name));
+    else this.expandedRows.update((r) => [...r, name]);
   }
 
   private async loadMetadata(name: string): Promise<void> {
