@@ -1,3 +1,20 @@
+## 0.23.1
+
+### 🚀 Features
+
+- **avatar:** add avatar ([#56](https://github.com/MGREMY/nx_source/pull/56))
+- **date-picker:** add date-picker ([#55](https://github.com/MGREMY/nx_source/pull/55))
+
+### 🩹 Fixes
+
+- **date-picker:** fix constructor ([b2c96ca](https://github.com/MGREMY/nx_source/commit/b2c96ca))
+- **tooltip:** theme ([8251ad7](https://github.com/MGREMY/nx_source/commit/8251ad7))
+
+### ❤️ Thank You
+
+- GREMY Miguel @MGREMY
+- Miguel Gremy @MGREMY
+
 ## 0.23.0
 
 ### 🚀 Features
