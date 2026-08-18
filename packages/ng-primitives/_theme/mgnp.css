@@ -4,6 +4,7 @@
 @import './_cdk.css';
 
 @import './components/accordion.css';
+@import './components/avatar.css';
 @import './components/breadcrumb.css';
 @import './components/button.css';
 @import './components/checkbox.css';

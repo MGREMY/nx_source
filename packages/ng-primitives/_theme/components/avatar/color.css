@@ -1,0 +1,8 @@
+@utility mgnp-avatar-color-* {
+  @apply bg-[--value(--background-color-*)];
+  @apply shadow-(color:--border-color-ui);
+}
+
+@utility mgnp-avatar-fallback-color {
+  @apply text-secondary;
+}
