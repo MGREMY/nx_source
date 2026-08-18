@@ -1,0 +1,35 @@
+@import './avatar/color.css';
+
+@layer components {
+  .mgnp-avatar {
+    @apply mgnp-base;
+    @apply inline-flex items-center justify-center;
+    @apply size-11;
+    @apply rounded-full shadow-md;
+    @apply align-middle;
+
+    /* Color */
+    @apply data-[mgnp-avatar-color=ui]:mgnp-avatar-color-ui;
+    @apply data-[mgnp-avatar-color=primary]:mgnp-avatar-color-primary;
+    @apply data-[mgnp-avatar-color=accent]:mgnp-avatar-color-accent;
+    @apply data-[mgnp-avatar-color=info]:mgnp-avatar-color-info;
+    @apply data-[mgnp-avatar-color=success]:mgnp-avatar-color-success;
+    @apply data-[mgnp-avatar-color=warning]:mgnp-avatar-color-warning;
+    @apply data-[mgnp-avatar-color=danger]:mgnp-avatar-color-danger;
+  }
+
+  .mgnp-avatr-fallback {
+    @apply mgnp-base mgnp-avatar-fallback-color;
+    @apply flex items-center justify-center;
+    @apply size-full;
+    @apply rounded-full;
+    @apply font-medium text-sm;
+  }
+
+  .mgnp-avatar-image {
+    @apply mgnp-base;
+    @apply size-full;
+    @apply rounded-full;
+    @apply object-cover object-[center_bottom];
+  }
+}
