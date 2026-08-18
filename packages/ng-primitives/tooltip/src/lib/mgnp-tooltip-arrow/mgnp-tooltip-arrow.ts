@@ -1,6 +1,4 @@
-import { MgnpTooltip } from '../mgnp-tooltip/mgnp-tooltip';
-
-import { Directive, inject } from '@angular/core';
+import { Directive } from '@angular/core';
 import {
   injectTooltipArrowState,
   NgpTooltipArrow,
@@ -13,7 +11,6 @@ import {
   host: {
     class: 'mgnp-tooltip-arrow mgnp-c-tooltip-arrow',
     'data-mgnp-tooltip-arrow': '',
-    '[attr.data-mgnp-tooltip-arrow-color]': 'tooltip.color()',
   },
   hostDirectives: [
     {
@@ -25,7 +22,5 @@ import {
   exportAs: 'mgnpTooltipArrow',
 })
 export class MgnpTooltipArrow {
-  protected readonly tooltip = inject(MgnpTooltip);
-
   readonly state = injectTooltipArrowState();
 }

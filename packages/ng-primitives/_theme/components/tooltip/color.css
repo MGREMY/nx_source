@@ -1,10 +1,10 @@
-@utility mgnp-tooltip-color-* {
-  @apply bg-[color-mix(in_srgb,var(--background-color-ui),var(--mg-state-hover-mix))];
+@utility mgnp-tooltip-color {
+  @apply bg-inverse;
   @apply border-none;
-  @apply text-[--value(--text-color-*)];
+  @apply text-inverse;
 }
 
 @utility mgnp-tooltip-arrow-color {
-  @apply bg-[color-mix(in_srgb,var(--background-color-ui),var(--mg-state-hover-mix))];
+  @apply bg-inverse;
   @apply border-none;
 }

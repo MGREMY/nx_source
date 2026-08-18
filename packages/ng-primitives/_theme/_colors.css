@@ -7,7 +7,7 @@
   --mg-background-success: light-dark(var(--color-green-500), var(--color-green-500));
   --mg-background-warning: light-dark(var(--color-yellow-500), var(--color-yellow-500));
   --mg-background-danger: light-dark(var(--color-red-500), var(--color-red-500));
-  --mg-background-inverse: light-dark(var(--color-black), var(--color-white));
+  --mg-background-inverse: light-dark(var(--color-stone-900), var(--color-stone-50));
 
   /* Text */
   --mg-text-ui: light-dark(var(--color-black), var(--color-white));
@@ -36,8 +36,8 @@
 
   --mg-state-hover-mix: light-dark(var(--color-black), var(--color-white)) 5%;
   --mg-state-active-mix: light-dark(var(--color-black), var(--color-white)) 15%;
-  --mg-color-secondary-mix: light-dark(var(--mg-text-inverse), var(--mg-text-inverse)) 25%;
-  --mg-color-tertiary-mix: light-dark(var(--mg-text-inverse), var(--mg-text-inverse)) 50%;
+  --mg-color-secondary-mix: var(--mg-text-inverse) 25%;
+  --mg-color-tertiary-mix: var(--mg-text-inverse) 50%;
 }
 
 /* Tailwind */

@@ -2,7 +2,7 @@
 
 @layer components {
   .mgnp-tooltip {
-    @apply mgnp-base;
+    @apply mgnp-base mgnp-tooltip-color;
     @apply absolute;
     @apply max-w-64;
     @apply py-3 px-3;
@@ -10,14 +10,6 @@
     @apply text-xs;
     @apply origin-(--ngp-tooltip-transform-origin);
     @apply animate-mg-show-y;
-
-    @apply data-[mgnp-tooltip-color=ui]:mgnp-tooltip-color-ui;
-    @apply data-[mgnp-tooltip-color=primary]:mgnp-tooltip-color-primary;
-    @apply data-[mgnp-tooltip-color=accent]:mgnp-tooltip-color-accent;
-    @apply data-[mgnp-tooltip-color=info]:mgnp-tooltip-color-info;
-    @apply data-[mgnp-tooltip-color=success]:mgnp-tooltip-color-success;
-    @apply data-[mgnp-tooltip-color=warning]:mgnp-tooltip-color-warning;
-    @apply data-[mgnp-tooltip-color=danger]:mgnp-tooltip-color-danger;
 
     @variant data-exit {
       @apply animate-mg-hide-y;
