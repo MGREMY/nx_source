@@ -4,5 +4,5 @@
 }
 
 @utility mgnp-avatar-fallback-color {
-  @apply text-inverse;
+  @apply text-secondary;
 }
