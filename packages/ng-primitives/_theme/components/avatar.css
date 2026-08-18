@@ -18,7 +18,7 @@
     @apply data-[mgnp-avatar-color=danger]:mgnp-avatar-color-danger;
   }
 
-  .mgnp-avatr-fallback {
+  .mgnp-avatar-fallback {
     @apply mgnp-base mgnp-avatar-fallback-color;
     @apply flex items-center justify-center;
     @apply size-full;
