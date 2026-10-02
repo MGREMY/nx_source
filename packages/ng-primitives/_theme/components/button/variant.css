@@ -1,0 +1,97 @@
+@layer components {
+  .mgnp-button-variant-default {
+    @apply bg-background text-foreground;
+
+    @variant data-hover {
+      @apply bg-background/80;
+    }
+
+    @variant data-press {
+      @apply bg-background/70;
+    }
+  }
+
+  .mgnp-button-variant-ghost {
+    @apply bg-default text-default-foreground;
+
+    @variant data-hover {
+      @apply bg-default/80;
+    }
+
+    @variant data-press {
+      @apply bg-default/70;
+    }
+  }
+
+  .mgnp-button-variant-primary {
+    @apply bg-primary text-primary-foreground;
+
+    @variant data-hover {
+      @apply bg-primary/80;
+    }
+
+    @variant data-press {
+      @apply bg-primary/70;
+    }
+  }
+
+  .mgnp-button-variant-accent {
+    @apply bg-accent text-accent-foreground;
+
+    @variant data-hover {
+      @apply bg-accent/80;
+    }
+
+    @variant data-press {
+      @apply bg-accent/70;
+    }
+  }
+
+  .mgnp-button-variant-info {
+    @apply bg-info text-info-foreground;
+
+    @variant data-hover {
+      @apply bg-info/80;
+    }
+
+    @variant data-press {
+      @apply bg-info/70;
+    }
+  }
+
+  .mgnp-button-variant-success {
+    @apply bg-success text-success-foreground;
+
+    @variant data-hover {
+      @apply bg-success/80;
+    }
+
+    @variant data-press {
+      @apply bg-success/70;
+    }
+  }
+
+  .mgnp-button-variant-warning {
+    @apply bg-warning text-warning-foreground;
+
+    @variant data-hover {
+      @apply bg-warning/80;
+    }
+
+    @variant data-press {
+      @apply bg-warning/70;
+    }
+  }
+
+  .mgnp-button-variant-danger {
+    @apply bg-danger text-danger-foreground;
+
+    @variant data-hover {
+      @apply bg-danger/80;
+    }
+
+    @variant data-press {
+      @apply bg-danger/70;
+    }
+  }
+}

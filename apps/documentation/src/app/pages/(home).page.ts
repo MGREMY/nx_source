@@ -45,8 +45,7 @@ import { RouterLink } from '@angular/router';
             <a
               mgnpButton
               size="lg"
-              color="accent"
-              variant="outline"
+              variant="primary"
               href="https://github.com/MGREMY/nx_source"
               target="_blank"
               rel="noopener noreferrer">
@@ -55,8 +54,7 @@ import { RouterLink } from '@angular/router';
             <a
               mgnpButton
               size="lg"
-              color="accent"
-              variant="outline"
+              color="outline"
               href="https://www.npmjs.com/package/@mgremy/ng-primitives"
               target="_blank"
               rel="noopener noreferrer">

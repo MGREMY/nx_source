@@ -1,31 +1,12 @@
+@import './button/variant.css';
 @import './button/size.css';
-@import './button/color.css';
 
 @layer components {
   .mgnp-button {
-    @apply select-none mgnp-base mgnp-focus;
-    @apply inline-flex items-center justify-center gap-1.5;
-    @apply cursor-pointer;
-    @apply border rounded-lg;
+    @apply select-none mgnp-focus;
+    @apply inline-flex items-center justify-center;
+    @apply rounded-md;
 
-    @variant data-disabled {
-      @apply opacity-50 cursor-default;
-    }
-
-    /* Size */
-    @apply data-[mgnp-button-size=xs]:mgnp-button-size-xs;
-    @apply data-[mgnp-button-size=sm]:mgnp-button-size-sm;
-    @apply data-[mgnp-button-size=md]:mgnp-button-size-md;
-    @apply data-[mgnp-button-size=lg]:mgnp-button-size-lg;
-    @apply data-[mgnp-button-size=xl]:mgnp-button-size-xl;
-
-    /* Color */
-    @apply data-[mgnp-button-color=ui]:mgnp-button-color-ui;
-    @apply data-[mgnp-button-color=primary]:mgnp-button-color-primary;
-    @apply data-[mgnp-button-color=accent]:mgnp-button-color-accent;
-    @apply data-[mgnp-button-color=info]:mgnp-button-color-info;
-    @apply data-[mgnp-button-color=success]:mgnp-button-color-success;
-    @apply data-[mgnp-button-color=warning]:mgnp-button-color-warning;
-    @apply data-[mgnp-button-color=danger]:mgnp-button-color-danger;
+    @apply data-disabled:opacity-50;
   }
 }

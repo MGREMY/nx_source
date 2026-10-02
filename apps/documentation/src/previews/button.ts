@@ -1,4 +1,4 @@
-import { MgnpButton } from '@mgremy/ng-primitives/button';
+import { ButtonVariants, MgnpButton } from '@mgremy/ng-primitives/button';
 
 import { Component } from '@angular/core';
 
@@ -8,19 +8,13 @@ import { Component } from '@angular/core';
     <p class="font-bold">Solid</p>
     <div class="flex flex-wrap gap-4 items-center justify-center">
       @for (color of _colors; track $index) {
-        <button mgnpButton [color]="color">{{ color }}</button>
-      }
-    </div>
-    <p class="font-bold">Outline</p>
-    <div class="flex flex-wrap gap-4 items-center justify-center">
-      @for (color of _colors; track $index) {
-        <button mgnpButton variant="outline" [color]="color">{{ color }}</button>
+        <button mgnpButton [variant]="color">{{ color }}</button>
       }
     </div>
     <p class="font-bold">Disabled</p>
     <div class="flex flex-wrap gap-4 items-center justify-center">
       @for (color of _colors; track $index) {
-        <button mgnpButton disabled variant="outline" [color]="color">{{ color }}</button>
+        <button mgnpButton disabled [variant]="color">{{ color }}</button>
       }
     </div>
   `,
@@ -29,5 +23,14 @@ import { Component } from '@angular/core';
   },
 })
 export default class Button {
-  readonly _colors = ['ui', 'primary', 'accent', 'info', 'success', 'warning', 'danger'];
+  readonly _colors = [
+    'default',
+    'ghost',
+    'primary',
+    'accent',
+    'info',
+    'success',
+    'warning',
+    'danger',
+  ] as ButtonVariants['variant'][];
 }

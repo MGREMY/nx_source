@@ -1,4 +1,24 @@
 @theme inline {
+  --mg-background: light-dark(var(--color-stone-900), var(--color-stone-50));
+  --mg-default: light-dark(var(--color-stone-50), var(--color-stone-900));
+  --mg-primary: var(--color-sky-300);
+  --mg-accent: var(--color-emerald-300);
+  --mg-info: var(--color-blue-300);
+  --mg-success: var(--color-green-300);
+  --mg-warning: var(--color-yellow-300);
+  --mg-danger: var(--color-red-300);
+
+  --mg-foreground: light-dark(var(--color-stone-50), var(--color-stone-900));
+  --mg-default-foreground: light-dark(var(--color-black), var(--color-white));
+  --mg-primary-foreground: var(--color-sky-800);
+  --mg-accent-foreground: var(--color-emerald-800);
+  --mg-info-foreground: var(--color-blue-800);
+  --mg-success-foreground: var(--color-green-800);
+  --mg-warning-foreground: var(--color-yellow-800);
+  --mg-danger-foreground: var(--color-red-800);
+
+  /* TODO DELETE */
+
   /* Background */
   --mg-background-ui: light-dark(var(--color-stone-50), var(--color-stone-900));
   --mg-background-primary: light-dark(var(--color-sky-500), var(--color-sky-500));
@@ -42,6 +62,26 @@
 
 /* Tailwind */
 @theme {
+  --color-background: var(--mg-background);
+  --color-foreground: var(--mg-foreground);
+  --color-default: var(--mg-default);
+  --color-primary: var(--mg-primary);
+  --color-accent: var(--mg-accent);
+  --color-info: var(--mg-info);
+  --color-success: var(--mg-success);
+  --color-warning: var(--mg-warning);
+  --color-danger: var(--mg-danger);
+
+  --color-default-foreground: var(--mg-default-foreground);
+  --color-primary-foreground: var(--mg-primary-foreground);
+  --color-accent-foreground: var(--mg-accent-foreground);
+  --color-info-foreground: var(--mg-info-foreground);
+  --color-success-foreground: var(--mg-success-foreground);
+  --color-warning-foreground: var(--mg-warning-foreground);
+  --color-danger-foreground: var(--mg-danger-foreground);
+
+  /* TODO DELETE */
+
   /* Background */
   --background-color-ui: var(--mg-background-ui);
   --background-color-primary: var(--mg-background-primary);

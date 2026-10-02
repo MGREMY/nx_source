@@ -36,6 +36,7 @@
       "@mgremy/ng-primitives/switch": ["./packages/ng-primitives/switch/src/index.ts"],
       "@mgremy/ng-primitives/toast": ["./packages/ng-primitives/toast/src/index.ts"],
       "@mgremy/ng-primitives/tooltip": ["./packages/ng-primitives/tooltip/src/index.ts"],
+      "@mgremy/ng-primitives/utils": ["./packages/ng-primitives/utils/src/index.ts"],
       "@mgremy/ng-primitives-extended": ["./packages/ng-primitives-extended/src/index.ts"],
       "@mgremy/ng-primitives-extended/loader": [
         "./packages/ng-primitives-extended/loader/src/index.ts"
