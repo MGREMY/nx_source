@@ -38,6 +38,7 @@ import { RouterLink } from '@angular/router';
           <a
             mgnpButton
             size="lg"
+            variant="ghost"
             [routerLink]="['/', 'documentation', 'core']">
             Get Started
           </a>
@@ -54,7 +55,7 @@ import { RouterLink } from '@angular/router';
             <a
               mgnpButton
               size="lg"
-              color="outline"
+              variant="primary"
               href="https://www.npmjs.com/package/@mgremy/ng-primitives"
               target="_blank"
               rel="noopener noreferrer">

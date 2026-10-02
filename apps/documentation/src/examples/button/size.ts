@@ -1,4 +1,4 @@
-import { ButtonVariants, MgnpButton } from '@mgremy/ng-primitives/button';
+import { MgnpButton, MgnpButtonVariants } from '@mgremy/ng-primitives/button';
 
 import { Component } from '@angular/core';
 
@@ -14,5 +14,5 @@ import { Component } from '@angular/core';
   },
 })
 export default class SizeExample {
-  readonly _sizes = ['xs', 'sm', 'md', 'lg', 'xl'] as ButtonVariants['size'][];
+  readonly _sizes = ['xs', 'sm', 'md', 'lg', 'xl'] as MgnpButtonVariants['size'][];
 }

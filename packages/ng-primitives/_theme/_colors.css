@@ -17,6 +17,8 @@
   --mg-warning-foreground: var(--color-yellow-800);
   --mg-danger-foreground: var(--color-red-800);
 
+  --mg-border: var(--color-stone-200);
+
   /* TODO DELETE */
 
   /* Background */
@@ -79,6 +81,8 @@
   --color-success-foreground: var(--mg-success-foreground);
   --color-warning-foreground: var(--mg-warning-foreground);
   --color-danger-foreground: var(--mg-danger-foreground);
+
+  --color-border: var(--mg-border);
 
   /* TODO DELETE */
 

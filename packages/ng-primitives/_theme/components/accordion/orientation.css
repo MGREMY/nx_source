@@ -1,60 +1,56 @@
-@utility mgnp-accordion-orientation-vertical {
-  @apply block w-full max-w-96;
-}
-
-@utility mgnp-accordion-orientation-horizontal {
-  @apply flex flex-row h-full max-h-96;
-}
-
-@utility mgnp-accordion-content-orientation-vertical {
-  @variant data-open {
-    animation: accordion-show-vertical var(--default-transition-duration)
-      var(--default-transition-timing-function) forwards;
+@layer components {
+  .mgnp-accordion-orientation-vertical {
+    @apply block w-full max-w-96;
   }
 
-  @variant data-closed {
-    animation: accordion-hide-vertical var(--default-transition-duration)
-      var(--default-transition-timing-function) forwards;
-  }
-}
-
-@utility mgnp-accordion-content-orientation-horizontal {
-  @variant data-open {
-    animation: accordion-show-horizontal var(--default-transition-duration)
-      var(--default-transition-timing-function) forwards;
+  .mgnp-accordion-orientation-horizontal {
+    @apply flex flex-row h-full max-h-96;
   }
 
-  @variant data-closed {
-    animation: accordion-hide-horizontal var(--default-transition-duration)
-      var(--default-transition-timing-function) forwards;
+  .mgnp-accordion-content-orientation-vertical {
+    @variant data-open {
+      animation: accordion-show-vertical var(--default-transition-duration)
+        var(--default-transition-timing-function) forwards;
+    }
+
+    @variant data-closed {
+      animation: accordion-hide-vertical var(--default-transition-duration)
+        var(--default-transition-timing-function) forwards;
+    }
   }
-}
 
-@utility mgnp-accordion-item-orientation-vertical {
-  @apply flex-col;
+  .mgnp-accordion-content-orientation-horizontal {
+    @variant data-open {
+      animation: accordion-show-horizontal var(--default-transition-duration)
+        var(--default-transition-timing-function) forwards;
+    }
 
-  @variant not-last {
-    @apply border-b border-b-ui;
+    @variant data-closed {
+      animation: accordion-hide-horizontal var(--default-transition-duration)
+        var(--default-transition-timing-function) forwards;
+    }
   }
-}
 
-@utility mgnp-accordion-item-orientation-horizontal {
-  @apply flex-row;
-
-  @variant not-last {
-    @apply border-r border-r-ui;
+  .mgnp-accordion-item-orientation-vertical {
+    @apply flex-col;
   }
-}
 
-@utility mgnp-accordion-trigger-orientation-vertical {
-  @apply w-full h-11 py-0 px-4;
-}
+  .mgnp-accordion-item-orientation-horizontal {
+    @apply flex-row;
+  }
 
-@utility mgnp-accordion-trigger-orientation-horizontal {
-  writing-mode: sideways-lr;
-  text-orientation: sideways;
+  .mgnp-accordion-trigger-orientation-vertical {
+    @apply w-full h-11 py-0 px-4;
+    @apply not-group-last/mgnp-accordion-item:border-b;
+  }
 
-  @apply w-11 h-full py-0 px-4;
+  .mgnp-accordion-trigger-orientation-horizontal {
+    writing-mode: sideways-lr;
+    text-orientation: sideways;
+
+    @apply w-11 h-full py-0 px-4;
+    @apply not-group-last/mgnp-accordion-item:border-r;
+  }
 }
 
 @theme {

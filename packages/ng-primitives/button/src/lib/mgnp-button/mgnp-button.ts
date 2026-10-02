@@ -1,12 +1,11 @@
 import { injectMgnpButtonConfig } from './mgnp-button.token';
 import { classes } from '@mgremy/ng-primitives/utils';
 
-import { Directive, input, signal } from '@angular/core';
+import { Directive, input } from '@angular/core';
 import { cva, type VariantProps } from 'class-variance-authority';
-import { ClassValue } from 'clsx';
 import { injectButtonState, NgpButton, provideButtonState } from 'ng-primitives/button';
 
-export const buttonVariants = cva('mgnp-button', {
+export const mgnpButtonVariants = cva('mgnp-button', {
   variants: {
     variant: {
       default: 'mgnp-button-variant-default',
@@ -32,7 +31,7 @@ export const buttonVariants = cva('mgnp-button', {
   },
 });
 
-export type ButtonVariants = VariantProps<typeof buttonVariants>;
+export type MgnpButtonVariants = VariantProps<typeof mgnpButtonVariants>;
 
 @Directive({
   selector: `[mgnpButton]`,
@@ -50,19 +49,10 @@ export class MgnpButton {
   public readonly config = injectMgnpButtonConfig();
   public readonly state = injectButtonState();
 
-  private readonly _additionalClasses = signal<ClassValue>('');
-
-  public readonly variant = input<ButtonVariants['variant']>('default');
-  public readonly size = input<ButtonVariants['size']>('md');
+  public readonly variant = input<MgnpButtonVariants['variant']>('default');
+  public readonly size = input<MgnpButtonVariants['size']>('md');
 
   constructor() {
-    classes(() => [
-      buttonVariants({ variant: this.variant(), size: this.size() }),
-      this._additionalClasses(),
-    ]);
-  }
-
-  setClass(classes: ClassValue): void {
-    this._additionalClasses.set(classes);
+    classes(() => mgnpButtonVariants({ variant: this.variant(), size: this.size() }));
   }
 }

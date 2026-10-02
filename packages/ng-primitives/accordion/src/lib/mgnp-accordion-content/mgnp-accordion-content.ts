@@ -1,20 +1,37 @@
 import { MgnpAccordion } from '../mgnp-accordion/mgnp-accordion';
+import { injectMgnpAccordionContentConfig } from './mgnp-accordion-content.token';
+import { classes } from '@mgremy/ng-primitives/utils';
 
 import { Directive, inject } from '@angular/core';
+import { cva } from 'class-variance-authority';
 import {
   injectAccordionContentState,
+  injectAccordionState,
   NgpAccordionContent,
   provideAccordionContentState,
 } from 'ng-primitives/accordion';
 
+export const mgnpAccordionContentVariants = cva(
+  'mgnp-accordion-content group/mgnp-accordion-content',
+  {
+    variants: {
+      variant: {
+        default: 'mgnp-accordion-content-variant-default',
+      },
+      orientation: {
+        vertical: 'mgnp-accordion-content-orientation-vertical',
+        horizontal: 'mgnp-accordion-content-orientation-horizontal',
+      },
+    },
+    defaultVariants: {
+      variant: 'default',
+    },
+  }
+);
+
 @Directive({
   selector: '[mgnpAccordionContent]',
   providers: [provideAccordionContentState()],
-  host: {
-    class: 'mgnp-accordion-content mgnp-c-accordion-content',
-    'data-mgnp-accordion-content': '',
-    '[attr.data-mgnp-accordion-content-color]': 'accordion.color()',
-  },
   hostDirectives: [
     {
       directive: NgpAccordionContent,
@@ -25,7 +42,18 @@ import {
   exportAs: 'mgnpAccordionContent',
 })
 export class MgnpAccordionContent {
-  protected readonly accordion = inject(MgnpAccordion);
+  private readonly _ngpAccordion = injectAccordionState();
+  private readonly _accordion = inject(MgnpAccordion);
 
-  readonly state = injectAccordionContentState();
+  public readonly config = injectMgnpAccordionContentConfig();
+  public readonly state = injectAccordionContentState();
+
+  constructor() {
+    classes(() =>
+      mgnpAccordionContentVariants({
+        variant: this._accordion.variant(),
+        orientation: this._ngpAccordion().orientation(),
+      })
+    );
+  }
 }

@@ -1,18 +1,30 @@
-import { PropertyType } from '@mgremy/ng-primitives';
+import { injectAccordionConfig } from './mgnp-accordion.token';
+import { classes } from '@mgremy/ng-primitives/utils';
 
 import { Directive, input } from '@angular/core';
+import { cva, VariantProps } from 'class-variance-authority';
 import { injectAccordionState, NgpAccordion, provideAccordionState } from 'ng-primitives/accordion';
 
-export type MgnpAccordionColor = PropertyType<'ui'>;
+export const mgnpAccordionVariants = cva('mgnp-accordion group/mgnp-accordion', {
+  variants: {
+    variant: {
+      default: 'mgnp-accordion-variant-default',
+    },
+    orientation: {
+      vertical: 'mgnp-accordion-orientation-vertical',
+      horizontal: 'mgnp-accordion-orientation-horizontal',
+    },
+  },
+  defaultVariants: {
+    variant: 'default',
+  },
+});
+
+export type MgnpAccordionVariants = VariantProps<typeof mgnpAccordionVariants>;
 
 @Directive({
   selector: '[mgnpAccordion]',
   providers: [provideAccordionState()],
-  host: {
-    class: 'mgnp-accordion mgnp-c-accordion',
-    'data-mgnp-accordion': '',
-    '[attr.data-mgnp-accordion-color]': 'color()',
-  },
   hostDirectives: [
     {
       directive: NgpAccordion,
@@ -29,7 +41,19 @@ export type MgnpAccordionColor = PropertyType<'ui'>;
   exportAs: 'mgnpAccordion',
 })
 export class MgnpAccordion {
-  readonly state = injectAccordionState();
+  private readonly _ngpAccordion = injectAccordionState();
 
-  readonly color = input<MgnpAccordionColor>('ui');
+  public readonly config = injectAccordionConfig();
+  public readonly state = injectAccordionState();
+
+  public readonly variant = input<MgnpAccordionVariants['variant']>(this.config.variant);
+
+  constructor() {
+    classes(() =>
+      mgnpAccordionVariants({
+        variant: this.variant(),
+        orientation: this._ngpAccordion().orientation(),
+      })
+    );
+  }
 }

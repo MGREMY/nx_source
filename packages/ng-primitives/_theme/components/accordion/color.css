@@ -1,9 +1,18 @@
-@utility mgnp-accordion-color-* {
-  @apply bg-[--value(--background-color-*)];
-  @apply border-[--value(--border-color-*)];
-}
+@layer components {
+  .mgnp-accordion-variant-default {
+    @apply bg-default;
+    @apply border-border;
+  }
 
-@utility mgnp-accordion-trigger-color-* {
-  @apply bg-transparent;
-  @apply text-[--value(--text-color-*)];
+  .mgnp-accordion-item-variant-default {
+    @apply border-default;
+
+    @apply data-[orientation=vertical]:not-last:border-b;
+    @apply data-[orientation=horizontal]:not-last:border-r;
+  }
+
+  .mgnp-accordion-trigger-variant-default {
+    @apply bg-transparent text-default-foreground;
+    @apply border-border;
+  }
 }
