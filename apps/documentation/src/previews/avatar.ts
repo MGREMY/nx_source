@@ -1,4 +1,4 @@
-import { MgnpAvatar, MgnpAvatarFallback, MgnpAvatarImage } from '@mgremy/ng-primitives/avatar';
+import { MgnpAvatar, MgnpAvatarFallback, MgnpAvatarImage, MgnpAvatarVariants } from '@mgremy/ng-primitives/avatar';
 
 import { Component } from '@angular/core';
 
@@ -6,16 +6,16 @@ import { Component } from '@angular/core';
   imports: [MgnpAvatar, MgnpAvatarFallback, MgnpAvatarImage],
   template: `
     <div class="flex flex-col gap-2 w-full items-center justify-center">
-      @for (color of _colors; track $index) {
-        <span>{{ color }}</span>
-        <span mgnpAvatar [color]="color">
+      @for (variant of _variant; track $index) {
+        <span>{{ variant }}</span>
+        <span mgnpAvatar [variant]="variant">
           <img mgnpAvatarImage alt="John Doe" src="https://cdn.jsdelivr.net/gh/alohe/memojis/png/memo_1.png" />
           <span mgnpAvatarFallback>JD</span>
         </span>
 
         <div class="inline-flex items-center *:not-first:-ml-4">
           @for (count of _count; track $index) {
-            <span mgnpAvatar [color]="color">
+            <span mgnpAvatar [variant]="variant">
               <img
                 mgnpAvatarImage
                 alt="John Doe"
@@ -30,5 +30,13 @@ import { Component } from '@angular/core';
 })
 export default class Avatar {
   readonly _count = Array.from({ length: 5 }, (_, i) => i++);
-  readonly _colors = ['ui', 'primary', 'accent', 'info', 'success', 'warning', 'danger'];
+  readonly _variant = [
+    'default',
+    'primary',
+    'accent',
+    'info',
+    'success',
+    'warning',
+    'danger',
+  ] as MgnpAvatarVariants['variant'][];
 }

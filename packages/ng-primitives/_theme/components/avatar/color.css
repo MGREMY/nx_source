@@ -1,8 +1,57 @@
-@utility mgnp-avatar-color-* {
-  @apply bg-[--value(--background-color-*)];
-  @apply shadow-(color:--border-color-ui);
-}
+@layer components {
+  .mgnp-avatar-variant-default {
+    @apply bg-default;
+  }
 
-@utility mgnp-avatar-fallback-color {
-  @apply text-secondary;
+  .mgnp-avatar-variant-primary {
+    @apply bg-primary;
+  }
+
+  .mgnp-avatar-variant-accent {
+    @apply bg-accent;
+  }
+
+  .mgnp-avatar-variant-info {
+    @apply bg-info;
+  }
+
+  .mgnp-avatar-variant-success {
+    @apply bg-success;
+  }
+
+  .mgnp-avatar-variant-warning {
+    @apply bg-warning;
+  }
+
+  .mgnp-avatar-variant-danger {
+    @apply bg-danger;
+  }
+
+  .mgnp-avatar-fallback-variant-default {
+    @apply text-default-foreground;
+  }
+
+  .mgnp-avatar-fallback-variant-primary {
+    @apply text-foreground;
+  }
+
+  .mgnp-avatar-fallback-variant-accent {
+    @apply text-foreground;
+  }
+
+  .mgnp-avatar-fallback-variant-info {
+    @apply text-foreground;
+  }
+
+  .mgnp-avatar-fallback-variant-success {
+    @apply text-foreground;
+  }
+
+  .mgnp-avatar-fallback-variant-warning {
+    @apply text-foreground;
+  }
+
+  .mgnp-avatar-fallback-variant-danger {
+    @apply text-foreground;
+  }
 }

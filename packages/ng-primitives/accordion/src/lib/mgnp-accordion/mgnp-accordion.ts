@@ -1,4 +1,4 @@
-import { injectAccordionConfig } from './mgnp-accordion.token';
+import { injectMgnpAccordionConfig } from './mgnp-accordion.token';
 import { classes } from '@mgremy/ng-primitives/utils';
 
 import { Directive, input } from '@angular/core';
@@ -43,7 +43,7 @@ export type MgnpAccordionVariants = VariantProps<typeof mgnpAccordionVariants>;
 export class MgnpAccordion {
   private readonly _ngpAccordion = injectAccordionState();
 
-  public readonly config = injectAccordionConfig();
+  public readonly config = injectMgnpAccordionConfig();
   public readonly state = injectAccordionState();
 
   public readonly variant = input<MgnpAccordionVariants['variant']>(this.config.variant);

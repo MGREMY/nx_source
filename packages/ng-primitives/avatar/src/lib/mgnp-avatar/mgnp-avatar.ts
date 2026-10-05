@@ -1,20 +1,32 @@
-import { PropertyType } from '@mgremy/ng-primitives';
+import { injectMgnpAvatarConfig } from './mgnp-avatar.token';
+import { classes } from '@mgremy/ng-primitives/utils';
 
 import { Directive, input } from '@angular/core';
+import { cva, VariantProps } from 'class-variance-authority';
 import { injectAvatarState, NgpAvatar, provideAvatarState } from 'ng-primitives/avatar';
 
-export type MgnpAvatarColor = PropertyType<
-  'ui' | 'primary' | 'accent' | 'info' | 'success' | 'warning' | 'danger'
->;
+export const mgnpAvatarVariants = cva('mgnp-avatar group/mgnp-avatar', {
+  variants: {
+    variant: {
+      default: 'mgnp-avatar-variant-default',
+      primary: 'mgnp-avatar-variant-primary',
+      accent: 'mgnp-avatar-variant-accent',
+      info: 'mgnp-avatar-variant-info',
+      success: 'mgnp-avatar-variant-success',
+      warning: 'mgnp-avatar-variant-warning',
+      danger: 'mgnp-avatar-variant-danger',
+    },
+  },
+  defaultVariants: {
+    variant: 'default',
+  },
+});
+
+export type MgnpAvatarVariants = VariantProps<typeof mgnpAvatarVariants>;
 
 @Directive({
   selector: '[mgnpAvatar]',
   providers: [provideAvatarState()],
-  host: {
-    class: 'mgnp-avatar mgnp-c-avatar',
-    'data-mgnp-avatar': '',
-    '[attr.data-mgnp-avatar-color]': 'color()',
-  },
   hostDirectives: [
     {
       directive: NgpAvatar,
@@ -25,7 +37,12 @@ export type MgnpAvatarColor = PropertyType<
   exportAs: 'mgnpAvatar',
 })
 export class MgnpAvatar {
-  readonly state = injectAvatarState();
+  public readonly config = injectMgnpAvatarConfig();
+  public readonly state = injectAvatarState();
 
-  readonly color = input<MgnpAvatarColor>('ui');
+  public readonly variant = input<MgnpAvatarVariants['variant']>(this.config.variant);
+
+  constructor() {
+    classes(() => mgnpAvatarVariants({ variant: this.variant() }));
+  }
 }

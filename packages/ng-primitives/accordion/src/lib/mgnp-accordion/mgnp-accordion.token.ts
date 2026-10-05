@@ -16,6 +16,6 @@ export function provideMgnpAccordionConfig(config: Partial<MgnpAccordionConfig>)
   return { provide: Token, useValue: { ...defaultConfig, ...config } };
 }
 
-export function injectAccordionConfig(): MgnpAccordionConfig {
+export function injectMgnpAccordionConfig(): MgnpAccordionConfig {
   return inject(Token, { optional: true }) ?? defaultConfig;
 }
