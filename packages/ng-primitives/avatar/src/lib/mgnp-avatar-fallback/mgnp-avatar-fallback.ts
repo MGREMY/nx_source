@@ -42,7 +42,7 @@ export type MgnpAvatarFallbackVariants = VariantProps<typeof mgnpAvatarFallbackV
   exportAs: 'mgnpAvatarFallback',
 })
 export class MgnpAvatarFallback {
-  protected readonly _avatar = inject(MgnpAvatar);
+  private readonly _avatar = inject(MgnpAvatar);
 
   public readonly config = injectAvatarFallbackConfig();
   public readonly state = injectAvatarFallbackState();

@@ -1,24 +1,36 @@
-import { PropertyType } from '@mgremy/ng-primitives';
+import { injectMgnpBreadcrumbConfig } from './mgnp-breadcrumb.token';
+import { classes } from '@mgremy/ng-primitives/utils';
 
 import { Directive, input } from '@angular/core';
+import { cva, VariantProps } from 'class-variance-authority';
 import {
   injectBreadcrumbsState,
   NgpBreadcrumbs,
   provideBreadcrumbsState,
 } from 'ng-primitives/breadcrumbs';
 
-export type MgnpBreadcrumbColor = PropertyType<
-  'ui' | 'primary' | 'accent' | 'info' | 'success' | 'warning' | 'danger'
->;
+export const mgnpBreadcrumbVariants = cva('mgnp-breadcrumb group/mgnp-breadcrumb', {
+  variants: {
+    variant: {
+      default: 'mgnp-breadcrumb-variant-default',
+      primary: 'mgnp-breadcrumb-variant-primary',
+      accent: 'mgnp-breadcrumb-variant-accent',
+      info: 'mgnp-breadcrumb-variant-info',
+      success: 'mgnp-breadcrumb-variant-success',
+      warning: 'mgnp-breadcrumb-variant-warning',
+      danger: 'mgnp-breadcrumb-variant-danger',
+    },
+  },
+  defaultVariants: {
+    variant: 'default',
+  },
+});
+
+export type MgnpBreadcrumbVariants = VariantProps<typeof mgnpBreadcrumbVariants>;
 
 @Directive({
   selector: '[mgnpBreadcrumb]',
   providers: [provideBreadcrumbsState()],
-  host: {
-    class: 'mgnp-breadcrumb mgnp-c-breadcrumb',
-    'data-mgnp-breadcrumb': '',
-    '[attr.data-mgnp-breadcrumb-color]': 'color()',
-  },
   hostDirectives: [
     {
       directive: NgpBreadcrumbs,
@@ -29,7 +41,12 @@ export type MgnpBreadcrumbColor = PropertyType<
   exportAs: 'mgnpBreadcrumb',
 })
 export class MgnpBreadcrumb {
-  readonly state = injectBreadcrumbsState();
+  public readonly config = injectMgnpBreadcrumbConfig();
+  public readonly state = injectBreadcrumbsState();
 
-  readonly color = input<MgnpBreadcrumbColor>('ui');
+  public readonly variant = input<MgnpBreadcrumbVariants['variant']>(this.config.variant);
+
+  constructor() {
+    classes(() => mgnpBreadcrumbVariants({ variant: this.variant() }));
+  }
 }

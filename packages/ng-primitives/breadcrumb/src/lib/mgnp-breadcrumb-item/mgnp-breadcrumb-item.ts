@@ -1,20 +1,35 @@
 import { MgnpBreadcrumb } from '../mgnp-breadcrumb/mgnp-breadcrumb';
+import { injectMgnpBreadcrumbItemConfig } from './mgnp-breadcrumb-item.token';
+import { classes } from '@mgremy/ng-primitives/utils';
 
 import { Directive, inject } from '@angular/core';
+import { cva } from 'class-variance-authority';
 import {
   injectBreadcrumbItemState,
   NgpBreadcrumbItem,
   provideBreadcrumbItemState,
 } from 'ng-primitives/breadcrumbs';
 
+export const mgnpBreadcrumbItemVariants = cva('mgnp-breadcrumb-item group/mgnp-breadcrumb-item', {
+  variants: {
+    variant: {
+      default: 'mgnp-breadcrumb-item-variant-default',
+      primary: 'mgnp-breadcrumb-item-variant-primary',
+      accent: 'mgnp-breadcrumb-item-variant-accent',
+      info: 'mgnp-breadcrumb-item-variant-info',
+      success: 'mgnp-breadcrumb-item-variant-success',
+      warning: 'mgnp-breadcrumb-item-variant-warning',
+      danger: 'mgnp-breadcrumb-item-variant-danger',
+    },
+  },
+  defaultVariants: {
+    variant: 'default',
+  },
+});
+
 @Directive({
   selector: '[mgnpBreadcrumbItem]',
   providers: [provideBreadcrumbItemState()],
-  host: {
-    class: 'mgnp-breadcrumb-item mgnp-c-breadcrumb-item',
-    'data-mgnp-breadcrumb-item': '',
-    '[attr.data-mgnp-breadcrumb-item-color]': 'breadcrumb.color()',
-  },
   hostDirectives: [
     {
       directive: NgpBreadcrumbItem,
@@ -25,7 +40,12 @@ import {
   exportAs: 'mgnpBreadcrumbItem',
 })
 export class MgnpBreadcrumbItem {
-  protected readonly breadcrumb = inject(MgnpBreadcrumb);
+  private readonly _breadcrumb = inject(MgnpBreadcrumb);
 
-  readonly state = injectBreadcrumbItemState();
+  public readonly config = injectMgnpBreadcrumbItemConfig();
+  public readonly state = injectBreadcrumbItemState();
+
+  constructor() {
+    classes(() => mgnpBreadcrumbItemVariants({ variant: this._breadcrumb.variant() }));
+  }
 }

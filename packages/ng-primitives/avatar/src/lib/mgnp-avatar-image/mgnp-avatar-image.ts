@@ -42,7 +42,7 @@ export type MgnpAvatarImageVariants = VariantProps<typeof mgnpAvatarImageVariant
   exportAs: 'mgnpAvatarImage',
 })
 export class MgnpAvatarImage {
-  protected readonly _avatar = inject(MgnpAvatar);
+  private readonly _avatar = inject(MgnpAvatar);
 
   public readonly state = injectAvatarImageState();
   public readonly config = injectAvatarImageConfig();

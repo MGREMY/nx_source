@@ -6,6 +6,7 @@ import {
   MgnpBreadcrumbList,
   MgnpBreadcrumbPage,
   MgnpBreadcrumbSeparator,
+  MgnpBreadcrumbVariants,
 } from '@mgremy/ng-primitives/breadcrumb';
 import { MgnpMenu, MgnpMenuItem, MgnpMenuTrigger } from '@mgremy/ng-primitives/menu';
 
@@ -32,9 +33,9 @@ import { RouterLink } from '@angular/router';
   ],
   template: `
     <div class="flex flex-col gap-2 w-full items-center justify-center">
-      @for (color of _colors; track $index) {
-        <span>{{ color }}</span>
-        <nav aria-label="Breadcrumb" mgnpBreadcrumb [color]="color">
+      @for (variant of _variants; track $index) {
+        <span>{{ variant }}</span>
+        <nav aria-label="Breadcrumb" mgnpBreadcrumb [variant]="variant">
           <ol mgnpBreadcrumbList>
             <li mgnpBreadcrumbItem>
               <a mgnpBreadcrumbLink [routerLink]="['/']">Home</a>
@@ -52,7 +53,7 @@ import { RouterLink } from '@angular/router';
               </button>
 
               <ng-template #breadcrumbMenu>
-                <div mgnpMenu [color]="color">
+                <div mgnpMenu>
                   <button mgnpMenuItem>Some</button>
                   <button mgnpMenuItem>Other</button>
                   <button mgnpMenuItem>Options</button>
@@ -85,5 +86,13 @@ import { RouterLink } from '@angular/router';
   providers: [provideIcons({ heroChevronRight, heroEllipsisHorizontal })],
 })
 export default class Breadcrumb {
-  readonly _colors = ['ui', 'primary', 'accent', 'info', 'success', 'warning', 'danger'];
+  readonly _variants = [
+    'default',
+    'primary',
+    'accent',
+    'info',
+    'success',
+    'warning',
+    'danger',
+  ] as MgnpBreadcrumbVariants['variant'][];
 }

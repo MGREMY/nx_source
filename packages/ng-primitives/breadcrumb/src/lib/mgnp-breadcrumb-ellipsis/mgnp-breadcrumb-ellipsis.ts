@@ -1,20 +1,38 @@
 import { MgnpBreadcrumb } from '../mgnp-breadcrumb/mgnp-breadcrumb';
+import { injectMgnpBreadcrumbEllipsisConfig } from './mgnp-breadcrumb-ellipsis.token';
+import { classes } from '@mgremy/ng-primitives/utils';
 
 import { Directive, inject } from '@angular/core';
+import { cva } from 'class-variance-authority';
 import {
   injectBreadcrumbEllipsisState,
   NgpBreadcrumbEllipsis,
   provideBreadcrumbEllipsisState,
 } from 'ng-primitives/breadcrumbs';
 
+export const mgnpBreadcrumbEllipsisVariants = cva(
+  'mgnp-breadcrumb-ellipsis group/mgnp-breadcrumb-ellipsis',
+  {
+    variants: {
+      variant: {
+        default: 'mgnp-breadcrumb-ellipsis-variant-default',
+        primary: 'mgnp-breadcrumb-ellipsis-variant-primary',
+        accent: 'mgnp-breadcrumb-ellipsis-variant-accent',
+        info: 'mgnp-breadcrumb-ellipsis-variant-info',
+        success: 'mgnp-breadcrumb-ellipsis-variant-success',
+        warning: 'mgnp-breadcrumb-ellipsis-variant-warning',
+        danger: 'mgnp-breadcrumb-ellipsis-variant-danger',
+      },
+    },
+    defaultVariants: {
+      variant: 'default',
+    },
+  }
+);
+
 @Directive({
   selector: '[mgnpBreadcrumbEllipsis]',
   providers: [provideBreadcrumbEllipsisState()],
-  host: {
-    class: 'mgnp-breadcrumb-ellipsis mgnp-c-breadcrumb-ellipsis',
-    'data-mgnp-breadcrumb-ellipsis': '',
-    '[attr.data-mgnp-breadcrumb-ellipsis-color]': 'breadcrumb.color()',
-  },
   hostDirectives: [
     {
       directive: NgpBreadcrumbEllipsis,
@@ -25,7 +43,12 @@ import {
   exportAs: 'mgnpBreadcrumbEllipsis',
 })
 export class MgnpBreadcrumbEllipsis {
-  protected readonly breadcrumb = inject(MgnpBreadcrumb);
+  private readonly _breadcrumb = inject(MgnpBreadcrumb);
 
-  readonly state = injectBreadcrumbEllipsisState();
+  public readonly config = injectMgnpBreadcrumbEllipsisConfig();
+  public readonly state = injectBreadcrumbEllipsisState();
+
+  constructor() {
+    classes(() => mgnpBreadcrumbEllipsisVariants({ variant: this._breadcrumb.variant() }));
+  }
 }

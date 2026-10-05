@@ -1,22 +1,99 @@
-@utility mgnp-breadcrumb-color-* {
-  @apply text-[color-mix(in_srgb,--value(--text-color-*),var(--mg-color-tertiary-mix))];
-}
-
-@utility mgnp-breadcrumb-ellipsis-color-* {
-  @apply bg-transparent;
-  @apply border-transparent;
-
-  @variant data-hover {
-    @apply text-[--value(--text-color-*)];
+@layer components {
+  .mgnp-breadcrumb-variant-default {
+    @apply text-default-foreground/70;
   }
-}
 
-@utility mgnp-breadcrumb-link-color-* {
-  @variant data-hover {
-    @apply text-[--value(--text-color-*)];
+  .mgnp-breadcrumb-variant-primary {
+    @apply text-default-foreground/70;
   }
-}
 
-@utility mgnp-breadcrumb-page-color-* {
-  @apply text-[--value(--text-color-*)];
+  .mgnp-breadcrumb-variant-accent {
+    @apply text-default-foreground/70;
+  }
+
+  .mgnp-breadcrumb-variant-info {
+    @apply text-default-foreground/70;
+  }
+
+  .mgnp-breadcrumb-variant-success {
+    @apply text-default-foreground/70;
+  }
+
+  .mgnp-breadcrumb-variant-warning {
+    @apply text-default-foreground/70;
+  }
+
+  .mgnp-breadcrumb-variant-danger {
+    @apply text-default-foreground/70;
+  }
+
+  .mgnp-breadcrumb-link-variant-default {
+    @variant hover {
+      @apply text-default-foreground;
+    }
+  }
+
+  .mgnp-breadcrumb-link-variant-primary {
+    @variant hover {
+      @apply text-primary-foreground;
+    }
+  }
+
+  .mgnp-breadcrumb-link-variant-accent {
+    @variant hover {
+      @apply text-accent-foreground;
+    }
+  }
+
+  .mgnp-breadcrumb-link-variant-info {
+    @variant hover {
+      @apply text-info-foreground;
+    }
+  }
+
+  .mgnp-breadcrumb-link-variant-success {
+    @variant hover {
+      @apply text-success-foreground;
+    }
+  }
+
+  .mgnp-breadcrumb-link-variant-warning {
+    @variant hover {
+      @apply text-warning-foreground;
+    }
+  }
+
+  .mgnp-breadcrumb-link-variant-danger {
+    @variant hover {
+      @apply text-danger-foreground;
+    }
+  }
+
+  .mgnp-breadcrumb-page-variant-default {
+    @apply text-default-foreground;
+  }
+
+  .mgnp-breadcrumb-page-variant-primary {
+    @apply text-primary-foreground;
+  }
+
+  .mgnp-breadcrumb-page-variant-accent {
+    @apply text-accent-foreground;
+  }
+
+  .mgnp-breadcrumb-page-variant-info {
+    @apply text-info-foreground;
+  }
+
+  .mgnp-breadcrumb-page-variant-success {
+    @apply text-success-foreground;
+  }
+
+  .mgnp-breadcrumb-page-variant-warning {
+    @apply text-warning-foreground;
+  }
+
+  .mgnp-breadcrumb-page-variant-danger {
+    @apply text-danger-foreground;
+  }
 }
