@@ -1,16 +1,92 @@
-@utility mgnp-checkbox-color-* {
-  @apply text-inverse;
-  @apply border-[--value(--border-color-*)];
+@layer components {
+  .mgnp-checkbox-variant-default {
+    @apply text-default;
+    @apply border-muted;
 
-  @variant not-data-pristine:data-invalid {
-    @apply border-danger;
+    @variant data-checked {
+      @apply bg-muted;
+    }
+
+    @variant data-indeterminate {
+      @apply bg-muted/25;
+    }
   }
 
-  @variant data-checked {
-    @apply bg-[color-mix(in_srgb,--value(--background-color-*),var(--mg-state-active-mix))] border-transparent;
+  .mgnp-checkbox-variant-primary {
+    @apply text-primary-foreground;
+    @apply border-primary-foreground;
+
+    @variant data-checked {
+      @apply bg-primary;
+    }
+
+    @variant data-indeterminate {
+      @apply bg-primary/50;
+    }
   }
 
-  @variant data-indeterminate {
-    @apply bg-[color-mix(in_srgb,--value(--background-color-*),var(--mg-state-active-mix))]/50 border-transparent;
+  .mgnp-checkbox-variant-accent {
+    @apply text-accent-foreground;
+    @apply border-accent-foreground;
+
+    @variant data-checked {
+      @apply bg-accent;
+    }
+
+    @variant data-indeterminate {
+      @apply bg-accent/50;
+    }
+  }
+
+  .mgnp-checkbox-variant-info {
+    @apply text-info-foreground;
+    @apply border-info-foreground;
+
+    @variant data-checked {
+      @apply bg-info;
+    }
+
+    @variant data-indeterminate {
+      @apply bg-info/50;
+    }
+  }
+
+  .mgnp-checkbox-variant-success {
+    @apply text-success-foreground;
+    @apply border-success-foreground;
+
+    @variant data-checked {
+      @apply bg-success;
+    }
+
+    @variant data-indeterminate {
+      @apply bg-success/50;
+    }
+  }
+
+  .mgnp-checkbox-variant-warning {
+    @apply text-warning-foreground;
+    @apply border-warning-foreground;
+
+    @variant data-checked {
+      @apply bg-warning;
+    }
+
+    @variant data-indeterminate {
+      @apply bg-warning/50;
+    }
+  }
+
+  .mgnp-checkbox-variant-danger {
+    @apply text-danger-foreground;
+    @apply border-danger-foreground;
+
+    @variant data-checked {
+      @apply bg-danger;
+    }
+
+    @variant data-indeterminate {
+      @apply bg-danger/50;
+    }
   }
 }

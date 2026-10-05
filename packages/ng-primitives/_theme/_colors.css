@@ -18,6 +18,7 @@
   --mg-danger-foreground: var(--color-red-800);
 
   --mg-border: var(--color-stone-200);
+  --mg-muted: var(--color-gray-400);
 
   /* TODO DELETE */
 
@@ -83,6 +84,7 @@
   --color-danger-foreground: var(--mg-danger-foreground);
 
   --color-border: var(--mg-border);
+  --color-muted: var(--mg-muted);
 
   /* TODO DELETE */
 

@@ -1,4 +1,4 @@
-import { MgnpCheckbox } from '@mgremy/ng-primitives/checkbox';
+import { MgnpCheckbox, MgnpCheckboxVariants } from '@mgremy/ng-primitives/checkbox';
 
 import { Component } from '@angular/core';
 
@@ -10,14 +10,22 @@ import { Component } from '@angular/core';
       <span></span>
       <span></span>
       <span class="justify-self-center">Indeterminate</span>
-      @for (color of _colors; track $index) {
-        <span>{{ color }}</span>
-        <span class="justify-self-end" mgnpCheckbox [color]="color"></span>
-        <span class="justify-self-center" mgnpCheckbox mgnpCheckboxIndeterminate [color]="color"></span>
+      @for (variant of _variants; track $index) {
+        <span>{{ variant }}</span>
+        <span class="justify-self-end" mgnpCheckbox [variant]="variant"></span>
+        <span class="justify-self-center" mgnpCheckbox mgnpCheckboxIndeterminate [variant]="variant"></span>
       }
     </div>
   `,
 })
 export default class Checkbox {
-  readonly _colors = ['ui', 'primary', 'accent', 'info', 'success', 'warning', 'danger'];
+  readonly _variants = [
+    'default',
+    'primary',
+    'accent',
+    'info',
+    'success',
+    'warning',
+    'danger',
+  ] as MgnpCheckboxVariants['variant'][];
 }

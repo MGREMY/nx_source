@@ -15,11 +15,11 @@
     @apply bg-default text-default-foreground;
 
     @variant data-hover {
-      @apply bg-default/80;
+      @apply bg-muted/30;
     }
 
     @variant data-press {
-      @apply bg-default/70;
+      @apply bg-muted/50;
     }
   }
 
