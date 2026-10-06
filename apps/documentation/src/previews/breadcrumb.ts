@@ -1,12 +1,12 @@
 import {
   MgnpBreadcrumb,
+  MgnpBreadcrumbCva,
   MgnpBreadcrumbEllipsis,
   MgnpBreadcrumbItem,
   MgnpBreadcrumbLink,
   MgnpBreadcrumbList,
   MgnpBreadcrumbPage,
   MgnpBreadcrumbSeparator,
-  MgnpBreadcrumbVariants,
 } from '@mgremy/ng-primitives/breadcrumb';
 import { MgnpMenu, MgnpMenuItem, MgnpMenuTrigger } from '@mgremy/ng-primitives/menu';
 
@@ -94,5 +94,5 @@ export default class Breadcrumb {
     'success',
     'warning',
     'danger',
-  ] as MgnpBreadcrumbVariants['variant'][];
+  ] as MgnpBreadcrumbCva['variant'][];
 }

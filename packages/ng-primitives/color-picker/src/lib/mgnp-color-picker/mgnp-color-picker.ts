@@ -1,11 +1,9 @@
-import { createMgnpComponentConfig } from '@mgremy/ng-primitives';
+import { createMgnpComponent } from '@mgremy/ng-primitives';
 import { classes } from '@mgremy/ng-primitives/utils';
 
 import { Directive, input } from '@angular/core';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { ControlValueAccessor } from '@angular/forms';
-import { cva, VariantProps } from 'class-variance-authority';
-import { ClassValue } from 'clsx';
 import {
   Color,
   injectColorPickerState,
@@ -15,40 +13,11 @@ import {
 import { ChangeFn, provideValueAccessor, TouchedFn } from 'ng-primitives/utils';
 
 export type MgnpColorPickerCva = {
-  variant: {
-    default: ClassValue;
-    primary: ClassValue;
-    accent: ClassValue;
-    info: ClassValue;
-    success: ClassValue;
-    warning: ClassValue;
-    danger: ClassValue;
-  };
+  variant: 'default' | 'primary' | 'accent' | 'info' | 'success' | 'warning' | 'danger';
 };
 
-export const mgnpColorPickerVariants = cva<MgnpColorPickerCva>(
-  'mgnp-color-picker group/mgnp-color-picker',
-  {
-    variants: {
-      variant: {
-        default: 'mgnp-color-picker-variant-variant',
-        primary: 'mgnp-color-picker-variant-primary',
-        accent: 'mgnp-color-picker-variant-accent',
-        info: 'mgnp-color-picker-variant-info',
-        success: 'mgnp-color-picker-variant-success',
-        warning: 'mgnp-color-picker-variant-warning',
-        danger: 'mgnp-color-picker-variant-danger',
-      },
-    },
-  }
-);
-
-export type MgnpColorPickerVariants = VariantProps<typeof mgnpColorPickerVariants>;
-
-export const [provideMgnpColorPickerConfig, injectMgnpColorPickerConfig] =
-  createMgnpComponentConfig<{
-    variant: MgnpColorPickerVariants['variant'];
-  }>('MgnpColorPicker', {
+export const [mgnpColorPickerVariants, provideMgnpColorPiclerConfig, injectMgnpColorPickerConfig] =
+  createMgnpComponent<MgnpColorPickerCva>('color-picker', {
     variant: 'default',
   });
 
@@ -77,7 +46,7 @@ export class MgnpColorPicker implements ControlValueAccessor {
   protected onChangeFn?: ChangeFn<Color>;
   protected onTouchedFn?: TouchedFn;
 
-  public readonly variant = input<MgnpColorPickerVariants['variant']>(this.config.variant);
+  public readonly variant = input<MgnpColorPickerCva['variant']>(this.config.variant);
 
   public constructor() {
     classes(() => mgnpColorPickerVariants({ variant: this.variant() }));

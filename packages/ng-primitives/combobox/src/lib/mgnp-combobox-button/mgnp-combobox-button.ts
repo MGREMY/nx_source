@@ -1,38 +1,19 @@
 import { MgnpCombobox, MgnpComboboxCva } from '../mgnp-combobox/mgnp-combobox';
-import { createMgnpComponentConfig } from '@mgremy/ng-primitives';
+import { createMgnpComponent } from '@mgremy/ng-primitives';
 import { classes } from '@mgremy/ng-primitives/utils';
 
 import { Directive, inject } from '@angular/core';
-import { cva, VariantProps } from 'class-variance-authority';
 import { NgpComboboxButton } from 'ng-primitives/combobox';
 
 export type MgnpComboboxButtonCva = MgnpComboboxCva;
 
-export const mgnpComboboxButtonVariants = cva<MgnpComboboxButtonCva>(
-  'mgnp-combobox-button group/mgnp-combobox-button',
-  {
-    variants: {
-      variant: {
-        default: 'mgnp-combobox-button-variant-default',
-        primary: 'mgnp-combobox-button-variant-primary',
-        accent: 'mgnp-combobox-button-variant-accent',
-        info: 'mgnp-combobox-button-variant-info',
-        success: 'mgnp-combobox-button-variant-success',
-        warning: 'mgnp-combobox-button-variant-warning',
-        danger: 'mgnp-combobox-button-variant-danger',
-      },
-    },
-  }
-);
-
-export type MgnpComboboxButtonVariants = VariantProps<typeof mgnpComboboxButtonVariants>;
-
-export const [provideMgnpComboboxButtonConfig, injectMgnpComboboxButtonConfig] =
-  createMgnpComponentConfig<{
-    variant: MgnpComboboxButtonVariants['variant'];
-  }>('MgnpComboboxButton', {
-    variant: 'default',
-  });
+export const [
+  mgnpComboboxButtonVariants,
+  provideMgnpComboboxButtonConfig,
+  injectMgnpComboboxButtonConfig,
+] = createMgnpComponent<MgnpComboboxButtonCva>('combobox-button', {
+  variant: 'default',
+});
 
 @Directive({
   selector: '[mgnpComboboxButton]',

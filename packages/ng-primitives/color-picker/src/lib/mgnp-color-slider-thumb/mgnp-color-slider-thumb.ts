@@ -1,9 +1,8 @@
 import { MgnpColorPicker, MgnpColorPickerCva } from '../mgnp-color-picker/mgnp-color-picker';
-import { createMgnpComponentConfig } from '@mgremy/ng-primitives';
+import { createMgnpComponent } from '@mgremy/ng-primitives';
 import { classes } from '@mgremy/ng-primitives/utils';
 
 import { Directive, inject } from '@angular/core';
-import { cva, VariantProps } from 'class-variance-authority';
 import {
   injectColorSliderThumbState,
   NgpColorSliderThumb,
@@ -12,31 +11,13 @@ import {
 
 export type MgnpColorSliderThumbCva = MgnpColorPickerCva;
 
-export const mgnpColorSliderThumbVariants = cva<MgnpColorSliderThumbCva>(
-  'mgnp-color-slider-thumb group/mgnp-color-slider-thumb',
-  {
-    variants: {
-      variant: {
-        default: 'mgnp-color-slider-thumb-variant-variant',
-        primary: 'mgnp-color-slider-thumb-variant-primary',
-        accent: 'mgnp-color-slider-thumb-variant-accent',
-        info: 'mgnp-color-slider-thumb-variant-info',
-        success: 'mgnp-color-slider-thumb-variant-success',
-        warning: 'mgnp-color-slider-thumb-variant-warning',
-        danger: 'mgnp-color-slider-thumb-variant-danger',
-      },
-    },
-  }
-);
-
-export type MgnpColorSliderThumbVariants = VariantProps<typeof mgnpColorSliderThumbVariants>;
-
-export const [provideMgnpColorSliderThumbConfig, injectMgnpColorSliderThumbConfig] =
-  createMgnpComponentConfig<{
-    variant: MgnpColorSliderThumbVariants['variant'];
-  }>('MgnpColorSliderThumb', {
-    variant: 'default',
-  });
+export const [
+  mgnpColorSliderThumbVariants,
+  provideMgnpColorSliderThumbConfig,
+  injectMgnpColorSliderThumbConfig,
+] = createMgnpComponent<MgnpColorSliderThumbCva>('color-slider-thumb', {
+  variant: 'default',
+});
 
 @Directive({
   selector: '[mgnpColorSliderThumb]',

@@ -4,7 +4,7 @@ import {
   MgnpColorAreaThumb,
   MgnpColorField,
   MgnpColorPicker,
-  MgnpColorPickerVariants,
+  MgnpColorPickerCva,
   MgnpColorSlider,
   MgnpColorSliderThumb,
   MgnpColorSliderTrack,
@@ -56,6 +56,6 @@ export default class ColorPicker {
     'success',
     'warning',
     'danger',
-  ] as MgnpColorPickerVariants['variant'][];
+  ] as MgnpColorPickerCva['variant'][];
   readonly c = Color.parse('#00a6f4');
 }

@@ -14,7 +14,7 @@
 
   .mgnp-checkbox-variant-primary {
     @apply text-primary-foreground;
-    @apply border-primary-foreground;
+    @apply border-primary;
 
     @variant data-checked {
       @apply bg-primary;
@@ -27,7 +27,7 @@
 
   .mgnp-checkbox-variant-accent {
     @apply text-accent-foreground;
-    @apply border-accent-foreground;
+    @apply border-accent;
 
     @variant data-checked {
       @apply bg-accent;
@@ -40,7 +40,7 @@
 
   .mgnp-checkbox-variant-info {
     @apply text-info-foreground;
-    @apply border-info-foreground;
+    @apply border-info;
 
     @variant data-checked {
       @apply bg-info;
@@ -53,7 +53,7 @@
 
   .mgnp-checkbox-variant-success {
     @apply text-success-foreground;
-    @apply border-success-foreground;
+    @apply border-success;
 
     @variant data-checked {
       @apply bg-success;
@@ -66,7 +66,7 @@
 
   .mgnp-checkbox-variant-warning {
     @apply text-warning-foreground;
-    @apply border-warning-foreground;
+    @apply border-warning;
 
     @variant data-checked {
       @apply bg-warning;
@@ -79,7 +79,7 @@
 
   .mgnp-checkbox-variant-danger {
     @apply text-danger-foreground;
-    @apply border-danger-foreground;
+    @apply border-danger;
 
     @variant data-checked {
       @apply bg-danger;

@@ -1,9 +1,8 @@
 import { MgnpColorPicker, MgnpColorPickerCva } from '../mgnp-color-picker/mgnp-color-picker';
-import { createMgnpComponentConfig } from '@mgremy/ng-primitives';
+import { createMgnpComponent } from '@mgremy/ng-primitives';
 import { classes } from '@mgremy/ng-primitives/utils';
 
 import { Directive, inject } from '@angular/core';
-import { cva, VariantProps } from 'class-variance-authority';
 import {
   injectColorSwatchState,
   NgpColorSwatch,
@@ -12,29 +11,8 @@ import {
 
 export type MgnpColorSwatchCva = MgnpColorPickerCva;
 
-export const mgnpColorSwatchVariants = cva<MgnpColorSwatchCva>(
-  'mgnp-color-swatch group/mgnp-color-swatch',
-  {
-    variants: {
-      variant: {
-        default: 'mgnp-color-swatch-variant-variant',
-        primary: 'mgnp-color-swatch-variant-primary',
-        accent: 'mgnp-color-swatch-variant-accent',
-        info: 'mgnp-color-swatch-variant-info',
-        success: 'mgnp-color-swatch-variant-success',
-        warning: 'mgnp-color-swatch-variant-warning',
-        danger: 'mgnp-color-swatch-variant-danger',
-      },
-    },
-  }
-);
-
-export type MgnpColorSwatchVariants = VariantProps<typeof mgnpColorSwatchVariants>;
-
-export const [provideMgnpColorSwatchConfig, injectMgnpColorSwatchConfig] =
-  createMgnpComponentConfig<{
-    variant: MgnpColorSwatchVariants['variant'];
-  }>('MgnpColorSwatch', {
+export const [mgnpColorSwatchVariants, provideMgnpColorSwatchConfig, injectMgnpColorSwatchConfig] =
+  createMgnpComponent<MgnpColorSwatchCva>('color-swatch', {
     variant: 'default',
   });
 

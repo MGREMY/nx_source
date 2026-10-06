@@ -1,4 +1,4 @@
-import { MgnpButton, MgnpButtonVariants } from '@mgremy/ng-primitives/button';
+import { MgnpButton, MgnpButtonCva } from '@mgremy/ng-primitives/button';
 
 import { Component } from '@angular/core';
 
@@ -32,5 +32,5 @@ export default class Button {
     'success',
     'warning',
     'danger',
-  ] as MgnpButtonVariants['variant'][];
+  ] as MgnpButtonCva['variant'][];
 }

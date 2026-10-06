@@ -1,4 +1,4 @@
-import { MgnpAvatar, MgnpAvatarFallback, MgnpAvatarImage, MgnpAvatarVariants } from '@mgremy/ng-primitives/avatar';
+import { MgnpAvatar, MgnpAvatarCva, MgnpAvatarFallback, MgnpAvatarImage } from '@mgremy/ng-primitives/avatar';
 
 import { Component } from '@angular/core';
 
@@ -38,5 +38,5 @@ export default class Avatar {
     'success',
     'warning',
     'danger',
-  ] as MgnpAvatarVariants['variant'][];
+  ] as MgnpAvatarCva['variant'][];
 }

@@ -1,10 +1,10 @@
 import {
   MgnpCombobox,
   MgnpComboboxButton,
+  MgnpComboboxCva,
   MgnpComboboxDropdown,
   MgnpComboboxOption,
   MgnpComboboxPortal,
-  MgnpComboboxVariants,
 } from '@mgremy/ng-primitives/combobox';
 
 import { NgIcon, provideIcons } from '@ng-icons/core';
@@ -45,6 +45,6 @@ export default class Combobox {
     'success',
     'warning',
     'danger',
-  ] as MgnpComboboxVariants['variant'][];
+  ] as MgnpComboboxCva['variant'][];
   readonly options = ['option 1', 'option 2', 'option 3'];
 }

@@ -1,4 +1,4 @@
-import { MgnpCheckbox, MgnpCheckboxVariants } from '@mgremy/ng-primitives/checkbox';
+import { MgnpCheckbox, MgnpCheckboxCva } from '@mgremy/ng-primitives/checkbox';
 
 import { Component } from '@angular/core';
 
@@ -27,5 +27,5 @@ export default class Checkbox {
     'success',
     'warning',
     'danger',
-  ] as MgnpCheckboxVariants['variant'][];
+  ] as MgnpCheckboxCva['variant'][];
 }

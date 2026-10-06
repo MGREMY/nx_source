@@ -1,46 +1,19 @@
-import { createMgnpComponentConfig } from '@mgremy/ng-primitives';
+import { createMgnpComponent } from '@mgremy/ng-primitives';
 import { classes } from '@mgremy/ng-primitives/utils';
 
 import { Directive, input } from '@angular/core';
 import { ControlValueAccessor } from '@angular/forms';
-import { cva, VariantProps } from 'class-variance-authority';
-import { ClassValue } from 'clsx';
 import { injectComboboxState, NgpCombobox, provideComboboxState } from 'ng-primitives/combobox';
 import { ChangeFn, provideValueAccessor, TouchedFn } from 'ng-primitives/utils';
 
 export type MgnpComboboxCva = {
-  variant: {
-    default: ClassValue;
-    primary: ClassValue;
-    accent: ClassValue;
-    info: ClassValue;
-    success: ClassValue;
-    warning: ClassValue;
-    danger: ClassValue;
-  };
+  variant: 'default' | 'primary' | 'accent' | 'info' | 'success' | 'warning' | 'danger';
 };
 
-export const mgnpComboboxVariants = cva<MgnpComboboxCva>('mgnp-combobox group/mgnp-combobox', {
-  variants: {
-    variant: {
-      default: 'mgnp-combobox-variant-default',
-      primary: 'mgnp-combobox-variant-primary',
-      accent: 'mgnp-combobox-variant-accent',
-      info: 'mgnp-combobox-variant-info',
-      success: 'mgnp-combobox-variant-success',
-      warning: 'mgnp-combobox-variant-warning',
-      danger: 'mgnp-combobox-variant-danger',
-    },
-  },
-});
-
-export type MgnpComboboxVariants = VariantProps<typeof mgnpComboboxVariants>;
-
-export const [provideMgnpComboboxConfig, injectMgnpComboboxConfig] = createMgnpComponentConfig<{
-  variant: MgnpComboboxVariants['variant'];
-}>('MgnpCombobox', {
-  variant: 'default',
-});
+export const [mgnpComboboxVariants, provideMgnpComboboxConfig, injectMgnpComboboxConfig] =
+  createMgnpComponent<MgnpComboboxCva>('combobox', {
+    variant: 'default',
+  });
 
 @Directive({
   selector: '[mgnpCombobox]',
@@ -76,7 +49,7 @@ export class MgnpCombobox<T> implements ControlValueAccessor {
   public readonly config = injectMgnpComboboxConfig();
   public readonly state = injectComboboxState();
 
-  public readonly variant = input<MgnpComboboxVariants['variant']>(this.config.variant);
+  public readonly variant = input<MgnpComboboxCva['variant']>(this.config.variant);
 
   protected onChangeFn?: ChangeFn<T>;
   protected onTouchedFn?: TouchedFn;

@@ -12,8 +12,6 @@
   }
 
   .mgnp-button-variant-ghost {
-    @apply bg-default text-default-foreground;
-
     @variant data-hover {
       @apply bg-muted/30;
     }
