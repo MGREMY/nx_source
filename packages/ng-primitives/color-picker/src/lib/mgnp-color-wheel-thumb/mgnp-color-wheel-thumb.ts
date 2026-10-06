@@ -1,4 +1,4 @@
-import { MgnpColorPicker } from '../mgnp-color-picker/mgnp-color-picker';
+import { MgnpColorPicker, MgnpColorPickerCva } from '../mgnp-color-picker/mgnp-color-picker';
 import { createMgnpComponentConfig } from '@mgremy/ng-primitives';
 import { classes } from '@mgremy/ng-primitives/utils';
 
@@ -10,14 +10,9 @@ import {
   provideColorWheelThumbState,
 } from 'ng-primitives/color';
 
-export const [provideMgnpWheelThumbConfig, injectMgnpColorWheelThumbConfig] =
-  createMgnpComponentConfig<{
-    variant: MgnpColorWheelThumbVariants['variant'];
-  }>('MgnpColorWheelThumb', {
-    variant: 'default',
-  });
+export type MgnpColorWheelThumbCva = MgnpColorPickerCva;
 
-export const mgnpColorWheelThumbVariants = cva(
+export const mgnpColorWheelThumbVariants = cva<MgnpColorWheelThumbCva>(
   'mgnp-color-wheel-thumb group/mgnp-color-wheel-thumb',
   {
     variants: {
@@ -31,13 +26,17 @@ export const mgnpColorWheelThumbVariants = cva(
         danger: 'mgnp-color-wheel-thumb-variant-danger',
       },
     },
-    defaultVariants: {
-      variant: 'default',
-    },
   }
 );
 
 export type MgnpColorWheelThumbVariants = VariantProps<typeof mgnpColorWheelThumbVariants>;
+
+export const [provideMgnpWheelThumbConfig, injectMgnpColorWheelThumbConfig] =
+  createMgnpComponentConfig<{
+    variant: MgnpColorWheelThumbVariants['variant'];
+  }>('MgnpColorWheelThumb', {
+    variant: 'default',
+  });
 
 @Directive({
   selector: '[mgnpColorWheelThumb]',

@@ -1,4 +1,4 @@
-import { MgnpCombobox } from '../mgnp-combobox/mgnp-combobox';
+import { MgnpCombobox, MgnpComboboxCva } from '../mgnp-combobox/mgnp-combobox';
 import { createMgnpComponentConfig } from '@mgremy/ng-primitives';
 import { classes } from '@mgremy/ng-primitives/utils';
 
@@ -6,14 +6,9 @@ import { Directive, inject } from '@angular/core';
 import { cva, VariantProps } from 'class-variance-authority';
 import { NgpComboboxDropdown } from 'ng-primitives/combobox';
 
-export const [provideMgnpComboboxDropdownConfig, injectMgnpComboboxDropdownConfig] =
-  createMgnpComponentConfig<{
-    variant: MgnpComboboxDropdownVariants['variant'];
-  }>('MgnpComboboxDropdown', {
-    variant: 'default',
-  });
+export type MgnpComboboxDropdownCva = MgnpComboboxCva;
 
-export const mgnpComboboxDropdownVariants = cva(
+export const mgnpComboboxDropdownVariants = cva<MgnpComboboxDropdownCva>(
   'mgnp-combobox-dropdown group/mgnp-combobox-dropdown',
   {
     variants: {
@@ -27,13 +22,17 @@ export const mgnpComboboxDropdownVariants = cva(
         danger: 'mgnp-combobox-dropdown-variant-danger',
       },
     },
-    defaultVariants: {
-      variant: 'default',
-    },
   }
 );
 
 export type MgnpComboboxDropdownVariants = VariantProps<typeof mgnpComboboxDropdownVariants>;
+
+export const [provideMgnpComboboxDropdownConfig, injectMgnpComboboxDropdownConfig] =
+  createMgnpComponentConfig<{
+    variant: MgnpComboboxDropdownVariants['variant'];
+  }>('MgnpComboboxDropdown', {
+    variant: 'default',
+  });
 
 @Directive({
   selector: '[mgnpComboboxDropdown]',

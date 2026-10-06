@@ -3,7 +3,20 @@ import { classes } from '@mgremy/ng-primitives/utils';
 
 import { Directive, input } from '@angular/core';
 import { cva, VariantProps } from 'class-variance-authority';
+import { ClassValue } from 'clsx';
 import { injectAvatarState, NgpAvatar, provideAvatarState } from 'ng-primitives/avatar';
+
+export type MgnpAvatarCva = {
+  variant: {
+    default: ClassValue;
+    primary: ClassValue;
+    accent: ClassValue;
+    info: ClassValue;
+    success: ClassValue;
+    warning: ClassValue;
+    danger: ClassValue;
+  };
+};
 
 export const [providMgnpAvatarConfig, injectMgnpAvatarConfig] = createMgnpComponentConfig<{
   variant: MgnpAvatarVariants['variant'];
@@ -11,7 +24,7 @@ export const [providMgnpAvatarConfig, injectMgnpAvatarConfig] = createMgnpCompon
   variant: 'default',
 });
 
-export const mgnpAvatarVariants = cva('mgnp-avatar group/mgnp-avatar', {
+export const mgnpAvatarVariants = cva<MgnpAvatarCva>('mgnp-avatar group/mgnp-avatar', {
   variants: {
     variant: {
       default: 'mgnp-avatar-variant-default',
@@ -22,9 +35,6 @@ export const mgnpAvatarVariants = cva('mgnp-avatar group/mgnp-avatar', {
       warning: 'mgnp-avatar-variant-warning',
       danger: 'mgnp-avatar-variant-danger',
     },
-  },
-  defaultVariants: {
-    variant: 'default',
   },
 });
 

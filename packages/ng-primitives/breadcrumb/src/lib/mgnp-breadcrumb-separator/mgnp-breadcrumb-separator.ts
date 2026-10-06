@@ -1,4 +1,4 @@
-import { MgnpBreadcrumb } from '../mgnp-breadcrumb/mgnp-breadcrumb';
+import { MgnpBreadcrumb, MgnpBreadcrumbCva } from '../mgnp-breadcrumb/mgnp-breadcrumb';
 import { createMgnpComponentConfig } from '@mgremy/ng-primitives';
 import { classes } from '@mgremy/ng-primitives/utils';
 
@@ -10,14 +10,9 @@ import {
   provideBreadcrumbSeparatorState,
 } from 'ng-primitives/breadcrumbs';
 
-export const [provideMgnpBreadcrumbSeparatorConfig, injectMgnpBreadcrumbSeparatorConfig] =
-  createMgnpComponentConfig<{
-    variant: MgnpBreadcrumbSeparatorVariants['variant'];
-  }>('MgnpBreadcrumbSeparator', {
-    variant: 'default',
-  });
+export type MgnpBreadcrumbSeparatorCva = MgnpBreadcrumbCva;
 
-export const mgnpBreadcrumbSeparatorVariants = cva(
+export const mgnpBreadcrumbSeparatorVariants = cva<MgnpBreadcrumbSeparatorCva>(
   'mgnp-breadcrumb-separator group/mgnp-breadcrumb-separator',
   {
     variants: {
@@ -31,13 +26,17 @@ export const mgnpBreadcrumbSeparatorVariants = cva(
         danger: 'mgnp-breadcrumb-separator-variant-danger',
       },
     },
-    defaultVariants: {
-      variant: 'default',
-    },
   }
 );
 
 export type MgnpBreadcrumbSeparatorVariants = VariantProps<typeof mgnpBreadcrumbSeparatorVariants>;
+
+export const [provideMgnpBreadcrumbSeparatorConfig, injectMgnpBreadcrumbSeparatorConfig] =
+  createMgnpComponentConfig<{
+    variant: MgnpBreadcrumbSeparatorVariants['variant'];
+  }>('MgnpBreadcrumbSeparator', {
+    variant: 'default',
+  });
 
 @Directive({
   selector: '[mgnpBreadcrumbSeparator]',

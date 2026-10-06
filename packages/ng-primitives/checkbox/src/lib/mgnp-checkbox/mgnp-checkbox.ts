@@ -5,18 +5,30 @@ import { Directive, input } from '@angular/core';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { ControlValueAccessor } from '@angular/forms';
 import { cva, VariantProps } from 'class-variance-authority';
+import { ClassValue } from 'clsx';
 import { injectCheckboxState, NgpCheckbox, provideCheckboxState } from 'ng-primitives/checkbox';
 import { ChangeFn, provideValueAccessor, TouchedFn } from 'ng-primitives/utils';
 
-export const [provideMgnpCheckboxConfig, injectMgnpCheckboxConfig] = createMgnpComponentConfig<{
-  variant: MgnpCheckboxVariants['variant'];
-  size: MgnpCheckboxVariants['size'];
-}>('MgnpCheckbox', {
-  variant: 'default',
-  size: 'md',
-});
+export type MgnpCheckboxCva = {
+  variant: {
+    default: ClassValue;
+    primary: ClassValue;
+    accent: ClassValue;
+    info: ClassValue;
+    success: ClassValue;
+    warning: ClassValue;
+    danger: ClassValue;
+  };
+  size: {
+    xs: ClassValue;
+    sm: ClassValue;
+    md: ClassValue;
+    lg: ClassValue;
+    xl: ClassValue;
+  };
+};
 
-export const mgnpCheckboxVariants = cva('mgnp-checkbox group/mgnp-checkbox', {
+export const mgnpCheckboxVariants = cva<MgnpCheckboxCva>('mgnp-checkbox group/mgnp-checkbox', {
   variants: {
     variant: {
       default: 'mgnp-checkbox-variant-default',
@@ -35,13 +47,17 @@ export const mgnpCheckboxVariants = cva('mgnp-checkbox group/mgnp-checkbox', {
       xl: 'mgnp-checkbox-size-xl',
     },
   },
-  defaultVariants: {
-    variant: 'default',
-    size: 'md',
-  },
 });
 
 export type MgnpCheckboxVariants = VariantProps<typeof mgnpCheckboxVariants>;
+
+export const [provideMgnpCheckboxConfig, injectMgnpCheckboxConfig] = createMgnpComponentConfig<{
+  variant: MgnpCheckboxVariants['variant'];
+  size: MgnpCheckboxVariants['size'];
+}>('MgnpCheckbox', {
+  variant: 'default',
+  size: 'md',
+});
 
 @Directive({
   selector: `[mgnpCheckbox]`,

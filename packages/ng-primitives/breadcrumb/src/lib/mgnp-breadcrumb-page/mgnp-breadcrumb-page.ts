@@ -1,4 +1,4 @@
-import { MgnpBreadcrumb } from '../mgnp-breadcrumb/mgnp-breadcrumb';
+import { MgnpBreadcrumb, MgnpBreadcrumbCva } from '../mgnp-breadcrumb/mgnp-breadcrumb';
 import { createMgnpComponentConfig } from '@mgremy/ng-primitives';
 import { classes } from '@mgremy/ng-primitives/utils';
 
@@ -10,31 +10,33 @@ import {
   provideBreadcrumbPageState,
 } from 'ng-primitives/breadcrumbs';
 
+export type MgnpBreadcrumbPageCva = MgnpBreadcrumbCva;
+
+export const mgnpBreadcrumbPageVariants = cva<MgnpBreadcrumbPageCva>(
+  'mgnp-breadcrumb-page group/mgnp-breadcrumb-page',
+  {
+    variants: {
+      variant: {
+        default: 'mgnp-breadcrumb-page-variant-default',
+        primary: 'mgnp-breadcrumb-page-variant-primary',
+        accent: 'mgnp-breadcrumb-page-variant-accent',
+        info: 'mgnp-breadcrumb-page-variant-info',
+        success: 'mgnp-breadcrumb-page-variant-success',
+        warning: 'mgnp-breadcrumb-page-variant-warning',
+        danger: 'mgnp-breadcrumb-page-variant-danger',
+      },
+    },
+  }
+);
+
+export type MgnpBreadcrumbPageVariants = VariantProps<typeof mgnpBreadcrumbPageVariants>;
+
 export const [provideMgnpBreadcrumbPageConfig, injectMgnpBreadcrumbPageConfig] =
   createMgnpComponentConfig<{
     variant: MgnpBreadcrumbPageVariants['variant'];
   }>('MgnpBreadcrumbPage', {
     variant: 'default',
   });
-
-export const mgnpBreadcrumbPageVariants = cva('mgnp-breadcrumb-page group/mgnp-breadcrumb-page', {
-  variants: {
-    variant: {
-      default: 'mgnp-breadcrumb-page-variant-default',
-      primary: 'mgnp-breadcrumb-page-variant-primary',
-      accent: 'mgnp-breadcrumb-page-variant-accent',
-      info: 'mgnp-breadcrumb-page-variant-info',
-      success: 'mgnp-breadcrumb-page-variant-success',
-      warning: 'mgnp-breadcrumb-page-variant-warning',
-      danger: 'mgnp-breadcrumb-page-variant-danger',
-    },
-  },
-  defaultVariants: {
-    variant: 'default',
-  },
-});
-
-export type MgnpBreadcrumbPageVariants = VariantProps<typeof mgnpBreadcrumbPageVariants>;
 
 @Directive({
   selector: '[mgnpBreadcrumbPage]',

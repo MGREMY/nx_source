@@ -4,16 +4,23 @@ import { classes } from '@mgremy/ng-primitives/utils';
 import { Directive, input } from '@angular/core';
 import { ControlValueAccessor } from '@angular/forms';
 import { cva, VariantProps } from 'class-variance-authority';
+import { ClassValue } from 'clsx';
 import { injectComboboxState, NgpCombobox, provideComboboxState } from 'ng-primitives/combobox';
 import { ChangeFn, provideValueAccessor, TouchedFn } from 'ng-primitives/utils';
 
-export const [provideMgnpComboboxConfig, injectMgnpComboboxConfig] = createMgnpComponentConfig<{
-  variant: MgnpComboboxVariants['variant'];
-}>('MgnpCombobox', {
-  variant: 'default',
-});
+export type MgnpComboboxCva = {
+  variant: {
+    default: ClassValue;
+    primary: ClassValue;
+    accent: ClassValue;
+    info: ClassValue;
+    success: ClassValue;
+    warning: ClassValue;
+    danger: ClassValue;
+  };
+};
 
-export const mgnpComboboxVariants = cva('mgnp-combobox group/mgnp-combobox', {
+export const mgnpComboboxVariants = cva<MgnpComboboxCva>('mgnp-combobox group/mgnp-combobox', {
   variants: {
     variant: {
       default: 'mgnp-combobox-variant-default',
@@ -25,12 +32,15 @@ export const mgnpComboboxVariants = cva('mgnp-combobox group/mgnp-combobox', {
       danger: 'mgnp-combobox-variant-danger',
     },
   },
-  defaultVariants: {
-    variant: 'default',
-  },
 });
 
 export type MgnpComboboxVariants = VariantProps<typeof mgnpComboboxVariants>;
+
+export const [provideMgnpComboboxConfig, injectMgnpComboboxConfig] = createMgnpComponentConfig<{
+  variant: MgnpComboboxVariants['variant'];
+}>('MgnpCombobox', {
+  variant: 'default',
+});
 
 @Directive({
   selector: '[mgnpCombobox]',

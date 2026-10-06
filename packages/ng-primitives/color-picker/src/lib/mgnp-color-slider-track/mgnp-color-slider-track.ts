@@ -1,4 +1,4 @@
-import { MgnpColorPicker } from '../mgnp-color-picker/mgnp-color-picker';
+import { MgnpColorPicker, MgnpColorPickerCva } from '../mgnp-color-picker/mgnp-color-picker';
 import { createMgnpComponentConfig } from '@mgremy/ng-primitives';
 import { classes } from '@mgremy/ng-primitives/utils';
 
@@ -10,14 +10,9 @@ import {
   provideColorSliderTrackState,
 } from 'ng-primitives/color';
 
-export const [provideMgnpColorSliderTrackConfig, injectMgnpColorSliderTrackConfig] =
-  createMgnpComponentConfig<{
-    variant: MgnpColorSliderTrackVariants['variant'];
-  }>('MgnpColorSliderTrack', {
-    variant: 'default',
-  });
+export type MgnpColorSliderTrackCva = MgnpColorPickerCva;
 
-export const mgnpColorSliderTrackVariants = cva(
+export const mgnpColorSliderTrackVariants = cva<MgnpColorSliderTrackCva>(
   'mgnp-color-slider-track group/mgnp-color-slider-track',
   {
     variants: {
@@ -31,13 +26,17 @@ export const mgnpColorSliderTrackVariants = cva(
         danger: 'mgnp-color-slider-track-variant-danger',
       },
     },
-    defaultVariants: {
-      variant: 'default',
-    },
   }
 );
 
 export type MgnpColorSliderTrackVariants = VariantProps<typeof mgnpColorSliderTrackVariants>;
+
+export const [provideMgnpColorSliderTrackConfig, injectMgnpColorSliderTrackConfig] =
+  createMgnpComponentConfig<{
+    variant: MgnpColorSliderTrackVariants['variant'];
+  }>('MgnpColorSliderTrack', {
+    variant: 'default',
+  });
 
 @Directive({
   selector: '[mgnpColorSliderTrack]',

@@ -3,17 +3,30 @@ import { classes } from '@mgremy/ng-primitives/utils';
 
 import { Directive, input } from '@angular/core';
 import { cva, type VariantProps } from 'class-variance-authority';
+import { ClassValue } from 'clsx';
 import { injectButtonState, NgpButton, provideButtonState } from 'ng-primitives/button';
 
-export const [provideMgnpButtonConfig, injectMgnpButtonConfig] = createMgnpComponentConfig<{
-  variant: MgnpButtonVariants['variant'];
-  size: MgnpButtonVariants['size'];
-}>('MgnpButtonConfig', {
-  variant: 'default',
-  size: 'md',
-});
+export type MgnpButtonCva = {
+  variant: {
+    default: ClassValue;
+    ghost: ClassValue;
+    primary: ClassValue;
+    accent: ClassValue;
+    info: ClassValue;
+    success: ClassValue;
+    warning: ClassValue;
+    danger: ClassValue;
+  };
+  size: {
+    xs: ClassValue;
+    sm: ClassValue;
+    md: ClassValue;
+    lg: ClassValue;
+    xl: ClassValue;
+  };
+};
 
-export const mgnpButtonVariants = cva('mgnp-button group/mgnp-button', {
+export const mgnpButtonVariants = cva<MgnpButtonCva>('mgnp-button group/mgnp-button', {
   variants: {
     variant: {
       default: 'mgnp-button-variant-default',
@@ -33,13 +46,17 @@ export const mgnpButtonVariants = cva('mgnp-button group/mgnp-button', {
       xl: 'mgnp-button-size-xl',
     },
   },
-  defaultVariants: {
-    variant: 'default',
-    size: 'md',
-  },
 });
 
 export type MgnpButtonVariants = VariantProps<typeof mgnpButtonVariants>;
+
+export const [provideMgnpButtonConfig, injectMgnpButtonConfig] = createMgnpComponentConfig<{
+  variant: MgnpButtonVariants['variant'];
+  size: MgnpButtonVariants['size'];
+}>('MgnpButtonConfig', {
+  variant: 'default',
+  size: 'md',
+});
 
 @Directive({
   selector: `[mgnpButton]`,

@@ -1,4 +1,4 @@
-import { MgnpColorPicker } from '../mgnp-color-picker/mgnp-color-picker';
+import { MgnpColorPicker, MgnpColorPickerCva } from '../mgnp-color-picker/mgnp-color-picker';
 import { createMgnpComponentConfig } from '@mgremy/ng-primitives';
 import { classes } from '@mgremy/ng-primitives/utils';
 
@@ -10,31 +10,33 @@ import {
   provideColorSwatchState,
 } from 'ng-primitives/color';
 
+export type MgnpColorSwatchCva = MgnpColorPickerCva;
+
+export const mgnpColorSwatchVariants = cva<MgnpColorSwatchCva>(
+  'mgnp-color-swatch group/mgnp-color-swatch',
+  {
+    variants: {
+      variant: {
+        default: 'mgnp-color-swatch-variant-variant',
+        primary: 'mgnp-color-swatch-variant-primary',
+        accent: 'mgnp-color-swatch-variant-accent',
+        info: 'mgnp-color-swatch-variant-info',
+        success: 'mgnp-color-swatch-variant-success',
+        warning: 'mgnp-color-swatch-variant-warning',
+        danger: 'mgnp-color-swatch-variant-danger',
+      },
+    },
+  }
+);
+
+export type MgnpColorSwatchVariants = VariantProps<typeof mgnpColorSwatchVariants>;
+
 export const [provideMgnpColorSwatchConfig, injectMgnpColorSwatchConfig] =
   createMgnpComponentConfig<{
     variant: MgnpColorSwatchVariants['variant'];
   }>('MgnpColorSwatch', {
     variant: 'default',
   });
-
-export const mgnpColorSwatchVariants = cva('mgnp-color-swatch group/mgnp-color-swatch', {
-  variants: {
-    variant: {
-      default: 'mgnp-color-swatch-variant-variant',
-      primary: 'mgnp-color-swatch-variant-primary',
-      accent: 'mgnp-color-swatch-variant-accent',
-      info: 'mgnp-color-swatch-variant-info',
-      success: 'mgnp-color-swatch-variant-success',
-      warning: 'mgnp-color-swatch-variant-warning',
-      danger: 'mgnp-color-swatch-variant-danger',
-    },
-  },
-  defaultVariants: {
-    variant: 'default',
-  },
-});
-
-export type MgnpColorSwatchVariants = VariantProps<typeof mgnpColorSwatchVariants>;
 
 @Directive({
   selector: '[mgnpColorSwatch]',

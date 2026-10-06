@@ -5,6 +5,7 @@ import { Directive, input } from '@angular/core';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { ControlValueAccessor } from '@angular/forms';
 import { cva, VariantProps } from 'class-variance-authority';
+import { ClassValue } from 'clsx';
 import {
   Color,
   injectColorPickerState,
@@ -13,31 +14,43 @@ import {
 } from 'ng-primitives/color';
 import { ChangeFn, provideValueAccessor, TouchedFn } from 'ng-primitives/utils';
 
+export type MgnpColorPickerCva = {
+  variant: {
+    default: ClassValue;
+    primary: ClassValue;
+    accent: ClassValue;
+    info: ClassValue;
+    success: ClassValue;
+    warning: ClassValue;
+    danger: ClassValue;
+  };
+};
+
+export const mgnpColorPickerVariants = cva<MgnpColorPickerCva>(
+  'mgnp-color-picker group/mgnp-color-picker',
+  {
+    variants: {
+      variant: {
+        default: 'mgnp-color-picker-variant-variant',
+        primary: 'mgnp-color-picker-variant-primary',
+        accent: 'mgnp-color-picker-variant-accent',
+        info: 'mgnp-color-picker-variant-info',
+        success: 'mgnp-color-picker-variant-success',
+        warning: 'mgnp-color-picker-variant-warning',
+        danger: 'mgnp-color-picker-variant-danger',
+      },
+    },
+  }
+);
+
+export type MgnpColorPickerVariants = VariantProps<typeof mgnpColorPickerVariants>;
+
 export const [provideMgnpColorPickerConfig, injectMgnpColorPickerConfig] =
   createMgnpComponentConfig<{
     variant: MgnpColorPickerVariants['variant'];
   }>('MgnpColorPicker', {
     variant: 'default',
   });
-
-export const mgnpColorPickerVariants = cva('mgnp-color-picker group/mgnp-color-picker', {
-  variants: {
-    variant: {
-      default: 'mgnp-color-picker-variant-variant',
-      primary: 'mgnp-color-picker-variant-primary',
-      accent: 'mgnp-color-picker-variant-accent',
-      info: 'mgnp-color-picker-variant-info',
-      success: 'mgnp-color-picker-variant-success',
-      warning: 'mgnp-color-picker-variant-warning',
-      danger: 'mgnp-color-picker-variant-danger',
-    },
-  },
-  defaultVariants: {
-    variant: 'default',
-  },
-});
-
-export type MgnpColorPickerVariants = VariantProps<typeof mgnpColorPickerVariants>;
 
 @Directive({
   selector: '[mgnpColorPicker]',

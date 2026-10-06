@@ -1,4 +1,4 @@
-import { MgnpColorPicker } from '../mgnp-color-picker/mgnp-color-picker';
+import { MgnpColorPicker, MgnpColorPickerCva } from '../mgnp-color-picker/mgnp-color-picker';
 import { createMgnpComponentConfig } from '@mgremy/ng-primitives';
 import { classes } from '@mgremy/ng-primitives/utils';
 
@@ -6,30 +6,32 @@ import { Directive, inject } from '@angular/core';
 import { cva, VariantProps } from 'class-variance-authority';
 import { injectColorWheelState, NgpColorWheel, provideColorWheelState } from 'ng-primitives/color';
 
+export type MgnpColorWheelCva = MgnpColorPickerCva;
+
+export const mgnpColorWheelVariants = cva<MgnpColorWheelCva>(
+  'mgnp-color-wheel group/mgnp-color-wheel',
+  {
+    variants: {
+      variant: {
+        default: 'mgnp-color-wheel-variant-variant',
+        primary: 'mgnp-color-wheel-variant-primary',
+        accent: 'mgnp-color-wheel-variant-accent',
+        info: 'mgnp-color-wheel-variant-info',
+        success: 'mgnp-color-wheel-variant-success',
+        warning: 'mgnp-color-wheel-variant-warning',
+        danger: 'mgnp-color-wheel-variant-danger',
+      },
+    },
+  }
+);
+
+export type MgnpColorWheelVariants = VariantProps<typeof mgnpColorWheelVariants>;
+
 export const [provideMgnpWheelConfig, injectMgnpColorWheelConfig] = createMgnpComponentConfig<{
   variant: MgnpColorWheelVariants['variant'];
 }>('MgnpColorWheel', {
   variant: 'default',
 });
-
-export const mgnpColorWheelVariants = cva('mgnp-color-wheel group/mgnp-color-wheel', {
-  variants: {
-    variant: {
-      default: 'mgnp-color-wheel-variant-variant',
-      primary: 'mgnp-color-wheel-variant-primary',
-      accent: 'mgnp-color-wheel-variant-accent',
-      info: 'mgnp-color-wheel-variant-info',
-      success: 'mgnp-color-wheel-variant-success',
-      warning: 'mgnp-color-wheel-variant-warning',
-      danger: 'mgnp-color-wheel-variant-danger',
-    },
-  },
-  defaultVariants: {
-    variant: 'default',
-  },
-});
-
-export type MgnpColorWheelVariants = VariantProps<typeof mgnpColorWheelVariants>;
 
 @Directive({
   selector: '[mgnpColorWheel]',

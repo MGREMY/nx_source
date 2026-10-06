@@ -1,4 +1,4 @@
-import { MgnpAccordion } from '../mgnp-accordion/mgnp-accordion';
+import { MgnpAccordion, MgnpAccordionCva } from '../mgnp-accordion/mgnp-accordion';
 import { createMgnpComponentConfig } from '@mgremy/ng-primitives';
 import { classes } from '@mgremy/ng-primitives/utils';
 
@@ -11,14 +11,9 @@ import {
   provideAccordionTriggerState,
 } from 'ng-primitives/accordion';
 
-export const [provideMgnpAccordionTriggerConfig, injectMgnpAccordionTriggerConfig] =
-  createMgnpComponentConfig<{
-    variant: MgnpAccordionTriggerVariants['variant'];
-  }>('MgnpAccordionTrigger', {
-    variant: 'default',
-  });
+export type MgnpAccordionTriggerCva = MgnpAccordionCva;
 
-export const mgnpAccordionTriggerVariants = cva(
+export const mgnpAccordionTriggerVariants = cva<MgnpAccordionTriggerCva>(
   'mgnp-accordion-trigger group/mgnp-accordion-trigger',
   {
     variants: {
@@ -30,13 +25,17 @@ export const mgnpAccordionTriggerVariants = cva(
         horizontal: 'mgnp-accordion-trigger-orientation-horizontal',
       },
     },
-    defaultVariants: {
-      variant: 'default',
-    },
   }
 );
 
 export type MgnpAccordionTriggerVariants = VariantProps<typeof mgnpAccordionTriggerVariants>;
+
+export const [provideMgnpAccordionTriggerConfig, injectMgnpAccordionTriggerConfig] =
+  createMgnpComponentConfig<{
+    variant: MgnpAccordionTriggerVariants['variant'];
+  }>('MgnpAccordionTrigger', {
+    variant: 'default',
+  });
 
 @Directive({
   selector: '[mgnpAccordionTrigger]',

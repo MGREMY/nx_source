@@ -1,4 +1,4 @@
-import { MgnpBreadcrumb } from '../mgnp-breadcrumb/mgnp-breadcrumb';
+import { MgnpBreadcrumb, MgnpBreadcrumbCva } from '../mgnp-breadcrumb/mgnp-breadcrumb';
 import { createMgnpComponentConfig } from '@mgremy/ng-primitives';
 import { classes } from '@mgremy/ng-primitives/utils';
 
@@ -10,14 +10,9 @@ import {
   provideBreadcrumbEllipsisState,
 } from 'ng-primitives/breadcrumbs';
 
-export const [provideMgnpBreadcrumbEllipsisConfig, injectMgnpBreadcrumbEllipsisConfig] =
-  createMgnpComponentConfig<{
-    variant: MgnpBreadcrumbEllipsisVariants['variant'];
-  }>('MgnpBreadcrumbEllipsis', {
-    variant: 'default',
-  });
+export type MgnpBreadcrumbEllipsisCva = MgnpBreadcrumbCva;
 
-export const mgnpBreadcrumbEllipsisVariants = cva(
+export const mgnpBreadcrumbEllipsisVariants = cva<MgnpBreadcrumbEllipsisCva>(
   'mgnp-breadcrumb-ellipsis group/mgnp-breadcrumb-ellipsis',
   {
     variants: {
@@ -31,13 +26,17 @@ export const mgnpBreadcrumbEllipsisVariants = cva(
         danger: 'mgnp-breadcrumb-ellipsis-variant-danger',
       },
     },
-    defaultVariants: {
-      variant: 'default',
-    },
   }
 );
 
 export type MgnpBreadcrumbEllipsisVariants = VariantProps<typeof mgnpBreadcrumbEllipsisVariants>;
+
+export const [provideMgnpBreadcrumbEllipsisConfig, injectMgnpBreadcrumbEllipsisConfig] =
+  createMgnpComponentConfig<{
+    variant: MgnpBreadcrumbEllipsisVariants['variant'];
+  }>('MgnpBreadcrumbEllipsis', {
+    variant: 'default',
+  });
 
 @Directive({
   selector: '[mgnpBreadcrumbEllipsis]',

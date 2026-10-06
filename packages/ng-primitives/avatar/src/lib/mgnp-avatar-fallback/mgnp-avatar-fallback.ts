@@ -1,4 +1,4 @@
-import { MgnpAvatar } from '../mgnp-avatar/mgnp-avatar';
+import { MgnpAvatar, MgnpAvatarCva } from '../mgnp-avatar/mgnp-avatar';
 import { createMgnpComponentConfig } from '@mgremy/ng-primitives';
 import { classes } from '@mgremy/ng-primitives/utils';
 
@@ -10,31 +10,33 @@ import {
   provideAvatarFallbackState,
 } from 'ng-primitives/avatar';
 
+export type MgnpAvatarFallbackCva = MgnpAvatarCva;
+
+export const mgnpAvatarFallbackVariants = cva<MgnpAvatarFallbackCva>(
+  'mgnp-avatar-fallback group/mgnp-avatar-fallback',
+  {
+    variants: {
+      variant: {
+        default: 'mgnp-avatar-fallback-variant-default',
+        primary: 'mgnp-avatar-fallback-variant-primary',
+        accent: 'mgnp-avatar-fallback-variant-accent',
+        info: 'mgnp-avatar-fallback-variant-info',
+        success: 'mgnp-avatar-fallback-variant-success',
+        warning: 'mgnp-avatar-fallback-variant-warning',
+        danger: 'mgnp-avatar-fallback-variant-danger',
+      },
+    },
+  }
+);
+
+export type MgnpAvatarFallbackVariants = VariantProps<typeof mgnpAvatarFallbackVariants>;
+
 export const [providMgnpAvatarFallbackConfig, injectMgnpAvatarFallbackConfig] =
   createMgnpComponentConfig<{
     variant: MgnpAvatarFallbackVariants['variant'];
   }>('MgnpAvatarFallback', {
     variant: 'default',
   });
-
-export const mgnpAvatarFallbackVariants = cva('mgnp-avatar-fallback group/mgnp-avatar-fallback', {
-  variants: {
-    variant: {
-      default: 'mgnp-avatar-fallback-variant-default',
-      primary: 'mgnp-avatar-fallback-variant-primary',
-      accent: 'mgnp-avatar-fallback-variant-accent',
-      info: 'mgnp-avatar-fallback-variant-info',
-      success: 'mgnp-avatar-fallback-variant-success',
-      warning: 'mgnp-avatar-fallback-variant-warning',
-      danger: 'mgnp-avatar-fallback-variant-danger',
-    },
-  },
-  defaultVariants: {
-    variant: 'default',
-  },
-});
-
-export type MgnpAvatarFallbackVariants = VariantProps<typeof mgnpAvatarFallbackVariants>;
 
 @Directive({
   selector: '[mgnpAvatarFallback]',

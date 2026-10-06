@@ -3,17 +3,20 @@ import { classes } from '@mgremy/ng-primitives/utils';
 
 import { Directive, input } from '@angular/core';
 import { cva, VariantProps } from 'class-variance-authority';
+import { ClassValue } from 'clsx';
 import { injectAccordionState, NgpAccordion, provideAccordionState } from 'ng-primitives/accordion';
 
-export const [provideMgnpAccordionConfig, injectMgnpAccordionConfig] = createMgnpComponentConfig<{
-  variant: MgnpAccordionVariants['variant'];
-  orientation: MgnpAccordionVariants['orientation'];
-}>('MgnpAccordion', {
-  variant: 'default',
-  orientation: 'vertical',
-});
+export type MgnpAccordionCva = {
+  variant: {
+    default: ClassValue;
+  };
+  orientation: {
+    vertical: ClassValue;
+    horizontal: ClassValue;
+  };
+};
 
-export const mgnpAccordionVariants = cva('mgnp-accordion group/mgnp-accordion', {
+export const mgnpAccordionVariants = cva<MgnpAccordionCva>('mgnp-accordion group/mgnp-accordion', {
   variants: {
     variant: {
       default: 'mgnp-accordion-variant-default',
@@ -23,12 +26,17 @@ export const mgnpAccordionVariants = cva('mgnp-accordion group/mgnp-accordion', 
       horizontal: 'mgnp-accordion-orientation-horizontal',
     },
   },
-  defaultVariants: {
-    variant: 'default',
-  },
 });
 
 export type MgnpAccordionVariants = VariantProps<typeof mgnpAccordionVariants>;
+
+export const [provideMgnpAccordionConfig, injectMgnpAccordionConfig] = createMgnpComponentConfig<{
+  variant: MgnpAccordionVariants['variant'];
+  orientation: MgnpAccordionVariants['orientation'];
+}>('MgnpAccordion', {
+  variant: 'default',
+  orientation: 'vertical',
+});
 
 @Directive({
   selector: '[mgnpAccordion]',
