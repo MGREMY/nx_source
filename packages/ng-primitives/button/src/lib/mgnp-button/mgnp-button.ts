@@ -1,9 +1,17 @@
-import { injectMgnpButtonConfig } from './mgnp-button.token';
+import { createMgnpComponentConfig } from '@mgremy/ng-primitives';
 import { classes } from '@mgremy/ng-primitives/utils';
 
 import { Directive, input } from '@angular/core';
 import { cva, type VariantProps } from 'class-variance-authority';
 import { injectButtonState, NgpButton, provideButtonState } from 'ng-primitives/button';
+
+export const [provideMgnpButtonConfig, injectMgnpButtonConfig] = createMgnpComponentConfig<{
+  variant: MgnpButtonVariants['variant'];
+  size: MgnpButtonVariants['size'];
+}>('MgnpButtonConfig', {
+  variant: 'default',
+  size: 'md',
+});
 
 export const mgnpButtonVariants = cva('mgnp-button group/mgnp-button', {
   variants: {
@@ -49,8 +57,8 @@ export class MgnpButton {
   public readonly config = injectMgnpButtonConfig();
   public readonly state = injectButtonState();
 
-  public readonly variant = input<MgnpButtonVariants['variant']>('default');
-  public readonly size = input<MgnpButtonVariants['size']>('md');
+  public readonly variant = input<MgnpButtonVariants['variant']>(this.config.variant);
+  public readonly size = input<MgnpButtonVariants['size']>(this.config.size);
 
   public constructor() {
     classes(() => mgnpButtonVariants({ variant: this.variant(), size: this.size() }));

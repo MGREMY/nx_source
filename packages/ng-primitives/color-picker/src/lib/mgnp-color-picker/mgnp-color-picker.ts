@@ -1,4 +1,4 @@
-import { injectMgnpColorPickerConfig } from './mgnp-color-picker.token';
+import { createMgnpComponentConfig } from '@mgremy/ng-primitives';
 import { classes } from '@mgremy/ng-primitives/utils';
 
 import { Directive, input } from '@angular/core';
@@ -12,6 +12,13 @@ import {
   provideColorPickerState,
 } from 'ng-primitives/color';
 import { ChangeFn, provideValueAccessor, TouchedFn } from 'ng-primitives/utils';
+
+export const [provideMgnpColorPickerConfig, injectMgnpColorPickerConfig] =
+  createMgnpComponentConfig<{
+    variant: MgnpColorPickerVariants['variant'];
+  }>('MgnpColorPicker', {
+    variant: 'default',
+  });
 
 export const mgnpColorPickerVariants = cva('mgnp-color-picker group/mgnp-color-picker', {
   variants: {

@@ -1,4 +1,4 @@
-import { injectMgnpCheckboxConfig } from './mgnp-checkbox.token';
+import { createMgnpComponentConfig } from '@mgremy/ng-primitives';
 import { classes } from '@mgremy/ng-primitives/utils';
 
 import { Directive, input } from '@angular/core';
@@ -7,6 +7,14 @@ import { ControlValueAccessor } from '@angular/forms';
 import { cva, VariantProps } from 'class-variance-authority';
 import { injectCheckboxState, NgpCheckbox, provideCheckboxState } from 'ng-primitives/checkbox';
 import { ChangeFn, provideValueAccessor, TouchedFn } from 'ng-primitives/utils';
+
+export const [provideMgnpCheckboxConfig, injectMgnpCheckboxConfig] = createMgnpComponentConfig<{
+  variant: MgnpCheckboxVariants['variant'];
+  size: MgnpCheckboxVariants['size'];
+}>('MgnpCheckbox', {
+  variant: 'default',
+  size: 'md',
+});
 
 export const mgnpCheckboxVariants = cva('mgnp-checkbox group/mgnp-checkbox', {
   variants: {

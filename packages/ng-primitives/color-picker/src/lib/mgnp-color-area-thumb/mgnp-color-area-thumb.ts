@@ -1,6 +1,6 @@
 import { mgnpColorAreaVariants } from '../mgnp-color-area/mgnp-color-area';
 import { MgnpColorPicker } from '../mgnp-color-picker/mgnp-color-picker';
-import { injectMgnpColorAreaThumbConfig } from './mgnp-color-area-thumb.token';
+import { createMgnpComponentConfig } from '@mgremy/ng-primitives';
 import { classes } from '@mgremy/ng-primitives/utils';
 
 import { Directive, inject } from '@angular/core';
@@ -10,6 +10,13 @@ import {
   NgpColorAreaThumb,
   provideColorAreaThumbState,
 } from 'ng-primitives/color';
+
+export const [provideMgnpColorAreaThumbConfig, injectMgnpColorAreaThumbConfig] =
+  createMgnpComponentConfig<{
+    variant: MgnpColorAreaThumbVariants['variant'];
+  }>('MgnpColorAreaThumb', {
+    variant: 'default',
+  });
 
 export const mgnpColorAreaThumbVariants = cva('mgnp-color-area-thumb group/mgnp-color-area-thumb', {
   variants: {

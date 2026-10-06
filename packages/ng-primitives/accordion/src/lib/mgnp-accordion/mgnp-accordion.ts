@@ -1,9 +1,17 @@
-import { injectMgnpAccordionConfig } from './mgnp-accordion.token';
+import { createMgnpComponentConfig } from '@mgremy/ng-primitives';
 import { classes } from '@mgremy/ng-primitives/utils';
 
 import { Directive, input } from '@angular/core';
 import { cva, VariantProps } from 'class-variance-authority';
 import { injectAccordionState, NgpAccordion, provideAccordionState } from 'ng-primitives/accordion';
+
+export const [provideMgnpAccordionConfig, injectMgnpAccordionConfig] = createMgnpComponentConfig<{
+  variant: MgnpAccordionVariants['variant'];
+  orientation: MgnpAccordionVariants['orientation'];
+}>('MgnpAccordion', {
+  variant: 'default',
+  orientation: 'vertical',
+});
 
 export const mgnpAccordionVariants = cva('mgnp-accordion group/mgnp-accordion', {
   variants: {

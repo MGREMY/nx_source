@@ -1,10 +1,16 @@
 import { MgnpColorPicker } from '../mgnp-color-picker/mgnp-color-picker';
-import { injectMgnpColorWheelConfig } from './mgnp-color-wheel.token';
+import { createMgnpComponentConfig } from '@mgremy/ng-primitives';
 import { classes } from '@mgremy/ng-primitives/utils';
 
 import { Directive, inject } from '@angular/core';
 import { cva, VariantProps } from 'class-variance-authority';
 import { injectColorWheelState, NgpColorWheel, provideColorWheelState } from 'ng-primitives/color';
+
+export const [provideMgnpWheelConfig, injectMgnpColorWheelConfig] = createMgnpComponentConfig<{
+  variant: MgnpColorWheelVariants['variant'];
+}>('MgnpColorWheel', {
+  variant: 'default',
+});
 
 export const mgnpColorWheelVariants = cva('mgnp-color-wheel group/mgnp-color-wheel', {
   variants: {

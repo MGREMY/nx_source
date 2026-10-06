@@ -1,5 +1,5 @@
 import { MgnpAvatar } from '../mgnp-avatar/mgnp-avatar';
-import { injectAvatarFallbackConfig } from './mgnp-avatar-fallback.token';
+import { createMgnpComponentConfig } from '@mgremy/ng-primitives';
 import { classes } from '@mgremy/ng-primitives/utils';
 
 import { Directive, inject } from '@angular/core';
@@ -9,6 +9,13 @@ import {
   NgpAvatarFallback,
   provideAvatarFallbackState,
 } from 'ng-primitives/avatar';
+
+export const [providMgnpAvatarFallbackConfig, injectMgnpAvatarFallbackConfig] =
+  createMgnpComponentConfig<{
+    variant: MgnpAvatarFallbackVariants['variant'];
+  }>('MgnpAvatarFallback', {
+    variant: 'default',
+  });
 
 export const mgnpAvatarFallbackVariants = cva('mgnp-avatar-fallback group/mgnp-avatar-fallback', {
   variants: {
@@ -44,7 +51,7 @@ export type MgnpAvatarFallbackVariants = VariantProps<typeof mgnpAvatarFallbackV
 export class MgnpAvatarFallback {
   private readonly _avatar = inject(MgnpAvatar);
 
-  public readonly config = injectAvatarFallbackConfig();
+  public readonly config = injectMgnpAvatarFallbackConfig();
   public readonly state = injectAvatarFallbackState();
 
   public constructor() {

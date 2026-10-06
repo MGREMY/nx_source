@@ -1,5 +1,5 @@
 import { MgnpColorPicker } from '../mgnp-color-picker/mgnp-color-picker';
-import { injectMgnpColorWheelConfig } from '../mgnp-color-wheel/mgnp-color-wheel.token';
+import { createMgnpComponentConfig } from '@mgremy/ng-primitives';
 import { classes } from '@mgremy/ng-primitives/utils';
 
 import { Directive, inject } from '@angular/core';
@@ -9,6 +9,13 @@ import {
   NgpColorWheelThumb,
   provideColorWheelThumbState,
 } from 'ng-primitives/color';
+
+export const [provideMgnpWheelThumbConfig, injectMgnpColorWheelThumbConfig] =
+  createMgnpComponentConfig<{
+    variant: MgnpColorWheelThumbVariants['variant'];
+  }>('MgnpColorWheelThumb', {
+    variant: 'default',
+  });
 
 export const mgnpColorWheelThumbVariants = cva(
   'mgnp-color-wheel-thumb group/mgnp-color-wheel-thumb',
@@ -47,7 +54,7 @@ export type MgnpColorWheelThumbVariants = VariantProps<typeof mgnpColorWheelThum
 export class MgnpColorWheelThumb {
   private readonly _colorPicker = inject(MgnpColorPicker, { optional: true });
 
-  public readonly config = injectMgnpColorWheelConfig();
+  public readonly config = injectMgnpColorWheelThumbConfig();
   public readonly state = injectColorWheelThumbState();
 
   public constructor() {

@@ -1,5 +1,5 @@
 import { MgnpBreadcrumb } from '../mgnp-breadcrumb/mgnp-breadcrumb';
-import { injectMgnpBreadcrumbListConfig } from './mgnp-breadcrumb-list.token';
+import { createMgnpComponentConfig } from '@mgremy/ng-primitives';
 import { classes } from '@mgremy/ng-primitives/utils';
 
 import { Directive, inject } from '@angular/core';
@@ -9,6 +9,13 @@ import {
   NgpBreadcrumbList,
   provideBreadcrumbListState,
 } from 'ng-primitives/breadcrumbs';
+
+export const [provideMgnpBreadcrumbListConfig, injectMgnpBreadcrumbListConfig] =
+  createMgnpComponentConfig<{
+    variant: MgnpBreadcrumbListVariants['variant'];
+  }>('MgnpBreadcrumbList', {
+    variant: 'default',
+  });
 
 export const mgnpBreadcrumbListVariants = cva('mgnp-breadcrumb-list group/mgnp-breadcrumb-list', {
   variants: {

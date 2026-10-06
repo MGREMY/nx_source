@@ -1,5 +1,5 @@
 import { MgnpAvatar } from '../mgnp-avatar/mgnp-avatar';
-import { injectAvatarImageConfig } from './mgnp-avatar-image.token';
+import { createMgnpComponentConfig } from '@mgremy/ng-primitives';
 import { classes } from '@mgremy/ng-primitives/utils';
 
 import { Directive, inject } from '@angular/core';
@@ -9,6 +9,13 @@ import {
   NgpAvatarImage,
   provideAvatarImageState,
 } from 'ng-primitives/avatar';
+
+export const [providMgnpAvatarImageConfig, injectMgnpAvatarImageConfig] =
+  createMgnpComponentConfig<{
+    variant: MgnpAvatarImageVariants['variant'];
+  }>('MgnpAvatarImage', {
+    variant: 'default',
+  });
 
 export const mgnpAvatarImageVariants = cva('mgnp-avatar-image group/mgnp-avatar-image', {
   variants: {
@@ -44,8 +51,8 @@ export type MgnpAvatarImageVariants = VariantProps<typeof mgnpAvatarImageVariant
 export class MgnpAvatarImage {
   private readonly _avatar = inject(MgnpAvatar);
 
+  public readonly config = injectMgnpAvatarImageConfig();
   public readonly state = injectAvatarImageState();
-  public readonly config = injectAvatarImageConfig();
 
   public constructor() {
     classes(() => mgnpAvatarImageVariants({ variant: this._avatar.variant() }));

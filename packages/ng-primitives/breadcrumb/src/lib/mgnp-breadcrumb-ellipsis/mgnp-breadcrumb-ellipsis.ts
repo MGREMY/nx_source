@@ -1,5 +1,5 @@
 import { MgnpBreadcrumb } from '../mgnp-breadcrumb/mgnp-breadcrumb';
-import { injectMgnpBreadcrumbEllipsisConfig } from './mgnp-breadcrumb-ellipsis.token';
+import { createMgnpComponentConfig } from '@mgremy/ng-primitives';
 import { classes } from '@mgremy/ng-primitives/utils';
 
 import { Directive, inject } from '@angular/core';
@@ -9,6 +9,13 @@ import {
   NgpBreadcrumbEllipsis,
   provideBreadcrumbEllipsisState,
 } from 'ng-primitives/breadcrumbs';
+
+export const [provideMgnpBreadcrumbEllipsisConfig, injectMgnpBreadcrumbEllipsisConfig] =
+  createMgnpComponentConfig<{
+    variant: MgnpBreadcrumbEllipsisVariants['variant'];
+  }>('MgnpBreadcrumbEllipsis', {
+    variant: 'default',
+  });
 
 export const mgnpBreadcrumbEllipsisVariants = cva(
   'mgnp-breadcrumb-ellipsis group/mgnp-breadcrumb-ellipsis',

@@ -1,10 +1,17 @@
 import { MgnpCombobox } from '../mgnp-combobox/mgnp-combobox';
-import { injectMgnpComboboxInputConfig } from './mgnp-combobox-input.token';
+import { createMgnpComponentConfig } from '@mgremy/ng-primitives';
 import { classes } from '@mgremy/ng-primitives/utils';
 
 import { Directive, inject } from '@angular/core';
 import { cva, VariantProps } from 'class-variance-authority';
 import { NgpComboboxInput } from 'ng-primitives/combobox';
+
+export const [provideMgnpComboboxInputConfig, injectMgnpComboboxInputConfig] =
+  createMgnpComponentConfig<{
+    variant: MgnpComboboxInputVariants['variant'];
+  }>('MgnpComboboxInput', {
+    variant: 'default',
+  });
 
 export const mgnpComboboxInputVariants = cva('mgnp-combobox-input group/mgnp-combobox-input', {
   variants: {

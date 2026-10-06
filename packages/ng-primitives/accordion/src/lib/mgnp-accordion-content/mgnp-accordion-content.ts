@@ -1,5 +1,5 @@
 import { MgnpAccordion } from '../mgnp-accordion/mgnp-accordion';
-import { injectMgnpAccordionContentConfig } from './mgnp-accordion-content.token';
+import { createMgnpComponentConfig } from '@mgremy/ng-primitives';
 import { classes } from '@mgremy/ng-primitives/utils';
 
 import { Directive, inject } from '@angular/core';
@@ -10,6 +10,13 @@ import {
   NgpAccordionContent,
   provideAccordionContentState,
 } from 'ng-primitives/accordion';
+
+export const [provideMgnpAccordionContentConfig, injectMgnpAccordionContentConfig] =
+  createMgnpComponentConfig<{
+    variant: MgnpAccordionContentVariants['variant'];
+  }>('MgnpAccordionContent', {
+    variant: 'default',
+  });
 
 export const mgnpAccordionContentVariants = cva(
   'mgnp-accordion-content group/mgnp-accordion-content',

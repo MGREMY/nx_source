@@ -1,5 +1,5 @@
 import { MgnpColorPicker } from '../mgnp-color-picker/mgnp-color-picker';
-import { injectMgnpColorSliderConfig } from './mgnp-color-slider.token';
+import { createMgnpComponentConfig } from '@mgremy/ng-primitives';
 import { classes } from '@mgremy/ng-primitives/utils';
 
 import { Directive, inject } from '@angular/core';
@@ -9,6 +9,13 @@ import {
   NgpColorSlider,
   provideColorSliderState,
 } from 'ng-primitives/color';
+
+export const [provideMgnpColorSliderConfig, injectMgnpColorSliderConfig] =
+  createMgnpComponentConfig<{
+    variant: MgnpColorSliderVariants['variant'];
+  }>('MgnpColorSlider', {
+    variant: 'default',
+  });
 
 export const mgnpColorSliderVariants = cva('mgnp-color-slider group/mgnp-color-slider', {
   variants: {

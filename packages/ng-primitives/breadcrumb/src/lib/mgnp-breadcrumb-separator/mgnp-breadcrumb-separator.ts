@@ -1,5 +1,5 @@
 import { MgnpBreadcrumb } from '../mgnp-breadcrumb/mgnp-breadcrumb';
-import { injectMgnpBreadcrumbSeparatorConfig } from './mgnp-breadcrumb-separator.token';
+import { createMgnpComponentConfig } from '@mgremy/ng-primitives';
 import { classes } from '@mgremy/ng-primitives/utils';
 
 import { Directive, inject } from '@angular/core';
@@ -9,6 +9,13 @@ import {
   NgpBreadcrumbSeparator,
   provideBreadcrumbSeparatorState,
 } from 'ng-primitives/breadcrumbs';
+
+export const [provideMgnpBreadcrumbSeparatorConfig, injectMgnpBreadcrumbSeparatorConfig] =
+  createMgnpComponentConfig<{
+    variant: MgnpBreadcrumbSeparatorVariants['variant'];
+  }>('MgnpBreadcrumbSeparator', {
+    variant: 'default',
+  });
 
 export const mgnpBreadcrumbSeparatorVariants = cva(
   'mgnp-breadcrumb-separator group/mgnp-breadcrumb-separator',

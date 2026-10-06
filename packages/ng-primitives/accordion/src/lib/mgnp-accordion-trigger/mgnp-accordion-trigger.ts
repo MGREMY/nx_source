@@ -1,5 +1,5 @@
 import { MgnpAccordion } from '../mgnp-accordion/mgnp-accordion';
-import { injectMgnpAccordionTriggerConfig } from './mgnp-accordion-trigger.token';
+import { createMgnpComponentConfig } from '@mgremy/ng-primitives';
 import { classes } from '@mgremy/ng-primitives/utils';
 
 import { Directive, inject } from '@angular/core';
@@ -10,6 +10,13 @@ import {
   NgpAccordionTrigger,
   provideAccordionTriggerState,
 } from 'ng-primitives/accordion';
+
+export const [provideMgnpAccordionTriggerConfig, injectMgnpAccordionTriggerConfig] =
+  createMgnpComponentConfig<{
+    variant: MgnpAccordionTriggerVariants['variant'];
+  }>('MgnpAccordionTrigger', {
+    variant: 'default',
+  });
 
 export const mgnpAccordionTriggerVariants = cva(
   'mgnp-accordion-trigger group/mgnp-accordion-trigger',

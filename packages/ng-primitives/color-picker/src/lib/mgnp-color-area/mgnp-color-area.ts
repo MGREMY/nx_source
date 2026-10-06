@@ -1,10 +1,16 @@
 import { MgnpColorPicker } from '../mgnp-color-picker/mgnp-color-picker';
-import { injectMgnpColorAreaConfig } from './mgnp-color-area.token';
+import { createMgnpComponentConfig } from '@mgremy/ng-primitives';
 import { classes } from '@mgremy/ng-primitives/utils';
 
 import { Directive, inject } from '@angular/core';
 import { cva, VariantProps } from 'class-variance-authority';
 import { injectColorAreaState, NgpColorArea, provideColorAreaState } from 'ng-primitives/color';
+
+export const [provideMgnpColorAreaConfig, injectMgnpColorAreaConfig] = createMgnpComponentConfig<{
+  variant: MgnpColorAreaVariants['variant'];
+}>('MgnpColorArea', {
+  variant: 'default',
+});
 
 export const mgnpColorAreaVariants = cva('mgnp-color-area group/mgnp-color-area', {
   variants: {

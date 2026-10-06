@@ -1,5 +1,5 @@
 import { MgnpColorPicker } from '../mgnp-color-picker/mgnp-color-picker';
-import { injectMgnpColorSwatchPickerConfig } from './mgnp-color-swatch-picker.token';
+import { createMgnpComponentConfig } from '@mgremy/ng-primitives';
 import { classes } from '@mgremy/ng-primitives/utils';
 
 import { Directive, inject } from '@angular/core';
@@ -9,6 +9,13 @@ import {
   NgpColorSwatchPicker,
   provideColorSwatchPickerState,
 } from 'ng-primitives/color';
+
+export const [provideMgnpColorSwatchPickerConfig, injectMgnpColorSwatchPickerConfig] =
+  createMgnpComponentConfig<{
+    variant: MgnpColorSwatchPickerVariants['variant'];
+  }>('MgnpColorSwatchPicker', {
+    variant: 'default',
+  });
 
 export const mgnpColorSwatchPickerVariants = cva(
   'mgnp-color-swatch-picker group/mgnp-color-swatch-picker',

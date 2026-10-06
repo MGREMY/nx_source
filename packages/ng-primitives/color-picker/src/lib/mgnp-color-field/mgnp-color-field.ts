@@ -1,10 +1,16 @@
 import { MgnpColorPicker } from '../mgnp-color-picker/mgnp-color-picker';
-import { injectMgnpColorFieldConfig } from './mgnp-color-field.token';
+import { createMgnpComponentConfig } from '@mgremy/ng-primitives';
 import { classes } from '@mgremy/ng-primitives/utils';
 
 import { Directive, inject } from '@angular/core';
 import { cva, VariantProps } from 'class-variance-authority';
 import { injectColorFieldState, NgpColorField, provideColorFieldState } from 'ng-primitives/color';
+
+export const [provideMgnpColorFieldConfig, injectMgnpColorFieldConfig] = createMgnpComponentConfig<{
+  variant: MgnpColorFieldVariants['variant'];
+}>('MgnpColorField', {
+  variant: 'default',
+});
 
 export const mgnpColorFieldVariants = cva('mgnp-color-field group/mgnp-color-field', {
   variants: {

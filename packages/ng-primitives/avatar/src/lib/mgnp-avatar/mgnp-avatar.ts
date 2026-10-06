@@ -1,9 +1,15 @@
-import { injectMgnpAvatarConfig } from './mgnp-avatar.token';
+import { createMgnpComponentConfig } from '@mgremy/ng-primitives';
 import { classes } from '@mgremy/ng-primitives/utils';
 
 import { Directive, input } from '@angular/core';
 import { cva, VariantProps } from 'class-variance-authority';
 import { injectAvatarState, NgpAvatar, provideAvatarState } from 'ng-primitives/avatar';
+
+export const [providMgnpAvatarConfig, injectMgnpAvatarConfig] = createMgnpComponentConfig<{
+  variant: MgnpAvatarVariants['variant'];
+}>('MgnpAvatar', {
+  variant: 'default',
+});
 
 export const mgnpAvatarVariants = cva('mgnp-avatar group/mgnp-avatar', {
   variants: {
