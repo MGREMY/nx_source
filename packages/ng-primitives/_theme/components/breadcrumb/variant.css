@@ -1,30 +1,30 @@
 @layer components {
   .mgnp-breadcrumb-variant-default {
-    @apply text-default-foreground/70;
+    @apply text-default-foreground/50;
   }
 
   .mgnp-breadcrumb-variant-primary {
-    @apply text-default-foreground/70;
+    @apply text-primary-foreground/50;
   }
 
   .mgnp-breadcrumb-variant-accent {
-    @apply text-default-foreground/70;
+    @apply text-accent-foreground/50;
   }
 
   .mgnp-breadcrumb-variant-info {
-    @apply text-default-foreground/70;
+    @apply text-info-foreground/50;
   }
 
   .mgnp-breadcrumb-variant-success {
-    @apply text-default-foreground/70;
+    @apply text-success-foreground/50;
   }
 
   .mgnp-breadcrumb-variant-warning {
-    @apply text-default-foreground/70;
+    @apply text-warning-foreground/50;
   }
 
   .mgnp-breadcrumb-variant-danger {
-    @apply text-default-foreground/70;
+    @apply text-danger-foreground/50;
   }
 
   .mgnp-breadcrumb-link-variant-default {
