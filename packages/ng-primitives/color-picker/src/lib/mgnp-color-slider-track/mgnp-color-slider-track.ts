@@ -1,20 +1,40 @@
 import { MgnpColorPicker } from '../mgnp-color-picker/mgnp-color-picker';
+import { injectMgnpColorSliderTrackConfig } from './mgnp-color-slider-track.token';
+import { classes } from '@mgremy/ng-primitives/utils';
 
 import { Directive, inject } from '@angular/core';
+import { cva, VariantProps } from 'class-variance-authority';
 import {
   injectColorSliderTrackState,
   NgpColorSliderTrack,
   provideColorSliderTrackState,
 } from 'ng-primitives/color';
 
+export const mgnpColorSliderTrackVariants = cva(
+  'mgnp-color-slider-track group/mgnp-color-slider-track',
+  {
+    variants: {
+      variant: {
+        default: 'mgnp-color-slider-track-variant-variant',
+        primary: 'mgnp-color-slider-track-variant-primary',
+        accent: 'mgnp-color-slider-track-variant-accent',
+        info: 'mgnp-color-slider-track-variant-info',
+        success: 'mgnp-color-slider-track-variant-success',
+        warning: 'mgnp-color-slider-track-variant-warning',
+        danger: 'mgnp-color-slider-track-variant-danger',
+      },
+    },
+    defaultVariants: {
+      variant: 'default',
+    },
+  }
+);
+
+export type MgnpColorSliderTrackVariants = VariantProps<typeof mgnpColorSliderTrackVariants>;
+
 @Directive({
   selector: '[mgnpColorSliderTrack]',
   providers: [provideColorSliderTrackState()],
-  host: {
-    class: 'mgnp-color-slider-track mgnp-c-color-slider-track',
-    'data-mgnp-color-slider-track': '',
-    '[attr.data-mgnp-color-slider-track-color]': 'colorPicker?.color() ?? null',
-  },
   hostDirectives: [
     {
       directive: NgpColorSliderTrack,
@@ -25,7 +45,14 @@ import {
   exportAs: 'mgnpColorSliderTrack',
 })
 export class MgnpColorSliderTrack {
-  protected readonly colorPicker = inject(MgnpColorPicker, { optional: true });
+  private readonly _colorPicker = inject(MgnpColorPicker, { optional: true });
 
-  readonly state = injectColorSliderTrackState();
+  public readonly config = injectMgnpColorSliderTrackConfig();
+  public readonly state = injectColorSliderTrackState();
+
+  constructor() {
+    classes(() =>
+      mgnpColorSliderTrackVariants({ variant: this._colorPicker?.variant() ?? this.config.variant })
+    );
+  }
 }

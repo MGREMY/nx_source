@@ -8,7 +8,7 @@ import { cva, VariantProps } from 'class-variance-authority';
 import { injectCheckboxState, NgpCheckbox, provideCheckboxState } from 'ng-primitives/checkbox';
 import { ChangeFn, provideValueAccessor, TouchedFn } from 'ng-primitives/utils';
 
-export const mgnpCheckboxVariants = cva('mgnp-checkbox', {
+export const mgnpCheckboxVariants = cva('mgnp-checkbox group/mgnp-checkbox', {
   variants: {
     variant: {
       default: 'mgnp-checkbox-variant-default',

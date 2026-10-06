@@ -1,16 +1,33 @@
 import { MgnpColorPicker } from '../mgnp-color-picker/mgnp-color-picker';
+import { injectMgnpColorFieldConfig } from './mgnp-color-field.token';
+import { classes } from '@mgremy/ng-primitives/utils';
 
 import { Directive, inject } from '@angular/core';
+import { cva, VariantProps } from 'class-variance-authority';
 import { injectColorFieldState, NgpColorField, provideColorFieldState } from 'ng-primitives/color';
+
+export const mgnpColorFieldVariants = cva('mgnp-color-field group/mgnp-color-field', {
+  variants: {
+    variant: {
+      default: 'mgnp-color-field-variant-variant',
+      primary: 'mgnp-color-field-variant-primary',
+      accent: 'mgnp-color-field-variant-accent',
+      info: 'mgnp-color-field-variant-info',
+      success: 'mgnp-color-field-variant-success',
+      warning: 'mgnp-color-field-variant-warning',
+      danger: 'mgnp-color-field-variant-danger',
+    },
+  },
+  defaultVariants: {
+    variant: 'default',
+  },
+});
+
+export type MgnpColorFieldVariants = VariantProps<typeof mgnpColorFieldVariants>;
 
 @Directive({
   selector: '[mgnpColorField]',
   providers: [provideColorFieldState()],
-  host: {
-    class: 'mgnp-color-field mgnp-c-color-field',
-    'data-mgnp-color-field': '',
-    '[attr.data-mgnp-color-field-color]': 'colorPicker?.color() ?? null',
-  },
   hostDirectives: [
     {
       directive: NgpColorField,
@@ -21,7 +38,14 @@ import { injectColorFieldState, NgpColorField, provideColorFieldState } from 'ng
   exportAs: 'mgnpColorField',
 })
 export class MgnpColorField {
-  protected readonly colorPicker = inject(MgnpColorPicker, { optional: true });
+  private readonly _colorPicker = inject(MgnpColorPicker, { optional: true });
 
-  readonly state = injectColorFieldState();
+  public readonly config = injectMgnpColorFieldConfig();
+  public readonly state = injectColorFieldState();
+
+  constructor() {
+    classes(() =>
+      mgnpColorFieldVariants({ variant: this._colorPicker?.variant() ?? this.config.variant })
+    );
+  }
 }

@@ -1,13 +1,13 @@
-import { MgnpBreadcrumbVariants } from '../mgnp-breadcrumb/mgnp-breadcrumb';
+import { MgnpBreadcrumbPageVariants } from './mgnp-breadcrumb-page';
 
 import { inject, InjectionToken, ValueProvider } from '@angular/core';
 
 export interface MgnpBreadcrumbPageConfig {
-  variant?: MgnpBreadcrumbVariants['variant'];
+  variant: MgnpBreadcrumbPageVariants['variant'];
 }
 
 const defaultConfig: MgnpBreadcrumbPageConfig = {
-  variant: undefined,
+  variant: 'default',
 };
 
 const Token = new InjectionToken<MgnpBreadcrumbPageConfig>('MgnpBreadcrumbPageConfig');

@@ -3,7 +3,7 @@ import { injectMgnpBreadcrumbPageConfig } from './mgnp-breadcrumb-page.token';
 import { classes } from '@mgremy/ng-primitives/utils';
 
 import { Directive, inject } from '@angular/core';
-import { cva } from 'class-variance-authority';
+import { cva, VariantProps } from 'class-variance-authority';
 import {
   injectBreadcrumbPageState,
   NgpBreadcrumbPage,
@@ -26,6 +26,8 @@ export const mgnpBreadcrumbPageVariants = cva('mgnp-breadcrumb-page group/mgnp-b
     variant: 'default',
   },
 });
+
+export type MgnpBreadcrumbPageVariants = VariantProps<typeof mgnpBreadcrumbPageVariants>;
 
 @Directive({
   selector: '[mgnpBreadcrumbPage]',

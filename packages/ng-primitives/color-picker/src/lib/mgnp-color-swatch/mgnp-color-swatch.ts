@@ -1,20 +1,37 @@
 import { MgnpColorPicker } from '../mgnp-color-picker/mgnp-color-picker';
+import { injectMgnpColorSwatchConfig } from './mgnp-color-swatch.token';
+import { classes } from '@mgremy/ng-primitives/utils';
 
 import { Directive, inject } from '@angular/core';
+import { cva, VariantProps } from 'class-variance-authority';
 import {
   injectColorSwatchState,
   NgpColorSwatch,
   provideColorSwatchState,
 } from 'ng-primitives/color';
 
+export const mgnpColorSwatchVariants = cva('mgnp-color-swatch group/mgnp-color-swatch', {
+  variants: {
+    variant: {
+      default: 'mgnp-color-swatch-variant-variant',
+      primary: 'mgnp-color-swatch-variant-primary',
+      accent: 'mgnp-color-swatch-variant-accent',
+      info: 'mgnp-color-swatch-variant-info',
+      success: 'mgnp-color-swatch-variant-success',
+      warning: 'mgnp-color-swatch-variant-warning',
+      danger: 'mgnp-color-swatch-variant-danger',
+    },
+  },
+  defaultVariants: {
+    variant: 'default',
+  },
+});
+
+export type MgnpColorSwatchVariants = VariantProps<typeof mgnpColorSwatchVariants>;
+
 @Directive({
   selector: '[mgnpColorSwatch]',
   providers: [provideColorSwatchState()],
-  host: {
-    class: 'mgnp-color-swatch mgnp-c-color-swatch',
-    'data-mgnp-color-swatch': '',
-    '[attr.data-mgnp-color-swatch-color]': 'colorPicker?.color() ?? null',
-  },
   hostDirectives: [
     {
       directive: NgpColorSwatch,
@@ -25,7 +42,14 @@ import {
   exportAs: 'mgnpColorSwatch',
 })
 export class MgnpColorSwatch {
-  protected readonly colorPicker = inject(MgnpColorPicker, { optional: true });
+  private readonly _colorPicker = inject(MgnpColorPicker, { optional: true });
 
-  readonly state = injectColorSwatchState();
+  public readonly config = injectMgnpColorSwatchConfig();
+  public readonly state = injectColorSwatchState();
+
+  constructor() {
+    classes(() =>
+      mgnpColorSwatchVariants({ variant: this._colorPicker?.variant() ?? this.config.variant })
+    );
+  }
 }

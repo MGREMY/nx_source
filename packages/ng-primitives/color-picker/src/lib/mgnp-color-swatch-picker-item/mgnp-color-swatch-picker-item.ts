@@ -1,20 +1,42 @@
 import { MgnpColorPicker } from '../mgnp-color-picker/mgnp-color-picker';
+import { injectMgnpColorSwatchPickerItemConfig } from './mgnp-color-swatch-picker-item.token';
+import { classes } from '@mgremy/ng-primitives/utils';
 
 import { Directive, inject } from '@angular/core';
+import { cva, VariantProps } from 'class-variance-authority';
 import {
   injectColorSwatchPickerItemState,
   NgpColorSwatchPickerItem,
   provideColorSwatchPickerItemState,
 } from 'ng-primitives/color';
 
+export const mgnpColorSwatchPickerItemVariants = cva(
+  'mgnp-color-swatch-picker-item group/mgnp-color-swatch-picker-item',
+  {
+    variants: {
+      variant: {
+        default: 'mgnp-color-swatch-picker-item-variant-variant',
+        primary: 'mgnp-color-swatch-picker-item-variant-primary',
+        accent: 'mgnp-color-swatch-picker-item-variant-accent',
+        info: 'mgnp-color-swatch-picker-item-variant-info',
+        success: 'mgnp-color-swatch-picker-item-variant-success',
+        warning: 'mgnp-color-swatch-picker-item-variant-warning',
+        danger: 'mgnp-color-swatch-picker-item-variant-danger',
+      },
+    },
+    defaultVariants: {
+      variant: 'default',
+    },
+  }
+);
+
+export type MgnpColorSwatchPickerItemVariants = VariantProps<
+  typeof mgnpColorSwatchPickerItemVariants
+>;
+
 @Directive({
   selector: '[mgnpColorSwatchPickerItem]',
   providers: [provideColorSwatchPickerItemState()],
-  host: {
-    class: 'mgnp-color-swatch-picker-item mgnp-c-color-swatch-picker-item',
-    'data-mgnp-color-swatch-picker-item': '',
-    '[attr.data-mgnp-color-swatch-picker-item-color]': 'colorPicker?.color() ?? null',
-  },
   hostDirectives: [
     {
       directive: NgpColorSwatchPickerItem,
@@ -28,7 +50,16 @@ import {
   exportAs: 'mgnpColorSwatchPickerItem',
 })
 export class MgnpColorSwatchPickerItem {
-  protected readonly colorPicker = inject(MgnpColorPicker, { optional: true });
+  private readonly _colorPicker = inject(MgnpColorPicker, { optional: true });
 
-  readonly state = injectColorSwatchPickerItemState();
+  public readonly config = injectMgnpColorSwatchPickerItemConfig();
+  public readonly state = injectColorSwatchPickerItemState();
+
+  constructor() {
+    classes(() =>
+      mgnpColorSwatchPickerItemVariants({
+        variant: this._colorPicker?.variant() ?? this.config.variant,
+      })
+    );
+  }
 }

@@ -4,6 +4,7 @@ import {
   MgnpColorAreaThumb,
   MgnpColorField,
   MgnpColorPicker,
+  MgnpColorPickerVariants,
   MgnpColorSlider,
   MgnpColorSliderThumb,
   MgnpColorSliderTrack,
@@ -25,9 +26,9 @@ import { Component } from '@angular/core';
   ],
   template: `
     <div class="flex flex-col gap-2 w-full items-center justify-center">
-      @for (color of _colors; track $index) {
-        <span>{{ color }}</span>
-        <div mgnpColorPicker [color]="color" [mgnpColorPickerDefaultValue]="c">
+      @for (variant of _variants; track $index) {
+        <span>{{ variant }}</span>
+        <div mgnpColorPicker [variant]="variant" [mgnpColorPickerDefaultValue]="c">
           <div mgnpColorArea mgnpColorAreaXChannel="saturation" mgnpColorAreaYChannel="brightness">
             <div mgnpColorAreaThumb></div>
           </div>
@@ -47,6 +48,14 @@ import { Component } from '@angular/core';
   `,
 })
 export default class ColorPicker {
-  readonly _colors = ['ui', 'primary', 'accent', 'info', 'success', 'warning', 'danger'];
+  readonly _variants = [
+    'default',
+    'primary',
+    'accent',
+    'info',
+    'success',
+    'warning',
+    'danger',
+  ] as MgnpColorPickerVariants['variant'][];
   readonly c = Color.parse('#00a6f4');
 }

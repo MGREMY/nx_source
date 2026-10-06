@@ -1,20 +1,40 @@
 import { MgnpColorPicker } from '../mgnp-color-picker/mgnp-color-picker';
+import { injectMgnpColorSliderThumbConfig } from './mgnp-color-slider-thumb.token';
+import { classes } from '@mgremy/ng-primitives/utils';
 
 import { Directive, inject } from '@angular/core';
+import { cva, VariantProps } from 'class-variance-authority';
 import {
   injectColorSliderThumbState,
   NgpColorSliderThumb,
   provideColorSliderThumbState,
 } from 'ng-primitives/color';
 
+export const mgnpColorSliderThumbVariants = cva(
+  'mgnp-color-slider-thumb group/mgnp-color-slider-thumb',
+  {
+    variants: {
+      variant: {
+        default: 'mgnp-color-slider-thumb-variant-variant',
+        primary: 'mgnp-color-slider-thumb-variant-primary',
+        accent: 'mgnp-color-slider-thumb-variant-accent',
+        info: 'mgnp-color-slider-thumb-variant-info',
+        success: 'mgnp-color-slider-thumb-variant-success',
+        warning: 'mgnp-color-slider-thumb-variant-warning',
+        danger: 'mgnp-color-slider-thumb-variant-danger',
+      },
+    },
+    defaultVariants: {
+      variant: 'default',
+    },
+  }
+);
+
+export type MgnpColorSliderThumbVariants = VariantProps<typeof mgnpColorSliderThumbVariants>;
+
 @Directive({
   selector: '[mgnpColorSliderThumb]',
   providers: [provideColorSliderThumbState()],
-  host: {
-    class: 'mgnp-color-slider-thumb mgnp-c-color-slider-thumb',
-    'data-mgnp-color-slider-thumb': '',
-    '[attr.data-mgnp-color-slider-thumb-color]': 'colorPicker?.color() ?? null',
-  },
   hostDirectives: [
     {
       directive: NgpColorSliderThumb,
@@ -28,7 +48,14 @@ import {
   exportAs: 'mgnpColorSliderThumb',
 })
 export class MgnpColorSliderThumb {
-  protected readonly colorPicker = inject(MgnpColorPicker, { optional: true });
+  private readonly _colorPicker = inject(MgnpColorPicker, { optional: true });
 
-  readonly state = injectColorSliderThumbState();
+  public readonly config = injectMgnpColorSliderThumbConfig();
+  public readonly state = injectColorSliderThumbState();
+
+  constructor() {
+    classes(() =>
+      mgnpColorSliderThumbVariants({ variant: this._colorPicker?.variant() ?? this.config.variant })
+    );
+  }
 }

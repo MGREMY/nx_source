@@ -3,7 +3,7 @@ import { injectMgnpAccordionTriggerConfig } from './mgnp-accordion-trigger.token
 import { classes } from '@mgremy/ng-primitives/utils';
 
 import { Directive, inject } from '@angular/core';
-import { cva } from 'class-variance-authority';
+import { cva, VariantProps } from 'class-variance-authority';
 import {
   injectAccordionState,
   injectAccordionTriggerState,
@@ -28,6 +28,8 @@ export const mgnpAccordionTriggerVariants = cva(
     },
   }
 );
+
+export type MgnpAccordionTriggerVariants = VariantProps<typeof mgnpAccordionTriggerVariants>;
 
 @Directive({
   selector: '[mgnpAccordionTrigger]',

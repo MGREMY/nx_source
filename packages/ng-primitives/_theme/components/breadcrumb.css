@@ -1,4 +1,4 @@
-@import './breadcrumb/color.css';
+@import './breadcrumb/variant.css';
 
 @layer components {
   .mgnp-breadcrumb {

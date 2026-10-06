@@ -1,13 +1,13 @@
-import { MgnpAccordionVariants } from '../mgnp-accordion/mgnp-accordion';
+import { MgnpAccordionContentVariants } from './mgnp-accordion-content';
 
 import { inject, InjectionToken, ValueProvider } from '@angular/core';
 
 export interface MgnpAccordionContentConfig {
-  variant?: MgnpAccordionVariants['variant'];
+  variant: MgnpAccordionContentVariants['variant'];
 }
 
 const defaultConfig: MgnpAccordionContentConfig = {
-  variant: undefined,
+  variant: 'default',
 };
 
 const Token = new InjectionToken<MgnpAccordionContentConfig>('MgnpAccordionContentConfig');

@@ -3,7 +3,7 @@ import { injectMgnpAccordionContentConfig } from './mgnp-accordion-content.token
 import { classes } from '@mgremy/ng-primitives/utils';
 
 import { Directive, inject } from '@angular/core';
-import { cva } from 'class-variance-authority';
+import { cva, VariantProps } from 'class-variance-authority';
 import {
   injectAccordionContentState,
   injectAccordionState,
@@ -28,6 +28,8 @@ export const mgnpAccordionContentVariants = cva(
     },
   }
 );
+
+export type MgnpAccordionContentVariants = VariantProps<typeof mgnpAccordionContentVariants>;
 
 @Directive({
   selector: '[mgnpAccordionContent]',

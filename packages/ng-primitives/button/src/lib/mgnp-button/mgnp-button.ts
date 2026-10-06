@@ -5,7 +5,7 @@ import { Directive, input } from '@angular/core';
 import { cva, type VariantProps } from 'class-variance-authority';
 import { injectButtonState, NgpButton, provideButtonState } from 'ng-primitives/button';
 
-export const mgnpButtonVariants = cva('mgnp-button', {
+export const mgnpButtonVariants = cva('mgnp-button group/mgnp-button', {
   variants: {
     variant: {
       default: 'mgnp-button-variant-default',

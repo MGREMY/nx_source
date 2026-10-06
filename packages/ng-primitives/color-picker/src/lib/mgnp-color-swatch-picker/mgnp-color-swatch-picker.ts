@@ -1,20 +1,40 @@
 import { MgnpColorPicker } from '../mgnp-color-picker/mgnp-color-picker';
+import { injectMgnpColorSwatchPickerConfig } from './mgnp-color-swatch-picker.token';
+import { classes } from '@mgremy/ng-primitives/utils';
 
 import { Directive, inject } from '@angular/core';
+import { cva, VariantProps } from 'class-variance-authority';
 import {
   injectColorSwatchPickerState,
   NgpColorSwatchPicker,
   provideColorSwatchPickerState,
 } from 'ng-primitives/color';
 
+export const mgnpColorSwatchPickerVariants = cva(
+  'mgnp-color-swatch-picker group/mgnp-color-swatch-picker',
+  {
+    variants: {
+      variant: {
+        default: 'mgnp-color-swatch-picker-variant-variant',
+        primary: 'mgnp-color-swatch-picker-variant-primary',
+        accent: 'mgnp-color-swatch-picker-variant-accent',
+        info: 'mgnp-color-swatch-picker-variant-info',
+        success: 'mgnp-color-swatch-picker-variant-success',
+        warning: 'mgnp-color-swatch-picker-variant-warning',
+        danger: 'mgnp-color-swatch-picker-variant-danger',
+      },
+    },
+    defaultVariants: {
+      variant: 'default',
+    },
+  }
+);
+
+export type MgnpColorSwatchPickerVariants = VariantProps<typeof mgnpColorSwatchPickerVariants>;
+
 @Directive({
   selector: '[mgnpColorSwatchPicker]',
   providers: [provideColorSwatchPickerState()],
-  host: {
-    class: 'mgnp-color-swatch-picker mgnp-c-color-swatch-picker',
-    'data-mgnp-color-swatch-picker': '',
-    '[attr.data-mgnp-color-swatch-picker-color]': 'colorPicker?.color() ?? null',
-  },
   hostDirectives: [
     {
       directive: NgpColorSwatchPicker,
@@ -30,7 +50,16 @@ import {
   exportAs: 'mgnpColorSwatchPicker',
 })
 export class MgnpColorSwatchPicker {
-  protected readonly colorPicker = inject(MgnpColorPicker, { optional: true });
+  private readonly _colorPicker = inject(MgnpColorPicker, { optional: true });
 
-  readonly state = injectColorSwatchPickerState();
+  public readonly config = injectMgnpColorSwatchPickerConfig();
+  public readonly state = injectColorSwatchPickerState();
+
+  constructor() {
+    classes(() =>
+      mgnpColorSwatchPickerVariants({
+        variant: this._colorPicker?.variant() ?? this.config.variant,
+      })
+    );
+  }
 }

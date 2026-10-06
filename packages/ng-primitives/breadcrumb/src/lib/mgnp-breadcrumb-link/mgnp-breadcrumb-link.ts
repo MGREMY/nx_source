@@ -3,7 +3,7 @@ import { injectMgnpBreadcrumbLinkConfig } from './mgnp-breadcrumb-link.token';
 import { classes } from '@mgremy/ng-primitives/utils';
 
 import { Directive, inject } from '@angular/core';
-import { cva } from 'class-variance-authority';
+import { cva, VariantProps } from 'class-variance-authority';
 import {
   injectBreadcrumbLinkState,
   NgpBreadcrumbLink,
@@ -26,6 +26,8 @@ export const mgnpBreadcrumbLinkVariants = cva('mgnp-breadcrumb-link group/mgnp-b
     variant: 'default',
   },
 });
+
+export type MgnpBreadcrumbLinkVariants = VariantProps<typeof mgnpBreadcrumbLinkVariants>;
 
 @Directive({
   selector: '[mgnpBreadcrumbLink]',

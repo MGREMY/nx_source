@@ -1,0 +1,155 @@
+@layer components {
+  .mgnp-color-area-thumb-variant-default {
+    @apply border-border;
+  }
+
+  .mgnp-color-area-thumb-variant-primary {
+    @apply border-primary;
+  }
+
+  .mgnp-color-area-thumb-variant-accent {
+    @apply border-accent;
+  }
+
+  .mgnp-color-area-thumb-variant-info {
+    @apply border-info;
+  }
+
+  .mgnp-color-area-thumb-variant-success {
+    @apply border-success;
+  }
+
+  .mgnp-color-area-thumb-variant-warning {
+    @apply border-warning;
+  }
+
+  .mgnp-color-area-thumb-variant-danger {
+    @apply border-danger;
+  }
+
+  .mgnp-color-field-variant-default {
+    @apply bg-default;
+    @apply border-border;
+    @apply text-default-foreground;
+  }
+
+  .mgnp-color-field-variant-primary {
+    @apply bg-default;
+    @apply border-primary;
+    @apply text-primary-foreground;
+  }
+
+  .mgnp-color-field-variant-accent {
+    @apply bg-default;
+    @apply border-accent;
+    @apply text-accent-foreground;
+  }
+
+  .mgnp-color-field-variant-info {
+    @apply bg-default;
+    @apply border-info;
+    @apply text-info-foreground;
+  }
+
+  .mgnp-color-field-variant-success {
+    @apply bg-default;
+    @apply border-success;
+    @apply text-success-foreground;
+  }
+
+  .mgnp-color-field-variant-warning {
+    @apply bg-default;
+    @apply border-warning;
+    @apply text-warning-foreground;
+  }
+
+  .mgnp-color-field-variant-danger {
+    @apply bg-default;
+    @apply border-danger;
+    @apply text-danger-foreground;
+  }
+
+  .mgnp-color-picker-variant-default {
+    @apply bg-default;
+  }
+
+  .mgnp-color-picker-variant-primary {
+    @apply bg-default;
+  }
+
+  .mgnp-color-picker-variant-accent {
+    @apply bg-default;
+  }
+
+  .mgnp-color-picker-variant-info {
+    @apply bg-default;
+  }
+
+  .mgnp-color-picker-variant-success {
+    @apply bg-default;
+  }
+
+  .mgnp-color-picker-variant-warning {
+    @apply bg-default;
+  }
+
+  .mgnp-color-picker-variant-danger {
+    @apply bg-default;
+  }
+
+  .mgnp-color-slider-thumb-variant-default {
+    @apply border-border;
+  }
+
+  .mgnp-color-slider-thumb-variant-primary {
+    @apply border-primary;
+  }
+
+  .mgnp-color-slider-thumb-variant-accent {
+    @apply border-accent;
+  }
+
+  .mgnp-color-slider-thumb-variant-info {
+    @apply border-info;
+  }
+
+  .mgnp-color-slider-thumb-variant-success {
+    @apply border-success;
+  }
+
+  .mgnp-color-slider-thumb-variant-warning {
+    @apply border-warning;
+  }
+
+  .mgnp-color-slider-thumb-variant-danger {
+    @apply border-danger;
+  }
+
+  .mgnp-color-wheel-thumb-variant-default {
+    @apply border-border;
+  }
+
+  .mgnp-color-wheel-thumb-variant-primary {
+    @apply border-primary;
+  }
+
+  .mgnp-color-wheel-thumb-variant-accent {
+    @apply border-accent;
+  }
+
+  .mgnp-color-wheel-thumb-variant-info {
+    @apply border-info;
+  }
+
+  .mgnp-color-wheel-thumb-variant-success {
+    @apply border-success;
+  }
+
+  .mgnp-color-wheel-thumb-variant-warning {
+    @apply border-warning;
+  }
+
+  .mgnp-color-wheel-thumb-variant-danger {
+    @apply border-danger;
+  }
+}

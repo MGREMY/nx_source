@@ -1,13 +1,13 @@
-import { MgnpAvatarConfig } from '../mgnp-avatar/mgnp-avatar.token';
+import { MgnpAvatarImageVariants } from './mgnp-avatar-image';
 
 import { inject, InjectionToken, ValueProvider } from '@angular/core';
 
 export interface MgnpAvatarImageConfig {
-  variant?: MgnpAvatarConfig['variant'];
+  variant: MgnpAvatarImageVariants['variant'];
 }
 
 const defaultConfig: MgnpAvatarImageConfig = {
-  variant: undefined,
+  variant: 'default',
 };
 
 const Token = new InjectionToken<MgnpAvatarImageConfig>('MgnpAvatarImageConfig');

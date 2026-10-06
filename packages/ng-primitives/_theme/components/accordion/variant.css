@@ -5,7 +5,7 @@
   }
 
   .mgnp-accordion-item-variant-default {
-    @apply border-default;
+    @apply border-border;
 
     @apply data-[orientation=vertical]:not-last:border-b;
     @apply data-[orientation=horizontal]:not-last:border-r;

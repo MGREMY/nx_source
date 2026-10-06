@@ -1,20 +1,38 @@
+import { mgnpColorAreaVariants } from '../mgnp-color-area/mgnp-color-area';
 import { MgnpColorPicker } from '../mgnp-color-picker/mgnp-color-picker';
+import { injectMgnpColorAreaThumbConfig } from './mgnp-color-area-thumb.token';
+import { classes } from '@mgremy/ng-primitives/utils';
 
 import { Directive, inject } from '@angular/core';
+import { cva, VariantProps } from 'class-variance-authority';
 import {
   injectColorAreaThumbState,
   NgpColorAreaThumb,
   provideColorAreaThumbState,
 } from 'ng-primitives/color';
 
+export const mgnpColorAreaThumbVariants = cva('mgnp-color-area-thumb group/mgnp-color-area-thumb', {
+  variants: {
+    variant: {
+      default: 'mgnp-color-area-thumb-variant-default',
+      primary: 'mgnp-color-area-thumb-variant-primary',
+      accent: 'mgnp-color-area-thumb-variant-accent',
+      info: 'mgnp-color-area-thumb-variant-info',
+      success: 'mgnp-color-area-thumb-variant-success',
+      warning: 'mgnp-color-area-thumb-variant-warning',
+      danger: 'mgnp-color-area-thumb-variant-danger',
+    },
+  },
+  defaultVariants: {
+    variant: 'default',
+  },
+});
+
+export type MgnpColorAreaThumbVariants = VariantProps<typeof mgnpColorAreaVariants>;
+
 @Directive({
   selector: '[mgnpColorAreaThumb]',
   providers: [provideColorAreaThumbState()],
-  host: {
-    class: 'mgnp-color-area-thumb mgnp-c-color-area-thumb',
-    'data-mgnp-color-area-thumb': '',
-    '[attr.data-mgnp-color-area-thumb-color]': 'colorPicker?.color() ?? null',
-  },
   hostDirectives: [
     {
       directive: NgpColorAreaThumb,
@@ -25,7 +43,14 @@ import {
   exportAs: 'mgnpColorAreaThumb',
 })
 export class MgnpColorAreaThumb {
-  protected readonly colorPicker = inject(MgnpColorPicker, { optional: true });
+  private readonly _colorPicker = inject(MgnpColorPicker, { optional: true });
 
-  readonly state = injectColorAreaThumbState();
+  public readonly config = injectMgnpColorAreaThumbConfig();
+  public readonly state = injectColorAreaThumbState();
+
+  constructor() {
+    classes(() =>
+      mgnpColorAreaThumbVariants({ variant: this._colorPicker?.variant() ?? this.config.variant })
+    );
+  }
 }

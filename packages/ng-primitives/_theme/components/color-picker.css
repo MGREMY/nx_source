@@ -1,4 +1,4 @@
-@import './color-picker/color.css';
+@import './color-picker/variant.css';
 
 @layer components {
   .mgnp-color-area {
@@ -11,21 +11,12 @@
   }
 
   .mgnp-color-area-thumb {
-    @apply mgnp-base mgnp-focus;
+    @apply mgnp-focus;
     @apply absolute;
     @apply bg-transparent;
     @apply size-4;
     @apply border-2 rounded-full shadow-sm;
     @apply transform-[translate(-50%,-50%)];
-
-    @apply not-data-mgnp-color-area-thumb-color:mgnp-color-area-thumb-color-ui;
-    @apply data-[mgnp-color-area-thumb-color=ui]:mgnp-color-area-thumb-color-ui;
-    @apply data-[mgnp-color-area-thumb-color=primary]:mgnp-color-area-thumb-color-primary;
-    @apply data-[mgnp-color-area-thumb-color=accent]:mgnp-color-area-thumb-color-accent;
-    @apply data-[mgnp-color-area-thumb-color=info]:mgnp-color-area-thumb-color-info;
-    @apply data-[mgnp-color-area-thumb-color=success]:mgnp-color-area-thumb-color-success;
-    @apply data-[mgnp-color-area-thumb-color=warning]:mgnp-color-area-thumb-color-warning;
-    @apply data-[mgnp-color-area-thumb-color=danger]:mgnp-color-area-thumb-color-danger;
   }
 
   .mgnp-color-area-thumb::before {
@@ -35,24 +26,14 @@
   }
 
   .mgnp-color-field {
-    @apply mgnp-base mgnp-focus;
+    @apply mgnp-focus;
     @apply block;
     @apply w-full;
     @apply py-2 px-4;
     @apply border rounded-lg;
-
-    @apply not-data-mgnp-color-field-color:mgnp-color-field-color-ui;
-    @apply data-[mgnp-color-field-color=ui]:mgnp-color-field-color-ui;
-    @apply data-[mgnp-color-field-color=primary]:mgnp-color-field-color-primary;
-    @apply data-[mgnp-color-field-color=accent]:mgnp-color-field-color-accent;
-    @apply data-[mgnp-color-field-color=info]:mgnp-color-field-color-info;
-    @apply data-[mgnp-color-field-color=success]:mgnp-color-field-color-success;
-    @apply data-[mgnp-color-field-color=warning]:mgnp-color-field-color-warning;
-    @apply data-[mgnp-color-field-color=danger]:mgnp-color-field-color-danger;
   }
 
   .mgnp-color-picker {
-    @apply mgnp-base mgnp-color-picker-color;
     @apply inline-flex flex-col gap-3 items-center;
     @apply w-full max-w-60;
     @apply p-3;
@@ -67,21 +48,12 @@
   }
 
   .mgnp-color-slider-thumb {
-    @apply mgnp-base mgnp-focus;
+    @apply mgnp-focus;
     @apply absolute top-1/2;
     @apply bg-transparent;
     @apply size-4;
     @apply border-2 rounded-full shadow-sm;
     @apply transform-[translate(-50%,-50%)];
-
-    @apply not-data-mgnp-color-slider-thumb-color:mgnp-color-slider-thumb-color-ui;
-    @apply data-[mgnp-color-slider-thumb-color=ui]:mgnp-color-slider-thumb-color-ui;
-    @apply data-[mgnp-color-slider-thumb-color=primary]:mgnp-color-slider-thumb-color-primary;
-    @apply data-[mgnp-color-slider-thumb-color=accent]:mgnp-color-slider-thumb-color-accent;
-    @apply data-[mgnp-color-slider-thumb-color=info]:mgnp-color-slider-thumb-color-info;
-    @apply data-[mgnp-color-slider-thumb-color=success]:mgnp-color-slider-thumb-color-success;
-    @apply data-[mgnp-color-slider-thumb-color=warning]:mgnp-color-slider-thumb-color-warning;
-    @apply data-[mgnp-color-slider-thumb-color=danger]:mgnp-color-slider-thumb-color-danger;
   }
 
   .mgnp-color-slider-thumb::before {
@@ -108,7 +80,6 @@
   }
 
   .mgnp-color-swatch-picker {
-    @apply mgnp-base;
     @apply flex flex-wrap gap-3 items-center justify-center;
     @apply w-full max-w-60;
     @apply p-3;
@@ -124,7 +95,6 @@
   }
 
   .mgnp-color-swatch-picker-item {
-    @apply motion-safe:transition-[scale,border-color];
     @apply shrink-0 size-8.5;
     @apply rounded-lg;
     @apply shadow-md;
@@ -159,15 +129,6 @@
     @apply size-4.5 -m-2.25;
     @apply border-2 rounded-full shadow-sm;
     @apply transform-[rotate(var(--ngp-color-wheel-hue))_translateY(--spacing(-19.25))];
-
-    @apply not-data-mgnp-color-wheel-thumb-color:mgnp-color-wheel-thumb-color-ui;
-    @apply data-[mgnp-color-wheel-thumb-color=ui]:mgnp-color-wheel-thumb-color-ui;
-    @apply data-[mgnp-color-wheel-thumb-color=primary]:mgnp-color-wheel-thumb-color-primary;
-    @apply data-[mgnp-color-wheel-thumb-color=accent]:mgnp-color-wheel-thumb-color-accent;
-    @apply data-[mgnp-color-wheel-thumb-color=info]:mgnp-color-wheel-thumb-color-info;
-    @apply data-[mgnp-color-wheel-thumb-color=success]:mgnp-color-wheel-thumb-color-success;
-    @apply data-[mgnp-color-wheel-thumb-color=warning]:mgnp-color-wheel-thumb-color-warning;
-    @apply data-[mgnp-color-wheel-thumb-color=danger]:mgnp-color-wheel-thumb-color-danger;
   }
 
   .mgnp-color-wheel-thumb::before {

@@ -1,7 +1,7 @@
 @layer components {
   .mgnp-checkbox-variant-default {
     @apply text-default;
-    @apply border-muted;
+    @apply border-border;
 
     @variant data-checked {
       @apply bg-muted;

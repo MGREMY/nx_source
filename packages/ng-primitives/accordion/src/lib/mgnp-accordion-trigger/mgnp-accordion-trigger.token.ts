@@ -1,9 +1,9 @@
-import { MgnpAccordionVariants } from '../mgnp-accordion/mgnp-accordion';
+import { MgnpAccordionTriggerVariants } from './mgnp-accordion-trigger';
 
 import { inject, InjectionToken, ValueProvider } from '@angular/core';
 
 export interface MgnpAccordionTriggerConfig {
-  variant?: MgnpAccordionVariants['variant'];
+  variant: MgnpAccordionTriggerVariants['variant'];
 }
 
 const defaultConfig: MgnpAccordionTriggerConfig = {

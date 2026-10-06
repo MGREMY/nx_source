@@ -1,4 +1,4 @@
-@import './avatar/color.css';
+@import './avatar/variant.css';
 
 @layer components {
   .mgnp-avatar {

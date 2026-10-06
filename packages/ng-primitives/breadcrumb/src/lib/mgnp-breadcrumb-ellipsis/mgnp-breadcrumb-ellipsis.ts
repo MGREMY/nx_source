@@ -3,7 +3,7 @@ import { injectMgnpBreadcrumbEllipsisConfig } from './mgnp-breadcrumb-ellipsis.t
 import { classes } from '@mgremy/ng-primitives/utils';
 
 import { Directive, inject } from '@angular/core';
-import { cva } from 'class-variance-authority';
+import { cva, VariantProps } from 'class-variance-authority';
 import {
   injectBreadcrumbEllipsisState,
   NgpBreadcrumbEllipsis,
@@ -29,6 +29,8 @@ export const mgnpBreadcrumbEllipsisVariants = cva(
     },
   }
 );
+
+export type MgnpBreadcrumbEllipsisVariants = VariantProps<typeof mgnpBreadcrumbEllipsisVariants>;
 
 @Directive({
   selector: '[mgnpBreadcrumbEllipsis]',

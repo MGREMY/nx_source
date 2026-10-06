@@ -1,13 +1,13 @@
-import { MgnpAvatarConfig } from '../mgnp-avatar/mgnp-avatar.token';
+import { MgnpAvatarFallbackVariants } from './mgnp-avatar-fallback';
 
 import { inject, InjectionToken, ValueProvider } from '@angular/core';
 
 export interface MgnpAvatarFallbackConfig {
-  variant?: MgnpAvatarConfig['variant'];
+  variant: MgnpAvatarFallbackVariants['variant'];
 }
 
 const defaultConfig: MgnpAvatarFallbackConfig = {
-  variant: undefined,
+  variant: 'default',
 };
 
 const Token = new InjectionToken<MgnpAvatarFallbackConfig>('MgnpAvatarFallbackConfig');

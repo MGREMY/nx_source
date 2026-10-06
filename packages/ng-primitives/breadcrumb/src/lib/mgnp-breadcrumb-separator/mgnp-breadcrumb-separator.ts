@@ -3,7 +3,7 @@ import { injectMgnpBreadcrumbSeparatorConfig } from './mgnp-breadcrumb-separator
 import { classes } from '@mgremy/ng-primitives/utils';
 
 import { Directive, inject } from '@angular/core';
-import { cva } from 'class-variance-authority';
+import { cva, VariantProps } from 'class-variance-authority';
 import {
   injectBreadcrumbSeparatorState,
   NgpBreadcrumbSeparator,
@@ -29,6 +29,8 @@ export const mgnpBreadcrumbSeparatorVariants = cva(
     },
   }
 );
+
+export type MgnpBreadcrumbSeparatorVariants = VariantProps<typeof mgnpBreadcrumbSeparatorVariants>;
 
 @Directive({
   selector: '[mgnpBreadcrumbSeparator]',

@@ -1,13 +1,13 @@
-import { MgnpBreadcrumbVariants } from '../mgnp-breadcrumb/mgnp-breadcrumb';
+import { MgnpBreadcrumbEllipsisVariants } from './mgnp-breadcrumb-ellipsis';
 
 import { inject, InjectionToken, ValueProvider } from '@angular/core';
 
 export interface MgnpBreadcrumbEllipsisConfig {
-  variant?: MgnpBreadcrumbVariants['variant'];
+  variant: MgnpBreadcrumbEllipsisVariants['variant'];
 }
 
 const defaultConfig: MgnpBreadcrumbEllipsisConfig = {
-  variant: undefined,
+  variant: 'default',
 };
 
 const Token = new InjectionToken<MgnpBreadcrumbEllipsisConfig>('MgnpBreadcrumbEllipsisConfig');
