@@ -4,6 +4,7 @@ import {
   MgnpComboboxDropdown,
   MgnpComboboxOption,
   MgnpComboboxPortal,
+  MgnpComboboxVariants,
 } from '@mgremy/ng-primitives/combobox';
 
 import { NgIcon, provideIcons } from '@ng-icons/core';
@@ -15,9 +16,9 @@ import { Component } from '@angular/core';
   imports: [MgnpCombobox, MgnpComboboxButton, MgnpComboboxDropdown, MgnpComboboxOption, MgnpComboboxPortal, NgIcon],
   template: `
     <div class="flex flex-col gap-y-2 w-full items-center justify-center">
-      @for (color of _colors; track $index) {
-        <span>{{ color }}</span>
-        <div mgnpCombobox #combobox="mgnpCombobox" [color]="color">
+      @for (variant of _variants; track $index) {
+        <span>{{ variant }}</span>
+        <div mgnpCombobox #combobox="mgnpCombobox" [variant]="variant">
           <button mgnpComboboxButton>
             <span>{{ combobox.state().value() || 'Select an option' }}</span>
             <ng-icon name="heroChevronDown" />
@@ -36,6 +37,14 @@ import { Component } from '@angular/core';
   providers: [provideIcons({ heroChevronDown })],
 })
 export default class Combobox {
-  readonly _colors = ['ui', 'primary', 'accent', 'info', 'success', 'warning', 'danger'];
+  readonly _variants = [
+    'default',
+    'primary',
+    'accent',
+    'info',
+    'success',
+    'warning',
+    'danger',
+  ] as MgnpComboboxVariants['variant'][];
   readonly options = ['option 1', 'option 2', 'option 3'];
 }

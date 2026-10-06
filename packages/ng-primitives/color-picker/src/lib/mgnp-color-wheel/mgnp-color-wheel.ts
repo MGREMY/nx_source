@@ -48,7 +48,7 @@ export class MgnpColorWheel {
   public readonly config = injectMgnpColorWheelConfig();
   public readonly state = injectColorWheelState();
 
-  constructor() {
+  public constructor() {
     classes(() =>
       mgnpColorWheelVariants({ variant: this._colorPicker?.variant() ?? this.config.variant })
     );

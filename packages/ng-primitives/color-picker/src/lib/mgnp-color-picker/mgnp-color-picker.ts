@@ -59,7 +59,7 @@ export class MgnpColorPicker implements ControlValueAccessor {
 
   public readonly variant = input<MgnpColorPickerVariants['variant']>(this.config.variant);
 
-  constructor() {
+  public constructor() {
     classes(() => mgnpColorPickerVariants({ variant: this.variant() }));
 
     this.state()
@@ -67,16 +67,16 @@ export class MgnpColorPicker implements ControlValueAccessor {
       .subscribe((value) => this.onChangeFn?.(value));
   }
 
-  writeValue(value: Color | string): void {
+  public writeValue(value: Color | string): void {
     if (typeof value === 'string') this.state().setValue(Color.parse(value));
     else this.state().setValue(value);
   }
 
-  registerOnChange(fn: ChangeFn<Color>): void {
+  public registerOnChange(fn: ChangeFn<Color>): void {
     this.onChangeFn = fn;
   }
 
-  registerOnTouched(fn: TouchedFn): void {
+  public registerOnTouched(fn: TouchedFn): void {
     this.onTouchedFn = fn;
   }
 }

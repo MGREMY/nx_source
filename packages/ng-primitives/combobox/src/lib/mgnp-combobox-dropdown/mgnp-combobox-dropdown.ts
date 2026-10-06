@@ -1,15 +1,35 @@
 import { MgnpCombobox } from '../mgnp-combobox/mgnp-combobox';
+import { injectMgnpComboboxDropdownConfig } from './mgnp-combobox-dropdown.token';
+import { classes } from '@mgremy/ng-primitives/utils';
 
 import { Directive, inject } from '@angular/core';
+import { cva, VariantProps } from 'class-variance-authority';
 import { NgpComboboxDropdown } from 'ng-primitives/combobox';
+
+export const mgnpComboboxDropdownVariants = cva(
+  'mgnp-combobox-dropdown group/mgnp-combobox-dropdown',
+  {
+    variants: {
+      variant: {
+        default: 'mgnp-combobox-dropdown-variant-default',
+        primary: 'mgnp-combobox-dropdown-variant-primary',
+        accent: 'mgnp-combobox-dropdown-variant-accent',
+        info: 'mgnp-combobox-dropdown-variant-info',
+        success: 'mgnp-combobox-dropdown-variant-success',
+        warning: 'mgnp-combobox-dropdown-variant-warning',
+        danger: 'mgnp-combobox-dropdown-variant-danger',
+      },
+    },
+    defaultVariants: {
+      variant: 'default',
+    },
+  }
+);
+
+export type MgnpComboboxDropdownVariants = VariantProps<typeof mgnpComboboxDropdownVariants>;
 
 @Directive({
   selector: '[mgnpComboboxDropdown]',
-  host: {
-    class: 'mgnp-combobox-dropdown mgnp-c-combobox-dropdown',
-    'data-mgnp-combobox-dropdown': '',
-    '[attr.data-mgnp-combobox-dropdown-color]': 'combobox.color()',
-  },
   hostDirectives: [
     {
       directive: NgpComboboxDropdown,
@@ -20,5 +40,11 @@ import { NgpComboboxDropdown } from 'ng-primitives/combobox';
   exportAs: 'mgnpComboboxDropdown',
 })
 export class MgnpComboboxDropdown {
-  protected readonly combobox = inject(MgnpCombobox);
+  private readonly _combobox = inject(MgnpCombobox);
+
+  public readonly config = injectMgnpComboboxDropdownConfig();
+
+  public constructor() {
+    classes(() => mgnpComboboxDropdownVariants({ variant: this._combobox.variant() }));
+  }
 }

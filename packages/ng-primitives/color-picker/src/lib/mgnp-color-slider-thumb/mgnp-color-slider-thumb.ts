@@ -53,7 +53,7 @@ export class MgnpColorSliderThumb {
   public readonly config = injectMgnpColorSliderThumbConfig();
   public readonly state = injectColorSliderThumbState();
 
-  constructor() {
+  public constructor() {
     classes(() =>
       mgnpColorSliderThumbVariants({ variant: this._colorPicker?.variant() ?? this.config.variant })
     );

@@ -46,7 +46,7 @@ export class MgnpBreadcrumb {
 
   public readonly variant = input<MgnpBreadcrumbVariants['variant']>(this.config.variant);
 
-  constructor() {
+  public constructor() {
     classes(() => mgnpBreadcrumbVariants({ variant: this.variant() }));
   }
 }

@@ -50,7 +50,7 @@ export class MgnpAccordionItem {
   public readonly config = injectMgnpAccordionItemConfig();
   public readonly state = injectAccordionItemState();
 
-  constructor() {
+  public constructor() {
     classes(() =>
       mgnpAccordionItemVariants({
         variant: this._accordion.variant(),

@@ -43,7 +43,7 @@ export class MgnpColorField {
   public readonly config = injectMgnpColorFieldConfig();
   public readonly state = injectColorFieldState();
 
-  constructor() {
+  public constructor() {
     classes(() =>
       mgnpColorFieldVariants({ variant: this._colorPicker?.variant() ?? this.config.variant })
     );

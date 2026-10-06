@@ -47,7 +47,7 @@ export class MgnpAvatarFallback {
   public readonly config = injectAvatarFallbackConfig();
   public readonly state = injectAvatarFallbackState();
 
-  constructor() {
+  public constructor() {
     classes(() => mgnpAvatarFallbackVariants({ variant: this._avatar.variant() }));
   }
 }

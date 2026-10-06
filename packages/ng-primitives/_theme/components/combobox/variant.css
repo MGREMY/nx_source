@@ -1,0 +1,239 @@
+@layer components {
+  .mgnp-combobox-variant-default {
+    @apply bg-default;
+    @apply border-border;
+
+    @variant not-data-pristine:data-invalid {
+      @apply border-danger;
+    }
+  }
+
+  .mgnp-combobox-variant-primary {
+    @apply bg-default;
+    @apply border-border;
+
+    @variant not-data-pristine:data-invalid {
+      @apply border-danger;
+    }
+  }
+
+  .mgnp-combobox-variant-accent {
+    @apply bg-default;
+    @apply border-border;
+
+    @variant not-data-pristine:data-invalid {
+      @apply border-danger;
+    }
+  }
+
+  .mgnp-combobox-variant-info {
+    @apply bg-default;
+    @apply border-border;
+
+    @variant not-data-pristine:data-invalid {
+      @apply border-danger;
+    }
+  }
+
+  .mgnp-combobox-variant-success {
+    @apply bg-default;
+    @apply border-border;
+
+    @variant not-data-pristine:data-invalid {
+      @apply border-danger;
+    }
+  }
+
+  .mgnp-combobox-variant-warning {
+    @apply bg-default;
+    @apply border-border;
+
+    @variant not-data-pristine:data-invalid {
+      @apply border-danger;
+    }
+  }
+
+  .mgnp-combobox-variant-danger {
+    @apply bg-default;
+    @apply border-border;
+
+    @variant not-data-pristine:data-invalid {
+      @apply border-danger;
+    }
+  }
+
+  .mgnp-combobox-input-variant-default {
+    @apply text-default-foreground;
+  }
+
+  .mgnp-combobox-input-variant-primary {
+    @apply text-primary-foreground;
+  }
+
+  .mgnp-combobox-input-variant-accent {
+    @apply text-accent-foreground;
+  }
+
+  .mgnp-combobox-input-variant-info {
+    @apply text-info-foreground;
+  }
+
+  .mgnp-combobox-input-variant-success {
+    @apply text-success-foreground;
+  }
+
+  .mgnp-combobox-input-variant-warning {
+    @apply text-warning-foreground;
+  }
+
+  .mgnp-combobox-input-variant-danger {
+    @apply text-danger-foreground;
+  }
+
+  .mgnp-combobox-button-variant-default {
+    @apply text-default-foreground;
+  }
+
+  .mgnp-combobox-button-variant-primary {
+    @apply text-primary-foreground;
+  }
+
+  .mgnp-combobox-button-variant-accent {
+    @apply text-accent-foreground;
+  }
+
+  .mgnp-combobox-button-variant-info {
+    @apply text-info-foreground;
+  }
+
+  .mgnp-combobox-button-variant-success {
+    @apply text-success-foreground;
+  }
+
+  .mgnp-combobox-button-variant-warning {
+    @apply text-warning-foreground;
+  }
+
+  .mgnp-combobox-button-variant-danger {
+    @apply text-danger-foreground;
+  }
+
+  .mgnp-combobox-dropdown-variant-default {
+    @apply bg-default;
+    @apply border-border;
+  }
+
+  .mgnp-combobox-dropdown-variant-primary {
+    @apply bg-default;
+    @apply border-border;
+  }
+
+  .mgnp-combobox-dropdown-variant-accent {
+    @apply bg-default;
+    @apply border-border;
+  }
+
+  .mgnp-combobox-dropdown-variant-info {
+    @apply bg-default;
+    @apply border-border;
+  }
+
+  .mgnp-combobox-dropdown-variant-success {
+    @apply bg-default;
+    @apply border-border;
+  }
+
+  .mgnp-combobox-dropdown-variant-warning {
+    @apply bg-default;
+    @apply border-border;
+  }
+
+  .mgnp-combobox-dropdown-variant-danger {
+    @apply bg-default;
+    @apply border-border;
+  }
+
+  .mgnp-combobox-option-variant-default {
+    @apply text-default-foreground;
+
+    @variant data-hover,data-active {
+      @apply bg-muted/50;
+    }
+
+    @variant data-disabled {
+      @apply opacity-50;
+    }
+  }
+
+  .mgnp-combobox-option-variant-primary {
+    @apply text-primary-foreground;
+
+    @variant data-hover,data-active {
+      @apply bg-primary/50;
+    }
+
+    @variant data-disabled {
+      @apply opacity-50;
+    }
+  }
+
+  .mgnp-combobox-option-variant-accent {
+    @apply text-accent-foreground;
+
+    @variant data-hover,data-active {
+      @apply bg-accent/50;
+    }
+
+    @variant data-disabled {
+      @apply opacity-50;
+    }
+  }
+
+  .mgnp-combobox-option-variant-info {
+    @apply text-info-foreground;
+
+    @variant data-hover,data-active {
+      @apply bg-info/50;
+    }
+
+    @variant data-disabled {
+      @apply opacity-50;
+    }
+  }
+
+  .mgnp-combobox-option-variant-success {
+    @apply text-success-foreground;
+
+    @variant data-hover,data-active {
+      @apply bg-success/50;
+    }
+
+    @variant data-disabled {
+      @apply opacity-50;
+    }
+  }
+
+  .mgnp-combobox-option-variant-warning {
+    @apply text-warning-foreground;
+
+    @variant data-hover,data-active {
+      @apply bg-warning/50;
+    }
+
+    @variant data-disabled {
+      @apply opacity-50;
+    }
+  }
+
+  .mgnp-combobox-option-variant-danger {
+    @apply text-danger-foreground;
+
+    @variant data-hover,data-active {
+      @apply bg-danger/50;
+    }
+
+    @variant data-disabled {
+      @apply opacity-50;
+    }
+  }
+}

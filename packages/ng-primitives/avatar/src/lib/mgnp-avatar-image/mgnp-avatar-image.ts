@@ -47,7 +47,7 @@ export class MgnpAvatarImage {
   public readonly state = injectAvatarImageState();
   public readonly config = injectAvatarImageConfig();
 
-  constructor() {
+  public constructor() {
     classes(() => mgnpAvatarImageVariants({ variant: this._avatar.variant() }));
   }
 }

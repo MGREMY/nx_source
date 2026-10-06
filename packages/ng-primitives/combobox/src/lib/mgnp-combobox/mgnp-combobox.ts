@@ -1,21 +1,35 @@
-import { PropertyType } from '@mgremy/ng-primitives';
+import { injectMgnpComboboxConfig } from './mgnp-combobox.token';
+import { classes } from '@mgremy/ng-primitives/utils';
 
 import { Directive, input } from '@angular/core';
 import { ControlValueAccessor } from '@angular/forms';
+import { cva, VariantProps } from 'class-variance-authority';
 import { injectComboboxState, NgpCombobox, provideComboboxState } from 'ng-primitives/combobox';
 import { ChangeFn, provideValueAccessor, TouchedFn } from 'ng-primitives/utils';
 
-export type MgnpComboboxColor = PropertyType<
-  'ui' | 'primary' | 'accent' | 'info' | 'success' | 'warning' | 'danger'
->;
+export const mgnpComboboxVariants = cva('mgnp-combobox group/mgnp-combobox', {
+  variants: {
+    variant: {
+      default: 'mgnp-combobox-variant-default',
+      primary: 'mgnp-combobox-variant-primary',
+      accent: 'mgnp-combobox-variant-accent',
+      info: 'mgnp-combobox-variant-info',
+      success: 'mgnp-combobox-variant-success',
+      warning: 'mgnp-combobox-variant-warning',
+      danger: 'mgnp-combobox-variant-danger',
+    },
+  },
+  defaultVariants: {
+    variant: 'default',
+  },
+});
+
+export type MgnpComboboxVariants = VariantProps<typeof mgnpComboboxVariants>;
 
 @Directive({
   selector: '[mgnpCombobox]',
   providers: [provideComboboxState(), provideValueAccessor(MgnpCombobox)],
   host: {
-    class: 'mgnp-combobox mgnp-c-combobox',
-    'data-mgnp-combobox': '',
-    '[attr.data-mgnp-combobox-color]': 'color()',
     '(focusout)': 'onTouchedFn?.()',
   },
   hostDirectives: [
@@ -43,32 +57,35 @@ export type MgnpComboboxColor = PropertyType<
   exportAs: 'mgnpCombobox',
 })
 export class MgnpCombobox<T> implements ControlValueAccessor {
-  readonly state = injectComboboxState();
+  public readonly config = injectMgnpComboboxConfig();
+  public readonly state = injectComboboxState();
 
-  readonly color = input<MgnpComboboxColor>('ui');
+  public readonly variant = input<MgnpComboboxVariants['variant']>(this.config.variant);
 
   protected onChangeFn?: ChangeFn<T>;
   protected onTouchedFn?: TouchedFn;
 
-  constructor() {
+  public constructor() {
+    classes(() => mgnpComboboxVariants({ variant: this.variant() }));
+
     this.state()
       .valueChange // TODO : pipe(takeUntilDestroyed())
       .subscribe((value) => this.onChangeFn?.(value));
   }
 
-  writeValue(value: T): void {
+  public writeValue(value: T): void {
     this.state().value.set(value);
   }
 
-  registerOnChange(fn: ChangeFn<T>): void {
+  public registerOnChange(fn: ChangeFn<T>): void {
     this.onChangeFn = fn;
   }
 
-  registerOnTouched(fn: TouchedFn): void {
+  public registerOnTouched(fn: TouchedFn): void {
     this.onTouchedFn = fn;
   }
 
-  setDisabledState(value: boolean): void {
+  public setDisabledState(value: boolean): void {
     this.state().disabled.set(value);
   }
 }

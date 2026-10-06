@@ -48,7 +48,7 @@ export class MgnpAccordion {
 
   public readonly variant = input<MgnpAccordionVariants['variant']>(this.config.variant);
 
-  constructor() {
+  public constructor() {
     classes(() =>
       mgnpAccordionVariants({
         variant: this.variant(),

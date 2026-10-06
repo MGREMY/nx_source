@@ -48,7 +48,7 @@ export class MgnpColorAreaThumb {
   public readonly config = injectMgnpColorAreaThumbConfig();
   public readonly state = injectColorAreaThumbState();
 
-  constructor() {
+  public constructor() {
     classes(() =>
       mgnpColorAreaThumbVariants({ variant: this._colorPicker?.variant() ?? this.config.variant })
     );

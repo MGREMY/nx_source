@@ -50,7 +50,7 @@ export class MgnpBreadcrumbEllipsis {
   public readonly config = injectMgnpBreadcrumbEllipsisConfig();
   public readonly state = injectBreadcrumbEllipsisState();
 
-  constructor() {
+  public constructor() {
     classes(() => mgnpBreadcrumbEllipsisVariants({ variant: this._breadcrumb.variant() }));
   }
 }

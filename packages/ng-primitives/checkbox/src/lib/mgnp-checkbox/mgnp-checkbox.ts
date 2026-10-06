@@ -69,7 +69,7 @@ export class MgnpCheckbox implements ControlValueAccessor {
   public readonly variant = input<MgnpCheckboxVariants['variant']>(this.config.variant);
   public readonly size = input<MgnpCheckboxVariants['size']>(this.config.size);
 
-  constructor() {
+  public constructor() {
     classes(() => mgnpCheckboxVariants({ variant: this.variant(), size: this.size() }));
 
     this.state()
@@ -77,19 +77,19 @@ export class MgnpCheckbox implements ControlValueAccessor {
       .subscribe((value) => this.onChangeFn?.(value));
   }
 
-  writeValue(value: boolean): void {
+  public writeValue(value: boolean): void {
     this.state().setChecked(value);
   }
 
-  registerOnChange(fn: ChangeFn<boolean>): void {
+  public registerOnChange(fn: ChangeFn<boolean>): void {
     this.onChangeFn = fn;
   }
 
-  registerOnTouched(fn: TouchedFn): void {
+  public registerOnTouched(fn: TouchedFn): void {
     this.onTouchedFn = fn;
   }
 
-  setDisabledState(value: boolean): void {
+  public setDisabledState(value: boolean): void {
     this.state().setDisabled(value);
   }
 }

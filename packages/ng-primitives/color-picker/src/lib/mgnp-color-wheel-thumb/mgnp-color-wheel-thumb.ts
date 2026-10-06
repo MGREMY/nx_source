@@ -50,7 +50,7 @@ export class MgnpColorWheelThumb {
   public readonly config = injectMgnpColorWheelConfig();
   public readonly state = injectColorWheelThumbState();
 
-  constructor() {
+  public constructor() {
     classes(() =>
       mgnpColorWheelThumbVariants({ variant: this._colorPicker?.variant() ?? this.config.variant })
     );

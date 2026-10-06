@@ -54,7 +54,7 @@ export class MgnpColorSlider {
   public readonly config = injectMgnpColorSliderConfig();
   public readonly state = injectColorSliderState();
 
-  constructor() {
+  public constructor() {
     classes(() =>
       mgnpColorSliderVariants({ variant: this._colorPicker?.variant() ?? this.config.variant })
     );

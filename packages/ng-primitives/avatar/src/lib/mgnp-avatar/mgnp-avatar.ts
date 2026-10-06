@@ -42,7 +42,7 @@ export class MgnpAvatar {
 
   public readonly variant = input<MgnpAvatarVariants['variant']>(this.config.variant);
 
-  constructor() {
+  public constructor() {
     classes(() => mgnpAvatarVariants({ variant: this.variant() }));
   }
 }

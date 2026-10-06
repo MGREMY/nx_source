@@ -55,7 +55,7 @@ export class MgnpColorSwatchPicker {
   public readonly config = injectMgnpColorSwatchPickerConfig();
   public readonly state = injectColorSwatchPickerState();
 
-  constructor() {
+  public constructor() {
     classes(() =>
       mgnpColorSwatchPickerVariants({
         variant: this._colorPicker?.variant() ?? this.config.variant,

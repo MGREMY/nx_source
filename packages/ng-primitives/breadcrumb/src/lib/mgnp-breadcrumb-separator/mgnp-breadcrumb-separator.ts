@@ -50,7 +50,7 @@ export class MgnpBreadcrumbSeparator {
   public readonly config = injectMgnpBreadcrumbSeparatorConfig();
   public readonly state = injectBreadcrumbSeparatorState();
 
-  constructor() {
+  public constructor() {
     classes(() => mgnpBreadcrumbSeparatorVariants({ variant: this._breadcrumb.variant() }));
   }
 }

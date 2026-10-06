@@ -50,7 +50,7 @@ export class MgnpColorArea {
   public readonly config = injectMgnpColorAreaConfig();
   public readonly state = injectColorAreaState();
 
-  constructor() {
+  public constructor() {
     classes(() =>
       mgnpColorAreaVariants({ variant: this._colorPicker?.variant() ?? this.config.variant })
     );

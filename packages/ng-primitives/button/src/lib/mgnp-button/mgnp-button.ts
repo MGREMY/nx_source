@@ -52,7 +52,7 @@ export class MgnpButton {
   public readonly variant = input<MgnpButtonVariants['variant']>('default');
   public readonly size = input<MgnpButtonVariants['size']>('md');
 
-  constructor() {
+  public constructor() {
     classes(() => mgnpButtonVariants({ variant: this.variant(), size: this.size() }));
   }
 }

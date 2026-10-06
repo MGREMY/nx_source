@@ -47,7 +47,7 @@ export class MgnpBreadcrumbList {
   public readonly config = injectMgnpBreadcrumbListConfig();
   public readonly state = injectBreadcrumbListState();
 
-  constructor() {
+  public constructor() {
     classes(() => mgnpBreadcrumbListVariants({ variant: this._breadcrumb.variant() }));
   }
 }

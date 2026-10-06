@@ -50,7 +50,7 @@ export class MgnpColorSliderTrack {
   public readonly config = injectMgnpColorSliderTrackConfig();
   public readonly state = injectColorSliderTrackState();
 
-  constructor() {
+  public constructor() {
     classes(() =>
       mgnpColorSliderTrackVariants({ variant: this._colorPicker?.variant() ?? this.config.variant })
     );

@@ -50,7 +50,7 @@ export class MgnpAccordionTrigger {
   public readonly config = injectMgnpAccordionTriggerConfig();
   public readonly state = injectAccordionTriggerState();
 
-  constructor() {
+  public constructor() {
     classes(() =>
       mgnpAccordionTriggerVariants({
         variant: this._accordion.variant(),
